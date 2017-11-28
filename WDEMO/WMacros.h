@@ -29,7 +29,6 @@ dispatch_async(dispatch_get_main_queue(), block);\
 
 #endif /* WMacros_h */
 
-
 //#ifdef DEBUG
 //#else
 //#endif
