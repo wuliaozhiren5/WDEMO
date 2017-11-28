@@ -18,7 +18,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+ 
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+    self.extensionContext.widgetLargestAvailableDisplayMode = NCWidgetDisplayModeExpanded;
+#endif
+    
+    
+    
+    //  添加一个button,点击button后改变背景的颜色
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
+    [button setTitle:@"点击一下" forState:UIControlStateNormal];
+    button.backgroundColor = [UIColor whiteColor];
+    [button addTarget:self action:@selector(clickAction) forControlEvents:UIControlEventTouchUpInside];
+    button.frame = CGRectMake(50, 10, 100, 30);
+    [self.view addSubview:button];
 }
+
+#ifdef NSFoundationVersionNumber_iOS_9_x_Max
+-(void)widgetActiveDisplayModeDidChange:(NCWidgetDisplayMode)activeDisplayMode withMaximumSize:(CGSize)maxSize{
+    switch (activeDisplayMode) {
+        case NCWidgetDisplayModeCompact:
+            self.preferredContentSize = CGSizeMake(maxSize.width,300);
+            //ios10以后，widget的关闭时高度为固定值，设置没效果。
+            break;
+        case NCWidgetDisplayModeExpanded:
+            self.preferredContentSize = CGSizeMake(maxSize.width,400);
+            break;
+        default:
+            break;
+    }
+    
+}
+#endif
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -35,4 +68,8 @@
     completionHandler(NCUpdateResultNewData);
 }
 
+
+- (void)clickAction{
+    self.view.backgroundColor = [UIColor redColor];
+}
 @end

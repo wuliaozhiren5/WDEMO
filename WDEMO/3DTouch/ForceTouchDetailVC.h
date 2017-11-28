@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface ForceTouchDetailVC : UIViewController
-
+@property(copy ,nonatomic)NSString *str;
 @end
