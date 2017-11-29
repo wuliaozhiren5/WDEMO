@@ -31,7 +31,7 @@
     [_goBtn addTarget:self action:@selector(clickGoBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_goBtn];
     
-     UIButton *touchBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 150, 100, 42)];
+    UIButton *touchBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 150, 100, 42)];
     //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
     [touchBtn setTitle:@"3D Touch" forState:UIControlStateNormal];
     touchBtn.backgroundColor = [UIColor grayColor];
