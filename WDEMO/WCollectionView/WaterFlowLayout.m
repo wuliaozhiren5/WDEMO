@@ -8,33 +8,36 @@
 
 #import "WaterFlowLayout.h"
 #import <AssetsLibrary/AssetsLibrary.h>
-//默认的列数
+
+/** 默认的列数    */
 static const NSInteger DefaultColumnCpunt = 3;
 
-//每一列之间的间距
+/** 每一列之间的间距    */
 static const CGFloat DefaultColumnMargin = 10;
 
-//每一行之间的间距
+/** 每一行之间的间距    */
 static const CGFloat DefaultRowMargin = 10;
 
-//边缘间距
-static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
+/** 内边距    */
+static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
 
 @interface WaterFlowLayout ()
 
-//c存放所有cell的布局属性
+/** 存放所有的布局属性 */
 @property (nonatomic, strong) NSMutableArray *attrsArray;
-//存放所有列的当前高度
+
+/** 存放所有列的当前高度 */
 @property (nonatomic, strong) NSMutableArray *columnHeights;
+
 /** 内容的高度 */
 @property (nonatomic, assign) CGFloat contentHeight;
 
-//@property (nonatomic, assign) CGFloat lastContentHeight;
 
 @end
 
 @implementation WaterFlowLayout
 
+#pragma mark - 数据处理
 //- (CGFloat)rowMargin
 //{
 //    if ([self.delegate respondsToSelector:@selector(rowMarginInWaterflowLayout:)]) {
@@ -87,7 +90,10 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
     return _columnHeights;
 }
 
-//每次布局都会调用
+/**
+ * 初始化
+ * 每次布局都会调用
+ */
 - (void)prepareLayout
 {
     [super prepareLayout];
@@ -98,6 +104,7 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
     [self.attrsArray removeAllObjects];
     
     self.contentHeight = 0;
+    
     self.rowMargin = DefaultRowMargin;
     self.columnMargin = DefaultColumnMargin;
     self.columnCount = DefaultColumnCpunt;
@@ -139,6 +146,7 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
             self.columnMargin = [self.delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:indexPath.section];
         }
       
+        
         //1 初始化 header
         //获取header的UICollectionViewLayoutAttributes
         UICollectionViewLayoutAttributes *headerAttrs = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:indexPath];
@@ -146,13 +154,13 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
   
         [self.columnHeights removeAllObjects];
  
+        
        //2 初始化区的 y 值
         for (NSInteger i = 0; i < DefaultColumnCpunt; i++) {
             //            [self.columnHeights addObject:@(self.edgeInsets.top)];
             [self.columnHeights addObject:@(self.contentHeight)]; 
         }
         
-        //        self.lastContentHeight = self.contentHeight;
 
         //3 每个区中有多少 item
         //获取item的UICollectionViewLayoutAttributes
@@ -162,6 +170,8 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
             UICollectionViewLayoutAttributes * attrs = [self layoutAttributesForItemAtIndexPath:index];
             [self.attrsArray addObject:attrs];
         }
+        
+        
         //4 初始化 footer
         //获取footer的UICollectionViewLayoutAttributes
         UICollectionViewLayoutAttributes *footerAttrs = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionFooter atIndexPath:indexPath];
@@ -169,13 +179,17 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
     }
 }
 
-//返回所有item属性
+/**
+ * 决定cell的布局属性
+ */
 - (NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect
 {
     return self.attrsArray;
 }
 
-//返回每个item的属性
+/**
+ * 返回indexPath位置cell对应的布局属性
+ */
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //每个区的初始化高度
@@ -192,20 +206,26 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
         self.columnMargin = [self.delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:indexPath.section];
     }
     
+    // 创建布局属性
     UICollectionViewLayoutAttributes *attrs = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
     
+    //collectionView的宽度
     CGFloat collectionViewW = self.collectionView.frame.size.width;
     
+    // 设置布局属性的frame
     CGFloat w = (collectionViewW - self.edgeInsets.left - self.edgeInsets.right -(self.columnCount - 1) * self.columnMargin) / self.columnCount;
     
 //    CGFloat h = [self.delegate WaterFlowLayout:self heightForRowAtIndexPath:indexPath.item itemWidth:w];
-    
     CGFloat h =  [self.delegate collectionView:self.collectionView layout:self heightForRowAtIndexPath:indexPath itemWidth:w];
     
+    // 找出最短的那一列
     NSInteger destColumn = 0;
     
     CGFloat minColumnHeight = [self.columnHeights[0] doubleValue];
+    
     for (NSInteger i = 0; i < self.columnCount; i++) {
+        
+        // 取得第i列的高度
         CGFloat columnHeight = [self.columnHeights[i] doubleValue];
         
         if (minColumnHeight > columnHeight) {
@@ -222,8 +242,10 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
     
     attrs.frame = CGRectMake(x, y, w, h);
     
+    // 更新最短那一列的高度
     self.columnHeights[destColumn] = @(CGRectGetMaxY(attrs.frame));
     
+    // 记录内容的高度 - 即最长那一列的高度
     CGFloat columnHeight = [self.columnHeights[destColumn] doubleValue];
     if (self.contentHeight < columnHeight) {
         self.contentHeight = columnHeight;
@@ -247,7 +269,9 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
 //    return CGSizeMake(0, self.contentHeight + self.edgeInsets.bottom);
 //}
 
-//布局完成后设置contentSize
+/**
+ * 内容的高度
+ */
 - (CGSize)collectionViewContentSize {
     return CGSizeMake(self.collectionView.frame.size.width, self.contentHeight);
 }
@@ -271,11 +295,10 @@ static const UIEdgeInsets DefaultEdgeInsets = {10,10,10,10};
         if ([_delegate respondsToSelector:@selector(collectionView:layout:referenceSizeForFooterInSection:)]) {
              footerReferenceSize = [_delegate collectionView:self.collectionView layout:self referenceSizeForFooterInSection:indexPath.section];
         }
-        
-        self.contentHeight += self.edgeInsets.bottom;
         attributes.frame = CGRectMake(0, self.contentHeight, footerReferenceSize.width, footerReferenceSize.height);
         
         self.contentHeight += footerReferenceSize.height;
+        self.contentHeight += self.edgeInsets.bottom;
     }
     
     return attributes;
