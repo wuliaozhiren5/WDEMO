@@ -1,8 +1,8 @@
 //
 //  LZTagListView.m
-//  longzhu
+//  xxx
 //
-//  Created by longzhu on 2017/10/30.
+//  Created by xxx on 2017/10/30.
 //  Copyright © 2017年 developer. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 #import "LZTagListCell.h"
 #import "LZTagSegmentedControl.h"
 #import "WaterFlowLayout.h"
-#import "PLUCustomLayout.h"
+#import "CustomLayout.h"
 //#import "ImageScrollView.h"
 #import "WMacros.h"
 
@@ -115,7 +115,7 @@
     layout.delegate = self;
    
 //    //CS测试
-//    PLUCustomLayout *layout = [[PLUCustomLayout alloc]init];
+//    CustomLayout *layout = [[CustomLayout alloc]init];
 //    layout.delegate = self;
     
     //初始化collectionView

@@ -2,15 +2,15 @@
 //  CustomLayout.m
 //  collectionView
 //
-//  Created by JiWuChao on 2017/6/29.
-//  Copyright © 2017年 姬武超. All rights reserved.
+//  Created by xxx on 2017/6/29.
+//  Copyright © 2017年 xxx. All rights reserved.
 //
 
-#import "PLUCustomLayout.h"
+#import "CustomLayout.h"
 
 static const NSInteger DefaultColumnCpunt = 3;
 
-@interface PLUCustomLayout ()
+@interface CustomLayout ()
 
 @property (nonatomic, strong) NSMutableArray *attrsArray;
 
@@ -25,7 +25,7 @@ static const NSInteger DefaultColumnCpunt = 3;
 
 @end
 
-@implementation PLUCustomLayout
+@implementation CustomLayout
 
 
 // 1

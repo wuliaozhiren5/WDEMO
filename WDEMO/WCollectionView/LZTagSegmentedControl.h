@@ -1,8 +1,8 @@
 //
 //  LZTagSegmentedControl.h
-//  longzhu
+//  xxx
 //
-//  Created by longzhu on 2017/10/31.
+//  Created by xxx on 2017/10/31.
 //  Copyright © 2017年 developer. All rights reserved.
 //
 @protocol LZTagSegmentedControlDelegate;

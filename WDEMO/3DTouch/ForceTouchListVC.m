@@ -2,7 +2,7 @@
 //  ForceTouchListVC.m
 //  WDEMO
 //
-//  Created by longzhu on 2017/11/24.
+//  Created by xxx on 2017/11/24.
 //  Copyright © 2017年 wwc. All rights reserved.
 //
 
@@ -30,7 +30,7 @@
     self.tableView=[[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
-    [self.tableView registerNib:[UINib nibWithNibName:@"PLURechargeDetailCell" bundle:nil] forCellReuseIdentifier:@"PLURechargeDetailCell"];
+    [self.tableView registerNib:[UINib nibWithNibName:@"RechargeDetailCell" bundle:nil] forCellReuseIdentifier:@"RechargeDetailCell"];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     
     [self.view addSubview:self.tableView];

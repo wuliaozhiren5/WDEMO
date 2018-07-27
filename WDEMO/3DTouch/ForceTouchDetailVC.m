@@ -2,7 +2,7 @@
 //  ForceTouchDetailVC.m
 //  WDEMO
 //
-//  Created by longzhu on 2017/11/24.
+//  Created by xxx on 2017/11/24.
 //  Copyright © 2017年 wwc. All rights reserved.
 //
 

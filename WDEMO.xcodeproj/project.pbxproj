@@ -26,7 +26,7 @@
 		6783C8911FB944B80040C02B /* LZTagListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C8871FB944B80040C02B /* LZTagListVC.m */; };
 		6783C8921FB944B80040C02B /* LZTagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C8891FB944B80040C02B /* LZTagListView.m */; };
 		6783C8931FB944B80040C02B /* LZTagSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C88B1FB944B80040C02B /* LZTagSegmentedControl.m */; };
-		6783C8941FB944B80040C02B /* PLUCustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C88D1FB944B80040C02B /* PLUCustomLayout.m */; };
+		6783C8941FB944B80040C02B /* CustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C88D1FB944B80040C02B /* CustomLayout.m */; };
 		6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C88F1FB944B80040C02B /* WaterFlowLayout.m */; };
 /* End PBXBuildFile section */
 
@@ -107,8 +107,8 @@
 		6783C8891FB944B80040C02B /* LZTagListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTagListView.m; sourceTree = "<group>"; };
 		6783C88A1FB944B80040C02B /* LZTagSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZTagSegmentedControl.h; sourceTree = "<group>"; };
 		6783C88B1FB944B80040C02B /* LZTagSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZTagSegmentedControl.m; sourceTree = "<group>"; };
-		6783C88C1FB944B80040C02B /* PLUCustomLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLUCustomLayout.h; sourceTree = "<group>"; };
-		6783C88D1FB944B80040C02B /* PLUCustomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLUCustomLayout.m; sourceTree = "<group>"; };
+		6783C88C1FB944B80040C02B /* CustomLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLayout.h; sourceTree = "<group>"; };
+		6783C88D1FB944B80040C02B /* CustomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLayout.m; sourceTree = "<group>"; };
 		6783C88E1FB944B80040C02B /* WaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFlowLayout.h; sourceTree = "<group>"; };
 		6783C88F1FB944B80040C02B /* WaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFlowLayout.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -250,8 +250,8 @@
 				6783C8891FB944B80040C02B /* LZTagListView.m */,
 				6783C88A1FB944B80040C02B /* LZTagSegmentedControl.h */,
 				6783C88B1FB944B80040C02B /* LZTagSegmentedControl.m */,
-				6783C88C1FB944B80040C02B /* PLUCustomLayout.h */,
-				6783C88D1FB944B80040C02B /* PLUCustomLayout.m */,
+				6783C88C1FB944B80040C02B /* CustomLayout.h */,
+				6783C88D1FB944B80040C02B /* CustomLayout.m */,
 				6783C88E1FB944B80040C02B /* WaterFlowLayout.h */,
 				6783C88F1FB944B80040C02B /* WaterFlowLayout.m */,
 			);
@@ -440,7 +440,7 @@
 				6783C8911FB944B80040C02B /* LZTagListVC.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
-				6783C8941FB944B80040C02B /* PLUCustomLayout.m in Sources */,
+				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 			);
