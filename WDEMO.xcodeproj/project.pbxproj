@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6730334C210AED3D001471D8 /* PersonalCenterBarBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 67303348210AED3C001471D8 /* PersonalCenterBarBtn.m */; };
+		6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6730334A210AED3C001471D8 /* PersonalCenterBar.m */; };
 		673AE9251FC7F5BD0002D304 /* ForceTouchListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 673AE9241FC7F5BD0002D304 /* ForceTouchListVC.m */; };
 		673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 673AE92A1FC7F5E90002D304 /* ForceTouchDetailVC.m */; };
 		673AE94A1FC810560002D304 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 673AE9321FC80E8A0002D304 /* NotificationCenter.framework */; };
@@ -28,6 +30,7 @@
 		6783C8931FB944B80040C02B /* LZTagSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C88B1FB944B80040C02B /* LZTagSegmentedControl.m */; };
 		6783C8941FB944B80040C02B /* CustomLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C88D1FB944B80040C02B /* CustomLayout.m */; };
 		6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C88F1FB944B80040C02B /* WaterFlowLayout.m */; };
+		679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 679FEC5C210AF53A00FF4972 /* RoundedSegmentedControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +72,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		67303348210AED3C001471D8 /* PersonalCenterBarBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterBarBtn.m; sourceTree = "<group>"; };
+		67303349210AED3C001471D8 /* PersonalCenterBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterBar.h; sourceTree = "<group>"; };
+		6730334A210AED3C001471D8 /* PersonalCenterBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalCenterBar.m; sourceTree = "<group>"; };
+		6730334B210AED3C001471D8 /* PersonalCenterBarBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalCenterBarBtn.h; sourceTree = "<group>"; };
 		673AE9231FC7F5BD0002D304 /* ForceTouchListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForceTouchListVC.h; sourceTree = "<group>"; };
 		673AE9241FC7F5BD0002D304 /* ForceTouchListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForceTouchListVC.m; sourceTree = "<group>"; };
 		673AE9291FC7F5E90002D304 /* ForceTouchDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForceTouchDetailVC.h; sourceTree = "<group>"; };
@@ -111,6 +118,8 @@
 		6783C88D1FB944B80040C02B /* CustomLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLayout.m; sourceTree = "<group>"; };
 		6783C88E1FB944B80040C02B /* WaterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterFlowLayout.h; sourceTree = "<group>"; };
 		6783C88F1FB944B80040C02B /* WaterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterFlowLayout.m; sourceTree = "<group>"; };
+		679FEC5C210AF53A00FF4972 /* RoundedSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundedSegmentedControl.m; sourceTree = "<group>"; };
+		679FEC5D210AF53B00FF4972 /* RoundedSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundedSegmentedControl.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +155,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67303347210AED2F001471D8 /* CenterBar */ = {
+			isa = PBXGroup;
+			children = (
+				67303349210AED3C001471D8 /* PersonalCenterBar.h */,
+				6730334A210AED3C001471D8 /* PersonalCenterBar.m */,
+				6730334B210AED3C001471D8 /* PersonalCenterBarBtn.h */,
+				67303348210AED3C001471D8 /* PersonalCenterBarBtn.m */,
+				679FEC5D210AF53B00FF4972 /* RoundedSegmentedControl.h */,
+				679FEC5C210AF53A00FF4972 /* RoundedSegmentedControl.m */,
+			);
+			path = CenterBar;
+			sourceTree = "<group>";
+		};
 		673AE91F1FC7F1A50002D304 /* 3DTouch */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +224,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				67303347210AED2F001471D8 /* CenterBar */,
 				673AE91F1FC7F1A50002D304 /* 3DTouch */,
 				6783C8831FB944B80040C02B /* WCollectionView */,
 				6783C8511FB941EE0040C02B /* AppDelegate.h */,
@@ -434,12 +457,15 @@
 				677BADD71FC412A700E7A3FF /* WConstants.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
+				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
 				6783C8931FB944B80040C02B /* LZTagSegmentedControl.m in Sources */,
 				673AE9251FC7F5BD0002D304 /* ForceTouchListVC.m in Sources */,
 				6783C8921FB944B80040C02B /* LZTagListView.m in Sources */,
+				6730334C210AED3D001471D8 /* PersonalCenterBarBtn.m in Sources */,
 				6783C8911FB944B80040C02B /* LZTagListVC.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
+				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
