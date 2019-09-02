@@ -146,7 +146,7 @@
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"Footer"];
     
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_WIDTH / IMAGEPLAYERVIEW_SCALE + 40)];
-    _headerView= headerView;
+    _headerView = headerView;
     
 //    ImageScrollView *imageScrollView = [[ImageScrollView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 //    _imageScrollView = imageScrollView;

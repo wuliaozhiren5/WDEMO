@@ -21,6 +21,13 @@
 FOUNDATION_EXTERN NSString * const MyOwnConstant;
 FOUNDATION_EXTERN NSString * const YetAnotherConstant;
 
+
+////.h文件 MJRefresh源码中喜欢使用 UIKIT_EXTERN
+//extern NSString *const MKDidLoginnotification;
+//
+////.m文件
+//NSString *const MKDidLoginnotification = @"MKDidLoginnotification";
+
 @interface WConstants : NSObject
 
 @end
