@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "LZTagListVC.h"
 #import "ForceTouchListVC.h"
+#import "AlterViewController.h"
 
 @interface ViewController ()
 @property(strong,nonatomic)UIButton *goBtn;
@@ -24,19 +25,27 @@
     self.navigationController.navigationBar.translucent = NO;
 //    self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    _goBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 100, 100, 42)];
+    _goBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 100, 40)];
 //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
     [_goBtn setTitle:@"xxx" forState:UIControlStateNormal];
     _goBtn.backgroundColor = [UIColor grayColor];
     [_goBtn addTarget:self action:@selector(clickGoBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_goBtn];
     
-    UIButton *touchBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 150, 100, 42)];
+    UIButton *touchBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 50, 100, 40)];
     //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
     [touchBtn setTitle:@"3D Touch" forState:UIControlStateNormal];
     touchBtn.backgroundColor = [UIColor grayColor];
     [touchBtn addTarget:self action:@selector(clickTouchBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:touchBtn];
+    
+    
+    UIButton *alterBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 100, 100, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [alterBtn setTitle:@"alter" forState:UIControlStateNormal];
+    alterBtn.backgroundColor = [UIColor grayColor];
+    [alterBtn addTarget:self action:@selector(clickAlterBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:alterBtn];
 } 
 
 - (void)didReceiveMemoryWarning {
@@ -55,4 +64,12 @@
     ForceTouchListVC *vc= [[ForceTouchListVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+-(void)clickAlterBtn:(UIButton *)btn {
+    
+    AlterViewController *vc= [[AlterViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 @end
