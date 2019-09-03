@@ -10,6 +10,7 @@
 #import "LZTagListVC.h"
 #import "ForceTouchListVC.h"
 #import "AlterViewController.h"
+#import "WTableViewController.h"
 
 @interface ViewController ()
 @property(strong,nonatomic)UIButton *goBtn;
@@ -46,6 +47,14 @@
     alterBtn.backgroundColor = [UIColor grayColor];
     [alterBtn addTarget:self action:@selector(clickAlterBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:alterBtn];
+    
+    
+    UIButton *tableViewBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 150, 100, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [tableViewBtn setTitle:@"tableview" forState:UIControlStateNormal];
+    tableViewBtn.backgroundColor = [UIColor grayColor];
+    [tableViewBtn addTarget:self action:@selector(clickTableViewBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:tableViewBtn];
 } 
 
 - (void)didReceiveMemoryWarning {
@@ -70,6 +79,13 @@
     AlterViewController *vc= [[AlterViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+-(void)clickTableViewBtn:(UIButton *)btn {
+    
+    WTableViewController *vc= [[WTableViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 
 @end

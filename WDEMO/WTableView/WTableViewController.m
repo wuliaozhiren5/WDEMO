@@ -7,8 +7,9 @@
 //
 
 #import "WTableViewController.h"
+#import "WTableViewCell.h"
 
-static NSString *kCellIdentify = @"DetailCell";
+//static NSString *kCellIdentify = @"DetailCell";
 
 @interface WTableViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -35,7 +36,10 @@ static NSString *kCellIdentify = @"DetailCell";
     
     //codecell
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
-    
+  
+    [self.tableView registerClass:[WTableViewCell class] forCellReuseIdentifier:NSStringFromClass([WTableViewCell class])];
+
+   
     
     //iOS11
     self.tableView.estimatedRowHeight = 0;
@@ -93,7 +97,29 @@ static NSString *kCellIdentify = @"DetailCell";
      self.tableView.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
      分割线长度
      cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+     
+     
      */
+    
+    
+    UIView  *foot = [[UIView alloc]init];
+    foot.frame = CGRectMake(0, 0, self.tableView.frame.size.width, 100);
+    foot.backgroundColor = [UIColor clearColor];
+    self.tableView.tableFooterView = foot;
+    
+    UIButton *btn = [[UIButton alloc]init];
+    btn.frame = CGRectMake(0, 0, self.tableView.frame.size.width/2, 50);
+    btn.center = CGPointMake(foot.frame.size.width/2, foot.frame.size.height/2);
+    btn.backgroundColor = [[UIColor alloc]initWithRed:78/255.0 green:154/255.0 blue:248/255.0 alpha:1.0];
+    [btn setTitle:@"进入" forState:UIControlStateNormal];
+    [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    
+    
+    [btn addTarget:self action:@selector(goPlayerVC:) forControlEvents:UIControlEventTouchUpInside];
+    
+    btn.layer.cornerRadius = 25;
+    btn.layer.masksToBounds = YES;
+    [foot addSubview:btn];
 }
 
 /*
@@ -130,13 +156,18 @@ static NSString *kCellIdentify = @"DetailCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-//    iPadMessageCell *cell = [tableView dequeueReusableCellWithIdentifier:@"iPadMessageCell" forIndexPath:indexPath];
+ 
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
+     
+    WTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WTableViewCell class]) forIndexPath:indexPath];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
     //cell的右边有一个小箭头，距离右边有十几像素；
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     //设置cell分割线的edge可以设置去除指定cell的分割线
-    cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0); 
+    //tableviewCell点击取消选中变灰效果
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
     return cell;
 }
 
@@ -176,13 +207,11 @@ static NSString *kCellIdentify = @"DetailCell";
  */
 
 #pragma mark -- UITableViewDelegate
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+//    点击效果
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-
 
 ////指定哪些行的 cell 可以进行编辑(UITableViewDataSource 协议方法)
 //-  (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

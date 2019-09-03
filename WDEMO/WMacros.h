@@ -27,6 +27,14 @@ block();\
 dispatch_async(dispatch_get_main_queue(), block);\
 }
 
+
+
+//weakSelf,strongSelf
+//__weak __typeof(self) weakSelf = self;
+//__strong __typeof(self) strongSelf = weakSelf;
+#define WeakObject(obj) __weak typeof(obj) weakObject = obj;
+#define StrongObject(obj) __strong typeof(obj) strongObject = weakObject;
+
 #endif /* WMacros_h */
 
 //#ifdef DEBUG
