@@ -122,6 +122,10 @@
     [foot addSubview:btn];
 }
 
+- (void)goPlayerVC:(UIButton *)sender
+{
+ 
+}
 /*
 #pragma mark - Navigation
 

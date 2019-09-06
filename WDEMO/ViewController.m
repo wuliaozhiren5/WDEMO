@@ -11,7 +11,7 @@
 #import "ForceTouchListVC.h"
 #import "AlterViewController.h"
 #import "WTableViewController.h"
-
+#import "PassValueViewController.h"
 @interface ViewController ()
 @property(strong,nonatomic)UIButton *goBtn;
 @end
@@ -28,7 +28,7 @@
     
     _goBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 100, 40)];
 //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [_goBtn setTitle:@"xxx" forState:UIControlStateNormal];
+    [_goBtn setTitle:@"Taglist" forState:UIControlStateNormal];
     _goBtn.backgroundColor = [UIColor grayColor];
     [_goBtn addTarget:self action:@selector(clickGoBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_goBtn];
@@ -43,7 +43,7 @@
     
     UIButton *alterBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 100, 100, 40)];
     //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [alterBtn setTitle:@"alter" forState:UIControlStateNormal];
+    [alterBtn setTitle:@"SystemAlter" forState:UIControlStateNormal];
     alterBtn.backgroundColor = [UIColor grayColor];
     [alterBtn addTarget:self action:@selector(clickAlterBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:alterBtn];
@@ -51,10 +51,17 @@
     
     UIButton *tableViewBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 150, 100, 40)];
     //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [tableViewBtn setTitle:@"tableview" forState:UIControlStateNormal];
+    [tableViewBtn setTitle:@"Tableview" forState:UIControlStateNormal];
     tableViewBtn.backgroundColor = [UIColor grayColor];
     [tableViewBtn addTarget:self action:@selector(clickTableViewBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:tableViewBtn];
+    
+    UIButton *passValueBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 200, 100, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [passValueBtn setTitle:@"PassValue" forState:UIControlStateNormal];
+    passValueBtn.backgroundColor = [UIColor grayColor];
+    [passValueBtn addTarget:self action:@selector(clickPassValueBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:passValueBtn];
 } 
 
 - (void)didReceiveMemoryWarning {
@@ -86,6 +93,11 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+-(void)clickPassValueBtn:(UIButton *)btn {
+    
+    PassValueViewController *vc= [[PassValueViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 @end

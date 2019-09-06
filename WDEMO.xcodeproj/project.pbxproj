@@ -46,6 +46,10 @@
 		67AB4823231E5A1200C837BB /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AB4815231E5A1200C837BB /* View+MASAdditions.m */; };
 		67AB4824231E5A1200C837BB /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 67AB4818231E5A1200C837BB /* ViewController+MASAdditions.m */; };
 		67AB4825231E5A1200C837BB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 67AB4819231E5A1200C837BB /* README.md */; };
+		67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F32321187E00C494EF /* PassValueViewController.m */; };
+		67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F62321189E00C494EF /* DelegateViewController.m */; };
+		67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F9232118A900C494EF /* BlockViewController.m */; };
+		67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5FC232118B800C494EF /* NotificationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -168,6 +172,14 @@
 		67AB4817231E5A1200C837BB /* ViewController+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ViewController+MASAdditions.h"; sourceTree = "<group>"; };
 		67AB4818231E5A1200C837BB /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		67AB4819231E5A1200C837BB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		67B7E5F22321187E00C494EF /* PassValueViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PassValueViewController.h; sourceTree = "<group>"; };
+		67B7E5F32321187E00C494EF /* PassValueViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PassValueViewController.m; sourceTree = "<group>"; };
+		67B7E5F52321189E00C494EF /* DelegateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DelegateViewController.h; sourceTree = "<group>"; };
+		67B7E5F62321189E00C494EF /* DelegateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DelegateViewController.m; sourceTree = "<group>"; };
+		67B7E5F8232118A900C494EF /* BlockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BlockViewController.h; sourceTree = "<group>"; };
+		67B7E5F9232118A900C494EF /* BlockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockViewController.m; sourceTree = "<group>"; };
+		67B7E5FB232118B800C494EF /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
+		67B7E5FC232118B800C494EF /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +295,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				67B7E5F12321185A00C494EF /* PassValue */,
 				67AB47FD231E5A1100C837BB /* Masonry */,
 				67AB47F6231E07C200C837BB /* AlertController */,
 				67303347210AED2F001471D8 /* CenterBar */,
@@ -392,6 +405,21 @@
 				67AB4818231E5A1200C837BB /* ViewController+MASAdditions.m */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		67B7E5F12321185A00C494EF /* PassValue */ = {
+			isa = PBXGroup;
+			children = (
+				67B7E5F22321187E00C494EF /* PassValueViewController.h */,
+				67B7E5F32321187E00C494EF /* PassValueViewController.m */,
+				67B7E5F52321189E00C494EF /* DelegateViewController.h */,
+				67B7E5F62321189E00C494EF /* DelegateViewController.m */,
+				67B7E5F8232118A900C494EF /* BlockViewController.h */,
+				67B7E5F9232118A900C494EF /* BlockViewController.m */,
+				67B7E5FB232118B800C494EF /* NotificationViewController.h */,
+				67B7E5FC232118B800C494EF /* NotificationViewController.m */,
+			);
+			path = PassValue;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -576,7 +604,9 @@
 				67AB481C231E5A1200C837BB /* MASConstraint.m in Sources */,
 				67AB481F231E5A1200C837BB /* MASViewAttribute.m in Sources */,
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
+				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
 				67AB481B231E5A1200C837BB /* MASCompositeConstraint.m in Sources */,
+				67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */,
 				67AB4823231E5A1200C837BB /* View+MASAdditions.m in Sources */,
 				6783C8931FB944B80040C02B /* LZTagSegmentedControl.m in Sources */,
 				673AE9251FC7F5BD0002D304 /* ForceTouchListVC.m in Sources */,
@@ -589,12 +619,14 @@
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
 				67AB4824231E5A1200C837BB /* ViewController+MASAdditions.m in Sources */,
 				67AB4820231E5A1200C837BB /* MASViewConstraint.m in Sources */,
+				67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */,
 				67AB481D231E5A1200C837BB /* MASConstraintMaker.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
 				67AB481E231E5A1200C837BB /* MASLayoutConstraint.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
+				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
 			);
