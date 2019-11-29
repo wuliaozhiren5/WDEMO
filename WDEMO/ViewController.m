@@ -169,6 +169,11 @@
 
     //    [[FGLanguageTool sharedInstance] setNewLanguage:@"en"];
     //    [[FGLanguageTool sharedInstance] setNewLanguage:@"zh-Hans"];
+    //    中文简体@"zh-Hans"
+    //    中文繁体@"zh-Hant"
+    //    英文@"en"
+
+ 
     [[FGLanguageTool sharedInstance] changeNowLanguage];
 }
 
