@@ -18,6 +18,8 @@ Constants  常量
 
 UIAlertController
 
+语言包，字体包
+
 git
 
 3： git add --all
