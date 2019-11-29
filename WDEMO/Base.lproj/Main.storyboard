@@ -29,7 +29,7 @@
         <!--Navigation Controller-->
         <scene sceneID="vzN-wm-2oX">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hks-rz-wVh" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="rootnav" automaticallyAdjustsScrollViewInsets="NO" id="hks-rz-wVh" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cwc-Co-py6">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

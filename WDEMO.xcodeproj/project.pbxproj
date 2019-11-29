@@ -15,6 +15,10 @@
 		673AE94E1FC810560002D304 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 673AE94D1FC810560002D304 /* TodayViewController.m */; };
 		673AE9511FC810560002D304 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 673AE94F1FC810560002D304 /* MainInterface.storyboard */; };
 		673AE9551FC810560002D304 /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 673AE9491FC810560002D304 /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67535E6E2390BC9B0009F882 /* 方正粗谭黑简体.ttf */; };
+		67535E722390C2920009F882 /* FGLanguageTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 67535E712390C2920009F882 /* FGLanguageTool.m */; };
+		67535E812390C6560009F882 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 67535E832390C6560009F882 /* InfoPlist.strings */; };
+		67535E892390F0CF0009F882 /* FontViewControlle.m in Sources */ = {isa = PBXBuildFile; fileRef = 67535E882390F0CF0009F882 /* FontViewControlle.m */; };
 		675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675852A7231D21A700C5CF7E /* WTableViewController.m */; };
 		675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 675852AA231D23F700C5CF7E /* WTableViewCell.m */; };
 		677BADD71FC412A700E7A3FF /* WConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 677BADD61FC412A700E7A3FF /* WConstants.m */; };
@@ -105,6 +109,20 @@
 		673AE94D1FC810560002D304 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		673AE9501FC810560002D304 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		673AE9521FC810560002D304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67535E6E2390BC9B0009F882 /* 方正粗谭黑简体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "方正粗谭黑简体.ttf"; sourceTree = "<group>"; };
+		67535E702390C2920009F882 /* FGLanguageTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FGLanguageTool.h; sourceTree = "<group>"; };
+		67535E712390C2920009F882 /* FGLanguageTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FGLanguageTool.m; sourceTree = "<group>"; };
+		67535E792390C6100009F882 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		67535E7A2390C6100009F882 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		67535E7B2390C6100009F882 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/MainInterface.strings"; sourceTree = "<group>"; };
+		67535E7C2390C6130009F882 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		67535E7D2390C6130009F882 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		67535E7E2390C6140009F882 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainInterface.strings"; sourceTree = "<group>"; };
+		67535E822390C6560009F882 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		67535E852390C6590009F882 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		67535E862390CA9A0009F882 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		67535E872390F0CF0009F882 /* FontViewControlle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FontViewControlle.h; sourceTree = "<group>"; };
+		67535E882390F0CF0009F882 /* FontViewControlle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FontViewControlle.m; sourceTree = "<group>"; };
 		675852A6231D21A700C5CF7E /* WTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTableViewController.h; sourceTree = "<group>"; };
 		675852A7231D21A700C5CF7E /* WTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTableViewController.m; sourceTree = "<group>"; };
 		675852A9231D23F700C5CF7E /* WTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTableViewCell.h; sourceTree = "<group>"; };
@@ -258,6 +276,25 @@
 			path = Widget;
 			sourceTree = "<group>";
 		};
+		67535E6A2390B8DF0009F882 /* 字体 */ = {
+			isa = PBXGroup;
+			children = (
+				67535E6E2390BC9B0009F882 /* 方正粗谭黑简体.ttf */,
+				67535E872390F0CF0009F882 /* FontViewControlle.h */,
+				67535E882390F0CF0009F882 /* FontViewControlle.m */,
+			);
+			path = "字体";
+			sourceTree = "<group>";
+		};
+		67535E6C2390B8DF0009F882 /* 语言包 */ = {
+			isa = PBXGroup;
+			children = (
+				67535E702390C2920009F882 /* FGLanguageTool.h */,
+				67535E712390C2920009F882 /* FGLanguageTool.m */,
+			);
+			path = "语言包";
+			sourceTree = "<group>";
+		};
 		675852A5231D211000C5CF7E /* WTableView */ = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +332,8 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				67535E6C2390B8DF0009F882 /* 语言包 */,
+				67535E6A2390B8DF0009F882 /* 字体 */,
 				67B7E5F12321185A00C494EF /* PassValue */,
 				67AB47FD231E5A1100C837BB /* Masonry */,
 				67AB47F6231E07C200C837BB /* AlertController */,
@@ -315,6 +354,7 @@
 				677BADD41FC4128900E7A3FF /* WEnums.h */,
 				677BADD51FC412A700E7A3FF /* WConstants.h */,
 				677BADD61FC412A700E7A3FF /* WConstants.m */,
+				67535E832390C6560009F882 /* InfoPlist.strings */,
 			);
 			path = WDEMO;
 			sourceTree = "<group>";
@@ -533,6 +573,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 6783C8451FB941EE0040C02B;
 			productRefGroup = 6783C84F1FB941EE0040C02B /* Products */;
@@ -560,6 +601,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
+				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
 				67AB4825231E5A1200C837BB /* README.md in Resources */,
@@ -601,10 +644,12 @@
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
+				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
 				67AB481C231E5A1200C837BB /* MASConstraint.m in Sources */,
 				67AB481F231E5A1200C837BB /* MASViewAttribute.m in Sources */,
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
+				67535E892390F0CF0009F882 /* FontViewControlle.m in Sources */,
 				67AB481B231E5A1200C837BB /* MASCompositeConstraint.m in Sources */,
 				67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */,
 				67AB4823231E5A1200C837BB /* View+MASAdditions.m in Sources */,
@@ -673,14 +718,28 @@
 			isa = PBXVariantGroup;
 			children = (
 				673AE9501FC810560002D304 /* Base */,
+				67535E7B2390C6100009F882 /* zh-Hans */,
+				67535E7E2390C6140009F882 /* zh-Hant */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		67535E832390C6560009F882 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				67535E822390C6560009F882 /* zh-Hans */,
+				67535E852390C6590009F882 /* zh-Hant */,
+				67535E862390CA9A0009F882 /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 		6783C8571FB941EE0040C02B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6783C8581FB941EE0040C02B /* Base */,
+				67535E792390C6100009F882 /* zh-Hans */,
+				67535E7C2390C6130009F882 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -689,6 +748,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6783C85D1FB941EE0040C02B /* Base */,
+				67535E7A2390C6100009F882 /* zh-Hans */,
+				67535E7D2390C6130009F882 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -730,6 +791,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -785,6 +847,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
