@@ -13,6 +13,7 @@
 #import "WTableViewController.h"
 #import "PassValueViewController.h"
 #import "FontViewControlle.h"
+#import "TagListViewController.h"
 
 //语言包
 #import "FGLanguageTool.h"
@@ -26,13 +27,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
-//    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
-//    self.edgesForExtendedLayout = UIRectEdgeNone;
+    //    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     _goBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 100, 40)];
-//    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
     [_goBtn setTitle:@"Taglist" forState:UIControlStateNormal];
     _goBtn.backgroundColor = [UIColor grayColor];
     [_goBtn addTarget:self action:@selector(clickGoBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -81,42 +82,50 @@
     fontBtn.backgroundColor = [UIColor grayColor];
     [fontBtn addTarget:self action:@selector(clickFontBtnBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:fontBtn];
- 
-//    //字体
-//    for (NSString *fontfamilyname in [UIFont familyNames])
-//    {
-//        NSLog(@"family:'%@'",fontfamilyname);
-//        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
-//        {
-//            NSLog(@"\tfont:'%@'",fontName);
-//        }
-//        NSLog(@"-------------");
-//    }
-//
-//    //微软雅黑字体包太大所以删除
-//    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 20)];
-//    titleLabel.textAlignment = NSTextAlignmentCenter;
-//    titleLabel.text = @"字体";
-//    titleLabel.font = [UIFont systemFontOfSize:16];
-//    titleLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:16];
-//    titleLabel.textColor = [UIColor grayColor];
-//    [self.view addSubview:titleLabel];
-//
-//    //方正粗谭黑简体
-//    UILabel *titleLabel1 = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, 320, 20)];
-//    titleLabel1.textAlignment = NSTextAlignmentCenter;
-//    titleLabel1.text = @"字体";
-//    titleLabel1.font = [UIFont fontWithName:@"FZCTHJW--GB1-0" size:16];
-//    titleLabel1.textColor = [UIColor grayColor];
-//    [self.view addSubview:titleLabel1];
-//
-//    UILabel *titleLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 40, 320, 20)];
-//    titleLabel2.textAlignment = NSTextAlignmentCenter;
-//    titleLabel2.text = @"字体";
-//    titleLabel2.font = [UIFont systemFontOfSize:16];
-//    titleLabel2.textColor = [UIColor grayColor];
-//    [self.view addSubview:titleLabel2];
-
+    
+    
+    UIButton *taglistBtn2 = [[UIButton alloc]initWithFrame:CGRectMake(10, 350, 100, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [taglistBtn2 setTitle:@"taglistBtn2" forState:UIControlStateNormal];
+    taglistBtn2.backgroundColor = [UIColor grayColor];
+    [taglistBtn2 addTarget:self action:@selector(clickTaglistBtn2:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:taglistBtn2];
+    
+    //    //字体
+    //    for (NSString *fontfamilyname in [UIFont familyNames])
+    //    {
+    //        NSLog(@"family:'%@'",fontfamilyname);
+    //        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
+    //        {
+    //            NSLog(@"\tfont:'%@'",fontName);
+    //        }
+    //        NSLog(@"-------------");
+    //    }
+    //
+    //    //微软雅黑字体包太大所以删除
+    //    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 20)];
+    //    titleLabel.textAlignment = NSTextAlignmentCenter;
+    //    titleLabel.text = @"字体";
+    //    titleLabel.font = [UIFont systemFontOfSize:16];
+    //    titleLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:16];
+    //    titleLabel.textColor = [UIColor grayColor];
+    //    [self.view addSubview:titleLabel];
+    //
+    //    //方正粗谭黑简体
+    //    UILabel *titleLabel1 = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, 320, 20)];
+    //    titleLabel1.textAlignment = NSTextAlignmentCenter;
+    //    titleLabel1.text = @"字体";
+    //    titleLabel1.font = [UIFont fontWithName:@"FZCTHJW--GB1-0" size:16];
+    //    titleLabel1.textColor = [UIColor grayColor];
+    //    [self.view addSubview:titleLabel1];
+    //
+    //    UILabel *titleLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 40, 320, 20)];
+    //    titleLabel2.textAlignment = NSTextAlignmentCenter;
+    //    titleLabel2.text = @"字体";
+    //    titleLabel2.font = [UIFont systemFontOfSize:16];
+    //    titleLabel2.textColor = [UIColor grayColor];
+    //    [self.view addSubview:titleLabel2];
+    
     UILabel *titleLabel3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
     titleLabel3.textAlignment = NSTextAlignmentRight;
     titleLabel3.text = @"字体";
@@ -124,10 +133,10 @@
     titleLabel3.textColor = [UIColor grayColor];
     [self.view addSubview:titleLabel3];
     //字体包
-    NSString *string = FGGetStringWithKeyFromTable(@"Language", @"InfoPlist"); 
-    NSLog(@"string:%@",string); 
+    NSString *string = FGGetStringWithKeyFromTable(@"Language", @"InfoPlist");
+    NSLog(@"string:%@",string);
     titleLabel3.text = string;
-
+    
 } 
 
 - (void)didReceiveMemoryWarning {
@@ -166,14 +175,14 @@
 }
 
 -(void)clickLanguageBtn:(UIButton *)btn {
-
+    
     //    [[FGLanguageTool sharedInstance] setNewLanguage:@"en"];
     //    [[FGLanguageTool sharedInstance] setNewLanguage:@"zh-Hans"];
     //    中文简体@"zh-Hans"
     //    中文繁体@"zh-Hant"
     //    英文@"en"
-
- 
+    
+    
     [[FGLanguageTool sharedInstance] changeNowLanguage];
 }
 
@@ -182,5 +191,13 @@
     FontViewControlle *vc= [[FontViewControlle alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+-(void)clickTaglistBtn2:(UIButton *)btn {
+    
+    TagListViewController *vc= [[TagListViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 @end
 

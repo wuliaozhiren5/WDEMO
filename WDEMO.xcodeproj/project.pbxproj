@@ -43,6 +43,13 @@
 		67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F62321189E00C494EF /* DelegateViewController.m */; };
 		67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F9232118A900C494EF /* BlockViewController.m */; };
 		67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5FC232118B800C494EF /* NotificationViewController.m */; };
+		A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C08F24B97F5E005922B1 /* TagListViewController.m */; };
+		A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09324B97F9B005922B1 /* TagListCell.m */; };
+		A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09524B97F9B005922B1 /* TagListView.m */; };
+		A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09624B97F9B005922B1 /* TagSegmentedControl.m */; };
+		A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09A24B97FD4005922B1 /* ViewController1.m */; };
+		A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09B24B97FD4005922B1 /* ViewController2.m */; };
+		A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09C24B97FD4005922B1 /* ViewController3.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -162,6 +169,20 @@
 		67B7E5FB232118B800C494EF /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		67B7E5FC232118B800C494EF /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		6F661C06B03CAE44D97A8656 /* Pods-WDEMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDEMO.release.xcconfig"; path = "Target Support Files/Pods-WDEMO/Pods-WDEMO.release.xcconfig"; sourceTree = "<group>"; };
+		A4F2C08E24B97F5E005922B1 /* TagListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagListViewController.h; sourceTree = "<group>"; };
+		A4F2C08F24B97F5E005922B1 /* TagListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagListViewController.m; sourceTree = "<group>"; };
+		A4F2C09124B97F9B005922B1 /* TagListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListCell.h; sourceTree = "<group>"; };
+		A4F2C09224B97F9B005922B1 /* TagListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListView.h; sourceTree = "<group>"; };
+		A4F2C09324B97F9B005922B1 /* TagListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListCell.m; sourceTree = "<group>"; };
+		A4F2C09424B97F9B005922B1 /* TagSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagSegmentedControl.h; sourceTree = "<group>"; };
+		A4F2C09524B97F9B005922B1 /* TagListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagListView.m; sourceTree = "<group>"; };
+		A4F2C09624B97F9B005922B1 /* TagSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagSegmentedControl.m; sourceTree = "<group>"; };
+		A4F2C09A24B97FD4005922B1 /* ViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController1.m; sourceTree = "<group>"; };
+		A4F2C09B24B97FD4005922B1 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		A4F2C09C24B97FD4005922B1 /* ViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController3.m; sourceTree = "<group>"; };
+		A4F2C09D24B97FD4005922B1 /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
+		A4F2C09E24B97FD4005922B1 /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
+		A4F2C09F24B97FD5005922B1 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		FBDBA0D4EFFC9C6F87B1E8B6 /* Pods-WDEMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDEMO.debug.xcconfig"; path = "Target Support Files/Pods-WDEMO/Pods-WDEMO.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -309,6 +330,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				A4F2C08D24B97F27005922B1 /* TagLIst */,
 				67535E6C2390B8DF0009F882 /* 语言包 */,
 				67535E6A2390B8DF0009F882 /* 字体 */,
 				67B7E5F12321185A00C494EF /* PassValue */,
@@ -394,6 +416,27 @@
 				67B7E5FC232118B800C494EF /* NotificationViewController.m */,
 			);
 			path = PassValue;
+			sourceTree = "<group>";
+		};
+		A4F2C08D24B97F27005922B1 /* TagLIst */ = {
+			isa = PBXGroup;
+			children = (
+				A4F2C08E24B97F5E005922B1 /* TagListViewController.h */,
+				A4F2C08F24B97F5E005922B1 /* TagListViewController.m */,
+				A4F2C09124B97F9B005922B1 /* TagListCell.h */,
+				A4F2C09324B97F9B005922B1 /* TagListCell.m */,
+				A4F2C09224B97F9B005922B1 /* TagListView.h */,
+				A4F2C09524B97F9B005922B1 /* TagListView.m */,
+				A4F2C09424B97F9B005922B1 /* TagSegmentedControl.h */,
+				A4F2C09624B97F9B005922B1 /* TagSegmentedControl.m */,
+				A4F2C09E24B97FD4005922B1 /* ViewController1.h */,
+				A4F2C09A24B97FD4005922B1 /* ViewController1.m */,
+				A4F2C09F24B97FD5005922B1 /* ViewController2.h */,
+				A4F2C09B24B97FD4005922B1 /* ViewController2.m */,
+				A4F2C09D24B97FD4005922B1 /* ViewController3.h */,
+				A4F2C09C24B97FD4005922B1 /* ViewController3.m */,
+			);
+			path = TagLIst;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -619,9 +662,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				677BADD71FC412A700E7A3FF /* WConstants.m in Sources */,
+				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
+				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
+				A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
+				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
@@ -632,14 +679,17 @@
 				6783C8921FB944B80040C02B /* LZTagListView.m in Sources */,
 				6730334C210AED3D001471D8 /* PersonalCenterBarBtn.m in Sources */,
 				6783C8911FB944B80040C02B /* LZTagListVC.m in Sources */,
+				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
 				67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
+				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
+				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
 			);
