@@ -149,6 +149,7 @@
     if (_index == btn.tag) {
         return;
     } else {
+        _index = btn.tag;
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:btn.tag inSection:0];
         [self didSelectItemAtIndexPath:indexPath];
         if ([_delegate respondsToSelector:@selector(tagSegmentedControl:didSelectItemAtIndex:)]) {
@@ -209,24 +210,33 @@
 
 -(void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell * cell = (UICollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+//    UICollectionViewCell * cell = (UICollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+     
+    UICollectionViewLayoutAttributes * pose = [self.collectionView.collectionViewLayout  layoutAttributesForItemAtIndexPath: indexPath];
+    CGRect frame = pose.frame;
+    
     if ( self.collectionView.contentSize.width < self.collectionView.frame.size.width) {
 
         [self.collectionView setContentOffset:CGPointMake(0, 0) animated:YES];
+        
     } else {
-        if (cell.frame.size.width/2 + cell.frame.origin.x - self.collectionView.frame.size.width/2 <=0) {
+        
+        
+        if (frame.size.width/2 + frame.origin.x - self.collectionView.frame.size.width/2 <=0) {
             [self.collectionView setContentOffset:CGPointMake(0, 0) animated:YES];
 
-        } else if (cell.frame.size.width/2 + cell.frame.origin.x > self.collectionView.contentSize.width - self.collectionView.frame.size.width/2 ){
+        } else if (frame.size.width/2 + frame.origin.x > self.collectionView.contentSize.width - self.collectionView.frame.size.width/2 ){
 
             [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentSize.width - self.collectionView.frame.size.width, 0) animated:YES];
 
         }else {
 
-            [self.collectionView setContentOffset:CGPointMake(cell.frame.size.width/2 + cell.frame.origin.x - self.collectionView.frame.size.width/2 , 0) animated:YES];
+            [self.collectionView setContentOffset:CGPointMake(frame.size.width/2 + frame.origin.x - self.collectionView.frame.size.width/2 , 0) animated:YES];
         }
+
+
     }
-    _index = indexPath.item;
+  
     [self.collectionView reloadData];
 }
 
@@ -253,9 +263,9 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-//    NSLog(@"进入A_View---hitTest withEvent ---");
+    NSLog(@"进入A_View---hitTest withEvent ---");
     UIView * view = [super hitTest:point withEvent:event];
-//    NSLog(@"离开A_View--- hitTest withEvent ---hitTestView:%@",view);
+    NSLog(@"离开A_View--- hitTest withEvent ---hitTestView:%@",view);
     return view;
 }
 

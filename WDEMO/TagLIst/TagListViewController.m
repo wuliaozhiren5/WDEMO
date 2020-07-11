@@ -32,11 +32,25 @@
 }
 -(void)addView{
     
+    
+//    NSArray *arr = @[@"全部",
+//       @"全部1",
+//       @"全部2",
+//       @"全部3",
+//       @"全部4",
+//                     @"全部5"];
+    
     NSArray *arr = @[@"全部",
-                     @"全部1",
-                     @"全部2",
-                     @"全部3",
-                     @"全部4"];
+    @"全部1",
+    @"全部2",
+    @"全部3",
+    @"全部4",
+    @"全部5",
+    @"全部6",
+    @"全部7",
+    @"全部8",
+    @"全部9",
+    @"全部10"];
     _tagListView= [[TagListView alloc]initWithFrame:self.view.bounds
                                              tagArr:arr
                                               index:0

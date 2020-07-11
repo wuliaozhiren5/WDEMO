@@ -166,7 +166,7 @@
     
     _index = index;
     NSLog(@"%zi",index);
-    [_bottomScrollView setContentOffset:CGPointMake((SCREEN_WIDTH * index), 0) animated:YES];
+    [_bottomScrollView setContentOffset:CGPointMake((SCREEN_WIDTH * index), 0) animated:NO];
      
     [self viewPage:_index];
 }
@@ -176,6 +176,8 @@
    
     if (!decelerate) {
         NSInteger index = scrollView.contentOffset.x / scrollView.frame.size.width;
+        _segmentedControl.index = index;
+
         [self viewPage:index];
     }
 }
@@ -183,14 +185,14 @@
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
  
     NSInteger index = scrollView.contentOffset.x / scrollView.frame.size.width;
+    _segmentedControl.index = index;
     [self viewPage:index];
+     
 }
 
 -(void)viewPage:(NSInteger)index{
     
-//    NSInteger index = scrollView.contentOffset.x / scrollView.frame.size.width;
     _index = index;
-    _segmentedControl.index = _index;
     
     if([self.cache objectForKey:@(_index)]){
         return;
