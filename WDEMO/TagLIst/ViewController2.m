@@ -7,9 +7,11 @@
 //
 
 #import "ViewController2.h"
+#import <Masonry/Masonry.h>
 
-@interface ViewController2 ()
+@interface ViewController2 ()<UITableViewDelegate,UITableViewDataSource>
 
+@property(nonatomic, strong) UITableView *tableView;
 @end
 
 @implementation ViewController2
@@ -18,25 +20,76 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIButton *touchBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 50, 100, 40)];
-    [touchBtn setTitle:@"click" forState:UIControlStateNormal];
-    touchBtn.backgroundColor = [UIColor grayColor];
-    [touchBtn addTarget:self action:@selector(clickBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:touchBtn];
-}
--(void)clickBtn:(UIButton *)btn {
+     self.navigationController.navigationBar.translucent = NO;
     
-    NSLog(@"2222222222");
+     self.tableView=[[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    self.tableView.delegate=self;
+    self.tableView.dataSource=self;
+    
+   
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
+ 
+ 
+       //iOS11
+    self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        //        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+    
+    [self.view addSubview:self.tableView];
+    
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.top.bottom.equalTo(self.view);
+    }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)goPlayerVC:(UIButton *)sender
+{
+ 
 }
-*/
 
+
+#pragma mark -- UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
+
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
+ 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+     
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"section:%zi,row:%zi",indexPath.section,indexPath.row];
+
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+
+ 
+#pragma mark -- UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    UIViewController *vc = [[UIViewController alloc]init];
+    vc.view.backgroundColor = [UIColor brownColor];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+ 
 @end

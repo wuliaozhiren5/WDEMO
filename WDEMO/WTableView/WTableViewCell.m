@@ -10,8 +10,8 @@
 
 @interface WTableViewCell ()
 
-
 @property (nonatomic, strong) UILabel *firstLabel;
+
 @property (nonatomic, strong) UILabel *secondLabel;
 
 @property (nonatomic, strong) UIImageView *avatarImageView;
@@ -74,6 +74,7 @@
         _nextImage = [[UIImageView alloc]init];
         _nextImage.frame = CGRectMake(0, 0, 40, 40);
         _nextImage.backgroundColor = [UIColor grayColor];
+        _nextImage.hidden = YES;
         [self.contentView addSubview:_nextImage];
     }
     return _nextImage;
@@ -110,9 +111,8 @@
     if (!_rightLabel) {
         _rightLabel = [[UILabel alloc] init];
         _rightLabel.frame = CGRectMake(0, 0, 40, 40);
+        _rightLabel.hidden = YES;
         [self.contentView addSubview:_rightLabel];
-        
-        
     }
     return _rightLabel;
     

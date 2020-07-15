@@ -49,8 +49,6 @@
         _textHighBackgroundColor = textHighBackgroundColor;
 
     }
-
-    
 }
  
 -(void)setTagStr:(NSString *)tagStr{

@@ -43,6 +43,10 @@
 		67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F62321189E00C494EF /* DelegateViewController.m */; };
 		67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F9232118A900C494EF /* BlockViewController.m */; };
 		67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5FC232118B800C494EF /* NotificationViewController.m */; };
+		A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A479987F24BAB2FA0079F72D /* GaoDengViewController.m */; };
+		A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A479988B24BAC0E20079F72D /* SmallCollectionView.m */; };
+		A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A479988E24BAE2EF0079F72D /* BigCollectionView.m */; };
+		A479989224BAEBCE0079F72D /* SmallBigCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A479989124BAEBCE0079F72D /* SmallBigCollectionViewCell.m */; };
 		A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C08F24B97F5E005922B1 /* TagListViewController.m */; };
 		A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09324B97F9B005922B1 /* TagListCell.m */; };
 		A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09524B97F9B005922B1 /* TagListView.m */; };
@@ -169,6 +173,14 @@
 		67B7E5FB232118B800C494EF /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		67B7E5FC232118B800C494EF /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		6F661C06B03CAE44D97A8656 /* Pods-WDEMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDEMO.release.xcconfig"; path = "Target Support Files/Pods-WDEMO/Pods-WDEMO.release.xcconfig"; sourceTree = "<group>"; };
+		A479987E24BAB2FA0079F72D /* GaoDengViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GaoDengViewController.h; sourceTree = "<group>"; };
+		A479987F24BAB2FA0079F72D /* GaoDengViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GaoDengViewController.m; sourceTree = "<group>"; };
+		A479988A24BAC0E20079F72D /* SmallCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmallCollectionView.h; sourceTree = "<group>"; };
+		A479988B24BAC0E20079F72D /* SmallCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmallCollectionView.m; sourceTree = "<group>"; };
+		A479988D24BAE2EF0079F72D /* BigCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BigCollectionView.h; sourceTree = "<group>"; };
+		A479988E24BAE2EF0079F72D /* BigCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BigCollectionView.m; sourceTree = "<group>"; };
+		A479989024BAEBCE0079F72D /* SmallBigCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmallBigCollectionViewCell.h; sourceTree = "<group>"; };
+		A479989124BAEBCE0079F72D /* SmallBigCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SmallBigCollectionViewCell.m; sourceTree = "<group>"; };
 		A4F2C08E24B97F5E005922B1 /* TagListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagListViewController.h; sourceTree = "<group>"; };
 		A4F2C08F24B97F5E005922B1 /* TagListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagListViewController.m; sourceTree = "<group>"; };
 		A4F2C09124B97F9B005922B1 /* TagListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListCell.h; sourceTree = "<group>"; };
@@ -330,6 +342,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				A479987D24BAB2A80079F72D /* CollectionView */,
 				A4F2C08D24B97F27005922B1 /* TagLIst */,
 				67535E6C2390B8DF0009F882 /* 语言包 */,
 				67535E6A2390B8DF0009F882 /* 字体 */,
@@ -416,6 +429,21 @@
 				67B7E5FC232118B800C494EF /* NotificationViewController.m */,
 			);
 			path = PassValue;
+			sourceTree = "<group>";
+		};
+		A479987D24BAB2A80079F72D /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A479987E24BAB2FA0079F72D /* GaoDengViewController.h */,
+				A479987F24BAB2FA0079F72D /* GaoDengViewController.m */,
+				A479988A24BAC0E20079F72D /* SmallCollectionView.h */,
+				A479988B24BAC0E20079F72D /* SmallCollectionView.m */,
+				A479988D24BAE2EF0079F72D /* BigCollectionView.h */,
+				A479988E24BAE2EF0079F72D /* BigCollectionView.m */,
+				A479989024BAEBCE0079F72D /* SmallBigCollectionViewCell.h */,
+				A479989124BAEBCE0079F72D /* SmallBigCollectionViewCell.m */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		A4F2C08D24B97F27005922B1 /* TagLIst */ = {
@@ -667,9 +695,12 @@
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
 				A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */,
+				A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */,
+				A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
+				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
 				67535E892390F0CF0009F882 /* FontViewControlle.m in Sources */,
@@ -683,6 +714,7 @@
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
 				67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */,
+				A479989224BAEBCE0079F72D /* SmallBigCollectionViewCell.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,

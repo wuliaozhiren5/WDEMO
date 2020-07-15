@@ -14,6 +14,7 @@
 #import "PassValueViewController.h"
 #import "FontViewControlle.h"
 #import "TagListViewController.h"
+#import "GaoDengViewController.h"
 
 //语言包
 #import "FGLanguageTool.h"
@@ -90,6 +91,15 @@
     taglistBtn2.backgroundColor = [UIColor grayColor];
     [taglistBtn2 addTarget:self action:@selector(clickTaglistBtn2:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:taglistBtn2];
+    
+    
+    UIButton *collectionBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 400, 100, 40)];
+      //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+      [collectionBtn setTitle:@"collectionBtn" forState:UIControlStateNormal];
+      collectionBtn.backgroundColor = [UIColor grayColor];
+      [collectionBtn addTarget:self action:@selector(clickCollectionBtn:) forControlEvents:UIControlEventTouchUpInside];
+      [self.view addSubview:collectionBtn];
+      
     
     //    //字体
     //    for (NSString *fontfamilyname in [UIFont familyNames])
@@ -197,6 +207,13 @@
     TagListViewController *vc= [[TagListViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+-(void)clickCollectionBtn:(UIButton *)btn {
+    GaoDengViewController *vc= [[GaoDengViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+
+}
+
 
 
 @end

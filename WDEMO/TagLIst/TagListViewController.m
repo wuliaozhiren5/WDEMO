@@ -14,6 +14,8 @@
 #import "ViewController2.h"
 #import "ViewController3.h"
 
+#import "WTableViewController.h"
+
 @interface TagListViewController ()<TagListViewDataSource>
 
 @property (nonatomic, strong) TagListView *tagListView;
@@ -32,31 +34,23 @@
 }
 -(void)addView{
     
-    
-//    NSArray *arr = @[@"全部",
-//       @"全部1",
-//       @"全部2",
-//       @"全部3",
-//       @"全部4",
-//                     @"全部5"];
-    
     NSArray *arr = @[@"全部",
-    @"全部1",
-    @"全部2",
-    @"全部3",
-    @"全部4",
-    @"全部5",
-    @"全部6",
-    @"全部7",
-    @"全部8",
-    @"全部9",
-    @"全部10"];
+                     @"全部1",
+                     @"全部2",
+                     @"全部3",
+                     @"全部4",
+                     @"全部5",
+                     @"全部6",
+                     @"全部7",
+                     @"全部8",
+                     @"全部9",
+                     @"全部10"];
     _tagListView= [[TagListView alloc]initWithFrame:self.view.bounds
                                              tagArr:arr
                                               index:0
-                                     textDefaultColor:[UIColor grayColor]
-                                   textHighlightColor:[UIColor whiteColor]
-                              textHighBackgroundColor:[UIColor redColor]];
+                                   textDefaultColor:[UIColor grayColor]
+                                 textHighlightColor:[UIColor whiteColor]
+                            textHighBackgroundColor:[UIColor redColor]];
     _tagListView.backgroundColor = [UIColor whiteColor];
     _tagListView.dataSource = self;
     
@@ -92,10 +86,19 @@
             return vc.view;
         }
             break;
-          
+            
         case 2:
         {
             ViewController3 *vc=[[ViewController3 alloc]init];
+            vc.view.backgroundColor = [UIColor yellowColor];
+            [self addChildViewController:vc];
+            return vc.view;
+        }
+            break;
+            
+        case 3:
+        {
+            WTableViewController *vc=[[WTableViewController alloc]init];
             vc.view.backgroundColor = [UIColor yellowColor];
             [self addChildViewController:vc];
             return vc.view;
