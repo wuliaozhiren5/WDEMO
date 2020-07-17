@@ -43,6 +43,8 @@
 		67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F62321189E00C494EF /* DelegateViewController.m */; };
 		67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F9232118A900C494EF /* BlockViewController.m */; };
 		67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5FC232118B800C494EF /* NotificationViewController.m */; };
+		A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A459C29024C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m */; };
+		A459C29424C174A300A3B5FF /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = A459C29324C174A300A3B5FF /* Plist.m */; };
 		A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A479987F24BAB2FA0079F72D /* GaoDengViewController.m */; };
 		A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A479988B24BAC0E20079F72D /* SmallCollectionView.m */; };
 		A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A479988E24BAE2EF0079F72D /* BigCollectionView.m */; };
@@ -173,6 +175,10 @@
 		67B7E5FB232118B800C494EF /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		67B7E5FC232118B800C494EF /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		6F661C06B03CAE44D97A8656 /* Pods-WDEMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDEMO.release.xcconfig"; path = "Target Support Files/Pods-WDEMO/Pods-WDEMO.release.xcconfig"; sourceTree = "<group>"; };
+		A459C28F24C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJAppUncaughtExceptionHandler.h; sourceTree = "<group>"; };
+		A459C29024C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAppUncaughtExceptionHandler.m; sourceTree = "<group>"; };
+		A459C29224C174A300A3B5FF /* Plist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plist.h; sourceTree = "<group>"; };
+		A459C29324C174A300A3B5FF /* Plist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plist.m; sourceTree = "<group>"; };
 		A479987E24BAB2FA0079F72D /* GaoDengViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GaoDengViewController.h; sourceTree = "<group>"; };
 		A479987F24BAB2FA0079F72D /* GaoDengViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GaoDengViewController.m; sourceTree = "<group>"; };
 		A479988A24BAC0E20079F72D /* SmallCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmallCollectionView.h; sourceTree = "<group>"; };
@@ -342,6 +348,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				A459C28824C1642B00A3B5FF /* Crash */,
 				A479987D24BAB2A80079F72D /* CollectionView */,
 				A4F2C08D24B97F27005922B1 /* TagLIst */,
 				67535E6C2390B8DF0009F882 /* 语言包 */,
@@ -366,6 +373,8 @@
 				677BADD51FC412A700E7A3FF /* WConstants.h */,
 				677BADD61FC412A700E7A3FF /* WConstants.m */,
 				67535E832390C6560009F882 /* InfoPlist.strings */,
+				A459C29224C174A300A3B5FF /* Plist.h */,
+				A459C29324C174A300A3B5FF /* Plist.m */,
 			);
 			path = WDEMO;
 			sourceTree = "<group>";
@@ -429,6 +438,15 @@
 				67B7E5FC232118B800C494EF /* NotificationViewController.m */,
 			);
 			path = PassValue;
+			sourceTree = "<group>";
+		};
+		A459C28824C1642B00A3B5FF /* Crash */ = {
+			isa = PBXGroup;
+			children = (
+				A459C28F24C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.h */,
+				A459C29024C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m */,
+			);
+			path = Crash;
 			sourceTree = "<group>";
 		};
 		A479987D24BAB2A80079F72D /* CollectionView */ = {
@@ -691,6 +709,7 @@
 			files = (
 				677BADD71FC412A700E7A3FF /* WConstants.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
+				A459C29424C174A300A3B5FF /* Plist.m in Sources */,
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
@@ -721,6 +740,7 @@
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
+				A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */,
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,

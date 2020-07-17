@@ -94,12 +94,18 @@
     
     
     UIButton *collectionBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 400, 100, 40)];
-      //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-      [collectionBtn setTitle:@"collectionBtn" forState:UIControlStateNormal];
-      collectionBtn.backgroundColor = [UIColor grayColor];
-      [collectionBtn addTarget:self action:@selector(clickCollectionBtn:) forControlEvents:UIControlEventTouchUpInside];
-      [self.view addSubview:collectionBtn];
-      
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [collectionBtn setTitle:@"collectionBtn" forState:UIControlStateNormal];
+    collectionBtn.backgroundColor = [UIColor grayColor];
+    [collectionBtn addTarget:self action:@selector(clickCollectionBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:collectionBtn];
+    
+    UIButton *crashBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 450, 100, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [crashBtn setTitle:@"抓取崩溃信息Btn" forState:UIControlStateNormal];
+    crashBtn.backgroundColor = [UIColor grayColor];
+    [crashBtn addTarget:self action:@selector(clickCrashBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:crashBtn];
     
     //    //字体
     //    for (NSString *fontfamilyname in [UIFont familyNames])
@@ -211,8 +217,18 @@
 -(void)clickCollectionBtn:(UIButton *)btn {
     GaoDengViewController *vc= [[GaoDengViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
-
+    
 }
+
+-(void)clickCrashBtn:(UIButton *)btn {
+    
+    NSArray *arry=[NSArray arrayWithObject:@"sss"];
+    NSLog(@"%@",[arry objectAtIndex:1]);
+    
+   
+}
+
+
 
 
 

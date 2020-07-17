@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "CJAppUncaughtExceptionHandler.h"
 
 @interface AppDelegate ()
 
@@ -26,6 +27,12 @@
     UIApplicationShortcutItem * itemThird = [[UIApplicationShortcutItem alloc]initWithType:@"two" localizedTitle:@"标签4" localizedSubtitle:@"444" icon:[UIApplicationShortcutIcon iconWithType:UIApplicationShortcutIconTypeSearch] userInfo:nil];
     
     [UIApplication sharedApplication].shortcutItems = @[item, itemTwo, itemThird];
+    
+    
+    //code...
+    //调用自定义类中的收集崩溃信息的方法
+    [CJAppUncaughtExceptionHandler InstallUncaughtExceptionHandler];
+    //code...
     
     return YES;
 }

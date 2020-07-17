@@ -20,6 +20,12 @@ UIAlertController
 
 语言包，字体包
 
+一对一联动的CollectionView GaoDengViewController DEMO
+
+UncaughtExceptionHandler
+
+.plist
+
 git
 
 3： git add --all
