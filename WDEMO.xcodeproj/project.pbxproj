@@ -58,6 +58,7 @@
 		A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09C24B97FD4005922B1 /* ViewController3.m */; };
 		F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */; };
 		F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB024C6C11C007D452E /* WCollectionViewCell.m */; };
+		F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,6 +208,8 @@
 		F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCollectionViewController.m; sourceTree = "<group>"; };
 		F5668FAF24C6C11C007D452E /* WCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewCell.h; sourceTree = "<group>"; };
 		F5668FB024C6C11C007D452E /* WCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCollectionViewCell.m; sourceTree = "<group>"; };
+		F5668FB824C6DB69007D452E /* CpuMemoryUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CpuMemoryUsage.h; sourceTree = "<group>"; };
+		F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CpuMemoryUsage.m; sourceTree = "<group>"; };
 		FBDBA0D4EFFC9C6F87B1E8B6 /* Pods-WDEMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDEMO.debug.xcconfig"; path = "Target Support Files/Pods-WDEMO/Pods-WDEMO.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -354,6 +357,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5668FB424C6D818007D452E /* cpu&memory */,
 				A459C28824C1642B00A3B5FF /* Crash */,
 				A479987D24BAB2A80079F72D /* CollectionView */,
 				A4F2C08D24B97F27005922B1 /* TagLIst */,
@@ -493,6 +497,15 @@
 				A4F2C09C24B97FD4005922B1 /* ViewController3.m */,
 			);
 			path = TagLIst;
+			sourceTree = "<group>";
+		};
+		F5668FB424C6D818007D452E /* cpu&memory */ = {
+			isa = PBXGroup;
+			children = (
+				F5668FB824C6DB69007D452E /* CpuMemoryUsage.h */,
+				F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */,
+			);
+			path = "cpu&memory";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -727,6 +740,7 @@
 				A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */,
 				A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */,
 				A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */,
+				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,

@@ -20,9 +20,15 @@
 
 //语言包
 #import "FGLanguageTool.h"
+#import "WMacros.h"
+#import "CpuMemoryUsage.h"
 
 @interface ViewController ()
+
 @property(strong,nonatomic)UIButton *goBtn;
+
+@property (nonatomic, strong) NSTimer *timer;
+
 @end
 
 @implementation ViewController
@@ -163,6 +169,9 @@
     NSLog(@"string:%@",string);
     titleLabel3.text = string;
     
+    
+    [self.timer fire];
+
 } 
 
 - (void)didReceiveMemoryWarning {
@@ -244,6 +253,31 @@
 }
 
 
-
+- (NSTimer *)timer {
+    if (!_timer || _timer.isValid) {
+        WeakObject(self)
+        
+        _timer = [NSTimer timerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            //            float cpu = [RRDebugUtilService cpu_usage];
+            //            self.lbCpu.text = [NSString stringWithFormat:@"cpu使用率：%.2f%%", cpu];
+            //            float mem = [RRDebugUtilService memoryUsage];
+            //            self.lbMem.text = [NSString stringWithFormat:@"内存使用：%.2fM", mem];
+            
+            float cpu = [CpuMemoryUsage cpuUsage];
+            NSString *cpuStr = [NSString stringWithFormat:@"cpu使用率：%.2f%%", cpu];
+            float mem = [CpuMemoryUsage memoryUsage];
+            NSString *memoryStr = [NSString stringWithFormat:@"内存使用：%.2fM", mem];
+            
+            NSLog(@"%@,%@", cpuStr, memoryStr);
+            
+        }];
+        [[NSRunLoop currentRunLoop] addTimer:_timer forMode:NSRunLoopCommonModes];
+    }
+    return _timer;
+}
+- (void)dealloc {
+    [self.timer invalidate];
+    self.timer = nil;
+}
 @end
 
