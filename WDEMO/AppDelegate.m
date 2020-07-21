@@ -31,7 +31,7 @@
     
     //code...
     //调用自定义类中的收集崩溃信息的方法
-    [CJAppUncaughtExceptionHandler InstallUncaughtExceptionHandler];
+//    [CJAppUncaughtExceptionHandler InstallUncaughtExceptionHandler];
     //code...
     
     return YES;

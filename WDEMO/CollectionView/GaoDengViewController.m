@@ -97,9 +97,7 @@
     self.bigCollectionView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.bigCollectionView];
     self.bigCollectionView.smallsCollectionView= self.smallCollectionView;
-    
-    
-    
+
     [self.smallCollectionView addObserver:self
                                forKeyPath:@"currentIndex" //监听的属性
                                   options:NSKeyValueObservingOptionNew
@@ -123,7 +121,6 @@
     NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
     [self.bigCollectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:YES];
 }
-
 
 - (void)dealloc{
     

@@ -157,6 +157,4 @@
     self.currentIndex = pageNum;
 }
 
-
-
 @end

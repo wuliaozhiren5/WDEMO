@@ -11,6 +11,8 @@
 #import "ForceTouchListVC.h"
 #import "AlterViewController.h"
 #import "WTableViewController.h"
+#import "WCollectionViewController.h"
+
 #import "PassValueViewController.h"
 #import "FontViewControlle.h"
 #import "TagListViewController.h"
@@ -58,26 +60,34 @@
     
     UIButton *tableViewBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 150, 100, 40)];
     //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [tableViewBtn setTitle:@"Tableview" forState:UIControlStateNormal];
+    [tableViewBtn setTitle:@"TableView" forState:UIControlStateNormal];
     tableViewBtn.backgroundColor = [UIColor grayColor];
     [tableViewBtn addTarget:self action:@selector(clickTableViewBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:tableViewBtn];
     
-    UIButton *passValueBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 200, 100, 40)];
+    UIButton *collectionViewBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 200, 100, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [collectionViewBtn setTitle:@"CollectionView" forState:UIControlStateNormal];
+    collectionViewBtn.backgroundColor = [UIColor grayColor];
+    [collectionViewBtn addTarget:self action:@selector(clickCollectionViewBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:collectionViewBtn];
+    
+    
+    UIButton *passValueBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 250, 100, 40)];
     //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
     [passValueBtn setTitle:@"PassValue" forState:UIControlStateNormal];
     passValueBtn.backgroundColor = [UIColor grayColor];
     [passValueBtn addTarget:self action:@selector(clickPassValueBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:passValueBtn];
     
-    UIButton *languageBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 250, 100, 40)];
+    UIButton *languageBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 300, 100, 40)];
     //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
     [languageBtn setTitle:@"Language" forState:UIControlStateNormal];
     languageBtn.backgroundColor = [UIColor grayColor];
     [languageBtn addTarget:self action:@selector(clickLanguageBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:languageBtn];
     
-    UIButton *fontBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 300, 100, 40)];
+    UIButton *fontBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 350, 100, 40)];
     //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
     [fontBtn setTitle:@"Font" forState:UIControlStateNormal];
     fontBtn.backgroundColor = [UIColor grayColor];
@@ -85,7 +95,7 @@
     [self.view addSubview:fontBtn];
     
     
-    UIButton *taglistBtn2 = [[UIButton alloc]initWithFrame:CGRectMake(10, 350, 100, 40)];
+    UIButton *taglistBtn2 = [[UIButton alloc]initWithFrame:CGRectMake(10, 400, 100, 40)];
     //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
     [taglistBtn2 setTitle:@"taglistBtn2" forState:UIControlStateNormal];
     taglistBtn2.backgroundColor = [UIColor grayColor];
@@ -93,16 +103,16 @@
     [self.view addSubview:taglistBtn2];
     
     
-    UIButton *collectionBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 400, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [collectionBtn setTitle:@"collectionBtn" forState:UIControlStateNormal];
-    collectionBtn.backgroundColor = [UIColor grayColor];
-    [collectionBtn addTarget:self action:@selector(clickCollectionBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:collectionBtn];
+    //    UIButton *collectionBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 400, 100, 40)];
+    //    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    //    [collectionBtn setTitle:@"collectionBtn" forState:UIControlStateNormal];
+    //    collectionBtn.backgroundColor = [UIColor grayColor];
+    //    [collectionBtn addTarget:self action:@selector(clickCollectionBtn:) forControlEvents:UIControlEventTouchUpInside];
+    //    [self.view addSubview:collectionBtn];
     
     UIButton *crashBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 450, 100, 40)];
     //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [crashBtn setTitle:@"抓取崩溃信息Btn" forState:UIControlStateNormal];
+    [crashBtn setTitle:@"抓取崩溃信息" forState:UIControlStateNormal];
     crashBtn.backgroundColor = [UIColor grayColor];
     [crashBtn addTarget:self action:@selector(clickCrashBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:crashBtn];
@@ -183,6 +193,12 @@
     WTableViewController *vc= [[WTableViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+-(void)clickCollectionViewBtn:(UIButton *)btn {
+    
+    WCollectionViewController *vc= [[WCollectionViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 -(void)clickPassValueBtn:(UIButton *)btn {
     
@@ -225,10 +241,7 @@
     NSArray *arry=[NSArray arrayWithObject:@"sss"];
     NSLog(@"%@",[arry objectAtIndex:1]);
     
-   
 }
-
-
 
 
 
