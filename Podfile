@@ -10,4 +10,6 @@ pod 'AFNetworking','~> 3.0’
 #UI
 pod 'Masonry', '~> 1.0.1'
 
+pod 'ReactiveObjC', '~> 2.0'
+
 end
