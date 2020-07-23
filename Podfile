@@ -12,4 +12,6 @@ pod 'Masonry', '~> 1.0.1'
 
 pod 'ReactiveObjC', '~> 2.0'
 
+pod 'YYKit', '~> 1.0'
+
 end
