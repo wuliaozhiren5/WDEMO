@@ -12,7 +12,7 @@
  ******************************************************************************/
 #import <UIKit/UIKit.h>
 
-@class TUIFaceView;
+@class FaceView;
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -31,7 +31,7 @@
  *  @param faceView 委托者，表情视图。通常情况下表情视图只有且只有一个。
  *  @param index 滑动的目的组号索引。
  */
-- (void)faceView:(TUIFaceView *)faceView scrollToFaceGroupIndex:(NSInteger)index;
+- (void)faceView:(FaceView *)faceView scrollToFaceGroupIndex:(NSInteger)index;
 
 /**
  *  选择某一具体表情后的回调（索引定位）。
@@ -40,7 +40,7 @@
  *  @param faceView 委托者，表情视图。通常情况下表情视图只有且只有一个。
  *  @param indexPath 索引路径，定位表情。index.section：表情所在分组；index.row：表情所在行。
  */
-- (void)faceView:(TUIFaceView *)faceView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+- (void)faceView:(FaceView *)faceView didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 
 /**
  *  点击表情视图中 删除 按钮后的操作回调。
@@ -48,7 +48,7 @@
  *
  *  @param faceView 委托者，表情视图，通常情况下表情视图只有且只有一个。
  */
-- (void)faceViewDidBackDelete:(TUIFaceView *)faceView;
+- (void)faceViewDidBackDelete:(FaceView *)faceView;
 @end
 
 
@@ -123,7 +123,7 @@
  *  通过本视图，您可以查看您可以使用的所有表情，在不同的表情分组间进行浏览，进一步进行表情的选择与发送。
  *  同时，本视图已经整合了字符串类型的表情（如[微笑]）的编辑功能，以及图像类表情的选取与发送功能。
  */
-@interface TUIFaceView : UIView
+@interface FaceView : UIView
 
 /**
  *  线视图

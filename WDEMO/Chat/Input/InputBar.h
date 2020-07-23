@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "TResponderTextView.h"
 
-@class TUIInputBar;
+@class InputBar;
 
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +30,7 @@
  *
  *  @param textView 委托者，当前与用户交互的 InputBar。
  */
-- (void)inputBarDidTouchFace:(TUIInputBar *)textView;
+- (void)inputBarDidTouchFace:(InputBar *)textView;
 
 /**
  *  点击更多按钮，即“+”后的回调委托。
@@ -57,7 +57,7 @@
  *  @param textView 委托者，当前与用户交互的 InputBar。
  *  @param offset 输入条高度改变的偏移量。
  */
-- (void)inputBar:(TUIInputBar *)textView didChangeInputHeight:(CGFloat)offset;
+- (void)inputBar:(InputBar *)textView didChangeInputHeight:(CGFloat)offset;
 
 /**
  *  发送文本消息时的回调委托。
@@ -68,7 +68,7 @@
  *  @param textView 委托者，当前与用户交互的 InputBar。
  *  @param text 点击发送时，当前 InputBar 中的文本消息。
  */
-- (void)inputBar:(TUIInputBar *)textView didSendText:(NSString *)text;
+- (void)inputBar:(InputBar *)textView didSendText:(NSString *)text;
 
 /**
  *  发送语音后的回调委托
@@ -88,7 +88,7 @@
  *
  *  @param textView 委托者，当前与用户交互的 InputBar。
  */
-- (void)inputBarDidTouchKeyboard:(TUIInputBar *)textView;
+- (void)inputBarDidTouchKeyboard:(InputBar *)textView;
 @end
 
 
@@ -105,7 +105,7 @@
  *  本类配合上述声明的回调委托，能够响应多种交互事件，包括点击输入条的表情、“更多”视图、语音按钮。以及发送消息、发送语音、更改输入高度等。
  *  本类不仅是实现了一个文本输入框中的业务逻辑，同时也是表情、more、和语音视图的逻辑入口。
  */
-@interface TUIInputBar : UIView
+@interface InputBar : UIView
 
 /**
  *  线视图

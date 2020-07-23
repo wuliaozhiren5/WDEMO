@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
 
-#import "TUIFaceView.h"
+#import "FaceView.h"
 #import "TUIFaceCell.h"
 #import "THeader.h"
 #import "UIColor+TUIDarkMode.h"
@@ -15,7 +15,7 @@
 @end
 
 
-@interface TUIFaceView () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface FaceView () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableArray *faceGroups;
 @property (nonatomic, strong) NSMutableArray *sectionIndexInGroup;
 @property (nonatomic, strong) NSMutableArray *pageCountInGroup;
@@ -25,7 +25,7 @@
 @property (nonatomic, assign) NSInteger curGroupIndex;
 @end
 
-@implementation TUIFaceView
+@implementation FaceView
 
 - (id)initWithFrame:(CGRect)frame
 {

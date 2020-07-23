@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
 
-#import "TUIInputController.h"
+#import "InputController.h"
 #import "TUIMenuCell.h"
 #import "TUIFaceCell.h"
 #import "THeader.h"
@@ -21,12 +21,12 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     Input_Status_Input_Talk,
 };
 
-@interface TUIInputController () <TTextViewDelegate, TMenuViewDelegate, TFaceViewDelegate>
+@interface InputController () <TTextViewDelegate, TMenuViewDelegate, TFaceViewDelegate>
 ////<TTextViewDelegate, TMenuViewDelegate, TFaceViewDelegate, TMoreViewDelegate>
 @property (nonatomic, assign) InputStatus status;
 @end
 
-@implementation TUIInputController
+@implementation InputController
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -60,7 +60,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 //    self.view.backgroundColor = [UIColor d_colorWithColorLight:TInput_Background_Color dark:TInput_Background_Color_Dark];
     _status = Input_Status_Input;
 
-    _inputBar = [[TUIInputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
+    _inputBar = [[InputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
     _inputBar.delegate = self;
     [self.view addSubview:_inputBar];
 }
@@ -176,7 +176,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 //    }
 //}
 //
-- (void)inputBarDidTouchFace:(TUIInputBar *)textView
+- (void)inputBarDidTouchFace:(InputBar *)textView
 {
     if([TUIKit sharedInstance].config.faceGroups.count == 0){
         return;
@@ -192,7 +192,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
 }
 
-- (void)inputBarDidTouchKeyboard:(TUIInputBar *)textView
+- (void)inputBarDidTouchKeyboard:(InputBar *)textView
 {
     if(_status == Input_Status_Input_More){
 //        [self hideMoreAnimation];
@@ -204,7 +204,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     [_inputBar.inputTextView becomeFirstResponder];
 }
 
-- (void)inputBar:(TUIInputBar *)textView didChangeInputHeight:(CGFloat)offset
+- (void)inputBar:(InputBar *)textView didChangeInputHeight:(CGFloat)offset
 {
     if(_status == Input_Status_Input_Face){
         [self showFaceAnimation];
@@ -217,7 +217,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
 }
 
-- (void)inputBar:(TUIInputBar *)textView didSendText:(NSString *)text
+- (void)inputBar:(InputBar *)textView didSendText:(NSString *)text
 {
     
     TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
@@ -227,7 +227,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
 }
 
-- (void)inputBar:(TUIInputBar *)textView didSendVoice:(NSString *)path
+- (void)inputBar:(InputBar *)textView didSendVoice:(NSString *)path
 {
 //    NSURL *url = [NSURL fileURLWithPath:path];
 //    AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:url options:nil];
@@ -280,17 +280,17 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 //    }
 }
 
-- (void)faceView:(TUIFaceView *)faceView scrollToFaceGroupIndex:(NSInteger)index
+- (void)faceView:(FaceView *)faceView scrollToFaceGroupIndex:(NSInteger)index
 {
     [self.menuView scrollToMenuIndex:index];
 }
 
-- (void)faceViewDidBackDelete:(TUIFaceView *)faceView
+- (void)faceViewDidBackDelete:(FaceView *)faceView
 {
     [_inputBar backDelete];
 }
 
-- (void)faceView:(TUIFaceView *)faceView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)faceView:(FaceView *)faceView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     TFaceGroup *group = [TUIKit sharedInstance].config.faceGroups[indexPath.section];
     TFaceCellData *face = group.faces[indexPath.row];
@@ -311,10 +311,10 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 }
 
 #pragma mark - lazy load
-- (TUIFaceView *)faceView
+- (FaceView *)faceView
 {
     if(!_faceView){
-        _faceView = [[TUIFaceView alloc] initWithFrame:CGRectMake(0, _inputBar.frame.origin.y + _inputBar.frame.size.height, self.view.frame.size.width, TFaceView_Height)];
+        _faceView = [[FaceView alloc] initWithFrame:CGRectMake(0, _inputBar.frame.origin.y + _inputBar.frame.size.height, self.view.frame.size.width, TFaceView_Height)];
         _faceView.delegate = self;
         [_faceView setData:[TUIKit sharedInstance].config.faceGroups];
     }

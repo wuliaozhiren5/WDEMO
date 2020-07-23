@@ -7,11 +7,11 @@
 //
 
 #import "ChatViewController.h"
-#import "TUIChatController.h"
+#import "ChatController.h"
 
 @interface ChatViewController ()
 
-@property (nonatomic, strong) TUIChatController *chat;
+@property (nonatomic, strong) ChatController *chat;
 
 @end
 
@@ -23,7 +23,7 @@
     self.view.backgroundColor = [UIColor grayColor];
     
 //    _chat = [[RRChatController alloc] initWithConversation:self.conversationData];
-    _chat = [[TUIChatController alloc] init];
+    _chat = [[ChatController alloc] init];
 //    _chat.delegate = self;
     [self addChildViewController:_chat];
     [self.view addSubview:_chat.view];

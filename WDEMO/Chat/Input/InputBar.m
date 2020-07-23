@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
 
-#import "TUIInputBar.h"
+#import "InputBar.h"
 //#import "TUIRecordView.h"
 #import "THeader.h"
 //#import "THelper.h"
@@ -22,14 +22,14 @@
 #import "NSAttributedString+zy_string.h"
 
 
-@interface TUIInputBar() <UITextViewDelegate, AVAudioRecorderDelegate>
+@interface InputBar() <UITextViewDelegate, AVAudioRecorderDelegate>
 //@property (nonatomic, strong) TUIRecordView *record;
 @property (nonatomic, strong) NSDate *recordStartTime;
 @property (nonatomic, strong) AVAudioRecorder *recorder;
 @property (nonatomic, strong) NSTimer *recordTimer;
 @end
 
-@implementation TUIInputBar
+@implementation InputBar
 
 - (id)initWithFrame:(CGRect)frame
 {

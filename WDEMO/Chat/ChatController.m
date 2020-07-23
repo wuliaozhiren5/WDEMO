@@ -6,14 +6,14 @@
 //  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import "TUIChatController.h"
+#import "ChatController.h"
 #import "THeader.h"
 
-@interface TUIChatController () <TInputControllerDelegate>
+@interface ChatController () <TInputControllerDelegate>
 
 @end
 
-@implementation TUIChatController
+@implementation ChatController
 
 - (instancetype)init{
     self = [super init];
@@ -30,8 +30,7 @@
 }
 
 - (void)setupViews{
-  
-
+   
 //    @weakify(self)
     //message
     _messageController = [[TUIMessageController alloc] init];
@@ -42,7 +41,7 @@
 //    [_messageController setConversation:self.conversationData];
 
     //input
-    _inputController = [[TUIInputController alloc] init];
+    _inputController = [[InputController alloc] init];
     _inputController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight, self.view.frame.size.width, TTextView_Height + Bottom_SafeHeight);
     
     _inputController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
@@ -61,7 +60,7 @@
 }
 
 #pragma mark- TInputControllerDelegate
-- (void)inputController:(TUIInputController *)inputController didChangeHeight:(CGFloat)height {
+- (void)inputController:(InputController *)inputController didChangeHeight:(CGFloat)height {
     __weak typeof(self) ws = self;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         CGRect msgFrame = ws.messageController.view.frame;
@@ -77,7 +76,7 @@
     } completion:nil];
 }
  
-- (void)inputController:(TUIInputController *)inputController didSendMessage:(TUIMessageCellData *)msg
+- (void)inputController:(InputController *)inputController didSendMessage:(TUIMessageCellData *)msg
 {
     [_messageController sendMessage:msg];
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {

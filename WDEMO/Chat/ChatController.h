@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TUIInputController.h"
+#import "InputController.h"
 #import "TUIMessageController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@class TUIChatController;
+@class ChatController;
 
 /////////////////////////////////////////////////////////////////////////////////
 //
@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param controller 委托者，当前聊天控制器。
  *  @param msgCellData TUIMessageCellData 即将发送的 msgCellData 。
  */
-- (void)chatController:(TUIChatController *)controller didSendMessage:(TUIMessageCellData *)msgCellData;
+- (void)chatController:(ChatController *)controller didSendMessage:(TUIMessageCellData *)msgCellData;
 
 /**
  *  接收新消息时的回调，用于甄别自定义消息
@@ -155,7 +155,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  A: 如果您想要实现 TUIKit 不支持的消息气泡样式，比如在消息气泡中添加投票链接等，可以参考文档：
  *     https://github.com/tencentyun/TIMSDK/wiki/TUIKit-iOS%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B6%88%E6%81%AF
  */
-@interface TUIChatController : UIViewController
+@interface ChatController : UIViewController
 
 //********************************
 //@property TUnReadView *unRead;
@@ -174,7 +174,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  同时 TUIInputController 整合了消息的发送功能，您可以直接使用 TUIInputController 进行消息的输入采集与发送。
  *  信息输入控制器的详细信息请参考 Section\Chat\Input\TUIInputController.h
  */
-@property TUIInputController *inputController;
+@property InputController *inputController;
 
 /**
  *  被委托类，负责实现并执行 TUIChatControllerDelegate 的委托函数

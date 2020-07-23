@@ -69,16 +69,16 @@
 		F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB024C6C11C007D452E /* WCollectionViewCell.m */; };
 		F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
-		F57B52A324C7DF2700940696 /* TUIChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* TUIChatController.m */; };
+		F57B52A324C7DF2700940696 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* ChatController.m */; };
 		F57B52AA24C7E73B00940696 /* TResponderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A824C7E73B00940696 /* TResponderTextView.m */; };
-		F57B52B824C7E87900940696 /* TUIInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52B424C7E87900940696 /* TUIInputController.m */; };
-		F57B52BA24C7E87900940696 /* TUIInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52B624C7E87900940696 /* TUIInputBar.m */; };
+		F57B52B824C7E87900940696 /* InputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52B424C7E87900940696 /* InputController.m */; };
+		F57B52BA24C7E87900940696 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52B624C7E87900940696 /* InputBar.m */; };
 		F57B531524C7EAB500940696 /* UIColor+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B531124C7EAB500940696 /* UIColor+TUIDarkMode.m */; };
 		F57B531624C7EAB500940696 /* UIImage+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B531224C7EAB500940696 /* UIImage+TUIDarkMode.m */; };
 		F5B61AEC24C8435E000CEA9A /* TUITextMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B61AEB24C8435D000CEA9A /* TUITextMessageCellData.m */; };
 		F5B61AEF24C843C2000CEA9A /* TUIBubbleMessageCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B61AED24C843C1000CEA9A /* TUIBubbleMessageCellData.m */; };
 		F5F3663124C81CE8008BA221 /* TUIMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3663024C81CE8008BA221 /* TUIMessageController.m */; };
-		F5F3663424C820F4008BA221 /* TUIFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3663324C820F4008BA221 /* TUIFaceView.m */; };
+		F5F3663424C820F4008BA221 /* FaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3663324C820F4008BA221 /* FaceView.m */; };
 		F5F3663724C8210F008BA221 /* TUIFaceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3663624C8210F008BA221 /* TUIFaceCell.m */; };
 		F5F3663C24C8218A008BA221 /* UIImage+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3663924C82188008BA221 /* UIImage+TUIDarkMode.m */; };
 		F5F3663D24C8218A008BA221 /* UIColor+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3663A24C82189008BA221 /* UIColor+TUIDarkMode.m */; };
@@ -266,15 +266,15 @@
 		F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CpuMemoryUsage.m; sourceTree = "<group>"; };
 		F57B529E24C7DECF00940696 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
 		F57B529F24C7DECF00940696 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
-		F57B52A124C7DF2700940696 /* TUIChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TUIChatController.h; sourceTree = "<group>"; };
-		F57B52A224C7DF2700940696 /* TUIChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TUIChatController.m; sourceTree = "<group>"; };
+		F57B52A124C7DF2700940696 /* ChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
+		F57B52A224C7DF2700940696 /* ChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
 		F57B52A724C7E32300940696 /* THeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THeader.h; sourceTree = "<group>"; };
 		F57B52A824C7E73B00940696 /* TResponderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TResponderTextView.m; sourceTree = "<group>"; };
 		F57B52A924C7E73B00940696 /* TResponderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TResponderTextView.h; sourceTree = "<group>"; };
-		F57B52B024C7E87800940696 /* TUIInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIInputController.h; sourceTree = "<group>"; };
-		F57B52B124C7E87800940696 /* TUIInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIInputBar.h; sourceTree = "<group>"; };
-		F57B52B424C7E87900940696 /* TUIInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIInputController.m; sourceTree = "<group>"; };
-		F57B52B624C7E87900940696 /* TUIInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIInputBar.m; sourceTree = "<group>"; };
+		F57B52B024C7E87800940696 /* InputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputController.h; sourceTree = "<group>"; };
+		F57B52B124C7E87800940696 /* InputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputBar.h; sourceTree = "<group>"; };
+		F57B52B424C7E87900940696 /* InputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputController.m; sourceTree = "<group>"; };
+		F57B52B624C7E87900940696 /* InputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputBar.m; sourceTree = "<group>"; };
 		F57B531124C7EAB500940696 /* UIColor+TUIDarkMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TUIDarkMode.m"; sourceTree = "<group>"; };
 		F57B531224C7EAB500940696 /* UIImage+TUIDarkMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TUIDarkMode.m"; sourceTree = "<group>"; };
 		F57B531324C7EAB500940696 /* UIImage+TUIDarkMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TUIDarkMode.h"; sourceTree = "<group>"; };
@@ -285,8 +285,8 @@
 		F5B61AEE24C843C1000CEA9A /* TUIBubbleMessageCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIBubbleMessageCellData.h; sourceTree = "<group>"; };
 		F5F3662F24C81CE7008BA221 /* TUIMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIMessageController.h; sourceTree = "<group>"; };
 		F5F3663024C81CE8008BA221 /* TUIMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIMessageController.m; sourceTree = "<group>"; };
-		F5F3663224C820F3008BA221 /* TUIFaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIFaceView.h; sourceTree = "<group>"; };
-		F5F3663324C820F4008BA221 /* TUIFaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIFaceView.m; sourceTree = "<group>"; };
+		F5F3663224C820F3008BA221 /* FaceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceView.h; sourceTree = "<group>"; };
+		F5F3663324C820F4008BA221 /* FaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceView.m; sourceTree = "<group>"; };
 		F5F3663524C8210E008BA221 /* TUIFaceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIFaceCell.h; sourceTree = "<group>"; };
 		F5F3663624C8210F008BA221 /* TUIFaceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIFaceCell.m; sourceTree = "<group>"; };
 		F5F3663824C82188008BA221 /* UIImage+TUIDarkMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TUIDarkMode.h"; sourceTree = "<group>"; };
@@ -656,8 +656,8 @@
 				F57B52AE24C7E86F00940696 /* Input */,
 				F57B529E24C7DECF00940696 /* ChatViewController.h */,
 				F57B529F24C7DECF00940696 /* ChatViewController.m */,
-				F57B52A124C7DF2700940696 /* TUIChatController.h */,
-				F57B52A224C7DF2700940696 /* TUIChatController.m */,
+				F57B52A124C7DF2700940696 /* ChatController.h */,
+				F57B52A224C7DF2700940696 /* ChatController.m */,
 				F5F3662F24C81CE7008BA221 /* TUIMessageController.h */,
 				F5F3663024C81CE8008BA221 /* TUIMessageController.m */,
 				F57B52A924C7E73B00940696 /* TResponderTextView.h */,
@@ -672,12 +672,12 @@
 		F57B52AE24C7E86F00940696 /* Input */ = {
 			isa = PBXGroup;
 			children = (
-				F57B52B124C7E87800940696 /* TUIInputBar.h */,
-				F57B52B624C7E87900940696 /* TUIInputBar.m */,
-				F57B52B024C7E87800940696 /* TUIInputController.h */,
-				F57B52B424C7E87900940696 /* TUIInputController.m */,
-				F5F3663224C820F3008BA221 /* TUIFaceView.h */,
-				F5F3663324C820F4008BA221 /* TUIFaceView.m */,
+				F57B52B124C7E87800940696 /* InputBar.h */,
+				F57B52B624C7E87900940696 /* InputBar.m */,
+				F57B52B024C7E87800940696 /* InputController.h */,
+				F57B52B424C7E87900940696 /* InputController.m */,
+				F5F3663224C820F3008BA221 /* FaceView.h */,
+				F5F3663324C820F4008BA221 /* FaceView.m */,
 				F5F3663524C8210E008BA221 /* TUIFaceCell.h */,
 				F5F3663624C8210F008BA221 /* TUIFaceCell.m */,
 				F5F3664124C824BE008BA221 /* TUIMenuView.h */,
@@ -981,7 +981,7 @@
 				6783C8931FB944B80040C02B /* LZTagSegmentedControl.m in Sources */,
 				673AE9251FC7F5BD0002D304 /* ForceTouchListVC.m in Sources */,
 				6783C8921FB944B80040C02B /* LZTagListView.m in Sources */,
-				F57B52B824C7E87900940696 /* TUIInputController.m in Sources */,
+				F57B52B824C7E87900940696 /* InputController.m in Sources */,
 				F5F3664C24C828D6008BA221 /* TUIKitConfig.m in Sources */,
 				6730334C210AED3D001471D8 /* PersonalCenterBarBtn.m in Sources */,
 				F5F3663124C81CE8008BA221 /* TUIMessageController.m in Sources */,
@@ -993,14 +993,14 @@
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
 				67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */,
-				F5F3663424C820F4008BA221 /* TUIFaceView.m in Sources */,
+				F5F3663424C820F4008BA221 /* FaceView.m in Sources */,
 				A479989224BAEBCE0079F72D /* SmallBigCollectionViewCell.m in Sources */,
 				F5FE071924C835A000DB25B4 /* TUIFaceMessageCellData.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
-				F57B52BA24C7E87900940696 /* TUIInputBar.m in Sources */,
+				F57B52BA24C7E87900940696 /* InputBar.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F5FE071F24C8374600DB25B4 /* TCommonCell.m in Sources */,
-				F57B52A324C7DF2700940696 /* TUIChatController.m in Sources */,
+				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* TUIImageCache.m in Sources */,

@@ -8,15 +8,15 @@
   *
   ******************************************************************************/
 #import <UIKit/UIKit.h>
-#import "TUIInputBar.h"
-#import "TUIFaceView.h"
+#import "InputBar.h"
+#import "FaceView.h"
 #import "TUIMenuView.h"
 //#import "TUIMoreView.h"
 //#import "TUIMessageCell.h"
 
 #import "TUIFaceMessageCellData.h"
 
-@class TUIInputController;
+@class InputController;
 
 /////////////////////////////////////////////////////////////////////////////////
 //
@@ -38,7 +38,7 @@
  *  @param  inputController 委托者，当前参与交互的视图控制器。
  *  @param height 改变高度的具体数值（偏移量）。
  */
-- (void)inputController:(TUIInputController *)inputController didChangeHeight:(CGFloat)height;
+- (void)inputController:(InputController *)inputController didChangeHeight:(CGFloat)height;
 
 /**
  *  当前 InputCOntroller 发送信息时的回调。
@@ -50,7 +50,7 @@
  *  @param msg 当前控制器所获取并准备发送的消息。
  */
 
-- (void)inputController:(TUIInputController *)inputController didSendMessage:(TUIMessageCellData *)msg;
+- (void)inputController:(InputController *)inputController didSendMessage:(TUIMessageCellData *)msg;
 
 /**
  *  点击某一具体“更多”单元后的回调。
@@ -58,7 +58,7 @@
  *  您可以通过该回调实现：根据点击的单元的类型，进行对应类型相应的进一步操作。比如选择图片、选择文件等。
  *  同时在本委托的实现中，含有以下代码：
  * <pre>
- *- (void)inputController:(TUIInputController *)inputController didSelectMoreCell:(TUIInputMoreCell *)cell{
+ *- (void)inputController:(InputController *)inputController didSelectMoreCell:(TUIInputMoreCell *)cell{
  *  ……
  *  ……
  *      if(_delegate && [_delegate respondsToSelector:@selector(chatController:onSelectMoreCell:)]){
@@ -72,7 +72,7 @@
  *  @param  inputController 委托者，当前参与交互的视图控制器。
  *  @param cell 被选中的单元。
  */
-//- (void)inputController:(TUIInputController *)inputController didSelectMoreCell:(TUIInputMoreCell *)cell;
+//- (void)inputController:(InputController *)inputController didSelectMoreCell:(TUIInputMoreCell *)cell;
 @end
 
 
@@ -88,21 +88,21 @@
  *  在输入条（TUIInputBar）中，提供了表情、语音、更多视图的按钮和响应回调。
  *  而在本类中，将 InputBar 与上述三个视图实际结合，实现了各个视图的显示与切换的逻辑。
  */
-@interface TUIInputController : UIViewController
+@interface InputController : UIViewController
 
 /**
  *  输入条
  *  输入条中包含文本输入框、语音按钮、“更多”按钮、表情按钮等一系列交互组件，并提供了这些组件的对应回调委托。
  *  详细信息请参考 Section\Chat\Input\TUIInputBar.h
  */
-@property (nonatomic, strong) TUIInputBar *inputBar;
+@property (nonatomic, strong) InputBar *inputBar;
 
 ///**
 // *  表情视图
 // *  表情视图一般在点击“笑脸”按钮后浮现。负责显示各个表情分组，与分组内表情的具体信息。
 // *  详细信息请参考 Section\Chat\TUIFaceView.h
 // */
-@property (nonatomic, strong) TUIFaceView *faceView;
+@property (nonatomic, strong) FaceView *faceView;
 //
 ///**
 // *  菜单视图

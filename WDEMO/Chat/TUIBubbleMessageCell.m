@@ -6,7 +6,7 @@
 //
 
 #import "TUIBubbleMessageCell.h"
-#import "TUIFaceView.h"
+#import "FaceView.h"
 #import "TUIFaceCell.h"
 #import "THeader.h"
 #import "TUIKit.h"

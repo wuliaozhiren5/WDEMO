@@ -20,7 +20,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "TUIFaceView.h"
+#import "FaceView.h"
 //#import "TUIInputMoreCell.h"
 //
 typedef NS_ENUM(NSInteger, TUIKitAvatarType) {

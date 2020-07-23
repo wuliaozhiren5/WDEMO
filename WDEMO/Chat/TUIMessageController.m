@@ -36,6 +36,7 @@
 #import "TUITextMessageCellData.h"
 #import "TUITextMessageCell.h"
 #import "TUIFaceMessageCell.h"
+#import "IMMessageCell.h"
 
 
 
@@ -147,7 +148,9 @@
 //    [self.tableView registerClass:[TUIVideoMessageCell class] forCellReuseIdentifier:TVideoMessageCell_ReuseId];
 //    [self.tableView registerClass:[TUIFileMessageCell class] forCellReuseIdentifier:TFileMessageCell_ReuseId];
 //    [self.tableView registerClass:[TUIJoinGroupMessageCell class] forCellReuseIdentifier:TJoinGroupMessageCell_ReuseId];
-//
+
+    [self.tableView registerClass:[IMMessageCell class] forCellReuseIdentifier:@"IMMessageCell"];
+   
 //
 //    _indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, TMessageController_Header_Height)];
 //    _indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -356,17 +359,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TUIMessageCellData *data = _uiMsgs[indexPath.row];
     TUIMessageCell *cell = nil;
-    if ([self.delegate respondsToSelector:@selector(messageController:onShowMessageData:)]) {
-//        cell = [self.delegate messageController:self onShowMessageData:data];
-        if (cell) {
-            cell.delegate = self;
-            return cell;
-        }
-    }
+    
+    IMMessageCell *messageCell = nil;
+
+//    if ([self.delegate respondsToSelector:@selector(messageController:onShowMessageData:)]) {
+////        cell = [self.delegate messageController:self onShowMessageData:data];
+//        if (cell) {
+//            cell.delegate = self;
+//            return cell;
+//        }
+//    }
     if (!data.reuseId) {
+         
         if([data isKindOfClass:[TUITextMessageCellData class]]) {
-            data.reuseId = TTextMessageCell_ReuseId;
-        }
+                   data.reuseId = @"IMMessageCell";
+               }
+//        if([data isKindOfClass:[TUITextMessageCellData class]]) {
+//            data.reuseId = TTextMessageCell_ReuseId;
+//        }
         else if([data isKindOfClass:[TUIFaceMessageCellData class]]) {
             data.reuseId = TFaceMessageCell_ReuseId;
         }
@@ -392,17 +402,24 @@
             return nil;
         }
     }
-    cell = [tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
-    //对于入群小灰条，需要进一步设置其委托。
-//    if([cell isKindOfClass:[TUIJoinGroupMessageCell class]]){
-//        TUIJoinGroupMessageCell *joinCell = (TUIJoinGroupMessageCell *)cell;
-//        joinCell.joinGroupDelegate = self;
-//        cell = joinCell;
-//    }
-    cell.delegate = self;
-    [cell fillWithData:_uiMsgs[indexPath.row]];
 
-    return cell;
+
+//    cell = [tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
+//    //对于入群小灰条，需要进一步设置其委托。
+////    if([cell isKindOfClass:[TUIJoinGroupMessageCell class]]){
+////        TUIJoinGroupMessageCell *joinCell = (TUIJoinGroupMessageCell *)cell;
+////        joinCell.joinGroupDelegate = self;
+////        cell = joinCell;
+////    }
+//    cell.delegate = self;
+//     [cell fillWithData:_uiMsgs[indexPath.row]];
+//      return cell;
+    
+    
+    messageCell =(IMMessageCell *)[tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
+    [messageCell fillWithData:_uiMsgs[indexPath.row]];
+
+    return messageCell;
 }
 //
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
