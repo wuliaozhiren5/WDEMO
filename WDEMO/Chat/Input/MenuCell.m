@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
 
-#import "TUIMenuCell.h"
+#import "MenuCell.h"
 #import "THeader.h"
 #import "TUIKit.h"
 #import "TUIImageCache.h"
@@ -15,7 +15,7 @@
 @implementation TMenuCellData
 @end
 
-@implementation TUIMenuCell
+@implementation MenuCell
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

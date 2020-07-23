@@ -7,7 +7,7 @@
 
 #import "TUIBubbleMessageCell.h"
 #import "FaceView.h"
-#import "TUIFaceCell.h"
+#import "FaceCell.h"
 #import "THeader.h"
 #import "TUIKit.h"
 #import "THelper.h"

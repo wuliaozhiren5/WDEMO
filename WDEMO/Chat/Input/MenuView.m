@@ -6,16 +6,16 @@
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
 
-#import "TUIMenuView.h"
+#import "MenuView.h"
 #import "THeader.h"
-#import "TUIMenuCell.h"
+#import "MenuCell.h"
 #import "UIColor+TUIDarkMode.h"
 
-@interface TUIMenuView () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface MenuView () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableArray *data;
 @end
 
-@implementation TUIMenuView
+@implementation MenuView
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -54,7 +54,7 @@
     //_menuFlowLayout.headerReferenceSize = CGSizeMake(TMenuView_Margin, 1);
 
     _menuCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:_menuFlowLayout];
-    [_menuCollectionView registerClass:[TUIMenuCell class] forCellWithReuseIdentifier:TMenuCell_ReuseId];
+    [_menuCollectionView registerClass:[MenuCell class] forCellWithReuseIdentifier:TMenuCell_ReuseId];
     [_menuCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:TMenuCell_Line_ReuseId];
     _menuCollectionView.collectionViewLayout = _menuFlowLayout;
     _menuCollectionView.delegate = self;
@@ -88,7 +88,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row % 2 == 0){
-        TUIMenuCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:TMenuCell_ReuseId forIndexPath:indexPath];
+        MenuCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:TMenuCell_ReuseId forIndexPath:indexPath];
         [cell setData:_data[indexPath.row / 2]];
         return cell;
     }

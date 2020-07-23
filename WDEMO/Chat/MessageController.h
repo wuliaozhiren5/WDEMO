@@ -15,7 +15,7 @@
 
 
 //@class TUIConversationCellData;
-@class TUIMessageController;
+@class MessageController;
 @class TUIMessageCellData;
 
 
@@ -38,7 +38,7 @@
  *
  *  @param controller 委托者，消息控制器
  */
-- (void)didTapInMessageController:(TUIMessageController *)controller;
+- (void)didTapInMessageController:(MessageController *)controller;
 
 /**
  *  隐藏长按菜单后的回调函数
@@ -46,7 +46,7 @@
  *
  *  @param controller 委托者，消息控制器
  */
-- (void)didHideMenuInMessageController:(TUIMessageController *)controller;
+- (void)didHideMenuInMessageController:(MessageController *)controller;
 
 /**
  *  显示长按菜单前的回调函数
@@ -55,7 +55,7 @@
  *  @param controller 委托者，消息控制器
  *  @param view 控制器所在view
  */
-- (BOOL)messageController:(TUIMessageController *)controller willShowMenuInCell:(UIView *)view;
+- (BOOL)messageController:(MessageController *)controller willShowMenuInCell:(UIView *)view;
 
 /**
  *  收到新消息的函数委托
@@ -118,7 +118,7 @@
  *  本类提供了接收/显示新消息、显示/隐藏菜单、点击消息头像等交互操作的回调接口。
  *  同时本类提供了图像、视频、文件信息的发送功能，直接整合调用了 IM SDK 实现发送功能。
  */
-@interface TUIMessageController : UITableViewController
+@interface MessageController : UITableViewController
 
 /**
  *  执行 TMessageControllerDelegate 协议的委托

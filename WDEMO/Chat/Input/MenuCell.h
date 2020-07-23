@@ -43,7 +43,7 @@
  * 【模块名称】TUIMenuCell
  * 【功能说明】存放表情菜单的图像，并在表情菜单视图中作为显示单元，同时也是响应用户交互的基本单元。
  */
-@interface TUIMenuCell : UICollectionViewCell
+@interface MenuCell : UICollectionViewCell
 /**
  *  菜单图像视图
  */

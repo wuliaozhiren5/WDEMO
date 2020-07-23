@@ -6,14 +6,14 @@
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
 
-#import "TUIFaceCell.h"
+#import "FaceCell.h"
 #import "TUIKit.h"
 #import "TUIImageCache.h"
 
 @implementation TFaceCellData
 @end
 
-@implementation TUIFaceCell
+@implementation FaceCell
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

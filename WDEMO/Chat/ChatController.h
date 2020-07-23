@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "InputController.h"
-#import "TUIMessageController.h"
+#import "MessageController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class ChatController;
@@ -166,7 +166,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  负责消息气泡的展示，同时负责响应用户对于消息气泡的交互，比如：点击消息发送者头像、轻点消息、长按消息等操作。
  *  聊天消息控制器的详细信息请参考 Section\Chat\TUIMessageController.h
  */
-@property TUIMessageController *messageController;
+@property MessageController *messageController;
 
 /**
  *  TUIKit 信息输入控制器。

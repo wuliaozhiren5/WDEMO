@@ -7,7 +7,7 @@
 //
 
 #import "FaceView.h"
-#import "TUIFaceCell.h"
+#import "FaceCell.h"
 #import "THeader.h"
 #import "UIColor+TUIDarkMode.h"
 
@@ -48,7 +48,7 @@
     _faceFlowLayout.sectionInset = UIEdgeInsetsMake(0, TFaceView_Page_Padding, 0, TFaceView_Page_Padding);
 
     _faceCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:_faceFlowLayout];
-    [_faceCollectionView registerClass:[TUIFaceCell class] forCellWithReuseIdentifier:TFaceCell_ReuseId];
+    [_faceCollectionView registerClass:[FaceCell class] forCellWithReuseIdentifier:TFaceCell_ReuseId];
     _faceCollectionView.collectionViewLayout = _faceFlowLayout;
     _faceCollectionView.pagingEnabled = YES;
     _faceCollectionView.delegate = self;
@@ -141,7 +141,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TUIFaceCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:TFaceCell_ReuseId forIndexPath:indexPath];
+    FaceCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:TFaceCell_ReuseId forIndexPath:indexPath];
     int groupIndex = [_groupIndexInSection[indexPath.section] intValue];
     TFaceGroup *group = _faceGroups[groupIndex];
     int itemCount = group.rowCount * group.itemCountPerRow;

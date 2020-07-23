@@ -41,7 +41,7 @@
  * 【功能说明】存储表情的图像，并根据 TFaceCellData 初始化 Cell。
  *  在表情视图中，TUIFaceCell 即为界面显示的单元。
  */
-@interface TUIFaceCell : UICollectionViewCell
+@interface FaceCell : UICollectionViewCell
 
 /**
  *  表情图像

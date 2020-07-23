@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "InputBar.h"
 #import "FaceView.h"
-#import "TUIMenuView.h"
+#import "MenuView.h"
 //#import "TUIMoreView.h"
 //#import "TUIMessageCell.h"
 
@@ -109,7 +109,7 @@
 // *  菜单视图位于表情视图下方，负责提供表情分组单元以及发送按钮。
 // *  详细信息请参考 Section\Chat\TUIMenuView.h
 // */
-@property (nonatomic, strong) TUIMenuView *menuView;
+@property (nonatomic, strong) MenuView *menuView;
 //
 ///**
 // *  更多视图

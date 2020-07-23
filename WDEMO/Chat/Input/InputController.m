@@ -7,8 +7,8 @@
 //
 
 #import "InputController.h"
-#import "TUIMenuCell.h"
-#import "TUIFaceCell.h"
+#import "MenuCell.h"
+#import "FaceCell.h"
 #import "THeader.h"
 #import "TUIKit.h"
 #import "TUITextMessageCellData.h"
@@ -261,12 +261,12 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
 }
 
-- (void)menuView:(TUIMenuView *)menuView didSelectItemAtIndex:(NSInteger)index
+- (void)menuView:(MenuView *)menuView didSelectItemAtIndex:(NSInteger)index
 {
     [self.faceView scrollToFaceGroupIndex:index];
 }
 
-- (void)menuViewDidSendMessage:(TUIMenuView *)menuView
+- (void)menuViewDidSendMessage:(MenuView *)menuView
 {
 //    NSString *text = [_inputBar getInput];
 //    if([text isEqualToString:@""]){
@@ -322,10 +322,10 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 }
 
 //tt group
-- (TUIMenuView *)menuView
+- (MenuView *)menuView
 {
     if(!_menuView){
-        _menuView = [[TUIMenuView alloc] initWithFrame:CGRectMake(0, self.faceView.frame.origin.y + self.faceView.frame.size.height, self.view.frame.size.width, TMenuView_Menu_Height)];
+        _menuView = [[MenuView alloc] initWithFrame:CGRectMake(0, self.faceView.frame.origin.y + self.faceView.frame.size.height, self.view.frame.size.width, TMenuView_Menu_Height)];
         _menuView.delegate = self;
 
         TUIKitConfig *config = [TUIKit sharedInstance].config;

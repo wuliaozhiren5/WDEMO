@@ -6,7 +6,7 @@
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
 
-#import "TUIMessageController.h"
+#import "MessageController.h"
 //#import "TUITextMessageCell.h"
 //#import "TUISystemMessageCell.h"
 //#import "TUIVoiceMessageCell.h"
@@ -44,7 +44,7 @@
 
 #define MAX_MESSAGE_SEP_DLAY (5 * 60)
 
-@interface TUIMessageController ()
+@interface MessageController ()
 //<TMessageCellDelegate>
 //@property (nonatomic, strong) TUIConversationCellData *conversationData;
 @property (nonatomic, strong) NSMutableArray *uiMsgs;
@@ -62,7 +62,7 @@
 //@property (nonatomic, assign) BOOL firstLoad;
 @end
 
-@implementation TUIMessageController
+@implementation MessageController
 
 - (void)viewDidLoad
 {

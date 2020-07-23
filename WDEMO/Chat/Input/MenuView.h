@@ -10,7 +10,7 @@
  ******************************************************************************/
 #import <UIKit/UIKit.h>
 
-@class TUIMenuView;
+@class MenuView;
 
 /////////////////////////////////////////////////////////////////////////////////
 //
@@ -30,7 +30,7 @@
  *  @param menuView 委托者，表情菜单视图
  *  @param index 索引下标，从0开始。
  */
-- (void)menuView:(TUIMenuView *)menuView didSelectItemAtIndex:(NSInteger)index;
+- (void)menuView:(MenuView *)menuView didSelectItemAtIndex:(NSInteger)index;
 
 /**
  *  menuView 点击发送按钮后的回调
@@ -41,7 +41,7 @@
  *
  *  @param menuView 委托者，表情菜单视图
  */
-- (void)menuViewDidSendMessage:(TUIMenuView *)menuView;
+- (void)menuViewDidSendMessage:(MenuView *)menuView;
 @end
 
 
@@ -58,7 +58,7 @@
  *  本视图负责显示各个表情分组及其缩略图，方便您快速在各个表情分组中切换，并提供“发送”按钮。
  *  您可以通过表情菜单视图在不同组别的表情下切换，或是发送表情。
  */
-@interface TUIMenuView : UIView
+@interface MenuView : UIView
 
 /**
  *  发送按钮

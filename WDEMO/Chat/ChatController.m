@@ -33,7 +33,7 @@
    
 //    @weakify(self)
     //message
-    _messageController = [[TUIMessageController alloc] init];
+    _messageController = [[MessageController alloc] init];
     _messageController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight);
 //    _messageController.delegate = self;
     [self addChildViewController:_messageController];
