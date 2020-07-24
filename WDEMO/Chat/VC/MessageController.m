@@ -39,7 +39,8 @@
 #import "ChatMessageData.h"
 //#import "TUITextMessageCell.h"
 //#import "TUIFaceMessageCell.h"
-//#import "IMMessageCell.h"
+#import "IMMessageCell.h"
+#import "ChatMessageData.h"
 
 
 
@@ -48,7 +49,7 @@
 #define MAX_MESSAGE_SEP_DLAY (5 * 60)
 
 @interface MessageController ()
-//<TMessageCellDelegate>
+///<TMessageCellDelegate>
 //@property (nonatomic, strong) TUIConversationCellData *conversationData;
 @property (nonatomic, strong) NSMutableArray *uiMsgs;
 @property (nonatomic, strong) NSMutableArray *heightCache;
@@ -141,7 +142,9 @@
     
     self.tableView.estimatedRowHeight = 0;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-//    self.tableView.backgroundColor = [UIColor d_colorWithColorLight:TController_Background_Color dark:TController_Background_Color_Dark];
+    self.tableView.backgroundColor = MessageViewColor;
+
+ 
     //
 //    [self.tableView registerClass:[TUITextMessageCell class] forCellReuseIdentifier:TTextMessageCell_ReuseId];
     //    [self.tableView registerClass:[TUIVoiceMessageCell class] forCellReuseIdentifier:TVoiceMessageCell_ReuseId];
@@ -152,7 +155,7 @@
     //    [self.tableView registerClass:[TUIFileMessageCell class] forCellReuseIdentifier:TFileMessageCell_ReuseId];
     //    [self.tableView registerClass:[TUIJoinGroupMessageCell class] forCellReuseIdentifier:TJoinGroupMessageCell_ReuseId];
     
-//    [self.tableView registerClass:[IMMessageCell class] forCellReuseIdentifier:@"IMMessageCell"];
+    [self.tableView registerClass:[IMMessageCell class] forCellReuseIdentifier:@"IMMessageCell"];
     
     //
     //    _indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, TMessageController_Header_Height)];
@@ -347,23 +350,26 @@
     return _uiMsgs.count;
 }
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    CGFloat height = 0;
-//    if(_heightCache.count > indexPath.row){
-//        return [_heightCache[indexPath.row] floatValue];
-//    }
-//    TUIMessageCellData *data = _uiMsgs[indexPath.row];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    CGFloat height = 0;
+    if(_heightCache.count > indexPath.row){
+        return [_heightCache[indexPath.row] floatValue];
+    }
+    ChatMessageData *data = _uiMsgs[indexPath.row];
 //    height = [data heightOfWidth:Screen_Width];
-//    [_heightCache insertObject:[NSNumber numberWithFloat:height] atIndex:indexPath.row];
-//    return height;
-//}
+    height = data.contentSize.height;
+    [_heightCache insertObject:[NSNumber numberWithFloat:height] atIndex:indexPath.row];
+    return height;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    TUIMessageCellData *data = _uiMsgs[indexPath.row];
+    
+
+    ChatMessageData *data = _uiMsgs[indexPath.row];
 //    TUIMessageCell *cell = nil;
 //
-//        IMMessageCell *messageCell = nil;
+        IMMessageCell *messageCell = nil;
 //
 //    //    if ([self.delegate respondsToSelector:@selector(messageController:onShowMessageData:)]) {
 //    ////        cell = [self.delegate messageController:self onShowMessageData:data];
@@ -380,9 +386,9 @@
 ////        if([data isKindOfClass:[TUITextMessageCellData class]]) {
 ////            data.reuseId = TTextMessageCell_ReuseId;
 ////        }
-//        else if([data isKindOfClass:[TUIFaceMessageCellData class]]) {
-//            data.reuseId = TFaceMessageCell_ReuseId;
-//        }
+////        else if([data isKindOfClass:[TUIFaceMessageCellData class]]) {
+////            data.reuseId = TFaceMessageCell_ReuseId;
+////        }
 //        //        else if([data isKindOfClass:[TUIImageMessageCellData class]]) {
 //        //            data.reuseId = TImageMessageCell_ReuseId;
 //        //        }
@@ -419,13 +425,12 @@
 ////    return cell;
 //
 //
-//        messageCell =(IMMessageCell *)[tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
-//        [messageCell fillWithData:_uiMsgs[indexPath.row]];
-//
-//        return messageCell;
+        messageCell =(IMMessageCell *)[tableView dequeueReusableCellWithIdentifier:@"IMMessageCell" forIndexPath:indexPath];
+        [messageCell fillWithData:_uiMsgs[indexPath.row]];
+
+        return messageCell;
     
-    return nil;
-}
+ }
 //
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 //{
@@ -445,7 +450,7 @@
     }
 }
 
-- (void)sendMessage:(TUIMessageCellData *)msg
+- (void)sendMessage:(ChatMessageData *)msg
 {
     [self.tableView beginUpdates];
     [_uiMsgs addObject:msg];
@@ -539,345 +544,6 @@
     //        }
     //    });
 }
-//
-//- (void)changeMsg:(TUIMessageCellData *)msg status:(TMsgStatus)status
-//{
-//    msg.status = status;
-//    NSInteger index = [_uiMsgs indexOfObject:msg];
-//    TUIMessageCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
-//    [cell fillWithData:msg];
-//}
-//
-//- (V2TIMMessage *)transIMMsgFromUIMsg:(TUIMessageCellData *)data
-//{
-//    V2TIMMessage *msg = nil;
-//    if([data isKindOfClass:[TUITextMessageCellData class]]){
-//        TUITextMessageCellData *text = (TUITextMessageCellData *)data;
-//        msg = [[V2TIMManager sharedInstance] createTextMessage:text.content];
-//    }
-//    else if([data isKindOfClass:[TUIFaceMessageCellData class]]){
-//        TUIFaceMessageCellData *image = (TUIFaceMessageCellData *)data;
-//        msg = [[V2TIMManager sharedInstance] createFaceMessage:(int)image.groupIndex data:[image.faceName dataUsingEncoding:NSUTF8StringEncoding]];
-//    }
-//    else if([data isKindOfClass:[TUIImageMessageCellData class]]){
-//        TUIImageMessageCellData *uiImage = (TUIImageMessageCellData *)data;
-//        msg = [[V2TIMManager sharedInstance] createImageMessage:uiImage.path];
-//    }
-//    else if([data isKindOfClass:[TUIVideoMessageCellData class]]){
-//        TUIVideoMessageCellData *uiVideo = (TUIVideoMessageCellData *)data;
-//        msg = [[V2TIMManager sharedInstance] createVideoMessage:uiVideo.videoPath type:uiVideo.videoItem.type duration:(int)uiVideo.videoItem.duration snapshotPath:uiVideo.snapshotPath];
-//    }
-//    else if([data isKindOfClass:[TUIVoiceMessageCellData class]]){
-//        TUIVoiceMessageCellData *uiSound = (TUIVoiceMessageCellData *)data;
-//        msg = [[V2TIMManager sharedInstance] createSoundMessage:uiSound.path duration:uiSound.duration];
-//    }
-//    else if([data isKindOfClass:[TUIFileMessageCellData class]]){
-//        TUIFileMessageCellData *uiFile = (TUIFileMessageCellData *)data;
-//        msg = [[V2TIMManager sharedInstance] createFileMessage:uiFile.path fileName:uiFile.fileName];
-//    }
-//    data.innerMessage = msg;
-//    return msg;
-//
-//}
-//- (TUISystemMessageCellData *)transSystemMsgFromDate:(NSDate *)date
-//{
-//    if(_msgForDate == nil || fabs([date timeIntervalSinceDate:_msgForDate.timestamp]) > MAX_MESSAGE_SEP_DLAY){
-//        TUISystemMessageCellData *system = [[TUISystemMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
-//        system.content = [date tk_messageString];
-//        system.reuseId = TSystemMessageCell_ReuseId;
-//        return system;
-//    }
-//    return nil;
-//}
-//
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-//{
-//    if(!_noMoreMsg && scrollView.contentOffset.y <= TMessageController_Header_Height){
-//        if(!_indicatorView.isAnimating){
-//            [_indicatorView startAnimating];
-//        }
-//    }
-//    else{
-//        if(_indicatorView.isAnimating){
-//            [_indicatorView stopAnimating];
-//        }
-//    }
-//}
-//
-//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
-//{
-//    if(scrollView.contentOffset.y <= TMessageController_Header_Height){
-//        [self loadMessage];
-//    }
-//}
-//
-//#pragma mark - message cell delegate
-//
-//- (void)onSelectMessage:(TUIMessageCell *)cell
-//{
-//    if([cell isKindOfClass:[TUIVoiceMessageCell class]]){
-//        [self playVoiceMessage:(TUIVoiceMessageCell *)cell];
-//    }
-//    if ([cell isKindOfClass:[TUIImageMessageCell class]]) {
-//        [self showImageMessage:(TUIImageMessageCell *)cell];
-//    }
-//    if ([cell isKindOfClass:[TUIVideoMessageCell class]]) {
-//        [self showVideoMessage:(TUIVideoMessageCell *)cell];
-//    }
-//    if ([cell isKindOfClass:[TUIFileMessageCell class]]) {
-//        [self showFileMessage:(TUIFileMessageCell *)cell];
-//    }
-//    if ([self.delegate respondsToSelector:@selector(messageController:onSelectMessageContent:)]) {
-//        [self.delegate messageController:self onSelectMessageContent:cell];
-//    }
-//}
-//
-//- (void)onLongPressMessage:(TUIMessageCell *)cell
-//{
-//    TUIMessageCellData *data = cell.messageData;
-//    if ([data isKindOfClass:[TUISystemMessageCellData class]])
-//        return; // 系统消息不响应
-//
-//    NSMutableArray *items = [NSMutableArray array];
-//    if ([data isKindOfClass:[TUITextMessageCellData class]]) {
-//        [items addObject:[[UIMenuItem alloc] initWithTitle:@"复制" action:@selector(onCopyMsg:)]];
-//    }
-//
-//    [items addObject:[[UIMenuItem alloc] initWithTitle:@"删除" action:@selector(onDelete:)]];
-//    V2TIMMessage *imMsg = data.innerMessage;
-//    if(imMsg){
-//        if([imMsg isSelf] && [[NSDate date] timeIntervalSinceDate:imMsg.timestamp] < 2 * 60){
-//            [items addObject:[[UIMenuItem alloc] initWithTitle:@"撤回" action:@selector(onRevoke:)]];
-//        }
-//    }
-//    if(imMsg.status == V2TIM_MSG_STATUS_SEND_FAIL){
-//        [items addObject:[[UIMenuItem alloc] initWithTitle:@"重发" action:@selector(onReSend:)]];
-//    }
-//
-//
-//    BOOL isFirstResponder = NO;
-//    if(_delegate && [_delegate respondsToSelector:@selector(messageController:willShowMenuInCell:)]){
-//        isFirstResponder = [_delegate messageController:self willShowMenuInCell:cell];
-//    }
-//    if(isFirstResponder){
-//        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(menuDidHide:) name:UIMenuControllerDidHideMenuNotification object:nil];
-//    }
-//    else{
-//        [self becomeFirstResponder];
-//    }
-//    UIMenuController *controller = [UIMenuController sharedMenuController];
-//    controller.menuItems = items;
-//    _menuUIMsg = data;
-//    [controller setTargetRect:cell.container.bounds inView:cell.container];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [controller setMenuVisible:YES animated:YES];
-//    });
-//}
-//
-//- (void)onRetryMessage:(TUIMessageCell *)cell
-//{
-//    _reSendUIMsg = cell.messageData;
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确定重发此消息吗？" message:nil preferredStyle:UIAlertControllerStyleAlert];
-//    [alert addAction:[UIAlertAction actionWithTitle:@"重发" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-//        [self sendMessage:self.reSendUIMsg];
-//    }]];
-//    [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-//
-//    }]];
-//    [self.navigationController presentViewController:alert animated:YES completion:nil];
-//}
-//
-//- (void)onSelectMessageAvatar:(TUIMessageCell *)cell
-//{
-//    if ([self.delegate respondsToSelector:@selector(messageController:onSelectMessageAvatar:)]) {
-//        [self.delegate messageController:self onSelectMessageAvatar:cell];
-//    }
-//}
-//
-//-(BOOL)canPerformAction:(SEL)action withSender:(id)sender
-//{
-//    if (action == @selector(onDelete:) ||
-//        action == @selector(onRevoke:) ||
-//        action == @selector(onReSend:) ||
-//        action == @selector(onCopyMsg:)){
-//        return YES;
-//    }
-//    return NO;
-//}
-//
-//- (BOOL)canBecomeFirstResponder
-//{
-//    return YES;
-//}
-//
-//- (void)onDelete:(id)sender
-//{
-//    V2TIMMessage *imMsg = _menuUIMsg.innerMessage;
-//    if(imMsg == nil){
-//        return;
-//    }
-//    @weakify(self)
-//    [[V2TIMManager sharedInstance] deleteMessageFromLocalStorage:imMsg succ:^{
-//        @strongify(self)
-//        [self.tableView beginUpdates];
-//        NSInteger index = [self.uiMsgs indexOfObject:self.menuUIMsg];
-//        [self.uiMsgs removeObjectAtIndex:index];
-//        [self.heightCache removeObjectAtIndex:index];
-//        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-//
-//        [self.tableView endUpdates];;
-//    } fail:^(int code, NSString *msg) {
-//        NSLog(@"remove msg failed!");
-//    }];
-//}
-//
-//- (void)menuDidHide:(NSNotification*)notification
-//{
-//    if(_delegate && [_delegate respondsToSelector:@selector(didHideMenuInMessageController:)]){
-//        [_delegate didHideMenuInMessageController:self];
-//    }
-//    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIMenuControllerDidHideMenuNotification object:nil];
-//}
-//
-//- (void)onCopyMsg:(id)sender
-//{
-//    if ([_menuUIMsg isKindOfClass:[TUITextMessageCellData class]]) {
-//        TUITextMessageCellData *txtMsg = (TUITextMessageCellData *)_menuUIMsg;
-//        UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-//        pasteboard.string = txtMsg.content;
-//    }
-//}
-//
-//- (void)onRevoke:(id)sender
-//{
-//    @weakify(self)
-//    [[V2TIMManager sharedInstance] revokeMessage:_menuUIMsg.innerMessage succ:^{
-//        @strongify(self)
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self revokeMsg:self.menuUIMsg];
-//        });
-//    } fail:^(int code, NSString *msg) {
-//        NSLog(@"revoke msg failed");
-//    }];
-//}
-//
-//- (void)onReSend:(id)sender
-//{
-//    [self sendMessage:_menuUIMsg];
-//}
-//
-//- (void)revokeMsg:(TUIMessageCellData *)msg
-//{
-//    V2TIMMessage *imMsg = msg.innerMessage;
-//    if(imMsg == nil){
-//        return;
-//    }
-//    NSInteger index = [_uiMsgs indexOfObject:msg];
-//    if (index == NSNotFound)
-//        return;
-//    [_uiMsgs removeObject:msg];
-//
-//    [self.tableView beginUpdates];
-//    [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-//    TUISystemMessageCellData *data = [imMsg revokeCellData];
-//    [_uiMsgs insertObject:data atIndex:index];
-//    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:index inSection:0]] withRowAnimation:UITableViewRowAnimationFade];
-//    [self.tableView endUpdates];
-//    [self scrollToBottom:YES];
-//}
-//
-//- (void)playVoiceMessage:(TUIVoiceMessageCell *)cell
-//{
-//    for (NSInteger index = 0; index < _uiMsgs.count; ++index) {
-//        if(![_uiMsgs[index] isKindOfClass:[TUIVoiceMessageCellData class]]){
-//            continue;
-//        }
-//        TUIVoiceMessageCellData *uiMsg = _uiMsgs[index];
-//        if(uiMsg == cell.voiceData){
-//            [uiMsg playVoiceMessage];
-//            cell.voiceReadPoint.hidden = YES;
-//        }
-//        else{
-//            [uiMsg stopVoiceMessage];
-//        }
-//    }
-//}
-//
-//- (void)showImageMessage:(TUIImageMessageCell *)cell
-//{
-//    TUIImageViewController *image = [[TUIImageViewController alloc] init];
-//    image.data = [cell imageData];
-//    [self.navigationController pushViewController:image animated:YES];
-//}
-//
-//- (void)showVideoMessage:(TUIVideoMessageCell *)cell
-//{
-//    TUIVideoViewController *video = [[TUIVideoViewController alloc] init];
-//    video.data = [cell videoData];
-//    [self.navigationController pushViewController:video animated:YES];
-//}
-//
-//- (void)showFileMessage:(TUIFileMessageCell *)cell
-//{
-//    TUIFileViewController *file = [[TUIFileViewController alloc] init];
-//    file.data = [cell fileData];
-//    [self.navigationController pushViewController:file animated:YES];
-//}
-//
-//
-//- (void)didTapOnRestNameLabel:(TUIJoinGroupMessageCell *)cell withIndex:(NSInteger)index{
-//    [self jumpToProfileController:cell.joinData.userIDList[index]];
-//}
-//- (void)jumpToProfileController:(NSString *)memberId{
-//    //此处实现点击入群的姓名 Label 后，跳转到对应的消息界面。此处的跳转逻辑和点击头像的跳转逻辑相同。
-//    @weakify(self)
-//    [[V2TIMManager sharedInstance] getFriendsInfo:@[memberId] succ:^(NSArray<V2TIMFriendInfoResult *> *resultList) {
-//        V2TIMFriendInfoResult *result = resultList.firstObject;
-//        id<TUIFriendProfileControllerServiceProtocol> vc = [[TCServiceManager shareInstance] createService:@protocol(TUIFriendProfileControllerServiceProtocol)];
-//        if ([vc isKindOfClass:[UIViewController class]]) {
-//            vc.friendProfile = result.friendInfo;
-//            [self.navigationController pushViewController:(UIViewController *)vc animated:YES];
-//            return;
-//        }
-//    } fail:^(int code, NSString *msg) {
-//        NSLog(@"拉取好友资料失败");
-//    }];
-//
-//    [[V2TIMManager sharedInstance] getUsersInfo:@[memberId] succ:^(NSArray<V2TIMUserFullInfo *> *infoList) {
-//        @strongify(self)
-//        V2TIMUserFullInfo *userFullInfo = infoList.firstObject;
-//        id<TUIUserProfileControllerServiceProtocol> vc = [[TCServiceManager shareInstance] createService:@protocol(TUIUserProfileControllerServiceProtocol)];
-//        if (userFullInfo && [vc isKindOfClass:[UIViewController class]]) {
-//            vc.userFullInfo = userFullInfo;
-//            vc.actionType = PCA_ADD_FRIEND;
-//            [self.navigationController pushViewController:(UIViewController *)vc animated:YES];
-//        }
-//    } fail:^(int code, NSString *msg) {
-//        [THelper makeToastError:code msg:msg];
-//    }];
-//}
-//
-////已读回执
-//- (void) didRecvMessageReceipts:(NSNotification *)noti{
-//    NSArray *receiptsArray = noti.object;
-//    if(!receiptsArray.count){
-//        NSLog(@"Receipt Data Error");
-//        return;
-//    }
-//    V2TIMMessageReceipt *receipt = receiptsArray[0];
-//    time_t receiptTime = receipt.timestamp;
-//    if(receipt.userID.length > 0 && [receipt.userID isEqualToString:self.conversationData.userID]){
-//        //性能优化
-//        for(int i = 0;i < _uiMsgs.count;i++){
-//            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:_uiMsgs.count - 1 - i inSection:0];
-//            TUIMessageCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-//            //通过回调时间戳判定当前的未读是否需要改为已读
-//            time_t msgTime = [cell.messageData.innerMessage.timestamp timeIntervalSince1970];
-//            if(msgTime <= receiptTime && ![cell.readReceiptLabel.text isEqualToString:@"已读"]) {
-//                cell.readReceiptLabel.text = @"已读";
-//            }
-//        }
-//    }
-//}
+ 
 
 @end

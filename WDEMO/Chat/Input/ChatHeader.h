@@ -27,7 +27,20 @@
 #define RGBA(r, g, b, a)    [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a]
 #define RGB(r, g, b)    [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.f]
 
+#define  MessageViewColor  RGB(33, 33, 33) 
+#define  InputBarColor  RGB(33, 33, 33)
+#define  InputBarTextViewColor  RGB(46, 46, 46)
+#define  InputBarTextColor  RGB(218, 218, 220)
+#define  FaceButtonTextNoAvailable  RGB(65, 65, 65)
+#define  FaceButtonTextAvailable  RGB(255, 255, 255)
+ 
+#define  FaceButtonBackGroundNoAvailable  RGB(65, 65, 65)
+#define  FaceButtonBackGroundAvailable  RGB(0, 187, 255)
 
+#define  ChatNameTextColor    RGB(145, 150, 150)
+#define  ChatContentTextColor RGB(218, 219, 220)
+ 
+ 
 //cell
 #define TMessageCell_Head_Width 45
 #define TMessageCell_Head_Height 45
@@ -40,7 +53,9 @@
 #define TTextMessageCell_ReuseId @"TTextMessageCell"
 #define TTextMessageCell_Height_Min (TMessageCell_Head_Size.height + 2 * TMessageCell_Padding)
 #define TTextMessageCell_Text_PADDING (160)
-#define TTextMessageCell_Text_Width_Max (Screen_Width - TTextMessageCell_Text_PADDING)
+//#define TTextMessageCell_Text_Width_Max (Screen_Width - TTextMessageCell_Text_PADDING)
+#define TTextMessageCell_Text_Width_Max (Screen_Width - 12 * 2 - 9 * 2)
+
 #define TTextMessageCell_Margin 12
 
 //system cell

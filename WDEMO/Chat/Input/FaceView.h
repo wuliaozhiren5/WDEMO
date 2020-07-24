@@ -158,4 +158,5 @@
  */
 - (void)setData:(NSMutableArray *)data;
 
+- (void)showButton:(NSString *)str;
 @end

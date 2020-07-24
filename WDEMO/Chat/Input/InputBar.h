@@ -55,6 +55,17 @@
  *  @param textView 委托者，当前与用户交互的 InputBar。
  */
 - (void)inputBarDidTouchKeyboard:(InputBar *)textView;
+
+
+/**
+*  text内容变化
+*
+*
+*
+*  @param textView 委托者，当前与用户交互的 InputBar。
+*/
+- (void)inputBarTextViewDidChange:(InputBar *)textView;
+
 @end
  
 

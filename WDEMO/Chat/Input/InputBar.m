@@ -47,14 +47,14 @@
     
     _faceButton = [[UIButton alloc] init];
     [_faceButton addTarget:self action:@selector(clickFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_faceButton setImage:[UIImage chat_imageNamed:@"ToolViewEmotion"] forState:UIControlStateNormal];
-    [_faceButton setImage:[UIImage chat_imageNamed:@"ToolViewEmotionHL"] forState:UIControlStateHighlighted];
+    [_faceButton setImage:[UIImage chat_imageNamed:@"ic_inputbox_emoji_white"] forState:UIControlStateNormal];
+    [_faceButton setImage:[UIImage chat_imageNamed:@"ic_inputbox_emoji_white"] forState:UIControlStateHighlighted];
     [self addSubview:_faceButton];
     
     _keyboardButton = [[UIButton alloc] init];
     [_keyboardButton addTarget:self action:@selector(clickKeyboardBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_keyboardButton setImage:[UIImage chat_imageNamed:@"ToolViewKeyboard"] forState:UIControlStateNormal];
-    [_keyboardButton setImage:[UIImage chat_imageNamed:@"ToolViewKeyboardHL"] forState:UIControlStateHighlighted];
+    [_keyboardButton setImage:[UIImage chat_imageNamed:@"ic_inputbox_keyboard_white"] forState:UIControlStateNormal];
+    [_keyboardButton setImage:[UIImage chat_imageNamed:@"ic_inputbox_keyboard_white"] forState:UIControlStateHighlighted];
     _keyboardButton.hidden = YES;
     [self addSubview:_keyboardButton];
     
@@ -62,11 +62,18 @@
     _inputTextView.delegate = self;
     [_inputTextView setFont:[UIFont systemFontOfSize:16]];
     [_inputTextView.layer setMasksToBounds:YES];
-    [_inputTextView.layer setCornerRadius:4.0f];
-    [_inputTextView.layer setBorderWidth:0.5f];
+    [_inputTextView.layer setCornerRadius:8.0f];
+//    [_inputTextView.layer setBorderWidth:0.5f];
     //    [_inputTextView.layer setBorderColor:[UIColor d_colorWithColorLight:TLine_Color dark:TLine_Color_Dark].CGColor];
+        
+    _inputTextView.backgroundColor = InputBarTextViewColor;
+    _inputTextView.textColor = InputBarTextColor;
+
+
     [_inputTextView setReturnKeyType:UIReturnKeySend];
     [self addSubview:_inputTextView];
+    
+
 }
 
 - (void)defaultLayout
@@ -137,14 +144,17 @@
 {
     self.keyboardButton.hidden = YES;
     self.faceButton.hidden = NO;
+    
+    textView.backgroundColor = InputBarTextViewColor;
+    textView.textColor = InputBarTextColor;
 }
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    //wwc
-    //    TUITextMessageCellData *data = [[vmbnm alloc] initWithDirection:MsgDirectionOutgoing];
-    //    data.content = textView.text;
-    //    textView.attributedText = data.attributedString;
+    
+    if(_delegate && [_delegate respondsToSelector:@selector(inputBarTextViewDidChange:)]) {
+        [_delegate inputBarTextViewDidChange:self];
+    }
     
     CGSize size = [_inputTextView sizeThatFits:CGSizeMake(_inputTextView.frame.size.width, TTextView_TextView_Height_Max)];
     CGFloat oldHeight = _inputTextView.frame.size.height;
@@ -167,6 +177,7 @@
         ws.inputTextView.frame = textFrame;
         [ws layoutButton:newHeight + 2 * TTextView_Margin];
     }];
+     
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text

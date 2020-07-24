@@ -68,6 +68,8 @@
 		F553E19B24CA8DE200DA5625 /* NSAttributedString+FaceString.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E19424CA8DE200DA5625 /* NSAttributedString+FaceString.m */; };
 		F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E19924CA8DE200DA5625 /* FaceAttachment.m */; };
 		F553E1A124CA8F9B00DA5625 /* ChatMessageData.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1A024CA8F9B00DA5625 /* ChatMessageData.m */; };
+		F553E1E124CAC69F00DA5625 /* IMMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1E024CAC69F00DA5625 /* IMMessageCell.m */; };
+		F553E1E424CAC97C00DA5625 /* ZYFaceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1E324CAC97C00DA5625 /* ZYFaceHelper.m */; };
 		F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */; };
 		F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB024C6C11C007D452E /* WCollectionViewCell.m */; };
 		F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */; };
@@ -247,6 +249,10 @@
 		F553E19924CA8DE200DA5625 /* FaceAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceAttachment.m; sourceTree = "<group>"; };
 		F553E19F24CA8F9B00DA5625 /* ChatMessageData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMessageData.h; sourceTree = "<group>"; };
 		F553E1A024CA8F9B00DA5625 /* ChatMessageData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMessageData.m; sourceTree = "<group>"; };
+		F553E1DF24CAC69F00DA5625 /* IMMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IMMessageCell.h; sourceTree = "<group>"; };
+		F553E1E024CAC69F00DA5625 /* IMMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IMMessageCell.m; sourceTree = "<group>"; };
+		F553E1E224CAC97C00DA5625 /* ZYFaceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZYFaceHelper.h; sourceTree = "<group>"; };
+		F553E1E324CAC97C00DA5625 /* ZYFaceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZYFaceHelper.m; sourceTree = "<group>"; };
 		F5668FAC24C6C0B9007D452E /* WCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewController.h; sourceTree = "<group>"; };
 		F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCollectionViewController.m; sourceTree = "<group>"; };
 		F5668FAF24C6C11C007D452E /* WCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewCell.h; sourceTree = "<group>"; };
@@ -553,13 +559,6 @@
 			path = TagLIst;
 			sourceTree = "<group>";
 		};
-		F553E18224CA8B5300DA5625 /* New Group model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group model";
-			sourceTree = "<group>";
-		};
 		F553E18C24CA8D1100DA5625 /* Face */ = {
 			isa = PBXGroup;
 			children = (
@@ -567,6 +566,8 @@
 				F553E19924CA8DE200DA5625 /* FaceAttachment.m */,
 				F553E19724CA8DE200DA5625 /* NSAttributedString+FaceString.h */,
 				F553E19424CA8DE200DA5625 /* NSAttributedString+FaceString.m */,
+				F553E1E224CAC97C00DA5625 /* ZYFaceHelper.h */,
+				F553E1E324CAC97C00DA5625 /* ZYFaceHelper.m */,
 			);
 			path = Face;
 			sourceTree = "<group>";
@@ -596,10 +597,11 @@
 		F57B529D24C7DEB100940696 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F553E1DF24CAC69F00DA5625 /* IMMessageCell.h */,
+				F553E1E024CAC69F00DA5625 /* IMMessageCell.m */,
 				F57B52AE24C7E86F00940696 /* Input */,
 				F553E1A224CA938300DA5625 /* VC */,
 				F553E18C24CA8D1100DA5625 /* Face */,
-				F553E18224CA8B5300DA5625 /* New Group model */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -881,6 +883,7 @@
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
+				F553E1E424CAC97C00DA5625 /* ZYFaceHelper.m in Sources */,
 				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,
 				F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */,
 				F553E12A24CA800200DA5625 /* InputController.m in Sources */,
@@ -902,6 +905,7 @@
 				67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */,
 				A479989224BAEBCE0079F72D /* SmallBigCollectionViewCell.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
+				F553E1E124CAC69F00DA5625 /* IMMessageCell.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,

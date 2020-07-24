@@ -8,6 +8,7 @@
 
 #import "IMMessageCell.h"
 #import <YYKit/YYKit.h>
+#import "ChatHeader.h"
 
 @interface IMMessageCell ()
 
@@ -21,19 +22,24 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-//        _content = [[UILabel alloc] init];
-//        _content.numberOfLines = 0;
-//        [self.bubbleView addSubview:_content];
-        
-        
+        //        _content = [[UILabel alloc] init];
+        //        _content.numberOfLines = 0;
+        //        [self.bubbleView addSubview:_content];
+        self.contentView.backgroundColor = [UIColor clearColor];
+        self.backgroundColor = [UIColor clearColor];
+
         _bubbleView = [[UIImageView alloc] initWithFrame:CGRectZero];
-        [self.contentView addSubview:_bubbleView];
-//        _bubbleView.mm_fill();
-//        _bubbleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        _bubbleView.layer.cornerRadius = 8;
         
-         _content = [[UILabel alloc] init];
-                _content.numberOfLines = 0;
-                [self.bubbleView addSubview:_content];
+        [self.contentView addSubview:_bubbleView];
+        //        _bubbleView.mm_fill();
+        //        _bubbleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+        _content = [[UILabel alloc] init];
+//        _content.font = [UIFont systemFontOfSize:12.0];
+//        _content.textColor = ChatTextColor;
+        _content.numberOfLines = 0;
+        [self.bubbleView addSubview:_content];
     }
     return self;
 }
@@ -50,21 +56,26 @@
 }
 
 
-- (void)fillWithData:(TUITextMessageCellData *)data;
+- (void)fillWithData:(ChatMessageData *)data
 {
-  
+    
     self.content.attributedText = data.attributedString;
-    self.content.frame = CGRectMake(0, 0, 100, 55);
-  
+    
+    self.bubbleView.backgroundColor = [UIColor grayColor];
+    
+    
+    self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
+    self.content.frame = CGRectMake(data.textOrigin.x, data.textOrigin.y,data.textSize.width,  data.textSize.height);
+    
 }
+
 -(UILabel *)content{
     if (!_content) {
         _content = [[UILabel alloc]init];
-        [self.contentView addSubview:_content];
     }
     return _content;
     
 }
- 
+
 
 @end

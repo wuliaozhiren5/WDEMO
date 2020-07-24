@@ -12,11 +12,11 @@
  ******************************************************************************/
 #import <UIKit/UIKit.h>
 //#import "TUIMessageCell.h"
+#import "ChatMessageData.h"
 
 
 //@class TUIConversationCellData;
 @class MessageController;
-@class TUIMessageCellData;
 
 
 ///////////////////////////////////////////////////////////////////////////////////
@@ -130,7 +130,7 @@
  *
  *  @param msg 消息单元数据
  */
-- (void)sendMessage:(TUIMessageCellData *)msg;
+- (void)sendMessage:(ChatMessageData *)msg;
 //
 ///**
 // *  滚动至底部

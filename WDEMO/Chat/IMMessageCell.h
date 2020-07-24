@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TUITextMessageCellData.h"
+#import "ChatMessageData.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface IMMessageCell : UITableViewCell
 
-- (void)fillWithData:(TUITextMessageCellData *)data;
+- (void)fillWithData:(ChatMessageData *)data;
 
 @end
 

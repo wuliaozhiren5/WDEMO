@@ -58,7 +58,6 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 {
 //    self.view.backgroundColor = [UIColor d_colorWithColorLight:TInput_Background_Color dark:TInput_Background_Color_Dark];
     _status = Input_Status_Input;
-
     _inputBar = [[InputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
     _inputBar.delegate = self;
     [self.view addSubview:_inputBar];
@@ -113,6 +112,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 - (void)showFaceAnimation
 {
     [self.view addSubview:self.faceView];
+    [_faceView showButton:_inputBar.inputTextView.text];
   
     self.faceView.hidden = NO;
     CGRect frame = self.faceView.frame;
@@ -170,6 +170,11 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
         [_delegate inputController:self didChangeHeight:self.view.frame.size.height + offset];
     }
+}
+- (void)inputBarTextViewDidChange:(InputBar *)textView {
+    NSString *str = textView.inputTextView.text;
+    [_faceView showButton:str];
+    
 }
 
 - (void)inputBar:(InputBar *)textView didSendText:(NSString *)text

@@ -9,7 +9,8 @@
 #import "FaceView.h"
 #import "FaceCell.h"
 #import "ChatHeader.h"
- 
+#import "UIImage+ChatKit.h"
+
 
 @implementation TFaceGroup
 @end
@@ -74,26 +75,51 @@
 //    _pageControl.pageIndicatorTintColor = [UIColor d_colorWithColorLight:TPage_Color dark:TPage_Color_Dark];
     [self addSubview:_pageControl];
     
-    
-    _sendMessageBtn= [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 40, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [_sendMessageBtn setTitle:@"send" forState:UIControlStateNormal];
+    _sendMessageBtn= [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 40)];
+    [_sendMessageBtn setTitle:@"发送" forState:UIControlStateNormal];
     _sendMessageBtn.backgroundColor = [UIColor grayColor];
     [_sendMessageBtn addTarget:self action:@selector(clickSendMessageBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_sendMessageBtn];
     
-    
-    
-    _deleteBtn= [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 40, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [_deleteBtn setTitle:@"delete" forState:UIControlStateNormal];
-    _deleteBtn.backgroundColor = [UIColor grayColor];
+    _deleteBtn= [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 50, 40)];
     [_deleteBtn addTarget:self action:@selector(clickDeleteBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_deleteBtn];
     
-    
+    _sendMessageBtn.titleLabel.font = [UIFont systemFontOfSize:15];
+    _sendMessageBtn.layer.masksToBounds = YES;
+    _sendMessageBtn.layer.cornerRadius = 5;
+    _sendMessageBtn.backgroundColor = InputBarTextViewColor;
+    _deleteBtn.layer.masksToBounds = YES;
+    _deleteBtn.layer.cornerRadius = 5;
+    _deleteBtn.backgroundColor = InputBarTextViewColor;
+  
 }
 
+- (void)showButton:(NSString *)str {
+  
+    BOOL flag;
+    if (str.length>0) {
+        flag =YES;
+     }else {
+         flag =NO;
+     }
+    
+    if (!flag) {
+         //不可以删状态
+         [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete_noclickable@2x"] forState:UIControlStateNormal];
+         [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete_noclickable@2x"] forState:UIControlStateHighlighted];
+         [_sendMessageBtn setTitleColor:FaceButtonTextNoAvailable forState:UIControlStateNormal];
+          _sendMessageBtn.backgroundColor = FaceButtonBackGroundNoAvailable;
+    }else{
+        //    //可以删状态
+        [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete@2x"] forState:UIControlStateNormal];
+        [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete@2x"] forState:UIControlStateHighlighted];
+        
+        [_sendMessageBtn setTitleColor:FaceButtonTextAvailable forState:UIControlStateNormal];
+        _sendMessageBtn.backgroundColor = FaceButtonBackGroundAvailable;
+    }
+    
+}
 
 
 
@@ -108,9 +134,9 @@
     
     
     
-    _sendMessageBtn.frame = CGRectMake(self.frame.size.width - TFaceView_Margin - 40, self.frame.size.height - TFaceView_Margin - 40 , 40, 40);
+    _sendMessageBtn.frame = CGRectMake(self.frame.size.width - TFaceView_Margin - 60, self.frame.size.height - TFaceView_Margin - 40 , 60, 40);
     
-    _deleteBtn.frame = CGRectMake(_sendMessageBtn.frame.origin.x - TFaceView_Margin - 40 , self.frame.size.height - TFaceView_Margin - 40, 40, 40);
+    _deleteBtn.frame = CGRectMake(_sendMessageBtn.frame.origin.x - TFaceView_Margin - 50 , self.frame.size.height - TFaceView_Margin - 40, 50, 40);
     
     
 }
