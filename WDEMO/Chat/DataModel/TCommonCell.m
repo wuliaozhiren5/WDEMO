@@ -7,8 +7,8 @@
 
 #import "TCommonCell.h"
 //#import "MMLayout/UIView+MMLayout.h"
-#import "UIColor+TUIDarkMode.h"
-#import "THeader.h"
+ 
+#import "ChatHeader.h"
 
 @implementation TCommonCellData
 
@@ -33,10 +33,16 @@
         _tapRecognizer.delegate = self;
         _tapRecognizer.cancelsTouchesInView = NO;
 
-        _colorWhenTouched = [UIColor d_colorWithColorLight:TCell_Touched dark:TCell_Touched_Dark];
+//        _colorWhenTouched = [UIColor d_colorWithColorLight:TCell_Touched dark:TCell_Touched_Dark];
+        
+//        self.backgroundColor = [UIColor TCell_Touched];
+
         _changeColorWhenTouched = NO;
         
-        self.backgroundColor = [UIColor d_colorWithColorLight:TCell_Nomal dark:TCell_Nomal_Dark];
+//        self.backgroundColor = [UIColor d_colorWithColorLight:TCell_Nomal dark:TCell_Nomal_Dark];
+    
+//        self.backgroundColor = [UIColor TCell_Touched];
+
     }
     return self;
 }
@@ -75,13 +81,13 @@
 
 -(void) touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     if(self.changeColorWhenTouched){
-        self.backgroundColor = [UIColor d_colorWithColorLight:TCell_Nomal dark:TCell_Nomal_Dark];
+//        self.backgroundColor = [UIColor d_colorWithColorLight:TCell_Nomal dark:TCell_Nomal_Dark];
     }
 }
 
 -(void) touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     if(self.changeColorWhenTouched){
-        self.backgroundColor = [UIColor d_colorWithColorLight:TCell_Nomal dark:TCell_Nomal_Dark];
+//        self.backgroundColor = [UIColor d_colorWithColorLight:TCell_Nomal dark:TCell_Nomal_Dark];
     }
 }
 

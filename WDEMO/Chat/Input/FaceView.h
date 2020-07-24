@@ -24,14 +24,6 @@
 
 @protocol TFaceViewDelegate <NSObject>
 
-/**
- *  滑动到指定表情分组后的回调。
- *  您可以通过该回调响应使用者的滑动操作，进而更新表情视图的信息，展示出新表情组内的表情。
- *
- *  @param faceView 委托者，表情视图。通常情况下表情视图只有且只有一个。
- *  @param index 滑动的目的组号索引。
- */
-- (void)faceView:(FaceView *)faceView scrollToFaceGroupIndex:(NSInteger)index;
 
 /**
  *  选择某一具体表情后的回调（索引定位）。
@@ -49,6 +41,8 @@
  *  @param faceView 委托者，表情视图，通常情况下表情视图只有且只有一个。
  */
 - (void)faceViewDidBackDelete:(FaceView *)faceView;
+
+- (void)faceViewSendMessage:(FaceView *)faceView;
 @end
 
 
@@ -130,7 +124,8 @@
  *  在视图中的分界线，使得表情视图与其他视图在视觉上区分，从而让表情视图在显示逻辑上更加清晰有序。
  */
 @property (nonatomic, strong) UIView *lineView;
-
+@property (nonatomic, strong) UIButton *sendMessageBtn;
+@property (nonatomic, strong) UIButton *deleteBtn;
 /**
  *  表情视图的 CollectionView
  *  包含多行表情，并配合 faceFlowLayout 进行灵活统一的视图布局。
@@ -170,4 +165,5 @@
  *  @param data 需要设置的数据（TFaceGroup）。在此 NSMutableArray 中存放的对象为 TFaceGroup，即表情组。
  */
 - (void)setData:(NSMutableArray *)data;
+
 @end

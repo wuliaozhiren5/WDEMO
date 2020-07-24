@@ -1,6 +1,6 @@
 //
 //  ChatViewController.m
-//  WDEMO
+//   
 //
 //  Created by rrtv on 2020/7/22.
 //  Copyright © 2020 wwc. All rights reserved.
@@ -9,7 +9,7 @@
 #import "ChatViewController.h"
 #import "ChatController.h"
 
-@interface ChatViewController ()
+@interface ChatViewController ()//<TUIChatControllerDelegate>
 
 @property (nonatomic, strong) ChatController *chat;
 
@@ -21,7 +21,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor grayColor];
-    
 //    _chat = [[RRChatController alloc] initWithConversation:self.conversationData];
     _chat = [[ChatController alloc] init];
 //    _chat.delegate = self;
@@ -39,5 +38,8 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+//- (void)chatController:(ChatController *)controller didSendMessage:(TUIMessageCellData *)msgCellData
+//{
+//    //  to do
+//}
 @end

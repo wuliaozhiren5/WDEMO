@@ -8,7 +8,7 @@
 #import "TUIImageCache.h"
 #import "THelper.h"
 #import "UIImage+TUIKIT.h"
-#import "UIImage+TUIDarkMode.h"
+ 
 
 @interface TUIImageCache()
 @property (nonatomic, strong) NSMutableDictionary *resourceCache;
@@ -23,7 +23,7 @@
     static TUIImageCache *instance;
     dispatch_once(&onceToken, ^{
         instance = [[TUIImageCache alloc] init];
-        [UIImage d_fixResizableImage];
+//        [UIImage d_fixResizableImage];
     });
     return instance;
 }
@@ -32,32 +32,13 @@
 {
     self = [super init];
     if (self) {
-        _resourceCache = [NSMutableDictionary dictionary];
+//        _resourceCache = [NSMutableDictionary dictionary];
         _faceCache = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
-- (void)addResourceToCache:(NSString *)path
-{
-    __weak typeof(self) ws = self;
-    [THelper asyncDecodeImage:path complete:^(NSString *key, UIImage *image) {
-        __strong __typeof(ws) strongSelf = ws;
-        [strongSelf.resourceCache setValue:image forKey:key];
-    }];
-}
-
-- (UIImage *)getResourceFromCache:(NSString *)path
-{
-    if(path.length == 0){
-        return nil;
-    }
-    UIImage *image = [_resourceCache objectForKey:path];
-    if(!image){
-        image = [UIImage tk_imagePath:path];
-    }
-    return image;
-}
+ 
 
 - (void)addFaceToCache:(NSString *)path
 {

@@ -23,19 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)sharedInstance;
 
-/**
- *  将图像资源添加进本地缓存中
- *
- *  @param path 本地缓存所在路径
- */
-- (void)addResourceToCache:(NSString *)path;
-
-/**
- *  从本地缓存获取图像资源
- *
- *  @param path 本地缓存所在路径
- */
-- (UIImage *)getResourceFromCache:(NSString *)path;
+ 
 
 /**
  *  将表情添加进本地缓存中

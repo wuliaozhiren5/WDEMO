@@ -8,8 +8,8 @@
 #import "TUIBubbleMessageCell.h"
 #import "FaceView.h"
 #import "FaceCell.h"
-#import "THeader.h"
-#import "TUIKit.h"
+#import "ChatHeader.h"
+#import "ChatKit.h"
 #import "THelper.h"
 #import "UIView+MMLayout.h"
 

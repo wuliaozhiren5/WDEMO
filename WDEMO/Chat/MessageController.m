@@ -17,7 +17,7 @@
 //#import "TUIJoinGroupMessageCell.h"
 //#import "TUIKitConfig.h"
 //#import "TUIFaceView.h"
-//#import "THeader.h"
+//#import "ChatHeader.h"
 //#import "TUIKit.h"
 //#import "THelper.h"
 //#import "TUIConversationCellData.h"
@@ -30,8 +30,11 @@
 //#import "MMLayout/UIView+MMLayout.h"
 //#import "TIMMessage+DataProvider.h"
 //#import "TUIUserProfileControllerServiceProtocol.h"
-#import "UIColor+TUIDarkMode.h"
-#import "THeader.h"
+
+
+
+ 
+#import "ChatHeader.h"
 #import "TUIMessageCell.h"
 #import "TUITextMessageCellData.h"
 #import "TUITextMessageCell.h"
@@ -68,7 +71,7 @@
 {
     [super viewDidLoad];
     [self setupViews];
-//    self.isActive = YES;
+    //    self.isActive = YES;
 }
 
 
@@ -79,15 +82,15 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    self.isInVC = YES;
-//    [self readedReport];
+    //    self.isInVC = YES;
+    //    [self readedReport];
     [super viewWillAppear:animated];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
 {
-//    self.isInVC = NO;
-//    [self readedReport];
+    //    self.isInVC = NO;
+    //    [self readedReport];
     [super viewWillDisappear:animated];
 }
 //
@@ -126,39 +129,39 @@
 //
 - (void)setupViews
 {
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnterBackground) name: UIApplicationDidEnterBackgroundNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNewMessage:) name:TUIKitNotification_TIMMessageListener object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRevokeMessage:) name:TUIKitNotification_TIMMessageRevokeListener object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRecvMessageReceipts:) name:TUIKitNotification_onRecvMessageReceipts object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationDidBecomeActiveNotification object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationBecomeActive) name:UIApplicationWillEnterForegroundNotification object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationEnterBackground) name: UIApplicationDidEnterBackgroundNotification object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNewMessage:) name:TUIKitNotification_TIMMessageListener object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onRevokeMessage:) name:TUIKitNotification_TIMMessageRevokeListener object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didRecvMessageReceipts:) name:TUIKitNotification_onRecvMessageReceipts object:nil];
     
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapViewController)];
     [self.view addGestureRecognizer:tap];
     
     self.tableView.estimatedRowHeight = 0;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    self.tableView.backgroundColor = [UIColor d_colorWithColorLight:TController_Background_Color dark:TController_Background_Color_Dark];
-//
+//    self.tableView.backgroundColor = [UIColor d_colorWithColorLight:TController_Background_Color dark:TController_Background_Color_Dark];
+    //
     [self.tableView registerClass:[TUITextMessageCell class] forCellReuseIdentifier:TTextMessageCell_ReuseId];
-//    [self.tableView registerClass:[TUIVoiceMessageCell class] forCellReuseIdentifier:TVoiceMessageCell_ReuseId];
-//    [self.tableView registerClass:[TUIImageMessageCell class] forCellReuseIdentifier:TImageMessageCell_ReuseId];
-//    [self.tableView registerClass:[TUISystemMessageCell class] forCellReuseIdentifier:TSystemMessageCell_ReuseId];
+    //    [self.tableView registerClass:[TUIVoiceMessageCell class] forCellReuseIdentifier:TVoiceMessageCell_ReuseId];
+    //    [self.tableView registerClass:[TUIImageMessageCell class] forCellReuseIdentifier:TImageMessageCell_ReuseId];
+    //    [self.tableView registerClass:[TUISystemMessageCell class] forCellReuseIdentifier:TSystemMessageCell_ReuseId];
     [self.tableView registerClass:[TUIFaceMessageCell class] forCellReuseIdentifier:TFaceMessageCell_ReuseId];
-//    [self.tableView registerClass:[TUIVideoMessageCell class] forCellReuseIdentifier:TVideoMessageCell_ReuseId];
-//    [self.tableView registerClass:[TUIFileMessageCell class] forCellReuseIdentifier:TFileMessageCell_ReuseId];
-//    [self.tableView registerClass:[TUIJoinGroupMessageCell class] forCellReuseIdentifier:TJoinGroupMessageCell_ReuseId];
-
+    //    [self.tableView registerClass:[TUIVideoMessageCell class] forCellReuseIdentifier:TVideoMessageCell_ReuseId];
+    //    [self.tableView registerClass:[TUIFileMessageCell class] forCellReuseIdentifier:TFileMessageCell_ReuseId];
+    //    [self.tableView registerClass:[TUIJoinGroupMessageCell class] forCellReuseIdentifier:TJoinGroupMessageCell_ReuseId];
+    
     [self.tableView registerClass:[IMMessageCell class] forCellReuseIdentifier:@"IMMessageCell"];
-   
-//
-//    _indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, TMessageController_Header_Height)];
-//    _indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-//    self.tableView.tableHeaderView = _indicatorView;
-//
+    
+    //
+    //    _indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, TMessageController_Header_Height)];
+    //    _indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    //    self.tableView.tableHeaderView = _indicatorView;
+    //
     _heightCache = [NSMutableArray array];
     _uiMsgs = [[NSMutableArray alloc] init];
-//    _firstLoad = YES;
+    //    _firstLoad = YES;
 }
 //
 //- (void)setConversation:(TUIConversationCellData *)conversationData
@@ -343,7 +346,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _uiMsgs.count;
 }
- 
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CGFloat height = 0;
@@ -360,66 +363,66 @@
     TUIMessageCellData *data = _uiMsgs[indexPath.row];
     TUIMessageCell *cell = nil;
     
-    IMMessageCell *messageCell = nil;
-
-//    if ([self.delegate respondsToSelector:@selector(messageController:onShowMessageData:)]) {
-////        cell = [self.delegate messageController:self onShowMessageData:data];
-//        if (cell) {
-//            cell.delegate = self;
-//            return cell;
-//        }
-//    }
+        IMMessageCell *messageCell = nil;
+    
+    //    if ([self.delegate respondsToSelector:@selector(messageController:onShowMessageData:)]) {
+    ////        cell = [self.delegate messageController:self onShowMessageData:data];
+    //        if (cell) {
+    //            cell.delegate = self;
+    //            return cell;
+    //        }
+    //    }
     if (!data.reuseId) {
-         
-        if([data isKindOfClass:[TUITextMessageCellData class]]) {
-                   data.reuseId = @"IMMessageCell";
-               }
+        
+                if([data isKindOfClass:[TUITextMessageCellData class]]) {
+                           data.reuseId = @"IMMessageCell";
+                       }
 //        if([data isKindOfClass:[TUITextMessageCellData class]]) {
 //            data.reuseId = TTextMessageCell_ReuseId;
 //        }
         else if([data isKindOfClass:[TUIFaceMessageCellData class]]) {
             data.reuseId = TFaceMessageCell_ReuseId;
         }
-//        else if([data isKindOfClass:[TUIImageMessageCellData class]]) {
-//            data.reuseId = TImageMessageCell_ReuseId;
-//        }
-//        else if([data isKindOfClass:[TUIVideoMessageCellData class]]) {
-//            data.reuseId = TVideoMessageCell_ReuseId;
-//        }
-//        else if([data isKindOfClass:[TUIVoiceMessageCellData class]]) {
-//            data.reuseId = TVoiceMessageCell_ReuseId;
-//        }
-//        else if([data isKindOfClass:[TUIFileMessageCellData class]]) {
-//            data.reuseId = TFileMessageCell_ReuseId;
-//        }
-//        else if([data isKindOfClass:[TUIJoinGroupMessageCellData class]]){//入群小灰条对应的数据源
-//            data.reuseId = TJoinGroupMessageCell_ReuseId;
-//        }
-//        else if([data isKindOfClass:[TUISystemMessageCellData class]]) {
-//            data.reuseId = TSystemMessageCell_ReuseId;
-//        }
+        //        else if([data isKindOfClass:[TUIImageMessageCellData class]]) {
+        //            data.reuseId = TImageMessageCell_ReuseId;
+        //        }
+        //        else if([data isKindOfClass:[TUIVideoMessageCellData class]]) {
+        //            data.reuseId = TVideoMessageCell_ReuseId;
+        //        }
+        //        else if([data isKindOfClass:[TUIVoiceMessageCellData class]]) {
+        //            data.reuseId = TVoiceMessageCell_ReuseId;
+        //        }
+        //        else if([data isKindOfClass:[TUIFileMessageCellData class]]) {
+        //            data.reuseId = TFileMessageCell_ReuseId;
+        //        }
+        //        else if([data isKindOfClass:[TUIJoinGroupMessageCellData class]]){//入群小灰条对应的数据源
+        //            data.reuseId = TJoinGroupMessageCell_ReuseId;
+        //        }
+        //        else if([data isKindOfClass:[TUISystemMessageCellData class]]) {
+        //            data.reuseId = TSystemMessageCell_ReuseId;
+        //        }
         else {
             return nil;
         }
     }
-
-
+    
+    
 //    cell = [tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
 //    //对于入群小灰条，需要进一步设置其委托。
-////    if([cell isKindOfClass:[TUIJoinGroupMessageCell class]]){
-////        TUIJoinGroupMessageCell *joinCell = (TUIJoinGroupMessageCell *)cell;
-////        joinCell.joinGroupDelegate = self;
-////        cell = joinCell;
-////    }
+//    //    if([cell isKindOfClass:[TUIJoinGroupMessageCell class]]){
+//    //        TUIJoinGroupMessageCell *joinCell = (TUIJoinGroupMessageCell *)cell;
+//    //        joinCell.joinGroupDelegate = self;
+//    //        cell = joinCell;
+//    //    }
 //    cell.delegate = self;
-//     [cell fillWithData:_uiMsgs[indexPath.row]];
-//      return cell;
+//    [cell fillWithData:_uiMsgs[indexPath.row]];
+//    return cell;
     
     
-    messageCell =(IMMessageCell *)[tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
-    [messageCell fillWithData:_uiMsgs[indexPath.row]];
-
-    return messageCell;
+        messageCell =(IMMessageCell *)[tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
+        [messageCell fillWithData:_uiMsgs[indexPath.row]];
+    
+        return messageCell;
 }
 //
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -442,97 +445,97 @@
 
 - (void)sendMessage:(TUIMessageCellData *)msg
 {
-      [self.tableView beginUpdates];
-      [_uiMsgs addObject:msg];
-      [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0]]
-                            withRowAnimation:UITableViewRowAnimationFade];
-      [self.tableView endUpdates];
-      [self scrollToBottom:YES];
+    [self.tableView beginUpdates];
+    [_uiMsgs addObject:msg];
+    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0]]
+                          withRowAnimation:UITableViewRowAnimationFade];
+    [self.tableView endUpdates];
+    [self scrollToBottom:YES];
     
     
-//    [self.tableView beginUpdates];
-//    V2TIMMessage *imMsg = msg.innerMessage;
-//    TUIMessageCellData *dateMsg = nil;
-//    if (msg.status == Msg_Status_Init)
-//    {
-//        //新消息
-//        if (!imMsg) {
-//            imMsg = [self transIMMsgFromUIMsg:msg];
-//        }
-//        dateMsg = [self transSystemMsgFromDate:imMsg.timestamp];
-//
-//    } else if (imMsg) {
-//        //重发
-//        dateMsg = [self transSystemMsgFromDate:[NSDate date]];
-//        NSInteger row = [_uiMsgs indexOfObject:msg];
-//        [_heightCache removeObjectAtIndex:row];
-//        [_uiMsgs removeObjectAtIndex:row];
-//        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]]
-//                              withRowAnimation:UITableViewRowAnimationFade];
-//    } else {
-//        [self.tableView endUpdates];
-//        NSLog(@"Unknown message state");
-//        return;
-//    }
-//    // 发消息
-//    @weakify(self)
-//    [[V2TIMManager sharedInstance] sendMessage:imMsg receiver:self.conversationData.userID groupID:self.conversationData.groupID priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
-//        @strongify(self)
-//        for (TUIMessageCellData *uiMsg in self.uiMsgs) {
-//            if ([uiMsg.innerMessage.msgID isEqualToString:imMsg.msgID]) {
-//                if([uiMsg isKindOfClass:[TUIImageMessageCellData class]]){
-//                    TUIImageMessageCellData *data = (TUIImageMessageCellData *)uiMsg;
-//                    data.uploadProgress = progress;
-//                }
-//                else if([uiMsg isKindOfClass:[TUIVideoMessageCellData class]]){
-//                    TUIVideoMessageCellData *data = (TUIVideoMessageCellData *)uiMsg;
-//                    data.uploadProgress = progress;
-//                }
-//                else if([uiMsg isKindOfClass:[TUIFileMessageCellData class]]){
-//                    TUIFileMessageCellData *data = (TUIFileMessageCellData *)uiMsg;
-//                    data.uploadProgress = progress;
-//                }
-//            }
-//        }
-//    } succ:^{
-//        @strongify(self)
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self changeMsg:msg status:Msg_Status_Succ];
-//        });
-//    } fail:^(int code, NSString *desc) {
-//        @strongify(self)
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [THelper makeToastError:code msg:desc];
-//            [self changeMsg:msg status:Msg_Status_Fail];
-//        });
-//    }];
-//
-//    // 展示 UI 界面
-//    msg.status = Msg_Status_Sending;
-//    msg.name = [msg.innerMessage getShowName];
-//    msg.avatarUrl = [NSURL URLWithString:[msg.innerMessage faceURL]];
-//    if(dateMsg){
-//        _msgForDate = imMsg;
-//        [_uiMsgs addObject:dateMsg];
-//        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0]]
-//                              withRowAnimation:UITableViewRowAnimationFade];
-//    }
-//    [_uiMsgs addObject:msg];
-//    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0]]
-//                          withRowAnimation:UITableViewRowAnimationFade];
-//    [self.tableView endUpdates];
-//    [self scrollToBottom:YES];
-//
-//    int delay = 1;
-//    if([msg isKindOfClass:[TUIImageMessageCellData class]]){
-//        delay = 0;
-//    }
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        @strongify(self)
-//        if(msg.status == Msg_Status_Sending){
-//            [self changeMsg:msg status:Msg_Status_Sending_2];
-//        }
-//    });
+    //    [self.tableView beginUpdates];
+    //    V2TIMMessage *imMsg = msg.innerMessage;
+    //    TUIMessageCellData *dateMsg = nil;
+    //    if (msg.status == Msg_Status_Init)
+    //    {
+    //        //新消息
+    //        if (!imMsg) {
+    //            imMsg = [self transIMMsgFromUIMsg:msg];
+    //        }
+    //        dateMsg = [self transSystemMsgFromDate:imMsg.timestamp];
+    //
+    //    } else if (imMsg) {
+    //        //重发
+    //        dateMsg = [self transSystemMsgFromDate:[NSDate date]];
+    //        NSInteger row = [_uiMsgs indexOfObject:msg];
+    //        [_heightCache removeObjectAtIndex:row];
+    //        [_uiMsgs removeObjectAtIndex:row];
+    //        [self.tableView deleteRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]]
+    //                              withRowAnimation:UITableViewRowAnimationFade];
+    //    } else {
+    //        [self.tableView endUpdates];
+    //        NSLog(@"Unknown message state");
+    //        return;
+    //    }
+    //    // 发消息
+    //    @weakify(self)
+    //    [[V2TIMManager sharedInstance] sendMessage:imMsg receiver:self.conversationData.userID groupID:self.conversationData.groupID priority:V2TIM_PRIORITY_DEFAULT onlineUserOnly:NO offlinePushInfo:nil progress:^(uint32_t progress) {
+    //        @strongify(self)
+    //        for (TUIMessageCellData *uiMsg in self.uiMsgs) {
+    //            if ([uiMsg.innerMessage.msgID isEqualToString:imMsg.msgID]) {
+    //                if([uiMsg isKindOfClass:[TUIImageMessageCellData class]]){
+    //                    TUIImageMessageCellData *data = (TUIImageMessageCellData *)uiMsg;
+    //                    data.uploadProgress = progress;
+    //                }
+    //                else if([uiMsg isKindOfClass:[TUIVideoMessageCellData class]]){
+    //                    TUIVideoMessageCellData *data = (TUIVideoMessageCellData *)uiMsg;
+    //                    data.uploadProgress = progress;
+    //                }
+    //                else if([uiMsg isKindOfClass:[TUIFileMessageCellData class]]){
+    //                    TUIFileMessageCellData *data = (TUIFileMessageCellData *)uiMsg;
+    //                    data.uploadProgress = progress;
+    //                }
+    //            }
+    //        }
+    //    } succ:^{
+    //        @strongify(self)
+    //        dispatch_async(dispatch_get_main_queue(), ^{
+    //            [self changeMsg:msg status:Msg_Status_Succ];
+    //        });
+    //    } fail:^(int code, NSString *desc) {
+    //        @strongify(self)
+    //        dispatch_async(dispatch_get_main_queue(), ^{
+    //            [THelper makeToastError:code msg:desc];
+    //            [self changeMsg:msg status:Msg_Status_Fail];
+    //        });
+    //    }];
+    //
+    //    // 展示 UI 界面
+    //    msg.status = Msg_Status_Sending;
+    //    msg.name = [msg.innerMessage getShowName];
+    //    msg.avatarUrl = [NSURL URLWithString:[msg.innerMessage faceURL]];
+    //    if(dateMsg){
+    //        _msgForDate = imMsg;
+    //        [_uiMsgs addObject:dateMsg];
+    //        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0]]
+    //                              withRowAnimation:UITableViewRowAnimationFade];
+    //    }
+    //    [_uiMsgs addObject:msg];
+    //    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0]]
+    //                          withRowAnimation:UITableViewRowAnimationFade];
+    //    [self.tableView endUpdates];
+    //    [self scrollToBottom:YES];
+    //
+    //    int delay = 1;
+    //    if([msg isKindOfClass:[TUIImageMessageCellData class]]){
+    //        delay = 0;
+    //    }
+    //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    //        @strongify(self)
+    //        if(msg.status == Msg_Status_Sending){
+    //            [self changeMsg:msg status:Msg_Status_Sending_2];
+    //        }
+    //    });
 }
 //
 //- (void)changeMsg:(TUIMessageCellData *)msg status:(TMsgStatus)status

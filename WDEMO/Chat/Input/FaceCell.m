@@ -7,8 +7,9 @@
 //
 
 #import "FaceCell.h"
-#import "TUIKit.h"
+#import "ChatKit.h" 
 #import "TUIImageCache.h"
+
 
 @implementation TFaceCellData
 @end

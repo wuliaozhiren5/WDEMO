@@ -8,7 +8,7 @@
 
 #import "THelper.h"
 //#import "EMVoiceConverter.h"
-#import "TUIKit.h"
+#import "ChatKit.h"
 //#import "Toast/Toast.h"
 //#import "TUIError.h"
 #import "SDWebImage/UIImage+GIF.h"
@@ -18,78 +18,7 @@
 
 @implementation THelper
 
-
-//+ (NSString *)genImageName:(NSString *)uuid
-//{
-//    NSInteger sdkAppId = [TUIKit sharedInstance].sdkAppId;
-//    NSString *identifier = [[V2TIMManager sharedInstance] getLoginUser];
-//    if(uuid == nil){
-//        uuid = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
-//    }
-//    NSString *name = [NSString stringWithFormat:@"%ld_%@_image_%@", (long)sdkAppId, identifier, uuid];
-//    return name;
-//}
-//
-//+ (NSString *)genSnapshotName:(NSString *)uuid
-//{
-//    NSInteger sdkAppId = [TUIKit sharedInstance].sdkAppId;
-//    NSString *identifier = [[V2TIMManager sharedInstance] getLoginUser];
-//    if(uuid == nil){
-//        uuid = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
-//    }
-//    NSString *name = [NSString stringWithFormat:@"%ld_%@_snapshot_%@", (long)sdkAppId, identifier, uuid];
-//    return name;
-//}
-//
-//+ (NSString *)genVideoName:(NSString *)uuid
-//{
-//    NSInteger sdkAppId = [TUIKit sharedInstance].sdkAppId;
-//    NSString *identifier = [[V2TIMManager sharedInstance] getLoginUser];
-//    if(uuid == nil){
-//        uuid = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
-//    }
-//    NSString *name = [NSString stringWithFormat:@"%ld_%@_video_%@", (long)sdkAppId, identifier, uuid];
-//    return name;
-//}
-//
-//
-//+ (NSString *)genVoiceName:(NSString *)uuid withExtension:(NSString *)extent
-//{
-//    NSInteger sdkAppId = [TUIKit sharedInstance].sdkAppId;
-//    NSString *identifier = [[V2TIMManager sharedInstance] getLoginUser];
-//    if(uuid == nil){
-//        uuid = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
-//    }
-//    NSString *name = [NSString stringWithFormat:@"%ld_%@_voice_%@.%@", (long)sdkAppId, identifier, uuid, extent];
-//    return name;
-//}
-//
-//+ (NSString *)genFileName:(NSString *)uuid
-//{
-//    NSInteger sdkAppId = [TUIKit sharedInstance].sdkAppId;
-//    NSString *identifier = [[V2TIMManager sharedInstance] getLoginUser];
-//    if(uuid == nil){
-//        uuid = [NSString stringWithFormat:@"%ld", (long)[[NSDate date] timeIntervalSince1970]];
-//    }
-//    NSString *name = [NSString stringWithFormat:@"%ld_%@_file_%@", (long)sdkAppId, identifier, uuid];
-//    return name;
-//}
-//
-//+ (BOOL)isAmr:(NSString *)path
-//{
-//    return [EMVoiceConverter isAMRFile:path];
-//}
-//
-//+ (BOOL)convertAmr:(NSString*)amrPath toWav:(NSString*)wavPath
-//{
-//    return [EMVoiceConverter amrToWav:amrPath wavSavePath:wavPath];
-//}
-//
-//+ (BOOL)convertWav:(NSString*)wavPath toAmr:(NSString*)amrPath
-//{
-//    return [EMVoiceConverter wavToAmr:wavPath amrSavePath:amrPath];
-//}
-
+ 
 
 + (void)asyncDecodeImage:(NSString *)path complete:(TAsyncImageComplete)complete
 {
@@ -167,30 +96,7 @@
         }
     });
 }
+ 
 
-//+ (void)makeToast:(NSString *)str
-//{
-//    [[UIApplication sharedApplication].keyWindow makeToast:str];
-//}
-//
-//+ (void)makeToastError:(NSInteger)error msg:(NSString *)msg
-//{
-//    [[UIApplication sharedApplication].keyWindow makeToast:[TUIError strError:error msg:msg]];
-//}
-//
-//+ (void)makeToastActivity
-//{
-//    [[UIApplication sharedApplication].keyWindow makeToastActivity:CSToastPositionCenter];
-//}
-//
-//+ (void)hideToastActivity
-//{
-//    [[UIApplication sharedApplication].keyWindow hideToastActivity];
-//}
-
-+ (NSString *)randAvatarUrl
-{
-    return [NSString stringWithFormat:@"https://picsum.photos/id/%d/200/200", rand()%999];
-}
 
 @end

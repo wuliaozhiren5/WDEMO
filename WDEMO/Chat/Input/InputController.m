@@ -7,11 +7,11 @@
 //
 
 #import "InputController.h"
-#import "MenuCell.h"
 #import "FaceCell.h"
-#import "THeader.h"
-#import "TUIKit.h"
+#import "ChatHeader.h"
+#import "ChatKit.h"
 #import "TUITextMessageCellData.h"
+#import "NSAttributedString+zy_string.h"
 
 typedef NS_ENUM(NSUInteger, InputStatus) {
     Input_Status_Input,
@@ -21,8 +21,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     Input_Status_Input_Talk,
 };
 
-@interface InputController () <TTextViewDelegate, TMenuViewDelegate, TFaceViewDelegate>
-////<TTextViewDelegate, TMenuViewDelegate, TFaceViewDelegate, TMoreViewDelegate>
+@interface InputController () <TTextViewDelegate, TFaceViewDelegate>
 @property (nonatomic, assign) InputStatus status;
 @end
 
@@ -100,18 +99,14 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 {
     self.faceView.hidden = NO;
     self.faceView.alpha = 1.0;
-    self.menuView.hidden = NO;
-    self.menuView.alpha = 1.0;
+  
     __weak typeof(self) ws = self;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         ws.faceView.alpha = 0.0;
-        ws.menuView.alpha = 0.0;
-    } completion:^(BOOL finished) {
+     } completion:^(BOOL finished) {
         ws.faceView.hidden = YES;
         ws.faceView.alpha = 1.0;
-        ws.menuView.hidden = YES;
-        ws.menuView.alpha = 1.0;
-        [ws.menuView removeFromSuperview];
+        
         [ws.faceView removeFromSuperview];
     }];
 }
@@ -119,66 +114,27 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 - (void)showFaceAnimation
 {
     [self.view addSubview:self.faceView];
-    [self.view addSubview:self.menuView];
-
+  
     self.faceView.hidden = NO;
     CGRect frame = self.faceView.frame;
     frame.origin.y = Screen_Height;
     self.faceView.frame = frame;
-
-    self.menuView.hidden = NO;
-    frame = self.menuView.frame;
+ 
     frame.origin.y = self.faceView.frame.origin.y + self.faceView.frame.size.height;
-    self.menuView.frame = frame;
-
+ 
     __weak typeof(self) ws = self;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         CGRect newFrame = ws.faceView.frame;
         newFrame.origin.y = ws.inputBar.frame.origin.y + ws.inputBar.frame.size.height;
         ws.faceView.frame = newFrame;
 
-        newFrame = ws.menuView.frame;
-        newFrame.origin.y = ws.faceView.frame.origin.y + ws.faceView.frame.size.height;
-        ws.menuView.frame = newFrame;
-    } completion:nil];
+         newFrame.origin.y = ws.faceView.frame.origin.y + ws.faceView.frame.size.height;
+     } completion:nil];
 }
 
- 
-
-
-//- (void)inputBarDidTouchVoice:(TUIInputBar *)textView
-//{
-//    if(_status == Input_Status_Input_Talk){
-//        return;
-//    }
-//    [_inputBar.inputTextView resignFirstResponder];
-//    [self hideFaceAnimation];
-//    [self hideMoreAnimation];
-//    _status = Input_Status_Input_Talk;
-//    if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
-//        [_delegate inputController:self didChangeHeight:TTextView_Height + Bottom_SafeHeight];
-//    }
-//}
-//
-//- (void)inputBarDidTouchMore:(TUIInputBar *)textView
-//{
-//    if(_status == Input_Status_Input_More){
-//        return;
-//    }
-//    if(_status == Input_Status_Input_Face){
-//        [self hideFaceAnimation];
-//    }
-//    [_inputBar.inputTextView resignFirstResponder];
-//    [self showMoreAnimation];
-//    _status = Input_Status_Input_More;
-//    if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
-//        [_delegate inputController:self didChangeHeight:_inputBar.frame.size.height + self.moreView.frame.size.height + Bottom_SafeHeight];
-//    }
-//}
-//
 - (void)inputBarDidTouchFace:(InputBar *)textView
 {
-    if([TUIKit sharedInstance].config.faceGroups.count == 0){
+    if([ChatKit sharedInstance].config.faceGroups.count == 0){
         return;
     }
     if(_status == Input_Status_Input_More){
@@ -188,7 +144,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     [self showFaceAnimation];
     _status = Input_Status_Input_Face;
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
-        [_delegate inputController:self didChangeHeight:_inputBar.frame.size.height + self.faceView.frame.size.height + self.menuView.frame.size.height + Bottom_SafeHeight];
+        [_delegate inputController:self didChangeHeight:_inputBar.frame.size.height + self.faceView.frame.size.height  + Bottom_SafeHeight];
     }
 }
 
@@ -227,21 +183,6 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
 }
 
-- (void)inputBar:(InputBar *)textView didSendVoice:(NSString *)path
-{
-//    NSURL *url = [NSURL fileURLWithPath:path];
-//    AVURLAsset *audioAsset = [AVURLAsset URLAssetWithURL:url options:nil];
-//    int duration = (int)CMTimeGetSeconds(audioAsset.duration);
-//    int length = (int)[[[NSFileManager defaultManager] attributesOfItemAtPath:path error:nil] fileSize];
-//
-//    TUIVoiceMessageCellData *voice = [[TUIVoiceMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
-//    voice.path = path;
-//    voice.duration = duration;
-//    voice.length = length;
-//    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
-//        [_delegate inputController:self didSendMessage:voice];
-//    }
-}
 
 - (void)reset
 {
@@ -261,52 +202,42 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
 }
 
-- (void)menuView:(MenuView *)menuView didSelectItemAtIndex:(NSInteger)index
-{
-    [self.faceView scrollToFaceGroupIndex:index];
-}
 
-- (void)menuViewDidSendMessage:(MenuView *)menuView
-{
-//    NSString *text = [_inputBar getInput];
-//    if([text isEqualToString:@""]){
-//        return;
-//    }
-//    [_inputBar clearInput];
-//    TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
-//    data.content = text;
-//    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
-//        [_delegate inputController:self didSendMessage:data];
-//    }
-}
 
 - (void)faceView:(FaceView *)faceView scrollToFaceGroupIndex:(NSInteger)index
 {
-    [self.menuView scrollToMenuIndex:index];
+//    [self.menuView scrollToMenuIndex:index];
 }
 
 - (void)faceViewDidBackDelete:(FaceView *)faceView
 {
     [_inputBar backDelete];
 }
+- (void)faceViewSendMessage:(FaceView *)faceView
+{
+    NSString *text =  [_inputBar.inputTextView.attributedText toString];
+    if([text isEqualToString:@""]){
+        return;
+    }
+    [_inputBar clearInput];
+    TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
+    data.content = text;
+    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
+        [_delegate inputController:self didSendMessage:data];
+    }
+
+}
+
 
 - (void)faceView:(FaceView *)faceView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    TFaceGroup *group = [TUIKit sharedInstance].config.faceGroups[indexPath.section];
+    TFaceGroup *group = [ChatKit sharedInstance].config.faceGroups[indexPath.section];
     TFaceCellData *face = group.faces[indexPath.row];
     if(indexPath.section == 0){
 //        [_inputBar addEmoji:face.path];
         [_inputBar addEmoji:face.name path:face.path];
     }
     else{
-        //tt group
-        TUIFaceMessageCellData *data = [[TUIFaceMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
-        data.groupIndex = group.groupIndex;
-        data.path = face.path;
-        data.faceName = face.name;
-        if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
-            [_delegate inputController:self didSendMessage:data];
-        }
     }
 }
 
@@ -316,32 +247,9 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     if(!_faceView){
         _faceView = [[FaceView alloc] initWithFrame:CGRectMake(0, _inputBar.frame.origin.y + _inputBar.frame.size.height, self.view.frame.size.width, TFaceView_Height)];
         _faceView.delegate = self;
-        [_faceView setData:[TUIKit sharedInstance].config.faceGroups];
+        [_faceView setData:[ChatKit sharedInstance].config.faceGroups];
     }
     return _faceView;
 }
 
-//tt group
-- (MenuView *)menuView
-{
-    if(!_menuView){
-        _menuView = [[MenuView alloc] initWithFrame:CGRectMake(0, self.faceView.frame.origin.y + self.faceView.frame.size.height, self.view.frame.size.width, TMenuView_Menu_Height)];
-        _menuView.delegate = self;
-
-        TUIKitConfig *config = [TUIKit sharedInstance].config;
-        NSMutableArray *menus = [NSMutableArray array];
-        for (NSInteger i = 0; i < config.faceGroups.count; ++i) {
-            TFaceGroup *group = config.faceGroups[i];
-            TMenuCellData *data = [[TMenuCellData alloc] init];
-            data.path = group.menuPath;
-            data.isSelected = NO;
-            if(i == 0){
-                data.isSelected = YES;
-            }
-            [menus addObject:data];
-        }
-        [_menuView setData:menus];
-    }
-    return _menuView;
-}
 @end

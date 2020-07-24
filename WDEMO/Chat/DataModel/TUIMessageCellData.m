@@ -6,10 +6,10 @@
 //
 
 #import "TUIMessageCellData.h"
-#import "THeader.h"
+#import "ChatHeader.h"
 #import "UIImage+TUIKIT.h"
-#import "TUIKit.h"
-#import "UIColor+TUIDarkMode.h"
+#import "ChatKit.h"
+// 
 
 @implementation TUIMessageCellData
 
@@ -20,7 +20,7 @@
         _direction = direction;
         _status = Msg_Status_Init;
         _showReadReceipt = YES;//新 Demo 默认显示已读回执
-        _avatarImage = DefaultAvatarImage;
+//        _avatarImage = DefaultAvatarImage;
         if (direction == MsgDirectionIncoming) {
             _cellLayout = [TUIMessageCellLayout incommingMessageLayout];
             _nameFont = [[self class] incommingNameFont];
@@ -63,7 +63,9 @@ static UIColor *sOutgoingNameColor;
 + (UIColor *)outgoingNameColor
 {
     if (!sOutgoingNameColor) {
-        sOutgoingNameColor = [UIColor d_systemGrayColor];
+//        sOutgoingNameColor = [UIColor d_systemGrayColor];
+        
+//        sOutgoingNameColor =[self systemGrayColor];
     }
     return sOutgoingNameColor;
 }
@@ -93,7 +95,7 @@ static UIColor *sIncommingNameColor;
 + (UIColor *)incommingNameColor
 {
     if (!sIncommingNameColor) {
-        sIncommingNameColor = [UIColor d_systemGrayColor];
+//        sIncommingNameColor = [UIColor d_systemGrayColor];
     }
     return sIncommingNameColor;
 }

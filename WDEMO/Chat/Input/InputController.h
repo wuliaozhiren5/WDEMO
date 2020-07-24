@@ -10,19 +10,11 @@
 #import <UIKit/UIKit.h>
 #import "InputBar.h"
 #import "FaceView.h"
-#import "MenuView.h"
-//#import "TUIMoreView.h"
-//#import "TUIMessageCell.h"
 
 #import "TUIFaceMessageCellData.h"
 
 @class InputController;
 
-/////////////////////////////////////////////////////////////////////////////////
-//
-//                         TInputControllerDelegate
-//
-/////////////////////////////////////////////////////////////////////////////////
 
 /**
  *  控制器的回调委托。
@@ -52,27 +44,6 @@
 
 - (void)inputController:(InputController *)inputController didSendMessage:(TUIMessageCellData *)msg;
 
-/**
- *  点击某一具体“更多”单元后的回调。
- *  一般由 MoreView 中的点击回调进一步调用。
- *  您可以通过该回调实现：根据点击的单元的类型，进行对应类型相应的进一步操作。比如选择图片、选择文件等。
- *  同时在本委托的实现中，含有以下代码：
- * <pre>
- *- (void)inputController:(InputController *)inputController didSelectMoreCell:(TUIInputMoreCell *)cell{
- *  ……
- *  ……
- *      if(_delegate && [_delegate respondsToSelector:@selector(chatController:onSelectMoreCell:)]){
- *      [_delegate chatController:self onSelectMoreCell:cell];
- *      }
- *  }
- * </pre>
- *  上述代码能够帮助您实现“更多”单元的自定义。
- *  更多信息您可以参照 Section\Chat\TUIChatController.h 中的注释进一步了解。
- *
- *  @param  inputController 委托者，当前参与交互的视图控制器。
- *  @param cell 被选中的单元。
- */
-//- (void)inputController:(InputController *)inputController didSelectMoreCell:(TUIInputMoreCell *)cell;
 @end
 
 
@@ -103,20 +74,6 @@
 // *  详细信息请参考 Section\Chat\TUIFaceView.h
 // */
 @property (nonatomic, strong) FaceView *faceView;
-//
-///**
-// *  菜单视图
-// *  菜单视图位于表情视图下方，负责提供表情分组单元以及发送按钮。
-// *  详细信息请参考 Section\Chat\TUIMenuView.h
-// */
-@property (nonatomic, strong) MenuView *menuView;
-//
-///**
-// *  更多视图
-// *  更多视图一般在点击“更多“按钮（”+“按钮）后浮现，负责显示各个更多单元，比如拍摄、视频、文件、相册等。
-// *  详细信息请参考 Section\Chat\TUIMoreView.h
-// */
-//@property (nonatomic, strong) TUIMoreView *moreView;
 
 /**
  *  实现 TInputControllerDelegate 协议的委托。

@@ -7,7 +7,7 @@
 //
 
 #import "ChatController.h"
-#import "THeader.h"
+#import "ChatHeader.h"
 
 @interface ChatController () <TInputControllerDelegate>
 
@@ -30,9 +30,7 @@
 }
 
 - (void)setupViews{
-   
-//    @weakify(self)
-    //message
+ 
     _messageController = [[MessageController alloc] init];
     _messageController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight);
 //    _messageController.delegate = self;
@@ -48,14 +46,10 @@
     _inputController.view.backgroundColor = [UIColor whiteColor];
     
     _inputController.delegate = self;
-//    [RACObserve(self, moreMenus) subscribeNext:^(NSArray *x) {
-//        @strongify(self)
-//        [self.inputController.moreView setData:x];
-//    }];
+ 
     [self addChildViewController:_inputController];
     [self.view addSubview:_inputController.view];
-//    _inputController.inputBar.inputTextView.text = self.conversationData.draftText;
-
+ 
     
 }
 

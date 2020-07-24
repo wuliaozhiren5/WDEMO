@@ -6,16 +6,15 @@
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
 
-#import "TUIKitConfig.h"
-#import "THeader.h"
-#import "TUIFaceCell.h"
-#import "TUIFaceView.h"
-#import "TUIInputMoreCell.h"
+#import "ChatKitConfig.h"
+#import "ChatHeader.h"
+#import "FaceCell.h"
+#import "FaceView.h"
 #import "TUIImageCache.h"
 #import "UIImage+TUIKIT.h"
 
 
-@interface TUIKitConfig ()
+@interface ChatKitConfig ()
 
 
 //提前加载资源（全路径）
@@ -23,7 +22,7 @@
 
 @end
 
-@implementation TUIKitConfig
+@implementation ChatKitConfig
 
 - (id)init
 {
@@ -42,9 +41,9 @@
 + (id)defaultConfig
 {
     static dispatch_once_t onceToken;
-    static TUIKitConfig *config;
+    static ChatKitConfig *config;
     dispatch_once(&onceToken, ^{
-        config = [[TUIKitConfig alloc] init];
+        config = [[ChatKitConfig alloc] init];
     });
     return config;
 }
@@ -117,39 +116,39 @@
  */
 - (void)defaultResourceCache
 {
-    //common
-    [self addResourceToCache:TUIKitResource(@"more_normal")];
-    [self addResourceToCache:TUIKitResource(@"more_pressed")];
-    [self addResourceToCache:TUIKitResource(@"face_normal")];
-    [self addResourceToCache:TUIKitResource(@"face_pressed")];
-    [self addResourceToCache:TUIKitResource(@"keyboard_normal")];
-    [self addResourceToCache:TUIKitResource(@"keyboard_pressed")];
-    [self addResourceToCache:TUIKitResource(@"voice_normal")];
-    [self addResourceToCache:TUIKitResource(@"voice_pressed")];
-    //text msg
-    [self addResourceToCache:TUIKitResource(@"sender_text_normal")];
-    [self addResourceToCache:TUIKitResource(@"sender_text_pressed")];
-    [self addResourceToCache:TUIKitResource(@"receiver_text_normal")];
-    [self addResourceToCache:TUIKitResource(@"receiver_text_pressed")];
-    //void msg
-    [self addResourceToCache:TUIKitResource(@"sender_voice")];
-    [self addResourceToCache:TUIKitResource(@"receiver_voice")];
-    [self addResourceToCache:TUIKitResource(@"sender_voice_play_1")];
-    [self addResourceToCache:TUIKitResource(@"sender_voice_play_2")];
-    [self addResourceToCache:TUIKitResource(@"sender_voice_play_3")];
-    [self addResourceToCache:TUIKitResource(@"receiver_voice_play_1")];
-    [self addResourceToCache:TUIKitResource(@"receiver_voice_play_2")];
-    [self addResourceToCache:TUIKitResource(@"receiver_voice_play_3")];
-    //file msg
-    [self addResourceToCache:TUIKitResource(@"msg_file")];
-    //video msg
-    [self addResourceToCache:TUIKitResource(@"play_normal")];
+//    //common
+//    [self addResourceToCache:TUIKitResource(@"more_normal")];
+//    [self addResourceToCache:TUIKitResource(@"more_pressed")];
+//    [self addResourceToCache:TUIKitResource(@"face_normal")];
+//    [self addResourceToCache:TUIKitResource(@"face_pressed")];
+//    [self addResourceToCache:TUIKitResource(@"keyboard_normal")];
+//    [self addResourceToCache:TUIKitResource(@"keyboard_pressed")];
+//    [self addResourceToCache:TUIKitResource(@"voice_normal")];
+//    [self addResourceToCache:TUIKitResource(@"voice_pressed")];
+//    //text msg
+//    [self addResourceToCache:TUIKitResource(@"sender_text_normal")];
+//    [self addResourceToCache:TUIKitResource(@"sender_text_pressed")];
+//    [self addResourceToCache:TUIKitResource(@"receiver_text_normal")];
+//    [self addResourceToCache:TUIKitResource(@"receiver_text_pressed")];
+//    //void msg
+//    [self addResourceToCache:TUIKitResource(@"sender_voice")];
+//    [self addResourceToCache:TUIKitResource(@"receiver_voice")];
+//    [self addResourceToCache:TUIKitResource(@"sender_voice_play_1")];
+//    [self addResourceToCache:TUIKitResource(@"sender_voice_play_2")];
+//    [self addResourceToCache:TUIKitResource(@"sender_voice_play_3")];
+//    [self addResourceToCache:TUIKitResource(@"receiver_voice_play_1")];
+//    [self addResourceToCache:TUIKitResource(@"receiver_voice_play_2")];
+//    [self addResourceToCache:TUIKitResource(@"receiver_voice_play_3")];
+//    //file msg
+//    [self addResourceToCache:TUIKitResource(@"msg_file")];
+//    //video msg
+//    [self addResourceToCache:TUIKitResource(@"play_normal")];
 }
 
 
 - (void)addResourceToCache:(NSString *)path
 {
-    [[TUIImageCache sharedInstance] addResourceToCache:path];
+//    [[TUIImageCache sharedInstance] addResourceToCache:path];
 }
 
 

@@ -11,14 +11,7 @@
 #import "TResponderTextView.h"
 
 @class InputBar;
-
-
-/////////////////////////////////////////////////////////////////////////////////
-//
-//                            TTextViewDelegate
-//
-/////////////////////////////////////////////////////////////////////////////////
-
+ 
 /**
  *  输入条的回调委托
  *  本委托包含输入条各种情况下的对于各种事件的回调。
@@ -31,22 +24,6 @@
  *  @param textView 委托者，当前与用户交互的 InputBar。
  */
 - (void)inputBarDidTouchFace:(InputBar *)textView;
-
-/**
- *  点击更多按钮，即“+”后的回调委托。
- *  您可以通过该回调实现：相应用户的点击操作，显示出对应的更多视图。
- *
- *  @param textView 委托者，当前与用户交互的 InputBar。
- */
-//- (void)inputBarDidTouchMore:(TUIInputBar *)textView;
-
-/**
- *  点击语音按钮，即“声波”图标后的回调委托。
- *  您可以通过该回调实现：显示出相应的操作提示视图，并开始语音的录制采集。
- *
- *  @param textView 委托者，当前与用户交互的 InputBar。
- */
-//- (void)inputBarDidTouchVoice:(TUIInputBar *)textView;
 
 /**
  *  输入条高度更改时的回调委托
@@ -71,17 +48,6 @@
 - (void)inputBar:(InputBar *)textView didSendText:(NSString *)text;
 
 /**
- *  发送语音后的回调委托
- *  当您长按语音按钮并松开时，执行该回调函数。
- *  您可以通过该回调实现：对录制到的语音信息进行处理并发送该语音消息。
- *  在 TUIKit 默认的实现中，本回调函数在处理了表情视图与更多视图的浮现后，进一步调用了 TUIInputController 中的 didSendMessage 委托进行消息发送的进一步逻辑处理。
- *
- *  @param textView 委托者，当前与用户交互的 InputBar。
- *  @param path 松开语音按钮时，当前录制的语音所在的路径。
- */
-//- (void)inputBar:(TUIInputBar *)textView didSendVoice:(NSString *)path;
-
-/**
  *  点击键盘按钮后的回调委托
  *  点击表情按钮后，对应位置的“笑脸”会变成“键盘”图标，此时为键盘按钮。
  *  您可以通过该回调实现：隐藏当前显示的表情视图或者更多视图，并浮现键盘。
@@ -90,13 +56,7 @@
  */
 - (void)inputBarDidTouchKeyboard:(InputBar *)textView;
 @end
-
-
-/////////////////////////////////////////////////////////////////////////////////
-//
-//                              TUIInputBar
-//
-/////////////////////////////////////////////////////////////////////////////////
+ 
 
 /**
  * 【模块名称】TUIInputBar
@@ -112,12 +72,6 @@
  *  在视图中的分界线，使得 InputBar 与其他视图在视觉上区分，从而让 InputBar 在显示逻辑上更加清晰有序。
  */
 @property (nonatomic, strong) UIView *lineView;
-
-/**
- *  语音按钮
- *  即在输入条最右侧的，具有“音波”图标的按钮。
- */
-//@property (nonatomic, strong) UIButton *micButton;
 
 /**
  *  键盘按钮
@@ -140,20 +94,6 @@
 @property (nonatomic, strong) UIButton *faceButton;
 
 /**
- *  更多按钮
- *  即在输入条中的“+”号按钮。
- *  对应回调委托中的“更多”按钮回调。
- */
-//@property (nonatomic, strong) UIButton *moreButton;
-
-/**
- *  录音按钮
- *  在您点击了语音按钮（“声波图标”）后，原本的文本输入框会变成改按钮。
- *  您可以引导用户点击该按钮开始语音的录制，并通过本按钮的回调函数实现声音的录制。
- */
-//@property (nonatomic, strong) UIButton *recordButton;
-
-/**
  *  实现 TTextViewDelegate 协议的委托。
  */
 @property (nonatomic, weak) id<TTextViewDelegate> delegate;
@@ -164,7 +104,7 @@
  *
  *  @param emoji 需要输入的表情的字符串表示形式。
  */
-- (void)addEmoji:(NSString *)emoji;
+//- (void)addEmoji:(NSString *)emoji;
 - (void)addEmoji:(NSString *)emoji path:(NSString *)path;
 /**
  *  删除函数

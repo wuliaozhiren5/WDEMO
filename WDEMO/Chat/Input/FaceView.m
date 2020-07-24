@@ -8,8 +8,8 @@
 
 #import "FaceView.h"
 #import "FaceCell.h"
-#import "THeader.h"
-#import "UIColor+TUIDarkMode.h"
+#import "ChatHeader.h"
+ 
 
 @implementation TFaceGroup
 @end
@@ -39,43 +39,80 @@
 
 - (void)setupViews
 {
-//    self.backgroundColor = [UIColor d_colorWithColorLight:TInput_Background_Color dark:TInput_Background_Color_Dark];
-
+    //    self.backgroundColor = [UIColor d_colorWithColorLight:TInput_Background_Color dark:TInput_Background_Color_Dark];
+    
     _faceFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-    _faceFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    _faceFlowLayout.minimumLineSpacing = TFaceView_Margin;
-    _faceFlowLayout.minimumInteritemSpacing = TFaceView_Margin;
+    _faceFlowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    _faceFlowLayout.minimumLineSpacing = 1;//TFaceView_Margin;
+    _faceFlowLayout.minimumInteritemSpacing = 1;//TFaceView_Margin;
     _faceFlowLayout.sectionInset = UIEdgeInsetsMake(0, TFaceView_Page_Padding, 0, TFaceView_Page_Padding);
-
+    
     _faceCollectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:_faceFlowLayout];
     [_faceCollectionView registerClass:[FaceCell class] forCellWithReuseIdentifier:TFaceCell_ReuseId];
     _faceCollectionView.collectionViewLayout = _faceFlowLayout;
-    _faceCollectionView.pagingEnabled = YES;
+    //    _faceCollectionView.pagingEnabled = YES;
     _faceCollectionView.delegate = self;
     _faceCollectionView.dataSource = self;
     _faceCollectionView.showsHorizontalScrollIndicator = NO;
     _faceCollectionView.showsVerticalScrollIndicator = NO;
     _faceCollectionView.backgroundColor = self.backgroundColor;
-    _faceCollectionView.alwaysBounceHorizontal = YES;
+    //    _faceCollectionView.alwaysBounceHorizontal = YES;
     [self addSubview:_faceCollectionView];
-
+    
+    [_faceCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
+    [_faceCollectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"Footer"];
+        
+    
     _lineView = [[UIView alloc] init];
-    _lineView.backgroundColor = [UIColor d_colorWithColorLight:TLine_Color dark:TLine_Color_Dark];
+//    _lineView.backgroundColor = [UIColor d_colorWithColorLight:TLine_Color dark:TLine_Color_Dark];
     [self addSubview:_lineView];
-
+    
     _pageControl = [[UIPageControl alloc] init];
     //pageControl不可点击
     _pageControl.userInteractionEnabled = NO;
-    _pageControl.currentPageIndicatorTintColor = [UIColor d_colorWithColorLight:TPage_Current_Color dark:TPage_Current_Color_Dark];
-    _pageControl.pageIndicatorTintColor = [UIColor d_colorWithColorLight:TPage_Color dark:TPage_Color_Dark];
+//    _pageControl.currentPageIndicatorTintColor = [UIColor d_colorWithColorLight:TPage_Current_Color dark:TPage_Current_Color_Dark];
+//    _pageControl.pageIndicatorTintColor = [UIColor d_colorWithColorLight:TPage_Color dark:TPage_Color_Dark];
     [self addSubview:_pageControl];
+    
+    
+    _sendMessageBtn= [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 40, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [_sendMessageBtn setTitle:@"send" forState:UIControlStateNormal];
+    _sendMessageBtn.backgroundColor = [UIColor grayColor];
+    [_sendMessageBtn addTarget:self action:@selector(clickSendMessageBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_sendMessageBtn];
+    
+    
+    
+    _deleteBtn= [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 40, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [_deleteBtn setTitle:@"delete" forState:UIControlStateNormal];
+    _deleteBtn.backgroundColor = [UIColor grayColor];
+    [_deleteBtn addTarget:self action:@selector(clickDeleteBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_deleteBtn];
+    
+    
 }
+
+
+
 
 - (void)defaultLayout
 {
     _lineView.frame = CGRectMake(0, 0, self.frame.size.width, TLine_Heigh);
-    _pageControl.frame = CGRectMake(0, self.frame.size.height - TFaceView_Page_Height, self.frame.size.width, TFaceView_Page_Height);
-    _faceCollectionView.frame = CGRectMake(0, _lineView.frame.origin.y + _lineView.frame.size.height + TFaceView_Margin, self.frame.size.width, self.frame.size.height - _pageControl.frame.size.height - _lineView.frame.size.height - 2 * TFaceView_Margin);
+    //    _pageControl.frame = CGRectMake(0, self.frame.size.height - TFaceView_Page_Height, self.frame.size.width, TFaceView_Page_Height);
+    _faceCollectionView.frame = CGRectMake(0,
+                                           _lineView.frame.origin.y + _lineView.frame.size.height + TFaceView_Margin,
+                                           self.frame.size.width,
+                                           self.frame.size.height - _pageControl.frame.size.height - _lineView.frame.size.height - 2 * TFaceView_Margin);
+    
+    
+    
+    _sendMessageBtn.frame = CGRectMake(self.frame.size.width - TFaceView_Margin - 40, self.frame.size.height - TFaceView_Margin - 40 , 40, 40);
+    
+    _deleteBtn.frame = CGRectMake(_sendMessageBtn.frame.origin.x - TFaceView_Margin - 40 , self.frame.size.height - TFaceView_Margin - 40, 40, 40);
+    
+    
 }
 
 
@@ -83,60 +120,21 @@
 {
     _faceGroups = data;
     [self defaultLayout];
-
-
-    _sectionIndexInGroup = [NSMutableArray array];
-    _groupIndexInSection = [NSMutableArray array];
-    _itemIndexs = [NSMutableDictionary dictionary];
-    _pageCountInGroup = [NSMutableArray array];
-
-    NSInteger sectionIndex = 0;
-    for (NSInteger groupIndex = 0; groupIndex < _faceGroups.count; ++groupIndex) {
-        TFaceGroup *group = _faceGroups[groupIndex];
-        [_sectionIndexInGroup addObject:@(sectionIndex)];
-        int itemCount = group.rowCount * group.itemCountPerRow;
-        int sectionCount = ceil(group.faces.count * 1.0 / (itemCount  - (group.needBackDelete ? 1 : 0)));
-        [_pageCountInGroup addObject:@(sectionCount)];
-        for (int sectionIndex = 0; sectionIndex < sectionCount; ++sectionIndex) {
-            [_groupIndexInSection addObject:@(groupIndex)];
-        }
-        sectionIndex += sectionCount;
-    }
-    _sectionCount = sectionIndex;
-
-
-    for (NSInteger curSection = 0; curSection < _sectionCount; ++curSection) {
-        NSNumber *groupIndex = _groupIndexInSection[curSection];
-        NSNumber *groupSectionIndex = _sectionIndexInGroup[groupIndex.integerValue];
-        TFaceGroup *face = _faceGroups[groupIndex.integerValue];
-        NSInteger itemCount = face.rowCount * face.itemCountPerRow - face.needBackDelete;
-        NSInteger groupSection = curSection - groupSectionIndex.integerValue;
-        for (NSInteger itemIndex = 0; itemIndex < itemCount; ++itemIndex) {
-            // transpose line/row
-            NSInteger row = itemIndex % face.rowCount;
-            NSInteger column = itemIndex / face.rowCount;
-            NSInteger reIndex = face.itemCountPerRow * row + column + groupSection * itemCount;
-            [_itemIndexs setObject:@(reIndex) forKey:[NSIndexPath indexPathForRow:itemIndex inSection:curSection]];
-        }
-    }
-
-    _curGroupIndex = 0;
-    if(_pageCountInGroup.count != 0){
-        _pageControl.numberOfPages = [_pageCountInGroup[0] intValue];
-    }
     [_faceCollectionView reloadData];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return _sectionCount;
+    //    return _sectionCount;
+    return 1;
+    
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     int groupIndex = [_groupIndexInSection[section] intValue];
     TFaceGroup *group = _faceGroups[groupIndex];
-    return group.rowCount * group.itemCountPerRow;
+    return group.faces.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -144,47 +142,20 @@
     FaceCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:TFaceCell_ReuseId forIndexPath:indexPath];
     int groupIndex = [_groupIndexInSection[indexPath.section] intValue];
     TFaceGroup *group = _faceGroups[groupIndex];
-    int itemCount = group.rowCount * group.itemCountPerRow;
-    if(indexPath.row == itemCount - 1 && group.needBackDelete){
-        TFaceCellData *data = [[TFaceCellData alloc] init];
-        data.path = TUIKitFace(@"del_normal");
-        [cell setData:data];
-    }
-    else{
-        NSNumber *index = [_itemIndexs objectForKey:indexPath];
-        if(index.integerValue < group.faces.count){
-            TFaceCellData *data = group.faces[index.integerValue];
-            [cell setData:data];
-        }
-        else{
-            [cell setData:nil];
-        }
-    }
+    
+    TFaceCellData *data = group.faces[indexPath.row];
+    [cell setData:data];
+    
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    int groupIndex = [_groupIndexInSection[indexPath.section] intValue];
-    TFaceGroup *faces = _faceGroups[groupIndex];
-    int itemCount = faces.rowCount * faces.itemCountPerRow;
-    if(indexPath.row == itemCount - 1 && faces.needBackDelete){
-        if(_delegate && [_delegate respondsToSelector:@selector(faceViewDidBackDelete:)]){
-            [_delegate faceViewDidBackDelete:self];
-        }
+    if(_delegate && [_delegate respondsToSelector:@selector(faceView:didSelectItemAtIndexPath:)]){
+        
+        [_delegate faceView:self didSelectItemAtIndexPath:indexPath];
     }
-    else{
-        NSNumber *index = [_itemIndexs objectForKey:indexPath];
-        if(index.integerValue < faces.faces.count){
-            if(_delegate && [_delegate respondsToSelector:@selector(faceView:didSelectItemAtIndexPath:)]){
-                NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index.integerValue inSection:groupIndex];
-                [_delegate faceView:self didSelectItemAtIndexPath:indexPath];
-            }
-        }
-        else{
-
-        }
-    }
+  
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -196,36 +167,53 @@
     return CGSizeMake(width, height);
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    NSInteger curSection = round(scrollView.contentOffset.x / scrollView.frame.size.width);
-    NSNumber *groupIndex = _groupIndexInSection[curSection];
-    NSNumber *startSection = _sectionIndexInGroup[groupIndex.integerValue];
-    NSNumber *pageCount = _pageCountInGroup[groupIndex.integerValue];
-    if(_curGroupIndex != groupIndex.integerValue){
-        _curGroupIndex = groupIndex.integerValue;
-        _pageControl.numberOfPages = pageCount.integerValue;
-        if(_delegate && [_delegate respondsToSelector:@selector(faceView:scrollToFaceGroupIndex:)]){
-            [_delegate faceView:self scrollToFaceGroupIndex:_curGroupIndex];
-        }
-    }
-    _pageControl.currentPage = curSection - startSection.integerValue;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+
+    return CGSizeMake(screenWidth, 40);
 }
 
 
-- (void)scrollToFaceGroupIndex:(NSInteger)index
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+
+
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
+
+        UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Header" forIndexPath:indexPath];
+//        header.backgroundColor = [UIColor whiteColor];
+        return header;
+
+    } else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
+
+        UICollectionReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Footer" forIndexPath:indexPath];
+//        footer.backgroundColor = [UIColor whiteColor];
+        return footer;
+
+    } else {
+        return nil;
+    }
+
+
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if(index > _sectionIndexInGroup.count){
-        return;
+ 
+}
+
+
+-(void)clickSendMessageBtn:(UIButton *)btn {
+    
+    if(_delegate && [_delegate respondsToSelector:@selector(faceViewSendMessage:)]){
+        [_delegate faceViewSendMessage:self];
     }
-    NSNumber *start = _sectionIndexInGroup[index];
-    NSNumber *count = _pageCountInGroup[index];
-    NSInteger curSection = ceil(_faceCollectionView.contentOffset.x / _faceCollectionView.frame.size.width);
-    if(curSection > start.integerValue && curSection < start.integerValue + count.integerValue){
-        return;
+}
+
+
+-(void)clickDeleteBtn:(UIButton *)btn {
+    if(_delegate && [_delegate respondsToSelector:@selector(faceViewDidBackDelete:)]){
+        [_delegate faceViewDidBackDelete:self];
     }
-    CGRect rect = CGRectMake(start.integerValue * _faceCollectionView.frame.size.width, 0, _faceCollectionView.frame.size.width, _faceCollectionView.frame.size.height);
-    [_faceCollectionView scrollRectToVisible:rect animated:NO];
-    [self scrollViewDidScroll:_faceCollectionView];
 }
 @end

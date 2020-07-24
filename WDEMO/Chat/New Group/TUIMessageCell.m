@@ -7,12 +7,12 @@
 //
 
 #import "TUIMessageCell.h"
-#import "THeader.h"
+#import "ChatHeader.h"
 #import "SDWebImage/UIImageView+WebCache.h"
 #import "ReactiveObjC/ReactiveObjC.h"
-#import "TUIKit.h"
+#import "ChatKit.h"
 #import "UIView+MMLayout.h"
-#import "UIColor+TUIDarkMode.h"
+ 
 
 @interface TUIMessageCell()
 @property (nonatomic, strong) TUIMessageCellData *messageData;
@@ -37,7 +37,7 @@
         //nameLabel
         _nameLabel = [[UILabel alloc] init];
         _nameLabel.font = [UIFont systemFontOfSize:13];
-        _nameLabel.textColor = [UIColor d_systemGrayColor];
+//        _nameLabel.textColor = [UIColor d_systemGrayColor];
         [self addSubview:_nameLabel];
 
         //container
@@ -65,7 +65,7 @@
         _readReceiptLabel = [[UILabel alloc] init];
         _readReceiptLabel.hidden = YES;
         _readReceiptLabel.font = [UIFont systemFontOfSize:12];
-        _readReceiptLabel.textColor = [UIColor d_systemGrayColor];
+//        _readReceiptLabel.textColor = [UIColor d_systemGrayColor];
         _readReceiptLabel.lineBreakMode = NSLineBreakByCharWrapping;
         [self addSubview:_readReceiptLabel];
         
@@ -87,12 +87,12 @@
     }];
 
 
-    if ([TUIKit sharedInstance].config.avatarType == TAvatarTypeRounded) {
+    if ([ChatKit sharedInstance].config.avatarType == TAvatarTypeRounded) {
         self.avatarView.layer.masksToBounds = YES;
         self.avatarView.layer.cornerRadius = data.cellLayout.avatarSize.height / 2;
-    } else if ([TUIKit sharedInstance].config.avatarType == TAvatarTypeRadiusCorner) {
+    } else if ([ChatKit sharedInstance].config.avatarType == TAvatarTypeRadiusCorner) {
         self.avatarView.layer.masksToBounds = YES;
-        self.avatarView.layer.cornerRadius = [TUIKit sharedInstance].config.avatarCornerRadius;
+        self.avatarView.layer.cornerRadius = [ChatKit sharedInstance].config.avatarCornerRadius;
     }
     
     //set data

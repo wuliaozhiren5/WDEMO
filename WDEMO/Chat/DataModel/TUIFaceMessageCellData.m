@@ -6,9 +6,8 @@
 //
 
 #import "TUIFaceMessageCellData.h"
-#import "THeader.h"
-#import "TUIKit.h"
-#import "TUIKit.h"
+#import "ChatHeader.h"
+#import "ChatKit.h"
 #import "TUIImageCache.h"
 
 @implementation TUIFaceMessageCellData

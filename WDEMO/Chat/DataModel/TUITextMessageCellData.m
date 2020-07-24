@@ -8,10 +8,10 @@
 #import "TUITextMessageCellData.h"
 #import "FaceView.h"
 #import "FaceCell.h"
-#import "THeader.h"
-#import "TUIKit.h"
+#import "ChatHeader.h"
+#import "ChatKit.h"
 #import "THelper.h"
-#import "UIColor+TUIDarkMode.h"
+ 
 #import "TUIImageCache.h"
   
 #ifndef CGFLOAT_CEIL
@@ -86,7 +86,7 @@
     //1、创建一个可变的属性字符串
     NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:text];
 
-    if([TUIKit sharedInstance].config.faceGroups.count == 0){
+    if([ChatKit sharedInstance].config.faceGroups.count == 0){
         [attributeString addAttribute:NSFontAttributeName value:self.textFont range:NSMakeRange(0, attributeString.length)];
         return attributeString;
     }
@@ -103,7 +103,7 @@
 
     NSArray *resultArray = [re matchesInString:text options:0 range:NSMakeRange(0, text.length)];
 
-    TFaceGroup *group = [TUIKit sharedInstance].config.faceGroups[0];
+    TFaceGroup *group = [ChatKit sharedInstance].config.faceGroups[0];
 
     //3、获取所有的表情以及位置
     //用来存放字典，字典中存储的是图片和图片对应的位置
@@ -156,7 +156,10 @@ static UIColor *sOutgoingTextColor;
 + (UIColor *)outgoingTextColor
 {
     if (!sOutgoingTextColor) {
-        sOutgoingTextColor = [UIColor d_colorWithColorLight:TText_Color dark:TText_OutMessage_Color_Dark];
+//        sOutgoingTextColor = [UIColor d_colorWithColorLight:TText_Color dark:TText_OutMessage_Color_Dark];
+        
+//        sOutgoingTextColor = [UIColor TText_Color];
+
     }
     return sOutgoingTextColor;
 }
@@ -186,7 +189,7 @@ static UIColor *sIncommingTextColor;
 + (UIColor *)incommingTextColor
 {
     if (!sIncommingTextColor) {
-        sIncommingTextColor = [UIColor d_colorWithColorLight:TText_Color dark:TText_Color_Dark];
+//        sIncommingTextColor = [UIColor d_colorWithColorLight:TText_Color dark:TText_Color_Dark];
     }
     return sIncommingTextColor;
 }

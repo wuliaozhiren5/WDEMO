@@ -11,22 +11,29 @@
 
 @interface IMMessageCell ()
 
-@property (nonatomic, strong) YYLabel *contentLabel;
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) UILabel *content;
+@property (nonatomic, strong) UIImageView *bubbleView;
 
 @end
 @implementation IMMessageCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if(self) {
-        self.backgroundColor = [UIColor clearColor];
+    if (self) {
+//        _content = [[UILabel alloc] init];
+//        _content.numberOfLines = 0;
+//        [self.bubbleView addSubview:_content];
         
         
-        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        _bubbleView = [[UIImageView alloc] initWithFrame:CGRectZero];
+        [self.contentView addSubview:_bubbleView];
+//        _bubbleView.mm_fill();
+//        _bubbleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
-        
+         _content = [[UILabel alloc] init];
+                _content.numberOfLines = 0;
+                [self.bubbleView addSubview:_content];
     }
     return self;
 }
@@ -45,55 +52,19 @@
 
 - (void)fillWithData:(TUITextMessageCellData *)data;
 {
-    //set data
-    //    [super fillWithData:data];
-    //    self.textData = data;
-    //    self.content.attributedText = data.attributedString;
-    //    self.content.textColor = data.textColor;
-    //  font set in attributedString
-    
-    
-//    self.label.attributedText = data.attributedString;
-//    self.label.frame = CGRectMake(0, 0, 100, 55);
- 
-    
-    // 1. Create an attributed string.
-    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"Some Text, blabla..."];
-        
- 
-    
-  [text setTextHighlightRange:NSMakeRange(0, 4)
-              color:[UIColor blueColor]
-    backgroundColor:[UIColor grayColor]
-          tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-      
-              NSLog(@"tap text range:...");
-          }];
-  self.contentLabel.attributedText = text;
-    
-//    self.contentLabel.attributedText = data.attributedString;
-  self.contentLabel.frame = CGRectMake(0, 0, 100, 55);
-    
-    
+  
+    self.content.attributedText = data.attributedString;
+    self.content.frame = CGRectMake(0, 0, 100, 55);
+  
 }
--(UILabel *)label{
-    if (!_label) {
-        _label = [[UILabel alloc]init];
-        [self.contentView addSubview:_label];
+-(UILabel *)content{
+    if (!_content) {
+        _content = [[UILabel alloc]init];
+        [self.contentView addSubview:_content];
     }
-    return _label;
+    return _content;
     
 }
-- (YYLabel *)contentLabel{
-    
-    if (!_contentLabel) {
-        _contentLabel = [[YYLabel alloc]init];
-        [self.contentView addSubview:_contentLabel];
-        
-    }
-    return _contentLabel;
-}
-
-
+ 
 
 @end
