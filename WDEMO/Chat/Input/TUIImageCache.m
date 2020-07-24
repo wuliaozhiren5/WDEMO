@@ -6,8 +6,8 @@
 //
 
 #import "TUIImageCache.h"
-#import "THelper.h"
-#import "UIImage+TUIKIT.h"
+#import "ChatHelper.h"
+#import "UIImage+ChatKit.h"
  
 
 @interface TUIImageCache()
@@ -42,8 +42,8 @@
 
 - (void)addFaceToCache:(NSString *)path
 {
-    __weak typeof(self) ws = self;
-    [THelper asyncDecodeImage:path complete:^(NSString *key, UIImage *image) {
+    __weak __typeof(self) ws = self;;
+    [ChatHelper asyncDecodeImage:path complete:^(NSString *key, UIImage *image) {
         __strong __typeof(ws) strongSelf = ws;
         [strongSelf.faceCache setValue:image forKey:key];
     }];

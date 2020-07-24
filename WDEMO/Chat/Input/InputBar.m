@@ -12,11 +12,11 @@
 #import <AVFoundation/AVFoundation.h>
 #import "ReactiveObjC/ReactiveObjC.h"
 
-#import "UIImage+TUIKIT.h"
-#import "TUITextMessageCellData.h"
+#import "UIImage+ChatKit.h"
+#import "ChatMessageData.h"
 #import "TUIImageCache.h"
 #import "FaceAttachment.h"
-#import "NSAttributedString+zy_string.h"
+#import "NSAttributedString+FaceString.h"
 
 
 @interface InputBar() <UITextViewDelegate, AVAudioRecorderDelegate>
@@ -47,14 +47,14 @@
     
     _faceButton = [[UIButton alloc] init];
     [_faceButton addTarget:self action:@selector(clickFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_faceButton setImage:[UIImage tk_imageNamed:@"ToolViewEmotion"] forState:UIControlStateNormal];
-    [_faceButton setImage:[UIImage tk_imageNamed:@"ToolViewEmotionHL"] forState:UIControlStateHighlighted];
+    [_faceButton setImage:[UIImage chat_imageNamed:@"ToolViewEmotion"] forState:UIControlStateNormal];
+    [_faceButton setImage:[UIImage chat_imageNamed:@"ToolViewEmotionHL"] forState:UIControlStateHighlighted];
     [self addSubview:_faceButton];
     
     _keyboardButton = [[UIButton alloc] init];
     [_keyboardButton addTarget:self action:@selector(clickKeyboardBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_keyboardButton setImage:[UIImage tk_imageNamed:@"ToolViewKeyboard"] forState:UIControlStateNormal];
-    [_keyboardButton setImage:[UIImage tk_imageNamed:@"ToolViewKeyboardHL"] forState:UIControlStateHighlighted];
+    [_keyboardButton setImage:[UIImage chat_imageNamed:@"ToolViewKeyboard"] forState:UIControlStateNormal];
+    [_keyboardButton setImage:[UIImage chat_imageNamed:@"ToolViewKeyboardHL"] forState:UIControlStateHighlighted];
     _keyboardButton.hidden = YES;
     [self addSubview:_keyboardButton];
     
@@ -142,7 +142,7 @@
 - (void)textViewDidChange:(UITextView *)textView
 {
     //wwc
-    //    TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
+    //    TUITextMessageCellData *data = [[vmbnm alloc] initWithDirection:MsgDirectionOutgoing];
     //    data.content = textView.text;
     //    textView.attributedText = data.attributedString;
     
@@ -160,7 +160,7 @@
         return;
     }
     
-    __weak typeof(self) ws = self;
+    __weak __typeof(self) ws = self;
     [UIView animateWithDuration:0.3 animations:^{
         CGRect textFrame = ws.inputTextView.frame;
         textFrame.size.height += newHeight - oldHeight;
@@ -179,8 +179,8 @@
                 [ac addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
                 //                [self.mm_viewController presentViewController:ac animated:YES completion:nil];
             } else {
-                //                [_delegate inputBar:self didSendText:textView.text];
                 
+                //发送消息
                 [_delegate inputBar:self didSendText:[textView.attributedText toString]];
                 
                 [self clearInput];
@@ -222,21 +222,7 @@
 
 //- (void)addEmoji:(NSString *)emoji
 - (void)addEmoji:(NSString *)emoji path:(NSString *)path;
-{
-    //wwc
-    //    [_inputTextView setText:[_inputTextView.text stringByAppendingString:emoji]];
-    
-    //    NSTextAttachment *textAttachment = [[NSTextAttachment alloc] init];
-    //    textAttachment.image = [[TUIImageCache sharedInstance] getFaceFromCache:emoji];
-    //    textAttachment.bounds = CGRectMake(0, 0, 16, 16);
-    //    NSInteger location = _inputTextView.selectedRange.location;
-    //    //插入表情
-    //    [_inputTextView.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:textAttachment] atIndex:_inputTextView.selectedRange.location];
-    //    //将光标位置向前移动一个单位
-    //    _inputTextView.selectedRange = NSMakeRange(location + 1, 0);
-    //
-    //
-    
+{  
     // //创建一个附件
     FaceAttachment *faceAttachement = [[FaceAttachment alloc]init];
     //添加表情
@@ -251,15 +237,15 @@
     [_inputTextView.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:faceAttachement] atIndex:_inputTextView.selectedRange.location];
     //将光标位置向前移动一个单位
     _inputTextView.selectedRange = NSMakeRange(location + 1, 0);
-    
+
     [_inputTextView setFont:[UIFont systemFontOfSize:16.0f]];
-    
-    
+
+
     if(_inputTextView.contentSize.height > TTextView_TextView_Height_Max){
         float offset = _inputTextView.contentSize.height - _inputTextView.frame.size.height;
         [_inputTextView scrollRectToVisible:CGRectMake(0, offset, _inputTextView.frame.size.width, _inputTextView.frame.size.height) animated:YES];
     }
-    
+
     [self textViewDidChange:_inputTextView];
 }
 

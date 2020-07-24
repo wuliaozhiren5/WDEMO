@@ -10,8 +10,9 @@
 #import <UIKit/UIKit.h>
 #import "InputBar.h"
 #import "FaceView.h"
+#import "ChatMessageData.h"
 
-#import "TUIFaceMessageCellData.h"
+//#import "TUIFaceMessageCellData.h"
 
 @class InputController;
 
@@ -41,9 +42,8 @@
  *  @param  inputController 委托者，当前参与交互的视图控制器。
  *  @param msg 当前控制器所获取并准备发送的消息。
  */
-
-- (void)inputController:(InputController *)inputController didSendMessage:(TUIMessageCellData *)msg;
-
+ 
+- (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageData *)msg;
 @end
 
 

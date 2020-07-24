@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "InputController.h"
 #import "MessageController.h"
+#import "ChatMessageData.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class ChatController;
@@ -27,8 +28,8 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param controller 委托者，当前聊天控制器。
  *  @param msgCellData TUIMessageCellData 即将发送的 msgCellData 。
  */
-- (void)chatController:(ChatController *)controller didSendMessage:(TUIMessageCellData *)msgCellData;
-
+ 
+- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageData *)msgCellData;
 
 @end
 
@@ -65,7 +66,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  发送自定义的个性化消息
  *
  */
-- (void)sendMessage:(TUIMessageCellData *)message;
+//- (void)sendMessage:(TUIMessageCellData *)message;
 
 
 

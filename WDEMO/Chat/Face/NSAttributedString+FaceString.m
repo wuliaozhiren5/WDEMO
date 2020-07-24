@@ -1,16 +1,15 @@
 //
-//  NSAttributedString+zy_string.m
-//  自定义表情包
+//  NSAttributedString+FaceString.m
+//  WDEMO
 //
-//  Created by 张祎 on 17/2/24.
-//  Copyright © 2017年 张祎. All rights reserved.
+//  Created by rrtv on 2020/7/24.
+//  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import "NSAttributedString+zy_string.h"
+#import "NSAttributedString+FaceString.h"
 #import "FaceAttachment.h"
 
-@implementation NSAttributedString (zy_string)
-
+@implementation NSAttributedString (FaceString)
 - (NSString *)toString {
     
     NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc]initWithAttributedString:self];

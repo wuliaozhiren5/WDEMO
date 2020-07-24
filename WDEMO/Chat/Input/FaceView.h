@@ -149,15 +149,7 @@
  *  需要实现 TFaceViewDelegate 协议中要求的功能。
  */
 @property (nonatomic, weak) id<TFaceViewDelegate> delegate;
-
-/**
- *  滑动到指定表情分组。
- *  根据用户点击的表情分组的下标，切换到对应的表情分组下。
- *
- *  @param index 目的分组的组号索引，从0开始。
- */
-- (void)scrollToFaceGroupIndex:(NSInteger)index;
-
+ 
 /**
  *  设置数据。
  *  用来进行 TUIFaceView 的初始化或在需要时更新 faceView 中的数据。

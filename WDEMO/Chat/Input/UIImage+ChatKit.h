@@ -9,11 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIImage (TUIKIT)
+@interface UIImage (ChatKit)
 
-+ (UIImage *)tk_imageNamed:(NSString *)name;
++ (UIImage *)chat_imageNamed:(NSString *)name;
 
-+ (UIImage *)tk_imagePath:(NSString *)path;
++ (UIImage *)chat_imagePath:(NSString *)path;
 
 @end
 

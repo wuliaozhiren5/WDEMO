@@ -11,7 +11,7 @@
 
 typedef void (^TAsyncImageComplete)(NSString *path, UIImage *image);
 
-@interface THelper : NSObject
+@interface ChatHelper : NSObject
  
 + (void)asyncDecodeImage:(NSString *)path complete:(TAsyncImageComplete)complete;
  

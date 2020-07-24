@@ -10,8 +10,8 @@
 #import "FaceCell.h"
 #import "ChatHeader.h"
 #import "ChatKit.h"
-#import "TUITextMessageCellData.h"
-#import "NSAttributedString+zy_string.h"
+#import "ChatMessageData.h"
+#import "NSAttributedString+FaceString.h"
 
 typedef NS_ENUM(NSUInteger, InputStatus) {
     Input_Status_Input,
@@ -65,8 +65,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification
-{
-    // http://tapd.oa.com/20398462/bugtrace/bugs/view?bug_id=1020398462072883317&url_cache_key=b8dc0f6bee40dbfe0e702ef8cebd5d81
+{ 
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
         [_delegate inputController:self didChangeHeight:_inputBar.frame.size.height + Bottom_SafeHeight];
     }
@@ -100,7 +99,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     self.faceView.hidden = NO;
     self.faceView.alpha = 1.0;
   
-    __weak typeof(self) ws = self;
+    __weak __typeof(self) ws = self;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         ws.faceView.alpha = 0.0;
      } completion:^(BOOL finished) {
@@ -122,7 +121,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
  
     frame.origin.y = self.faceView.frame.origin.y + self.faceView.frame.size.height;
  
-    __weak typeof(self) ws = self;
+    __weak __typeof(self) ws = self;;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         CGRect newFrame = ws.faceView.frame;
         newFrame.origin.y = ws.inputBar.frame.origin.y + ws.inputBar.frame.size.height;
@@ -175,12 +174,19 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 
 - (void)inputBar:(InputBar *)textView didSendText:(NSString *)text
 {
+ //发送消息
+//    TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
+//    data.content = text;
+//    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
+//        [_delegate inputController:self didSendMessage:data];
+//    }
     
-    TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
+    ChatMessageData *data = [[ChatMessageData alloc] init];
     data.content = text;
-    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
-        [_delegate inputController:self didSendMessage:data];
-    }
+     if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
+           [_delegate inputController:self didSendMessage:data];
+       }
+
 }
 
 
@@ -215,16 +221,23 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 }
 - (void)faceViewSendMessage:(FaceView *)faceView
 {
+    //发送消息
     NSString *text =  [_inputBar.inputTextView.attributedText toString];
     if([text isEqualToString:@""]){
         return;
     }
     [_inputBar clearInput];
-    TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
-    data.content = text;
-    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
-        [_delegate inputController:self didSendMessage:data];
-    }
+//    TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
+//    data.content = text;
+//    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
+//        [_delegate inputController:self didSendMessage:data];
+//    }
+    
+    ChatMessageData *data = [[ChatMessageData alloc] init];
+       data.content = text;
+        if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
+              [_delegate inputController:self didSendMessage:data];
+          }
 
 }
 

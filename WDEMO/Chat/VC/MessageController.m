@@ -35,11 +35,11 @@
 
  
 #import "ChatHeader.h"
-#import "TUIMessageCell.h"
-#import "TUITextMessageCellData.h"
-#import "TUITextMessageCell.h"
-#import "TUIFaceMessageCell.h"
-#import "IMMessageCell.h"
+//#import "TUIMessageCell.h"
+#import "ChatMessageData.h"
+//#import "TUITextMessageCell.h"
+//#import "TUIFaceMessageCell.h"
+//#import "IMMessageCell.h"
 
 
 
@@ -143,16 +143,16 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 //    self.tableView.backgroundColor = [UIColor d_colorWithColorLight:TController_Background_Color dark:TController_Background_Color_Dark];
     //
-    [self.tableView registerClass:[TUITextMessageCell class] forCellReuseIdentifier:TTextMessageCell_ReuseId];
+//    [self.tableView registerClass:[TUITextMessageCell class] forCellReuseIdentifier:TTextMessageCell_ReuseId];
     //    [self.tableView registerClass:[TUIVoiceMessageCell class] forCellReuseIdentifier:TVoiceMessageCell_ReuseId];
     //    [self.tableView registerClass:[TUIImageMessageCell class] forCellReuseIdentifier:TImageMessageCell_ReuseId];
     //    [self.tableView registerClass:[TUISystemMessageCell class] forCellReuseIdentifier:TSystemMessageCell_ReuseId];
-    [self.tableView registerClass:[TUIFaceMessageCell class] forCellReuseIdentifier:TFaceMessageCell_ReuseId];
+//    [self.tableView registerClass:[TUIFaceMessageCell class] forCellReuseIdentifier:TFaceMessageCell_ReuseId];
     //    [self.tableView registerClass:[TUIVideoMessageCell class] forCellReuseIdentifier:TVideoMessageCell_ReuseId];
     //    [self.tableView registerClass:[TUIFileMessageCell class] forCellReuseIdentifier:TFileMessageCell_ReuseId];
     //    [self.tableView registerClass:[TUIJoinGroupMessageCell class] forCellReuseIdentifier:TJoinGroupMessageCell_ReuseId];
     
-    [self.tableView registerClass:[IMMessageCell class] forCellReuseIdentifier:@"IMMessageCell"];
+//    [self.tableView registerClass:[IMMessageCell class] forCellReuseIdentifier:@"IMMessageCell"];
     
     //
     //    _indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, TMessageController_Header_Height)];
@@ -347,82 +347,84 @@
     return _uiMsgs.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    CGFloat height = 0;
-    if(_heightCache.count > indexPath.row){
-        return [_heightCache[indexPath.row] floatValue];
-    }
-    TUIMessageCellData *data = _uiMsgs[indexPath.row];
-    height = [data heightOfWidth:Screen_Width];
-    [_heightCache insertObject:[NSNumber numberWithFloat:height] atIndex:indexPath.row];
-    return height;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    CGFloat height = 0;
+//    if(_heightCache.count > indexPath.row){
+//        return [_heightCache[indexPath.row] floatValue];
+//    }
+//    TUIMessageCellData *data = _uiMsgs[indexPath.row];
+//    height = [data heightOfWidth:Screen_Width];
+//    [_heightCache insertObject:[NSNumber numberWithFloat:height] atIndex:indexPath.row];
+//    return height;
+//}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    TUIMessageCellData *data = _uiMsgs[indexPath.row];
-    TUIMessageCell *cell = nil;
-    
-        IMMessageCell *messageCell = nil;
-    
-    //    if ([self.delegate respondsToSelector:@selector(messageController:onShowMessageData:)]) {
-    ////        cell = [self.delegate messageController:self onShowMessageData:data];
-    //        if (cell) {
-    //            cell.delegate = self;
-    //            return cell;
-    //        }
-    //    }
-    if (!data.reuseId) {
-        
-                if([data isKindOfClass:[TUITextMessageCellData class]]) {
-                           data.reuseId = @"IMMessageCell";
-                       }
-//        if([data isKindOfClass:[TUITextMessageCellData class]]) {
-//            data.reuseId = TTextMessageCell_ReuseId;
-//        }
-        else if([data isKindOfClass:[TUIFaceMessageCellData class]]) {
-            data.reuseId = TFaceMessageCell_ReuseId;
-        }
-        //        else if([data isKindOfClass:[TUIImageMessageCellData class]]) {
-        //            data.reuseId = TImageMessageCell_ReuseId;
-        //        }
-        //        else if([data isKindOfClass:[TUIVideoMessageCellData class]]) {
-        //            data.reuseId = TVideoMessageCell_ReuseId;
-        //        }
-        //        else if([data isKindOfClass:[TUIVoiceMessageCellData class]]) {
-        //            data.reuseId = TVoiceMessageCell_ReuseId;
-        //        }
-        //        else if([data isKindOfClass:[TUIFileMessageCellData class]]) {
-        //            data.reuseId = TFileMessageCell_ReuseId;
-        //        }
-        //        else if([data isKindOfClass:[TUIJoinGroupMessageCellData class]]){//入群小灰条对应的数据源
-        //            data.reuseId = TJoinGroupMessageCell_ReuseId;
-        //        }
-        //        else if([data isKindOfClass:[TUISystemMessageCellData class]]) {
-        //            data.reuseId = TSystemMessageCell_ReuseId;
-        //        }
-        else {
-            return nil;
-        }
-    }
-    
-    
-//    cell = [tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
-//    //对于入群小灰条，需要进一步设置其委托。
-//    //    if([cell isKindOfClass:[TUIJoinGroupMessageCell class]]){
-//    //        TUIJoinGroupMessageCell *joinCell = (TUIJoinGroupMessageCell *)cell;
-//    //        joinCell.joinGroupDelegate = self;
-//    //        cell = joinCell;
+//    TUIMessageCellData *data = _uiMsgs[indexPath.row];
+//    TUIMessageCell *cell = nil;
+//
+//        IMMessageCell *messageCell = nil;
+//
+//    //    if ([self.delegate respondsToSelector:@selector(messageController:onShowMessageData:)]) {
+//    ////        cell = [self.delegate messageController:self onShowMessageData:data];
+//    //        if (cell) {
+//    //            cell.delegate = self;
+//    //            return cell;
+//    //        }
 //    //    }
-//    cell.delegate = self;
-//    [cell fillWithData:_uiMsgs[indexPath.row]];
-//    return cell;
+//    if (!data.reuseId) {
+//
+//                if([data isKindOfClass:[TUITextMessageCellData class]]) {
+//                           data.reuseId = @"IMMessageCell";
+//                       }
+////        if([data isKindOfClass:[TUITextMessageCellData class]]) {
+////            data.reuseId = TTextMessageCell_ReuseId;
+////        }
+//        else if([data isKindOfClass:[TUIFaceMessageCellData class]]) {
+//            data.reuseId = TFaceMessageCell_ReuseId;
+//        }
+//        //        else if([data isKindOfClass:[TUIImageMessageCellData class]]) {
+//        //            data.reuseId = TImageMessageCell_ReuseId;
+//        //        }
+//        //        else if([data isKindOfClass:[TUIVideoMessageCellData class]]) {
+//        //            data.reuseId = TVideoMessageCell_ReuseId;
+//        //        }
+//        //        else if([data isKindOfClass:[TUIVoiceMessageCellData class]]) {
+//        //            data.reuseId = TVoiceMessageCell_ReuseId;
+//        //        }
+//        //        else if([data isKindOfClass:[TUIFileMessageCellData class]]) {
+//        //            data.reuseId = TFileMessageCell_ReuseId;
+//        //        }
+//        //        else if([data isKindOfClass:[TUIJoinGroupMessageCellData class]]){//入群小灰条对应的数据源
+//        //            data.reuseId = TJoinGroupMessageCell_ReuseId;
+//        //        }
+//        //        else if([data isKindOfClass:[TUISystemMessageCellData class]]) {
+//        //            data.reuseId = TSystemMessageCell_ReuseId;
+//        //        }
+//        else {
+//            return nil;
+//        }
+//    }
+//
+//
+////    cell = [tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
+////    //对于入群小灰条，需要进一步设置其委托。
+////    //    if([cell isKindOfClass:[TUIJoinGroupMessageCell class]]){
+////    //        TUIJoinGroupMessageCell *joinCell = (TUIJoinGroupMessageCell *)cell;
+////    //        joinCell.joinGroupDelegate = self;
+////    //        cell = joinCell;
+////    //    }
+////    cell.delegate = self;
+////    [cell fillWithData:_uiMsgs[indexPath.row]];
+////    return cell;
+//
+//
+//        messageCell =(IMMessageCell *)[tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
+//        [messageCell fillWithData:_uiMsgs[indexPath.row]];
+//
+//        return messageCell;
     
-    
-        messageCell =(IMMessageCell *)[tableView dequeueReusableCellWithIdentifier:data.reuseId forIndexPath:indexPath];
-        [messageCell fillWithData:_uiMsgs[indexPath.row]];
-    
-        return messageCell;
+    return nil;
 }
 //
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

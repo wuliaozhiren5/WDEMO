@@ -9,7 +9,7 @@
 #import "ChatViewController.h"
 #import "ChatController.h"
 
-@interface ChatViewController ()//<TUIChatControllerDelegate>
+@interface ChatViewController ()///<TUIChatControllerDelegate>
 
 @property (nonatomic, strong) ChatController *chat;
 
@@ -38,8 +38,8 @@
     // Pass the selected object to the new view controller.
 }
 */
-//- (void)chatController:(ChatController *)controller didSendMessage:(TUIMessageCellData *)msgCellData
-//{
-//    //  to do
-//}
+- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageData *)msgCellData;
+{
+    //  to do
+}
 @end

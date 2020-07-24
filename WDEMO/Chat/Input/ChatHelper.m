@@ -6,17 +6,17 @@
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
 
-#import "THelper.h"
+#import "ChatHelper.h"
 //#import "EMVoiceConverter.h"
 #import "ChatKit.h"
 //#import "Toast/Toast.h"
 //#import "TUIError.h"
 #import "SDWebImage/UIImage+GIF.h"
-#import "UIImage+TUIKIT.h"
+#import "UIImage+ChatKit.h"
 
 //@import ImSDK;
 
-@implementation THelper
+@implementation ChatHelper
 
  
 
@@ -44,7 +44,7 @@
             }
             return;
         } else {
-            image = [UIImage tk_imagePath:path];
+            image = [UIImage chat_imagePath:path];
         }
         
         if (image == nil) {

@@ -8,6 +8,7 @@
 
 #import "ChatController.h"
 #import "ChatHeader.h"
+#import "ChatMessageData.h"
 
 @interface ChatController () <TInputControllerDelegate>
 
@@ -55,7 +56,7 @@
 
 #pragma mark- TInputControllerDelegate
 - (void)inputController:(InputController *)inputController didChangeHeight:(CGFloat)height {
-    __weak typeof(self) ws = self;
+    __weak __typeof(self) ws = self;;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         CGRect msgFrame = ws.messageController.view.frame;
         msgFrame.size.height = ws.view.frame.size.height - height;
@@ -70,17 +71,17 @@
     } completion:nil];
 }
  
-- (void)inputController:(InputController *)inputController didSendMessage:(TUIMessageCellData *)msg
+- (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageData *)msg
 {
-    [_messageController sendMessage:msg];
+//    [_messageController sendMessage:msg];
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {
         [self.delegate chatController:self didSendMessage:msg];
     }
 }
-
-- (void)sendMessage:(TUIMessageCellData *)message
-{
-    [_messageController sendMessage:message];
-}
+//
+//- (void)sendMessage:(TUIMessageCellData *)message
+//{
+//    [_messageController sendMessage:message];
+//}
 
 @end

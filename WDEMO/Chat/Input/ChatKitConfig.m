@@ -11,7 +11,7 @@
 #import "FaceCell.h"
 #import "FaceView.h"
 #import "TUIImageCache.h"
-#import "UIImage+TUIKIT.h"
+#import "UIImage+ChatKit.h"
 
 
 @interface ChatKitConfig ()
@@ -29,8 +29,8 @@
     self = [super init];
     if(self){
         _avatarCornerRadius = 5.f;
-        _defaultAvatarImage = [UIImage tk_imageNamed:@"default_c2c_head"];
-        _defaultGroupAvatarImage = [UIImage tk_imageNamed:@"default_group_head"];
+        _defaultAvatarImage = [UIImage chat_imageNamed:@"default_c2c_head"];
+        _defaultGroupAvatarImage = [UIImage chat_imageNamed:@"default_group_head"];
 
         [self defaultResourceCache];
         [self defaultFace];
