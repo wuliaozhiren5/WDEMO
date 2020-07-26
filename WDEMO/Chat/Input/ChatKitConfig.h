@@ -34,22 +34,22 @@ typedef NS_ENUM(NSInteger, TUIKitAvatarType) {
  * 表情列表（需要注意的是 TUIKit 里面的表情包都是有版权限制的，请在上线的时候替换成自己的表情包，否则会面临法律风险）
  */
 @property (nonatomic, strong) NSArray<TFaceGroup *> *faceGroups;
-/**
- *  头像类型
- */
-@property (nonatomic, assign) TUIKitAvatarType avatarType;
-/**
- *  头像圆角大小
- */
-@property (nonatomic, assign) CGFloat avatarCornerRadius;
-/**
- *  默认头像图片
- */
-@property (nonatomic, strong) UIImage *defaultAvatarImage;
-/**
- *  默认群组头像图片
- */
-@property (nonatomic, strong) UIImage *defaultGroupAvatarImage;
+///**
+// *  头像类型
+// */
+//@property (nonatomic, assign) TUIKitAvatarType avatarType;
+///**
+// *  头像圆角大小
+// */
+//@property (nonatomic, assign) CGFloat avatarCornerRadius;
+///**
+// *  默认头像图片
+// */
+//@property (nonatomic, strong) UIImage *defaultAvatarImage;
+///**
+// *  默认群组头像图片
+// */
+//@property (nonatomic, strong) UIImage *defaultGroupAvatarImage;
 
 + (ChatKitConfig *)defaultConfig;
 

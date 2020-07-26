@@ -11,8 +11,6 @@
 
 #define Version 4
 
-#define DefaultAvatarImage ([TUIKit sharedInstance].config.defaultAvatarImage)
-#define DefaultGroupAvatarImage ([TUIKit sharedInstance].config.defaultGroupAvatarImage)
 
 #define Screen_Width        [UIScreen mainScreen].bounds.size.width
 #define Screen_Height       [UIScreen mainScreen].bounds.size.height
@@ -297,38 +295,6 @@
 //#define TUIKitResource(name) name
 //#define TUIKitFace(name) name
 
-
-//notification
-#define TUIKitNotification_TIMRefreshListener @"TUIKitNotification_TIMRefreshListener"
-#define TUIKitNotification_TIMRefreshListener_Add @"TUIKitNotification_TIMRefreshListener_Add"
-#define TUIKitNotification_TIMRefreshListener_Changed @"TUIKitNotification_TIMRefreshListener_Changed"
-#define TUIKitNotification_TIMMessageListener @"TUIKitNotification_TIMMessageListener"
-#define TUIKitNotification_TIMMessageRevokeListener @"TUIKitNotification_TIMMessageRevokeListener"
-#define TUIKitNotification_TIMUploadProgressListener @"TUIKitNotification_TIMUploadProgressListener"
-#define TUIKitNotification_TIMUserStatusListener @"TUIKitNotification_TIMUserStatusListener"
-#define TUIKitNotification_TIMConnListener @"TUIKitNotification_TIMConnListener"
-#define TUIKitNotification_onSelfInfoUpdated @"TUIKitNotification_onSelfInfoUpdated"
-#define TUIKitNotification_onFriendApplicationListAdded @"TUIKitNotification_onFriendApplicationListAdded"
-#define TUIKitNotification_onFriendApplicationListDeleted @"TUIKitNotification_onFriendApplicationListDeleted"
-#define TUIKitNotification_onFriendApplicationListRead @"TUIKitNotification_onFriendApplicationListRead"
-#define TUIKitNotification_onFriendListAdded @"TUIKitNotification_onFriendListAdded"
-#define TUIKitNotification_onFriendListDeleted @"TUIKitNotification_onFriendListDeleted"
-#define TUIKitNotification_onFriendInfoUpdate @"TUIKitNotification_onFriendInfoUpdate"
-#define TUIKitNotification_onBlackListAdded @"TUIKitNotification_onBlackListAdded"
-#define TUIKitNotification_onBlackListDeleted @"TUIKitNotification_onBlackListDeleted"
-#define TUIKitNotification_onRecvMessageReceipts @"TUIKitNotification_onRecvMessageReceipts"
-#define TUIKitNotification_onChangeUnReadCount @"TUIKitNotification_onChangeUnReadCount"
-#define TUIKitNotification_onGroupDismissed @"TUIKitNotification_onGroupDismissed"
-#define TUIKitNotification_onGroupRecycled @"TUIKitNotification_onGroupRecycled"
-#define TUIKitNotification_onKickOffFromGroup @"TUIKitNotification_onKickOffFromGroup"
-#define TUIKitNotification_onLeaveFromGroup @"TUIKitNotification_onLeaveFromGroup"
-
-//path
-#define TUIKit_DB_Path [NSHomeDirectory() stringByAppendingString:@"/Documents/com_tencent_imsdk_data/"]
-#define TUIKit_Image_Path [NSHomeDirectory() stringByAppendingString:@"/Documents/com_tencent_imsdk_data/image/"]
-#define TUIKit_Video_Path [NSHomeDirectory() stringByAppendingString:@"/Documents/com_tencent_imsdk_data/video/"]
-#define TUIKit_Voice_Path [NSHomeDirectory() stringByAppendingString:@"/Documents/com_tencent_imsdk_data/voice/"]
-#define TUIKit_File_Path  [NSHomeDirectory() stringByAppendingString:@"/Documents/com_tencent_imsdk_data/file/"]
 
 
 // rich

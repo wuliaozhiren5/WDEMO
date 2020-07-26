@@ -29,11 +29,11 @@
 {
     self = [super init];
     if(self){
-        _avatarCornerRadius = 5.f;
-        _defaultAvatarImage = [UIImage chat_imageNamed:@"default_c2c_head"];
-        _defaultGroupAvatarImage = [UIImage chat_imageNamed:@"default_group_head"];
+//        _avatarCornerRadius = 5.f;
+//        _defaultAvatarImage = [UIImage chat_imageNamed:@"default_c2c_head"];
+//        _defaultGroupAvatarImage = [UIImage chat_imageNamed:@"default_group_head"];
 
-        [self defaultResourceCache];
+//        [self defaultResourceCache];
         [self defaultFace];
     }
     return self;

@@ -164,6 +164,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
+    //默认文字
     if (textView.text.length == 0) {
         _placeholderLabel.text = @"请填写审批意见...";
     }else{
