@@ -96,6 +96,7 @@
  *  继承自 UITextView
  */
 @property (nonatomic, strong) TResponderTextView *inputTextView;
+@property (nonatomic, strong) UILabel *placeholderLabel;
 
 /**
  *  表情按钮

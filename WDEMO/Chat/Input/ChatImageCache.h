@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  *  TUIImageCache 提供了将图像信息保存在本地缓存中的功能，使您能够快速的从本地缓存中获取已有图像
  */
-@interface TUIImageCache : NSObject
+@interface ChatImageCache : NSObject
 
 + (instancetype)sharedInstance;
 

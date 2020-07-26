@@ -78,7 +78,7 @@
 		F5F3664924C8287C008BA221 /* ChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3664824C8287C008BA221 /* ChatKit.m */; };
 		F5F3665224C82ABF008BA221 /* TUIKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* TUIKitFace.bundle */; };
 		F5F3665324C82ABF008BA221 /* TUIKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* TUIKitResource.bundle */; };
-		F5F3665624C82E5C008BA221 /* TUIImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3665524C82E5C008BA221 /* TUIImageCache.m */; };
+		F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3665524C82E5C008BA221 /* ChatImageCache.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -267,8 +267,8 @@
 		F5F3664824C8287C008BA221 /* ChatKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKit.m; sourceTree = "<group>"; };
 		F5F3665024C82AB9008BA221 /* TUIKitFace.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TUIKitFace.bundle; sourceTree = "<group>"; };
 		F5F3665124C82ABE008BA221 /* TUIKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TUIKitResource.bundle; sourceTree = "<group>"; };
-		F5F3665424C82E5B008BA221 /* TUIImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUIImageCache.h; sourceTree = "<group>"; };
-		F5F3665524C82E5C008BA221 /* TUIImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUIImageCache.m; sourceTree = "<group>"; };
+		F5F3665424C82E5B008BA221 /* ChatImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatImageCache.h; sourceTree = "<group>"; };
+		F5F3665524C82E5C008BA221 /* ChatImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatImageCache.m; sourceTree = "<group>"; };
 		FBDBA0D4EFFC9C6F87B1E8B6 /* Pods-WDEMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDEMO.debug.xcconfig"; path = "Target Support Files/Pods-WDEMO/Pods-WDEMO.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -416,6 +416,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				A4F155F524CD30C2007493C7 /* 富文本 */,
 				F57B529D24C7DEB100940696 /* Chat */,
 				F5668FB424C6D818007D452E /* cpu&memory */,
 				A459C28824C1642B00A3B5FF /* Crash */,
@@ -538,6 +539,13 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
+		A4F155F524CD30C2007493C7 /* 富文本 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "富文本";
+			sourceTree = "<group>";
+		};
 		A4F2C08D24B97F27005922B1 /* TagLIst */ = {
 			isa = PBXGroup;
 			children = (
@@ -616,8 +624,8 @@
 				F5F3664824C8287C008BA221 /* ChatKit.m */,
 				F553E14324CA82E700DA5625 /* ChatKitConfig.h */,
 				F553E14224CA82E600DA5625 /* ChatKitConfig.m */,
-				F5F3665424C82E5B008BA221 /* TUIImageCache.h */,
-				F5F3665524C82E5C008BA221 /* TUIImageCache.m */,
+				F5F3665424C82E5B008BA221 /* ChatImageCache.h */,
+				F5F3665524C82E5C008BA221 /* ChatImageCache.m */,
 				F553E17D24CA888700DA5625 /* ChatHelper.h */,
 				F553E17C24CA888700DA5625 /* ChatHelper.m */,
 				F553E17924CA86FC00DA5625 /* UIImage+ChatKit.h */,
@@ -910,7 +918,7 @@
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
-				F5F3665624C82E5C008BA221 /* TUIImageCache.m in Sources */,
+				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,
 				F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,

@@ -7,12 +7,12 @@
 //
 
 #import "FaceAttachment.h"
-#import "TUIImageCache.h"
+#import "ChatImageCache.h"
 
 
 @implementation FaceAttachment
 - (UIImage *)image {
 //    return [UIImage imageNamed:_imageName];
-    return [[TUIImageCache sharedInstance] getFaceFromCache:_imageName];
+    return [[ChatImageCache sharedInstance] getFaceFromCache:_imageName];
 }
 @end

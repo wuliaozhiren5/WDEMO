@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  此协议旨在帮助开发者根据自身需求实现自定义消息。
  *  自定义消息的的具体实现方法，请参照链接
  */
-@protocol TUIChatControllerDelegate <NSObject>
+@protocol ChatControllerDelegate <NSObject>
 
 /**
  *  发送新消息时的回调
@@ -57,9 +57,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property InputController *inputController;
 
 /**
- *  被委托类，负责实现并执行 TUIChatControllerDelegate 的委托函数
+ *  被委托类，负责实现并执行 ChatControllerDelegate 的委托函数
  */
-@property (weak) id<TUIChatControllerDelegate> delegate;
+@property (weak) id<ChatControllerDelegate> delegate;
 
 
 /**

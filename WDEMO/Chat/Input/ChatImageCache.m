@@ -5,24 +5,24 @@
 //  Created by annidyfeng on 2019/5/15.
 //
 
-#import "TUIImageCache.h"
+#import "ChatImageCache.h"
 #import "ChatHelper.h"
 #import "UIImage+ChatKit.h"
  
 
-@interface TUIImageCache()
+@interface ChatImageCache()
 @property (nonatomic, strong) NSMutableDictionary *resourceCache;
 @property (nonatomic, strong) NSMutableDictionary *faceCache;
 @end
 
-@implementation TUIImageCache
+@implementation ChatImageCache
 
 + (instancetype)sharedInstance
 {
     static dispatch_once_t onceToken;
-    static TUIImageCache *instance;
+    static ChatImageCache *instance;
     dispatch_once(&onceToken, ^{
-        instance = [[TUIImageCache alloc] init];
+        instance = [[ChatImageCache alloc] init];
 //        [UIImage d_fixResizableImage];
     });
     return instance;

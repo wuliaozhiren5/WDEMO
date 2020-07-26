@@ -10,7 +10,7 @@
 #import "ChatHeader.h"
 #import "FaceCell.h"
 #import "FaceView.h"
-#import "TUIImageCache.h"
+#import "ChatImageCache.h"
 #import "UIImage+ChatKit.h"
  
 
@@ -155,7 +155,7 @@
 
 - (void)addFaceToCache:(NSString *)path
 {
-    [[TUIImageCache sharedInstance] addFaceToCache:path];
+    [[ChatImageCache sharedInstance] addFaceToCache:path];
 }
 
 

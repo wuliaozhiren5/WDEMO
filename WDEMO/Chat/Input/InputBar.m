@@ -14,7 +14,7 @@
 
 #import "UIImage+ChatKit.h"
 #import "ChatMessageData.h"
-#import "TUIImageCache.h"
+#import "ChatImageCache.h"
 #import "FaceAttachment.h"
 #import "NSAttributedString+FaceString.h"
 
@@ -63,17 +63,26 @@
     [_inputTextView setFont:[UIFont systemFontOfSize:16]];
     [_inputTextView.layer setMasksToBounds:YES];
     [_inputTextView.layer setCornerRadius:8.0f];
-//    [_inputTextView.layer setBorderWidth:0.5f];
+    //    [_inputTextView.layer setBorderWidth:0.5f];
     //    [_inputTextView.layer setBorderColor:[UIColor d_colorWithColorLight:TLine_Color dark:TLine_Color_Dark].CGColor];
-        
+    
+    _placeholderLabel = [[UILabel alloc] init];
+    _placeholderLabel.frame = CGRectMake(17, 8, 100, 20);
+    _placeholderLabel.font = [UIFont systemFontOfSize:16];
+    _placeholderLabel.text = @"请填写审批意见...";
+    //    _placeholderLabel.textColor = [UIColor redColor];
+    _placeholderLabel.enabled = NO;//lable必须设置为不可用
+    _placeholderLabel.backgroundColor = [UIColor clearColor];
+    [_inputTextView addSubview:_placeholderLabel];
+    
     _inputTextView.backgroundColor = InputBarTextViewColor;
     _inputTextView.textColor = InputBarTextColor;
-
-
+    
+    
     [_inputTextView setReturnKeyType:UIReturnKeySend];
     [self addSubview:_inputTextView];
     
-
+    
 }
 
 - (void)defaultLayout
@@ -88,6 +97,10 @@
     CGFloat endX = Screen_Width - TTextView_Margin;
     
     _inputTextView.frame = CGRectMake(beginX, (TTextView_Height - TTextView_TextView_Height_Min) * 0.5, endX - beginX, TTextView_TextView_Height_Min);
+    
+    _placeholderLabel.frame = CGRectMake(8, 8, _inputTextView.frame.size.width - 8 * 2, 20);
+    //    _placeholderLabel.frame = CGRectMake(_inputTextView.textContainerInset.left, _inputTextView.textContainerInset.top, 200, 20);
+    
 }
 
 - (void)layoutButton:(CGFloat)height
@@ -151,7 +164,13 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
+    if (textView.text.length == 0) {
+        _placeholderLabel.text = @"请填写审批意见...";
+    }else{
+        _placeholderLabel.text = @"";
+    }
     
+    //faceview 发送删除按钮显示
     if(_delegate && [_delegate respondsToSelector:@selector(inputBarTextViewDidChange:)]) {
         [_delegate inputBarTextViewDidChange:self];
     }
@@ -177,7 +196,7 @@
         ws.inputTextView.frame = textFrame;
         [ws layoutButton:newHeight + 2 * TTextView_Margin];
     }];
-     
+    
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
@@ -248,15 +267,15 @@
     [_inputTextView.textStorage insertAttributedString:[NSAttributedString attributedStringWithAttachment:faceAttachement] atIndex:_inputTextView.selectedRange.location];
     //将光标位置向前移动一个单位
     _inputTextView.selectedRange = NSMakeRange(location + 1, 0);
-
+    
     [_inputTextView setFont:[UIFont systemFontOfSize:16.0f]];
-
-
+    
+    
     if(_inputTextView.contentSize.height > TTextView_TextView_Height_Max){
         float offset = _inputTextView.contentSize.height - _inputTextView.frame.size.height;
         [_inputTextView scrollRectToVisible:CGRectMake(0, offset, _inputTextView.frame.size.width, _inputTextView.frame.size.height) animated:YES];
     }
-
+    
     [self textViewDidChange:_inputTextView];
 }
 

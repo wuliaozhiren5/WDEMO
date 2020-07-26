@@ -8,7 +8,7 @@
 
 #import "FaceCell.h"
 #import "ChatKit.h" 
-#import "TUIImageCache.h"
+#import "ChatImageCache.h"
 
 
 @implementation TFaceCellData
@@ -40,7 +40,7 @@
 
 - (void)setData:(TFaceCellData *)data
 {
-    _face.image = [[TUIImageCache sharedInstance] getFaceFromCache:data.path];
+    _face.image = [[ChatImageCache sharedInstance] getFaceFromCache:data.path];
     [self defaultLayout];
 }
 

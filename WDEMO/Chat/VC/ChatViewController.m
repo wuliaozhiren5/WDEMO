@@ -9,7 +9,7 @@
 #import "ChatViewController.h"
 #import "ChatController.h"
 
-@interface ChatViewController ()///<TUIChatControllerDelegate>
+@interface ChatViewController ()///<ChatControllerDelegate>
 
 @property (nonatomic, strong) ChatController *chat;
 
