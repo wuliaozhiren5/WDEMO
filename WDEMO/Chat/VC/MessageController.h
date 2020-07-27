@@ -70,4 +70,5 @@
  */
 - (void)sendMessage:(ChatMessageData *)msg;
 
+- (void)scrollToBottom:(BOOL)animate;
 @end

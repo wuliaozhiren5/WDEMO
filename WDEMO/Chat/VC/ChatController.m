@@ -62,15 +62,6 @@
         ws.inputController.view.frame = inputFrame;
         
 //        [ws.messageController scrollToBottom:NO];
-        
-        if (height > 0.0) {
-             //成员列表消失
-            ws.messageController.chatMemberListView.hidden = YES;
-        } else {
-             //成员列表出现
-            ws.messageController.chatMemberListView.hidden = NO;
-
-        }
     } completion:nil];
 }
 

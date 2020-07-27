@@ -24,7 +24,6 @@
 
 @property (nonatomic, strong) NSArray<TFaceGroup *> *faceGroups;
 
-
 + (ChatKitConfig *)defaultConfig;
 
 @end

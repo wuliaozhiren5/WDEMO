@@ -91,6 +91,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
         [_delegate inputController:self didChangeHeight:keyboardFrame.size.height + _inputBar.frame.size.height];
     }
+    
 }
 //
 - (void)hideFaceAnimation

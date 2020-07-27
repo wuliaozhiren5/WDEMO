@@ -24,7 +24,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    
     [self setupViews];
+}
+
+- (void)keyboardWillHide:(NSNotification *)notification {
+    self.chatMemberListView.hidden = NO;
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+    self.chatMemberListView.hidden = YES;
+}
+
+- (void)keyboardWillChangeFrame:(NSNotification *)notification {
 }
 
 - (void)dealloc {
