@@ -12,11 +12,7 @@
 #import "FaceView.h"
 #import "ChatMessageData.h"
 
-//#import "TUIFaceMessageCellData.h"
-
 @class InputController;
-
-
 /**
  *  控制器的回调委托。
  *  通常由各个视图（InputBar、MoreView 等）中的回调函数进一步调用。实现功能的分层与逐步细化。

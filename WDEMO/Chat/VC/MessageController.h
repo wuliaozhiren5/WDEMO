@@ -12,6 +12,7 @@
  ******************************************************************************/
 #import <UIKit/UIKit.h>
 #import "ChatMessageData.h"
+#import "ChatMemberListView.h"
 
 
 //@class TUIConversationCellData;
@@ -39,70 +40,6 @@
  */
 - (void)didTapInMessageController:(MessageController *)controller;
 
-/**
- *  隐藏长按菜单后的回调函数
- *  您可以根据您的需求个性化实现该委托函数。
- *
- *  @param controller 委托者，消息控制器
- */
-- (void)didHideMenuInMessageController:(MessageController *)controller;
-
-/**
- *  显示长按菜单前的回调函数
- *  您可以根据您的需求个性化实现该委托函数。
- *
- *  @param controller 委托者，消息控制器
- *  @param view 控制器所在view
- */
-- (BOOL)messageController:(MessageController *)controller willShowMenuInCell:(UIView *)view;
-
-/**
- *  收到新消息的函数委托
- *  您可以通过该回调实现：根据传入的 data 初始化新消息并进行新消息提醒。
- *
- *  @param controller 委托者，消息控制器
- *  @param data 新消息
- *
- *  @return 返回需要显示的新消息单元。该消息单元的信息与数据，来自于参数中的 data 参数。
- */
-//- (TUIMessageCellData *)messageController:(TUIMessageController *)controller onNewMessage:(V2TIMMessage *)data;
-
-/**
- *  显示消息数据委托
- *  您可以通过该回调实现：根据传入的 data 初始化消息气泡并进行显示
- *
- *  @param controller 委托者，消息控制器
- *  @param data 需要显示的消息数据
- *
- *  @return 返回需要显示的消息单元。该消息单元的信息与数据，来自于参数中的 data 参数。
- */
-//- (TUIMessageCell *)messageController:(TUIMessageController *)controller onShowMessageData:(TUIMessageCellData *)data;
-
-/**
- *  点击消息头像委托
- *  您可以通过该回调实现：跳转到对应用户的详细信息界面。
- *  1、首先拉取用户信息，如果该用户是当前使用者好友，则初始化相应的好友信息界面并进行跳转。
- *  2、如果该用户不是当前使用者好友，则初始化相应的添加好友界面并进行跳转。
- *
- *  @param controller 委托者，消息控制器
- *  @param cell 所点击的消息单元
- */
-//- (void)messageController:(TUIMessageController *)controller onSelectMessageAvatar:(TUIMessageCell *)cell;
-
-/**
- *  点击消息内容委托
- *
- *  @param controller 委托者，消息控制器
- *  @param cell 所点击的消息单元
- */
-//- (void)messageController:(TUIMessageController *)controller onSelectMessageContent:(TUIMessageCell *)cell;
-
-/**
- *  点击入群消息中用户名称时的回调委托。例如：“小明加入群组”，本回调在用户点击“小明”时触发。
- *
- *  @param controller 委托者，消息控制器
- *  @param cell 所点击的入群消息单元
- */
 @end
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -111,13 +48,17 @@
 //
 /////////////////////////////////////////////////////////////////////////////////
 
-/** 腾讯云 TUIKit
+/** 腾讯云
  * 【模块名称】TUIMessageController
  * 【功能说明】消息控制器，负责实现消息的接收、发送、显示等一系列业务逻辑。
  *  本类提供了接收/显示新消息、显示/隐藏菜单、点击消息头像等交互操作的回调接口。
  *  同时本类提供了图像、视频、文件信息的发送功能，直接整合调用了 IM SDK 实现发送功能。
  */
 @interface MessageController : UITableViewController
+/**
+*  执行 TMessageControllerDelegate 协议的委托
+*/
+@property (nonatomic, strong) ChatMemberListView *chatMemberListView;
 
 /**
  *  执行 TMessageControllerDelegate 协议的委托
@@ -130,25 +71,5 @@
  *  @param msg 消息单元数据
  */
 - (void)sendMessage:(ChatMessageData *)msg;
-//
-///**
-// *  滚动至底部
-// *  通过对 tableView 进行设置，使当前视图滚动至底部。
-// *  建议在需要返回至消息视图底部或者需要浏览最新信息时调用，比如每次发送消息、接收消息、撤回消息、删除消息时。
-// *  本函数的实现调用了 tableView 的滑动函数：
-// * <pre>
-// *  [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:uiMsgs.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animate];
-// * </pre>
-// *  其中第一个参数出现的 uiMsgs，即当前消息控制器中已接收到并展示的消息数组。
-// *
-// *  @param animate 动画标志位。YES：启用动画；NO：禁用动画。
-// */
-//- (void)scrollToBottom:(BOOL)animate;
-//
-///**
-// *  设置会话
-// *
-// */
-//- (void)setConversation:(TUIConversationCellData *)conversationData;
 
 @end

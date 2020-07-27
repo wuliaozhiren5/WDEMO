@@ -5,7 +5,7 @@
 //  Created by kennethmiao on 2018/11/5.
 //  Copyright © 2018年 Tencent. All rights reserved.
 //
-/** 腾讯云 TUIKitConfig
+/** itConfig
  *
  *
  *  本类依赖于腾讯云 IM SDK 实现
@@ -22,12 +22,12 @@
 #import <UIKit/UIKit.h>
 #import "FaceView.h"
 //#import "TUIInputMoreCell.h"
-//
-typedef NS_ENUM(NSInteger, TUIKitAvatarType) {
-    TAvatarTypeNone,             /*矩形直角头像*/
-    TAvatarTypeRounded,          /*圆形头像*/
-    TAvatarTypeRadiusCorner,     /*圆角头像*/
-};
+////
+//typedef NS_ENUM(NSInteger, TUIKitAvatarType) {
+//    TAvatarTypeNone,             /*矩形直角头像*/
+//    TAvatarTypeRounded,          /*圆形头像*/
+//    TAvatarTypeRadiusCorner,     /*圆角头像*/
+//};
 
 @interface ChatKitConfig : NSObject
 /**

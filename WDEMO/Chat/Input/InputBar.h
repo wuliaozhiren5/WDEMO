@@ -91,6 +91,11 @@
 @property (nonatomic, strong) UIButton *keyboardButton;
 
 /**
+*  播放列表按钮
+*/
+@property (nonatomic, strong) UIButton *playListButton;
+
+/**
  *  文本输入视图
  *  即在输入条中占据大部分面积的白色文本输入框
  *  继承自 UITextView

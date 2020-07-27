@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-/** 腾讯云 TUIImageCache
+/**  ImageCache
  *
  *
  *  本类依赖于腾讯云 IM SDK 实现

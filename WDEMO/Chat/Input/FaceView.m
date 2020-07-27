@@ -11,10 +11,8 @@
 #import "ChatHeader.h"
 #import "UIImage+ChatKit.h"
 
-
 @implementation TFaceGroup
 @end
-
 
 @interface FaceView () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableArray *faceGroups;

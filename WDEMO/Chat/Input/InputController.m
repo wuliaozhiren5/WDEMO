@@ -226,30 +226,28 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 }
 - (void)faceViewSendMessage:(FaceView *)faceView
 {
-     //发送消息
+    //发送消息
     NSString *text =  [_inputBar.inputTextView.attributedText toString];
- 
     
     NSString *sp = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-    if (sp.length == 0) { 
-//         UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"不能发送空白消息" message:nil preferredStyle:UIAlertControllerStyleAlert];
-//         [ac addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
-         //                [self.mm_viewController presentViewController:ac animated:YES completion:nil];
-     }else if (sp.length >= 100) {
-         //大于100字
-    
-     }else {
-         
+    if (sp.length == 0) {
+        //         UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"不能发送空白消息" message:nil preferredStyle:UIAlertControllerStyleAlert];
+        //         [ac addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+        //                [self.mm_viewController presentViewController:ac animated:YES completion:nil];
+    }else if (sp.length >= 100) {
+        //大于100字
         
-          [_inputBar clearInput];
-         ChatMessageData *data = [[ChatMessageData alloc] init];
-         data.content = text;
-         if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
-             [_delegate inputController:self didSendMessage:data];
-         }
-          
-     }
-     
+    }else {
+        
+        [_inputBar clearInput];
+        ChatMessageData *data = [[ChatMessageData alloc] init];
+        data.content = text;
+        if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
+            [_delegate inputController:self didSendMessage:data];
+        }
+        
+    }
+    
 }
 
 
@@ -271,7 +269,9 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     if(!_faceView){
         _faceView = [[FaceView alloc] initWithFrame:CGRectMake(0, _inputBar.frame.origin.y + _inputBar.frame.size.height, self.view.frame.size.width, TFaceView_Height)];
         _faceView.delegate = self;
-        [_faceView setData:[ChatKit sharedInstance].config.faceGroups];
+        //        [_faceView setData:[ChatKit sharedInstance].config.faceGroups];
+        [_faceView setData:[[ChatKit sharedInstance].config.faceGroups mutableCopy]];
+        
     }
     return _faceView;
 }

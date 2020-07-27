@@ -1,5 +1,5 @@
 //
-//  RRChatController.m
+//  ChatController.m
 //  WDEMO
 //
 //  Created by rrtv on 2020/7/22.
@@ -10,7 +10,7 @@
 #import "ChatHeader.h"
 #import "ChatMessageData.h"
 
-@interface ChatController () <TInputControllerDelegate>
+@interface ChatController () <TInputControllerDelegate, TMessageControllerDelegate>
 
 @end
 
@@ -37,21 +37,17 @@
     _messageController.delegate = self;
     [self addChildViewController:_messageController];
     [self.view addSubview:_messageController.view];
-    //    [_messageController setConversation:self.conversationData];
-    
+ 
     //input
     _inputController = [[InputController alloc] init];
     _inputController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight, self.view.frame.size.width, TTextView_Height + Bottom_SafeHeight);
     
     _inputController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     _inputController.view.backgroundColor = InputBarColor;
-    
-    
     _inputController.delegate = self;
     
     [self addChildViewController:_inputController];
     [self.view addSubview:_inputController.view];
-    
     
 }
 
@@ -68,7 +64,16 @@
         inputFrame.size.height = height;
         ws.inputController.view.frame = inputFrame;
         
-        //        [ws.messageController scrollToBottom:NO];
+//        [ws.messageController scrollToBottom:NO];
+        
+        if (height > 0.0) {
+             //成员列表消失
+            ws.messageController.chatMemberListView.hidden = YES;
+        } else {
+             //成员列表出现
+            ws.messageController.chatMemberListView.hidden = NO;
+
+        }
     } completion:nil];
 }
 

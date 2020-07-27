@@ -74,6 +74,8 @@
 		F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
 		F57B52A324C7DF2700940696 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* ChatController.m */; };
+		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
+		F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */; };
 		F5F3664924C8287C008BA221 /* ChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3664824C8287C008BA221 /* ChatKit.m */; };
 		F5F3665224C82ABF008BA221 /* TUIKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* TUIKitFace.bundle */; };
 		F5F3665324C82ABF008BA221 /* TUIKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* TUIKitResource.bundle */; };
@@ -260,6 +262,10 @@
 		F57B529F24C7DECF00940696 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		F57B52A124C7DF2700940696 /* ChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
 		F57B52A224C7DF2700940696 /* ChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
+		F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListView.h; sourceTree = "<group>"; };
+		F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMemberListView.m; sourceTree = "<group>"; };
+		F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListCell.h; sourceTree = "<group>"; };
+		F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMemberListCell.m; sourceTree = "<group>"; };
 		F5F3664724C8287B008BA221 /* ChatKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKit.h; sourceTree = "<group>"; };
 		F5F3664824C8287C008BA221 /* ChatKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKit.m; sourceTree = "<group>"; };
 		F5F3665024C82AB9008BA221 /* TUIKitFace.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TUIKitFace.bundle; sourceTree = "<group>"; };
@@ -584,6 +590,10 @@
 				F57B52A224C7DF2700940696 /* ChatController.m */,
 				F553E18024CA8A8200DA5625 /* MessageController.h */,
 				F553E17F24CA8A8200DA5625 /* MessageController.m */,
+				F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */,
+				F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */,
+				F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */,
+				F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -916,7 +926,9 @@
 				673AE9251FC7F5BD0002D304 /* ForceTouchListVC.m in Sources */,
 				6783C8921FB944B80040C02B /* LZTagListView.m in Sources */,
 				6730334C210AED3D001471D8 /* PersonalCenterBarBtn.m in Sources */,
+				F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */,
 				6783C8911FB944B80040C02B /* LZTagListVC.m in Sources */,
+				F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */,
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,

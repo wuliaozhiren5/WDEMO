@@ -24,23 +24,24 @@
 @property (nonatomic, strong) NSDate *recordStartTime;
 @property (nonatomic, strong) AVAudioRecorder *recorder;
 @property (nonatomic, strong) NSTimer *recordTimer;
+@property (nonatomic, copy) NSString *placeholderStr;
+
 @end
 
 @implementation InputBar
 
-- (id)initWithFrame:(CGRect)frame
-{
+- (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if(self){
         [self setupViews];
         [self defaultLayout];
+        
     }
     return self;
 }
 
-- (void)setupViews
-{
-    
+- (void)setupViews {
+    _placeholderStr = @"有爱发言，人人说两句～";
     _lineView = [[UIView alloc] init];
     //    _lineView.backgroundColor = [UIColor d_colorWithColorLight:TLine_Color dark:TLine_Color_Dark];
     [self addSubview:_lineView];
@@ -69,7 +70,7 @@
     _placeholderLabel = [[UILabel alloc] init];
     _placeholderLabel.frame = CGRectMake(17, 8, 100, 20);
     _placeholderLabel.font = [UIFont systemFontOfSize:16];
-    _placeholderLabel.text = @"请填写审批意见...";
+    _placeholderLabel.text = _placeholderStr;
     //    _placeholderLabel.textColor = [UIColor redColor];
     _placeholderLabel.enabled = NO;//lable必须设置为不可用
     _placeholderLabel.backgroundColor = [UIColor clearColor];
@@ -77,25 +78,29 @@
     
     _inputTextView.backgroundColor = InputBarTextViewColor;
     _inputTextView.textColor = InputBarTextColor;
-    
-    
     [_inputTextView setReturnKeyType:UIReturnKeySend];
     [self addSubview:_inputTextView];
     
     
+    _playListButton = [[UIButton alloc] init];
+    [_playListButton addTarget:self action:@selector(clickKeyboardBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_playListButton setImage:[UIImage chat_imageNamed:@"playlist"] forState:UIControlStateNormal];
+    [_playListButton setImage:[UIImage chat_imageNamed:@"playlist"] forState:UIControlStateHighlighted];
+    [self addSubview:_playListButton];
+    
 }
 
-- (void)defaultLayout
-{
+- (void)defaultLayout {
     _lineView.frame = CGRectMake(0, 0, Screen_Width, TLine_Heigh);
     CGSize buttonSize = TTextView_Button_Size;
     CGFloat buttonOriginY = (TTextView_Height - buttonSize.height) * 0.5;
     
     _faceButton.frame = CGRectMake(TTextView_Margin, buttonOriginY, buttonSize.width, buttonSize.height);
     
-    CGFloat beginX = _faceButton.frame.origin.x + _faceButton.frame.size.width + TTextView_Margin;
-    CGFloat endX = Screen_Width - TTextView_Margin;
+    _playListButton.frame = CGRectMake(Screen_Width - TTextView_Margin -  buttonSize.width , buttonOriginY, buttonSize.width, buttonSize.height);
     
+    CGFloat beginX = _faceButton.frame.origin.x + _faceButton.frame.size.width + TTextView_Margin;
+    CGFloat endX = Screen_Width - TTextView_Margin * 2 - _playListButton.frame.size.width;
     _inputTextView.frame = CGRectMake(beginX, (TTextView_Height - TTextView_TextView_Height_Min) * 0.5, endX - beginX, TTextView_TextView_Height_Min);
     
     _placeholderLabel.frame = CGRectMake(8, 8, _inputTextView.frame.size.width - 8 * 2, 20);
@@ -103,8 +108,7 @@
     
 }
 
-- (void)layoutButton:(CGFloat)height
-{
+- (void)layoutButton:(CGFloat)height {
     CGRect frame = self.frame;
     CGFloat offset = height - frame.size.height;
     frame.size.height = height;
@@ -119,13 +123,16 @@
     _faceButton.frame = faceFrame;
     _keyboardButton.frame = faceFrame;
     
+    CGRect  playListButtonFrame  = _playListButton.frame;
+    playListButtonFrame.origin.y = originY;
+    _playListButton.frame = playListButtonFrame;
+    
     if(_delegate && [_delegate respondsToSelector:@selector(inputBar:didChangeInputHeight:)]){
         [_delegate inputBar:self didChangeInputHeight:offset];
     }
 }
 
-- (void)clickKeyboardBtn:(UIButton *)sender
-{
+- (void)clickKeyboardBtn:(UIButton *)sender {
     //    _micButton.hidden = NO;
     _keyboardButton.hidden = YES;
     //    _recordButton.hidden = YES;
@@ -137,8 +144,7 @@
     }
 }
 
-- (void)clickFaceBtn:(UIButton *)sender
-{
+- (void)clickFaceBtn:(UIButton *)sender {
     //    _micButton.hidden = NO;
     _faceButton.hidden = YES;
     _keyboardButton.hidden = NO;
@@ -153,20 +159,35 @@
 
 #pragma mark - talk
 
-- (void)textViewDidBeginEditing:(UITextView *)textView
-{
+- (void)textViewDidBeginEditing:(UITextView *)textView {
     self.keyboardButton.hidden = YES;
     self.faceButton.hidden = NO;
     
     textView.backgroundColor = InputBarTextViewColor;
     textView.textColor = InputBarTextColor;
+    
+    _playListButton.hidden = YES;
+    
+    CGFloat beginX = _faceButton.frame.origin.x + _faceButton.frame.size.width + TTextView_Margin;
+    CGFloat endX = Screen_Width - TTextView_Margin;
+    _inputTextView.frame = CGRectMake(beginX, (TTextView_Height - TTextView_TextView_Height_Min) * 0.5, endX - beginX, TTextView_TextView_Height_Min);
+    [self textViewDidChange:_inputTextView];
+
 }
 
-- (void)textViewDidChange:(UITextView *)textView
-{
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    _playListButton.hidden = NO;
+    CGFloat beginX = _faceButton.frame.origin.x + _faceButton.frame.size.width + TTextView_Margin;
+    CGFloat endX = Screen_Width - TTextView_Margin * 2 - _playListButton.frame.size.width;
+    _inputTextView.frame = CGRectMake(beginX, (TTextView_Height - TTextView_TextView_Height_Min) * 0.5, endX - beginX, TTextView_TextView_Height_Min);
+    [self textViewDidChange:_inputTextView];
+
+}
+
+- (void)textViewDidChange:(UITextView *)textView {
     //默认文字
     if (textView.text.length == 0) {
-        _placeholderLabel.text = @"请填写审批意见...";
+        _placeholderLabel.text = _placeholderStr;
     }else{
         _placeholderLabel.text = @"";
     }
@@ -200,13 +221,12 @@
     
 }
 
-- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if([text isEqualToString:@"\n"]){
         if(_delegate && [_delegate respondsToSelector:@selector(inputBar:didSendText:)]) {
-//            NSString *sp = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            //            NSString *sp = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             NSString *sp = [[textView.attributedText toString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-
+            
             if (sp.length == 0) {
                 
                 UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"不能发送空白消息" message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -214,7 +234,7 @@
                 //                [self.mm_viewController presentViewController:ac animated:YES completion:nil];
             }else if (sp.length >= 100) {
                 //大于100字
-           
+                
             }else {
                 
                 //发送消息
@@ -246,20 +266,17 @@
     return YES;
 }
 
-- (void)clearInput
-{
+- (void)clearInput {
     _inputTextView.text = @"";
     [self textViewDidChange:_inputTextView];
 }
 
-- (NSString *)getInput
-{
+- (NSString *)getInput {
     return _inputTextView.text;
 }
 
 //- (void)addEmoji:(NSString *)emoji
-- (void)addEmoji:(NSString *)emoji path:(NSString *)path;
-{  
+- (void)addEmoji:(NSString *)emoji path:(NSString *)path {
     // //创建一个附件
     FaceAttachment *faceAttachement = [[FaceAttachment alloc]init];
     //添加表情
@@ -277,7 +294,6 @@
     
     [_inputTextView setFont:[UIFont systemFontOfSize:16.0f]];
     
-    
     if(_inputTextView.contentSize.height > TTextView_TextView_Height_Max){
         float offset = _inputTextView.contentSize.height - _inputTextView.frame.size.height;
         [_inputTextView scrollRectToVisible:CGRectMake(0, offset, _inputTextView.frame.size.width, _inputTextView.frame.size.height) animated:YES];
@@ -286,8 +302,7 @@
     [self textViewDidChange:_inputTextView];
 }
 
-- (void)backDelete
-{
+- (void)backDelete {
     //wwc
     //    [self textView:_inputTextView shouldChangeTextInRange:NSMakeRange(_inputTextView.text.length - 1, 1) replacementText:@""];
     
@@ -296,6 +311,5 @@
     
     [self textViewDidChange:_inputTextView];
 }
-
 
 @end
