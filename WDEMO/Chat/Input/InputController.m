@@ -56,7 +56,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 
 - (void)setupViews
 {
-//    self.view.backgroundColor = [UIColor d_colorWithColorLight:TInput_Background_Color dark:TInput_Background_Color_Dark];
+    //    self.view.backgroundColor = [UIColor d_colorWithColorLight:TInput_Background_Color dark:TInput_Background_Color_Dark];
     _status = Input_Status_Input;
     _inputBar = [[InputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
     _inputBar.delegate = self;
@@ -76,7 +76,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
         [self hideFaceAnimation];
     }
     else if(_status == Input_Status_Input_More){
-//        [self hideMoreAnimation];
+        //        [self hideMoreAnimation];
     }
     else{
         //[self hideFaceAnimation:NO];
@@ -97,11 +97,11 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 {
     self.faceView.hidden = NO;
     self.faceView.alpha = 1.0;
-  
+    
     __weak __typeof(self) ws = self;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         ws.faceView.alpha = 0.0;
-     } completion:^(BOOL finished) {
+    } completion:^(BOOL finished) {
         ws.faceView.hidden = YES;
         ws.faceView.alpha = 1.0;
         
@@ -113,22 +113,22 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 {
     [self.view addSubview:self.faceView];
     [_faceView showButton:_inputBar.inputTextView.text];
-  
+    
     self.faceView.hidden = NO;
     CGRect frame = self.faceView.frame;
     frame.origin.y = Screen_Height;
     self.faceView.frame = frame;
- 
+    
     frame.origin.y = self.faceView.frame.origin.y + self.faceView.frame.size.height;
- 
+    
     __weak __typeof(self) ws = self;;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         CGRect newFrame = ws.faceView.frame;
         newFrame.origin.y = ws.inputBar.frame.origin.y + ws.inputBar.frame.size.height;
         ws.faceView.frame = newFrame;
-
-         newFrame.origin.y = ws.faceView.frame.origin.y + ws.faceView.frame.size.height;
-     } completion:nil];
+        
+        newFrame.origin.y = ws.faceView.frame.origin.y + ws.faceView.frame.size.height;
+    } completion:nil];
 }
 
 - (void)inputBarDidTouchFace:(InputBar *)textView
@@ -137,7 +137,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
         return;
     }
     if(_status == Input_Status_Input_More){
-//        [self hideMoreAnimation];
+        //        [self hideMoreAnimation];
     }
     [_inputBar.inputTextView resignFirstResponder];
     [self showFaceAnimation];
@@ -150,7 +150,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 - (void)inputBarDidTouchKeyboard:(InputBar *)textView
 {
     if(_status == Input_Status_Input_More){
-//        [self hideMoreAnimation];
+        //        [self hideMoreAnimation];
     }
     if (_status == Input_Status_Input_Face) {
         [self hideFaceAnimation];
@@ -165,7 +165,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
         [self showFaceAnimation];
     }
     else if(_status == Input_Status_Input_More){
-//        [self showMoreAnimation];
+        //        [self showMoreAnimation];
     }
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
         [_delegate inputController:self didChangeHeight:self.view.frame.size.height + offset];
@@ -179,19 +179,19 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 
 - (void)inputBar:(InputBar *)textView didSendText:(NSString *)text
 {
- //发送消息
-//    TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
-//    data.content = text;
-//    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
-//        [_delegate inputController:self didSendMessage:data];
-//    }
+    //发送消息
+    //    TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
+    //    data.content = text;
+    //    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
+    //        [_delegate inputController:self didSendMessage:data];
+    //    }
     
     ChatMessageData *data = [[ChatMessageData alloc] init];
     data.content = text;
-     if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
-           [_delegate inputController:self didSendMessage:data];
-       }
-
+    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
+        [_delegate inputController:self didSendMessage:data];
+    }
+    
 }
 
 
@@ -201,7 +201,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
         return;
     }
     else if(_status == Input_Status_Input_More){
-//        [self hideMoreAnimation];
+        //        [self hideMoreAnimation];
     }
     else if(_status == Input_Status_Input_Face){
         [self hideFaceAnimation];
@@ -217,7 +217,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 
 - (void)faceView:(FaceView *)faceView scrollToFaceGroupIndex:(NSInteger)index
 {
-//    [self.menuView scrollToMenuIndex:index];
+    //    [self.menuView scrollToMenuIndex:index];
 }
 
 - (void)faceViewDidBackDelete:(FaceView *)faceView
@@ -226,24 +226,30 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 }
 - (void)faceViewSendMessage:(FaceView *)faceView
 {
-    //发送消息
+     //发送消息
     NSString *text =  [_inputBar.inputTextView.attributedText toString];
-    if([text isEqualToString:@""]){
-        return;
-    }
-    [_inputBar clearInput];
-//    TUITextMessageCellData *data = [[TUITextMessageCellData alloc] initWithDirection:MsgDirectionOutgoing];
-//    data.content = text;
-//    if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
-//        [_delegate inputController:self didSendMessage:data];
-//    }
+ 
     
-    ChatMessageData *data = [[ChatMessageData alloc] init];
-       data.content = text;
-        if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
-              [_delegate inputController:self didSendMessage:data];
-          }
-
+    NSString *sp = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if (sp.length == 0) { 
+//         UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"不能发送空白消息" message:nil preferredStyle:UIAlertControllerStyleAlert];
+//         [ac addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
+         //                [self.mm_viewController presentViewController:ac animated:YES completion:nil];
+     }else if (sp.length >= 100) {
+         //大于100字
+    
+     }else {
+         
+        
+          [_inputBar clearInput];
+         ChatMessageData *data = [[ChatMessageData alloc] init];
+         data.content = text;
+         if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
+             [_delegate inputController:self didSendMessage:data];
+         }
+          
+     }
+     
 }
 
 
@@ -252,7 +258,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     TFaceGroup *group = [ChatKit sharedInstance].config.faceGroups[indexPath.section];
     TFaceCellData *face = group.faces[indexPath.row];
     if(indexPath.section == 0){
-//        [_inputBar addEmoji:face.path];
+        //        [_inputBar addEmoji:face.path];
         [_inputBar addEmoji:face.name path:face.path];
     }
     else{

@@ -204,12 +204,18 @@
 {
     if([text isEqualToString:@"\n"]){
         if(_delegate && [_delegate respondsToSelector:@selector(inputBar:didSendText:)]) {
-            NSString *sp = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+//            NSString *sp = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            NSString *sp = [[textView.attributedText toString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+
             if (sp.length == 0) {
+                
                 UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"不能发送空白消息" message:nil preferredStyle:UIAlertControllerStyleAlert];
                 [ac addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
                 //                [self.mm_viewController presentViewController:ac animated:YES completion:nil];
-            } else {
+            }else if (sp.length >= 100) {
+                //大于100字
+           
+            }else {
                 
                 //发送消息
                 [_delegate inputBar:self didSendText:[textView.attributedText toString]];
@@ -261,7 +267,7 @@
     //添加标签名
     faceAttachement.tagName = emoji;
     //设置表情大小
-    faceAttachement.bounds = CGRectMake(0, 0, 18, 18);
+    faceAttachement.bounds = CGRectMake(0, 0, 14, 14);
     //记录光标位置
     NSInteger location = _inputTextView.selectedRange.location;
     //插入表情

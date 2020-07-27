@@ -42,14 +42,14 @@ NS_ASSUME_NONNULL_BEGIN
 //********************************
 
 /**
- *  TUIKit 聊天消息控制器
+ *  ChatKit 聊天消息控制器
  *  负责消息气泡的展示，同时负责响应用户对于消息气泡的交互，比如：点击消息发送者头像、轻点消息、长按消息等操作。
  *  聊天消息控制器的详细信息请参考 Section\Chat\TUIMessageController.h
  */
 @property MessageController *messageController;
 
 /**
- *  TUIKit 信息输入控制器。
+ *  ChatKit 信息输入控制器。
  *  负责接收用户输入，同时显示“+”按钮与语音输入按钮、表情按钮等。
  *  同时 TUIInputController 整合了消息的发送功能，您可以直接使用 TUIInputController 进行消息的输入采集与发送。
  *  信息输入控制器的详细信息请参考 Section\Chat\Input\TUIInputController.h

@@ -1,6 +1,6 @@
 //
 //  TResponderTextView.m
-//  TUIKit
+//  ChatKit
 //
 //  Created by kennethmiao on 2018/10/25.
 //  Copyright © 2018年 Tencent. All rights reserved.
