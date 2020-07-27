@@ -12,11 +12,7 @@
 #import "UIImage+ChatKit.h"
 
 @implementation ChatHelper
-
- 
-
-+ (void)asyncDecodeImage:(NSString *)path complete:(TAsyncImageComplete)complete
-{
++ (void)asyncDecodeImage:(NSString *)path complete:(TAsyncImageComplete)complete {
     static dispatch_queue_t queue;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

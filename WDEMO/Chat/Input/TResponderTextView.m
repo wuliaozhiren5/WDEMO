@@ -10,8 +10,7 @@
 
 @implementation TResponderTextView
 
-- (UIResponder *)nextResponder
-{
+- (UIResponder *)nextResponder {
     if(_overrideNextResponder == nil){
         return [super nextResponder];
     }

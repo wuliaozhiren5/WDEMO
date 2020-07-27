@@ -22,24 +22,24 @@
 
 @implementation MessageController
 
-- (void)viewDidLoad{
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self setupViews];
 }
 
-- (void)dealloc{
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)viewWillAppear:(BOOL)animated{
+- (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
 }
 
-- (void)setupViews{
+- (void)setupViews {
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapViewController)];
     tap.delegate = self;
     [self.view addGestureRecognizer:tap];
@@ -62,14 +62,13 @@
     self.chatMemberListView = [[ChatMemberListView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60) collectionViewLayout:layout];
     self.chatMemberListView.backgroundColor = [UIColor redColor];
     [self.view addSubview:self.chatMemberListView];
-      
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _uiMsgs.count;
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat height = 0;
     if(_heightCache.count > indexPath.row){
         return [_heightCache[indexPath.row] floatValue];
@@ -81,46 +80,41 @@
     return height;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ChatMessageData *data = _uiMsgs[indexPath.row];
     IMMessageCell *messageCell = nil;
-    
     messageCell =(IMMessageCell *)[tableView dequeueReusableCellWithIdentifier:@"IMMessageCell" forIndexPath:indexPath];
     [messageCell fillWithData:data];
     
     return messageCell;
-    
 }
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //}
 
-- (void)scrollToBottom:(BOOL)animate{
+- (void)scrollToBottom:(BOOL)animate {
     if (_uiMsgs.count > 0) {
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animate];
     }
 }
 
-- (void)didTapViewController
-{
+- (void)didTapViewController {
     if(_delegate && [_delegate respondsToSelector:@selector(didTapInMessageController:)]){
         [_delegate didTapInMessageController:self];
     }
 }
 
-- (void)sendMessage:(ChatMessageData *)msg
-{
+- (void)sendMessage:(ChatMessageData *)msg {
     [self.tableView beginUpdates];
     [_uiMsgs addObject:msg];
     [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0]]
                           withRowAnimation:UITableViewRowAnimationFade];
     [self.tableView endUpdates];
     [self scrollToBottom:YES];
-    
 }
 
 #pragma mark - UIGestureRecognizerDelegate
 #pragma mark- --点击手势代理，为了去除手势冲突--
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     if([touch.view isDescendantOfView:self.chatMemberListView]){
         return NO;
     }

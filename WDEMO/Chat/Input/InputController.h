@@ -40,8 +40,8 @@
  */
  
 - (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageData *)msg;
-@end
 
+@end
 
 /////////////////////////////////////////////////////////////////////////////////
 //

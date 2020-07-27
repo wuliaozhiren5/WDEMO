@@ -14,8 +14,6 @@
 #import "ChatMessageData.h"
 #import "ChatMemberListView.h"
 
-
-//@class TUIConversationCellData;
 @class MessageController;
 
 

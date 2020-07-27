@@ -8,7 +8,6 @@
 #import "ChatImageCache.h"
 #import "ChatHelper.h"
 #import "UIImage+ChatKit.h"
- 
 
 @interface ChatImageCache()
 @property (nonatomic, strong) NSMutableDictionary *resourceCache;
@@ -17,8 +16,7 @@
 
 @implementation ChatImageCache
 
-+ (instancetype)sharedInstance
-{
++ (instancetype)sharedInstance {
     static dispatch_once_t onceToken;
     static ChatImageCache *instance;
     dispatch_once(&onceToken, ^{
@@ -28,8 +26,7 @@
     return instance;
 }
 
-- (instancetype)init
-{
+- (instancetype)init {
     self = [super init];
     if (self) {
 //        _resourceCache = [NSMutableDictionary dictionary];
@@ -38,10 +35,7 @@
     return self;
 }
 
- 
-
-- (void)addFaceToCache:(NSString *)path
-{
+- (void)addFaceToCache:(NSString *)path {
     __weak __typeof(self) ws = self;;
     [ChatHelper asyncDecodeImage:path complete:^(NSString *key, UIImage *image) {
         __strong __typeof(ws) strongSelf = ws;
@@ -49,8 +43,7 @@
     }];
 }
 
-- (UIImage *)getFaceFromCache:(NSString *)path
-{
+- (UIImage *)getFaceFromCache:(NSString *)path {
     if(path.length == 0){
         return nil;
     }

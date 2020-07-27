@@ -52,7 +52,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property(nonatomic, weak) id<ChatControllerDelegate> delegate;
 
-
 /**
  *  发送自定义的个性化消息
  *

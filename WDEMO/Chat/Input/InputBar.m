@@ -9,21 +9,13 @@
 #import "InputBar.h"
 #import "ChatHeader.h"
 #import "ChatKit.h"
-#import <AVFoundation/AVFoundation.h>
-#import "ReactiveObjC/ReactiveObjC.h"
-
 #import "UIImage+ChatKit.h"
 #import "ChatMessageData.h"
 #import "ChatImageCache.h"
 #import "FaceAttachment.h"
 #import "NSAttributedString+FaceString.h"
 
-
-@interface InputBar() <UITextViewDelegate, AVAudioRecorderDelegate>
-//@property (nonatomic, strong) TUIRecordView *record;
-@property (nonatomic, strong) NSDate *recordStartTime;
-@property (nonatomic, strong) AVAudioRecorder *recorder;
-@property (nonatomic, strong) NSTimer *recordTimer;
+@interface InputBar() <UITextViewDelegate>
 @property (nonatomic, copy) NSString *placeholderStr;
 
 @end

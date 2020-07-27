@@ -17,7 +17,6 @@
 
 //提前加载资源（全路径）
 
-
 @end
 
 @implementation ChatKitConfig
@@ -26,11 +25,6 @@
 {
     self = [super init];
     if(self){
-//        _avatarCornerRadius = 5.f;
-//        _defaultAvatarImage = [UIImage chat_imageNamed:@"default_c2c_head"];
-//        _defaultGroupAvatarImage = [UIImage chat_imageNamed:@"default_group_head"];
-
-//        [self defaultResourceCache];
         [self defaultFace];
     }
     return self;
@@ -105,44 +99,7 @@
 }
 
 
-
-
-
 #pragma mark - resource
-/**
- *  将配默认配置写入本地缓存，方便下一次快速加载
- */
-- (void)defaultResourceCache
-{
-//    //common
-//    [self addResourceToCache:TUIKitResource(@"more_normal")];
-//    [self addResourceToCache:TUIKitResource(@"more_pressed")];
-//    [self addResourceToCache:TUIKitResource(@"face_normal")];
-//    [self addResourceToCache:TUIKitResource(@"face_pressed")];
-//    [self addResourceToCache:TUIKitResource(@"keyboard_normal")];
-//    [self addResourceToCache:TUIKitResource(@"keyboard_pressed")];
-//    [self addResourceToCache:TUIKitResource(@"voice_normal")];
-//    [self addResourceToCache:TUIKitResource(@"voice_pressed")];
-//    //text msg
-//    [self addResourceToCache:TUIKitResource(@"sender_text_normal")];
-//    [self addResourceToCache:TUIKitResource(@"sender_text_pressed")];
-//    [self addResourceToCache:TUIKitResource(@"receiver_text_normal")];
-//    [self addResourceToCache:TUIKitResource(@"receiver_text_pressed")];
-//    //void msg
-//    [self addResourceToCache:TUIKitResource(@"sender_voice")];
-//    [self addResourceToCache:TUIKitResource(@"receiver_voice")];
-//    [self addResourceToCache:TUIKitResource(@"sender_voice_play_1")];
-//    [self addResourceToCache:TUIKitResource(@"sender_voice_play_2")];
-//    [self addResourceToCache:TUIKitResource(@"sender_voice_play_3")];
-//    [self addResourceToCache:TUIKitResource(@"receiver_voice_play_1")];
-//    [self addResourceToCache:TUIKitResource(@"receiver_voice_play_2")];
-//    [self addResourceToCache:TUIKitResource(@"receiver_voice_play_3")];
-//    //file msg
-//    [self addResourceToCache:TUIKitResource(@"msg_file")];
-//    //video msg
-//    [self addResourceToCache:TUIKitResource(@"play_normal")];
-}
-
 
 - (void)addResourceToCache:(NSString *)path
 {

@@ -7,7 +7,6 @@
 //
 /** itConfig
  *
- *
  *  本类依赖于腾讯云 IM SDK 实现
  *  TUIKit 中的组件在实现 UI 功能的同时，调用 IM SDK 相应的接口实现 IM 相关逻辑和数据的处理
  *  您可以在TUIKit的基础上做一些个性化拓展，即可轻松接入IM SDK
@@ -21,35 +20,10 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "FaceView.h"
-//#import "TUIInputMoreCell.h"
-////
-//typedef NS_ENUM(NSInteger, TUIKitAvatarType) {
-//    TAvatarTypeNone,             /*矩形直角头像*/
-//    TAvatarTypeRounded,          /*圆形头像*/
-//    TAvatarTypeRadiusCorner,     /*圆角头像*/
-//};
-
 @interface ChatKitConfig : NSObject
-/**
- * 表情列表（需要注意的是 TUIKit 里面的表情包都是有版权限制的，请在上线的时候替换成自己的表情包，否则会面临法律风险）
- */
+
 @property (nonatomic, strong) NSArray<TFaceGroup *> *faceGroups;
-///**
-// *  头像类型
-// */
-//@property (nonatomic, assign) TUIKitAvatarType avatarType;
-///**
-// *  头像圆角大小
-// */
-//@property (nonatomic, assign) CGFloat avatarCornerRadius;
-///**
-// *  默认头像图片
-// */
-//@property (nonatomic, strong) UIImage *defaultAvatarImage;
-///**
-// *  默认群组头像图片
-// */
-//@property (nonatomic, strong) UIImage *defaultGroupAvatarImage;
+
 
 + (ChatKitConfig *)defaultConfig;
 
