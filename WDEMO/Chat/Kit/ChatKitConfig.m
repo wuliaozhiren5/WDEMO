@@ -48,52 +48,52 @@
     NSMutableArray *faceGroups = [NSMutableArray array];
     //emoji group
     NSMutableArray *emojiFaces = [NSMutableArray array];
-    NSArray *emojis = [NSArray arrayWithContentsOfFile:TUIKitFace(@"emoji/emoji.plist")];
+    NSArray *emojis = [NSArray arrayWithContentsOfFile:ChatKitFace(@"emoji/emoji.plist")];
     for (NSDictionary *dic in emojis) {
         TFaceCellData *data = [[TFaceCellData alloc] init];
         NSString *name = [dic objectForKey:@"face_name"];
         NSString *path = [NSString stringWithFormat:@"emoji/%@", name];
         data.name = name;
-        data.path = TUIKitFace(path);
+        data.path = ChatKitFace(path);
         [self addFaceToCache:data.path];
         [emojiFaces addObject:data];
     }
     if(emojiFaces.count != 0){
         TFaceGroup *emojiGroup = [[TFaceGroup alloc] init];
         emojiGroup.groupIndex = 0;
-        emojiGroup.groupPath = TUIKitFace(@"emoji/");
+        emojiGroup.groupPath = ChatKitFace(@"emoji/");
         emojiGroup.faces = emojiFaces;
         emojiGroup.rowCount = 3;
         emojiGroup.itemCountPerRow = 9;
         emojiGroup.needBackDelete = YES;
-        emojiGroup.menuPath = TUIKitFace(@"emoji/menu");
+        emojiGroup.menuPath = ChatKitFace(@"emoji/menu");
         [self addFaceToCache:emojiGroup.menuPath];
         [faceGroups addObject:emojiGroup];
-        [self addFaceToCache:TUIKitFace(@"del_normal")];
+        [self addFaceToCache:ChatKitFace(@"del_normal")];
     }
 
-    //tt group
-    NSMutableArray *ttFaces = [NSMutableArray array];
-    for (int i = 0; i <= 16; i++) {
-        TFaceCellData *data = [[TFaceCellData alloc] init];
-        NSString *name = [NSString stringWithFormat:@"tt%02d", i];
-        NSString *path = [NSString stringWithFormat:@"tt/%@", name];
-        data.name = name;
-        data.path = TUIKitFace(path);
-        [self addFaceToCache:data.path];
-        [ttFaces addObject:data];
-    }
-    if(ttFaces.count != 0){
-        TFaceGroup *ttGroup = [[TFaceGroup alloc] init];
-        ttGroup.groupIndex = 1;
-        ttGroup.groupPath = TUIKitFace(@"tt/");
-        ttGroup.faces = ttFaces;
-        ttGroup.rowCount = 2;
-        ttGroup.itemCountPerRow = 5;
-        ttGroup.menuPath = TUIKitFace(@"tt/menu");
-        [self addFaceToCache:ttGroup.menuPath];
-        [faceGroups addObject:ttGroup];
-    }
+//    //tt group
+//    NSMutableArray *ttFaces = [NSMutableArray array];
+//    for (int i = 0; i <= 16; i++) {
+//        TFaceCellData *data = [[TFaceCellData alloc] init];
+//        NSString *name = [NSString stringWithFormat:@"tt%02d", i];
+//        NSString *path = [NSString stringWithFormat:@"tt/%@", name];
+//        data.name = name;
+//        data.path = ChatKitFace(path);
+//        [self addFaceToCache:data.path];
+//        [ttFaces addObject:data];
+//    }
+//    if(ttFaces.count != 0){
+//        TFaceGroup *ttGroup = [[TFaceGroup alloc] init];
+//        ttGroup.groupIndex = 1;
+//        ttGroup.groupPath = ChatKitFace(@"tt/");
+//        ttGroup.faces = ttFaces;
+//        ttGroup.rowCount = 2;
+//        ttGroup.itemCountPerRow = 5;
+//        ttGroup.menuPath = ChatKitFace(@"tt/menu");
+//        [self addFaceToCache:ttGroup.menuPath];
+//        [faceGroups addObject:ttGroup];
+//    }
 
     _faceGroups = faceGroups;
 }

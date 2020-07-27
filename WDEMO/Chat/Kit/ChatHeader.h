@@ -288,12 +288,12 @@
 
 
 //resource
-//#define TUIKitResource(name) [NSString stringWithFormat:@"TUIKitResource.bundle/%@", name]
-//#define TUIKitFace(name) [NSString stringWithFormat:@"TUIKitFace.bundle/%@", name]
-#define TUIKitFace(name) [[NSBundle mainBundle] pathForResource:@"TUIKitFace" ofType:@"bundle"] == nil ? ([[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: @"Frameworks/TXIMSDK_TUIKit_iOS.framework/TUIKitFace.bundle"] stringByAppendingPathComponent:name]) : ([[[NSBundle mainBundle] pathForResource:@"TUIKitFace" ofType:@"bundle"] stringByAppendingPathComponent:name])
-#define TUIKitResource(name) [[NSBundle mainBundle] pathForResource:@"TUIKitResource" ofType:@"bundle"] == nil ? ([[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: @"Frameworks/TXIMSDK_TUIKit_iOS.framework/TUIKitResource.bundle"] stringByAppendingPathComponent:name]) : ([[[NSBundle mainBundle] pathForResource:@"TUIKitResource" ofType:@"bundle"] stringByAppendingPathComponent:name])
-//#define TUIKitResource(name) name
-//#define TUIKitFace(name) name
+//#define ChatKitResource(name) [NSString stringWithFormat:@"ChatKitResource.bundle/%@", name]
+//#define ChatKitFace(name) [NSString stringWithFormat:@"ChatKitFace.bundle/%@", name]
+#define ChatKitFace(name) [[NSBundle mainBundle] pathForResource:@"ChatKitFace" ofType:@"bundle"] == nil ? ([[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: @"Frameworks/TXIMSDK_TUIKit_iOS.framework/ChatKitFace.bundle"] stringByAppendingPathComponent:name]) : ([[[NSBundle mainBundle] pathForResource:@"ChatKitFace" ofType:@"bundle"] stringByAppendingPathComponent:name])
+#define ChatKitResource(name) [[NSBundle mainBundle] pathForResource:@"ChatKitResource" ofType:@"bundle"] == nil ? ([[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: @"Frameworks/TXIMSDK_TUIKit_iOS.framework/ChatKitResource.bundle"] stringByAppendingPathComponent:name]) : ([[[NSBundle mainBundle] pathForResource:@"ChatKitResource" ofType:@"bundle"] stringByAppendingPathComponent:name])
+//#define ChatKitResource(name) name
+//#define ChatKitFace(name) name
 
 
 

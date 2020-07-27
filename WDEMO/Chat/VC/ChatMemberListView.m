@@ -55,7 +55,10 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     ChatMemberListCell *cell = (ChatMemberListCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ChatMemberListCell class]) forIndexPath:indexPath];
-    cell.contentView.backgroundColor = [UIColor grayColor];
+    
+    [cell avaterImageView];
+
+//    cell.contentView.backgroundColor = [UIColor grayColor];
     NSString *str = [NSString stringWithFormat:@"%zi:%zi", indexPath.section, indexPath.row];
     cell.titleLabel.text = str;
     return cell;

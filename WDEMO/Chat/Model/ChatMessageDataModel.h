@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ChatMessageData : NSObject
+@interface ChatMessageDataModel : NSObject
 
 /**
 *  消息的文本内容

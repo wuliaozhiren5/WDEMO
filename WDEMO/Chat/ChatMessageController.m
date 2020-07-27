@@ -1,26 +1,26 @@
 //
-//  TUIMessageController.m
-//  UIKit
+//  ChatMessageController.m
+//  WDEMO
 //
-//  Created by annidyfeng on 2019/7/1.
-//  Copyright © 2018年 Tencent. All rights reserved.
+//  Created by rrtv on 2020/7/27.
+//  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import "MessageController.h"
+#import "ChatMessageController.h"
 #import "ChatHeader.h"
 #import "ChatMessageDataModel.h"
 #import "ChatMessageCell.h"
- 
-#define MAX_MESSAGE_SEP_DLAY (5 * 60)
+#import "ChatMessageDataModel.h"
 
-@interface MessageController ()<UIGestureRecognizerDelegate>
+
+@interface ChatMessageController () <UITableViewDelegate, UITableViewDataSource, UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSMutableArray *uiMsgs;
 @property (nonatomic, strong) NSMutableArray *heightCache;
 
+
 @end
 
-@implementation MessageController
-
+@implementation ChatMessageController
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -59,10 +59,16 @@
     tap.delegate = self;
     [self.view addGestureRecognizer:tap];
     
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     self.tableView.estimatedRowHeight = 0;
+    self.tableView.estimatedSectionFooterHeight = 0;
+    self.tableView.estimatedSectionHeaderHeight = 0;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.backgroundColor = MessageViewColor;
     [self.tableView registerClass:[ChatMessageCell class] forCellReuseIdentifier:@"IMMessageCell"];
+    [self.view addSubview:self.tableView];
     
     _heightCache = [NSMutableArray array];
     _uiMsgs = [[NSMutableArray alloc] init];
@@ -76,7 +82,7 @@
     
     self.chatMemberListView = [[ChatMemberListView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60) collectionViewLayout:layout];
     self.chatMemberListView.backgroundColor = [UIColor redColor];
-    [self.viewIfLoaded addSubview:self.chatMemberListView];
+    [self.view addSubview:self.chatMemberListView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -103,12 +109,17 @@
     
     return messageCell;
 }
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+}
 
 - (void)scrollToBottom:(BOOL)animate {
     if (_uiMsgs.count > 0) {
+        [self.tableView beginUpdates];
+
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animate];
+         
+         [self.tableView endUpdates];
+        
     }
 }
 

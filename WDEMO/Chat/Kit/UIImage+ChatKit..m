@@ -13,8 +13,8 @@
 
 + (UIImage *)chat_imageNamed:(NSString *)name
 {
-//    UIImage *image = [UIImage d_imageWithImageLight:TUIKitResource(name) dark:[NSString stringWithFormat:@"%@_dark",TUIKitResource(name)]];
-    UIImage *image =[UIImage imageNamed:TUIKitResource(name)];
+//    UIImage *image = [UIImage d_imageWithImageLight:ChatKitResource(name) dark:[NSString stringWithFormat:@"%@_dark",ChatKitResource(name)]];
+    UIImage *image =[UIImage imageNamed:ChatKitResource(name)];
     return image;
 }
 

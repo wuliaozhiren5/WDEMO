@@ -6,17 +6,16 @@
 //  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import "IMMessageCell.h"
-#import <YYKit/YYKit.h>
+#import "ChatMessageCell.h"
 #import "ChatHeader.h"
 
-@interface IMMessageCell ()
+@interface ChatMessageCell ()
 
 @property (nonatomic, strong) UILabel *content;
 @property (nonatomic, strong) UIImageView *bubbleView;
 
 @end
-@implementation IMMessageCell
+@implementation ChatMessageCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -56,7 +55,7 @@
 }
 
 
-- (void)fillWithData:(ChatMessageData *)data
+- (void)fillWithData:(ChatMessageDataModel *)data
 {
     
     self.content.attributedText = data.attributedString;

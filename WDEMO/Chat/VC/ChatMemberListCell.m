@@ -10,18 +10,27 @@
 
 @implementation ChatMemberListCell
 -(UILabel *)titleLabel {
-
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc]initWithFrame:self.contentView.bounds];
         _titleLabel.frame = self.contentView.bounds;
         _titleLabel.font = [UIFont systemFontOfSize:12.0];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
-//        _titleLabel.frame = CGRectMake(10, 10, 50, 50);
+        //        _titleLabel.frame = CGRectMake(10, 10, 50, 50);
         [self.contentView addSubview:_titleLabel];
-//        [_tagLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.center.equalTo(self.contentView);
-//        }];
+        //        [_tagLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        //            make.center.equalTo(self.contentView);
+        //        }];
     }
     return _titleLabel;
+}
+
+-(UIImageView *)avaterImageView {
+    if (!_avaterImageView) {
+        _avaterImageView = [[UIImageView alloc]initWithFrame:self.contentView.bounds];
+        _avaterImageView.frame = self.contentView.bounds;
+        _avaterImageView.backgroundColor = [UIColor greenColor];
+        [self.contentView addSubview:_avaterImageView];
+    }
+    return _avaterImageView;
 }
 @end

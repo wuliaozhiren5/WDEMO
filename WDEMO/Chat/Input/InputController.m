@@ -10,7 +10,7 @@
 #import "FaceCell.h"
 #import "ChatHeader.h"
 #import "ChatKit.h"
-#import "ChatMessageData.h"
+#import "ChatMessageDataModel.h"
 #import "NSAttributedString+FaceString.h"
 
 typedef NS_ENUM(NSUInteger, InputStatus) {
@@ -187,7 +187,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     //        [_delegate inputController:self didSendMessage:data];
     //    }
     
-    ChatMessageData *data = [[ChatMessageData alloc] init];
+    ChatMessageDataModel *data = [[ChatMessageDataModel alloc] init];
     data.content = text;
     if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
         [_delegate inputController:self didSendMessage:data];
@@ -241,7 +241,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }else {
         
         [_inputBar clearInput];
-        ChatMessageData *data = [[ChatMessageData alloc] init];
+        ChatMessageDataModel *data = [[ChatMessageDataModel alloc] init];
         data.content = text;
         if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
             [_delegate inputController:self didSendMessage:data];

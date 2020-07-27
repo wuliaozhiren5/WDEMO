@@ -10,7 +10,7 @@
 #import "ChatHeader.h"
 #import "ChatKit.h"
 #import "UIImage+ChatKit.h"
-#import "ChatMessageData.h"
+#import "ChatMessageDataModel.h"
 #import "ChatImageCache.h"
 #import "FaceAttachment.h"
 #import "NSAttributedString+FaceString.h"

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "InputController.h"
+//#import "ChatMessageController.h"
 #import "MessageController.h"
-#import "ChatMessageData.h"
+#import "ChatMessageDataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class ChatController;
@@ -26,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param controller 委托者，当前聊天控制器。
  *  @param msgCellData TUIMessageCellData 即将发送的 msgCellData 。
  */
-- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageData *)msgCellData;
+- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageDataModel *)msgCellData;
 
 @end
 
@@ -37,6 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  负责消息气泡的展示，同时负责响应用户对于消息气泡的交互，比如：点击消息发送者头像、轻点消息、长按消息等操作。
  *  聊天消息控制器的详细信息请参考 Section\Chat\TUIMessageController.h
  */
+//@property(nonatomic, strong) ChatMessageController *messageController;
 @property(nonatomic, strong) MessageController *messageController;
 
 /**
@@ -57,7 +59,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 
-- (void)sendMessage:(ChatMessageData *)msg;
+- (void)sendMessage:(ChatMessageDataModel *)msg;
 
 @end
 

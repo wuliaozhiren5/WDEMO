@@ -8,7 +8,7 @@
 
 #import "ChatController.h"
 #import "ChatHeader.h"
-#import "ChatMessageData.h"
+#import "ChatMessageDataModel.h"
 
 @interface ChatController () <TInputControllerDelegate, TMessageControllerDelegate>
 
@@ -30,6 +30,7 @@
 }
 
 - (void)setupViews {
+//    _messageController = [[ChatMessageController alloc] init];
     _messageController = [[MessageController alloc] init];
     _messageController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight);
     _messageController.delegate = self;
@@ -61,22 +62,24 @@
         inputFrame.size.height = height;
         ws.inputController.view.frame = inputFrame;
         
-//        [ws.messageController scrollToBottom:NO];
+        [ws.messageController scrollToBottom:NO];
     } completion:nil];
 }
 
-- (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageData *)msg {
+- (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageDataModel *)msg {
     [_messageController sendMessage:msg];
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {
         [self.delegate chatController:self didSendMessage:msg];
     }
 }
 
-- (void)sendMessage:(ChatMessageData *)message {
+- (void)sendMessage:(ChatMessageDataModel *)message {
     [_messageController sendMessage:message];
 }
 
+//- (void)didTapInMessageController:(ChatMessageController *)controller {
 - (void)didTapInMessageController:(MessageController *)controller {
+
     [_inputController reset];
 }
 @end

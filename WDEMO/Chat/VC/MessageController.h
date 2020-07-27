@@ -11,7 +11,7 @@
  *
  ******************************************************************************/
 #import <UIKit/UIKit.h>
-#import "ChatMessageData.h"
+#import "ChatMessageDataModel.h"
 #import "ChatMemberListView.h"
 
 @class MessageController;
@@ -68,7 +68,7 @@
  *
  *  @param msg 消息单元数据
  */
-- (void)sendMessage:(ChatMessageData *)msg;
+- (void)sendMessage:(ChatMessageDataModel *)msg;
 
 - (void)scrollToBottom:(BOOL)animate;
 @end

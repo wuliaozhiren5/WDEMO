@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "InputBar.h"
 #import "FaceView.h"
-#import "ChatMessageData.h"
+#import "ChatMessageDataModel.h"
 
 @class InputController;
 /**
@@ -39,7 +39,7 @@
  *  @param msg 当前控制器所获取并准备发送的消息。
  */
  
-- (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageData *)msg;
+- (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageDataModel *)msg;
 
 @end
 

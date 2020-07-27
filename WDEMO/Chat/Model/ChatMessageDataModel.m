@@ -6,7 +6,7 @@
 //  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import "ChatMessageData.h"
+#import "ChatMessageDataModel.h"
 #import "FaceAttachment.h"
 #import "FaceCell.h"
 #import "FaceView.h"
@@ -14,7 +14,7 @@
 #import "ChatKit.h"
 #import "ChatHeader.h"
 
-@implementation ChatMessageData
+@implementation ChatMessageDataModel
 
 - (NSAttributedString *)attributedString
 {

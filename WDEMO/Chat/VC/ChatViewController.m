@@ -9,7 +9,7 @@
 #import "ChatViewController.h"
 #import "ChatController.h"
 
-@interface ChatViewController ()///<ChatControllerDelegate>
+@interface ChatViewController () <ChatControllerDelegate>
 
 @property (nonatomic, strong) ChatController *chat;
 
@@ -21,14 +21,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor grayColor];
-//    _chat = [[RRChatController alloc] initWithConversation:self.conversationData];
     _chat = [[ChatController alloc] init];
-//    _chat.delegate = self;
+    _chat.delegate = self;
+    _chat.view.frame =CGRectMake(0, 200, self.view.bounds.size.width, self.view.bounds.size.height - 200);
     [self addChildViewController:_chat];
     [self.view addSubview:_chat.view];
 }
  
-- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageData *)msgCellData;
+- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageDataModel *)msgCellData;
 {
     //  to do
 }
