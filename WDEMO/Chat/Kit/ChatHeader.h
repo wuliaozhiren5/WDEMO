@@ -25,7 +25,7 @@
 #define RGBA(r, g, b, a)    [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a]
 #define RGB(r, g, b)    [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.f]
 
-#define  MessageViewColor  RGB(33, 33, 33) 
+#define  MessageViewColor  RGBA(0, 0, 0, 0.7)
 #define  InputBarColor  RGB(33, 33, 33)
 #define  InputBarTextViewColor  RGB(46, 46, 46)
 #define  InputBarTextColor  RGB(218, 218, 220)
@@ -35,10 +35,17 @@
 #define  FaceButtonBackGroundNoAvailable  RGB(65, 65, 65)
 #define  FaceButtonBackGroundAvailable  RGB(0, 187, 255)
 
-#define  ChatNameTextColor    RGB(145, 150, 150)
-#define  ChatContentTextColor RGB(218, 219, 220)
- 
- 
+//公告气泡
+#define  NoticeBubbleColor    RGBA(255, 255, 255, 0.1)
+//聊天文字
+#define  ChatTextColor    RGBA(218, 219, 220, 1.0)
+//进入房间文字
+#define  EnterUserContenTextColor RGBA(218, 219, 220, 0.5)
+//聊天姓名
+#define  ChatNameColor    RGBA(145, 150, 153, 1.0)
+//聊天气泡
+#define  ChatBubbleColor    RGBA(0, 0, 0, 0.2)
+
 //cell
 #define TMessageCell_Head_Width 45
 #define TMessageCell_Head_Height 45

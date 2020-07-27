@@ -74,9 +74,9 @@
     layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-    self.chatMemberListView = [[ChatMemberListView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60) collectionViewLayout:layout];
-    self.chatMemberListView.backgroundColor = [UIColor redColor];
-    [self.viewIfLoaded addSubview:self.chatMemberListView];
+//    self.chatMemberListView = [[ChatMemberListView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60) collectionViewLayout:layout];
+//    self.chatMemberListView.backgroundColor = [UIColor redColor];
+//    [self.viewIfLoaded addSubview:self.chatMemberListView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -99,6 +99,7 @@
     ChatMessageDataModel *data = _uiMsgs[indexPath.row];
     ChatMessageCell *messageCell = nil;
     messageCell =(ChatMessageCell *)[tableView dequeueReusableCellWithIdentifier:@"IMMessageCell" forIndexPath:indexPath];
+    messageCell.selectionStyle = UITableViewCellSelectionStyleNone;
     [messageCell fillWithData:data];
     
     return messageCell;

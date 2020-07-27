@@ -55,7 +55,7 @@
     _inputTextView.delegate = self;
     [_inputTextView setFont:[UIFont systemFontOfSize:16]];
     [_inputTextView.layer setMasksToBounds:YES];
-    [_inputTextView.layer setCornerRadius:8.0f];
+    [_inputTextView.layer setCornerRadius:TTextView_TextView_Height_Min / 2.0];
     //    [_inputTextView.layer setBorderWidth:0.5f];
     //    [_inputTextView.layer setBorderColor:[UIColor d_colorWithColorLight:TLine_Color dark:TLine_Color_Dark].CGColor];
     
