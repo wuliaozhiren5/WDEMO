@@ -26,9 +26,13 @@
 #define RGB(r, g, b)    [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.f]
 
 #define  MessageViewColor  RGBA(0, 0, 0, 0.7)
+//inputview背景色
 #define  InputBarColor  RGB(33, 33, 33)
-#define  InputBarTextViewColor  RGB(46, 46, 46)
-#define  InputBarTextColor  RGB(218, 218, 220)
+//输入框背景色
+#define  InputBarTextViewColor  RGBA(255, 255, 255, 0.1)
+//输入框文字
+#define  InputBarTextColor  RGBA(255, 255, 255, 0.35)
+
 #define  FaceButtonTextNoAvailable  RGB(65, 65, 65)
 #define  FaceButtonTextAvailable  RGB(255, 255, 255)
  

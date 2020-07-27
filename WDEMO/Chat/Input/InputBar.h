@@ -140,4 +140,9 @@
  *  @return 以字符串形式返回当前输入框中的内容。
  */
 - (NSString *)getInput;
+
+
+- (void)clickKeyboardBtn:(UIButton *)sender;
+
+- (void)clickFaceBtn:(UIButton *)sender;
 @end

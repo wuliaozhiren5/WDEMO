@@ -55,13 +55,13 @@
     _inputTextView.delegate = self;
     [_inputTextView setFont:[UIFont systemFontOfSize:16]];
     [_inputTextView.layer setMasksToBounds:YES];
-    [_inputTextView.layer setCornerRadius:TTextView_TextView_Height_Min / 2.0];
+    [_inputTextView.layer setCornerRadius:5.0f];
     //    [_inputTextView.layer setBorderWidth:0.5f];
     //    [_inputTextView.layer setBorderColor:[UIColor d_colorWithColorLight:TLine_Color dark:TLine_Color_Dark].CGColor];
     
     _placeholderLabel = [[UILabel alloc] init];
     _placeholderLabel.frame = CGRectMake(17, 8, 100, 20);
-    _placeholderLabel.font = [UIFont systemFontOfSize:16];
+    _placeholderLabel.font = [UIFont systemFontOfSize:18.0];
     _placeholderLabel.text = _placeholderStr;
     //    _placeholderLabel.textColor = [UIColor redColor];
     _placeholderLabel.enabled = NO;//lable必须设置为不可用
@@ -73,13 +73,6 @@
     [_inputTextView setReturnKeyType:UIReturnKeySend];
     [self addSubview:_inputTextView];
     
-    
-    _playListButton = [[UIButton alloc] init];
-    [_playListButton addTarget:self action:@selector(clickKeyboardBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_playListButton setImage:[UIImage chat_imageNamed:@"playlist"] forState:UIControlStateNormal];
-    [_playListButton setImage:[UIImage chat_imageNamed:@"playlist"] forState:UIControlStateHighlighted];
-    [self addSubview:_playListButton];
-    
 }
 
 - (void)defaultLayout {
@@ -88,11 +81,10 @@
     CGFloat buttonOriginY = (TTextView_Height - buttonSize.height) * 0.5;
     
     _faceButton.frame = CGRectMake(TTextView_Margin, buttonOriginY, buttonSize.width, buttonSize.height);
-    
-    _playListButton.frame = CGRectMake(Screen_Width - TTextView_Margin -  buttonSize.width , buttonOriginY, buttonSize.width, buttonSize.height);
+     
     
     CGFloat beginX = _faceButton.frame.origin.x + _faceButton.frame.size.width + TTextView_Margin;
-    CGFloat endX = Screen_Width - TTextView_Margin * 2 - _playListButton.frame.size.width;
+    CGFloat endX = Screen_Width - TTextView_Margin;
     _inputTextView.frame = CGRectMake(beginX, (TTextView_Height - TTextView_TextView_Height_Min) * 0.5, endX - beginX, TTextView_TextView_Height_Min);
     
     _placeholderLabel.frame = CGRectMake(8, 8, _inputTextView.frame.size.width - 8 * 2, 20);
@@ -114,10 +106,6 @@
     faceFrame.origin.y = originY;
     _faceButton.frame = faceFrame;
     _keyboardButton.frame = faceFrame;
-    
-    CGRect  playListButtonFrame  = _playListButton.frame;
-    playListButtonFrame.origin.y = originY;
-    _playListButton.frame = playListButtonFrame;
     
     if(_delegate && [_delegate respondsToSelector:@selector(inputBar:didChangeInputHeight:)]){
         [_delegate inputBar:self didChangeInputHeight:offset];
@@ -157,22 +145,6 @@
     
     textView.backgroundColor = InputBarTextViewColor;
     textView.textColor = InputBarTextColor;
-    
-    _playListButton.hidden = YES;
-    
-    CGFloat beginX = _faceButton.frame.origin.x + _faceButton.frame.size.width + TTextView_Margin;
-    CGFloat endX = Screen_Width - TTextView_Margin;
-    _inputTextView.frame = CGRectMake(beginX, (TTextView_Height - TTextView_TextView_Height_Min) * 0.5, endX - beginX, TTextView_TextView_Height_Min);
-    [self textViewDidChange:_inputTextView];
-
-}
-
-- (void)textViewDidEndEditing:(UITextView *)textView {
-    _playListButton.hidden = NO;
-    CGFloat beginX = _faceButton.frame.origin.x + _faceButton.frame.size.width + TTextView_Margin;
-    CGFloat endX = Screen_Width - TTextView_Margin * 2 - _playListButton.frame.size.width;
-    _inputTextView.frame = CGRectMake(beginX, (TTextView_Height - TTextView_TextView_Height_Min) * 0.5, endX - beginX, TTextView_TextView_Height_Min);
-    [self textViewDidChange:_inputTextView];
 
 }
 
@@ -276,7 +248,7 @@
     //添加标签名
     faceAttachement.tagName = emoji;
     //设置表情大小
-    faceAttachement.bounds = CGRectMake(0, 0, 14, 14);
+    faceAttachement.bounds = CGRectMake(0, 0, 16, 16);
     //记录光标位置
     NSInteger location = _inputTextView.selectedRange.location;
     //插入表情

@@ -76,6 +76,7 @@
 		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
 		F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */; };
 		F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32724CEBB66009A6767 /* MessageController.m */; };
+		F5DEB33024CEF5E3009A6767 /* NoInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32F24CEF5E3009A6767 /* NoInputBar.m */; };
 		F5F3664924C8287C008BA221 /* ChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3664824C8287C008BA221 /* ChatKit.m */; };
 		F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */; };
 		F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */; };
@@ -266,6 +267,8 @@
 		F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMemberListCell.m; sourceTree = "<group>"; };
 		F5DEB32724CEBB66009A6767 /* MessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageController.m; sourceTree = "<group>"; };
 		F5DEB32824CEBB66009A6767 /* MessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageController.h; sourceTree = "<group>"; };
+		F5DEB32E24CEF5E3009A6767 /* NoInputBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoInputBar.h; sourceTree = "<group>"; };
+		F5DEB32F24CEF5E3009A6767 /* NoInputBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoInputBar.m; sourceTree = "<group>"; };
 		F5F3664724C8287B008BA221 /* ChatKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKit.h; sourceTree = "<group>"; };
 		F5F3664824C8287C008BA221 /* ChatKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKit.m; sourceTree = "<group>"; };
 		F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChatKitFace.bundle; sourceTree = "<group>"; };
@@ -632,6 +635,8 @@
 				F553E11F24CA800200DA5625 /* FaceView.m */,
 				F553E12524CA800200DA5625 /* InputBar.h */,
 				F553E11E24CA800200DA5625 /* InputBar.m */,
+				F5DEB32E24CEF5E3009A6767 /* NoInputBar.h */,
+				F5DEB32F24CEF5E3009A6767 /* NoInputBar.m */,
 				F553E12024CA800200DA5625 /* InputController.h */,
 				F553E12224CA800200DA5625 /* InputController.m */,
 				F553E12124CA800200DA5625 /* TResponderTextView.h */,
@@ -928,6 +933,7 @@
 				6730334C210AED3D001471D8 /* PersonalCenterBarBtn.m in Sources */,
 				F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */,
 				6783C8911FB944B80040C02B /* LZTagListVC.m in Sources */,
+				F5DEB33024CEF5E3009A6767 /* NoInputBar.m in Sources */,
 				F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */,
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,

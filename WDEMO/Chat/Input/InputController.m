@@ -12,6 +12,8 @@
 #import "ChatKit.h"
 #import "ChatMessageDataModel.h"
 #import "NSAttributedString+FaceString.h"
+#import "UIImage+ChatKit.h"
+#import "NoInputBar.h"
 
 typedef NS_ENUM(NSUInteger, InputStatus) {
     Input_Status_Input,
@@ -22,7 +24,12 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 };
 
 @interface InputController () <TTextViewDelegate, TFaceViewDelegate>
+
 @property (nonatomic, assign) InputStatus status;
+
+//假的inputview
+@property (nonatomic, strong) NoInputBar *bottomBar;
+
 @end
 
 @implementation InputController
@@ -61,8 +68,34 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     _inputBar = [[InputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
     _inputBar.delegate = self;
     [self.view addSubview:_inputBar];
+
+    _bottomBar = [[NoInputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
+    _bottomBar.backgroundColor = InputBarColor;
+    [self.view addSubview:_bottomBar];
+ 
+    [_bottomBar.faceButton addTarget:self action:@selector(clickBottomBarFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_bottomBar.textViewBtn addTarget:self action:@selector(clickBottomBarTextViewBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_bottomBar.playListBtn addTarget:self action:@selector(clickBottomBarPlayListBtn:) forControlEvents:UIControlEventTouchUpInside];
+     
+    _bottomBar.hidden = NO;
+    _inputBar.inputTextView.hidden = YES;
+ 
 }
 
+- (void)clickBottomBarFaceBtn:(UIButton *)sender {
+    _bottomBar.hidden = YES;
+    [_inputBar clickFaceBtn:sender];
+}
+
+- (void)clickBottomBarTextViewBtn:(UIButton *)sender {
+    _bottomBar.hidden = YES;
+    [_inputBar clickKeyboardBtn:sender];
+}
+
+- (void)clickBottomBarPlayListBtn:(UIButton *)sender {
+  
+}
+ 
 - (void)keyboardWillHide:(NSNotification *)notification
 { 
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
@@ -196,8 +229,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 }
 
 
-- (void)reset
-{
+- (void)reset {
     if(_status == Input_Status_Input){
         return;
     }
@@ -212,6 +244,10 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
         [_delegate inputController:self didChangeHeight:_inputBar.frame.size.height + Bottom_SafeHeight];
     }
+    
+    _bottomBar.hidden = NO;
+    _inputBar.inputTextView.hidden = YES;
+    
 }
 
 

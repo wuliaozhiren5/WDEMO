@@ -104,8 +104,10 @@
     
     return messageCell;
 }
+
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //}
+
 
 - (void)scrollToBottom:(BOOL)animate {
     if (_uiMsgs.count > 0) {
@@ -135,5 +137,13 @@
         return NO;
     }
     return YES;
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(_delegate && [_delegate respondsToSelector:@selector(didTapInMessageController:)]){
+         [_delegate didTapInMessageController:self];
+     }
+    
 }
 @end

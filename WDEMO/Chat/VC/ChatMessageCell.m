@@ -59,9 +59,10 @@
     
     self.content.attributedText = data.attributedString;
     
-    self.bubbleView.backgroundColor = ChatBubbleColor;
-//    self.bubbleView.backgroundColor = NoticeBubbleColor;
-
+        //聊天气泡
+    //    self.bubbleView.backgroundColor = ChatBubbleColor;
+    //    公告气泡
+        self.bubbleView.backgroundColor = NoticeBubbleColor;
     
     self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
     self.content.frame = CGRectMake(data.textOrigin.x, data.textOrigin.y,data.textSize.width,  data.textSize.height);
