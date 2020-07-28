@@ -58,7 +58,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  发送自定义的个性化消息
  *
  */
-
 - (void)sendMessage:(ChatMessageDataModel *)msg;
 
 @end

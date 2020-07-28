@@ -85,15 +85,23 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 - (void)clickBottomBarFaceBtn:(UIButton *)sender {
     _bottomBar.hidden = YES;
     [_inputBar clickFaceBtn:sender];
+    if (_delegate && [_delegate respondsToSelector:@selector(inputControllerDidTouchFace:)]){
+          [_delegate inputControllerDidTouchFace:self];
+      }
 }
 
 - (void)clickBottomBarTextViewBtn:(UIButton *)sender {
     _bottomBar.hidden = YES;
     [_inputBar clickKeyboardBtn:sender];
+    if (_delegate && [_delegate respondsToSelector:@selector(inputControllerDidTouchTextView:)]){
+        [_delegate inputControllerDidTouchTextView:self];
+    }
 }
 
 - (void)clickBottomBarPlayListBtn:(UIButton *)sender {
-  
+  if (_delegate && [_delegate respondsToSelector:@selector(inputControllerDidTouchPlayList:)]){
+       [_delegate inputControllerDidTouchPlayList:self];
+   }
 }
  
 - (void)keyboardWillHide:(NSNotification *)notification
@@ -112,8 +120,8 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
         //        [self hideMoreAnimation];
     }
     else{
-        //[self hideFaceAnimation:NO];
-        //[self hideMoreAnimation:NO];
+//        [self hideFaceAnimation:NO];
+//        [self hideMoreAnimation:NO];
     }
     _status = Input_Status_Input_Keyboard;
 }

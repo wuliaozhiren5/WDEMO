@@ -9,8 +9,11 @@
 #import "ChatController.h"
 #import "ChatHeader.h"
 #import "ChatMessageDataModel.h"
+#import "ChatMemberListView.h"
 
 @interface ChatController () <TInputControllerDelegate, TMessageControllerDelegate>
+
+@property (nonatomic, strong) ChatMemberListView *chatMemberListView;
 
 @end
 
@@ -30,23 +33,37 @@
 }
 
 - (void)setupViews {
-//    _messageController = [[ChatMessageController alloc] init];
+    //message
     _messageController = [[MessageController alloc] init];
     _messageController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight);
     _messageController.delegate = self;
     [self addChildViewController:_messageController];
     [self.view addSubview:_messageController.view];
- 
+    
     //input
     _inputController = [[InputController alloc] init];
     _inputController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight, self.view.frame.size.width, TTextView_Height + Bottom_SafeHeight);
-    
     _inputController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     _inputController.view.backgroundColor = InputBarColor;
     _inputController.delegate = self;
-    
     [self addChildViewController:_inputController];
     [self.view addSubview:_inputController.view];
+    
+    //Member
+    UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
+    layout.itemSize = CGSizeMake(30, 30);
+    layout.minimumLineSpacing = 10;
+    layout.minimumInteritemSpacing = 10;
+    layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    self.chatMemberListView = [[ChatMemberListView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60) collectionViewLayout:layout];
+    self.chatMemberListView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:self.chatMemberListView];
+    
+}
+
+- (void)sendMessage:(ChatMessageDataModel *)message {
+    [_messageController sendMessage:message];
 }
 
 #pragma mark- TInputControllerDelegate
@@ -73,13 +90,26 @@
     }
 }
 
-- (void)sendMessage:(ChatMessageDataModel *)message {
-    [_messageController sendMessage:message];
+- (void)inputControllerDidTouchFace:(InputController *)inputController {
+    //键盘出现时，处理UI，人员列表
+    self.chatMemberListView.hidden = YES;
 }
 
+- (void)inputControllerDidTouchTextView:(InputController *)inputController {
+    //键盘出现时，处理UI，人员列表
+    self.chatMemberListView.hidden = YES;
+}
+
+- (void)inputControllerDidTouchPlayList:(InputController *)inputController {
+    
+}
+
+#pragma mark- TMessageControllerDelegate
 //- (void)didTapInMessageController:(ChatMessageController *)controller {
 - (void)didTapInMessageController:(MessageController *)controller {
-
+    //键盘消失时，处理UI，人员列表
+    self.chatMemberListView.hidden = NO;
     [_inputController reset];
 }
+
 @end

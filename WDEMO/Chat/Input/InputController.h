@@ -38,8 +38,22 @@
  *  @param  inputController 委托者，当前参与交互的视图控制器。
  *  @param msg 当前控制器所获取并准备发送的消息。
  */
- 
 - (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageDataModel *)msg;
+
+/**
+*  点击Face按钮时候  外部需要处理的事件
+*/
+- (void)inputControllerDidTouchFace:(InputController *)inputController;
+
+/**
+*  点击TextView按钮时候  外部需要处理的事件
+*/
+- (void)inputControllerDidTouchTextView:(InputController *)inputController;
+
+/**
+*  点击PlayList按钮时候  外部需要处理的事件
+*/
+- (void)inputControllerDidTouchPlayList:(InputController *)inputController;
 
 @end
 

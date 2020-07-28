@@ -56,22 +56,19 @@
     [_inputTextView setFont:[UIFont systemFontOfSize:16]];
     [_inputTextView.layer setMasksToBounds:YES];
     [_inputTextView.layer setCornerRadius:5.0f];
-    //    [_inputTextView.layer setBorderWidth:0.5f];
-    //    [_inputTextView.layer setBorderColor:[UIColor d_colorWithColorLight:TLine_Color dark:TLine_Color_Dark].CGColor];
+    _inputTextView.backgroundColor = InputBarTextViewColor;
+    _inputTextView.textColor = ChatTextColor;
+    [_inputTextView setReturnKeyType:UIReturnKeySend];
+    [self addSubview:_inputTextView];
     
     _placeholderLabel = [[UILabel alloc] init];
     _placeholderLabel.frame = CGRectMake(17, 8, 100, 20);
     _placeholderLabel.font = [UIFont systemFontOfSize:18.0];
     _placeholderLabel.text = _placeholderStr;
-    //    _placeholderLabel.textColor = [UIColor redColor];
-    _placeholderLabel.enabled = NO;//lable必须设置为不可用
+    _placeholderLabel.textColor = InputBarTextColor;
+//    _placeholderLabel.enabled = NO;//lable必须设置为不可用
     _placeholderLabel.backgroundColor = [UIColor clearColor];
     [_inputTextView addSubview:_placeholderLabel];
-    
-    _inputTextView.backgroundColor = InputBarTextViewColor;
-    _inputTextView.textColor = InputBarTextColor;
-    [_inputTextView setReturnKeyType:UIReturnKeySend];
-    [self addSubview:_inputTextView];
     
 }
 
@@ -136,16 +133,12 @@
     _keyboardButton.frame = _faceButton.frame;
 }
 
-
 #pragma mark - talk
-
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     self.keyboardButton.hidden = YES;
     self.faceButton.hidden = NO;
-    
-    textView.backgroundColor = InputBarTextViewColor;
-    textView.textColor = InputBarTextColor;
-
+    //设置textView的textColor颜色，原因修改过程中会变色
+    textView.textColor = ChatTextColor;
 }
 
 - (void)textViewDidChange:(UITextView *)textView {

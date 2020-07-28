@@ -30,7 +30,7 @@
 #define  InputBarColor  RGB(33, 33, 33)
 //输入框背景色
 #define  InputBarTextViewColor  RGBA(255, 255, 255, 0.1)
-//输入框文字
+//输入框默认文字
 #define  InputBarTextColor  RGBA(255, 255, 255, 0.35)
 
 #define  FaceButtonTextNoAvailable  RGB(65, 65, 65)

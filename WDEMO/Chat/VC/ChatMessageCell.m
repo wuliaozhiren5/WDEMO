@@ -7,14 +7,11 @@
 //
 
 #import "ChatMessageCell.h"
-#import "ChatHeader.h"
 
 @interface ChatMessageCell ()
 
-@property (nonatomic, strong) UILabel *content;
-@property (nonatomic, strong) UIImageView *bubbleView;
-
 @end
+
 @implementation ChatMessageCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -57,8 +54,7 @@
 
 - (void)fillWithData:(ChatMessageDataModel *)data {
     
-    self.content.attributedText = data.attributedString;
-    
+    self.content.attributedText = data.attributedString; 
         //聊天气泡
     //    self.bubbleView.backgroundColor = ChatBubbleColor;
     //    公告气泡

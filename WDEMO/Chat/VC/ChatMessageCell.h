@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ChatHeader.h"
 #import "ChatMessageDataModel.h"
-
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ChatMessageCell : UITableViewCell
+
+@property (nonatomic, strong) UILabel *content;
+
+@property (nonatomic, strong) UIImageView *bubbleView;
 
 - (void)fillWithData:(ChatMessageDataModel *)data;
 

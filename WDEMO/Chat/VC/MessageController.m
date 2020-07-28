@@ -14,6 +14,7 @@
 #define MAX_MESSAGE_SEP_DLAY (5 * 60)
 
 @interface MessageController ()<UIGestureRecognizerDelegate>
+
 @property (nonatomic, strong) NSMutableArray *uiMsgs;
 @property (nonatomic, strong) NSMutableArray *heightCache;
 
@@ -43,7 +44,7 @@
 //}
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -63,20 +64,13 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.backgroundColor = MessageViewColor;
     [self.tableView registerClass:[ChatMessageCell class] forCellReuseIdentifier:@"IMMessageCell"];
+     
+    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 50)];
+    self.tableView.tableHeaderView = headerView;
     
     _heightCache = [NSMutableArray array];
     _uiMsgs = [[NSMutableArray alloc] init];
     
-    UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
-    layout.itemSize = CGSizeMake(30, 30);
-    layout.minimumLineSpacing = 10;
-    layout.minimumInteritemSpacing = 10;
-    layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
-    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    
-    self.chatMemberListView = [[ChatMemberListView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60) collectionViewLayout:layout];
-    self.chatMemberListView.backgroundColor = [UIColor clearColor];
-    [self.viewIfLoaded addSubview:self.chatMemberListView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -116,6 +110,7 @@
 }
 
 - (void)didTapViewController {
+    
     if(_delegate && [_delegate respondsToSelector:@selector(didTapInMessageController:)]){
         [_delegate didTapInMessageController:self];
     }
@@ -132,17 +127,21 @@
 
 #pragma mark - UIGestureRecognizerDelegate
 #pragma mark- --点击手势代理，为了去除手势冲突--
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
-    if([touch.view isDescendantOfView:self.chatMemberListView]){
-        return NO;
-    }
-    return YES;
-}
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+//    if([touch.view isDescendantOfView:self.chatMemberListView]){
+//        return NO;
+//    }
+//    return YES;
+//}
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if(_delegate && [_delegate respondsToSelector:@selector(didTapInMessageController:)]){
-         [_delegate didTapInMessageController:self];
-     }
+//    [self didTapViewController];
+//    if(_delegate && [_delegate respondsToSelector:@selector(didTapInMessageController:)]){
+//         [_delegate didTapInMessageController:self];
+//     }
+}
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self didTapViewController];
 }
 @end

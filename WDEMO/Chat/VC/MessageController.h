@@ -12,10 +12,8 @@
  ******************************************************************************/
 #import <UIKit/UIKit.h>
 #import "ChatMessageDataModel.h"
-#import "ChatMemberListView.h"
 
 @class MessageController;
-
 
 ///////////////////////////////////////////////////////////////////////////////////
 ////
@@ -53,10 +51,6 @@
  *  同时本类提供了图像、视频、文件信息的发送功能，直接整合调用了 IM SDK 实现发送功能。
  */
 @interface MessageController : UITableViewController
-/**
-*  执行 TMessageControllerDelegate 协议的委托
-*/
-@property (nonatomic, strong) ChatMemberListView *chatMemberListView;
 
 /**
  *  执行 TMessageControllerDelegate 协议的委托
