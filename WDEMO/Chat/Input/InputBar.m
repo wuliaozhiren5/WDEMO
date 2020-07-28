@@ -189,7 +189,7 @@
                 UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"不能发送空白消息" message:nil preferredStyle:UIAlertControllerStyleAlert];
                 [ac addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
                 //                [self.mm_viewController presentViewController:ac animated:YES completion:nil];
-            }else if (sp.length >= 100) {
+            }else if (sp.length > 100) {
                 //大于100字
                 
             }else {
