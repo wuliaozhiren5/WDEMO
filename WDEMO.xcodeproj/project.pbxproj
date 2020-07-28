@@ -593,11 +593,11 @@
 				F57B529F24C7DECF00940696 /* ChatViewController.m */,
 				F57B52A124C7DF2700940696 /* ChatController.h */,
 				F57B52A224C7DF2700940696 /* ChatController.m */,
+				F5DEB32824CEBB66009A6767 /* MessageController.h */,
+				F5DEB32724CEBB66009A6767 /* MessageController.m */,
 				F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */,
 				F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */,
 				F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */,
-				F5DEB32824CEBB66009A6767 /* MessageController.h */,
-				F5DEB32724CEBB66009A6767 /* MessageController.m */,
 				F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */,
 			);
 			path = VC;

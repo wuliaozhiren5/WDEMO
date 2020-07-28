@@ -24,23 +24,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
     [self setupViews];
 }
 
-- (void)keyboardWillHide:(NSNotification *)notification {
-    self.chatMemberListView.hidden = NO;
-}
-
-- (void)keyboardWillShow:(NSNotification *)notification {
-    self.chatMemberListView.hidden = YES;
-}
-
-- (void)keyboardWillChangeFrame:(NSNotification *)notification {
-}
+//- (void)keyboardWillHide:(NSNotification *)notification {
+//    self.chatMemberListView.hidden = NO;
+//}
+//
+//- (void)keyboardWillShow:(NSNotification *)notification {
+//    self.chatMemberListView.hidden = YES;
+//}
+//
+//- (void)keyboardWillChangeFrame:(NSNotification *)notification {
+//}
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -74,9 +74,9 @@
     layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-//    self.chatMemberListView = [[ChatMemberListView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60) collectionViewLayout:layout];
-//    self.chatMemberListView.backgroundColor = [UIColor redColor];
-//    [self.viewIfLoaded addSubview:self.chatMemberListView];
+    self.chatMemberListView = [[ChatMemberListView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60) collectionViewLayout:layout];
+    self.chatMemberListView.backgroundColor = [UIColor clearColor];
+    [self.viewIfLoaded addSubview:self.chatMemberListView];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -144,6 +144,5 @@
     if(_delegate && [_delegate respondsToSelector:@selector(didTapInMessageController:)]){
          [_delegate didTapInMessageController:self];
      }
-    
 }
 @end
