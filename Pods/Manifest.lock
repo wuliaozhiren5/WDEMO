@@ -15,6 +15,7 @@ PODS:
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
   - Masonry (1.0.2)
+  - MBProgressHUD (1.2.0)
   - MJRefresh (3.4.3)
   - ReactiveObjC (2.1.2)
   - SDWebImage (3.8.3):
@@ -27,15 +28,17 @@ PODS:
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
   - Masonry (~> 1.0.1)
+  - MBProgressHUD (~> 1.2.0)
   - MJRefresh
   - ReactiveObjC (~> 2.0)
   - SDWebImage (~> 3.8)
-  - YYKit
+  - YYKit (~> 1.0)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - Masonry
+    - MBProgressHUD
     - MJRefresh
     - ReactiveObjC
     - SDWebImage
@@ -44,11 +47,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
   SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 3bb219ec568f0045b317364a31b077a4107ca6bb
+PODFILE CHECKSUM: 5a7597e659164d2ed30934246a6e0a364a3804b9
 
 COCOAPODS: 1.9.3

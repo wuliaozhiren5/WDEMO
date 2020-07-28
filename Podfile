@@ -9,9 +9,10 @@ pod 'MJRefresh'
 pod 'AFNetworking','~> 3.0’
 #UI
 pod 'Masonry', '~> 1.0.1'
-
+#RAC
 pod 'ReactiveObjC', '~> 2.0'
 
 pod 'YYKit', '~> 1.0'
-
+#HUD
+pod 'MBProgressHUD', '~> 1.2.0'
 end
