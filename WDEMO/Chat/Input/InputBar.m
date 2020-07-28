@@ -14,6 +14,7 @@
 #import "ChatImageCache.h"
 #import "FaceAttachment.h"
 #import "NSAttributedString+FaceString.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface InputBar() <UITextViewDelegate>
 @property (nonatomic, copy) NSString *placeholderStr;
@@ -66,7 +67,7 @@
     _placeholderLabel.font = [UIFont systemFontOfSize:18.0];
     _placeholderLabel.text = _placeholderStr;
     _placeholderLabel.textColor = InputBarTextColor;
-//    _placeholderLabel.enabled = NO;//lable必须设置为不可用
+    //    _placeholderLabel.enabled = NO;//lable必须设置为不可用
     _placeholderLabel.backgroundColor = [UIColor clearColor];
     [_inputTextView addSubview:_placeholderLabel];
     
@@ -78,7 +79,7 @@
     CGFloat buttonOriginY = (TTextView_Height - buttonSize.height) * 0.5;
     
     _faceButton.frame = CGRectMake(TTextView_Margin, buttonOriginY, buttonSize.width, buttonSize.height);
-     
+    
     
     CGFloat beginX = _faceButton.frame.origin.x + _faceButton.frame.size.width + TTextView_Margin;
     CGFloat endX = Screen_Width - TTextView_Margin;
@@ -191,6 +192,17 @@
                 //                [self.mm_viewController presentViewController:ac animated:YES completion:nil];
             }else if (sp.length > 100) {
                 //大于100字
+                
+                UIView *view = [UIApplication sharedApplication].delegate.window;
+                //只显示文字
+                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+                hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+                hud.bezelView.backgroundColor = [UIColor blackColor];
+                hud.mode = MBProgressHUDModeText;
+                hud.label.text = @"Some message...";
+                hud.label.textColor = [UIColor whiteColor];
+                [hud hideAnimated:YES afterDelay:2];
+                
                 
             }else {
                 

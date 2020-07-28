@@ -24,6 +24,8 @@
 #import "CpuMemoryUsage.h"
 
 #import "ChatViewController.h"
+//HUB
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface ViewController ()
 
@@ -292,6 +294,19 @@
     }
     return _timer;
 }
+- (void)hub{
+    
+    UIView *view = [UIApplication sharedApplication].delegate.window;
+           //只显示文字
+           MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+           hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+           hud.bezelView.backgroundColor = [UIColor blackColor];
+           hud.mode = MBProgressHUDModeText;
+           hud.label.text = @"Some message...";
+           hud.label.textColor = [UIColor whiteColor];
+           [hud hideAnimated:YES afterDelay:2];
+}
+
 - (void)dealloc {
     [self.timer invalidate];
     self.timer = nil;
