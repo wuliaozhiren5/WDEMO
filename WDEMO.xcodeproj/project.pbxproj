@@ -433,7 +433,7 @@
 			children = (
 				A4F155F524CD30C2007493C7 /* 富文本 */,
 				F57B529D24C7DEB100940696 /* Chat */,
-				F5668FB424C6D818007D452E /* cpu&memory */,
+				F5668FB424C6D818007D452E /* CPU */,
 				A459C28824C1642B00A3B5FF /* Crash */,
 				A479987D24BAB2A80079F72D /* CollectionView */,
 				A4F2C08D24B97F27005922B1 /* TagLIst */,
@@ -618,13 +618,13 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
-		F5668FB424C6D818007D452E /* cpu&memory */ = {
+		F5668FB424C6D818007D452E /* CPU */ = {
 			isa = PBXGroup;
 			children = (
 				F5668FB824C6DB69007D452E /* CpuMemoryUsage.h */,
 				F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */,
 			);
-			path = "cpu&memory";
+			path = CPU;
 			sourceTree = "<group>";
 		};
 		F57B529D24C7DEB100940696 /* Chat */ = {
