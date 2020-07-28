@@ -78,12 +78,13 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     [_bottomBar.playListBtn addTarget:self action:@selector(clickBottomBarPlayListBtn:) forControlEvents:UIControlEventTouchUpInside];
      
     _bottomBar.hidden = NO;
-    _inputBar.inputTextView.hidden = YES;
+    _inputBar.hidden = YES;
  
 }
 
 - (void)clickBottomBarFaceBtn:(UIButton *)sender {
     _bottomBar.hidden = YES;
+    _inputBar.hidden = NO;
     [_inputBar clickFaceBtn:sender];
     if (_delegate && [_delegate respondsToSelector:@selector(inputControllerDidTouchFace:)]){
           [_delegate inputControllerDidTouchFace:self];
@@ -92,6 +93,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 
 - (void)clickBottomBarTextViewBtn:(UIButton *)sender {
     _bottomBar.hidden = YES;
+    _inputBar.hidden = NO;
     [_inputBar clickKeyboardBtn:sender];
     if (_delegate && [_delegate respondsToSelector:@selector(inputControllerDidTouchTextView:)]){
         [_delegate inputControllerDidTouchTextView:self];
@@ -254,7 +256,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
     
     _bottomBar.hidden = NO;
-    _inputBar.inputTextView.hidden = YES;
+    _inputBar.hidden = YES;
     
 }
 
