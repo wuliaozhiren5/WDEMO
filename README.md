@@ -26,6 +26,9 @@ UncaughtExceptionHandler
 
 .plist
 
+cell:  - (void)fillWithData:(id)data;  
+view: - (void)setupViews;
+
 git
 
 3： git add --all

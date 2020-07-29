@@ -193,22 +193,21 @@
             }else if (sp.length > 100) {
                 //大于100字
                 
-                UIView *view = [UIApplication sharedApplication].delegate.window;
-                //只显示文字
-                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-                hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
-                hud.bezelView.backgroundColor = [UIColor blackColor];
-                hud.mode = MBProgressHUDModeText;
-                hud.label.text = @"Some message...";
-                hud.label.textColor = [UIColor whiteColor];
-                [hud hideAnimated:YES afterDelay:2];
+//                UIView *view = [UIApplication sharedApplication].delegate.window;
+//                //只显示文字
+//                MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+//                hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+//                hud.bezelView.backgroundColor = [UIColor blackColor];
+//                hud.mode = MBProgressHUDModeText;
+//                hud.label.text = @"Some message...";
+//                hud.label.textColor = [UIColor whiteColor];
+//                [hud hideAnimated:YES afterDelay:2];
                 
                 
             }else {
                 
                 //发送消息
                 [_delegate inputBar:self didSendText:[textView.attributedText toString]];
-                
                 [self clearInput];
             }
         }

@@ -15,6 +15,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage *)chat_imagePath:(NSString *)path;
 
+//UIView转化为UIImage
++ (UIImage *)convertViewToImage:(UIView *)view;
+
+//房主标签图片
++ (UIImage *)roomOwnimage;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -23,17 +23,16 @@
         //        [self.bubbleView addSubview:_content];
         self.contentView.backgroundColor = [UIColor clearColor];
         self.backgroundColor = [UIColor clearColor];
-
+        
         _bubbleView = [[UIImageView alloc] initWithFrame:CGRectZero];
         _bubbleView.layer.cornerRadius = 8;
         
         [self.contentView addSubview:_bubbleView];
         //        _bubbleView.mm_fill();
-        //        _bubbleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        _bubbleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         
         _content = [[UILabel alloc] init];
-//        _content.font = [UIFont systemFontOfSize:12.0];
-//        _content.textColor = ChatTextColor;
+        _content.lineBreakMode = NSLineBreakByCharWrapping;
         _content.numberOfLines = 0;
         [self.bubbleView addSubview:_content];
     }
@@ -55,10 +54,10 @@
 - (void)fillWithData:(ChatMessageDataModel *)data {
     
     self.content.attributedText = data.attributedString; 
-        //聊天气泡
+    //聊天气泡
     //    self.bubbleView.backgroundColor = ChatBubbleColor;
     //    公告气泡
-        self.bubbleView.backgroundColor = NoticeBubbleColor;
+    self.bubbleView.backgroundColor = NoticeBubbleColor;
     
     self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
     self.content.frame = CGRectMake(data.textOrigin.x, data.textOrigin.y,data.textSize.width,  data.textSize.height);

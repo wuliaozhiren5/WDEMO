@@ -13,21 +13,20 @@
 #import "ChatKit.h"
 #import "ChatKit.h"
 #import "ChatHeader.h"
+#import "UIImage+ChatKit.h"
 
 @implementation ChatMessageDataModel
 
 - (NSAttributedString *)attributedString
 {
     if (!_attributedString) {
-                _attributedString = [self faceWithServerString:_content];
-        //        _attributedString = [self systemNoticeWithString:_content];
-        
-//        _attributedString = [self enterNoticeWithString:_content];
+        _attributedString = [self faceWithServerString:_content];
+        //        _attributedString = [self tipMessageWithString:_content];
+        //        _attributedString = [self enterMessageWithString:_content];
         
     }
     return _attributedString;
 }
-
 
 - (NSAttributedString *)faceWithServerString:(NSString *)string {
     
@@ -47,7 +46,6 @@
     
     TFaceGroup *group = [ChatKit sharedInstance].config.faceGroups[0];
     
-    
     for (NSTextCheckingResult *result in resultArr) {
         NSRange range = result.range;
         NSString *subString = [string substringWithRange:range];
@@ -62,7 +60,6 @@
                 faceAttachment.bounds = CGRectMake(0, 0, 14, 14);
                 
                 [faceModelArr addObject:faceAttachment];
-                
             }
         }
     }
@@ -74,44 +71,91 @@
         [attributedString replaceCharactersInRange:faceAttachment.range withAttributedString:faceAttributedString];
     }
     
+    [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14], NSForegroundColorAttributeName:ChatTextColor} range:NSMakeRange(0, attributedString.length)];
     
-//    [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14]} range:NSMakeRange(0, attributedString.length)];
-    
-      [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14], NSForegroundColorAttributeName:ChatTextColor} range:NSMakeRange(0, attributedString.length)];
-    
-    
-    NSString *str = @"用户XXX:";
+    //nickname
+    NSString *name = @"用户XXX:";
+    //    NSString *name = self.sender.nickName;
     NSDictionary *dictAttr = @{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:ChatNameColor};
-    NSAttributedString *attr = [[NSAttributedString alloc]initWithString:str attributes:dictAttr];
+    NSAttributedString *nameStr = [[NSAttributedString alloc]initWithString:name attributes:dictAttr];
     
+    //vip
+    UIImage *vipImage = [UIImage chat_imageNamed:@"ic_common_vip_small"];
+    NSTextAttachment *attachmentVip = [[NSTextAttachment alloc]init];
+    attachmentVip.image = vipImage;
+    attachmentVip.bounds = CGRectMake(0, -2, 12, 12);
+    NSAttributedString *vipStr = [NSAttributedString attributedStringWithAttachment:attachmentVip];
+    
+    UIImage *roomImage = [UIImage roomOwnimage];
+    NSTextAttachment *attachmentRoom = [[NSTextAttachment alloc]init];
+    attachmentRoom.image = roomImage;
+    attachmentRoom.bounds = CGRectMake(0, -2, 24, 12);
+    NSAttributedString *roomStr = [NSAttributedString attributedStringWithAttachment:attachmentRoom];
+    
+    //空格
+    NSAttributedString *spaceStr = [[NSAttributedString alloc]initWithString:@" " attributes:dictAttr];
+    //冒号
+    NSAttributedString *colonStr = [[NSAttributedString alloc]initWithString:@":" attributes:dictAttr];
     
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc]initWithString:@""];
-    [attrStr appendAttributedString:attr];
+    
+    //    BOOL isVip = self.sender.isVip;
+    //    BOOL isRoomOwn = [self.creatorId isEqualToString:self.sender.userId];
+    BOOL isVip = YES;
+    BOOL isRoomOwn = YES;
+    if (isVip) {
+        [attrStr appendAttributedString:vipStr];
+        [attrStr appendAttributedString:spaceStr];
+    }
+    if (isRoomOwn) {
+        [attrStr appendAttributedString:roomStr];
+        [attrStr appendAttributedString:spaceStr];
+    }
+    [attrStr appendAttributedString:nameStr];
+    [attrStr appendAttributedString:colonStr];
+    [attrStr appendAttributedString:spaceStr];
     [attrStr appendAttributedString:attributedString];
     
-    //    return attributedString;
+    //行高
+    NSMutableParagraphStyle *aParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+    aParagraphStyle.lineSpacing = 5.0;
+    [aParagraphStyle setLineBreakMode:NSLineBreakByCharWrapping];
+    [attrStr addAttributes:@{NSParagraphStyleAttributeName:aParagraphStyle} range:NSMakeRange(0, attrStr.length)];
+    
     return attrStr;
 }
 
-- (NSAttributedString *)systemNoticeWithString:(NSString *)string {
+- (NSAttributedString *)tipMessageWithString:(NSString *)string {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:string];
-    [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12], NSForegroundColorAttributeName:ChatTextColor} range:NSMakeRange(0, attributedString.length)];
+    //行高
+    NSMutableParagraphStyle *aParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+    aParagraphStyle.lineSpacing = 5.0;
+    [aParagraphStyle setLineBreakMode:NSLineBreakByCharWrapping];
+    [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:12], NSForegroundColorAttributeName:ChatTextColor, NSParagraphStyleAttributeName:aParagraphStyle} range:NSMakeRange(0, attributedString.length)];
     return attributedString;
 }
 
-- (NSAttributedString *)enterNoticeWithString:(NSString *)string { 
+- (NSAttributedString *)enterMessageWithString:(NSString *)string {
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:@""];
-    
+   
     NSString *nameStr = @"用户XXX";
+//    NSString *nameStr = self.sender.nickName;
     NSDictionary *dictAttr1 = @{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:ChatTextColor};
     NSAttributedString *attr1 = [[NSAttributedString alloc]initWithString:nameStr attributes:dictAttr1];
     
-    NSString *contentStr = @"一起来看剧啦";
+    //    NSString *contentStr = @"一起来看剧啦";
+    NSString *contentStr = string;
     NSDictionary *dictAttr2 = @{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:EnterUserContenTextColor};
     NSAttributedString *attr2 = [[NSAttributedString alloc]initWithString:contentStr attributes:dictAttr2];
     
     [attributedString appendAttributedString:attr1];
     [attributedString appendAttributedString:attr2];
+    
+    //行高
+    NSMutableParagraphStyle *aParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+    aParagraphStyle.lineSpacing = 5.0;
+    [aParagraphStyle setLineBreakMode:NSLineBreakByCharWrapping];
+    [attributedString addAttributes:@{NSParagraphStyleAttributeName:aParagraphStyle} range:NSMakeRange(0, attributedString.length)];
     
     return attributedString;
 }
