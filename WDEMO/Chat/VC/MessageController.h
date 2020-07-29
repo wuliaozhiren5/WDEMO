@@ -56,6 +56,10 @@
  *  执行 TMessageControllerDelegate 协议的委托
  */
 @property (nonatomic, weak) id<TMessageControllerDelegate> delegate;
+
+//显示隐藏header
+@property (nonatomic, assign) BOOL hiddenHeader;
+
 /**
  *  发送消息
  *  本函数整合调用了 IM SDK 的发送接口，可以轻松接入 SDK。

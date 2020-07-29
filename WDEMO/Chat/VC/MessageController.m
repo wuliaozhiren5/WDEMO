@@ -73,6 +73,21 @@
     
 }
 
+-(void)setHiddenHeader:(BOOL)hiddenHeader {
+    _hiddenHeader = hiddenHeader;
+    [UIView animateWithDuration:1.0 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+        if (!_hiddenHeader) {
+            UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 50)];
+            self.tableView.tableHeaderView= headerView;
+
+        } else {
+            UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+            self.tableView.tableHeaderView = headerView;
+
+        }
+    } completion:nil];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _uiMsgs.count;
 }
