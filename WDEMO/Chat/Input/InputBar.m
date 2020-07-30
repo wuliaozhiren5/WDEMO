@@ -159,6 +159,17 @@
     CGFloat oldHeight = _inputTextView.frame.size.height;
     CGFloat newHeight = size.height;
     
+    //iOS：解决UITextView自适应高度粘贴大量文字导致上移显示不全的问题
+    CGFloat maxHeight = TTextView_TextView_Height_Max;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        if (size.height >= maxHeight) {
+            textView.scrollEnabled = YES;   // 允许滚动
+            [textView scrollRangeToVisible:textView.selectedRange];
+        }else {
+            textView.scrollEnabled = NO;    // 不允许滚动，当textview的大小足以容纳它的text的时候，需要设置scrollEnabed为NO，否则会出现光标乱滚动的情况
+        }
+    });
+    
     if(newHeight > TTextView_TextView_Height_Max){
         newHeight = TTextView_TextView_Height_Max;
     }

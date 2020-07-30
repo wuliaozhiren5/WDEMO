@@ -27,17 +27,19 @@
 
 #define  MessageViewColor  RGBA(0, 0, 0, 0.7)
 //inputview背景色
-#define  InputBarColor  RGB(33, 33, 33)
+#define  InputBarColor RGBA(0, 0, 0, 0.2) //RGB(33, 33, 33)
 //输入框背景色
 #define  InputBarTextViewColor  RGBA(255, 255, 255, 0.1)
 //输入框默认文字
 #define  InputBarTextColor  RGBA(255, 255, 255, 0.35)
 
-#define  FaceButtonTextNoAvailable  RGB(65, 65, 65)
+//face发送按钮 文字颜色
+#define  FaceButtonTextNoAvailable  RGB(46, 46, 46)
 #define  FaceButtonTextAvailable  RGB(255, 255, 255)
  
-#define  FaceButtonBackGroundNoAvailable  RGB(65, 65, 65)
-#define  FaceButtonBackGroundAvailable  RGB(0, 187, 255)
+//face发送按钮 背景颜色
+#define  FaceButtonBackGroundNoAvailable  RGBA(65, 65, 65, 0.9)
+#define  FaceButtonBackGroundAvailable    RGB(0, 187, 255)
 
 //公告气泡
 #define  NoticeBubbleColor    RGBA(255, 255, 255, 0.1)
@@ -57,6 +59,11 @@
 #define TMessageCell_Padding 8
 #define TMessageCell_Margin 8
 #define TMessageCell_Indicator_Size CGSizeMake(20, 20)
+
+#define ChatMessageCell_ReuseId @"ChatMessageCell"
+#define TipMessageCell_ReuseId @"TipMessageCell"
+#define FaceMessageCell_ReuseId @"FaceMessageCell"
+#define EnterMessageCell_ReuseId @"EnterMessageCell"
 
 //text cell
 #define TTextMessageCell_ReuseId @"TTextMessageCell"

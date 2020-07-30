@@ -9,6 +9,7 @@
   ******************************************************************************/
 #import <UIKit/UIKit.h>
 #import "InputBar.h"
+#import "NoInputBar.h"
 #import "FaceView.h"
 #import "ChatMessageDataModel.h"
 
@@ -77,6 +78,12 @@
  *  详细信息请参考 Section\Chat\Input\TUIInputBar.h
  */
 @property (nonatomic, strong) InputBar *inputBar;
+
+/**
+ *  假的输入条
+ */
+@property (nonatomic, strong) NoInputBar *bottomBar;
+
 
 ///**
 // *  表情视图

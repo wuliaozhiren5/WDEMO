@@ -157,5 +157,10 @@
  */
 - (void)setData:(NSMutableArray *)data;
 
+/**
+*  修改删除按钮，发送按钮 状态
+*
+*/
 - (void)showButton:(NSString *)str;
+
 @end

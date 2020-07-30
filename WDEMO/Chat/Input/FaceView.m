@@ -70,7 +70,6 @@
     
     _sendMessageBtn= [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 60, 40)];
     [_sendMessageBtn setTitle:@"发送" forState:UIControlStateNormal];
-    _sendMessageBtn.backgroundColor = [UIColor grayColor];
     [_sendMessageBtn addTarget:self action:@selector(clickSendMessageBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_sendMessageBtn];
     
@@ -81,10 +80,15 @@
     _sendMessageBtn.titleLabel.font = [UIFont systemFontOfSize:15];
     _sendMessageBtn.layer.masksToBounds = YES;
     _sendMessageBtn.layer.cornerRadius = 5;
-    _sendMessageBtn.backgroundColor = InputBarTextViewColor;
     _deleteBtn.layer.masksToBounds = YES;
     _deleteBtn.layer.cornerRadius = 5;
-    _deleteBtn.backgroundColor = InputBarTextViewColor;
+        
+    //不可以删状态
+    [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete_noclickable"] forState:UIControlStateNormal];
+    [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete_noclickable"] forState:UIControlStateHighlighted];
+    _deleteBtn.backgroundColor = FaceButtonBackGroundNoAvailable;
+    [_sendMessageBtn setTitleColor:FaceButtonTextNoAvailable forState:UIControlStateNormal];
+    _sendMessageBtn.backgroundColor = FaceButtonBackGroundNoAvailable;
 }
 
 - (void)showButton:(NSString *)str {
@@ -97,15 +101,18 @@
     
     if (!flag) {
         //不可以删状态
-        [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete_noclickable@2x"] forState:UIControlStateNormal];
-        [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete_noclickable@2x"] forState:UIControlStateHighlighted];
+        [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete_noclickable"] forState:UIControlStateNormal];
+        [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete_noclickable"] forState:UIControlStateHighlighted];
+        _deleteBtn.backgroundColor = FaceButtonBackGroundNoAvailable;
+        
         [_sendMessageBtn setTitleColor:FaceButtonTextNoAvailable forState:UIControlStateNormal];
         _sendMessageBtn.backgroundColor = FaceButtonBackGroundNoAvailable;
     }else{
-        //    //可以删状态
-        [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete@2x"] forState:UIControlStateNormal];
-        [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete@2x"] forState:UIControlStateHighlighted];
-        
+        //可以删状态
+        [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete"] forState:UIControlStateNormal];
+        [_deleteBtn setImage:[UIImage chat_imageNamed:@"ic_inputbox_delete"] forState:UIControlStateHighlighted];
+        _deleteBtn.backgroundColor = FaceButtonBackGroundNoAvailable;
+
         [_sendMessageBtn setTitleColor:FaceButtonTextAvailable forState:UIControlStateNormal];
         _sendMessageBtn.backgroundColor = FaceButtonBackGroundAvailable;
     }

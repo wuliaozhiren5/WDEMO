@@ -13,7 +13,6 @@
 #import "ChatMessageDataModel.h"
 #import "NSAttributedString+FaceString.h"
 #import "UIImage+ChatKit.h"
-#import "NoInputBar.h"
 
 typedef NS_ENUM(NSUInteger, InputStatus) {
     Input_Status_Input,
@@ -26,9 +25,6 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 @interface InputController () <TTextViewDelegate, TFaceViewDelegate>
 
 @property (nonatomic, assign) InputStatus status;
-
-//假的inputview
-@property (nonatomic, strong) NoInputBar *bottomBar;
 
 @end
 

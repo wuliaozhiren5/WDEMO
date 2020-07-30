@@ -79,6 +79,10 @@
         inputFrame.size.height = height;
         ws.inputController.view.frame = inputFrame;
         
+        CGRect bottomBarFrame = ws.inputController.bottomBar.frame;
+        bottomBarFrame.origin.y = height - bottomBarFrame.size.height - Bottom_SafeHeight;
+        ws.inputController.bottomBar.frame = bottomBarFrame;
+
         [ws.messageController scrollToBottom:NO];
     } completion:nil];
 }
