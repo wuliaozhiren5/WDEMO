@@ -271,7 +271,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 {
     //发送消息
     NSString *text =  [_inputBar.inputTextView.attributedText toString];
-    
+    //去除前后空格
     NSString *sp = [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if (sp.length == 0) {
         //         UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"不能发送空白消息" message:nil preferredStyle:UIAlertControllerStyleAlert];
@@ -284,7 +284,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
         
         [_inputBar clearInput];
         ChatMessageDataModel *data = [[ChatMessageDataModel alloc] init];
-        data.content = text;
+        data.content = sp;
         if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
             [_delegate inputController:self didSendMessage:data];
         }

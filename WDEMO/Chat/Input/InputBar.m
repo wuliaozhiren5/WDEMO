@@ -194,10 +194,10 @@
     if([text isEqualToString:@"\n"]){
         if(_delegate && [_delegate respondsToSelector:@selector(inputBar:didSendText:)]) {
             //            NSString *sp = [textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+            //去除前后空格
             NSString *sp = [[textView.attributedText toString] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
             
             if (sp.length == 0) {
-                
                 UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"不能发送空白消息" message:nil preferredStyle:UIAlertControllerStyleAlert];
                 [ac addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:nil]];
                 //                [self.mm_viewController presentViewController:ac animated:YES completion:nil];
@@ -213,12 +213,10 @@
 //                hud.label.text = @"Some message...";
 //                hud.label.textColor = [UIColor whiteColor];
 //                [hud hideAnimated:YES afterDelay:2];
-                
-                
             }else {
                 
                 //发送消息
-                [_delegate inputBar:self didSendText:[textView.attributedText toString]];
+                [_delegate inputBar:self didSendText:sp];
                 [self clearInput];
             }
         }
