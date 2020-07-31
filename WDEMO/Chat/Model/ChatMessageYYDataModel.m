@@ -14,11 +14,11 @@
 {
     if (!_yyAttributedString) {
         //表情
-//        _yyAttributedString = [self yyFaceWithServerString:self.content];
+        _yyAttributedString = [self yyFaceWithServerString:self.content];
         //公告
 //        _yyAttributedString = [self yyTipMessageWithString:self.content];
         //进入房间
-        _yyAttributedString = [self yyEnterMessageWithString:self.content];
+//        _yyAttributedString = [self yyEnterMessageWithString:self.content];
         
     }
     return _yyAttributedString;
@@ -91,6 +91,14 @@
     nameStr.lineBreakMode = NSLineBreakByCharWrapping;
     nameStr.font = namefont;
     nameStr.color = ChatNameColor;
+    
+//    [nameStr setTextHighlightRange:nameStr.rangeOfAll
+//                                  color:RGBA(84, 84, 84, 1)
+//                        backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.220]
+//                              tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+//                 //自定义代码，此处根据需要调整
+//                 NSLog(@"《嚯货协议》");
+//             }];
  
     //vip
     UIImage *vipImage = [UIImage chat_imageNamed:@"ic_common_vip_small"];;

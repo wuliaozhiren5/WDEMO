@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ChatMessageYYDataModel : ChatMessageDataModel
 
 @property (nonatomic, strong) NSAttributedString *yyAttributedString;
+
 @property (nonatomic, strong) YYTextLayout *layout;
 
 @property (nonatomic, strong) NSMutableAttributedString *yyNameStr;

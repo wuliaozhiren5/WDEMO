@@ -10,7 +10,8 @@
 #import "ChatHeader.h"
 #import "ChatMessageDataModel.h"
 #import "ChatMemberListView.h"
-    #import "ChatMessageYYDataModel.h"
+#import "ChatMessageYYDataModel.h"
+
 @interface ChatController () <TInputControllerDelegate, TMessageControllerDelegate>
 
 @property (nonatomic, strong) ChatMemberListView *chatMemberListView;

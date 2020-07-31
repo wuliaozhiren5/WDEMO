@@ -117,8 +117,8 @@
     ChatMessageCell *messageCell = nil;
     
     data.type = ChatMessageTypeTextFace;
-    data.type = ChatMessageTypeTip;
-    data.type = ChatMessageTypeEnter;
+//    data.type = ChatMessageTypeTip;
+//    data.type = ChatMessageTypeEnter;
 
     NSString *reuseId = nil;
        switch (data.type) {
