@@ -26,6 +26,7 @@
 #import "ChatViewController.h"
 //HUB
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "YYViewController.h"
 
 @interface ViewController ()
 
@@ -44,7 +45,13 @@
     //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
     //    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
+     
+    UIButton *tagListBtn1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 100, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [tagListBtn1 setTitle:@"tagListBtn1" forState:UIControlStateNormal];
+    tagListBtn1.backgroundColor = [UIColor grayColor];
+    [tagListBtn1 addTarget:self action:@selector(clickTagListBtn1:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:tagListBtn1];
     
     
     UIButton *touchBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 50, 100, 40)];
@@ -123,13 +130,21 @@
     [self.view addSubview:crashBtn];
     
     
-      UIButton *chatBtn  = [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 100, 40)];
-       //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-       
-       [chatBtn setTitle:@"chatBtn" forState:UIControlStateNormal];
-       chatBtn.backgroundColor = [UIColor grayColor];
-       [chatBtn addTarget:self action:@selector(clickChatBtn:) forControlEvents:UIControlEventTouchUpInside];
-       [self.view addSubview:chatBtn];
+    UIButton *chatBtn  = [[UIButton alloc]initWithFrame:CGRectMake(10, 550, 100, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [chatBtn setTitle:@"chatBtn" forState:UIControlStateNormal];
+    chatBtn.backgroundColor = [UIColor grayColor];
+    [chatBtn addTarget:self action:@selector(clickChatBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:chatBtn];
+
+    
+    UIButton *YYBtn  = [[UIButton alloc]initWithFrame:CGRectMake(10, 600, 100, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [YYBtn setTitle:@"clickYYBtn" forState:UIControlStateNormal];
+    YYBtn.backgroundColor = [UIColor grayColor];
+    [YYBtn addTarget:self action:@selector(clickYYBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:YYBtn];
+    
     
     
     //#############################################################################################################
@@ -190,7 +205,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)clickTaglistBtn:(UIButton *)btn {
+-(void)clickTagListBtn1:(UIButton *)btn {
     
     LZTagListVC *vc= [[LZTagListVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
@@ -251,7 +266,7 @@
 
 -(void)clickCollectionBtn:(UIButton *)btn {
     
-//    上下一对一联动的Collection
+    //    上下一对一联动的Collection
     GaoDengViewController *vc= [[GaoDengViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
     
@@ -269,6 +284,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+-(void)clickYYBtn:(UIButton *)btn { 
+    YYViewController *vc= [[YYViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (NSTimer *)timer {
     if (!_timer || _timer.isValid) {
