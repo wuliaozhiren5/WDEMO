@@ -84,6 +84,8 @@
 		F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */; };
 		F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */; };
 		F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3665524C82E5C008BA221 /* ChatImageCache.m */; };
+		F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10224D3C158007DB7F3 /* YYViewController.m */; };
+		F5F4F10624D3C192007DB7F3 /* AttributedTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10524D3C192007DB7F3 /* AttributedTextViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -284,6 +286,10 @@
 		F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChatKitResource.bundle; sourceTree = "<group>"; };
 		F5F3665424C82E5B008BA221 /* ChatImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatImageCache.h; sourceTree = "<group>"; };
 		F5F3665524C82E5C008BA221 /* ChatImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatImageCache.m; sourceTree = "<group>"; };
+		F5F4F10124D3C158007DB7F3 /* YYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYViewController.h; sourceTree = "<group>"; };
+		F5F4F10224D3C158007DB7F3 /* YYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYViewController.m; sourceTree = "<group>"; };
+		F5F4F10424D3C192007DB7F3 /* AttributedTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AttributedTextViewController.h; path = WDEMO/YY/AttributedTextViewController.h; sourceTree = SOURCE_ROOT; };
+		F5F4F10524D3C192007DB7F3 /* AttributedTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AttributedTextViewController.m; path = WDEMO/YY/AttributedTextViewController.m; sourceTree = SOURCE_ROOT; };
 		FBDBA0D4EFFC9C6F87B1E8B6 /* Pods-WDEMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDEMO.debug.xcconfig"; path = "Target Support Files/Pods-WDEMO/Pods-WDEMO.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -431,6 +437,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5F4F10024D3BF23007DB7F3 /* YY */,
 				A4F155F524CD30C2007493C7 /* 富文本 */,
 				F57B529D24C7DEB100940696 /* Chat */,
 				F5668FB424C6D818007D452E /* CPU */,
@@ -557,6 +564,8 @@
 		A4F155F524CD30C2007493C7 /* 富文本 */ = {
 			isa = PBXGroup;
 			children = (
+				F5F4F10424D3C192007DB7F3 /* AttributedTextViewController.h */,
+				F5F4F10524D3C192007DB7F3 /* AttributedTextViewController.m */,
 			);
 			path = "富文本";
 			sourceTree = "<group>";
@@ -685,6 +694,15 @@
 				F553E17A24CA86FC00DA5625 /* UIImage+ChatKit..m */,
 			);
 			path = Kit;
+			sourceTree = "<group>";
+		};
+		F5F4F10024D3BF23007DB7F3 /* YY */ = {
+			isa = PBXGroup;
+			children = (
+				F5F4F10124D3C158007DB7F3 /* YYViewController.h */,
+				F5F4F10224D3C158007DB7F3 /* YYViewController.m */,
+			);
+			path = YY;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -941,6 +959,7 @@
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
 				F553E17E24CA888800DA5625 /* ChatHelper.m in Sources */,
+				F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */,
 				67535E892390F0CF0009F882 /* FontViewControlle.m in Sources */,
 				67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */,
 				6783C8931FB944B80040C02B /* LZTagSegmentedControl.m in Sources */,
@@ -972,6 +991,7 @@
 				F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */,
 				F553E17B24CA86FC00DA5625 /* UIImage+ChatKit..m in Sources */,
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
+				F5F4F10624D3C192007DB7F3 /* AttributedTextViewController.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
 			);

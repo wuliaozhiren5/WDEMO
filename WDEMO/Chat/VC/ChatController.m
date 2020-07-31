@@ -32,6 +32,34 @@
     [self setupViews];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [_inputController reset];
+    
+//    todo
+//    https://www.jianshu.com/p/8d02bbe5d234
+//    进入后台（最小化） applicationDidEnterBackground
+//    不会调用 viewWillAppear viewDidAppear viewWillDisappear viewDidDisappear
+//    使用beginAppearanceTransition:(BOOL)isAppearing animated:(BOOL)animated和endAppearanceTransition来处理。
+//    [VC beginAppearanceTransition:YES animated:YES]触发towCol的viewWillAppear。
+//    [VC endAppearanceTransition]触发viewDidAppear。
+//
+//    [VC beginAppearanceTransition:NO animated:YES]触发towCol的viewWillDisappear。
+//    [VC endAppearanceTransition]触发viewDidDisappear。
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+}
+
 - (void)setupViews {
     //message
     _messageController = [[MessageController alloc] init];
