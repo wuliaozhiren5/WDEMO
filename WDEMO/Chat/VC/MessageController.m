@@ -10,7 +10,9 @@
 #import "ChatHeader.h"
 #import "ChatMessageDataModel.h"
 #import "ChatMessageCell.h"
- 
+#import "TipMessageCell.h"
+#import "FaceMessageCell.h"
+#import "EnterMessageCell.h"
 #define MAX_MESSAGE_SEP_DLAY (5 * 60)
 
 @interface MessageController ()<UIGestureRecognizerDelegate>
@@ -56,14 +58,20 @@
 }
 
 - (void)setupViews {
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapViewController)];
-    tap.delegate = self;
-    [self.view addGestureRecognizer:tap];
+    
+//      //点击退出编辑模式
+//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapViewController)];
+//    tap.delegate = self;
+//    [self.view addGestureRecognizer:tap];
     
     self.tableView.estimatedRowHeight = 0;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.backgroundColor = MessageViewColor;
-    [self.tableView registerClass:[ChatMessageCell class] forCellReuseIdentifier:@"IMMessageCell"];
+    
+    [self.tableView registerClass:[ChatMessageCell class] forCellReuseIdentifier:ChatMessageCell_ReuseId];
+    [self.tableView registerClass:[TipMessageCell class] forCellReuseIdentifier:TipMessageCell_ReuseId];
+    [self.tableView registerClass:[FaceMessageCell class] forCellReuseIdentifier:FaceMessageCell_ReuseId];
+    [self.tableView registerClass:[EnterMessageCell class] forCellReuseIdentifier:EnterMessageCell_ReuseId];
      
     UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 50)];
     self.tableView.tableHeaderView = headerView;
@@ -107,15 +115,48 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ChatMessageDataModel *data = _uiMsgs[indexPath.row];
     ChatMessageCell *messageCell = nil;
-    messageCell =(ChatMessageCell *)[tableView dequeueReusableCellWithIdentifier:@"IMMessageCell" forIndexPath:indexPath];
+    
+    data.type = ChatMessageTypeTextFace;
+    data.type = ChatMessageTypeTip;
+    data.type = ChatMessageTypeEnter;
+
+    NSString *reuseId = nil;
+       switch (data.type) {
+           case ChatMessageTypeTip:
+                reuseId = TipMessageCell_ReuseId;
+               break;
+            case ChatMessageTypeTextFace:
+               reuseId = FaceMessageCell_ReuseId;
+               break;
+            case ChatMessageTypeEnter:
+                reuseId = EnterMessageCell_ReuseId;
+               break;
+           default:
+               reuseId = ChatMessageCell_ReuseId;
+               break;
+       }
+    
+    
+    messageCell =(ChatMessageCell *)[tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     messageCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [messageCell fillWithData:data];
+    
+    if ([data isMemberOfClass:NSClassFromString(@"ChatMessageYYDataModel")]) {
+         [messageCell fillWithYYData:data];
+
+    } else if ([data isMemberOfClass:NSClassFromString(@"ChatMessageDataModel")]) {
+        [messageCell fillWithData:data];
+    }else {
+        
+    }
     
     return messageCell;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+
+
+}
 
 
 - (void)scrollToBottom:(BOOL)animate {

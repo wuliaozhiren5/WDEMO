@@ -8,6 +8,20 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "FaceAttachment.h"
+#import "FaceCell.h"
+#import "FaceView.h"
+#import "ChatKit.h"
+#import "ChatKit.h"
+#import "ChatHeader.h"
+#import "UIImage+ChatKit.h"
+
+typedef NS_ENUM(NSInteger, ChatMessageType) {
+    ChatMessageTypeUnknown,
+    ChatMessageTypeTextFace,
+    ChatMessageTypeTip,
+    ChatMessageTypeEnter,
+};
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -25,7 +39,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, strong) NSAttributedString *attributedString;
 
- 
+@property (nonatomic, assign)ChatMessageType type;
+
 @property (nonatomic, copy) NSString *name;
 
 @property (nonatomic, assign)CGSize contentSize;

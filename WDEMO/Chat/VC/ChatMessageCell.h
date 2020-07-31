@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "ChatHeader.h"
 #import "ChatMessageDataModel.h"
+#import <YYKit/YYKit.h>
+#import "ChatMessageYYDataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,10 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UILabel *content;
 
+@property (nonatomic, strong) YYLabel *yyContent;
+
 @property (nonatomic, strong) UIImageView *bubbleView;
 
 - (void)fillWithData:(ChatMessageDataModel *)data;
-
+- (void)fillWithYYData:(ChatMessageYYDataModel *)data;
 @end
 
 NS_ASSUME_NONNULL_END

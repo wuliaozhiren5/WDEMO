@@ -1,5 +1,5 @@
 //
-//  NoticeMessageCell.h
+//  TipMessageCell.h
 //  WDEMO
 //
 //  Created by rrtv on 2020/7/28.
@@ -10,8 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NoticeMessageCell : ChatMessageCell
+@interface TipMessageCell : ChatMessageCell
 
+- (void)fillWithData:(ChatMessageDataModel *)data;
+- (void)fillWithYYData:(ChatMessageYYDataModel *)data;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -10,7 +10,7 @@
 #import "ChatHeader.h"
 #import "ChatMessageDataModel.h"
 #import "ChatMemberListView.h"
-
+    #import "ChatMessageYYDataModel.h"
 @interface ChatController () <TInputControllerDelegate, TMessageControllerDelegate>
 
 @property (nonatomic, strong) ChatMemberListView *chatMemberListView;
@@ -116,7 +116,15 @@
 }
 
 - (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageDataModel *)msg {
-    [_messageController sendMessage:msg];
+
+    //直接发送系统样式
+//    [_messageController sendMessage:msg];
+    
+//    直接发送yytext样式
+    ChatMessageYYDataModel *msgModel = [[ChatMessageYYDataModel alloc]init];
+    msgModel.content = msg.content;
+    [_messageController sendMessage:msgModel];
+
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {
         [self.delegate chatController:self didSendMessage:msg];
     }

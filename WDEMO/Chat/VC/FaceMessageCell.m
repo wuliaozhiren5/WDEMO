@@ -8,6 +8,7 @@
 
 #import "FaceMessageCell.h"
 
+
 @implementation FaceMessageCell
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -30,7 +31,7 @@
 }
 
 - (void)fillWithData:(ChatMessageDataModel *)data {
-    
+
     self.content.attributedText = data.attributedString;
     //聊天气泡
     self.bubbleView.backgroundColor = ChatBubbleColor;
@@ -38,5 +39,25 @@
     self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
     self.content.frame = CGRectMake(data.textOrigin.x, data.textOrigin.y,data.textSize.width,  data.textSize.height);
     
+}
+
+- (void)fillWithYYData:(ChatMessageYYDataModel *)data {
+     
+    //聊天气泡
+    self.bubbleView.backgroundColor = ChatBubbleColor; 
+    self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
+ 
+    self.yyContent.attributedText = data.attributedString;
+    self.yyContent.origin =  CGPointMake(data.textOrigin.x, data.textOrigin.y);
+    self.yyContent.size = data.layout.textBoundingSize;
+    self.yyContent.textLayout = data.layout;
+     
+    [data.yyNameStr setTextHighlightRange:data.yyNameStr.rangeOfAll
+                                  color:RGBA(84, 84, 84, 1)
+                        backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.220]
+                              tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+                 //自定义代码，此处根据需要调整
+                 NSLog(@"《嚯货协议》");
+             }];
 }
 @end

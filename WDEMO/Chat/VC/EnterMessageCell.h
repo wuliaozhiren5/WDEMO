@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface EnterMessageCell : ChatMessageCell
 
+- (void)fillWithData:(ChatMessageDataModel *)data;
+- (void)fillWithYYData:(ChatMessageYYDataModel *)data;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -7,10 +7,16 @@
 //
 
 #import "ChatMessageCell.h"
+#import "ChatMessageYYDataModel.h"
+//#import <YYKit/YYKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface FaceMessageCell : ChatMessageCell
+
+- (void)fillWithData:(ChatMessageDataModel *)data;
+
+- (void)fillWithYYData:(ChatMessageYYDataModel *)data;
 
 @end
 

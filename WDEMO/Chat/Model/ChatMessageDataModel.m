@@ -7,22 +7,19 @@
 //
 
 #import "ChatMessageDataModel.h"
-#import "FaceAttachment.h"
-#import "FaceCell.h"
-#import "FaceView.h"
-#import "ChatKit.h"
-#import "ChatKit.h"
-#import "ChatHeader.h"
-#import "UIImage+ChatKit.h"
+
 
 @implementation ChatMessageDataModel
 
 - (NSAttributedString *)attributedString
 {
     if (!_attributedString) {
+        //表情
         _attributedString = [self faceWithServerString:_content];
-        //        _attributedString = [self tipMessageWithString:_content];
-        //        _attributedString = [self enterMessageWithString:_content];
+        //公告
+//                _attributedString = [self tipMessageWithString:_content];
+        //进入房间
+//                _attributedString = [self enterMessageWithString:_content];
         
     }
     return _attributedString;
