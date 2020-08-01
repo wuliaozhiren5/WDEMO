@@ -18,15 +18,13 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        //        _content = [[UILabel alloc] init];
-        //        _content.numberOfLines = 0;
-        //        [self.bubbleView addSubview:_content];
+
         self.contentView.backgroundColor = [UIColor clearColor];
         self.backgroundColor = [UIColor clearColor];
-        
-        [self.contentView addSubview:self.bubbleView];
-        [self.bubbleView addSubview:self.content];
-        [self.bubbleView addSubview:self.yyContent];
+ 
+//        [self.contentView addSubview:self.bubbleView];
+//        [self.bubbleView addSubview:self.content];
+//        [self.bubbleView addSubview:self.yyContent];
         
     }
     return self;
@@ -65,27 +63,35 @@
         _content = [[UILabel alloc]initWithFrame:CGRectZero];
         _content.lineBreakMode = NSLineBreakByCharWrapping;
         _content.numberOfLines = 0;
-    }
+//        _content.userInteractionEnabled = YES; 
+        [self.bubbleView addSubview:_content];
+     }
     return _content;
     
 }
 
 - (UIImageView *)bubbleView {
     if (!_bubbleView) {
-        _bubbleView = [[UIImageView alloc]initWithFrame:CGRectZero];
+        _bubbleView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
         _bubbleView.layer.cornerRadius = 8;
         //        _bubbleView.mm_fill();
-        _bubbleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    }
+//        _bubbleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        _bubbleView.userInteractionEnabled = YES;
+
+        [self.contentView addSubview:_bubbleView];
+     }
     return _bubbleView;
     
 }
 
 - (YYLabel *)yyContent{
     if (!_yyContent) {
-        _yyContent = [[YYLabel alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _yyContent = [YYLabel new];
         _yyContent.lineBreakMode = NSLineBreakByCharWrapping;
         _yyContent.numberOfLines = 0;
+        _yyContent.userInteractionEnabled = YES;
+
+        [self.bubbleView addSubview:_yyContent];
     }
     return _yyContent;
 }

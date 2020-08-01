@@ -10,13 +10,12 @@
 
 @implementation ChatMessageYYDataModel
 
-- (NSAttributedString *)yyAttributedString
-{
+- (NSAttributedString *)yyAttributedString {
     if (!_yyAttributedString) {
         //表情
         _yyAttributedString = [self yyFaceWithServerString:self.content];
         //公告
-//        _yyAttributedString = [self yyTipMessageWithString:self.content];
+        //        _yyAttributedString = [self yyTipMessageWithString:self.content];
         //进入房间
 //        _yyAttributedString = [self yyEnterMessageWithString:self.content];
         
@@ -85,21 +84,25 @@
     //nikename
     UIFont *namefont = [UIFont systemFontOfSize:12];
     //nickname
-    NSString *name = @"用户XXX:";
+    NSString *name = @"用户wwc:";
     //    NSString *name = self.sender.nickName;
     NSMutableAttributedString *nameStr = [[NSMutableAttributedString alloc] initWithString:name];
     nameStr.lineBreakMode = NSLineBreakByCharWrapping;
     nameStr.font = namefont;
     nameStr.color = ChatNameColor;
     
-//    [nameStr setTextHighlightRange:nameStr.rangeOfAll
-//                                  color:RGBA(84, 84, 84, 1)
-//                        backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.220]
-//                              tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-//                 //自定义代码，此处根据需要调整
-//                 NSLog(@"《嚯货协议》");
-//             }];
- 
+    __weak __typeof(self) ws = self;;
+    [nameStr setTextHighlightRange:nameStr.rangeOfAll
+                             color:[UIColor redColor]//RGBA(84, 84, 84, 1)
+                   backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.220]
+                         tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+        //自定义代码，此处根据需要调整
+        NSLog(@"点击了用户昵称:%@", name);
+        if (ws.clickNickName) {
+            ws.clickNickName();
+        }
+    }];
+    
     //vip
     UIImage *vipImage = [UIImage chat_imageNamed:@"ic_common_vip_small"];;
     NSMutableAttributedString *vipAttachment = [NSMutableAttributedString attachmentStringWithContent:vipImage contentMode:UIViewContentModeCenter attachmentSize:vipImage.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
@@ -149,17 +152,24 @@
         [attrStr appendAttributedString:roomAttachment];
         [attrStr appendAttributedString:spaceStr];
     }
+    
     [attrStr appendAttributedString:nameStr];
     [attrStr appendAttributedString:colonStr];
     [attrStr appendAttributedString:spaceStr];
     [attrStr appendAttributedString:attributedString];
-  
-    self.yyNameStr = nameStr;
-
+    
+    //    self.yyVipStr = vipAttachment;
+    //    self.yyRoomHostStr = roomAttachment;
+    //    self.yyNickNameStr = nameStr;
+    //    self.yyTextFaceStr = attributedString;
+    //    self.yyColonStr = colonStr;
+    //    self.yySpaceStr = spaceStr;
+    
     return attrStr;
 }
 
 - (NSAttributedString *)yyTipMessageWithString:(NSString *)string {
+    
     UIFont *font = [UIFont systemFontOfSize:12];
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:string];
     //设置行间距
@@ -183,13 +193,25 @@
     NSMutableAttributedString *nameStr = [[NSMutableAttributedString alloc] initWithString:name];
     nameStr.lineBreakMode = NSLineBreakByCharWrapping;
     nameStr.font = namefont;
-    nameStr.color = ChatTextColor;
+    nameStr.color = [UIColor redColor];
+    
+    __weak __typeof(self) ws = self;;
+    [nameStr setTextHighlightRange:nameStr.rangeOfAll
+                             color:[UIColor redColor]//RGBA(84, 84, 84, 1)
+                   backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.220]
+                         tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+        //自定义代码，此处根据需要调整
+        NSLog(@"点击了用户昵称:%@", name);
+        if (ws.clickNickName) {
+            ws.clickNickName();
+        }
+    }];
     
     NSString *enter = @"一起来看剧啦";
     NSMutableAttributedString *enterStr = [[NSMutableAttributedString alloc] initWithString:enter];
-    nameStr.lineBreakMode = NSLineBreakByCharWrapping;
-    nameStr.font = namefont;
-    nameStr.color = EnterUserContenTextColor;
+    enterStr.lineBreakMode = NSLineBreakByCharWrapping;
+    enterStr.font = namefont;
+    enterStr.color = EnterUserContenTextColor;
     
     //最后结果str
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc]initWithString:@""];
@@ -200,7 +222,7 @@
     [attrStr appendAttributedString:nameStr];
     [attrStr appendAttributedString:enterStr];
     
-    self.yyNameStr = nameStr;
+    //    self.yyNameStr = nameStr;
     
     return attrStr;
 }

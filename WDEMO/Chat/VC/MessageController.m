@@ -27,9 +27,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
     [self setupViews];
 }
@@ -46,7 +46,7 @@
 //}
 
 - (void)dealloc {
-//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    //    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -59,10 +59,10 @@
 
 - (void)setupViews {
     
-//      //点击退出编辑模式
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapViewController)];
-//    tap.delegate = self;
-//    [self.view addGestureRecognizer:tap];
+    //点击退出编辑模式
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapViewController)];
+    tap.delegate = self;
+    [self.view addGestureRecognizer:tap];
     
     self.tableView.estimatedRowHeight = 0;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
@@ -72,7 +72,7 @@
     [self.tableView registerClass:[TipMessageCell class] forCellReuseIdentifier:TipMessageCell_ReuseId];
     [self.tableView registerClass:[FaceMessageCell class] forCellReuseIdentifier:FaceMessageCell_ReuseId];
     [self.tableView registerClass:[EnterMessageCell class] forCellReuseIdentifier:EnterMessageCell_ReuseId];
-     
+    
     UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 50)];
     self.tableView.tableHeaderView = headerView;
     
@@ -87,11 +87,11 @@
         if (!_hiddenHeader) {
             UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 50)];
             self.tableView.tableHeaderView= headerView;
-
+            
         } else {
             UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
             self.tableView.tableHeaderView = headerView;
-
+            
         }
     } completion:nil];
 }
@@ -118,31 +118,36 @@
     
     data.type = ChatMessageTypeTextFace;
 //    data.type = ChatMessageTypeTip;
-//    data.type = ChatMessageTypeEnter;
-
+//        data.type = ChatMessageTypeEnter;
+    
     NSString *reuseId = nil;
-       switch (data.type) {
-           case ChatMessageTypeTip:
-                reuseId = TipMessageCell_ReuseId;
-               break;
-            case ChatMessageTypeTextFace:
-               reuseId = FaceMessageCell_ReuseId;
-               break;
-            case ChatMessageTypeEnter:
-                reuseId = EnterMessageCell_ReuseId;
-               break;
-           default:
-               reuseId = ChatMessageCell_ReuseId;
-               break;
-       }
+    switch (data.type) {
+        case ChatMessageTypeTip:
+            reuseId = TipMessageCell_ReuseId;
+            break;
+        case ChatMessageTypeTextFace:
+            reuseId = FaceMessageCell_ReuseId;
+            break;
+        case ChatMessageTypeEnter:
+            reuseId = EnterMessageCell_ReuseId;
+            break;
+        default:
+            reuseId = ChatMessageCell_ReuseId;
+            break;
+    }
     
-    
+  
     messageCell =(ChatMessageCell *)[tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     messageCell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     if ([data isMemberOfClass:NSClassFromString(@"ChatMessageYYDataModel")]) {
-         [messageCell fillWithYYData:data];
-
+        
+        ChatMessageYYDataModel *cellData = (ChatMessageYYDataModel *)data; 
+        cellData.clickNickName = ^() {
+              NSLog(@"点击了用户昵称:YYLabel");
+          };
+        [messageCell fillWithYYData:cellData];
+        
     } else if ([data isMemberOfClass:NSClassFromString(@"ChatMessageDataModel")]) {
         [messageCell fillWithData:data];
     }else {
@@ -153,9 +158,9 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-
-
+    
+    
+    
 }
 
 
@@ -189,13 +194,22 @@
 //    }
 //    return YES;
 //}
+ - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    // 点击的view的类名
+    NSLog(@"%@", NSStringFromClass([touch.view class]));
+    // 点击了tableViewCell，view的类名为UITableViewCellContentView，则不接收Touch点击事件
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
+        return NO;
+    }
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"YYLabel"]) {
+         return NO;
+    }
+    return  YES;
+}
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    [self didTapViewController];
-//    if(_delegate && [_delegate respondsToSelector:@selector(didTapInMessageController:)]){
-//         [_delegate didTapInMessageController:self];
-//     }
+ 
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self didTapViewController];

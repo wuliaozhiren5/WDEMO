@@ -31,7 +31,7 @@
 }
 
 - (void)fillWithData:(ChatMessageDataModel *)data {
-
+    
     self.content.attributedText = data.attributedString;
     //聊天气泡
     self.bubbleView.backgroundColor = ChatBubbleColor;
@@ -42,17 +42,16 @@
 }
 
 - (void)fillWithYYData:(ChatMessageYYDataModel *)data {
- 
+    
     //聊天气泡
     self.bubbleView.backgroundColor = ChatBubbleColor;
-    self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
-
-    self.yyContent.attributedText = data.attributedString;
+    self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y, data.bubbleSize.width, data.bubbleSize.height);
+  
+    self.yyContent.attributedText = data.yyAttributedString;
     self.yyContent.origin =  CGPointMake(data.textOrigin.x, data.textOrigin.y);
     self.yyContent.size = data.layout.textBoundingSize;
     self.yyContent.textLayout = data.layout;
-   
-
+    
 }
- 
+
 @end

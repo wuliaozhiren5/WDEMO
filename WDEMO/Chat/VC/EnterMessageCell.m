@@ -46,10 +46,10 @@
     self.bubbleView.backgroundColor = NoticeBubbleColor;
     self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
  
-    self.yyContent.attributedText = data.attributedString;
+    self.yyContent.attributedText = data.yyAttributedString;
     self.yyContent.origin =  CGPointMake(data.textOrigin.x, data.textOrigin.y);
     self.yyContent.size = data.layout.textBoundingSize;
     self.yyContent.textLayout = data.layout;
-    
+  
 }
 @end

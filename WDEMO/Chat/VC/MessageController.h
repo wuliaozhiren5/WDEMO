@@ -36,6 +36,14 @@
  */
 - (void)didTapInMessageController:(MessageController *)controller;
 
+///**
+//*  点击聊天的用户昵称
+//*
+//*
+//*  @param controller 委托者，消息控制器
+//*/
+//- (void)messageController:(MessageController *)controller didSelectNickName:(ChatMessageDataModel *)model;
+
 @end
 
 /////////////////////////////////////////////////////////////////////////////////
