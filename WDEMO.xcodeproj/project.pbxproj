@@ -56,6 +56,7 @@
 		A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09A24B97FD4005922B1 /* ViewController1.m */; };
 		A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09B24B97FD4005922B1 /* ViewController2.m */; };
 		A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09C24B97FD4005922B1 /* ViewController3.m */; };
+		A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9DC1A24D66049009FB2EA /* UIImage+size.m */; };
 		F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E11D24CA800200DA5625 /* TResponderTextView.m */; };
 		F553E12824CA800200DA5625 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E11E24CA800200DA5625 /* InputBar.m */; };
 		F553E12924CA800200DA5625 /* FaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E11F24CA800200DA5625 /* FaceView.m */; };
@@ -232,6 +233,8 @@
 		A4F2C09D24B97FD4005922B1 /* ViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController3.h; sourceTree = "<group>"; };
 		A4F2C09E24B97FD4005922B1 /* ViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController1.h; sourceTree = "<group>"; };
 		A4F2C09F24B97FD5005922B1 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		A4F9DC1924D66049009FB2EA /* UIImage+size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+size.h"; sourceTree = "<group>"; };
+		A4F9DC1A24D66049009FB2EA /* UIImage+size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+size.m"; sourceTree = "<group>"; };
 		F553E11D24CA800200DA5625 /* TResponderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TResponderTextView.m; sourceTree = "<group>"; };
 		F553E11E24CA800200DA5625 /* InputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputBar.m; sourceTree = "<group>"; };
 		F553E11F24CA800200DA5625 /* FaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceView.m; sourceTree = "<group>"; };
@@ -471,6 +474,8 @@
 				67535E832390C6560009F882 /* InfoPlist.strings */,
 				A459C29224C174A300A3B5FF /* Plist.h */,
 				A459C29324C174A300A3B5FF /* Plist.m */,
+				A4F9DC1924D66049009FB2EA /* UIImage+size.h */,
+				A4F9DC1A24D66049009FB2EA /* UIImage+size.m */,
 			);
 			path = WDEMO;
 			sourceTree = "<group>";
@@ -958,6 +963,7 @@
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
 				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,
 				F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */,
+				A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */,
 				F553E12A24CA800200DA5625 /* InputController.m in Sources */,
 				F553E19B24CA8DE200DA5625 /* NSAttributedString+FaceString.m in Sources */,
 				F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */,
