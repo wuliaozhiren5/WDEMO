@@ -17,7 +17,10 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 
 @interface InputBar() <UITextViewDelegate>
+//textView 默认文字
 @property (nonatomic, copy) NSString *placeholderStr;
+//textView Text 文字保存
+@property (nonatomic, strong) NSAttributedString *textViewTextStr;
 
 @end
 
@@ -140,6 +143,11 @@
     self.faceButton.hidden = NO;
     //设置textView的textColor颜色，原因修改过程中会变色
     textView.textColor = ChatTextColor;
+    
+    if (_textViewTextStr) {
+        textView.attributedText = _textViewTextStr;
+        [self textViewDidChange:_inputTextView];
+    } else {}
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
@@ -246,12 +254,18 @@
 - (void)clearInput {
     _inputTextView.text = @"";
     [self textViewDidChange:_inputTextView];
+     _textViewTextStr = nil;
 }
 
 - (NSString *)getInput {
     return _inputTextView.text;
 }
 
+- (void)keyboardHidden {
+    _textViewTextStr = _inputTextView.attributedText;
+    _inputTextView.text = @"";
+    [self textViewDidChange:_inputTextView];
+}
 //- (void)addEmoji:(NSString *)emoji
 - (void)addEmoji:(NSString *)emoji path:(NSString *)path {
     // //创建一个附件

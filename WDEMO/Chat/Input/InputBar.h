@@ -140,7 +140,13 @@
  *  @return 以字符串形式返回当前输入框中的内容。
  */
 - (NSString *)getInput;
-
+ 
+ /**
+ *  手动推出编辑模式 键盘消失时候
+ *
+ *  处理当前输入框中的内容。
+ */
+- (void)keyboardHidden;
 
 - (void)clickKeyboardBtn:(UIButton *)sender;
 

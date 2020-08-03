@@ -107,10 +107,11 @@
         inputFrame.origin.y = msgFrame.origin.y + msgFrame.size.height;
         inputFrame.size.height = height;
         ws.inputController.view.frame = inputFrame;
-        
-        CGRect bottomBarFrame = ws.inputController.bottomBar.frame;
-        bottomBarFrame.origin.y = height - bottomBarFrame.size.height - Bottom_SafeHeight;
-        ws.inputController.bottomBar.frame = bottomBarFrame;
+ 
+        //高度出现问题 所以注释
+//        CGRect bottomBarFrame = ws.inputController.bottomBar.frame;
+//        bottomBarFrame.origin.y = height - bottomBarFrame.size.height - Bottom_SafeHeight;
+//        ws.inputController.bottomBar.frame = bottomBarFrame;
 
         [ws.messageController scrollToBottom:NO];
     } completion:nil];

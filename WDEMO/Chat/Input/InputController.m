@@ -247,6 +247,7 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
     _status = Input_Status_Input;
     [_inputBar.inputTextView resignFirstResponder];
+    [_inputBar keyboardHidden];
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
         [_delegate inputController:self didChangeHeight:_inputBar.frame.size.height + Bottom_SafeHeight];
     }
