@@ -73,7 +73,6 @@
     _inputController = [[InputController alloc] init];
     _inputController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight, self.view.frame.size.width, TTextView_Height + Bottom_SafeHeight);
     _inputController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-    _inputController.view.backgroundColor = InputBarColor;
     _inputController.delegate = self;
     [self addChildViewController:_inputController];
     [self.view addSubview:_inputController.view];

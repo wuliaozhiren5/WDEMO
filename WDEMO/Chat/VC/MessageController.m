@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(TResponderTextViewboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
@@ -196,9 +196,9 @@
     // 点击的view的类名
     NSLog(@"%@", NSStringFromClass([touch.view class]));
     // 点击了tableViewCell，view的类名为UITableViewCellContentView，则不接收Touch点击事件
-    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
-        return NO;
-    }
+//    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
+//        return NO;
+//    }
     if ([NSStringFromClass([touch.view class]) isEqualToString:@"YYLabel"]) {
          return NO;
     }

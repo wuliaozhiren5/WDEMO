@@ -148,6 +148,13 @@
  */
 - (void)keyboardHidden;
 
+/**
+*  表情和键盘状态变化 保存textViewText
+*
+*  处理当前输入框中的内容。保存textViewText
+*/
+- (void)faceAndKeyboardStateChange;
+
 - (void)clickKeyboardBtn:(UIButton *)sender;
 
 - (void)clickFaceBtn:(UIButton *)sender;

@@ -36,6 +36,7 @@
 }
 
 - (void)setupViews {
+    self.backgroundColor = InputBarBackgroundColor;
     _faceFlowLayout = [[UICollectionViewFlowLayout alloc] init];
     _faceFlowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     _faceFlowLayout.minimumLineSpacing = 1;//TFaceView_Margin;

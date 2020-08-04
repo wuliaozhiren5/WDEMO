@@ -27,7 +27,7 @@
 
 #define  MessageViewColor  RGBA(0, 0, 0, 0.7)
 //inputview背景色
-#define  InputBarColor RGBA(0, 0, 0, 0.2) //RGB(33, 33, 33)
+#define  InputBarBackgroundColor RGB(33, 33, 33)
 //输入框背景色
 #define  InputBarTextViewColor  RGBA(255, 255, 255, 0.1)
 //输入框默认文字
@@ -51,6 +51,9 @@
 #define  ChatNameColor    RGBA(145, 150, 153, 1.0)
 //聊天气泡
 #define  ChatBubbleColor    RGBA(0, 0, 0, 0.2)
+
+//TextFont 聊天输入框字体
+#define kChatTextFont      [UIFont systemFontOfSize:15.0]
 
 //cell
 #define TMessageCell_Head_Width 45

@@ -43,7 +43,7 @@
       //    bottomBarTextViewBtn.layer.masksToBounds = YES;
       bottomBarTextViewBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
       bottomBarTextViewBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
-      bottomBarTextViewBtn.titleLabel.font = [UIFont systemFontOfSize:18];
+      bottomBarTextViewBtn.titleLabel.font = kChatTextFont;
       [bottomBarTextViewBtn setTitleColor:InputBarTextColor forState:UIControlStateNormal];
       bottomBarTextViewBtn.backgroundColor = InputBarTextViewColor;
       [self addSubview:bottomBarTextViewBtn];

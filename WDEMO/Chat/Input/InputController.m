@@ -62,11 +62,12 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     //    self.view.backgroundColor = [UIColor d_colorWithColorLight:TInput_Background_Color dark:TInput_Background_Color_Dark];
     _status = Input_Status_Input;
     _inputBar = [[InputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
+    _inputBar.backgroundColor = InputBarBackgroundColor;
     _inputBar.delegate = self;
     [self.view addSubview:_inputBar];
 
     _bottomBar = [[NoInputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
-    _bottomBar.backgroundColor = InputBarColor;
+    _bottomBar.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_bottomBar];
  
     [_bottomBar.faceButton addTarget:self action:@selector(clickBottomBarFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -179,6 +180,10 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     if(_status == Input_Status_Input_More){
         //        [self hideMoreAnimation];
     }
+    if(_status == Input_Status_Input_Keyboard){
+        //隐藏键盘
+        [_inputBar faceAndKeyboardStateChange];
+    }
     [_inputBar.inputTextView resignFirstResponder];
     [self showFaceAnimation];
     _status = Input_Status_Input_Face;
@@ -193,6 +198,8 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
         //        [self hideMoreAnimation];
     }
     if (_status == Input_Status_Input_Face) {
+        //隐藏表情
+        [_inputBar faceAndKeyboardStateChange];
         [self hideFaceAnimation];
     }
     _status = Input_Status_Input_Keyboard;

@@ -57,17 +57,20 @@
     
     _inputTextView = [[TResponderTextView alloc] init];
     _inputTextView.delegate = self;
-    [_inputTextView setFont:[UIFont systemFontOfSize:16]];
+    [_inputTextView setFont:kChatTextFont];
     [_inputTextView.layer setMasksToBounds:YES];
     [_inputTextView.layer setCornerRadius:5.0f];
     _inputTextView.backgroundColor = InputBarTextViewColor;
     _inputTextView.textColor = ChatTextColor;
+    //设置某个键盘颜色
+    _inputTextView.keyboardAppearance = UIKeyboardAppearanceDark;
+    //设置按钮样式
     [_inputTextView setReturnKeyType:UIReturnKeySend];
     [self addSubview:_inputTextView];
     
     _placeholderLabel = [[UILabel alloc] init];
-    _placeholderLabel.frame = CGRectMake(17, 8, 100, 20);
-    _placeholderLabel.font = [UIFont systemFontOfSize:18.0];
+    _placeholderLabel.frame = CGRectMake(8, 8, 100, 17);
+    _placeholderLabel.font = kChatTextFont;
     _placeholderLabel.text = _placeholderStr;
     _placeholderLabel.textColor = InputBarTextColor;
     //    _placeholderLabel.enabled = NO;//lable必须设置为不可用
@@ -88,7 +91,7 @@
     CGFloat endX = Screen_Width - TTextView_Margin;
     _inputTextView.frame = CGRectMake(beginX, (TTextView_Height - TTextView_TextView_Height_Min) * 0.5, endX - beginX, TTextView_TextView_Height_Min);
     
-    _placeholderLabel.frame = CGRectMake(8, 8, _inputTextView.frame.size.width - 8 * 2, 20);
+    _placeholderLabel.frame = CGRectMake(8, 8, _inputTextView.frame.size.width - 8 * 2, 17);
     //    _placeholderLabel.frame = CGRectMake(_inputTextView.textContainerInset.left, _inputTextView.textContainerInset.top, 200, 20);
     
 }
@@ -135,19 +138,28 @@
         [_delegate inputBarDidTouchFace:self];
     }
     _keyboardButton.frame = _faceButton.frame;
+    //用户开始编辑调用
+    [self userTextViewDidBeginEditing:_inputTextView];
+}
+
+//用户开始编辑
+- (void)userTextViewDidBeginEditing:(UITextView *)textView {
+    if (_textViewTextStr) {
+        textView.attributedText = _textViewTextStr;
+        [self textViewDidChange:textView];
+        _textViewTextStr = nil;
+
+    } else {}
+    //设置textView的textColor颜色，原因修改过程中会变色
+    textView.textColor = ChatTextColor;
 }
 
 #pragma mark - talk
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     self.keyboardButton.hidden = YES;
     self.faceButton.hidden = NO;
-    //设置textView的textColor颜色，原因修改过程中会变色
-    textView.textColor = ChatTextColor;
-    
-    if (_textViewTextStr) {
-        textView.attributedText = _textViewTextStr;
-        [self textViewDidChange:_inputTextView];
-    } else {}
+    //用户开始编辑调用
+    [self userTextViewDidBeginEditing:textView];
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
@@ -266,6 +278,11 @@
     _inputTextView.text = @"";
     [self textViewDidChange:_inputTextView];
 }
+
+- (void)faceAndKeyboardStateChange {
+    _textViewTextStr = _inputTextView.attributedText;
+}
+
 //- (void)addEmoji:(NSString *)emoji
 - (void)addEmoji:(NSString *)emoji path:(NSString *)path {
     // //创建一个附件
@@ -275,7 +292,7 @@
     //添加标签名
     faceAttachement.tagName = emoji;
     //设置表情大小
-    faceAttachement.bounds = CGRectMake(0, 0, 16, 16);
+    faceAttachement.bounds = CGRectMake(0, -2, 15, 15);
     //记录光标位置
     NSInteger location = _inputTextView.selectedRange.location;
     //插入表情
@@ -283,7 +300,7 @@
     //将光标位置向前移动一个单位
     _inputTextView.selectedRange = NSMakeRange(location + 1, 0);
     
-    [_inputTextView setFont:[UIFont systemFontOfSize:16.0f]];
+    [_inputTextView setFont:kChatTextFont];
     
     if(_inputTextView.contentSize.height > TTextView_TextView_Height_Max){
         float offset = _inputTextView.contentSize.height - _inputTextView.frame.size.height;
