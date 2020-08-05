@@ -25,8 +25,9 @@
 
 - (NSAttributedString *)yyFaceWithServerString:(NSString *)string {
     
-    UIFont *font = [UIFont systemFontOfSize:14];
-    
+    UIFont *font = [UIFont systemFontOfSize:15];
+    CGFloat lineSpacing = 8.0;
+
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:string];
     
     NSString *pattern = @"\\[[^\\[|^\\]]+\\]";
@@ -67,14 +68,15 @@
         //        NSAttributedString *faceAttributedString = [NSAttributedString attributedStringWithAttachment:faceAttachment];
         
         UIImage *image = faceAttachment.image;
-        NSMutableAttributedString *faceAttributedString = [NSMutableAttributedString attachmentStringWithContent:image contentMode:UIViewContentModeCenter attachmentSize:image.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+        UIImage *faceImage = [image imageByResizeToSize:CGSizeMake(15, 15)];
+        NSMutableAttributedString *faceAttributedString = [NSMutableAttributedString attachmentStringWithContent:faceImage contentMode:UIViewContentModeCenter attachmentSize:faceImage.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
         [attributedString replaceCharactersInRange:faceAttachment.range withAttributedString:faceAttributedString];
     }
     
     //    [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14], NSForegroundColorAttributeName:ChatTextColor} range:NSMakeRange(0, attributedString.length)];
     
     //设置行间距
-    attributedString.lineSpacing = 9;
+    attributedString.lineSpacing = lineSpacing;
     attributedString.lineBreakMode = NSLineBreakByCharWrapping;
     //设置文本字号
     attributedString.font = font;
@@ -87,6 +89,7 @@
     NSString *name = @"用户wwc:";
     //    NSString *name = self.sender.nickName;
     NSMutableAttributedString *nameStr = [[NSMutableAttributedString alloc] initWithString:name];
+    nameStr.lineSpacing = lineSpacing;
     nameStr.lineBreakMode = NSLineBreakByCharWrapping;
     nameStr.font = namefont;
     nameStr.color = ChatNameColor;
@@ -106,6 +109,7 @@
     //vip
     UIImage *vipImage = [UIImage chat_imageNamed:@"ic_common_vip_small"];;
     NSMutableAttributedString *vipAttachment = [NSMutableAttributedString attachmentStringWithContent:vipImage contentMode:UIViewContentModeCenter attachmentSize:vipImage.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+    vipAttachment.lineSpacing = lineSpacing;
     vipAttachment.lineBreakMode = NSLineBreakByCharWrapping;
     
     //房主
@@ -120,16 +124,19 @@
     [room addSubview:roomLabel];
     
     NSMutableAttributedString *roomAttachment = [NSMutableAttributedString attachmentStringWithContent:room contentMode:UIViewContentModeBottom attachmentSize:room.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+    roomAttachment.lineSpacing = lineSpacing;
     roomAttachment.lineBreakMode = NSLineBreakByCharWrapping;
     
     //空格
     NSMutableAttributedString *spaceStr = [[NSMutableAttributedString alloc] initWithString:@" "];
+    spaceStr.lineSpacing = lineSpacing;
     spaceStr.lineBreakMode = NSLineBreakByCharWrapping;
     spaceStr.font = namefont;
     spaceStr.color = ChatNameColor;
     
     //冒号
     NSMutableAttributedString *colonStr = [[NSMutableAttributedString alloc] initWithString:@":"];
+    colonStr.lineSpacing = lineSpacing;
     colonStr.lineBreakMode = NSLineBreakByCharWrapping;
     colonStr.font = namefont;
     colonStr.color = ChatNameColor;
@@ -137,7 +144,7 @@
     //最后结果str
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc]initWithString:@""];
     //设置行间距
-    attrStr.lineSpacing = 10;
+    attrStr.lineSpacing = lineSpacing;
     attrStr.lineBreakMode = NSLineBreakByCharWrapping;
     
     //    BOOL isVip = self.sender.isVip;
@@ -171,9 +178,11 @@
 - (NSAttributedString *)yyTipMessageWithString:(NSString *)string {
     
     UIFont *font = [UIFont systemFontOfSize:12];
+    CGFloat lineSpacing = 6.0;
+
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:string];
     //设置行间距
-    attributedString.lineSpacing = 9;
+    attributedString.lineSpacing = lineSpacing;
     attributedString.lineBreakMode = NSLineBreakByCharWrapping;
     //设置文本字号
     attributedString.font = font;
@@ -187,10 +196,13 @@
     
     //nikename
     UIFont *namefont = [UIFont systemFontOfSize:12];
+    CGFloat lineSpacing = 6.0;
+
     //nickname
     NSString *name = @"用户XXX";
     //    NSString *name = self.sender.nickName;
     NSMutableAttributedString *nameStr = [[NSMutableAttributedString alloc] initWithString:name];
+    nameStr.lineSpacing = lineSpacing;
     nameStr.lineBreakMode = NSLineBreakByCharWrapping;
     nameStr.font = namefont;
     nameStr.color = [UIColor redColor];
@@ -209,6 +221,7 @@
     
     NSString *enter = @"一起来看剧啦";
     NSMutableAttributedString *enterStr = [[NSMutableAttributedString alloc] initWithString:enter];
+    enterStr.lineSpacing = lineSpacing;
     enterStr.lineBreakMode = NSLineBreakByCharWrapping;
     enterStr.font = namefont;
     enterStr.color = EnterUserContenTextColor;
