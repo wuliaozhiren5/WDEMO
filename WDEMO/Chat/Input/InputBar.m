@@ -62,10 +62,14 @@
     [_inputTextView.layer setCornerRadius:5.0f];
     _inputTextView.backgroundColor = InputBarTextViewColor;
     _inputTextView.textColor = ChatTextColor;
-    //设置某个键盘颜色
+    // 设置某个键盘颜色
     _inputTextView.keyboardAppearance = UIKeyboardAppearanceDark;
-    //设置按钮样式
+    //回车按钮样式
     [_inputTextView setReturnKeyType:UIReturnKeySend];
+    // 设置为Yes 即可再有文字数据状态下,可以发送,没有输入状态,置灰,不可点击
+    _inputTextView.enablesReturnKeyAutomatically = YES;
+    //光标颜色
+    _inputTextView.tintColor = [UIColor systemBlueColor];
     [self addSubview:_inputTextView];
     
     _placeholderLabel = [[UILabel alloc] init];
