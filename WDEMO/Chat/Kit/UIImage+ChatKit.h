@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 //房主标签图片
 + (UIImage *)roomOwnimage;
 
+
+//IOS 截取图片 部分 并生成新图片
+//https://www.cnblogs.com/zhhl/p/5685396.html
 /**
 *  从图片中按指定的位置大小截取图片的一部分
 *

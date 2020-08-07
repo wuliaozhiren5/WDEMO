@@ -86,7 +86,7 @@
     //nikename
     UIFont *namefont = [UIFont systemFontOfSize:12];
     //nickname
-    NSString *name = @"用户wwc:";
+    NSString *name = @"用户冲冲冲:";
     //    NSString *name = self.sender.nickName;
     NSMutableAttributedString *nameStr = [[NSMutableAttributedString alloc] initWithString:name];
     nameStr.lineSpacing = lineSpacing;
@@ -199,7 +199,7 @@
     CGFloat lineSpacing = 6.0;
 
     //nickname
-    NSString *name = @"用户XXX";
+    NSString *name = @"用户冲冲冲";
     //    NSString *name = self.sender.nickName;
     NSMutableAttributedString *nameStr = [[NSMutableAttributedString alloc] initWithString:name];
     nameStr.lineSpacing = lineSpacing;

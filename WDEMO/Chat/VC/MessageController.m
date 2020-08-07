@@ -66,7 +66,8 @@
     
     self.tableView.estimatedRowHeight = 0;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-    self.tableView.backgroundColor = MessageViewColor;
+    self.tableView.backgroundColor = [UIColor clearColor];
+//    self.tableView.backgroundColor = MessageViewColor;
     
     [self.tableView registerClass:[ChatMessageCell class] forCellReuseIdentifier:ChatMessageCell_ReuseId];
     [self.tableView registerClass:[TipMessageCell class] forCellReuseIdentifier:TipMessageCell_ReuseId];
