@@ -328,5 +328,36 @@
     [self.timer invalidate];
     self.timer = nil;
 }
+
+
+- (void)rrTest {
+   
+//    富文本
+//    iOS富文本设置混合字符串（中英文）奇葩换行问题
+//    https://www.jianshu.com/p/84e1a0784edc
+//
+//    解决方法：
+//    //UILabel
+//    设置label.lineBreakMode ＝ NSLineBreakByCharWrapping;
+//
+//    如果此时你是即进行了富文本设定又对换行进行设定的话，记住先把换行操作的代码放到label.attributedText ＝ .......代码之后，不然label.lineBreakMode ＝ NSLineBreakByCharWrapping会失效。
+//    设置之后显示正常了，但是计算这个文本高度的时候，计算的高度不准确了。
+//
+//    切记：计算高度的时候，段落样式加上这个属性，就可以计算高度
+//    //NSMutableParagraphStyle
+//    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
+
+//    富文本AttributedString的总结（一）
+//    https://www.jianshu.com/p/bbfe7bd282f1
+//    富文本AttributedString总结（二）之简单实现图文混排
+//    https://www.jianshu.com/p/c2de7824328d
+//    富文本AttributedString总结（三）之链接属性的设置
+//    https://www.jianshu.com/p/aecb9e426459
+    
+}
+
+
+
+
 @end
 
