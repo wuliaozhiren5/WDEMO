@@ -131,6 +131,7 @@
     [self.view addSubview:backgroundImageView];
     self.backgroundImageView = backgroundImageView;
     
+    //模糊
     [self uivisualEffectViewStyle];
     //网络图片
     //    __weak __typeof(self) weakself = self;
@@ -142,7 +143,7 @@
     //    }];
 }
 
-//ios8
+//ios8 模糊
 - (void)uivisualEffectViewStyle{
     //实现模糊效果
     UIBlurEffect *effect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
