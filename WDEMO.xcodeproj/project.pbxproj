@@ -76,6 +76,8 @@
 		F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
 		F57B52A324C7DF2700940696 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* ChatController.m */; };
+		F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */; };
+		F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0124E0E70500CAADF8 /* MaskViewController.m */; };
 		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
 		F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */; };
 		F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32724CEBB66009A6767 /* MessageController.m */; };
@@ -85,7 +87,6 @@
 		F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */; };
 		F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3665524C82E5C008BA221 /* ChatImageCache.m */; };
 		F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10224D3C158007DB7F3 /* YYViewController.m */; };
-		F5F4F10624D3C192007DB7F3 /* AttributedTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10524D3C192007DB7F3 /* AttributedTextViewController.m */; };
 		F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10724D40311007DB7F3 /* TipMessageCell.m */; };
 		F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10B24D4081A007DB7F3 /* ChatMessageYYDataModel.m */; };
 /* End PBXBuildFile section */
@@ -274,6 +275,10 @@
 		F57B529F24C7DECF00940696 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		F57B52A124C7DF2700940696 /* ChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
 		F57B52A224C7DF2700940696 /* ChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
+		F5D0FBFD24E0E6CB00CAADF8 /* AttributedTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedTextViewController.h; sourceTree = "<group>"; };
+		F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedTextViewController.m; sourceTree = "<group>"; };
+		F5D0FC0024E0E70400CAADF8 /* MaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskViewController.h; sourceTree = "<group>"; };
+		F5D0FC0124E0E70500CAADF8 /* MaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaskViewController.m; sourceTree = "<group>"; };
 		F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListView.h; sourceTree = "<group>"; };
 		F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMemberListView.m; sourceTree = "<group>"; };
 		F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListCell.h; sourceTree = "<group>"; };
@@ -290,8 +295,6 @@
 		F5F3665524C82E5C008BA221 /* ChatImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatImageCache.m; sourceTree = "<group>"; };
 		F5F4F10124D3C158007DB7F3 /* YYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYViewController.h; sourceTree = "<group>"; };
 		F5F4F10224D3C158007DB7F3 /* YYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYViewController.m; sourceTree = "<group>"; };
-		F5F4F10424D3C192007DB7F3 /* AttributedTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AttributedTextViewController.h; path = WDEMO/YY/AttributedTextViewController.h; sourceTree = SOURCE_ROOT; };
-		F5F4F10524D3C192007DB7F3 /* AttributedTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AttributedTextViewController.m; path = WDEMO/YY/AttributedTextViewController.m; sourceTree = SOURCE_ROOT; };
 		F5F4F10724D40311007DB7F3 /* TipMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipMessageCell.m; sourceTree = "<group>"; };
 		F5F4F10824D40311007DB7F3 /* TipMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipMessageCell.h; sourceTree = "<group>"; };
 		F5F4F10A24D4081A007DB7F3 /* ChatMessageYYDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMessageYYDataModel.h; sourceTree = "<group>"; };
@@ -443,8 +446,9 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5D0FBFC24E0E6A300CAADF8 /* Mask */,
+				F5D0FBFB24E0E65500CAADF8 /* 富文本 */,
 				F5F4F10024D3BF23007DB7F3 /* YY */,
-				A4F155F524CD30C2007493C7 /* 富文本 */,
 				F57B529D24C7DEB100940696 /* Chat */,
 				F5668FB424C6D818007D452E /* CPU */,
 				A459C28824C1642B00A3B5FF /* Crash */,
@@ -569,15 +573,6 @@
 			path = CollectionView;
 			sourceTree = "<group>";
 		};
-		A4F155F524CD30C2007493C7 /* 富文本 */ = {
-			isa = PBXGroup;
-			children = (
-				F5F4F10424D3C192007DB7F3 /* AttributedTextViewController.h */,
-				F5F4F10524D3C192007DB7F3 /* AttributedTextViewController.m */,
-			);
-			path = "富文本";
-			sourceTree = "<group>";
-		};
 		A4F2C08D24B97F27005922B1 /* TagLIst */ = {
 			isa = PBXGroup;
 			children = (
@@ -675,6 +670,24 @@
 				F553E11D24CA800200DA5625 /* TResponderTextView.m */,
 			);
 			path = Input;
+			sourceTree = "<group>";
+		};
+		F5D0FBFB24E0E65500CAADF8 /* 富文本 */ = {
+			isa = PBXGroup;
+			children = (
+				F5D0FBFD24E0E6CB00CAADF8 /* AttributedTextViewController.h */,
+				F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */,
+			);
+			path = "富文本";
+			sourceTree = "<group>";
+		};
+		F5D0FBFC24E0E6A300CAADF8 /* Mask */ = {
+			isa = PBXGroup;
+			children = (
+				F5D0FC0024E0E70400CAADF8 /* MaskViewController.h */,
+				F5D0FC0124E0E70500CAADF8 /* MaskViewController.m */,
+			);
+			path = Mask;
 			sourceTree = "<group>";
 		};
 		F5DEB2A224CE7667009A6767 /* Model */ = {
@@ -944,6 +957,7 @@
 				F553E14424CA82E700DA5625 /* ChatKitConfig.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
 				F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */,
+				F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */,
 				A459C29424C174A300A3B5FF /* Plist.m in Sources */,
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
@@ -984,6 +998,7 @@
 				F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */,
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
+				F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
 				67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */,
 				A479989224BAEBCE0079F72D /* SmallBigCollectionViewCell.m in Sources */,
@@ -1002,7 +1017,6 @@
 				F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */,
 				F553E17B24CA86FC00DA5625 /* UIImage+ChatKit..m in Sources */,
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
-				F5F4F10624D3C192007DB7F3 /* AttributedTextViewController.m in Sources */,
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,

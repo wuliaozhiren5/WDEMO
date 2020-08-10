@@ -27,6 +27,8 @@
 //HUB
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "YYViewController.h"
+#import "MaskViewController.h"
+
 
 @interface ViewController ()
 
@@ -146,6 +148,12 @@
     [self.view addSubview:YYBtn];
     
     
+    UIButton *maskBtn  = [[UIButton alloc]initWithFrame:CGRectMake(10, 650, 100, 40)];
+    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [maskBtn setTitle:@"clickMaskBtn" forState:UIControlStateNormal];
+    maskBtn.backgroundColor = [UIColor grayColor];
+    [maskBtn addTarget:self action:@selector(clickMaskBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:maskBtn];
     
     //#############################################################################################################
     
@@ -288,6 +296,12 @@
     YYViewController *vc= [[YYViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+-(void)clickMaskBtn:(UIButton *)btn {
+    MaskViewController *vc= [[MaskViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 - (NSTimer *)timer {
     if (!_timer || _timer.isValid) {
