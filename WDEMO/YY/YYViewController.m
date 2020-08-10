@@ -22,7 +22,7 @@
     
     //YYText文字点击
     [self texthighlight];
-    //YYText 富文本 本地图片 文字点击事件 图片点击事件 网络图片
+    //YYText 富文本 本地图片使用UIImage 文字点击事件 图片点击事件 网络图片使用UIImageView
     [self textAttachments];
     // YYText 富文本 网络图片
 //    [self textAttachments];
