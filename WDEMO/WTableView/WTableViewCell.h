@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WTableViewCell : UITableViewCell
 
+@property (nonatomic, strong) UILabel *firstLabel;
+
+@property (nonatomic, strong) UILabel *secondLabel;
+
+@property (nonatomic, strong) UIImageView *avatarImageView;
+
 @end
 
 NS_ASSUME_NONNULL_END

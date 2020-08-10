@@ -29,10 +29,15 @@
 #import "YYViewController.h"
 #import "MaskViewController.h"
 
+//model
+#import "ListModel.h"
+#import "ListModelCell.h"
 
-@interface ViewController ()
 
-@property(strong,nonatomic)UIButton *goBtn;
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property(nonatomic, strong) UITableView *tableView;
+@property(nonatomic, copy) NSArray *data;
 
 @property (nonatomic, strong) NSTimer *timer;
 
@@ -47,151 +52,18 @@
     //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
     //    self.edgesForExtendedLayout = UIRectEdgeNone;
-     
-    UIButton *tagListBtn1 = [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [tagListBtn1 setTitle:@"tagListBtn1" forState:UIControlStateNormal];
-    tagListBtn1.backgroundColor = [UIColor grayColor];
-    [tagListBtn1 addTarget:self action:@selector(clickTagListBtn1:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:tagListBtn1];
     
+    UIButton *tagListBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 100, 40)];
+    //    [tagListBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [tagListBtn setTitle:@"tagListBtn" forState:UIControlStateNormal];
+    tagListBtn.backgroundColor = [UIColor grayColor];
+    [tagListBtn addTarget:self action:@selector(clickTagListBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:tagListBtn];
     
-    UIButton *touchBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 50, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [touchBtn setTitle:@"3D Touch" forState:UIControlStateNormal];
-    touchBtn.backgroundColor = [UIColor grayColor];
-    [touchBtn addTarget:self action:@selector(clickTouchBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:touchBtn];
-    
-    
-    UIButton *alterBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 100, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [alterBtn setTitle:@"SystemAlter" forState:UIControlStateNormal];
-    alterBtn.backgroundColor = [UIColor grayColor];
-    [alterBtn addTarget:self action:@selector(clickAlterBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:alterBtn];
-    
-    
-    UIButton *tableViewBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 150, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [tableViewBtn setTitle:@"TableView" forState:UIControlStateNormal];
-    tableViewBtn.backgroundColor = [UIColor grayColor];
-    [tableViewBtn addTarget:self action:@selector(clickTableViewBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:tableViewBtn];
-    
-    UIButton *collectionViewBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 200, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [collectionViewBtn setTitle:@"CollectionView" forState:UIControlStateNormal];
-    collectionViewBtn.backgroundColor = [UIColor grayColor];
-    [collectionViewBtn addTarget:self action:@selector(clickCollectionViewBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:collectionViewBtn];
-    
-    
-    UIButton *passValueBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 250, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [passValueBtn setTitle:@"PassValue" forState:UIControlStateNormal];
-    passValueBtn.backgroundColor = [UIColor grayColor];
-    [passValueBtn addTarget:self action:@selector(clickPassValueBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:passValueBtn];
-    
-    UIButton *languageBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 300, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [languageBtn setTitle:@"Language" forState:UIControlStateNormal];
-    languageBtn.backgroundColor = [UIColor grayColor];
-    [languageBtn addTarget:self action:@selector(clickLanguageBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:languageBtn];
-    
-    UIButton *fontBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 350, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [fontBtn setTitle:@"Font" forState:UIControlStateNormal];
-    fontBtn.backgroundColor = [UIColor grayColor];
-    [fontBtn addTarget:self action:@selector(clickFontBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:fontBtn];
-    
-    
-    UIButton *taglistBtn2 = [[UIButton alloc]initWithFrame:CGRectMake(10, 400, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [taglistBtn2 setTitle:@"taglistBtn2" forState:UIControlStateNormal];
-    taglistBtn2.backgroundColor = [UIColor grayColor];
-    [taglistBtn2 addTarget:self action:@selector(clickTaglistBtn2:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:taglistBtn2];
-    
-    UIButton *collectionBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 450, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [collectionBtn setTitle:@"一对一联动" forState:UIControlStateNormal];
-    collectionBtn.backgroundColor = [UIColor grayColor];
-    [collectionBtn addTarget:self action:@selector(clickCollectionBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:collectionBtn];
-    
-    
-    UIButton *crashBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 500, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [crashBtn setTitle:@"抓取崩溃信息" forState:UIControlStateNormal];
-    crashBtn.backgroundColor = [UIColor grayColor];
-    [crashBtn addTarget:self action:@selector(clickCrashBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:crashBtn];
-    
-    
-    UIButton *chatBtn  = [[UIButton alloc]initWithFrame:CGRectMake(10, 550, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [chatBtn setTitle:@"chatBtn" forState:UIControlStateNormal];
-    chatBtn.backgroundColor = [UIColor grayColor];
-    [chatBtn addTarget:self action:@selector(clickChatBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:chatBtn];
-
-    
-    UIButton *YYBtn  = [[UIButton alloc]initWithFrame:CGRectMake(10, 600, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [YYBtn setTitle:@"clickYYBtn" forState:UIControlStateNormal];
-    YYBtn.backgroundColor = [UIColor grayColor];
-    [YYBtn addTarget:self action:@selector(clickYYBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:YYBtn];
-    
-    
-    UIButton *maskBtn  = [[UIButton alloc]initWithFrame:CGRectMake(10, 650, 100, 40)];
-    //    [_goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [maskBtn setTitle:@"clickMaskBtn" forState:UIControlStateNormal];
-    maskBtn.backgroundColor = [UIColor grayColor];
-    [maskBtn addTarget:self action:@selector(clickMaskBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:maskBtn];
+  
     
     //#############################################################################################################
-    
-    //    //字体
-    //    for (NSString *fontfamilyname in [UIFont familyNames])
-    //    {
-    //        NSLog(@"family:'%@'",fontfamilyname);
-    //        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
-    //        {
-    //            NSLog(@"\tfont:'%@'",fontName);
-    //        }
-    //        NSLog(@"-------------");
-    //    }
-    //
-    //    //微软雅黑字体包太大所以删除
-    //    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 320, 20)];
-    //    titleLabel.textAlignment = NSTextAlignmentCenter;
-    //    titleLabel.text = @"字体";
-    //    titleLabel.font = [UIFont systemFontOfSize:16];
-    //    titleLabel.font = [UIFont fontWithName:@"MicrosoftYaHei" size:16];
-    //    titleLabel.textColor = [UIColor grayColor];
-    //    [self.view addSubview:titleLabel];
-    //
-    //    //方正粗谭黑简体
-    //    UILabel *titleLabel1 = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, 320, 20)];
-    //    titleLabel1.textAlignment = NSTextAlignmentCenter;
-    //    titleLabel1.text = @"字体";
-    //    titleLabel1.font = [UIFont fontWithName:@"FZCTHJW--GB1-0" size:16];
-    //    titleLabel1.textColor = [UIColor grayColor];
-    //    [self.view addSubview:titleLabel1];
-    //
-    //    UILabel *titleLabel2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 40, 320, 20)];
-    //    titleLabel2.textAlignment = NSTextAlignmentCenter;
-    //    titleLabel2.text = @"字体";
-    //    titleLabel2.font = [UIFont systemFontOfSize:16];
-    //    titleLabel2.textColor = [UIColor grayColor];
-    //    [self.view addSubview:titleLabel2];
-    
+     
     UILabel *titleLabel3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
     titleLabel3.textAlignment = NSTextAlignmentRight;
     titleLabel3.text = @"字体";
@@ -200,12 +72,32 @@
     [self.view addSubview:titleLabel3];
     //字体包
     NSString *string = FGGetStringWithKeyFromTable(@"Language", @"InfoPlist");
-    NSLog(@"string:%@",string);
+    NSLog(@"APP当前语言:%@",string);
     titleLabel3.text = string;
+    
+
+    NSArray * array = @[
+        [ListModel initWithTitle:@"TagList1" detail:@"瀑布流" type:ListModelTypeTagList1],
+        [ListModel initWithTitle:@"TagList2" detail:@"瀑布流优化" type:ListModelTypeTagList2],
+        [ListModel initWithTitle:@"3DTouch" detail:@"3DTouch" type:ListModelType3DTouch],
+        [ListModel initWithTitle:@"SystemAlter" detail:@"系统提示框" type:ListModelTypeSystemAlter],
+        [ListModel initWithTitle:@"TableView" detail:@"简单的列表" type:ListModelTypeTableView],
+        [ListModel initWithTitle:@"CollectionView" detail:@"简单的网格" type:ListModelTypeCollectionView],
+        [ListModel initWithTitle:@"PassValue" detail:@"传值" type:ListModelTypePassValue],
+        [ListModel initWithTitle:@"Language" detail:@"语言切换" type:ListModelTypeLanguage],
+        [ListModel initWithTitle:@"Font" detail:@"字体" type:ListModelTypeFont],
+        [ListModel initWithTitle:@"TwoList" detail:@"上下一对一联动的Collection" type:ListModelTypeTwoCollectionList],
+        [ListModel initWithTitle:@"Crash" detail:@"抓取崩溃信息" type:ListModelTypeCrash],
+        [ListModel initWithTitle:@"Chat" detail:@"传值" type:ListModelTypeChat],
+        [ListModel initWithTitle:@"YYText" detail:@"YYText富文本" type:ListModelTypeYYText],
+        [ListModel initWithTitle:@"Mask" detail:@"遮罩" type:ListModelTypeMask],
+    ];
+    self.data = array;
+    
+    [self setupViews];
     
     //    //cup memory监控
     //    [self.timer fire];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -213,43 +105,55 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)clickTagListBtn1:(UIButton *)btn {
+-(void)clickTagListBtn:(UIButton *)btn {
+    
+}
+
+-(void)clickTagList1 {
     
     LZTagListVC *vc= [[LZTagListVC alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)clickTouchBtn:(UIButton *)btn {
+-(void)clickTagList2 {
+    
+    TagListViewController *vc= [[TagListViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)click3DTouch {
     
     ForceTouchListVC *vc= [[ForceTouchListVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)clickAlterBtn:(UIButton *)btn {
+-(void)clickSystemAlter {
     
     AlterViewController *vc= [[AlterViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)clickTableViewBtn:(UIButton *)btn {
+-(void)clickTableView {
     
     WTableViewController *vc= [[WTableViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
--(void)clickCollectionViewBtn:(UIButton *)btn {
+
+-(void)clickCollectionView {
     
     WCollectionViewController *vc= [[WCollectionViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 
--(void)clickPassValueBtn:(UIButton *)btn {
+-(void)clickPassValue {
     
     PassValueViewController *vc= [[PassValueViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)clickLanguageBtn:(UIButton *)btn {
+-(void)clickLanguage {
     
     //    [[FGLanguageTool sharedInstance] setNewLanguage:@"en"];
     //    [[FGLanguageTool sharedInstance] setNewLanguage:@"zh-Hans"];
@@ -260,19 +164,13 @@
     [[FGLanguageTool sharedInstance] changeNowLanguage];
 }
 
--(void)clickFontBtn:(UIButton *)btn {
+-(void)clickFont {
     
     FontViewControlle *vc= [[FontViewControlle alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)clickTaglistBtn2:(UIButton *)btn {
-    
-    TagListViewController *vc= [[TagListViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
--(void)clickCollectionBtn:(UIButton *)btn {
+-(void)clickTwoCollectionList{
     
     //    上下一对一联动的Collection
     GaoDengViewController *vc= [[GaoDengViewController alloc]init];
@@ -280,24 +178,23 @@
     
 }
 
--(void)clickCrashBtn:(UIButton *)btn {
+-(void)clickCrash {
     
     NSArray *arry=[NSArray arrayWithObject:@"sss"];
     NSLog(@"%@",[arry objectAtIndex:1]);
 }
 
--(void)clickChatBtn:(UIButton *)btn {
-    
+-(void)clickChat {
     ChatViewController *vc= [[ChatViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)clickYYBtn:(UIButton *)btn { 
+-(void)clickYYText {
     YYViewController *vc= [[YYViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)clickMaskBtn:(UIButton *)btn {
+-(void)clickMask {
     MaskViewController *vc= [[MaskViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -343,30 +240,180 @@
     self.timer = nil;
 }
 
+- (void)setupViews {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.frame = self.view.bounds;;
+    self.tableView.frame = CGRectMake(0, 0, self.view.bounds.size.width , 480);
+    
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    //codecell
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
+    [self.tableView registerClass:[ListModelCell class] forCellReuseIdentifier:NSStringFromClass([ListModelCell class])];
+    [self.view addSubview:self.tableView];
+    //    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.edges.equalTo(self.view);
+    //    }];
+    
+}
+
+#pragma mark -- UITableViewDataSource
+//返回分组数
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+    
+}
+//返回每组行数
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.data.count;
+}
+
+//row高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 60;
+}
+
+//返回每行cell
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    ListModelCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ListModelCell class]) forIndexPath:indexPath];
+    
+    ListModel *model = self.data[indexPath.row];
+    
+    [cell fillWithData:model];
+    
+    //cell的右边有一个小箭头，距离右边有十几像素；
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    //设置cell分割线的edge可以设置去除指定cell的分割线
+    cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
+    //tableviewCell点击取消选中变灰效果
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+#pragma mark -- UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //    点击效果
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    ListModel *model = self.data[indexPath.row];
+    ListModelType type = model.type;
+    switch (type) {
+        case ListModelTypeNone:
+        {
+        }
+            break;
+        case ListModelTypeTagList1:
+        {
+            [self clickTagList1];
+
+        }
+            break;
+        case ListModelTypeTagList2:
+        {
+            [self clickTagList2];
+
+        }
+            break;
+        case ListModelType3DTouch:
+        {
+            [self click3DTouch];
+        }
+            break;
+        case ListModelTypeSystemAlter:
+        {
+            [self clickSystemAlter];
+        }
+            break;
+        case ListModelTypeTableView:
+        {
+            [self clickTableView];
+        }
+            break;
+        case ListModelTypeCollectionView:
+        {
+            [self clickCollectionView];
+        }
+            break;
+        case ListModelTypePassValue:
+        {
+            [self clickPassValue];
+        }
+            break;
+        case ListModelTypeLanguage:
+        {
+            [self clickLanguage];
+        }
+            break;
+        case ListModelTypeFont:
+        {
+            [self clickFont];
+        }
+            break;
+        case ListModelTypeTwoCollectionList:
+        {
+            [self clickTwoCollectionList];
+        }
+            break;
+        case ListModelTypeCrash:
+        {
+            [self clickCrash];
+        }
+            break;
+        case ListModelTypeChat:
+        {
+            [self clickChat];
+        }
+            break;
+        case ListModelTypeYYText:
+        {
+            [self clickYYText];
+        }
+            break;
+        case ListModelTypeMask:
+        {
+            [self clickMask];
+        }
+            break;
+        default:
+        {
+            NSAssert(NO, @"PLUPersonalItemType 类型错误");
+        }
+            break;
+    }
+}
+
 
 - (void)rrTest {
-   
-//    富文本
-//    iOS富文本设置混合字符串（中英文）奇葩换行问题
-//    https://www.jianshu.com/p/84e1a0784edc
-//
-//    解决方法：
-//    //UILabel
-//    设置label.lineBreakMode ＝ NSLineBreakByCharWrapping;
-//
-//    如果此时你是即进行了富文本设定又对换行进行设定的话，记住先把换行操作的代码放到label.attributedText ＝ .......代码之后，不然label.lineBreakMode ＝ NSLineBreakByCharWrapping会失效。
-//    设置之后显示正常了，但是计算这个文本高度的时候，计算的高度不准确了。
-//
-//    切记：计算高度的时候，段落样式加上这个属性，就可以计算高度
-//    //NSMutableParagraphStyle
-//    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
-
-//    富文本AttributedString的总结（一）
-//    https://www.jianshu.com/p/bbfe7bd282f1
-//    富文本AttributedString总结（二）之简单实现图文混排
-//    https://www.jianshu.com/p/c2de7824328d
-//    富文本AttributedString总结（三）之链接属性的设置
-//    https://www.jianshu.com/p/aecb9e426459
+    
+    //    富文本
+    //    iOS富文本设置混合字符串（中英文）奇葩换行问题
+    //    https://www.jianshu.com/p/84e1a0784edc
+    //
+    //    解决方法：
+    //    //UILabel
+    //    设置label.lineBreakMode ＝ NSLineBreakByCharWrapping;
+    //
+    //    如果此时你是即进行了富文本设定又对换行进行设定的话，记住先把换行操作的代码放到label.attributedText ＝ .......代码之后，不然label.lineBreakMode ＝ NSLineBreakByCharWrapping会失效。
+    //    设置之后显示正常了，但是计算这个文本高度的时候，计算的高度不准确了。
+    //
+    //    切记：计算高度的时候，段落样式加上这个属性，就可以计算高度
+    //    //NSMutableParagraphStyle
+    //    paraStyle.lineBreakMode = NSLineBreakByCharWrapping;
+    
+    //    富文本AttributedString的总结（一）
+    //    https://www.jianshu.com/p/bbfe7bd282f1
+    //    富文本AttributedString总结（二）之简单实现图文混排
+    //    https://www.jianshu.com/p/c2de7824328d
+    //    富文本AttributedString总结（三）之链接属性的设置
+    //    https://www.jianshu.com/p/aecb9e426459
     
 }
 

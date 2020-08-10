@@ -153,5 +153,11 @@
     
     return cell;
 }
+#pragma mark -- UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    点击效果
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end

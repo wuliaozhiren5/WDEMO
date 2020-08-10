@@ -10,11 +10,11 @@
 
 @interface WTableViewCell ()
 
-@property (nonatomic, strong) UILabel *firstLabel;
-
-@property (nonatomic, strong) UILabel *secondLabel;
-
-@property (nonatomic, strong) UIImageView *avatarImageView;
+//@property (nonatomic, strong) UILabel *firstLabel;
+//
+//@property (nonatomic, strong) UILabel *secondLabel;
+//
+//@property (nonatomic, strong) UIImageView *avatarImageView;
 
 @property (nonatomic, strong) UILabel *leftLabel;
 
@@ -41,8 +41,8 @@
 //        self.selectionStyle = UITableViewCellSelectionStyleNone;
          
         self.avatarImageView.frame = CGRectMake(10, 10, 40, 40);
-        self.firstLabel.frame = CGRectMake(60, 10, 100, 20);
-        self.secondLabel.frame = CGRectMake(60, 30, 100, 20);
+        self.firstLabel.frame = CGRectMake(60, 10, 200, 20);
+        self.secondLabel.frame = CGRectMake(60, 30, 200, 20);
         self.rightLabel.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 100, 0, 80, 60);
 
         

@@ -76,6 +76,8 @@
 		F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
 		F57B52A324C7DF2700940696 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* ChatController.m */; };
+		F5C7261824E1258000B16639 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261724E1257F00B16639 /* ListModel.m */; };
+		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
 		F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */; };
 		F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0124E0E70500CAADF8 /* MaskViewController.m */; };
 		F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0524E0F91800CAADF8 /* UIColor+TUIDarkMode.m */; };
@@ -278,6 +280,10 @@
 		F57B529F24C7DECF00940696 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		F57B52A124C7DF2700940696 /* ChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
 		F57B52A224C7DF2700940696 /* ChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
+		F5C7261624E1257F00B16639 /* ListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
+		F5C7261724E1257F00B16639 /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
+		F5C7261924E1317B00B16639 /* ListModelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelCell.h; sourceTree = "<group>"; };
+		F5C7261A24E1317B00B16639 /* ListModelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModelCell.m; sourceTree = "<group>"; };
 		F5D0FBFD24E0E6CB00CAADF8 /* AttributedTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedTextViewController.h; sourceTree = "<group>"; };
 		F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedTextViewController.m; sourceTree = "<group>"; };
 		F5D0FC0024E0E70400CAADF8 /* MaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskViewController.h; sourceTree = "<group>"; };
@@ -456,6 +462,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5C7261524E1252B00B16639 /* 列表Model */,
 				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 */,
 				F5D0FBFC24E0E6A300CAADF8 /* Mask */,
 				F5D0FBFB24E0E65500CAADF8 /* 富文本 */,
@@ -477,6 +484,8 @@
 				6783C8521FB941EE0040C02B /* AppDelegate.m */,
 				6783C8541FB941EE0040C02B /* ViewController.h */,
 				6783C8551FB941EE0040C02B /* ViewController.m */,
+				F5C7261924E1317B00B16639 /* ListModelCell.h */,
+				F5C7261A24E1317B00B16639 /* ListModelCell.m */,
 				6783C8571FB941EE0040C02B /* Main.storyboard */,
 				6783C85A1FB941EE0040C02B /* Assets.xcassets */,
 				6783C85C1FB941EE0040C02B /* LaunchScreen.storyboard */,
@@ -681,6 +690,15 @@
 				F553E11D24CA800200DA5625 /* TResponderTextView.m */,
 			);
 			path = Input;
+			sourceTree = "<group>";
+		};
+		F5C7261524E1252B00B16639 /* 列表Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5C7261624E1257F00B16639 /* ListModel.h */,
+				F5C7261724E1257F00B16639 /* ListModel.m */,
+			);
+			path = "列表Model";
 			sourceTree = "<group>";
 		};
 		F5D0FBFB24E0E65500CAADF8 /* 富文本 */ = {
@@ -1034,8 +1052,10 @@
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
 				F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
+				F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */,
 				F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
+				F5C7261824E1258000B16639 /* ListModel.m in Sources */,
 				67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */,
 				A479989224BAEBCE0079F72D /* SmallBigCollectionViewCell.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
