@@ -22,10 +22,10 @@
     
     //YYText文字点击
     [self texthighlight];
-    //    YYText 富文本 本地图片
+    //YYText 富文本 本地图片 文字点击事件 图片点击事件
     [self textAttachments];
     // YYText 富文本 网络图片
-    [self textAttachments];
+//    [self textAttachments];
     
 }
 
@@ -116,9 +116,18 @@
     // 嵌入 UIImage
     UIImage *image = [UIImage imageNamed:@"dao"];
     attachment = [NSMutableAttributedString attachmentStringWithContent:image contentMode:UIViewContentModeCenter attachmentSize:image.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
-    
+ 
+    [attachment setTextHighlightRange:attachment.rangeOfAll
+                         color:RGBA(84, 84, 84, 1)
+               backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.220]
+                     tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+        
+        NSLog(@"点击了图片 dao");
+        
+    }];
     [text appendAttributedString: attachment];
     
+   
     // 嵌入 UIView
     UISwitch *switcher = [UISwitch new];
     [switcher sizeToFit];
