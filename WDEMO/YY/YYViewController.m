@@ -22,7 +22,7 @@
     
     //YYText文字点击
     [self texthighlight];
-    //YYText 富文本 本地图片 文字点击事件 图片点击事件
+    //YYText 富文本 本地图片 文字点击事件 图片点击事件 网络图片
     [self textAttachments];
     // YYText 富文本 网络图片
 //    [self textAttachments];
@@ -140,11 +140,18 @@
     //    attachment = [NSMutableAttributedString attachmentStringWithContent:layer contentMode:UIViewContentModeBottom attachmentSize:switcher.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
     //    [text appendAttributedString: attachment];
     
+    
+    // 嵌入 UIImageViewv  网络图片 webimage
+    UIImageView *imageView = [[UIImageView alloc] init];
+    imageView.frame = CGRectMake(0, 0, 20, 20);
+    [imageView setImageWithURL:[NSURL URLWithString:@"https://avatar.csdnimg.cn/D/A/E/1_weixin_39840387.jpg"] placeholder:[UIImage imageNamed:@"dao"]];
+    attachment = [NSMutableAttributedString attachmentStringWithContent:imageView contentMode:UIViewContentModeCenter attachmentSize:imageView.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+    [text appendAttributedString: attachment];
+    
+
     //文本布局计算
     CGSize size = CGSizeMake(self.view.frame.size.width, CGFLOAT_MAX);
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:size text:text];
-    
-    
     
     // text layout display
     YYLabel *label = [YYLabel new];
