@@ -64,23 +64,7 @@
     NSLog(@"%zd", [array indexOfObject:array2]);//结果为0
 }
 
-//没有重写isEqual
-- (void)test3
-{
-    MYPerson *p1 = [[MYPerson alloc] init];
-    p1.age = 20;
-    p1.no = 30;
-    
-    MYPerson *p2 = [[MYPerson alloc] init];
-    p2.age = 20;
-    p2.no = 30;
-    
-    NSLog(@"%p %p", p1, p2);
-    NSLog(@"p1 == p2 -> %zd", p1 == p2); // 0
-    NSLog(@"[p1 isEqual:p2] -> %zd", [p1 isEqual:p2]); // 0
-}
-
-////重写后
+////没有重写isEqual
 //- (void)test3
 //{
 //    MYPerson *p1 = [[MYPerson alloc] init];
@@ -91,9 +75,26 @@
 //    p2.age = 20;
 //    p2.no = 30;
 //
-//    NSArray *array = @[@"2", @"6", p1, @"111"];
-//
-//    NSLog(@"%zd", [array indexOfObject:p2]);//结果为2
+//    NSLog(@"%p %p", p1, p2);
+//    NSLog(@"p1 == p2 -> %zd", p1 == p2); // 0
+//    NSLog(@"[p1 isEqual:p2] -> %zd", [p1 isEqual:p2]); // 0
 //}
+
+//重写后
+- (void)test3
+{
+    MYPerson *p1 = [[MYPerson alloc] init];
+    p1.age = 20;
+    p1.no = 30;
+
+    MYPerson *p2 = [[MYPerson alloc] init];
+    p2.age = 20;
+    p2.no = 30;
+
+    NSArray *array = @[@"2", @"6", p1, @"111"];
+
+    NSLog(@"%zd", [array indexOfObject:p2]);//结果为2
+    NSLog(@"%zd", [array containsObject:p2]);//结果为1
+}
 
 @end

@@ -51,6 +51,7 @@
     return YES;
 }
 
+////重写类的isEqual:方法
 ////自己项目代码中的写法
 //- (BOOL)isEqual:(MYPerson *)other {
 //    if (other == self) {
