@@ -24,7 +24,8 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeChat,//直播聊天页面
     ListModelTypeYYText,//YYText富文本
     ListModelTypeMask,//遮罩
-    
+    ListModelTypeAttributedText,//系统富文本
+ 
 };
 
 NS_ASSUME_NONNULL_BEGIN

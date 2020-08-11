@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (UIImage *)chat_imagePath:(NSString *)path;
 
+//UIView转成图片-ios
+//https://www.jianshu.com/p/0ac37d9854e7
 //UIView转化为UIImage
 + (UIImage *)convertViewToImage:(UIView *)view;
 

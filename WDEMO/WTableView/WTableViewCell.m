@@ -45,7 +45,6 @@
         self.secondLabel.frame = CGRectMake(60, 30, 200, 20);
         self.rightLabel.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 100, 0, 80, 60);
 
-        
         self.nextImage.frame = CGRectMake([UIScreen mainScreen].bounds.size.width -40, 20, 20, 20);
 
         self.firstLabel.text = @"firstLabel"; 

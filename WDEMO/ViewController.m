@@ -32,6 +32,8 @@
 //model
 #import "ListModel.h"
 #import "ListModelCell.h"
+//系统的富文本
+#import "AttributedTextViewController.h"
 
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -60,22 +62,8 @@
     [tagListBtn addTarget:self action:@selector(clickTagListBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:tagListBtn];
     
-  
-    
     //#############################################################################################################
-     
-    UILabel *titleLabel3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
-    titleLabel3.textAlignment = NSTextAlignmentRight;
-    titleLabel3.text = @"字体";
-    titleLabel3.font = [UIFont systemFontOfSize:16];
-    titleLabel3.textColor = [UIColor grayColor];
-    [self.view addSubview:titleLabel3];
-    //字体包
-    NSString *string = FGGetStringWithKeyFromTable(@"Language", @"InfoPlist");
-    NSLog(@"APP当前语言:%@",string);
-    titleLabel3.text = string;
     
-
     NSArray * array = @[
         [ListModel initWithTitle:@"TagList1" detail:@"瀑布流" type:ListModelTypeTagList1],
         [ListModel initWithTitle:@"TagList2" detail:@"瀑布流优化" type:ListModelTypeTagList2],
@@ -91,6 +79,9 @@
         [ListModel initWithTitle:@"Chat" detail:@"传值" type:ListModelTypeChat],
         [ListModel initWithTitle:@"YYText" detail:@"YYText富文本" type:ListModelTypeYYText],
         [ListModel initWithTitle:@"Mask" detail:@"遮罩" type:ListModelTypeMask],
+        [ListModel initWithTitle:@"AttributedText" detail:@"系统富文本" type:ListModelTypeAttributedText],
+        
+        
     ];
     self.data = array;
     
@@ -98,6 +89,22 @@
     
     //    //cup memory监控
     //    [self.timer fire];
+    
+    
+    //#############################################################################################################
+    
+    UILabel *titleLabel3 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 20)];
+    titleLabel3.textAlignment = NSTextAlignmentRight;
+    titleLabel3.text = @"字体";
+    titleLabel3.font = [UIFont systemFontOfSize:16];
+    titleLabel3.textColor = [UIColor grayColor];
+    [self.view addSubview:titleLabel3];
+    //字体包
+    NSString *string = FGGetStringWithKeyFromTable(@"Language", @"InfoPlist");
+    NSLog(@"APP当前语言:%@",string);
+    NSString *showStr = [NSString stringWithFormat:@"APP当前语言:%@",string];
+    titleLabel3.text = showStr;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -199,6 +206,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+-(void)clickAttributedText {
+    AttributedTextViewController *vc= [[AttributedTextViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (NSTimer *)timer {
     if (!_timer || _timer.isValid) {
@@ -313,13 +324,13 @@
         case ListModelTypeTagList1:
         {
             [self clickTagList1];
-
+            
         }
             break;
         case ListModelTypeTagList2:
         {
             [self clickTagList2];
-
+            
         }
             break;
         case ListModelType3DTouch:
@@ -382,6 +393,13 @@
             [self clickMask];
         }
             break;
+        case ListModelTypeAttributedText:
+        {
+            [self clickAttributedText];
+        }
+            break;
+            
+            
         default:
         {
             NSAssert(NO, @"PLUPersonalItemType 类型错误");
