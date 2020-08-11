@@ -34,6 +34,7 @@
 #import "ListModelCell.h"
 //系统的富文本
 #import "AttributedTextViewController.h"
+#import "IsEqualViewController.h"
 
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
@@ -80,8 +81,8 @@
         [ListModel initWithTitle:@"YYText" detail:@"YYText富文本" type:ListModelTypeYYText],
         [ListModel initWithTitle:@"Mask" detail:@"遮罩" type:ListModelTypeMask],
         [ListModel initWithTitle:@"AttributedText" detail:@"系统富文本" type:ListModelTypeAttributedText],
-        
-        
+        [ListModel initWithTitle:@"IsEqua" detail:@"判断对象是否相等" type:ListModelTypeIsEqual],
+  
     ];
     self.data = array;
     
@@ -104,7 +105,7 @@
     NSLog(@"APP当前语言:%@",string);
     NSString *showStr = [NSString stringWithFormat:@"APP当前语言:%@",string];
     titleLabel3.text = showStr;
-    
+ 
 }
 
 - (void)didReceiveMemoryWarning {
@@ -208,6 +209,11 @@
 
 -(void)clickAttributedText {
     AttributedTextViewController *vc= [[AttributedTextViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickIsEqual {
+    IsEqualViewController *vc= [[IsEqualViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -398,7 +404,11 @@
             [self clickAttributedText];
         }
             break;
-            
+        case ListModelTypeIsEqual:
+        {
+            [self clickIsEqual];
+        }
+            break;
             
         default:
         {
@@ -407,7 +417,6 @@
             break;
     }
 }
-
 
 - (void)rrTest {
     

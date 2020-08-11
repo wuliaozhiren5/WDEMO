@@ -57,6 +57,9 @@
 		A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09B24B97FD4005922B1 /* ViewController2.m */; };
 		A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09C24B97FD4005922B1 /* ViewController3.m */; };
 		A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9DC1A24D66049009FB2EA /* UIImage+size.m */; };
+		F507113024E2A6A700AD5306 /* MYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F507112F24E2A6A700AD5306 /* MYPerson.m */; };
+		F507113324E2A6BE00AD5306 /* MYCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113224E2A6BE00AD5306 /* MYCar.m */; };
+		F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113624E2AB9400AD5306 /* IsEqualViewController.m */; };
 		F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E11D24CA800200DA5625 /* TResponderTextView.m */; };
 		F553E12824CA800200DA5625 /* InputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E11E24CA800200DA5625 /* InputBar.m */; };
 		F553E12924CA800200DA5625 /* FaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E11F24CA800200DA5625 /* FaceView.m */; };
@@ -241,6 +244,12 @@
 		A4F2C09F24B97FD5005922B1 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		A4F9DC1924D66049009FB2EA /* UIImage+size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+size.h"; sourceTree = "<group>"; };
 		A4F9DC1A24D66049009FB2EA /* UIImage+size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+size.m"; sourceTree = "<group>"; };
+		F507112E24E2A6A700AD5306 /* MYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYPerson.h; sourceTree = "<group>"; };
+		F507112F24E2A6A700AD5306 /* MYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYPerson.m; sourceTree = "<group>"; };
+		F507113124E2A6BE00AD5306 /* MYCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYCar.h; sourceTree = "<group>"; };
+		F507113224E2A6BE00AD5306 /* MYCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYCar.m; sourceTree = "<group>"; };
+		F507113524E2AB9400AD5306 /* IsEqualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsEqualViewController.h; sourceTree = "<group>"; };
+		F507113624E2AB9400AD5306 /* IsEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsEqualViewController.m; sourceTree = "<group>"; };
 		F553E11D24CA800200DA5625 /* TResponderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TResponderTextView.m; sourceTree = "<group>"; };
 		F553E11E24CA800200DA5625 /* InputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InputBar.m; sourceTree = "<group>"; };
 		F553E11F24CA800200DA5625 /* FaceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceView.m; sourceTree = "<group>"; };
@@ -462,6 +471,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F507113424E2AA6D00AD5306 /* 判断对象是否相等 */,
 				F5C7261524E1252B00B16639 /* 列表Model */,
 				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 */,
 				F5D0FBFC24E0E6A300CAADF8 /* Mask */,
@@ -612,6 +622,19 @@
 				A4F2C09C24B97FD4005922B1 /* ViewController3.m */,
 			);
 			path = TagLIst;
+			sourceTree = "<group>";
+		};
+		F507113424E2AA6D00AD5306 /* 判断对象是否相等 */ = {
+			isa = PBXGroup;
+			children = (
+				F507112E24E2A6A700AD5306 /* MYPerson.h */,
+				F507112F24E2A6A700AD5306 /* MYPerson.m */,
+				F507113124E2A6BE00AD5306 /* MYCar.h */,
+				F507113224E2A6BE00AD5306 /* MYCar.m */,
+				F507113524E2AB9400AD5306 /* IsEqualViewController.h */,
+				F507113624E2AB9400AD5306 /* IsEqualViewController.m */,
+			);
+			path = "判断对象是否相等";
 			sourceTree = "<group>";
 		};
 		F553E18C24CA8D1100DA5625 /* Face */ = {
@@ -1021,11 +1044,13 @@
 				F5F3664924C8287C008BA221 /* ChatKit.m in Sources */,
 				A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */,
 				A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */,
+				F507113024E2A6A700AD5306 /* MYPerson.m in Sources */,
 				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
+				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
 				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,
 				F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */,
@@ -1066,6 +1091,7 @@
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,
+				F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */,
 				F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
