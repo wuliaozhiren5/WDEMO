@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIImageView *avatarImageView;
 
+- (void)fillWithData:(id)data;
+ 
+
 @end
 
 NS_ASSUME_NONNULL_END

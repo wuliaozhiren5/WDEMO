@@ -79,6 +79,9 @@
 		F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
 		F57B52A324C7DF2700940696 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* ChatController.m */; };
+		F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F12924E3C12B00F611E6 /* TestViewController.m */; };
+		F5A9F13924E3D44B00F611E6 /* RRSeeLivingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13824E3D44A00F611E6 /* RRSeeLivingBaseCell.m */; };
+		F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */; };
 		F5C7261824E1258000B16639 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261724E1257F00B16639 /* ListModel.m */; };
 		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
 		F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */; };
@@ -289,6 +292,12 @@
 		F57B529F24C7DECF00940696 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		F57B52A124C7DF2700940696 /* ChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
 		F57B52A224C7DF2700940696 /* ChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
+		F5A9F12824E3C12B00F611E6 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		F5A9F12924E3C12B00F611E6 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		F5A9F13724E3D44A00F611E6 /* RRSeeLivingBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRSeeLivingBaseCell.h; sourceTree = "<group>"; };
+		F5A9F13824E3D44A00F611E6 /* RRSeeLivingBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRSeeLivingBaseCell.m; sourceTree = "<group>"; };
+		F5A9F13A24E3EC2400F611E6 /* RRSeeLivingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRSeeLivingModel.h; sourceTree = "<group>"; };
+		F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRSeeLivingModel.m; sourceTree = "<group>"; };
 		F5C7261624E1257F00B16639 /* ListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
 		F5C7261724E1257F00B16639 /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		F5C7261924E1317B00B16639 /* ListModelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelCell.h; sourceTree = "<group>"; };
@@ -494,6 +503,12 @@
 				6783C8521FB941EE0040C02B /* AppDelegate.m */,
 				6783C8541FB941EE0040C02B /* ViewController.h */,
 				6783C8551FB941EE0040C02B /* ViewController.m */,
+				F5A9F12824E3C12B00F611E6 /* TestViewController.h */,
+				F5A9F12924E3C12B00F611E6 /* TestViewController.m */,
+				F5A9F13724E3D44A00F611E6 /* RRSeeLivingBaseCell.h */,
+				F5A9F13824E3D44A00F611E6 /* RRSeeLivingBaseCell.m */,
+				F5A9F13A24E3EC2400F611E6 /* RRSeeLivingModel.h */,
+				F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */,
 				F5C7261924E1317B00B16639 /* ListModelCell.h */,
 				F5C7261A24E1317B00B16639 /* ListModelCell.m */,
 				6783C8571FB941EE0040C02B /* Main.storyboard */,
@@ -1031,8 +1046,10 @@
 				F553E14424CA82E700DA5625 /* ChatKitConfig.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
 				F5D0FC0D24E0F99800CAADF8 /* UIImage+TUIKIT.m in Sources */,
+				F5A9F13924E3D44B00F611E6 /* RRSeeLivingBaseCell.m in Sources */,
 				F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */,
 				F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */,
+				F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */,
 				A459C29424C174A300A3B5FF /* Plist.m in Sources */,
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
@@ -1077,6 +1094,7 @@
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
 				F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
+				F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */,
 				F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */,
 				F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,

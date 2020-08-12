@@ -55,6 +55,10 @@
     return self;
 }
 
+- (void)fillWithData:(id)data {
+    
+}
+
 //lazy
 -(UIImageView *)avatarImageView {
     

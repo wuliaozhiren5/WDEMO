@@ -35,13 +35,16 @@
 //系统的富文本
 #import "AttributedTextViewController.h"
 #import "IsEqualViewController.h"
+//暗黑
+#import "UIColor+TUIDarkMode.h"
+#import "UIImage+TUIDarkMode.h"
 
+#import "TestViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, copy) NSArray *data;
-
 @property (nonatomic, strong) NSTimer *timer;
 
 @end
@@ -55,6 +58,9 @@
     //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
     //    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    //深色模式 切换时会自动变化
+    self.view.backgroundColor = [UIColor d_colorWithColorLight:[UIColor whiteColor] dark:[UIColor grayColor]];
     
     UIButton *tagListBtn = [[UIButton alloc]initWithFrame:CGRectMake(10, 0, 100, 40)];
     //    [tagListBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
@@ -82,7 +88,8 @@
         [ListModel initWithTitle:@"Mask" detail:@"遮罩" type:ListModelTypeMask],
         [ListModel initWithTitle:@"AttributedText" detail:@"系统富文本" type:ListModelTypeAttributedText],
         [ListModel initWithTitle:@"IsEqua" detail:@"判断对象是否相等" type:ListModelTypeIsEqual],
-  
+        [ListModel initWithTitle:@"Test" detail:@"测试" type:ListModelTypeTest],
+        
     ];
     self.data = array;
     
@@ -105,7 +112,7 @@
     NSLog(@"APP当前语言:%@",string);
     NSString *showStr = [NSString stringWithFormat:@"APP当前语言:%@",string];
     titleLabel3.text = showStr;
- 
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -214,6 +221,12 @@
 
 - (void)clickIsEqual {
     IsEqualViewController *vc= [[IsEqualViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickIsTest {
+
+    TestViewController *vc= [[TestViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -409,6 +422,13 @@
             [self clickIsEqual];
         }
             break;
+        case ListModelTypeTest:
+        {
+            [self clickIsTest];
+        }
+            break;
+            
+            
             
         default:
         {

@@ -164,4 +164,44 @@
 //
 //}
 
+
+
+#pragma mark -- UICollectionViewDelegateFlowLayout
+/*
+//CGSize itemSize：它定义了每一个item的大小，通过itemSize可以快捷给每一个cell设置一样的大小，如果你想到不同的尺寸，-collectionView:layout:sizeForItemAtIndexPath:来给每一个item指定不同的尺寸。
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(100, 100);
+}
+ 
+ //UIEdgeInsets sectionInset：组内边距，设置UIcollectionView整体的组内边距，同上有特定方法-collectionView:insetForSectionAtIndex:设置具体的边距
+ - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section  {
+     //设置senction的内边距
+     return UIEdgeInsetsMake(5, 5, 5, 5);
+ }
+ 
+ //CGFloat minimumLineSpacing：最小行间隔，同样你也可以通过-* collectionView:minimumLineSpacingForSectionAtIndex:方法来个没一行设置不同的行间距
+ - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section  {
+     //     设置最小行间距
+     return 10.0;
+
+ }
+ 
+ //CGFloat minimumInteritemSpacing：最小cell之间的距离，同上都是可以通过-collectionView:minimumInteritemSpacingForSectionAtIndex:特定的方法，顶底到具体的行和item之间的间距的，非常的灵活。
+ - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+     //    设置同一列中间隔的cell最小间距
+     return 10.0;
+
+ }
+ 
+ //CGSize headerReferenceSize：设置supplementary header View的大小-collectionView:referenceSizeForHeaderInSection:
+ - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section  {
+     
+ }
+
+ //CGSize footerReferenceSize：设置supplementary header View的大小-collectionView:referenceSizeForFooterInSection:
+ - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+     
+ }
+*/
+
 @end
