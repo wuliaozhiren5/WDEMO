@@ -50,6 +50,9 @@
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
     [self.collectionView registerClass:[WCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([WCollectionViewCell class])];
     
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
+    [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"Footer"];
+    
     [self.view addSubview:self.collectionView];
     
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -73,26 +76,26 @@
 //有多少组
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    //    return 1;
+        return 1;
     
-    return 2;
+//    return 2;
 }
 ///每一组有多少个cell
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    //    return 100;
+        return 10;
     
-    switch (section) {
-        case 0:
-            return 1;
-            break;
-        case 1:
-            return 50;
-            break;
-        default:
-            return 0;
-            break;
-    }
+//    switch (section) {
+//        case 0:
+//            return 1;
+//            break;
+//        case 1:
+//            return 50;
+//            break;
+//        default:
+//            return 0;
+//            break;
+//    }
 }
 //
 //定义并返回每个cell
@@ -125,44 +128,39 @@
     return YES;
 }
 
-//// 设置Header的尺寸
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-//
-//    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-//
-//    return CGSizeMake(screenWidth/2-5-50, 100);
-//}
-//
-//// 设置Footer的尺寸
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
-//
-//    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
-//
-//    return CGSizeMake(screenWidth/2-5-50, 100);
-//}
-//
-//
-//- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-//
-//
-//    if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
-//
-//        UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Header" forIndexPath:indexPath];
-////        header.backgroundColor = [UIColor whiteColor];
-//        return header;
-//
-//    } else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
-//
-//        UICollectionReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Footer" forIndexPath:indexPath];
-////        footer.backgroundColor = [UIColor whiteColor];
-//        return footer;
-//
-//    } else {
-//        return nil;
-//    }
-//
-//
-//}
+// 设置Header的尺寸
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    return CGSizeMake(screenWidth/2-5-50, 100);
+}
+
+// 设置Footer的尺寸
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section{
+
+    CGFloat screenWidth = [UIScreen mainScreen].bounds.size.width;
+    return CGSizeMake(screenWidth/2-5-50, 100);
+}
+
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
+ 
+    if ([kind isEqualToString:UICollectionElementKindSectionHeader]){
+
+        UICollectionReusableView *header = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Header" forIndexPath:indexPath];
+        header.backgroundColor = [UIColor systemBlueColor];
+        return header;
+
+    } else if ([kind isEqualToString:UICollectionElementKindSectionFooter]){
+
+        UICollectionReusableView *footer = [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"Footer" forIndexPath:indexPath];
+        footer.backgroundColor = [UIColor systemBlueColor];
+        return footer;
+
+    } else {
+        return nil;
+    }
+}
 
 
 

@@ -28,6 +28,7 @@
     
     //**************************************************************************
     self.tableView=[[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
+    
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     
@@ -38,8 +39,7 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
   
     [self.tableView registerClass:[WTableViewCell class] forCellReuseIdentifier:NSStringFromClass([WTableViewCell class])];
-
-   
+ 
     
     //iOS11
     self.tableView.estimatedRowHeight = 0;

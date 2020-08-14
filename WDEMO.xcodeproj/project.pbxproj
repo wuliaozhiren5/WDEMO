@@ -84,6 +84,11 @@
 		F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */; };
 		F5C7261824E1258000B16639 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261724E1257F00B16639 /* ListModel.m */; };
 		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
+		F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */; };
+		F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1B24E6901700B20C80 /* RRDestroyAccountReasonViewController.m */; };
+		F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlterview.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlterview.m */; };
+		F5CE3D2224E6901800B20C80 /* RRDestroyAccountReasonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1D24E6901700B20C80 /* RRDestroyAccountReasonCell.m */; };
+		F5CE3D2324E6901800B20C80 /* RRDestroyAccountAgreenmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */; };
 		F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */; };
 		F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0124E0E70500CAADF8 /* MaskViewController.m */; };
 		F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0524E0F91800CAADF8 /* UIColor+TUIDarkMode.m */; };
@@ -302,6 +307,17 @@
 		F5C7261724E1257F00B16639 /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		F5C7261924E1317B00B16639 /* ListModelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelCell.h; sourceTree = "<group>"; };
 		F5C7261A24E1317B00B16639 /* ListModelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModelCell.m; sourceTree = "<group>"; };
+		F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountContentCell.m; sourceTree = "<group>"; };
+		F5CE3D1624E6901700B20C80 /* RRDestroyAccountAlterview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountAlterview.h; sourceTree = "<group>"; };
+		F5CE3D1724E6901700B20C80 /* RRDestroyAccountReasonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountReasonViewController.h; sourceTree = "<group>"; };
+		F5CE3D1824E6901700B20C80 /* RRDestroyAccountReasonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountReasonCell.h; sourceTree = "<group>"; };
+		F5CE3D1924E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountAgreenmentViewController.h; sourceTree = "<group>"; };
+		F5CE3D1A24E6901700B20C80 /* RRDestroyAccountContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountContentCell.h; sourceTree = "<group>"; };
+		F5CE3D1B24E6901700B20C80 /* RRDestroyAccountReasonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountReasonViewController.m; sourceTree = "<group>"; };
+		F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlterview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountAlterview.m; sourceTree = "<group>"; };
+		F5CE3D1D24E6901700B20C80 /* RRDestroyAccountReasonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountReasonCell.m; sourceTree = "<group>"; };
+		F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountAgreenmentViewController.m; sourceTree = "<group>"; };
+		F5CE3D2424E6930C00B20C80 /* ACMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACMacros.h; sourceTree = "<group>"; };
 		F5D0FBFD24E0E6CB00CAADF8 /* AttributedTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedTextViewController.h; sourceTree = "<group>"; };
 		F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedTextViewController.m; sourceTree = "<group>"; };
 		F5D0FC0024E0E70400CAADF8 /* MaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskViewController.h; sourceTree = "<group>"; };
@@ -480,6 +496,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5CE3D1424E6901700B20C80 /* 注销 */,
 				F507113424E2AA6D00AD5306 /* 判断对象是否相等 */,
 				F5C7261524E1252B00B16639 /* 列表Model */,
 				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 */,
@@ -737,6 +754,24 @@
 				F5C7261724E1257F00B16639 /* ListModel.m */,
 			);
 			path = "列表Model";
+			sourceTree = "<group>";
+		};
+		F5CE3D1424E6901700B20C80 /* 注销 */ = {
+			isa = PBXGroup;
+			children = (
+				F5CE3D2424E6930C00B20C80 /* ACMacros.h */,
+				F5CE3D1624E6901700B20C80 /* RRDestroyAccountAlterview.h */,
+				F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlterview.m */,
+				F5CE3D1724E6901700B20C80 /* RRDestroyAccountReasonViewController.h */,
+				F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */,
+				F5CE3D1824E6901700B20C80 /* RRDestroyAccountReasonCell.h */,
+				F5CE3D1924E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.h */,
+				F5CE3D1A24E6901700B20C80 /* RRDestroyAccountContentCell.h */,
+				F5CE3D1B24E6901700B20C80 /* RRDestroyAccountReasonViewController.m */,
+				F5CE3D1D24E6901700B20C80 /* RRDestroyAccountReasonCell.m */,
+				F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */,
+			);
+			path = "注销";
 			sourceTree = "<group>";
 		};
 		F5D0FBFB24E0E65500CAADF8 /* 富文本 */ = {
@@ -1106,6 +1141,7 @@
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
+				F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,
@@ -1114,11 +1150,15 @@
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
 				A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */,
+				F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlterview.m in Sources */,
 				F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */,
 				F553E17B24CA86FC00DA5625 /* UIImage+ChatKit..m in Sources */,
+				F5CE3D2324E6901800B20C80 /* RRDestroyAccountAgreenmentViewController.m in Sources */,
+				F5CE3D2224E6901800B20C80 /* RRDestroyAccountReasonCell.m in Sources */,
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
+				F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
