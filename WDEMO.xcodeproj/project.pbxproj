@@ -79,6 +79,7 @@
 		F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
 		F57B52A324C7DF2700940696 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* ChatController.m */; };
+		F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F581D21724EAB684008AC679 /* WScrollViewController.m */; };
 		F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F12924E3C12B00F611E6 /* TestViewController.m */; };
 		F5A9F13924E3D44B00F611E6 /* RRSeeLivingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13824E3D44A00F611E6 /* RRSeeLivingBaseCell.m */; };
 		F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */; };
@@ -297,6 +298,8 @@
 		F57B529F24C7DECF00940696 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		F57B52A124C7DF2700940696 /* ChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
 		F57B52A224C7DF2700940696 /* ChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
+		F581D21624EAB684008AC679 /* WScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WScrollViewController.h; sourceTree = "<group>"; };
+		F581D21724EAB684008AC679 /* WScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WScrollViewController.m; sourceTree = "<group>"; };
 		F5A9F12824E3C12B00F611E6 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		F5A9F12924E3C12B00F611E6 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		F5A9F13724E3D44A00F611E6 /* RRSeeLivingBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRSeeLivingBaseCell.h; sourceTree = "<group>"; };
@@ -496,6 +499,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F581D21524EAB65A008AC679 /* ScrollView */,
 				F5CE3D1424E6901700B20C80 /* 注销 */,
 				F507113424E2AA6D00AD5306 /* 判断对象是否相等 */,
 				F5C7261524E1252B00B16639 /* 列表Model */,
@@ -745,6 +749,15 @@
 				F553E11D24CA800200DA5625 /* TResponderTextView.m */,
 			);
 			path = Input;
+			sourceTree = "<group>";
+		};
+		F581D21524EAB65A008AC679 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				F581D21624EAB684008AC679 /* WScrollViewController.h */,
+				F581D21724EAB684008AC679 /* WScrollViewController.m */,
+			);
+			path = ScrollView;
 			sourceTree = "<group>";
 		};
 		F5C7261524E1252B00B16639 /* 列表Model */ = {
@@ -1087,6 +1100,7 @@
 				F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */,
 				A459C29424C174A300A3B5FF /* Plist.m in Sources */,
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
+				F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */,
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
