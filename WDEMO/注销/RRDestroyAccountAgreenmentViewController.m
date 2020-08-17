@@ -9,9 +9,10 @@
 #import "RRDestroyAccountAgreenmentViewController.h"
 #import "RRDestroyAccountContentCell.h"
 #import "RRDestroyAccountReasonViewController.h"
+//#import "Activity_ViewController.h"
+#import "ACMacros.h"
 #import <YYKit/YYKit.h>
 #import <Masonry/Masonry.h>
-
 @interface RRDestroyAccountAgreenmentViewController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *dataArray;
@@ -28,15 +29,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self createData];
+    [self setupViews];
+}
+- (void)createData {
+    
+//    //用户信息
+//    RrmjUser *me = [UserInfoConfig sharedUserInfoConfig].userInfo;
+//    NSString * time = me.createTime;
+//    NSTimeInterval interval = [time doubleValue] / 1000.0;
+//    NSDate *date  = [NSDate dateWithTimeIntervalSince1970:interval];
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateFormat:@"yyyy.MM.dd"];//更改自己想要的时间格式
+//    NSString *dateString = [formatter stringFromDate: date];
+//
+//    NSString *endTimeString = @"无";
+//    if (me.vipMedal){
+//        endTimeString = [NSString stringWithFormat:@"%@到期",me.vipMedal.endTimeString];
+//    }else{
+//       endTimeString = @"无";
+//    }
+    
+    NSString *name = @"12312";//me.nickName
+    NSString *dateString = @"2020-20-20";//dateString
+    NSString *level = [NSString stringWithFormat:@"LV%i",12];//me.level
+
+    NSString *endTimeString = @"2020-20-20";
+    NSString *count = [NSString stringWithFormat:@"%i",10];//me.medalList.count
+    NSString *achievementCount = @"2";//me.achievementCount
+
     self.selectIndex = -1;
-    self.dataArray = @[[RRDestroyAccountContentModel initWithTitle:@"1.账号信息" detail:@"账号相关信息将被清零，个人资料和历史信息 (包括头像、昵称、浏览记录) 将被清空。" type:RRDestroyAccountContentTypeAccountInfo],
-                       [RRDestroyAccountContentModel initWithTitle:@"2.账号内财产相关" detail:@"注销后账号内全部权益将被清除，已购买会员等产品将视为自动放弃，请您务必知晓并确认。" type:RRDestroyAccountContentTypeMemberInfo],
+    self.dataArray = @[[RRDestroyAccountContentModel initWithTitle:@"1.账号信息" detail:@"账号相关信息将被清零，个人资料和历史信息 (包括头像、昵称、浏览记录) 将被清空。" name:name time:dateString level:level type:RRDestroyAccountContentTypeAccountInfo],
+                       [RRDestroyAccountContentModel initWithTitle:@"2.账号内财产相关" detail:@"注销后账号内全部权益将被清除，已购买会员等产品将视为自动放弃，请您务必知晓并确认。" name:endTimeString time:count level:achievementCount type:RRDestroyAccountContentTypeMemberInfo],
                        
-                       [RRDestroyAccountContentModel initWithTitle:@"3.账号注销后无法找回" detail:@"账号注销后，即使您使用相同的手机号码再次注册，依旧无法找回之前的账号信息，会以新的用户身份进行登录。" type:RRDestroyAccountContentTypeTips],
+                       [RRDestroyAccountContentModel initWithTitle:@"3.账号注销后无法找回" detail:@"账号注销后，即使您使用相同的手机号码再次注册，依旧无法找回之前的账号信息，会以新的用户身份进行登录。" name:@"" time:@"" level:@"" type:RRDestroyAccountContentTypeTips],
                        
     ];
-    
-    [self setupViews];
 }
 
 - (void)setupViews {
@@ -57,8 +86,9 @@
 }
 - (void)next:(UIButton *)btn {
     //注销原因 页面
-//    RRDestroyAccountReasonViewController *vc = [[RRDestroyAccountReasonViewController alloc]init];
- 
+    RRDestroyAccountReasonViewController *vc = [[RRDestroyAccountReasonViewController alloc]init];
+//    [[RRAppLinkManager sharedManager] pushViewController:vc animated:YES];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -158,7 +188,7 @@
 #pragma mark -- UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-} 
+}
 
 - (UITableView *)tableView {
     if (!_tableView) {
@@ -191,7 +221,8 @@
         UIButton *submitbtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
         submitbtn.titleLabel.font = SYSTEMFONT(15);
 //        submitbtn.backgroundColor = kCOLOR_dynamicProvider_F2F4F5_2E2E2E;
-//        [submitbtn setTitleColor:kCOLOR_dynamicProvider_333333_DADBDC forState:UIControlStateNormal];
+        submitbtn.backgroundColor = kCOLOR_CACBCC;
+        [submitbtn setTitleColor:kCOLOR_333333 forState:UIControlStateNormal];
         [submitbtn setTitle:@"下一步" forState:UIControlStateNormal];
         [submitbtn addTarget:self action:@selector(next:) forControlEvents:UIControlEventTouchUpInside];
         [_footerView addSubview:submitbtn];
@@ -211,19 +242,20 @@
         text.lineSpacing = 2.5;
         text.font = textFont;
         //设置字体颜色
-        //       text.color = RGBA(158, 158, 158, 1);
-        text.color = [UIColor blackColor];
+        text.color = kCOLOR_333333;
+        
         
         NSMutableAttributedString *agreenmemt = [[NSMutableAttributedString alloc] initWithString:@"《账号注销协议》"];
         agreenmemt.lineSpacing = 2.5;
         agreenmemt.font = textFont;
-        agreenmemt.color = [UIColor redColor];
+        agreenmemt.color = kCOLOR_00BBFF;
         [agreenmemt setTextHighlightRange:agreenmemt.rangeOfAll
-                                    color:[UIColor redColor]
+                                    color:kCOLOR_00BBFF
                           backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.220]
                                 tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
             //自定义代码，此处根据需要调整
             NSLog(@"《账号注销协议》");
+//            [self agreement:DestroyAccountAgree];
         }];
         [text appendAttributedString:agreenmemt];
         
@@ -251,4 +283,11 @@
     return _footerView;
 }
 
+
+- (void)agreement:(NSString *)urlStr {
+//    NSString *url = urlStr;
+//    Activity_ViewController *next = [[Activity_ViewController alloc] init];
+//    next.targetUrl = url;
+//    [[RRAppLinkManager sharedManager] pushViewController:next animated:YES];
+}
 @end

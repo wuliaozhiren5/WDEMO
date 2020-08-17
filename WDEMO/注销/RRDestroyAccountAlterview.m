@@ -7,19 +7,13 @@
 //
 
 #import "RRDestroyAccountAlterview.h"
-#import <Masonry/Masonry.h>
 #import "ACMacros.h"
+#import <YYKit/YYKit.h>
+#import <Masonry/Masonry.h>
 
 @interface RRDestroyAccountAlterview ()
 
 @property(strong,nonatomic)UIView *container;
-
-//???
-@property(strong,nonatomic)UIView *topView;
-//???
-@property(strong,nonatomic)UIView *centerView;
-//???
-@property(strong,nonatomic)UIView *bottomView;
 
 @property(strong,nonatomic)UILabel *titleLab;
 @property(strong,nonatomic)UILabel *contentLab;
@@ -61,17 +55,11 @@
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self) {
-        //        _titleStr = @"您是否要撤回注销账号申请？";
-        //        _contentStr = @"该账号注销中，请在24小时内不要登录此账号。点击“是”将登录此账号，并撤回注销申请。";;
-        //        _confirmStr = @"是";;
-        //        _closeStr = @"否";
-        
+    if (self) { 
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
         [self addTarget:self action:@selector(hidden) forControlEvents:UIControlEventTouchUpInside];
         
         _container = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 320)];
-        //        _container.backgroundColor = [UIColor colorFromHexRGB:@"ffffff" alpha:1.0];
         _container.backgroundColor = [UIColor whiteColor];
         _container.layer.cornerRadius = 8;
         _container.layer.masksToBounds = YES;
@@ -121,7 +109,6 @@
         [_confirmBtn setTitleColor:kCOLOR_00BBFF forState:UIControlStateNormal];
         [_confirmBtn addTarget:self action:@selector(clickConfirmBtn) forControlEvents:UIControlEventTouchUpInside];
         [_container addSubview:_confirmBtn];
-        
         
         //        横线
         UIView *horizontalLine = [[UIView alloc]initWithFrame:CGRectZero];

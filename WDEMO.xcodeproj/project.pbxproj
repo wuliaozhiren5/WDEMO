@@ -762,13 +762,13 @@
 				F5CE3D2424E6930C00B20C80 /* ACMacros.h */,
 				F5CE3D1624E6901700B20C80 /* RRDestroyAccountAlterview.h */,
 				F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlterview.m */,
-				F5CE3D1724E6901700B20C80 /* RRDestroyAccountReasonViewController.h */,
-				F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */,
 				F5CE3D1824E6901700B20C80 /* RRDestroyAccountReasonCell.h */,
-				F5CE3D1924E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.h */,
-				F5CE3D1A24E6901700B20C80 /* RRDestroyAccountContentCell.h */,
-				F5CE3D1B24E6901700B20C80 /* RRDestroyAccountReasonViewController.m */,
 				F5CE3D1D24E6901700B20C80 /* RRDestroyAccountReasonCell.m */,
+				F5CE3D1A24E6901700B20C80 /* RRDestroyAccountContentCell.h */,
+				F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */,
+				F5CE3D1724E6901700B20C80 /* RRDestroyAccountReasonViewController.h */,
+				F5CE3D1B24E6901700B20C80 /* RRDestroyAccountReasonViewController.m */,
+				F5CE3D1924E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.h */,
 				F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */,
 			);
 			path = "注销";

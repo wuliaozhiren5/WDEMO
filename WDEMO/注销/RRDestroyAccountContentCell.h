@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <YYKit/YYKit.h>
-#import <Masonry/Masonry.h>
-#import "ACMacros.h"
+#import "YYKit.h"
 
 NS_ASSUME_NONNULL_BEGIN
 typedef NS_ENUM(NSInteger, RRDestroyAccountContentType) {
@@ -24,12 +22,19 @@ typedef NS_ENUM(NSInteger, RRDestroyAccountContentType) {
 @interface RRDestroyAccountContentModel : NSObject 
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *detail;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *time;
+@property (nonatomic, strong) NSString *level;
+
 @property (nonatomic, strong) NSMutableAttributedString *detailAtt;
 @property (nonatomic, assign) RRDestroyAccountContentType type;
 @property (nonatomic, assign) CGFloat cellHeight;
 
 + (instancetype)initWithTitle:(NSString *)title
                        detail:(NSString *)detail
+                     name:(NSString *)name
+                         time:(NSString *)time
+                        level:(NSString *)level
                          type:(RRDestroyAccountContentType)type;
 
 @end

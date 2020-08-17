@@ -40,6 +40,9 @@
 #import "UIImage+TUIDarkMode.h"
 
 #import "TestViewController.h"
+#import "RRDestroyAccountAgreenmentViewController.h"
+
+
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -126,9 +129,15 @@
 
 -(void)clickTagList1 {
     
-    LZTagListVC *vc= [[LZTagListVC alloc]init];
+//    LZTagListVC *vc= [[LZTagListVC alloc]init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
+     
+    RRDestroyAccountAgreenmentViewController *vc= [[RRDestroyAccountAgreenmentViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+    
+    
 }
 
 -(void)clickTagList2 {

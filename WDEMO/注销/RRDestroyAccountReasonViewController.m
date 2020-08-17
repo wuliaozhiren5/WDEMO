@@ -9,7 +9,10 @@
 #import "RRDestroyAccountReasonViewController.h"
 #import "RRDestroyAccountReasonCell.h"
 #import "RRDestroyAccountAlterview.h"
-
+//#import "UIImage+GradientColor.h"//渐变色
+#import "ACMacros.h"
+#import <YYKit/YYKit.h>
+#import <Masonry/Masonry.h>
 @interface RRDestroyAccountReasonViewController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *dataArray;
@@ -18,6 +21,8 @@
 @property (nonatomic, assign) CGRect currentTextViewRect;
 @property (nonatomic, strong) UIView *footerView;
 @property (nonatomic, strong) UIButton *submitbtn;
+@property (nonatomic, strong) UILabel *placeholderLabel;
+@property (nonatomic, copy) NSString *placeholderStr;
 @end
 
 @implementation RRDestroyAccountReasonViewController
@@ -25,14 +30,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.selectIndex = -1;
-    self.dataArray = @[[RRDestroyAccountReasonModel initWithTitle:@"这是个多余的账号" reason:@"这是个多余的账号" type:RRDestroyAccountReasonTypeMoreAccount select:NO],
-                       [RRDestroyAccountReasonModel initWithTitle:@"产品性能问题（卡顿、闪退、bug多等）" reason:@"产品性能问题（卡顿、闪退、bug多等）" type:RRDestroyAccountReasonTypeHaveBug select:NO],
-                       [RRDestroyAccountReasonModel initWithTitle:@"没找到想看的剧、推荐的剧不喜欢" reason:@"没找到想看的剧、推荐的剧不喜欢" type:RRDestroyAccountReasonTypeNoLike select:NO],
-                       [RRDestroyAccountReasonModel initWithTitle:@"其他" reason:@"" type:RRDestroyAccountReasonTypeOther select:NO]
-    ];
-    
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self createData];
     [self setupViews];
+
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,8 +79,18 @@
     return YES;
 }
 
+- (void)createData {
+    self.selectIndex = -1;
+    self.placeholderStr = @"请描述您的注销原因";
+    self.dataArray = @[[RRDestroyAccountReasonModel initWithTitle:@"这是个多余的账号" reason:@"这是个多余的账号" type:RRDestroyAccountReasonTypeMoreAccount select:NO],
+                       [RRDestroyAccountReasonModel initWithTitle:@"产品性能问题（卡顿、闪退、bug多等）" reason:@"产品性能问题（卡顿、闪退、bug多等）" type:RRDestroyAccountReasonTypeHaveBug select:NO],
+                       [RRDestroyAccountReasonModel initWithTitle:@"没找到想看的剧、推荐的剧不喜欢" reason:@"没找到想看的剧、推荐的剧不喜欢" type:RRDestroyAccountReasonTypeNoLike select:NO],
+                       [RRDestroyAccountReasonModel initWithTitle:@"其他" reason:@"" type:RRDestroyAccountReasonTypeOther select:NO]
+    ];
+    
+}
 - (void)setupViews {
-    [self.view addSubview:self.tableView];
+     [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.bottom.offset(0);
         make.top.equalTo(self.view);
@@ -92,55 +104,72 @@
     }
     self.selectIndex = btn.tag;
     [self.tableView reloadData];
-}
+    
+//    [self setSelectGradientColor];
 
+}
 - (void)submit:(UIButton *)btn {
+    
+    if (_selectIndex < 0) {
+        return;
+    }
     [self.view endEditing:YES];
+    RRDestroyAccountReasonModel *model = [self.dataArray objectOrNilAtIndex:_selectIndex];
+
+//    switch (model.type) {
+//        case <#constant#>:
+//            <#statements#>
+//            break;
+//
+//        default:
+//            break;
+//    }
+//
+    //去除空格
+    NSString *sp = [self.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    if (sp.length == 0) {
+//        TOAST(@"不能发送空白消息");
+    } else if (sp.length > 100) {
+        //大于100字
+//        TOAST(@"最多可输入100个字");
+    } else {
+        //发送消息
+    }
     
     
     RRDestroyAccountAlterview *alterview = [[RRDestroyAccountAlterview alloc]initWithFrame:CGRectMake(0, 0, 320, 320)
-                                                                                     titel:@"您是否要撤回注销账号申请？"
-                                                                                   content: @"该账号注销中，请在24小时内不要登录此账号。点击“是”将登录此账号，并撤回注销申请。"
-                                                                                   confirm:@"是"
-                                                                                     close:@"否"
+                                                                                     titel:@"注销申请提交成功"
+                                                                                   content: @"若符合注销要求，我们将在24小时后删除您所有数据。若您在24小时内重新登录，则会默认取消您的注销申请。"
+                                                                                   confirm:@"完成并退出视频"
+                                                                                     close:nil
                                                                             confirmHandler:^{
 
     }
-                                                                              closeHandler:^{
-
-    }];
+                                                                              closeHandler:^{}];
     [alterview show];
-    
-    
-    
-//    RRDestroyAccountAlterview *alterview = [[RRDestroyAccountAlterview alloc]initWithFrame:CGRectMake(0, 0, 320, 320)
-//                                                                                     titel:@"注销申请提交成功"
-//                                                                                   content: @"若符合注销要求，我们将在24小时后删除您所有数据。若您在24小时内重新登录，则会默认取消您的注销申请。"
-//                                                                                   confirm:@"完成并退出人人视频"
-//                                                                                     close:nil
-//                                                                            confirmHandler:^{
-//
-//    }
-//                                                                              closeHandler:^{
-//
-//    }];
-//    [alterview show];
-    
-//        RRDestroyAccountAlterview *alterview = [[RRDestroyAccountAlterview alloc]initWithFrame:CGRectMake(0, 0, 320, 320)
-//                                                                                     titel:@"注销申请提交成功"
-//                                                                                   content: @"若符合注销要求，我们将在24小时后删除您所有数据。若您在24小时内重新登录，则会默认取消您的注销申请。"
-//                                                                                   confirm:nil
-//                                                                                     close:@"完成并退出人人视频"
-//                                                                            confirmHandler:^{
-//
-//    }
-//                                                                              closeHandler:^{
-//
-//    }];
-//    [alterview show];
+ 
     
 }
 
+////按钮渐变色
+//- (void)setDisabledGradientBackColor {
+//    UIColor *topColor = kCOLOR_CACBCC;
+//    UIColor *bottomColor = kCOLOR_DADBDC;
+//    CGSize size = _submitbtn.frame.size;
+//    UIImage *bgImg = [UIImage gradientColorImageFromColors:@[topColor, bottomColor] gradientType:GradientTypeLeftToRight imgSize:size];
+//    _submitbtn.backgroundColor = [UIColor colorWithPatternImage:bgImg];
+//
+//}
+//
+////按钮渐变色
+//- (void)setSelectGradientColor {
+//    UIColor *topColor = kCOLOR_00D5FF;
+//    UIColor *bottomColor = kCOLOR_00BBFF;
+//    CGSize size = _submitbtn.frame.size;
+//    UIImage *bgImg = [UIImage gradientColorImageFromColors:@[topColor, bottomColor] gradientType:GradientTypeLeftToRight imgSize:size];
+//    _submitbtn.backgroundColor = [UIColor colorWithPatternImage:bgImg];
+//
+//}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -151,7 +180,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row == self.dataArray.count - 1) {
-        return 46 + 85 ;
+        return 46 + 12 + 85 ;
     }
     return 46;
 }
@@ -170,8 +199,8 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             self.textView = cell.textView;
             self.textView.delegate = self;
+            self.placeholderLabel.text = _placeholderStr;
             return cell;
-            
         }
             break;
         default:{
@@ -194,7 +223,7 @@
         titleLabel.tag = 111;
         [headView addSubview:titleLabel];
         
-//        titleLabel.font = MEDIUMFONT(24);
+        titleLabel.font = MEDIUMFONT(24);
         titleLabel.text = @"注销原因";
 //        titleLabel.textColor = kCOLOR_dynamicProvider_222222_DADBDC;
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -228,8 +257,28 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self.view endEditing:YES];
 }
+#pragma mark - UITextViewDelegate
+-(void)textViewDidChange:(UITextView *)textView {
+    if (textView.text.length == 0) {
+        _placeholderLabel.text = _placeholderStr;
+    }else{
+        _placeholderLabel.text = @"";
+    }
+}
 
-
+-(UILabel *)placeholderLabel {
+    if (!_placeholderLabel) {
+        _placeholderLabel = [[UILabel alloc] init];
+        _placeholderLabel.frame = CGRectMake(8, 8, 200, 17);
+        _placeholderLabel.font = [UIFont systemFontOfSize:15.0];
+//        _placeholderLabel.text = _placeholderStr;
+        _placeholderLabel.textColor = kCOLOR_CACBCC;
+        //    _placeholderLabel.enabled = NO;//lable必须设置为不可用
+        _placeholderLabel.backgroundColor = [UIColor clearColor];
+        [_textView addSubview:_placeholderLabel];
+    }
+    return _placeholderLabel;
+}
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
@@ -256,10 +305,12 @@
 - (UIView *)footerView {
     if (!_footerView) {
         _footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 75)];
-        UIButton *submitbtn =[[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-//        submitbtn.titleLabel.font = SYSTEMFONT(15);
+        UIButton *submitbtn =[[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width -21 * 2, 45)];
+        submitbtn.titleLabel.font = SYSTEMFONT(15);
 //        submitbtn.backgroundColor = kCOLOR_dynamicProvider_F2F4F5_2E2E2E;
-//        [submitbtn setTitleColor:kCOLOR_dynamicProvider_333333_DADBDC forState:UIControlStateNormal];
+        submitbtn.backgroundColor = kCOLOR_CACBCC;
+        [submitbtn setTitleColor:kCOLOR_FFFFFF forState:UIControlStateNormal];
+        submitbtn.layer.cornerRadius = 22.5;
         [submitbtn setTitle:@"提交" forState:UIControlStateNormal];
         [submitbtn addTarget:self action:@selector(submit:) forControlEvents:UIControlEventTouchUpInside];
         [_footerView addSubview:submitbtn];
@@ -269,8 +320,8 @@
             make.top.offset(15);
             make.height.offset(45);
         }];
-        submitbtn.layer.cornerRadius = 22.5;
         _submitbtn = submitbtn;
+//        [self setDisabledGradientBackColor];
     }
     return _footerView;
 }

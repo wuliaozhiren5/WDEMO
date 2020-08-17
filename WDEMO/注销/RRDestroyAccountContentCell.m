@@ -13,15 +13,23 @@
 #define CellTextWidth             [UIScreen mainScreen].bounds.size.width - 21 * 2
 
 #import "RRDestroyAccountContentCell.h"
-
+#import "ACMacros.h"
+#import <YYKit/YYKit.h>
+#import <Masonry/Masonry.h>
 @implementation RRDestroyAccountContentModel
 + (instancetype)initWithTitle:(NSString *)title
                        detail:(NSString *)detail
+                     name:(NSString *)name
+                         time:(NSString *)time
+                        level:(NSString *)level
                          type:(RRDestroyAccountContentType)type {
     RRDestroyAccountContentModel *model = [RRDestroyAccountContentModel alloc];
     model.title = title;
     model.detail = detail;
     model.type = type;
+    model.name = name;
+    model.time = time;
+    model.level = level;
     return model;
     
 }
@@ -32,12 +40,9 @@
         CGFloat fontSize = 15.;
         UIFont *textFont = [UIFont systemFontOfSize:fontSize];
         NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:str];
-        //设置行间距
         text.lineSpacing = CellDetailRowSpacing;
-        //设置文本字号
         text.font = textFont;
-        //设置字体颜色
-//        text.color = [UIColor redColor];
+        //        text.color = [UIColor redColor];
         _detailAtt = text;
     }
     return _detailAtt;
@@ -119,6 +124,8 @@
         _titleLab.frame = CGRectMake(0, 0, 40, 40);
         _titleLab.font = [UIFont systemFontOfSize:21.0];
         _titleLab.numberOfLines = 0;
+        _titleLab.textColor = kCOLOR_222222;
+        
     }
     return _titleLab;
 }
@@ -139,6 +146,7 @@
         _detailLab.lineBreakMode = NSLineBreakByCharWrapping;
         _detailLab.numberOfLines = 0;
         _detailLab.userInteractionEnabled = YES;
+        _detailLab.textColor = kCOLOR_919699;
     }
     return _detailLab;
 }
@@ -199,20 +207,7 @@
 
 - (void)fillWithData:(RRDestroyAccountContentModel *)model {
     self.model = model;
-    self.titleLab.text = self.model.title;
-    //    self.detailLab.text = self.model.detail;
-    //
-    //    NSString *str = self.model.detail;
-    //    CGFloat fontSize = 16.;
-    //    UIFont *textFont = [UIFont systemFontOfSize:fontSize];
-    //    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:str];
-    //    //设置行间距
-    //    text.lineSpacing = CellDetailRowSpacing;
-    //    //设置文本字号
-    //    text.font = textFont;
-    //    //设置字体颜色
-    //    text.color = [UIColor redColor];
-    
+    self.titleLab.text = self.model.title; 
     //文本布局计算
     CGSize size = CGSizeMake(self.contentView.frame.size.width - 21 * 2, CGFLOAT_MAX);
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:size text:model.detailAtt];
@@ -233,9 +228,10 @@
             self.subtitleLab1.text = @"- 账号昵称：";
             self.subtitleLab2.text = @"- 注册时间：";
             self.subtitleLab3.text = @"- 等级：";
-            self.contentLab1.text = @"- 账号昵称：111";
-            self.contentLab2.text = @"- 注册时间：111";
-            self.contentLab3.text = @"- 等级：111";
+            
+            self.contentLab1.text = self.model.name;
+            self.contentLab2.text = self.model.time;
+            self.contentLab3.text = self.model.level;
             
             self.subtitleLab1.hidden = NO;
             self.subtitleLab2.hidden = NO;
@@ -244,12 +240,14 @@
             self.contentLab2.hidden = NO;
             self.contentLab3.hidden = NO ;
             
-            //            self.contentLab1.textColor = kCOLOR_00BBFF;
-            //            self.contentLab1.textColor = kCOLOR_00BBFF;
-            //            self.contentLab1.textColor = kCOLOR_00BBFF;
-            //            self.contentLab1.textColor = kCOLOR_00BBFF;
-            //            self.contentLab1.textColor = kCOLOR_00BBFF;
-            //            self.contentLab1.textColor = kCOLOR_00BBFF;
+            self.contentLab1.textColor = kCOLOR_333333;
+            self.contentLab2.textColor = kCOLOR_333333;
+            self.contentLab3.textColor = kCOLOR_333333;
+            _contentLab1.font = [UIFont systemFontOfSize:15.0];
+            _contentLab2.font = [UIFont systemFontOfSize:15.0];
+            _contentLab3.font = [UIFont systemFontOfSize:15.0];
+            
+            
         }
             break;
         case RRDestroyAccountContentTypeMemberInfo:
@@ -257,9 +255,9 @@
             self.subtitleLab1.text = @"- 会员权益：";
             self.subtitleLab2.text = @"- 勋章：";
             self.subtitleLab3.text = @"- 成就值：";
-            self.contentLab1.text = @"- 会员权益：1";
-            self.contentLab2.text = @"- 勋章：1";
-            self.contentLab3.text = @"- 成就值：1";
+            self.contentLab1.text = self.model.name;
+            self.contentLab2.text = self.model.time;
+            self.contentLab3.text = self.model.level;
             
             self.subtitleLab1.hidden = NO;
             self.subtitleLab2.hidden = NO;
@@ -271,6 +269,10 @@
             self.contentLab1.textColor = kCOLOR_00BBFF;
             self.contentLab2.textColor = kCOLOR_00BBFF;
             self.contentLab3.textColor = kCOLOR_00BBFF;
+            _contentLab1.font = [UIFont boldSystemFontOfSize:15.0];
+            _contentLab2.font = [UIFont boldSystemFontOfSize:15.0];
+            _contentLab3.font = [UIFont boldSystemFontOfSize:15.0];
+            
         }
             break;
             
@@ -299,6 +301,7 @@
         _contentLab1 = [[UILabel alloc]initWithFrame:CGRectZero];
         _contentLab1.frame = CGRectMake(0, 0, 40, 40);
         _contentLab1.font = [UIFont systemFontOfSize:15.0];
+        _contentLab3.textColor = kCOLOR_333333;
         //        _contentLab1.textAlignment = NSTextAlignmentLeft;
     }
     return _contentLab1;
@@ -308,6 +311,7 @@
         _contentLab2 = [[UILabel alloc]initWithFrame:CGRectZero];
         _contentLab2.frame = CGRectMake(0, 0, 40, 40);
         _contentLab2.font = [UIFont systemFontOfSize:15.0];
+        _contentLab3.textColor = kCOLOR_333333;
     }
     return _contentLab2;
 }
@@ -317,6 +321,7 @@
         _contentLab3 = [[UILabel alloc]initWithFrame:CGRectZero];
         _contentLab3.frame = CGRectMake(0, 0, 40, 40);
         _contentLab3.font = [UIFont systemFontOfSize:15.0];
+        _contentLab3.textColor = kCOLOR_333333;
     }
     return _contentLab3;
 }
@@ -327,6 +332,7 @@
         _subtitleLab1 = [[UILabel alloc]initWithFrame:CGRectZero];
         _subtitleLab1.frame = CGRectMake(0, 0, 40, 40);
         _subtitleLab1.font = [UIFont systemFontOfSize:15.0];
+        _subtitleLab1.textColor = kCOLOR_333333;
     }
     return _subtitleLab1;
 }
@@ -336,6 +342,7 @@
         _subtitleLab2 = [[UILabel alloc]initWithFrame:CGRectZero];
         _subtitleLab2.frame = CGRectMake(0, 0, 40, 40);
         _subtitleLab2.font = [UIFont systemFontOfSize:15.0];
+        _subtitleLab2.textColor = kCOLOR_333333;
     }
     return _subtitleLab2;
 }
@@ -345,6 +352,7 @@
         _subtitleLab3 = [[UILabel alloc]initWithFrame:CGRectZero];
         _subtitleLab3.frame = CGRectMake(0, 0, 40, 40);
         _subtitleLab3.font = [UIFont systemFontOfSize:15.0];
+        _subtitleLab3.textColor = kCOLOR_333333;
     }
     return _subtitleLab3;
 }
