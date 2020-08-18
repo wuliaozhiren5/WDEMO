@@ -116,6 +116,11 @@
     NSString *showStr = [NSString stringWithFormat:@"APP当前语言:%@",string];
     titleLabel3.text = showStr;
     
+    
+    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 200, 320, 320)];
+    textView.backgroundColor= [UIColor grayColor];
+    [self.view addSubview:textView];
+    
 }
 
 - (void)didReceiveMemoryWarning {

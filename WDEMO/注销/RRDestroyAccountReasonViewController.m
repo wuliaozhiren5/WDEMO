@@ -17,7 +17,7 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *dataArray;
 @property (nonatomic, assign) NSInteger selectIndex;
-@property (nonatomic, assign) UITextView *textView;
+@property (nonatomic, strong) UITextView *textView;
 @property (nonatomic, assign) CGRect currentTextViewRect;
 @property (nonatomic, strong) UIView *footerView;
 @property (nonatomic, strong) UIButton *submitbtn;
@@ -34,7 +34,10 @@
     [self createData];
     [self setupViews];
 
-    
+        
+    //    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 200, 320, 320)];
+    //    textView.backgroundColor= [UIColor grayColor];
+    //     [self.view addSubview:textView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
