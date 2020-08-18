@@ -67,4 +67,7 @@
 }
 */
 
+- (void)startWithCompletionBlock:(void (^)(id result, NSError *error))block {
+    
+}
 @end

@@ -23,6 +23,10 @@ typedef void(^ButtonClickBlock)(NSString * _Nonnull str);//不可以为空
 //写法2
 @property(nonatomic,copy) void (^valueBlcok)(void);
 
+
+//- (void)startWithCompletionBlock:(void (^)(JsonModel *result, NSError *error))block; 
+- (void)startWithCompletionBlock:(void (^)(id result, NSError *error))block;
+
 @end
 
 NS_ASSUME_NONNULL_END
