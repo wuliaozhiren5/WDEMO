@@ -16,7 +16,6 @@
 @interface RRDestroyAccountAgreenmentViewController ()<UITableViewDataSource,UITableViewDelegate,UITextViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy) NSArray *dataArray;
-@property (nonatomic, assign) NSInteger selectIndex;
 @property (nonatomic, assign) UITextView *textView;
 @property (nonatomic, assign) CGRect currentTextViewRect;
 @property (nonatomic, strong) UIView *footerView;
@@ -59,7 +58,6 @@
     NSString *count = [NSString stringWithFormat:@"%i",10];//me.medalList.count
     NSString *achievementCount = @"2";//me.achievementCount
 
-    self.selectIndex = -1;
     self.dataArray = @[[RRDestroyAccountContentModel initWithTitle:@"1.账号信息" detail:@"账号相关信息将被清零，个人资料和历史信息 (包括头像、昵称、浏览记录) 将被清空。" name:name time:dateString level:level type:RRDestroyAccountContentTypeAccountInfo],
                        [RRDestroyAccountContentModel initWithTitle:@"2.账号内财产相关" detail:@"注销后账号内全部权益将被清除，已购买会员等产品将视为自动放弃，请您务必知晓并确认。" name:endTimeString time:count level:achievementCount type:RRDestroyAccountContentTypeMemberInfo],
                        
@@ -76,14 +74,6 @@
     }];
 }
 
-- (void)select:(UIButton *)btn {
-    [self.view endEditing:YES];
-    if (self.selectIndex == btn.tag) {
-        return;
-    }
-    self.selectIndex = btn.tag;
-    [self.tableView reloadData];
-}
 - (void)next:(UIButton *)btn {
     //注销原因 页面
     RRDestroyAccountReasonViewController *vc = [[RRDestroyAccountReasonViewController alloc]init];
