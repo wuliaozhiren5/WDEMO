@@ -100,7 +100,7 @@
     }];
 }
 
-- (void)select:(UIButton *)btn {
+- (void)clickSelectBtn:(UIButton *)btn {
     [self.view endEditing:YES];
     if (self.selectIndex == btn.tag) {
         return;
@@ -198,7 +198,7 @@
             cell.model = model;
             [cell isSelected:(self.selectIndex == indexPath.row ? YES : NO)];
             cell.selectBtn.tag = indexPath.row;
-            [cell.selectBtn addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.selectBtn addTarget:self action:@selector(clickSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             self.textView = cell.textView;
             self.textView.delegate = self;
@@ -211,7 +211,7 @@
             cell.model = model;
             [cell isSelected:(self.selectIndex == indexPath.row ? YES : NO)];
             cell.selectBtn.tag = indexPath.row;
-            [cell.selectBtn addTarget:self action:@selector(select:) forControlEvents:UIControlEventTouchUpInside];
+            [cell.selectBtn addTarget:self action:@selector(clickSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             return cell;
         }

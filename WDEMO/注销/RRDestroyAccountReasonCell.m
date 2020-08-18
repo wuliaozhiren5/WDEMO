@@ -147,6 +147,8 @@
         _textView.backgroundColor = kCOLOR_F6F7F8;
         _textView.userInteractionEnabled = NO;
         _textView.textColor = kCOLOR_333333;
+        //光标颜色
+        _textView.tintColor = kCOLOR_00BBFF;
     }
     return _textView;
 }

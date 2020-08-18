@@ -117,9 +117,9 @@
     titleLabel3.text = showStr;
     
     
-    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 200, 320, 320)];
-    textView.backgroundColor= [UIColor grayColor];
-    [self.view addSubview:textView];
+//    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 200, 320, 320)];
+//    textView.backgroundColor= [UIColor grayColor];
+//    [self.view addSubview:textView];
     
 }
 
