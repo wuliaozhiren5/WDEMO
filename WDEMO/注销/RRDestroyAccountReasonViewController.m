@@ -77,11 +77,6 @@
     }
 }
 
-- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
-    self.currentTextViewRect = [textView convertRect:textView.frame toView:self.tableView];
-    return YES;
-}
-
 - (void)createData {
     self.selectIndex = -1;
     self.placeholderStr = @"请描述您的注销原因";
@@ -132,7 +127,7 @@
     NSString *sp = [self.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if (sp.length == 0) {
 //        TOAST(@"不能发送空白消息");
-    } else if (sp.length > 100) {
+    } else if (sp.length > 50) {
         //大于100字
 //        TOAST(@"最多可输入100个字");
     } else {
@@ -261,11 +256,28 @@
     [self.view endEditing:YES];
 }
 #pragma mark - UITextViewDelegate
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView{
+    self.currentTextViewRect = [textView convertRect:textView.frame toView:self.tableView];
+    return YES;
+}
+
 -(void)textViewDidChange:(UITextView *)textView {
     if (textView.text.length == 0) {
         _placeholderLabel.text = _placeholderStr;
     }else{
         _placeholderLabel.text = @"";
+    }
+    
+    NSString  *nsTextContent = textView.text;
+    NSInteger existTextNum = nsTextContent.length;
+    
+    if (textView.markedTextRange == nil) {
+        // 没有预输入文字
+        if (existTextNum > 50){
+            //截取到最大位置的字符
+            NSString *s = [nsTextContent substringToIndex:50];
+            [textView setText:s];
+        }
     }
 }
 
