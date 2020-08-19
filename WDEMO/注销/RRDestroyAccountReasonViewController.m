@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UIView *footerView;
 @property (nonatomic, strong) UIButton *submitbtn;
 @property (nonatomic, strong) UILabel *placeholderLabel;
+@property (nonatomic, strong) UILabel *numLabel;
 @property (nonatomic, copy) NSString *placeholderStr;
 @end
 
@@ -33,8 +34,8 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self createData];
     [self setupViews];
-
-        
+    
+    
     //    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 200, 320, 320)];
     //    textView.backgroundColor= [UIColor grayColor];
     //     [self.view addSubview:textView];
@@ -57,7 +58,7 @@
 }
 
 - (void)keyboardWillHide:(NSNotification *)notification {
-
+    
 }
 
 - (void)keyboardWillShow:(NSNotification *)notification{
@@ -88,7 +89,7 @@
     
 }
 - (void)setupViews {
-     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.tableView];
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.bottom.offset(0);
         make.top.equalTo(self.view);
@@ -103,8 +104,8 @@
     self.selectIndex = btn.tag;
     [self.tableView reloadData];
     
-//    [self setSelectGradientColor];
-
+    //    [self setSelectGradientColor];
+    
 }
 - (void)submit:(UIButton *)btn {
     
@@ -113,23 +114,23 @@
     }
     [self.view endEditing:YES];
     RRDestroyAccountReasonModel *model = [self.dataArray objectOrNilAtIndex:_selectIndex];
-
-//    switch (model.type) {
-//        case <#constant#>:
-//            <#statements#>
-//            break;
-//
-//        default:
-//            break;
-//    }
-//
+    
+    //    switch (model.type) {
+    //        case <#constant#>:
+    //            <#statements#>
+    //            break;
+    //
+    //        default:
+    //            break;
+    //    }
+    //
     //去除空格
     NSString *sp = [self.textView.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if (sp.length == 0) {
-//        TOAST(@"不能发送空白消息");
+        //        TOAST(@"不能发送空白消息");
     } else if (sp.length > 50) {
         //大于100字
-//        TOAST(@"最多可输入100个字");
+        //        TOAST(@"最多可输入100个字");
     } else {
         //发送消息
     }
@@ -141,11 +142,11 @@
                                                                                    confirm:@"完成并退出视频"
                                                                                      close:nil
                                                                             confirmHandler:^{
-
+        
     }
                                                                               closeHandler:^{}];
     [alterview show];
- 
+    
     
 }
 
@@ -170,7 +171,7 @@
                                                                                      close:nil
                                                                             confirmHandler:^{
         //退出登录，并且关闭app
-
+        
     }
                                                                               closeHandler:^{}];
     [alterview show];
@@ -224,7 +225,9 @@
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             self.textView = cell.textView;
             self.textView.delegate = self;
-            self.placeholderLabel.text = _placeholderStr;
+            self.numLabel = cell.numLabel;
+            self.placeholderLabel = cell.placeholderLabel;
+            [self textViewDidChange:self.textView];
             return cell;
         }
             break;
@@ -250,7 +253,7 @@
         
         titleLabel.font = MEDIUMFONT(24);
         titleLabel.text = @"注销原因";
-//        titleLabel.textColor = kCOLOR_dynamicProvider_222222_DADBDC;
+        //        titleLabel.textColor = kCOLOR_dynamicProvider_222222_DADBDC;
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.leading.offset(21);
             make.bottom.offset(-12);
@@ -290,37 +293,37 @@
 
 -(void)textViewDidChange:(UITextView *)textView {
     if (textView.text.length == 0) {
-        _placeholderLabel.text = _placeholderStr;
+        self.placeholderLabel.text = _placeholderStr;
     }else{
-        _placeholderLabel.text = @"";
+        self.placeholderLabel.text = @"";
     }
     
+    //    NSString  *nsTextContent = textView.text;
+    //    NSInteger existTextNum = nsTextContent.length;
+    //
+    //    if (textView.markedTextRange == nil) {
+    //        // 没有预输入文字
+    //        if (existTextNum > 50){
+    //            //截取到最大位置的字符
+    //            NSString *s = [nsTextContent substringToIndex:50];
+    //            [textView setText:s];
+    //        }
+    //    }
     NSString  *nsTextContent = textView.text;
     NSInteger existTextNum = nsTextContent.length;
-    
     if (textView.markedTextRange == nil) {
         // 没有预输入文字
-        if (existTextNum > 50){
-            //截取到最大位置的字符
-            NSString *s = [nsTextContent substringToIndex:50];
-            [textView setText:s];
+        NSInteger num = 50 - existTextNum;
+        self.numLabel.text = [NSString stringWithFormat:@"%ld",(long)num];
+        if (num >= 0) {
+            self.numLabel.textColor = kCOLOR_CACBCC;
+        } else {
+            self.numLabel.textColor = kCOLOR_FF617B;
         }
     }
+    
 }
 
--(UILabel *)placeholderLabel {
-    if (!_placeholderLabel) {
-        _placeholderLabel = [[UILabel alloc] init];
-        _placeholderLabel.frame = CGRectMake(8, 8, 200, 17);
-        _placeholderLabel.font = [UIFont systemFontOfSize:15.0];
-//        _placeholderLabel.text = _placeholderStr;
-        _placeholderLabel.textColor = kCOLOR_CACBCC;
-        //    _placeholderLabel.enabled = NO;//lable必须设置为不可用
-        _placeholderLabel.backgroundColor = [UIColor clearColor];
-        [_textView addSubview:_placeholderLabel];
-    }
-    return _placeholderLabel;
-}
 - (UITableView *)tableView {
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];
@@ -349,7 +352,7 @@
         _footerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, 75)];
         UIButton *submitbtn =[[UIButton alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width -21 * 2, 45)];
         submitbtn.titleLabel.font = SYSTEMFONT(15);
-//        submitbtn.backgroundColor = kCOLOR_dynamicProvider_F2F4F5_2E2E2E;
+        //        submitbtn.backgroundColor = kCOLOR_dynamicProvider_F2F4F5_2E2E2E;
         submitbtn.backgroundColor = kCOLOR_CACBCC;
         [submitbtn setTitleColor:kCOLOR_FFFFFF forState:UIControlStateNormal];
         submitbtn.layer.cornerRadius = 22.5;
@@ -363,7 +366,7 @@
             make.height.offset(45);
         }];
         _submitbtn = submitbtn;
-//        [self setDisabledGradientBackColor];
+        //        [self setDisabledGradientBackColor];
     }
     return _footerView;
 }

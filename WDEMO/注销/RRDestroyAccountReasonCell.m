@@ -105,7 +105,10 @@
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         //        self.selectionStyle = UITableViewCellSelectionStyleNone;
+                 //        self.selectionStyle = UITableViewCellSelectionStyleNone;
         [self.contentView addSubview:self.textView];
+        [self.contentView addSubview:self.numLabel];
+        [self.textView addSubview:self.placeholderLabel];
         [self.textView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.top.equalTo(self.titleLab.mas_bottom).offset(26);
             make.leading.equalTo(self.contentView.mas_leading).offset(21);
@@ -113,6 +116,9 @@
             make.height.equalTo(@85);
         }];
         
+        [self.numLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.bottom.equalTo(self.textView.mas_bottom).offset(-13);            make.trailing.equalTo(self.textView.mas_trailing).offset(-9);
+        }];
     } else {}
     return self;
 }
@@ -147,9 +153,45 @@
         _textView.backgroundColor = kCOLOR_F6F7F8;
         _textView.userInteractionEnabled = NO;
         _textView.textColor = kCOLOR_333333;
+        _textView.font = [UIFont systemFontOfSize:15.0];
+        _textView.layer.cornerRadius = 4;
+        _textView.textContainerInset = UIEdgeInsetsMake(9, 9, 9, 32.5);
         //光标颜色
         _textView.tintColor = kCOLOR_00BBFF;
+        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+        paragraphStyle.lineSpacing = 3;// 字体的行间距
+        NSDictionary *attributes = @{ NSFontAttributeName:_textView.font ,
+        NSForegroundColorAttributeName:kCOLOR_333333,
+            NSParagraphStyleAttributeName:paragraphStyle
+                                     };
+        _textView.typingAttributes = attributes;
+
     }
     return _textView;
 }
+
+- (UILabel *)numLabel {
+    if (!_numLabel) {
+        _numLabel = [[UILabel alloc] init];
+        _numLabel.textColor = kCOLOR_CACBCC;
+        _numLabel.font =[UIFont systemFontOfSize:12.0];
+        _numLabel.text = @"";
+    }
+    return _numLabel;
+}
+
+-(UILabel *)placeholderLabel {
+    if (!_placeholderLabel) {
+        _placeholderLabel = [[UILabel alloc] init];
+        _placeholderLabel.frame = CGRectMake(12, 9, 200, 17);
+        _placeholderLabel.font = [UIFont systemFontOfSize:15.0];
+        //        _placeholderLabel.text = _placeholderStr;
+        _placeholderLabel.textColor = kCOLOR_CACBCC;
+        //    _placeholderLabel.enabled = NO;//lable必须设置为不可用
+        _placeholderLabel.backgroundColor = [UIColor clearColor];
+        [_textView addSubview:_placeholderLabel];
+    }
+    return _placeholderLabel;
+}
+
 @end
