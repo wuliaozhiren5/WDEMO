@@ -10,14 +10,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RRDestroyAccountAlterview : UIControl
+@interface RRDestroyAccountAlertView : UIControl
 - (instancetype)initWithFrame:(CGRect)frame
                         titel:(NSString *)title
                       content:(NSString *)content
                       confirm:(nullable NSString *)confirm
                         close:(nullable NSString *)close
-            confirmHandler:(void (^)(void))confirmHandler
-            closeHandler:(void (^)(void))closeHandler;
+               confirmHandler:(void (^)(void))confirmHandler
+                 closeHandler:(void (^)(void))closeHandler;
 -(void)showInView:(UIView *)view;
 -(void)show;
 -(void)hidden;

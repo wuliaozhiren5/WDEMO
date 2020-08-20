@@ -8,7 +8,7 @@
 
 #import "RRDestroyAccountReasonViewController.h"
 #import "RRDestroyAccountReasonCell.h"
-#import "RRDestroyAccountAlterview.h"
+#import "RRDestroyAccountAlertView.h"
 //#import "UIImage+GradientColor.h"//渐变色
 #import "ACMacros.h"
 #import <YYKit/YYKit.h>
@@ -136,7 +136,7 @@
     }
     
     
-    RRDestroyAccountAlterview *alterview = [[RRDestroyAccountAlterview alloc]initWithFrame:CGRectMake(0, 0, 320, 320)
+    RRDestroyAccountAlertView *alterview = [[RRDestroyAccountAlertView alloc]initWithFrame:CGRectMake(0, 0, 320, 320)
                                                                                      titel:@"注销申请提交成功"
                                                                                    content: @"若符合注销要求，我们将在24小时后删除您所有数据。若您在24小时内重新登录，则会默认取消您的注销申请。"
                                                                                    confirm:@"完成并退出视频"
@@ -152,7 +152,7 @@
 
 - (void)showAlter1{
     __weak __typeof(self)weakself = self;
-    RRDestroyAccountAlterview *alterview = [[RRDestroyAccountAlterview alloc]initWithFrame:CGRectMake(0, 0, 320, 320)
+    RRDestroyAccountAlertView *alterview = [[RRDestroyAccountAlertView alloc]initWithFrame:CGRectMake(0, 0, 320, 320)
                                                                                      titel:@"您是否要撤回注销账号申请？"
                                                                                    content:@"该账号注销中，请在24小时内不要登录此账号。点击“是”将登录此账号，并撤回注销申请。"
                                                                                    confirm:@"是"
@@ -164,7 +164,7 @@
 
 - (void)showAlter{
     __weak __typeof(self)weakself = self;
-    RRDestroyAccountAlterview *alterview = [[RRDestroyAccountAlterview alloc]initWithFrame:CGRectMake(0, 0, 320, 320)
+    RRDestroyAccountAlertView *alterview = [[RRDestroyAccountAlertView alloc]initWithFrame:CGRectMake(0, 0, 320, 320)
                                                                                      titel:@"注销申请提交成功"
                                                                                    content: @"若符合注销要求，我们将在24小时后删除您所有数据。若您在24小时内重新登录，则会默认取消您的注销申请。"
                                                                                    confirm:@"完成并退出视频"

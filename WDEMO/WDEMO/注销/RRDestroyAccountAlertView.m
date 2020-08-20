@@ -6,12 +6,12 @@
 //  Copyright © 2020 RRMJ. All rights reserved.
 //
 
-#import "RRDestroyAccountAlterview.h"
+#import "RRDestroyAccountAlertView.h"
 #import "ACMacros.h"
 #import <YYKit/YYKit.h>
 #import <Masonry/Masonry.h>
 
-@interface RRDestroyAccountAlterview ()
+@interface RRDestroyAccountAlertView ()
 
 @property(strong,nonatomic)UIView *container;
 
@@ -30,7 +30,7 @@
 
 
 @end
-@implementation RRDestroyAccountAlterview
+@implementation RRDestroyAccountAlertView
 - (instancetype)initWithFrame:(CGRect)frame
                         titel:(NSString *)title
                       content:(NSString *)content
@@ -120,6 +120,9 @@
         verticalLine.backgroundColor = kCOLOR_CACBCC;
         [_container addSubview:verticalLine];
         
+        //分割线宽度
+        //#define kMinBorderWidth    (1.f / [[UIScreen mainScreen] scale])
+        CGFloat lineWidth  = kMinBorderWidth;
         
         if (_closeStr && _confirmStr) {
             _closeBtn.hidden = NO;
@@ -144,14 +147,14 @@
                 make.top.equalTo(_closeBtn.mas_top).offset(0);
                 make.leading.equalTo(_container);
                 make.trailing.equalTo(_container);
-                make.height.equalTo(@.5);
+                make.height.equalTo(@(lineWidth));
                 
             }];
             [verticalLine mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.bottom.equalTo(_container.mas_bottom).offset(0);
                 make.centerX.equalTo(_container);
                 make.height.equalTo(@54);
-                make.width.equalTo(@0.5);
+                make.width.equalTo(@(lineWidth));
                 
             }];
             
@@ -178,7 +181,7 @@
                 make.top.equalTo(_confirmBtn.mas_top).offset(0);
                 make.leading.equalTo(_container);
                 make.trailing.equalTo(_container);
-                make.height.equalTo(@.5);
+                make.height.equalTo(@(lineWidth));
                 
             }];
             //自适应大小
@@ -203,7 +206,7 @@
                 make.top.equalTo(_closeBtn.mas_top).offset(0);
                 make.leading.equalTo(_container);
                 make.trailing.equalTo(_container);
-                make.height.equalTo(@.5);
+                make.height.equalTo(@(lineWidth));
             }];
             //自适应大小
             [_container mas_makeConstraints:^(MASConstraintMaker *make) {

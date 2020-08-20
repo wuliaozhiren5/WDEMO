@@ -87,7 +87,7 @@
 		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
 		F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */; };
 		F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1B24E6901700B20C80 /* RRDestroyAccountReasonViewController.m */; };
-		F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlterview.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlterview.m */; };
+		F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlertView.m */; };
 		F5CE3D2224E6901800B20C80 /* RRDestroyAccountReasonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1D24E6901700B20C80 /* RRDestroyAccountReasonCell.m */; };
 		F5CE3D2324E6901800B20C80 /* RRDestroyAccountAgreenmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */; };
 		F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */; };
@@ -311,13 +311,13 @@
 		F5C7261924E1317B00B16639 /* ListModelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelCell.h; sourceTree = "<group>"; };
 		F5C7261A24E1317B00B16639 /* ListModelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModelCell.m; sourceTree = "<group>"; };
 		F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountContentCell.m; sourceTree = "<group>"; };
-		F5CE3D1624E6901700B20C80 /* RRDestroyAccountAlterview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountAlterview.h; sourceTree = "<group>"; };
+		F5CE3D1624E6901700B20C80 /* RRDestroyAccountAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountAlertView.h; sourceTree = "<group>"; };
 		F5CE3D1724E6901700B20C80 /* RRDestroyAccountReasonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountReasonViewController.h; sourceTree = "<group>"; };
 		F5CE3D1824E6901700B20C80 /* RRDestroyAccountReasonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountReasonCell.h; sourceTree = "<group>"; };
 		F5CE3D1924E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountAgreenmentViewController.h; sourceTree = "<group>"; };
 		F5CE3D1A24E6901700B20C80 /* RRDestroyAccountContentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountContentCell.h; sourceTree = "<group>"; };
 		F5CE3D1B24E6901700B20C80 /* RRDestroyAccountReasonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountReasonViewController.m; sourceTree = "<group>"; };
-		F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlterview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountAlterview.m; sourceTree = "<group>"; };
+		F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountAlertView.m; sourceTree = "<group>"; };
 		F5CE3D1D24E6901700B20C80 /* RRDestroyAccountReasonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountReasonCell.m; sourceTree = "<group>"; };
 		F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountAgreenmentViewController.m; sourceTree = "<group>"; };
 		F5CE3D2424E6930C00B20C80 /* ACMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACMacros.h; sourceTree = "<group>"; };
@@ -773,8 +773,8 @@
 			isa = PBXGroup;
 			children = (
 				F5CE3D2424E6930C00B20C80 /* ACMacros.h */,
-				F5CE3D1624E6901700B20C80 /* RRDestroyAccountAlterview.h */,
-				F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlterview.m */,
+				F5CE3D1624E6901700B20C80 /* RRDestroyAccountAlertView.h */,
+				F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlertView.m */,
 				F5CE3D1824E6901700B20C80 /* RRDestroyAccountReasonCell.h */,
 				F5CE3D1D24E6901700B20C80 /* RRDestroyAccountReasonCell.m */,
 				F5CE3D1A24E6901700B20C80 /* RRDestroyAccountContentCell.h */,
@@ -1196,7 +1196,7 @@
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
 				A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */,
-				F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlterview.m in Sources */,
+				F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlertView.m in Sources */,
 				F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */,
 				F553E17B24CA86FC00DA5625 /* UIImage+ChatKit..m in Sources */,
 				F5CE3D2324E6901800B20C80 /* RRDestroyAccountAgreenmentViewController.m in Sources */,
