@@ -180,10 +180,10 @@
 		675852A7231D21A700C5CF7E /* WTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTableViewController.m; sourceTree = "<group>"; };
 		675852A9231D23F700C5CF7E /* WTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTableViewCell.h; sourceTree = "<group>"; };
 		675852AA231D23F700C5CF7E /* WTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTableViewCell.m; sourceTree = "<group>"; };
-		677BADCD1FC40D4E00E7A3FF /* WMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WMacros.h; sourceTree = "<group>"; };
-		677BADD41FC4128900E7A3FF /* WEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WEnums.h; sourceTree = "<group>"; };
-		677BADD51FC412A700E7A3FF /* WConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WConstants.h; sourceTree = "<group>"; };
-		677BADD61FC412A700E7A3FF /* WConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WConstants.m; sourceTree = "<group>"; };
+		677BADCD1FC40D4E00E7A3FF /* WMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WMacros.h; path = ../WMacros.h; sourceTree = "<group>"; };
+		677BADD41FC4128900E7A3FF /* WEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEnums.h; path = ../WEnums.h; sourceTree = "<group>"; };
+		677BADD51FC412A700E7A3FF /* WConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WConstants.h; path = ../WConstants.h; sourceTree = "<group>"; };
+		677BADD61FC412A700E7A3FF /* WConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WConstants.m; path = ../WConstants.m; sourceTree = "<group>"; };
 		6783C84E1FB941EE0040C02B /* WDEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6783C8511FB941EE0040C02B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6783C8521FB941EE0040C02B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -499,6 +499,10 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5F346F324ED59CB006AAEA3 /* New Group */,
+				F5F346F224ED5970006AAEA3 /* 宏 */,
+				F5F346F124ED596C006AAEA3 /* 常量 */,
+				F5F346F024ED5964006AAEA3 /* 枚举 */,
 				F581D21524EAB65A008AC679 /* ScrollView */,
 				F5CE3D1424E6901700B20C80 /* 注销 */,
 				F507113424E2AA6D00AD5306 /* 判断对象是否相等 */,
@@ -532,20 +536,16 @@
 				F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */,
 				F5C7261924E1317B00B16639 /* ListModelCell.h */,
 				F5C7261A24E1317B00B16639 /* ListModelCell.m */,
+				A459C29224C174A300A3B5FF /* Plist.h */,
+				A459C29324C174A300A3B5FF /* Plist.m */,
+				A4F9DC1924D66049009FB2EA /* UIImage+size.h */,
+				A4F9DC1A24D66049009FB2EA /* UIImage+size.m */,
 				6783C8571FB941EE0040C02B /* Main.storyboard */,
 				6783C85A1FB941EE0040C02B /* Assets.xcassets */,
 				6783C85C1FB941EE0040C02B /* LaunchScreen.storyboard */,
 				6783C85F1FB941EE0040C02B /* Info.plist */,
 				6783C8601FB941EE0040C02B /* main.m */,
-				677BADCD1FC40D4E00E7A3FF /* WMacros.h */,
-				677BADD41FC4128900E7A3FF /* WEnums.h */,
-				677BADD51FC412A700E7A3FF /* WConstants.h */,
-				677BADD61FC412A700E7A3FF /* WConstants.m */,
 				67535E832390C6560009F882 /* InfoPlist.strings */,
-				A459C29224C174A300A3B5FF /* Plist.h */,
-				A459C29324C174A300A3B5FF /* Plist.m */,
-				A4F9DC1924D66049009FB2EA /* UIImage+size.h */,
-				A4F9DC1A24D66049009FB2EA /* UIImage+size.m */,
 			);
 			path = WDEMO;
 			sourceTree = "<group>";
@@ -854,6 +854,38 @@
 				F553E17A24CA86FC00DA5625 /* UIImage+ChatKit..m */,
 			);
 			path = Kit;
+			sourceTree = "<group>";
+		};
+		F5F346F024ED5964006AAEA3 /* 枚举 */ = {
+			isa = PBXGroup;
+			children = (
+				677BADD41FC4128900E7A3FF /* WEnums.h */,
+			);
+			path = "枚举";
+			sourceTree = "<group>";
+		};
+		F5F346F124ED596C006AAEA3 /* 常量 */ = {
+			isa = PBXGroup;
+			children = (
+				677BADD51FC412A700E7A3FF /* WConstants.h */,
+				677BADD61FC412A700E7A3FF /* WConstants.m */,
+			);
+			path = "常量";
+			sourceTree = "<group>";
+		};
+		F5F346F224ED5970006AAEA3 /* 宏 */ = {
+			isa = PBXGroup;
+			children = (
+				677BADCD1FC40D4E00E7A3FF /* WMacros.h */,
+			);
+			path = "宏";
+			sourceTree = "<group>";
+		};
+		F5F346F324ED59CB006AAEA3 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		F5F4F10024D3BF23007DB7F3 /* YY */ = {
