@@ -73,6 +73,13 @@
     [self.view addSubview:tagListBtn];
     
     //#############################################################################################################
+    //字典
+//    对setObject:forKey:与setObject:forKeyedSubscript:的理解
+//    http://www.cocoachina.com/articles/28519
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    dict[@"name"] = @"jack"; //@{@"name":@"jack"}   //等效于[mutableDictionary setObject:value forKeyedSubscript:@"someKey"];
+    dict[@"name"] = nil;     //@{}
+ 
     
     NSArray * array = @[
         [ListModel initWithTitle:@"TagList1" detail:@"瀑布流" type:ListModelTypeTagList1],
