@@ -74,12 +74,12 @@
     
     //#############################################################################################################
     //字典
-//    对setObject:forKey:与setObject:forKeyedSubscript:的理解
-//    http://www.cocoachina.com/articles/28519
+    //    对setObject:forKey:与setObject:forKeyedSubscript:的理解
+    //    http://www.cocoachina.com/articles/28519
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     dict[@"name"] = @"jack"; //@{@"name":@"jack"}   //等效于[mutableDictionary setObject:value forKeyedSubscript:@"someKey"];
     dict[@"name"] = nil;     //@{}
- 
+    
     
     NSArray * array = @[
         [ListModel initWithTitle:@"TagList1" detail:@"瀑布流" type:ListModelTypeTagList1],
@@ -98,7 +98,9 @@
         [ListModel initWithTitle:@"Mask" detail:@"遮罩" type:ListModelTypeMask],
         [ListModel initWithTitle:@"AttributedText" detail:@"系统富文本" type:ListModelTypeAttributedText],
         [ListModel initWithTitle:@"IsEqua" detail:@"判断对象是否相等" type:ListModelTypeIsEqual],
+        [ListModel initWithTitle:@"DestroyAccount" detail:@"用户注销" type:ListModelTypeDestroyAccount],
         [ListModel initWithTitle:@"Test" detail:@"测试" type:ListModelTypeTest],
+        
         
     ];
     self.data = array;
@@ -124,9 +126,9 @@
     titleLabel3.text = showStr;
     
     
-//    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 200, 320, 320)];
-//    textView.backgroundColor= [UIColor grayColor];
-//    [self.view addSubview:textView];
+    //    UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 200, 320, 320)];
+    //    textView.backgroundColor= [UIColor grayColor];
+    //    [self.view addSubview:textView];
     
 }
 
@@ -141,15 +143,9 @@
 
 -(void)clickTagList1 {
     
-//    LZTagListVC *vc= [[LZTagListVC alloc]init];
-//    vc.hidesBottomBarWhenPushed = YES;
-//    [self.navigationController pushViewController:vc animated:YES];
-     
-    RRDestroyAccountAgreenmentViewController *vc= [[RRDestroyAccountAgreenmentViewController alloc]init];
+    LZTagListVC *vc= [[LZTagListVC alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    
-    
 }
 
 -(void)clickTagList2 {
@@ -221,35 +217,48 @@
 }
 
 -(void)clickChat {
+    
     ChatViewController *vc= [[ChatViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)clickYYText {
+    
     YYViewController *vc= [[YYViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)clickMask {
+    
     MaskViewController *vc= [[MaskViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(void)clickAttributedText {
+    
     AttributedTextViewController *vc= [[AttributedTextViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)clickIsEqual {
+    
     IsEqualViewController *vc= [[IsEqualViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)clickIsTest {
+- (void)clickDestroyAccount {
+    
+    RRDestroyAccountAgreenmentViewController *vc= [[RRDestroyAccountAgreenmentViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
+- (void)clickTest {
+    
     TestViewController *vc= [[TestViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
 
 - (NSTimer *)timer {
     if (!_timer || _timer.isValid) {
@@ -443,14 +452,16 @@
             [self clickIsEqual];
         }
             break;
-        case ListModelTypeTest:
+        case ListModelTypeDestroyAccount:
         {
-            [self clickIsTest];
+            [self clickDestroyAccount];
         }
             break;
-            
-            
-            
+        case ListModelTypeTest:
+        {
+            [self clickTest];
+        }
+            break;
         default:
         {
             NSAssert(NO, @"PLUPersonalItemType 类型错误");
@@ -459,7 +470,7 @@
     }
 }
 
-- (void)rrTest {
+- (void)xxTest {
     
     //    富文本
     //    iOS富文本设置混合字符串（中英文）奇葩换行问题
@@ -484,9 +495,5 @@
     //    https://www.jianshu.com/p/aecb9e426459
     
 }
-
-
-
-
 @end
 

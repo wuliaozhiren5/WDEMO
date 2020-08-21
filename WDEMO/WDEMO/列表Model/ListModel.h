@@ -26,8 +26,9 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeMask,//遮罩
     ListModelTypeAttributedText,//系统富文本
     ListModelTypeIsEqual,//判断对象是否相等
+    ListModelTypeDestroyAccount,//用户注销
     ListModelTypeTest,//测试页面
-
+     
 };
 
 NS_ASSUME_NONNULL_BEGIN
