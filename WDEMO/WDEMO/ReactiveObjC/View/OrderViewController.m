@@ -61,22 +61,24 @@
     //footer
     self.tableView.tableFooterView = [[UIView alloc]initWithFrame:CGRectZero];
     
+    self.tableView.rowHeight = 100;
+
 }
 
 #pragma mark - ViewModel事件
 - (void)ViewModelEvent {
     
-    [self.vm.reqCommand execute:nil]; 
+    [self.vm.reqCommand execute:nil];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.vm.reqCommand execute:nil];
     });
     
-    //    @weakify(self);
-    //    [self.reqVM.refreshUISubject subscribeNext:^(id x) {
-    //        @strongify(self);
-    //        [self.tableView reloadData];
-    //    }];
+    @weakify(self);
+    [self.vm.refreshUISubject subscribeNext:^(id x) {
+        @strongify(self);
+        [self.tableView reloadData];
+    }];
 }
 #pragma mark - UITableView配置
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -84,7 +86,7 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     OrderCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([OrderCell class]) forIndexPath:indexPath];
-    //    cell.model = self.vm.dataArray[indexPath.row];
+    cell.model = self.vm.dataArray[indexPath.row];
     return cell;
 }
 #pragma mark - 懒加载

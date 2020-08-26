@@ -14,6 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) OrderModel *model;
 
+@property (strong, nonatomic) UIImageView *imgV;
+@property (strong, nonatomic) UILabel *nameLab;
+@property (strong, nonatomic) UILabel *typeLab;
+@property (strong, nonatomic) UILabel *descLab;
 @end
 
 NS_ASSUME_NONNULL_END

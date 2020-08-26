@@ -36,6 +36,7 @@
 
     // Configure the view for the selected state
 }
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
 //        self.selectionStyle = UITableViewCellSelectionStyleNone;

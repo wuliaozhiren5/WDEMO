@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *type;
+
++(instancetype)initWithName:(NSString *)name desc:(NSString *)desc type:(NSString *)type imageUrl:(NSString *)imageUrl;
+
 @end
 
 NS_ASSUME_NONNULL_END
