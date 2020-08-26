@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeIsEqual,//判断对象是否相等
     ListModelTypeDestroyAccount,//用户注销
     ListModelTypeReactiveObjC,//RAC
+    ListModelTypeReactiveObjCLogin,//RAC Login
     ListModelTypeTest,//测试页面
     
 };

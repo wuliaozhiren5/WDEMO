@@ -42,7 +42,9 @@
 #import "TestViewController.h"
 #import "RRDestroyAccountAgreenmentViewController.h"
 
+//RAC
 #import "OrderViewController.h"
+#import "RACLoginViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -100,8 +102,9 @@
         [ListModel initWithTitle:@"IsEqua" detail:@"判断对象是否相等" type:ListModelTypeIsEqual],
         [ListModel initWithTitle:@"DestroyAccount" detail:@"用户注销" type:ListModelTypeDestroyAccount],
         [ListModel initWithTitle:@"ReactiveObjC" detail:@"RAC" type:ListModelTypeReactiveObjC],
+        [ListModel initWithTitle:@"登录" detail:@"RAC login" type:ListModelTypeReactiveObjCLogin],
         [ListModel initWithTitle:@"Test" detail:@"测试" type:ListModelTypeTest],
-
+        
         
         
     ];
@@ -258,6 +261,12 @@
 - (void)clickReactiveObjC {
     
     OrderViewController *vc= [[OrderViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickReactiveObjCLogin {
+    
+    RACLoginViewController *vc= [[RACLoginViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -468,6 +477,11 @@
         case ListModelTypeReactiveObjC:
         {
             [self clickReactiveObjC];
+        }
+            break;
+        case ListModelTypeReactiveObjCLogin:
+        {
+            [self clickReactiveObjCLogin];
         }
             break;
         case ListModelTypeTest:
