@@ -25,7 +25,7 @@
     
     //    UINavigationBar与UITabBar半透明：会被遮挡；不透明，不会被遮挡
     self.navigationController.navigationBar.translucent = NO;
-    
+    self.view.backgroundColor = [UIColor whiteColor];
     //**************************************************************************
     self.tableView=[[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStylePlain];
     

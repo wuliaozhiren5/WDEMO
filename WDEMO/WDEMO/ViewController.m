@@ -42,7 +42,7 @@
 #import "TestViewController.h"
 #import "RRDestroyAccountAgreenmentViewController.h"
 
-
+#import "OrderViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -99,7 +99,9 @@
         [ListModel initWithTitle:@"AttributedText" detail:@"系统富文本" type:ListModelTypeAttributedText],
         [ListModel initWithTitle:@"IsEqua" detail:@"判断对象是否相等" type:ListModelTypeIsEqual],
         [ListModel initWithTitle:@"DestroyAccount" detail:@"用户注销" type:ListModelTypeDestroyAccount],
+        [ListModel initWithTitle:@"ReactiveObjC" detail:@"RAC" type:ListModelTypeReactiveObjC],
         [ListModel initWithTitle:@"Test" detail:@"测试" type:ListModelTypeTest],
+
         
         
     ];
@@ -250,6 +252,12 @@
     
     RRDestroyAccountAgreenmentViewController *vc= [[RRDestroyAccountAgreenmentViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickReactiveObjC {
+    
+    OrderViewController *vc= [[OrderViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -455,6 +463,11 @@
         case ListModelTypeDestroyAccount:
         {
             [self clickDestroyAccount];
+        }
+            break;
+        case ListModelTypeReactiveObjC:
+        {
+            [self clickReactiveObjC];
         }
             break;
         case ListModelTypeTest:
