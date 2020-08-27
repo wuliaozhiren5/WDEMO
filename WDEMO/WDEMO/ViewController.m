@@ -45,6 +45,7 @@
 //RAC
 #import "OrderViewController.h"
 #import "RACLoginViewController.h"
+#import "RACViewController.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -265,8 +266,9 @@
 }
 
 - (void)clickReactiveObjCLogin {
-    
-    RACLoginViewController *vc= [[RACLoginViewController alloc]init];
+//    RACLoginViewController *vc= [[RACLoginViewController alloc]init];
+
+    RACViewController *vc= [[RACViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

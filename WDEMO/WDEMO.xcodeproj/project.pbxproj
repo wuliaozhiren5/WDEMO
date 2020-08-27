@@ -72,6 +72,7 @@
 		F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E19924CA8DE200DA5625 /* FaceAttachment.m */; };
 		F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */; };
 		F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */; };
+		F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F564D5E824F7550C00A02FA2 /* RACViewController.m */; };
 		F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */; };
 		F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB024C6C11C007D452E /* WCollectionViewCell.m */; };
 		F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */; };
@@ -290,6 +291,8 @@
 		F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMessageDataModel.m; sourceTree = "<group>"; };
 		F553E1DF24CAC69F00DA5625 /* ChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCell.h; sourceTree = "<group>"; };
 		F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCell.m; sourceTree = "<group>"; };
+		F564D5E724F7550C00A02FA2 /* RACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewController.h; sourceTree = "<group>"; };
+		F564D5E824F7550C00A02FA2 /* RACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
 		F5668FAC24C6C0B9007D452E /* WCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewController.h; sourceTree = "<group>"; };
 		F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCollectionViewController.m; sourceTree = "<group>"; };
 		F5668FAF24C6C11C007D452E /* WCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewCell.h; sourceTree = "<group>"; };
@@ -946,6 +949,8 @@
 				F5A8899224F6081C00DB73ED /* Model */,
 				F5A8898F24F607BA00DB73ED /* View */,
 				F5A8899124F6080F00DB73ED /* ViewModel */,
+				F564D5E724F7550C00A02FA2 /* RACViewController.h */,
+				F564D5E824F7550C00A02FA2 /* RACViewController.m */,
 			);
 			path = ReactiveObjC;
 			sourceTree = "<group>";
@@ -1274,6 +1279,7 @@
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
+				F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

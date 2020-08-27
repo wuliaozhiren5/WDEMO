@@ -97,23 +97,32 @@
 }
 
 - (void)clickSelectBtn:(UIButton *)btn {
-    [self.view endEditing:YES];
-    if (self.selectIndex == btn.tag) {
-        return;
-    }
-    self.selectIndex = btn.tag;
-    [self.tableView reloadData];
-    
-    //    [self setSelectGradientColor];
-    
+    [self updateWithSelectIndex:btn.tag];
 }
+ 
+- (void)clickTitleLab:(UITapGestureRecognizer *)sender {
+    UIView *view = sender.view;
+    [self updateWithSelectIndex:view.tag];
+}
+
+- (void)updateWithSelectIndex:(NSInteger)selectIndex {
+     [self.view endEditing:YES];
+     if (self.selectIndex == selectIndex) {
+         return;
+     }
+     self.selectIndex = selectIndex;
+     [self.tableView reloadData];
+    
+     [self setSelectGradientColor];
+}
+
 - (void)submit:(UIButton *)btn {
     
-    if (_selectIndex < 0) {
+    if (self.selectIndex < 0) {
         return;
     }
     [self.view endEditing:YES];
-    RRDestroyAccountReasonModel *model = [self.dataArray objectOrNilAtIndex:_selectIndex];
+    RRDestroyAccountReasonModel *model = [self.dataArray objectOrNilAtIndex:self.selectIndex];
     
     //    switch (model.type) {
     //        case <#constant#>:
@@ -195,7 +204,15 @@
 //    UIImage *bgImg = [UIImage gradientColorImageFromColors:@[topColor, bottomColor] gradientType:GradientTypeLeftToRight imgSize:size];
 //    _submitbtn.backgroundColor = [UIColor colorWithPatternImage:bgImg];
 //
+
 //}
+//按钮渐变色
+- (void)setSelectGradientColor {
+//    UIColor *topColor = kCOLOR_00D5FF;
+//    UIColor *bottomColor = kCOLOR_00BBFF;
+ 
+    _submitbtn.backgroundColor = kCOLOR_00D5FF;
+}
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -205,7 +222,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.dataArray.count - 1) {
+    if (indexPath.row == self.dataArray.count - 1 && indexPath.row == self.selectIndex) {
         return 46 + 12 + 85 ;
     }
     return 46;
@@ -221,6 +238,7 @@
             cell.model = model;
             [cell isSelected:(self.selectIndex == indexPath.row ? YES : NO)];
             cell.selectBtn.tag = indexPath.row;
+            cell.titleLab.tag = indexPath.row;
             [cell.selectBtn addTarget:self action:@selector(clickSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             self.textView = cell.textView;
@@ -228,6 +246,9 @@
             self.numLabel = cell.numLabel;
             self.placeholderLabel = cell.placeholderLabel;
             [self textViewDidChange:self.textView];
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTitleLab:)];
+            tapGesture.numberOfTapsRequired = 1;
+            [cell.titleLab addGestureRecognizer:tapGesture];
             return cell;
         }
             break;
@@ -236,8 +257,12 @@
             cell.model = model;
             [cell isSelected:(self.selectIndex == indexPath.row ? YES : NO)];
             cell.selectBtn.tag = indexPath.row;
+            cell.titleLab.tag = indexPath.row;
             [cell.selectBtn addTarget:self action:@selector(clickSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickTitleLab:)];
+            tapGesture.numberOfTapsRequired = 1;
+            [cell.titleLab addGestureRecognizer:tapGesture];
             return cell;
         }
             break;

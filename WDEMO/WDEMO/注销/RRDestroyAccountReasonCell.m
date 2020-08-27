@@ -42,7 +42,8 @@
         [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
             make.centerY.equalTo(self.selectBtn.mas_centerY);
             make.leading.equalTo(self.selectBtn.mas_trailing).offset(12);
-            make.trailing.equalTo(self.contentView.mas_trailing).offset(-21);
+//            make.trailing.equalTo(self.contentView.mas_trailing).offset(-21);
+            make.trailing.lessThanOrEqualTo(self.contentView.mas_trailing).offset(-21);
         }];
         
     } else {}
@@ -58,7 +59,7 @@
 -(void)isSelected:(BOOL)select{
     self.isSelected = select;
     if (self.isSelected) {
-        [self.selectBtn setImage:[UIImage imageNamed:@"ic_common_checkbox_selected"] forState:UIControlStateNormal];
+        [self.selectBtn setImage:[UIImage imageNamed:@"ic_common_radio_selected"] forState:UIControlStateNormal];
         self.titleLab.textColor = kCOLOR_00BBFF;
     }else {
         [self.selectBtn setImage:[UIImage imageNamed:@"ic_common_checkbox"] forState:UIControlStateNormal];
@@ -82,12 +83,12 @@
         _titleLab = [[UILabel alloc]initWithFrame:CGRectZero];
         _titleLab.frame = CGRectMake(0, 0, 40, 40);
         _titleLab.font = [UIFont systemFontOfSize:15.0];
+        _titleLab.userInteractionEnabled = YES;
     }
     return _titleLab;
 }
 
 -(UIButton *)selectBtn {
-    
     if (!_selectBtn) {
         _selectBtn = [[UIButton alloc]init];
         _selectBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
@@ -136,13 +137,17 @@
 -(void) isSelected:(BOOL)select{
     self.isSelected = select;
     if (self.isSelected) {
-        [self.selectBtn setImage:[UIImage imageNamed:@"ic_common_checkbox_selected"] forState:UIControlStateNormal];
+        [self.selectBtn setImage:[UIImage imageNamed:@"ic_common_radio_selected"] forState:UIControlStateNormal];
         self.titleLab.textColor = kCOLOR_00BBFF;
-        _textView.userInteractionEnabled = YES;
+        self.textView.userInteractionEnabled = YES;
+        self.textView.hidden = NO;
+        self.numLabel.hidden = NO;
     }else {
         [self.selectBtn setImage:[UIImage imageNamed:@"ic_common_checkbox"] forState:UIControlStateNormal];
         self.titleLab.textColor = kCOLOR_333333;
-        _textView.userInteractionEnabled = NO;
+        self.textView.userInteractionEnabled = NO;
+        self.textView.hidden = YES;
+        self.numLabel.hidden = YES;
     }
 }
 
