@@ -206,6 +206,14 @@
 //
 
 //}
+
+//按钮渐变色
+- (void)setDisabledGradientBackColor {
+//    UIColor *topColor = kCOLOR_CACBCC;
+//    UIColor *bottomColor = kCOLOR_DADBDC;
+
+    _submitbtn.backgroundColor = kCOLOR_CACBCC;
+}
 //按钮渐变色
 - (void)setSelectGradientColor {
 //    UIColor *topColor = kCOLOR_00D5FF;
@@ -391,7 +399,7 @@
             make.height.offset(45);
         }];
         _submitbtn = submitbtn;
-        //        [self setDisabledGradientBackColor];
+        [self setDisabledGradientBackColor];
     }
     return _footerView;
 }
