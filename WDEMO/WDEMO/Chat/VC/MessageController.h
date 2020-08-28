@@ -58,8 +58,11 @@
  *  本类提供了接收/显示新消息、显示/隐藏菜单、点击消息头像等交互操作的回调接口。
  *  同时本类提供了图像、视频、文件信息的发送功能，直接整合调用了 IM SDK 实现发送功能。
  */
-@interface MessageController : UITableViewController
 
+@interface MessageController : UITableViewController
+//为了渐变图层
+//@interface MessageController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+//@property (nonatomic, strong) UITableView *tableView;
 /**
  *  执行 TMessageControllerDelegate 协议的委托
  */
