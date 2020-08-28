@@ -90,6 +90,7 @@
 		F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F12924E3C12B00F611E6 /* TestViewController.m */; };
 		F5A9F13924E3D44B00F611E6 /* RRSeeLivingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13824E3D44A00F611E6 /* RRSeeLivingBaseCell.m */; };
 		F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */; };
+		F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B30F6524F8D3F8003DFB2E /* RAC.md */; };
 		F5C7261824E1258000B16639 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261724E1257F00B16639 /* ListModel.m */; };
 		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
 		F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */; };
@@ -327,6 +328,7 @@
 		F5A9F13824E3D44A00F611E6 /* RRSeeLivingBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRSeeLivingBaseCell.m; sourceTree = "<group>"; };
 		F5A9F13A24E3EC2400F611E6 /* RRSeeLivingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRSeeLivingModel.h; sourceTree = "<group>"; };
 		F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRSeeLivingModel.m; sourceTree = "<group>"; };
+		F5B30F6524F8D3F8003DFB2E /* RAC.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RAC.md; sourceTree = "<group>"; };
 		F5C7261624E1257F00B16639 /* ListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
 		F5C7261724E1257F00B16639 /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		F5C7261924E1317B00B16639 /* ListModelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelCell.h; sourceTree = "<group>"; };
@@ -786,8 +788,8 @@
 			children = (
 				F5A8899424F612A000DB73ED /* OrderCell.h */,
 				F5A8899324F612A000DB73ED /* OrderCell.m */,
-				F5A8898424F605C600DB73ED /* OrderViewController.m */,
 				F5A8898324F605C600DB73ED /* OrderViewController.h */,
+				F5A8898424F605C600DB73ED /* OrderViewController.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -945,6 +947,7 @@
 		F5F346F324ED59CB006AAEA3 /* ReactiveObjC */ = {
 			isa = PBXGroup;
 			children = (
+				F5B30F6524F8D3F8003DFB2E /* RAC.md */,
 				F5A889B624F65D2400DB73ED /* RACLogin */,
 				F5A8899224F6081C00DB73ED /* Model */,
 				F5A8898F24F607BA00DB73ED /* View */,
@@ -1109,6 +1112,7 @@
 				F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */,
 				F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */,
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
+				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
