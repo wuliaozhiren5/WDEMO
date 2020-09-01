@@ -47,6 +47,12 @@
 #import "RACLoginViewController.h"
 #import "RACViewController.h"
 
+//滚动视图
+#import "WScrollViewController.h"
+
+#import "ChangePasswordVC.h"
+#import "SetPasswordVC.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property(nonatomic, strong) UITableView *tableView;
@@ -149,9 +155,32 @@
 
 -(void)clickTagList1 {
     
-    LZTagListVC *vc= [[LZTagListVC alloc]init];
+//    LZTagListVC *vc= [[LZTagListVC alloc]init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
+    
+//    WScrollViewController *vc= [[WScrollViewController alloc]init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
+     
+    ChangePasswordVC *vc= [[ChangePasswordVC alloc]init];
+    vc.title = @"修改密码";
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+    
+    //跳转设置密码
+    SetPasswordVC *vc2 = [[SetPasswordVC alloc]init];
+    vc2.isReset = NO;
+    vc2.title = @"设置密码";
+    [self.navigationController pushViewController:vc2 animated:YES];
+    
+    //跳转重置密码
+    SetPasswordVC *vc1 = [[SetPasswordVC alloc]init];
+    vc1.isReset = YES;
+    vc1.title = @"重置密码";
+    [self.navigationController pushViewController:vc1 animated:YES];
+
+  
 }
 
 -(void)clickTagList2 {
