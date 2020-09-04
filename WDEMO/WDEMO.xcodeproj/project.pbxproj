@@ -86,7 +86,7 @@
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
 		F57B52A324C7DF2700940696 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* ChatController.m */; };
 		F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F581D21724EAB684008AC679 /* WScrollViewController.m */; };
-		F5A51F3124FC95E90054A4DD /* SetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51F3024FC95E90054A4DD /* SetPasswordVC.m */; };
+		F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */ = {isa = PBXBuildFile; fileRef = F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */; };
 		F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */; };
 		F5A8898524F605C600DB73ED /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A8898424F605C600DB73ED /* OrderViewController.m */; };
 		F5A8898B24F6074A00DB73ED /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A8898A24F6074A00DB73ED /* OrderModel.m */; };
@@ -327,8 +327,8 @@
 		F57B52A224C7DF2700940696 /* ChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
 		F581D21624EAB684008AC679 /* WScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WScrollViewController.h; sourceTree = "<group>"; };
 		F581D21724EAB684008AC679 /* WScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WScrollViewController.m; sourceTree = "<group>"; };
-		F5A51F2F24FC95E90054A4DD /* SetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordVC.h; sourceTree = "<group>"; };
-		F5A51F3024FC95E90054A4DD /* SetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordVC.m; sourceTree = "<group>"; };
+		F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+buttonType.m"; sourceTree = "<group>"; };
+		F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+buttonType.h"; sourceTree = "<group>"; };
 		F5A51F3524FC98430054A4DD /* PasswordTextFieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextFieldView.h; sourceTree = "<group>"; };
 		F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordTextFieldView.m; sourceTree = "<group>"; };
 		F5A8898324F605C600DB73ED /* OrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
@@ -543,6 +543,8 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */,
+				F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */,
 				F53F668A24FE2E2200770055 /* UIImage+GradientColor.h */,
 				F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */,
 				F5A51F2B24FC952C0054A4DD /* Password */,
@@ -810,8 +812,6 @@
 		F5A51F2B24FC952C0054A4DD /* Password */ = {
 			isa = PBXGroup;
 			children = (
-				F5A51F2F24FC95E90054A4DD /* SetPasswordVC.h */,
-				F5A51F3024FC95E90054A4DD /* SetPasswordVC.m */,
 				F5A51F3524FC98430054A4DD /* PasswordTextFieldView.h */,
 				F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */,
 				F53F669024FE454000770055 /* PasswordTextField.h */,
@@ -1309,7 +1309,6 @@
 				F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */,
 				F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
-				F5A51F3124FC95E90054A4DD /* SetPasswordVC.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
 				F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */,
@@ -1323,6 +1322,7 @@
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
 				A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */,
 				F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlertView.m in Sources */,
+				F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */,
 				F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */,
 				F553E17B24CA86FC00DA5625 /* UIImage+ChatKit..m in Sources */,
 				F5CE3D2324E6901800B20C80 /* RRDestroyAccountAgreenmentViewController.m in Sources */,

@@ -214,6 +214,7 @@
 //按钮
 #define kCOLOR_EDCEFF  RGB(0xed, 0xce, 0xff)
 #define kCOLOR_CACBCC  RGB(0xca, 0xcb, 0xcc)
+#define kCOLOR_CACBCC  RGB(0xca, 0xcb, 0xcc)
 
 //按钮二级 不可点击
 #define kCOLOR_DBB258       RGB(0xDB, 0xB2, 0x58)
@@ -428,6 +429,7 @@
 #define kCOLOR_2E2E2E       RGB(0x2E, 0x2E, 0x2E)
 #define kCOLOR_616466       RGB(0x61, 0x64, 0x66)
 #define kCOLOR_2A2A2A       RGB(0x2A, 0x2A, 0x2A)
+#define kCOLOR_353535       RGB(0x35, 0x35, 0x35)
 
 #define Proportion [UIScreen mainScreen].bounds.size.width / 375
 static inline CGFloat windowFloorf(CGFloat value) {

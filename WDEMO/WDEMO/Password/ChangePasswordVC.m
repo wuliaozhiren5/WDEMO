@@ -119,21 +119,21 @@
     NSString *confirmPasswordStr = self.confirmPassword.textField.text;
     if (oldPasswordStr.length > 0 && freshPasswordStr.length > 0 && confirmPasswordStr.length > 0) {
         self.submitBtn.enabled = YES;
-        [self setEnabledGradientColor];
+//        [self setEnabledGradientColor];
     } else {
         self.submitBtn.enabled = NO;
-        [self setDisabledGradientBackColor];
+//        [self setDisabledGradientBackColor];
     }
 }
 
-//按钮渐变色
-- (void)setDisabledGradientBackColor {
-    [super setDisabledGradientBackColor];
-}
-
-//按钮渐变色
-- (void)setEnabledGradientColor {
-    [super setEnabledGradientColor];
-}
+////按钮渐变色
+//- (void)setDisabledGradientBackColor {
+//    [super setDisabledGradientBackColor];
+//}
+//
+////按钮渐变色
+//- (void)setEnabledGradientColor {
+//    [super setEnabledGradientColor];
+//}
 
 @end

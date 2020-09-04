@@ -36,7 +36,7 @@
     
     //点击退出编辑模式
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapViewController)];
-    //    tap.delegate = self;
+    tap.delegate = self;
     [self.view addGestureRecognizer:tap];
     
     UIScrollView *scrollView = [[UIScrollView alloc] init];
@@ -88,11 +88,12 @@
     submitBtn.titleLabel.font = SYSTEMFONT(22);
     //        submitbtn.backgroundColor = kCOLOR_dynamicProvider_F2F4F5_2E2E2E;
     //    submitbtn.backgroundColor = kCOLOR_CACBCC;
-    submitBtn.backgroundColor = [UIColor grayColor];
+//    submitBtn.backgroundColor = [UIColor grayColor];
     [submitBtn setTitleColor:kCOLOR_FFFFFF forState:UIControlStateNormal];
     submitBtn.layer.cornerRadius = 24;
     [submitBtn setTitle:@"确定" forState:UIControlStateNormal];
     [submitBtn addTarget:self action:@selector(submit:) forControlEvents:UIControlEventTouchUpInside];
+    [submitBtn setButtonDisableType:RRButtonDarkTypeTitleWhiteGradient];
     submitBtn.enabled = NO;
     [container addSubview:submitBtn];
     
@@ -107,8 +108,7 @@
     _confirmPassword = confirmPassword;
     _submitBtn = submitBtn;
     
-    [self setDisabledGradientBackColor];
-    
+//    [self setDisabledGradientBackColor];
 }
 
 - (void)submit:(UIButton *)btn {
@@ -155,5 +155,14 @@
 
 - (void)didTapViewController {
     [self.view endEditing:YES];
+}
+
+#pragma mark - UIGestureRecognizerDelegate
+ - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    //点击YYLabel
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"YYLabel"]) {
+         return NO;
+    }
+    return  YES;
 }
 @end
