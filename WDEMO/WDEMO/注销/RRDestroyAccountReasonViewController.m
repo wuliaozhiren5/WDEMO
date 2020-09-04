@@ -114,7 +114,7 @@
      self.selectIndex = selectIndex;
      [self.tableView reloadData];
     
-     [self setSelectGradientColor];
+     [self setEnabledGradientColor];
 }
 
 - (void)submit:(UIButton *)btn {
@@ -198,7 +198,7 @@
 //}
 //
 ////按钮渐变色
-//- (void)setSelectGradientColor {
+//- (void)setEnabledGradientColor {
 //    UIColor *topColor = kCOLOR_00D5FF;
 //    UIColor *bottomColor = kCOLOR_00BBFF;
 //    CGSize size = _submitbtn.frame.size;
@@ -216,7 +216,7 @@
     _submitbtn.backgroundColor = kCOLOR_CACBCC;
 }
 //按钮渐变色
-- (void)setSelectGradientColor {
+- (void)setEnabledGradientColor {
 //    UIColor *topColor = kCOLOR_00D5FF;
 //    UIColor *bottomColor = kCOLOR_00BBFF;
  

@@ -97,8 +97,7 @@
     [submitBtn setButtonDisableType:RRButtonDarkTypeTitleWhiteGradient];
     submitBtn.enabled = NO;
     [container addSubview:submitBtn];
-    
-    
+
     _scrollView = scrollView;
     _container = container;
     _titleLabel = titleLabel;

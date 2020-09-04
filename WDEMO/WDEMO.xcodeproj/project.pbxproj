@@ -75,6 +75,10 @@
 		F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E19924CA8DE200DA5625 /* FaceAttachment.m */; };
 		F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */; };
 		F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */; };
+		F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C922502134800A13C15 /* SetPasswordVC.m */; };
+		F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C98250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m */; };
+		F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C9B250215ED00A13C15 /* NeedResetPasswordVC.m */; };
+		F5609C9F250216BE00A13C15 /* RegisterSetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C9E250216BE00A13C15 /* RegisterSetPasswordVC.m */; };
 		F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F564D5E824F7550C00A02FA2 /* RACViewController.m */; };
 		F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */; };
 		F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB024C6C11C007D452E /* WCollectionViewCell.m */; };
@@ -305,6 +309,14 @@
 		F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMessageDataModel.m; sourceTree = "<group>"; };
 		F553E1DF24CAC69F00DA5625 /* ChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCell.h; sourceTree = "<group>"; };
 		F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCell.m; sourceTree = "<group>"; };
+		F5609C912502134800A13C15 /* SetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordVC.h; sourceTree = "<group>"; };
+		F5609C922502134800A13C15 /* SetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordVC.m; sourceTree = "<group>"; };
+		F5609C97250214FC00A13C15 /* ForgetPasswordResetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordResetPasswordVC.h; sourceTree = "<group>"; };
+		F5609C98250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgetPasswordResetPasswordVC.m; sourceTree = "<group>"; };
+		F5609C9A250215ED00A13C15 /* NeedResetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NeedResetPasswordVC.h; sourceTree = "<group>"; };
+		F5609C9B250215ED00A13C15 /* NeedResetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NeedResetPasswordVC.m; sourceTree = "<group>"; };
+		F5609C9D250216BE00A13C15 /* RegisterSetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterSetPasswordVC.h; sourceTree = "<group>"; };
+		F5609C9E250216BE00A13C15 /* RegisterSetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterSetPasswordVC.m; sourceTree = "<group>"; };
 		F564D5E724F7550C00A02FA2 /* RACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewController.h; sourceTree = "<group>"; };
 		F564D5E824F7550C00A02FA2 /* RACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
 		F5668FAC24C6C0B9007D452E /* WCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewController.h; sourceTree = "<group>"; };
@@ -822,6 +834,14 @@
 				F566A1D225008B6A004991D3 /* PasswordVC.m */,
 				F566A1D425008D76004991D3 /* ChangePasswordVC.h */,
 				F566A1D525008D76004991D3 /* ChangePasswordVC.m */,
+				F5609C912502134800A13C15 /* SetPasswordVC.h */,
+				F5609C922502134800A13C15 /* SetPasswordVC.m */,
+				F5609C97250214FC00A13C15 /* ForgetPasswordResetPasswordVC.h */,
+				F5609C98250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m */,
+				F5609C9A250215ED00A13C15 /* NeedResetPasswordVC.h */,
+				F5609C9B250215ED00A13C15 /* NeedResetPasswordVC.m */,
+				F5609C9D250216BE00A13C15 /* RegisterSetPasswordVC.h */,
+				F5609C9E250216BE00A13C15 /* RegisterSetPasswordVC.m */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -1240,6 +1260,7 @@
 				F553E14424CA82E700DA5625 /* ChatKitConfig.m in Sources */,
 				F5A8898524F605C600DB73ED /* OrderViewController.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
+				F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */,
 				F5A8898E24F6078E00DB73ED /* OrderViewModel.m in Sources */,
 				F5D0FC0D24E0F99800CAADF8 /* UIImage+TUIKIT.m in Sources */,
 				F5A9F13924E3D44B00F611E6 /* RRSeeLivingBaseCell.m in Sources */,
@@ -1262,6 +1283,7 @@
 				A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */,
 				F507113024E2A6A700AD5306 /* MYPerson.m in Sources */,
 				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
+				F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */,
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
@@ -1307,12 +1329,14 @@
 				F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */,
 				F5A889BC24F65D9000DB73ED /* LoginViewModel.m in Sources */,
 				F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */,
+				F5609C9F250216BE00A13C15 /* RegisterSetPasswordVC.m in Sources */,
 				F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
 				F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
+				F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,
 				F53F669B24FE484700770055 /* NSString+Password.m in Sources */,

@@ -49,9 +49,17 @@
 
 //滚动视图
 #import "WScrollViewController.h"
-
+//修改密码
 #import "ChangePasswordVC.h"
-//#import "SetPasswordVC.h"
+//设置密码 没有密码
+#import "SetPasswordVC.h"
+//设置密码 注册时候（可跳过）
+#import "RegisterSetPasswordVC.h"
+//重置密码 忘记密码 需要：手机号phone，验证码code
+#import "ForgetPasswordResetPasswordVC.h"
+//重置密码 存量用户
+#import "NeedResetPasswordVC.h"
+
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -163,34 +171,33 @@
 //    vc.hidesBottomBarWhenPushed = YES;
 //    [self.navigationController pushViewController:vc animated:YES];
      
-      //修改密码
+    //修改密码
     ChangePasswordVC *vc= [[ChangePasswordVC alloc]init];
     vc.title = @"修改密码";
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+     
+    //设置密码 没有密码
+    SetPasswordVC *vc3 = [[SetPasswordVC alloc]init];
+    vc3.title = @"设置密码 没有密码";
+    [self.navigationController pushViewController:vc3 animated:YES];
     
-  
-//    //跳转设置密码 没有密码
-//    SetPasswordVC *vc3 = [[SetPasswordVC alloc]init];
-//    vc3.passwordType = PasswordTypeNoSet;
-//    vc3.title = @"设置密码";
-//    [self.navigationController pushViewController:vc3 animated:YES];
-//
-//
-//    //跳转重置密码 忘记密码 phone code
-//    SetPasswordVC *vc2 = [[SetPasswordVC alloc]init];
-//    vc2.passwordType = PasswordTypeForget;
-//    vc2.phone = @"";
-//    vc2.code = @"";
-//    vc2.title = @"重置密码";
-//    [self.navigationController pushViewController:vc2 animated:YES];
-//
-//
-//    //跳转重置密码 存量用户
-//    SetPasswordVC *vc1 = [[SetPasswordVC alloc]init];
-//    vc1.passwordType = PasswordTypeTooSimple;
-//    vc1.title = @"重置密码";
-//    [self.navigationController pushViewController:vc1 animated:YES];
+    //设置密码 注册时候（可跳过）
+    RegisterSetPasswordVC *vc4 = [[RegisterSetPasswordVC alloc]init];
+    vc4.title = @"设置密码 注册时候（可跳过）";
+    [self.navigationController pushViewController:vc4 animated:YES];
+
+    //重置密码 忘记密码 需要：手机号phone，验证码code
+    ForgetPasswordResetPasswordVC *vc2 = [[ForgetPasswordResetPasswordVC alloc]init];
+    vc2.phone = @"";
+    vc2.code = @"";
+    vc2.title = @"重置密码 忘记密码 手机号 验证码";
+    [self.navigationController pushViewController:vc2 animated:YES];
+ 
+    //重置密码 存量用户
+    NeedResetPasswordVC *vc1 = [[NeedResetPasswordVC alloc]init];
+    vc1.title = @"重置密码 存量用户";
+    [self.navigationController pushViewController:vc1 animated:YES];
 
   
 }

@@ -37,10 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) UIButton *submitBtn;
 
 - (void)setupViews;
-//按钮渐变色
-- (void)setDisabledGradientBackColor;
-//按钮渐变色
-- (void)setEnabledGradientColor;
 
 - (void)submit:(UIButton *)btn;
 
