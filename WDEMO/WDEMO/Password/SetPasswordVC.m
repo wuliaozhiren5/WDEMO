@@ -14,7 +14,7 @@
 #import "UIImage+GradientColor.h"//渐变色
 #import "NSString+Password.h"
 
-@interface SetPasswordVC ()
+@interface SetPasswordVC () <UIGestureRecognizerDelegate>
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
@@ -41,9 +41,23 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated]; 
+    [self.view endEditing:YES];
+}
+
 - (void)setupViews {
     self.navigationController.navigationBar.translucent = NO;
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    //点击退出编辑模式
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapViewController)];
+    tap.delegate = self;
+    [self.view addGestureRecognizer:tap];
     
     CGFloat fontSize = 15.;
     CGFloat smallFontSize = 12.;
@@ -135,47 +149,97 @@
         make.width.equalTo(scrollview);
     }];
     
-    if (!_isReset) {
-        //设置密码
-        subtitleLabel.hidden = YES;
-        [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(container);
-            make.leading.equalTo(container);
-            make.trailing.equalTo(container);
-            make.height.offset(35);
-        }];
-        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(titleView.mas_leading).offset(21);
-            make.trailing.equalTo(titleView.mas_trailing).offset(-21);
-            make.height.equalTo(@29);
-            make.top.equalTo(titleView.mas_top).offset(6);
-        }];
-    } else {
-        //重置密码
-        subtitleLabel.hidden = NO;
-        [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(container);
-            make.leading.equalTo(container);
-            make.trailing.equalTo(container);
-            make.height.offset(65);
-        }];
-        
-        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(titleView.mas_leading).offset(21);
-            make.trailing.equalTo(titleView.mas_trailing).offset(-21);
-            make.height.equalTo(@29);
-            make.top.equalTo(titleView.mas_top).offset(6);
-        }];
-        
-        [subtitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(titleView.mas_leading).offset(21);
-            make.trailing.equalTo(titleView.mas_trailing).offset(-21);
-            make.height.equalTo(@18);
-            make.top.equalTo(titleLabel.mas_bottom).offset(11);
+    switch (_passwordType) {
+        case PasswordTypeNoSet:
+        {
+            //设置密码
+            subtitleLabel.hidden = YES;
+            [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(container);
+                make.leading.equalTo(container);
+                make.trailing.equalTo(container);
+                make.height.offset(35);
+            }];
+            [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.equalTo(titleView.mas_leading).offset(21);
+                make.trailing.equalTo(titleView.mas_trailing).offset(-21);
+                make.height.equalTo(@29);
+                make.top.equalTo(titleView.mas_top).offset(6);
+            }];
             
-        }];
+        }
+            break;
+            
+        default:
+        {
+            //重置密码
+            subtitleLabel.hidden = NO;
+            [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(container);
+                make.leading.equalTo(container);
+                make.trailing.equalTo(container);
+                make.height.offset(65);
+            }];
+            
+            [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.equalTo(titleView.mas_leading).offset(21);
+                make.trailing.equalTo(titleView.mas_trailing).offset(-21);
+                make.height.equalTo(@29);
+                make.top.equalTo(titleView.mas_top).offset(6);
+            }];
+            
+            [subtitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.equalTo(titleView.mas_leading).offset(21);
+                make.trailing.equalTo(titleView.mas_trailing).offset(-21);
+                make.height.equalTo(@18);
+                make.top.equalTo(titleLabel.mas_bottom).offset(11);
+                
+            }];
+        }
+            break;
     }
     
+//    if (!_isReset) {
+//        //设置密码
+//        subtitleLabel.hidden = YES;
+//        [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(container);
+//            make.leading.equalTo(container);
+//            make.trailing.equalTo(container);
+//            make.height.offset(35);
+//        }];
+//        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.leading.equalTo(titleView.mas_leading).offset(21);
+//            make.trailing.equalTo(titleView.mas_trailing).offset(-21);
+//            make.height.equalTo(@29);
+//            make.top.equalTo(titleView.mas_top).offset(6);
+//        }];
+//    } else {
+//        //重置密码
+//        subtitleLabel.hidden = NO;
+//        [titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.top.equalTo(container);
+//            make.leading.equalTo(container);
+//            make.trailing.equalTo(container);
+//            make.height.offset(65);
+//        }];
+//
+//        [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.leading.equalTo(titleView.mas_leading).offset(21);
+//            make.trailing.equalTo(titleView.mas_trailing).offset(-21);
+//            make.height.equalTo(@29);
+//            make.top.equalTo(titleView.mas_top).offset(6);
+//        }];
+//
+//        [subtitleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.leading.equalTo(titleView.mas_leading).offset(21);
+//            make.trailing.equalTo(titleView.mas_trailing).offset(-21);
+//            make.height.equalTo(@18);
+//            make.top.equalTo(titleLabel.mas_bottom).offset(11);
+//
+//        }];
+//    }
+
     [freshPassword mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(titleView.mas_bottom).offset(15.5);
         make.leading.equalTo(@(0));
@@ -222,20 +286,23 @@
     
     [self.view endEditing:YES];
     
-    //    NSString *oldPasswordStr;
-    //    NSString *freshPasswordStr= _freshPassword.textField.text;
-    //    NSString *confirmPasswordStr = _confirmPassword.textField.text;
-    //
-    //    //    if (![self judgePassWordLegal:freshPasswordStr]) {
-    //    //        [IanAlert alertError:@"密码8~16位，大小写字母、数字或特殊字符，至少包含3种" length:1];
-    //    //        return;
-    //    //    }
-    //
-    //    if (![freshPasswordStr isEqualToString:confirmPasswordStr]) {
-    //        [IanAlert alertError:@"两次密码输入不一致" length:1];
-    //        return;
-    //    }
-    //
+    NSString *oldPasswordStr;
+    NSString *freshPasswordStr= _freshPassword.textField.text;
+    NSString *confirmPasswordStr = _confirmPassword.textField.text;
+    
+    if (freshPasswordStr.length < 8 || freshPasswordStr.length > 16) {
+        //        [IanAlert alertError:@"密码8~16位" length:1];
+        return;
+    }
+    if (![NSString judgePassword:freshPasswordStr]) {
+        //        [IanAlert alertError:@"密码8~16位，大小写字母、数字或特殊字符，至少包含3种" length:1];
+        return;
+    }
+    if (![freshPasswordStr isEqualToString:confirmPasswordStr]) {
+        //        [IanAlert alertError:@"两次密码输入不一致" length:1];
+        return;
+    }
+  
     //    NSString *userId = [UserInfoConfig sharedUserInfoConfig].userInfo.Id;
     //    NSString *token = [UserInfoConfig sharedUserInfoConfig].userInfo.token;
     //    if (userId.length == 0 || token.length == 0) {
@@ -267,6 +334,25 @@
     //        [IanAlert alertError:ERRORMSG2 length:1];
     //
     //    }];
+    
+    switch (_passwordType) {
+        case PasswordTypeNoSet:
+        {
+        }
+            break;
+        case PasswordTypeTooSimple:
+        {
+        }
+            break;
+        case PasswordTypeForget:
+        {
+        }
+            break;
+        default:
+        {
+        }
+            break;
+    }
 }
 
 - (void)textFieldDidChange:(UITextField *)textField {
@@ -305,15 +391,7 @@
     _submitBtn.backgroundColor = [UIColor colorWithPatternImage:bgImg];
 }
 
--(BOOL)judgePassWordLegal:(NSString *)pass {
-    BOOL result ;
-    //密码8~16位，大小写字母、数字或特殊字符，至少包含3种
-    //正则规则与安卓一致
-    NSString * regex = @"^(?![a-zA-Z]+$)(?![A-Z0-9]+$)(?![A-Z\\W_]+$)(?![a-z0-9]+$)(?![a-z\\W_]+$)(?![0-9\\W_]+$)[a-zA-Z0-9\\W_]{8,16}$";
-    NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-    result = [pred evaluateWithObject:pass];
-    NSLog(@"%hhd",result);
-    return result;
+- (void)didTapViewController {
+    [self.view endEditing:YES];
 }
-
 @end

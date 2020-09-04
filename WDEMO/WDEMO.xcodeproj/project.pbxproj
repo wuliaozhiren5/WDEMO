@@ -79,12 +79,13 @@
 		F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */; };
 		F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB024C6C11C007D452E /* WCollectionViewCell.m */; };
 		F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */; };
+		F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D225008B6A004991D3 /* PasswordVC.m */; };
+		F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D525008D76004991D3 /* ChangePasswordVC.m */; };
 		F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */; };
 		F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
 		F57B52A324C7DF2700940696 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* ChatController.m */; };
 		F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F581D21724EAB684008AC679 /* WScrollViewController.m */; };
-		F5A51F2E24FC95D30054A4DD /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51F2D24FC95D30054A4DD /* ChangePasswordVC.m */; };
 		F5A51F3124FC95E90054A4DD /* SetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51F3024FC95E90054A4DD /* SetPasswordVC.m */; };
 		F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */; };
 		F5A8898524F605C600DB73ED /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A8898424F605C600DB73ED /* OrderViewController.m */; };
@@ -312,6 +313,10 @@
 		F5668FB024C6C11C007D452E /* WCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCollectionViewCell.m; sourceTree = "<group>"; };
 		F5668FB824C6DB69007D452E /* CpuMemoryUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CpuMemoryUsage.h; sourceTree = "<group>"; };
 		F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CpuMemoryUsage.m; sourceTree = "<group>"; };
+		F566A1D125008B6A004991D3 /* PasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordVC.h; sourceTree = "<group>"; };
+		F566A1D225008B6A004991D3 /* PasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordVC.m; sourceTree = "<group>"; };
+		F566A1D425008D76004991D3 /* ChangePasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
+		F566A1D525008D76004991D3 /* ChangePasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
 		F57A6A7524CFCA8400D51E01 /* FaceMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageCell.h; sourceTree = "<group>"; };
 		F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageCell.m; sourceTree = "<group>"; };
 		F57A6A7824CFCA9700D51E01 /* EnterMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterMessageCell.h; sourceTree = "<group>"; };
@@ -322,8 +327,6 @@
 		F57B52A224C7DF2700940696 /* ChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
 		F581D21624EAB684008AC679 /* WScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WScrollViewController.h; sourceTree = "<group>"; };
 		F581D21724EAB684008AC679 /* WScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WScrollViewController.m; sourceTree = "<group>"; };
-		F5A51F2C24FC95D30054A4DD /* ChangePasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
-		F5A51F2D24FC95D30054A4DD /* ChangePasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
 		F5A51F2F24FC95E90054A4DD /* SetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordVC.h; sourceTree = "<group>"; };
 		F5A51F3024FC95E90054A4DD /* SetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordVC.m; sourceTree = "<group>"; };
 		F5A51F3524FC98430054A4DD /* PasswordTextFieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextFieldView.h; sourceTree = "<group>"; };
@@ -807,8 +810,6 @@
 		F5A51F2B24FC952C0054A4DD /* Password */ = {
 			isa = PBXGroup;
 			children = (
-				F5A51F2C24FC95D30054A4DD /* ChangePasswordVC.h */,
-				F5A51F2D24FC95D30054A4DD /* ChangePasswordVC.m */,
 				F5A51F2F24FC95E90054A4DD /* SetPasswordVC.h */,
 				F5A51F3024FC95E90054A4DD /* SetPasswordVC.m */,
 				F5A51F3524FC98430054A4DD /* PasswordTextFieldView.h */,
@@ -817,6 +818,10 @@
 				F53F669124FE454000770055 /* PasswordTextField.m */,
 				F53F669924FE484700770055 /* NSString+Password.h */,
 				F53F669A24FE484700770055 /* NSString+Password.m */,
+				F566A1D125008B6A004991D3 /* PasswordVC.h */,
+				F566A1D225008B6A004991D3 /* PasswordVC.m */,
+				F566A1D425008D76004991D3 /* ChangePasswordVC.h */,
+				F566A1D525008D76004991D3 /* ChangePasswordVC.m */,
 			);
 			path = Password;
 			sourceTree = "<group>";
@@ -1258,7 +1263,6 @@
 				F507113024E2A6A700AD5306 /* MYPerson.m in Sources */,
 				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
-				F5A51F2E24FC95D30054A4DD /* ChangePasswordVC.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
@@ -1276,6 +1280,7 @@
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
 				F553E17E24CA888800DA5625 /* ChatHelper.m in Sources */,
+				F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */,
 				F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */,
 				67535E892390F0CF0009F882 /* FontViewControlle.m in Sources */,
 				67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */,
@@ -1301,6 +1306,7 @@
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
 				F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */,
 				F5A889BC24F65D9000DB73ED /* LoginViewModel.m in Sources */,
+				F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */,
 				F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F5A51F3124FC95E90054A4DD /* SetPasswordVC.m in Sources */,

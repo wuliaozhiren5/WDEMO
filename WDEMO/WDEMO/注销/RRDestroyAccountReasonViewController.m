@@ -54,6 +54,7 @@
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
+    [self.view endEditing:YES];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 

@@ -2,15 +2,15 @@
 //  ChangePasswordVC.h
 //  WDEMO
 //
-//  Created by rrtv on 2020/8/31.
+//  Created by rrtv on 2020/9/3.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "PasswordVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ChangePasswordVC : UIViewController
+@interface ChangePasswordVC : PasswordVC
 
 @end
 
