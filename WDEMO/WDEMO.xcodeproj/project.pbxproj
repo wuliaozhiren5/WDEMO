@@ -79,6 +79,10 @@
 		F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C98250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m */; };
 		F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C9B250215ED00A13C15 /* NeedResetPasswordVC.m */; };
 		F5609C9F250216BE00A13C15 /* RegisterSetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C9E250216BE00A13C15 /* RegisterSetPasswordVC.m */; };
+		F5609CA22502194C00A13C15 /* AllScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA12502194C00A13C15 /* AllScreenViewController.m */; };
+		F5609CA62502222100A13C15 /* WWCBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA52502222100A13C15 /* WWCBaseNavigationController.m */; };
+		F5609CA92502235400A13C15 /* WWCBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA82502235300A13C15 /* WWCBaseTabBarController.m */; };
+		F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */ = {isa = PBXBuildFile; fileRef = F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */; };
 		F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F564D5E824F7550C00A02FA2 /* RACViewController.m */; };
 		F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */; };
 		F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB024C6C11C007D452E /* WCollectionViewCell.m */; };
@@ -317,6 +321,13 @@
 		F5609C9B250215ED00A13C15 /* NeedResetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NeedResetPasswordVC.m; sourceTree = "<group>"; };
 		F5609C9D250216BE00A13C15 /* RegisterSetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterSetPasswordVC.h; sourceTree = "<group>"; };
 		F5609C9E250216BE00A13C15 /* RegisterSetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterSetPasswordVC.m; sourceTree = "<group>"; };
+		F5609CA02502194B00A13C15 /* AllScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllScreenViewController.h; sourceTree = "<group>"; };
+		F5609CA12502194C00A13C15 /* AllScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllScreenViewController.m; sourceTree = "<group>"; };
+		F5609CA42502222000A13C15 /* WWCBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWCBaseNavigationController.h; sourceTree = "<group>"; };
+		F5609CA52502222100A13C15 /* WWCBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWCBaseNavigationController.m; sourceTree = "<group>"; };
+		F5609CA72502235300A13C15 /* WWCBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWCBaseTabBarController.h; sourceTree = "<group>"; };
+		F5609CA82502235300A13C15 /* WWCBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWCBaseTabBarController.m; sourceTree = "<group>"; };
+		F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "暗黑模式 深色模式.md"; sourceTree = "<group>"; };
 		F564D5E724F7550C00A02FA2 /* RACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewController.h; sourceTree = "<group>"; };
 		F564D5E824F7550C00A02FA2 /* RACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
 		F5668FAC24C6C0B9007D452E /* WCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewController.h; sourceTree = "<group>"; };
@@ -555,6 +566,9 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5609CAB2502236700A13C15 /* TabBarController */,
+				F5609CAA2502236400A13C15 /* NavigationController */,
+				F5609CA32502195A00A13C15 /* AllScreen */,
 				F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */,
 				F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */,
 				F53F668A24FE2E2200770055 /* UIImage+GradientColor.h */,
@@ -568,7 +582,7 @@
 				F5CE3D1424E6901700B20C80 /* 注销 */,
 				F507113424E2AA6D00AD5306 /* 判断对象是否相等 */,
 				F5C7261524E1252B00B16639 /* 列表Model */,
-				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 */,
+				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 深色模式 */,
 				F5D0FBFC24E0E6A300CAADF8 /* Mask */,
 				F5D0FBFB24E0E65500CAADF8 /* 富文本 */,
 				F5F4F10024D3BF23007DB7F3 /* YY */,
@@ -770,6 +784,33 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
+		F5609CA32502195A00A13C15 /* AllScreen */ = {
+			isa = PBXGroup;
+			children = (
+				F5609CA02502194B00A13C15 /* AllScreenViewController.h */,
+				F5609CA12502194C00A13C15 /* AllScreenViewController.m */,
+			);
+			path = AllScreen;
+			sourceTree = "<group>";
+		};
+		F5609CAA2502236400A13C15 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				F5609CA42502222000A13C15 /* WWCBaseNavigationController.h */,
+				F5609CA52502222100A13C15 /* WWCBaseNavigationController.m */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		F5609CAB2502236700A13C15 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F5609CA72502235300A13C15 /* WWCBaseTabBarController.h */,
+				F5609CA82502235300A13C15 /* WWCBaseTabBarController.m */,
+			);
+			path = TabBarController;
+			sourceTree = "<group>";
+		};
 		F5668FB424C6D818007D452E /* CPU */ = {
 			isa = PBXGroup;
 			children = (
@@ -931,15 +972,16 @@
 			path = Mask;
 			sourceTree = "<group>";
 		};
-		F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 */ = {
+		F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 深色模式 */ = {
 			isa = PBXGroup;
 			children = (
+				F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */,
 				F5D0FC0E24E0FA5900CAADF8 /* THeader.h */,
 				F5D0FC0B24E0F99700CAADF8 /* UIImage+TUIKIT.h */,
 				F5D0FC0C24E0F99700CAADF8 /* UIImage+TUIKIT.m */,
 				F5D0FC0424E0F91800CAADF8 /* Theme */,
 			);
-			path = "暗黑模式";
+			path = "暗黑模式 深色模式";
 			sourceTree = "<group>";
 		};
 		F5D0FC0424E0F91800CAADF8 /* Theme */ = {
@@ -1176,6 +1218,7 @@
 				F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */,
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
+				F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
@@ -1259,6 +1302,7 @@
 				677BADD71FC412A700E7A3FF /* WConstants.m in Sources */,
 				F553E14424CA82E700DA5625 /* ChatKitConfig.m in Sources */,
 				F5A8898524F605C600DB73ED /* OrderViewController.m in Sources */,
+				F5609CA22502194C00A13C15 /* AllScreenViewController.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
 				F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */,
 				F5A8898E24F6078E00DB73ED /* OrderViewModel.m in Sources */,
@@ -1288,7 +1332,9 @@
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
+				F5609CA62502222100A13C15 /* WWCBaseNavigationController.m in Sources */,
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
+				F5609CA92502235400A13C15 /* WWCBaseTabBarController.m in Sources */,
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
 				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,
 				F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */,
