@@ -93,6 +93,7 @@
     submitBtn.layer.cornerRadius = 24;
     [submitBtn setTitle:@"确定" forState:UIControlStateNormal];
     [submitBtn addTarget:self action:@selector(submit:) forControlEvents:UIControlEventTouchUpInside];
+    //深色模式按钮渐变图片
     [submitBtn setButtonDisableType:RRButtonDarkTypeTitleWhiteGradient];
     submitBtn.enabled = NO;
     [container addSubview:submitBtn];
