@@ -83,6 +83,7 @@
 		F5609CA62502222100A13C15 /* WWCBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA52502222100A13C15 /* WWCBaseNavigationController.m */; };
 		F5609CA92502235400A13C15 /* WWCBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA82502235300A13C15 /* WWCBaseTabBarController.m */; };
 		F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */ = {isa = PBXBuildFile; fileRef = F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */; };
+		F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CAE25024E2600A13C15 /* AllScreenViewController.m */; };
 		F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F564D5E824F7550C00A02FA2 /* RACViewController.m */; };
 		F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */; };
 		F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB024C6C11C007D452E /* WCollectionViewCell.m */; };
@@ -328,6 +329,8 @@
 		F5609CA72502235300A13C15 /* WWCBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWCBaseTabBarController.h; sourceTree = "<group>"; };
 		F5609CA82502235300A13C15 /* WWCBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWCBaseTabBarController.m; sourceTree = "<group>"; };
 		F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "暗黑模式 深色模式.md"; sourceTree = "<group>"; };
+		F5609CAE25024E2600A13C15 /* AllScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllScreenViewController.m; sourceTree = "<group>"; };
+		F5609CAF25024E2600A13C15 /* AllScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllScreenViewController.h; sourceTree = "<group>"; };
 		F564D5E724F7550C00A02FA2 /* RACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewController.h; sourceTree = "<group>"; };
 		F564D5E824F7550C00A02FA2 /* RACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
 		F5668FAC24C6C0B9007D452E /* WCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewController.h; sourceTree = "<group>"; };
@@ -568,7 +571,7 @@
 			children = (
 				F5609CAB2502236700A13C15 /* TabBarController */,
 				F5609CAA2502236400A13C15 /* NavigationController */,
-				F5609CA32502195A00A13C15 /* AllScreen */,
+				F5609CA32502195A00A13C15 /* 屏幕旋转 */,
 				F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */,
 				F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */,
 				F53F668A24FE2E2200770055 /* UIImage+GradientColor.h */,
@@ -784,13 +787,15 @@
 			path = VC;
 			sourceTree = "<group>";
 		};
-		F5609CA32502195A00A13C15 /* AllScreen */ = {
+		F5609CA32502195A00A13C15 /* 屏幕旋转 */ = {
 			isa = PBXGroup;
 			children = (
+				F5609CAF25024E2600A13C15 /* AllScreenViewController.h */,
+				F5609CAE25024E2600A13C15 /* AllScreenViewController.m */,
 				F5609CA02502194B00A13C15 /* AllScreenViewController.h */,
 				F5609CA12502194C00A13C15 /* AllScreenViewController.m */,
 			);
-			path = AllScreen;
+			path = "屏幕旋转";
 			sourceTree = "<group>";
 		};
 		F5609CAA2502236400A13C15 /* NavigationController */ = {
@@ -1317,6 +1322,7 @@
 				F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */,
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
 				F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */,
+				F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
 				F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */,
