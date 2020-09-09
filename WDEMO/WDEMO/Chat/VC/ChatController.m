@@ -197,15 +197,15 @@
 
 - (void)inputControllerDidTouchFace:(InputController *)inputController {
     //键盘出现时，处理UI，人员列表
-    self.chatMemberListView.hidden = YES;
-    _messageController.hiddenHeader = YES;
+//    self.chatMemberListView.hidden = YES;
+//    _messageController.hiddenHeader = YES;
     
 }
 
 - (void)inputControllerDidTouchTextView:(InputController *)inputController {
     //键盘出现时，处理UI，人员列表
-    self.chatMemberListView.hidden = YES;
-    _messageController.hiddenHeader = YES;
+//    self.chatMemberListView.hidden = YES;
+//    _messageController.hiddenHeader = YES;
     
 }
 
@@ -217,8 +217,7 @@
 //- (void)didTapInMessageController:(ChatMessageController *)controller {
 - (void)didTapInMessageController:(MessageController *)controller {
     //键盘消失时，处理UI，人员列表
-    self.chatMemberListView.hidden = NO;
-    _messageController.hiddenHeader = NO;
+//    selfvvvController.hiddenHeader = NO;
     
     [_inputController reset];
 }

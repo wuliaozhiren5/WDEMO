@@ -124,20 +124,20 @@
 //   self.tableView.superview.layer.mask = nil;
 //}
 
--(void)setHiddenHeader:(BOOL)hiddenHeader {
-    _hiddenHeader = hiddenHeader;
-    if (!_hiddenHeader) {
-        UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 54)];
-        self.tableView.tableHeaderView = headerView;
-        //为了渐变图层
-//        [self addGradient];
-    } else {
-        UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
-        self.tableView.tableHeaderView = headerView;
-        //为了渐变图层
-//        [self removeGradient];
-    }
-}
+//-(void)setHiddenHeader:(BOOL)hiddenHeader {
+//    _hiddenHeader = hiddenHeader;
+//    if (!_hiddenHeader) {
+//        UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 54)];
+//        self.tableView.tableHeaderView = headerView;
+//        //为了渐变图层
+////        [self addGradient];
+//    } else {
+//        UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
+//        self.tableView.tableHeaderView = headerView;
+//        //为了渐变图层
+////        [self removeGradient];
+//    }
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _uiMsgs.count;

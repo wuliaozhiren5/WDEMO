@@ -38,7 +38,7 @@ typedef void(^ChatMessageDataModelClickNickName)(void);
 //@property (nonatomic, strong) NSMutableAttributedString *yyNickNameStr;
 @property (nonatomic, strong) NSMutableAttributedString *yyEnterStr;
 */
-
+- (NSAttributedString *)yyStringWithServerString:(NSString *)string;
 @end
 
 NS_ASSUME_NONNULL_END

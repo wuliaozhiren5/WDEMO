@@ -107,6 +107,11 @@
 		F5A9F13924E3D44B00F611E6 /* RRSeeLivingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13824E3D44A00F611E6 /* RRSeeLivingBaseCell.m */; };
 		F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */; };
 		F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B30F6524F8D3F8003DFB2E /* RAC.md */; };
+		F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A92F2508F502002505AE /* FullScreenMessageController.m */; };
+		F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9302508F502002505AE /* HalfScreenMessageController.m */; };
+		F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9372508F79A002505AE /* TipMessageDataModel.m */; };
+		F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */; };
+		F5B5A93E2508F7B5002505AE /* TextFaceMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93D2508F7B5002505AE /* TextFaceMessageDataModel.m */; };
 		F5C7261824E1258000B16639 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261724E1257F00B16639 /* ListModel.m */; };
 		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
 		F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */; };
@@ -376,6 +381,16 @@
 		F5A9F13A24E3EC2400F611E6 /* RRSeeLivingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRSeeLivingModel.h; sourceTree = "<group>"; };
 		F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRSeeLivingModel.m; sourceTree = "<group>"; };
 		F5B30F6524F8D3F8003DFB2E /* RAC.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RAC.md; sourceTree = "<group>"; };
+		F5B5A92E2508F501002505AE /* HalfScreenMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenMessageController.h; sourceTree = "<group>"; };
+		F5B5A92F2508F502002505AE /* FullScreenMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenMessageController.m; sourceTree = "<group>"; };
+		F5B5A9302508F502002505AE /* HalfScreenMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfScreenMessageController.m; sourceTree = "<group>"; };
+		F5B5A9312508F502002505AE /* FullScreenMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenMessageController.h; sourceTree = "<group>"; };
+		F5B5A9362508F79A002505AE /* TipMessageDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TipMessageDataModel.h; sourceTree = "<group>"; };
+		F5B5A9372508F79A002505AE /* TipMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipMessageDataModel.m; sourceTree = "<group>"; };
+		F5B5A9392508F7A6002505AE /* EnterMessageDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterMessageDataModel.h; sourceTree = "<group>"; };
+		F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterMessageDataModel.m; sourceTree = "<group>"; };
+		F5B5A93C2508F7B5002505AE /* TextFaceMessageDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFaceMessageDataModel.h; sourceTree = "<group>"; };
+		F5B5A93D2508F7B5002505AE /* TextFaceMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFaceMessageDataModel.m; sourceTree = "<group>"; };
 		F5C7261624E1257F00B16639 /* ListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
 		F5C7261724E1257F00B16639 /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		F5C7261924E1317B00B16639 /* ListModelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelCell.h; sourceTree = "<group>"; };
@@ -777,8 +792,6 @@
 				F57B529F24C7DECF00940696 /* ChatViewController.m */,
 				F57B52A124C7DF2700940696 /* ChatController.h */,
 				F57B52A224C7DF2700940696 /* ChatController.m */,
-				F5DEB32824CEBB66009A6767 /* MessageController.h */,
-				F5DEB32724CEBB66009A6767 /* MessageController.m */,
 				F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */,
 				F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */,
 				F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */,
@@ -828,6 +841,8 @@
 		F57B529D24C7DEB100940696 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F5B5A9352508F53D002505AE /* InputController */,
+				F5B5A9342508F509002505AE /* MessageController */,
 				F5DEB2A324CE76B6009A6767 /* Kit */,
 				F5DEB2A224CE7667009A6767 /* Model */,
 				F57B52AE24C7E86F00940696 /* Input */,
@@ -932,6 +947,26 @@
 			path = RACLogin;
 			sourceTree = "<group>";
 		};
+		F5B5A9342508F509002505AE /* MessageController */ = {
+			isa = PBXGroup;
+			children = (
+				F5DEB32824CEBB66009A6767 /* MessageController.h */,
+				F5DEB32724CEBB66009A6767 /* MessageController.m */,
+				F5B5A9312508F502002505AE /* FullScreenMessageController.h */,
+				F5B5A92F2508F502002505AE /* FullScreenMessageController.m */,
+				F5B5A92E2508F501002505AE /* HalfScreenMessageController.h */,
+				F5B5A9302508F502002505AE /* HalfScreenMessageController.m */,
+			);
+			path = MessageController;
+			sourceTree = "<group>";
+		};
+		F5B5A9352508F53D002505AE /* InputController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InputController;
+			sourceTree = "<group>";
+		};
 		F5C7261524E1252B00B16639 /* 列表Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1007,6 +1042,12 @@
 				F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */,
 				F5F4F10A24D4081A007DB7F3 /* ChatMessageYYDataModel.h */,
 				F5F4F10B24D4081A007DB7F3 /* ChatMessageYYDataModel.m */,
+				F5B5A9362508F79A002505AE /* TipMessageDataModel.h */,
+				F5B5A9372508F79A002505AE /* TipMessageDataModel.m */,
+				F5B5A9392508F7A6002505AE /* EnterMessageDataModel.h */,
+				F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */,
+				F5B5A93C2508F7B5002505AE /* TextFaceMessageDataModel.h */,
+				F5B5A93D2508F7B5002505AE /* TextFaceMessageDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1316,6 +1357,7 @@
 				F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */,
 				F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */,
 				F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */,
+				F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */,
 				F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */,
 				A459C29424C174A300A3B5FF /* Plist.m in Sources */,
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
@@ -1323,9 +1365,11 @@
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
 				F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */,
 				F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */,
+				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
 				F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */,
+				F5B5A93E2508F7B5002505AE /* TextFaceMessageDataModel.m in Sources */,
 				A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */,
 				F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */,
 				F5F3664924C8287C008BA221 /* ChatKit.m in Sources */,
@@ -1383,6 +1427,7 @@
 				F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */,
 				F5609C9F250216BE00A13C15 /* RegisterSetPasswordVC.m in Sources */,
 				F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */,
+				F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
@@ -1403,6 +1448,7 @@
 				F553E17B24CA86FC00DA5625 /* UIImage+ChatKit..m in Sources */,
 				F5CE3D2324E6901800B20C80 /* RRDestroyAccountAgreenmentViewController.m in Sources */,
 				F5A8898B24F6074A00DB73ED /* OrderModel.m in Sources */,
+				F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */,
 				F5CE3D2224E6901800B20C80 /* RRDestroyAccountReasonCell.m in Sources */,
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,

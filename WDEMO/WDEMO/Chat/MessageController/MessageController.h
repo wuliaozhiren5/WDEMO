@@ -68,8 +68,14 @@
  */
 @property (nonatomic, weak) id<TMessageControllerDelegate> delegate;
 
-//显示隐藏header
-@property (nonatomic, assign) BOOL hiddenHeader;
+////显示隐藏header
+//@property (nonatomic, assign) BOOL hiddenHeader;
+
+//全屏半屏
+@property (nonatomic, assign) BOOL isFull;
+
+//全屏半屏Cell的宽高
+@property (nonatomic, assign) CGFloat messageListCellWidth;
 
 /**
  *  发送消息
