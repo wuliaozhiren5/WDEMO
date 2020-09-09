@@ -28,17 +28,22 @@
 #define  MessageViewColor  RGBA(0, 0, 0, 0.7)
 //inputview背景色
 #define  InputBarBackgroundColor RGB(33, 33, 33)
+//假的输入框背景色
+#define  NoInputBarTextViewColor  RGBA(255, 255, 255, 0.1)
 //输入框背景色
-#define  InputBarTextViewColor  RGBA(255, 255, 255, 0.1)
+#define  InputBarTextViewColor  RGBA(46, 46, 46, 1.0)
 //输入框默认文字
-#define  InputBarTextColor  RGBA(255, 255, 255, 0.35)
+#define  NOInputBarTextColor  RGBA(255, 255, 255, 0.35)
+//输入框默认文字
+#define  InputBarTextColor  RGBA(97, 100, 102, 1.0)
+ 
 
 //face发送按钮 文字颜色
-#define  FaceButtonTextNoAvailable  RGB(46, 46, 46)
+#define  FaceButtonTextNoAvailable  RGB(65, 65, 65)
 #define  FaceButtonTextAvailable  RGB(255, 255, 255)
  
 //face发送按钮 背景颜色
-#define  FaceButtonBackGroundNoAvailable  RGBA(65, 65, 65, 0.9)
+#define  FaceButtonBackGroundNoAvailable  RGB(46, 46, 46)
 #define  FaceButtonBackGroundAvailable    RGB(0, 187, 255)
 
 //公告气泡
@@ -73,204 +78,57 @@
 #define TTextMessageCell_Height_Min (TMessageCell_Head_Size.height + 2 * TMessageCell_Padding)
 #define TTextMessageCell_Text_PADDING (160)
 //#define TTextMessageCell_Text_Width_Max (Screen_Width - TTextMessageCell_Text_PADDING)
-#define TTextMessageCell_Text_Width_Max (Screen_Width - 12 * 2 - 9 * 2)
+//#define TTextMessageCell_Text_Width_Max (Screen_Width - 12 * 2 - 9 * 2)
+//右边间距132px/2（跟放映厅共用一个组件的话，右边为其他功能预留区域）
+//#define TTextMessageCell_Text_Width_Max (Screen_Width - 15 - 9 * 2 - 132 / 2)
+//全屏/半屏 分别的宽度
+#define TTextMessageCell_Text_Width_Max      (Screen_Width - 15 - 9 * 2 - 132 / 2)
+//全屏/半屏 分别的宽度
+//半屏时候Screen_Width会变化,要获取最短的一条边,所以不能使用(Screen_Width - 15 - 9 * 2 - 132 / 2)
+#define TTextMessageCell_Text_Width_Max_Half_NEW(width) (width - 15 - 9 * 2 - 132 / 2)
+#define TTextMessageCell_Text_Width_Max_Full_NEW(width) (width - 15 * 2 - 9 * 2)
+
+//气泡和左边的边距
+#define TTextMessageCell_Bubble_LeftMargin 15
+//气泡和上边的边距
+#define TTextMessageCell_Bubble_TopMargin  6
+//文字和气泡的边距
+#define TTextMessageCell_BubbleText_Margin  9
 
 #define TTextMessageCell_Margin 12
-
-//system cell
-#define TSystemMessageCell_ReuseId @"TSystemMessageCell"
-#define TSystemMessageCell_Text_Width_Max (Screen_Width * 0.5)
-#define TSystemMessageCell_Margin 5
-
-//joinGroup cell 继承自 system cell
-#define TJoinGroupMessageCell_ReuseId @"TJoinGroupMessageCell"
-#define TJoinGroupMessageCell_Text_Width_Max (Screen_Width * 0.5)
-#define TJoinGroupMessageCell_Margin 5
-
-//image cell
-#define TImageMessageCell_ReuseId @"TImageMessageCell"
-#define TImageMessageCell_Image_Width_Max (Screen_Width * 0.4)
-#define TImageMessageCell_Image_Height_Max TImageMessageCell_Image_Width_Max
-#define TImageMessageCell_Margin_2 8
-#define TImageMessageCell_Margin_1 16
-#define TImageMessageCell_Progress_Color  RGBA(0, 0, 0, 0.5)
-
-//face cell
-#define TFaceMessageCell_ReuseId @"TFaceMessageCell"
-#define TFaceMessageCell_Image_Width_Max (Screen_Width * 0.25)
-#define TFaceMessageCell_Image_Height_Max TFaceMessageCell_Image_Width_Max
-#define TFaceMessageCell_Margin 16
-
-//file cell
-#define TFileMessageCell_ReuseId @"TFileMessageCell"
-#define TFileMessageCell_Container_Size CGSizeMake((Screen_Width * 0.5), (Screen_Width * 0.15))
-#define TFileMessageCell_Margin 10
-#define TFileMessageCell_Progress_Color  RGBA(0, 0, 0, 0.5)
-
-//video cell
-#define TVideoMessageCell_ReuseId @"TVideoMessageCell"
-#define TVideoMessageCell_Image_Width_Max (Screen_Width * 0.4)
-#define TVideoMessageCell_Image_Height_Max TVideoMessageCell_Image_Width_Max
-#define TVideoMessageCell_Margin_3 4
-#define TVideoMessageCell_Margin_2 8
-#define TVideoMessageCell_Margin_1 16
-#define TVideoMessageCell_Play_Size CGSizeMake(35, 35)
-#define TVideoMessageCell_Progress_Color  RGBA(0, 0, 0, 0.5)
-
-//voice cell
-#define TVoiceMessageCell_ReuseId @"TVoiceMessaageCell"
-#define TVoiceMessageCell_Max_Duration 60.0
-#define TVoiceMessageCell_Height TMessageCell_Head_Size.height
-#define TVoiceMessageCell_Margin 12
-#define TVoiceMessageCell_Back_Width_Max (Screen_Width * 0.4)
-#define TVoiceMessageCell_Back_Width_Min 60
-#define TVoiceMessageCell_Duration_Size CGSizeMake(33, 33)
-
-//text view
-#define TTextView_Height (49)
-#define TTextView_Button_Size CGSizeMake(30, 30)
-#define TTextView_Margin 6
-#define TTextView_TextView_Height_Min (TTextView_Height - 2 * TTextView_Margin)
-#define TTextView_TextView_Height_Max 80
-
-//face view
-#define TFaceView_Height 180
-#define TFaceView_Margin 12
-#define TFaceView_Page_Padding 20
-#define TFaceView_Page_Height 30
-
-//menu view
-#define TMenuView_Send_Color RGBA(87, 190, 105, 1.0)
-#define TMenuView_Margin 6
-#define TMenuView_Menu_Height 40
-
-//more view
-#define TMoreView_Column_Count 4
-#define TMoreView_Section_Padding 30
-#define TMoreView_Margin 10
-#define TMoreView_Page_Height 30
-
-//menu item cell
-#define TMenuCell_ReuseId @"TMenuCell"
-#define TMenuCell_Margin 6
-#define TMenuCell_Line_ReuseId @"TMenuLineCell"
-#define TMenuCell_Background_Color  RGBA(246, 246, 246, 1.0)
-#define TMenuCell_Background_Color_Dark  RGBA(30, 30, 30, 1.0)
-#define TMenuCell_Selected_Background_Color  RGBA(255, 255, 255, 1.0)
-#define TMenuCell_Selected_Background_Color_Dark  RGBA(41, 41, 41, 1.0)
-
-//more item cell
-#define TMoreCell_ReuseId @"TMoreCell"
-#define TMoreCell_Margin 5
-#define TMoreCell_Image_Size CGSizeMake(70, 70)
-#define TMoreCell_Title_Height 20
-
+ 
 //face item cell
 #define TFaceCell_ReuseId @"TFaceCell"
 
-//group member cell
-#define TGroupMemberCell_ReuseId @"TGroupMemberCell"
-#define TGroupMemberCell_Margin 5
-#define TGroupMemberCell_Head_Size CGSizeMake(60, 60)
-#define TGroupMemberCell_Name_Height 20
+//text view
+#define TTextView_Height (51)
+#define TTextView_Button_Size CGSizeMake(30, 30)
+#define TTextView_Margin 9
+#define TTextView_TextView_Height_Min (TTextView_Height - 2 * TTextView_Margin)
+#define TTextView_TextView_Height_Max 80
 
-//conversation cell
-#define TConversationCell_Height 72
-#define TConversationCell_Margin 12
-#define TConversationCell_Margin_Text 14
+#define TTextView_LeftMargin 11
+#define TTextView_RightMargin 15
+//#define TTextView_MidMargin 4
 
-//pop view
-#define TPopView_Arrow_Size CGSizeMake(15, 10)
-#define TPopView_Background_Color RGBA(188, 188, 188, 0.5)
-#define TPopView_Background_Color_Dark RGBA(76, 76, 76, 0.5)
+#define NoTTextView_LeftMargin 11
+#define NoTTextView_MidMargin 4
 
-//pop cell
-#define TPopCell_ReuseId @"TPopCell"
-#define TPopCell_Height 45
-#define TPopCell_Margin 18
-#define TPopCell_Padding 12
+//face view
+#define TFaceView_Height 195
+#define TFaceView_Margin 12
+#define TFaceView_Page_Padding 20
+#define TFaceView_Page_Height 30
+ 
+#define TFaceView_Page_TopPadding 21
+#define TFaceView_Page_LeftPadding 15
+#define TFaceView_Page_BottomPadding 15
+#define TFaceView_LineSpacing 21
+#define TFaceView_InteritemSpacing 21
 
-//unRead
-#define TUnReadView_Margin_TB 2
-#define TUnReadView_Margin_LR 4
 
 //message controller
 #define TMessageController_Header_Height 40
-
-//members controller
-#define TGroupMembersController_Margin 20
-#define TGroupMembersController_Row_Count 5
-
-//add c2c controller
-#define TAddC2CController_Margin 10
-
-//add group controller
-#define TAddGroupController_Margin 15
-
-//add member controller
-#define TAddMemberController_Margin 15
-
-//delete member controller
-#define TDeleteMemberController_Margin 15
-
-
-//add collection cell
-#define TAddCollectionCell_ReuseId @"TAddCollectionCell"
-#define TAddCollectionCell_Margin 10
-#define TAddCollectionCell_Size CGSizeMake(33, 33)
-
-//add cell
-#define TAddCell_ReuseId @"TAddCell"
-#define TAddCell_Height 55
-#define TAddCell_Margin 10
-#define TAddCell_Select_Size CGSizeMake(25, 25)
-#define TAddCell_Head_Size CGSizeMake(38, 38)
-
-//modify view
-#define TModifyView_Background_Color RGBA(188, 188, 188, 0.5)
-#define TModifyView_Background_Color_Dark RGBA(76, 76, 76, 0.5)
-#define TModifyView_Confirm_Color RGBA(44, 145, 247, 1.0)
-
-//record
-#define Record_Background_Color RGBA(0, 0, 0, 0.6)
-#define Record_Background_Size CGSizeMake(Screen_Width * 0.4, Screen_Width * 0.4)
-#define Record_Title_Height 30
-#define Record_Title_Background_Color RGBA(186, 60, 65, 1.0)
-#define Record_Margin 8
-
-//key value cell
-#define TKeyValueCell_ReuseId @"TKeyValueCell"
-#define TKeyValueCell_Indicator_Size CGSizeMake(15, 15)
-#define TKeyValueCell_Margin 10
-#define TKeyValueCell_Height 50
-
-//button cell
-#define TButtonCell_ReuseId @"TButtonCell"
-#define TButtonCell_Height 60
-#define TButtonCell_Margin 12
-
-//switch cell
-#define TSwitchCell_ReuseId @"TSwitchCell"
-#define TSwitchCell_Height 50
-#define TSwitchCell_Margin 10
-
-//personal common cell
-#define TPersonalCommonCell_Image_Size CGSizeMake(80, 80)
-#define TPersonalCommonCell_Margin 10
-#define TPersonalCommonCell_Indicator_Size CGSizeMake(15, 15)
-
-//group common cell
-#define TGroupCommonCell_ReuseId @"TGroupCommonCell"
-#define TGroupCommonCell_Image_Size CGSizeMake(80, 80)
-#define TGroupCommonCell_Margin 10
-#define TGroupCommonCell_Indicator_Size CGSizeMake(15, 15)
-
-//gropu member cell
-#define TGroupMembersCell_ReuseId @"TGroupMembersCell"
-#define TGroupMembersCell_Column_Count 5
-#define TGroupMembersCell_Row_Count 2
-#define TGroupMembersCell_Margin 10
-#define TGroupMembersCell_Image_Size CGSizeMake(60, 60)
 
 //navigationbar indicator view
 #define TNaviBarIndicatorView_Margin 5
@@ -315,9 +173,7 @@
 #define ChatKitResource(name) [[NSBundle mainBundle] pathForResource:@"ChatKitResource" ofType:@"bundle"] == nil ? ([[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent: @"Frameworks/TXIMSDK_TUIKit_iOS.framework/ChatKitResource.bundle"] stringByAppendingPathComponent:name]) : ([[[NSBundle mainBundle] pathForResource:@"ChatKitResource" ofType:@"bundle"] stringByAppendingPathComponent:name])
 //#define ChatKitResource(name) name
 //#define ChatKitFace(name) name
-
-
-
+ 
 // rich
 #define kDefaultRichCellHeight 50
 #define kDefaultRichCellMargin 8
@@ -325,4 +181,12 @@
 #define kRichCellValueColor [UIColor grayColor]
 #define kRichCellTextFont      [UIFont systemFontOfSize:14]
 
+ 
+//全屏聊天的宽
+#define FullScreenChatViewWidth      270
+//半屏聊天的宽
+#define HalfScreenChatViewWidth     [UIScreen mainScreen].bounds.size.width
+
+#define ChatViewWidth               Screen_Width < Screen_Height ? [UIScreen mainScreen].bounds.size.width : 270
+ 
 #endif /* ChatHeader_h */

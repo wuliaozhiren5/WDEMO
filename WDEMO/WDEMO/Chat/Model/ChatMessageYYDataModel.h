@@ -15,7 +15,7 @@ typedef void(^ChatMessageDataModelClickNickName)(void);
 
 @interface ChatMessageYYDataModel : ChatMessageDataModel
 
-@property (nonatomic, strong) NSAttributedString *yyAttributedString;
+@property (nonatomic, strong) NSMutableAttributedString *yyAttributedString;
 
 @property (nonatomic, strong) YYTextLayout *layout;
 
@@ -38,7 +38,7 @@ typedef void(^ChatMessageDataModelClickNickName)(void);
 //@property (nonatomic, strong) NSMutableAttributedString *yyNickNameStr;
 @property (nonatomic, strong) NSMutableAttributedString *yyEnterStr;
 */
-- (NSAttributedString *)yyStringWithServerString:(NSString *)string;
+- (NSMutableAttributedString *)yyStringWithServerString:(NSString *)string;
 @end
 
 NS_ASSUME_NONNULL_END

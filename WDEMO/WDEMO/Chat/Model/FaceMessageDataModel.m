@@ -1,19 +1,24 @@
 //
-//  TextFaceMessageDataModel.m
+//  FaceMessageDataModel.m
 //  WDEMO
 //
 //  Created by rrtv on 2020/9/9.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import "TextFaceMessageDataModel.h"
+#import "FaceMessageDataModel.h"
 
-@implementation TextFaceMessageDataModel
-- (NSAttributedString *)yyFaceWithServerString:(NSString *)string {
+@implementation FaceMessageDataModel
+
+- (NSMutableAttributedString *)yyStringWithServerString:(NSString *)string{
+    return [self yyFaceWithServerString:self.content];;
+}
+
+- (NSMutableAttributedString *)yyFaceWithServerString:(NSString *)string {
     
     UIFont *font = [UIFont systemFontOfSize:15];
     CGFloat lineSpacing = 8.0;
-
+    
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:string];
     
     NSString *pattern = @"\\[[^\\[|^\\]]+\\]";
@@ -72,7 +77,7 @@
     //nikename
     UIFont *namefont = [UIFont systemFontOfSize:12];
     //nickname
-    NSString *name = @"用户冲冲冲:";
+    NSString *name = @"用户300冲冲冲";
     //    NSString *name = self.sender.nickName;
     NSMutableAttributedString *nameStr = [[NSMutableAttributedString alloc] initWithString:name];
     nameStr.lineSpacing = lineSpacing;
@@ -82,7 +87,7 @@
     
     __weak __typeof(self) ws = self;;
     [nameStr setTextHighlightRange:nameStr.rangeOfAll
-                             color:[UIColor redColor]//RGBA(84, 84, 84, 1)
+                             color:ChatNameColor//RGBA(84, 84, 84, 1)
                    backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.220]
                          tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
         //自定义代码，此处根据需要调整

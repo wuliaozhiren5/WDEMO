@@ -10,10 +10,13 @@
 
 @implementation ChatMessageYYDataModel
 
-- (NSAttributedString *)yyAttributedString {
+- (NSMutableAttributedString *)yyAttributedString {
     if (!_yyAttributedString) {
+        
+         _yyAttributedString = [self yyStringWithServerString:self.content];
+        
         //表情
-        _yyAttributedString = [self yyFaceWithServerString:self.content];
+//        _yyAttributedString = [self yyFaceWithServerString:self.content];
         //公告
         //        _yyAttributedString = [self yyTipMessageWithString:self.content];
         //进入房间
@@ -23,11 +26,11 @@
     return _yyAttributedString;
 }
 
-- (NSAttributedString *)yyStringWithServerString:(NSString *)string{
-    return [[NSMutableAttributedString alloc]initWithString:@""];
+- (NSMutableAttributedString *)yyStringWithServerString:(NSString *)string{
+    return [[NSMutableAttributedString alloc]initWithString:string];
 }
 
-- (NSAttributedString *)yyFaceWithServerString:(NSString *)string {
+- (NSMutableAttributedString *)yyFaceWithServerString:(NSString *)string {
     
     UIFont *font = [UIFont systemFontOfSize:15];
     CGFloat lineSpacing = 8.0;

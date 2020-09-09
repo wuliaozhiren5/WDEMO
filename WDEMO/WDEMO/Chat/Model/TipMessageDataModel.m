@@ -10,12 +10,15 @@
 
 @implementation TipMessageDataModel
 
+- (NSMutableAttributedString *)yyStringWithServerString:(NSString *)string{
+    return [self yyTipMessageWithString:self.content];;
+}
 
-- (NSAttributedString *)yyTipMessageWithString:(NSString *)string {
+- (NSMutableAttributedString *)yyTipMessageWithString:(NSString *)string {
     
     UIFont *font = [UIFont systemFontOfSize:12];
     CGFloat lineSpacing = 6.0;
-
+    
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:string];
     //设置行间距
     attributedString.lineSpacing = lineSpacing;
@@ -27,7 +30,7 @@
     
     return attributedString;
 }
- 
+
 //- (CGSize)contentSize {
 //    
 //    //    CGRect rect = [self.attributedString boundingRectWithSize:CGSizeMake(TTextMessageCell_Text_Width_Max, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];

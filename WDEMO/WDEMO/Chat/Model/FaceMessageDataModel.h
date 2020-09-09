@@ -1,5 +1,5 @@
 //
-//  TextFaceMessageDataModel.h
+//  FaceMessageDataModel.h
 //  WDEMO
 //
 //  Created by rrtv on 2020/9/9.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TextFaceMessageDataModel : ChatMessageYYDataModel
+@interface FaceMessageDataModel : ChatMessageYYDataModel
 
 @end
 

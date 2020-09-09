@@ -12,6 +12,7 @@
  ******************************************************************************/
 #import <UIKit/UIKit.h>
 #import "ChatMessageDataModel.h"
+#import "ChatHeader.h"
 
 @class MessageController;
 
@@ -59,10 +60,9 @@
  *  同时本类提供了图像、视频、文件信息的发送功能，直接整合调用了 IM SDK 实现发送功能。
  */
 
-@interface MessageController : UITableViewController
-//为了渐变图层
-//@interface MessageController : UIViewController<UITableViewDelegate, UITableViewDataSource>
-//@property (nonatomic, strong) UITableView *tableView;
+@interface MessageController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, strong) UITableView *tableView;
 /**
  *  执行 TMessageControllerDelegate 协议的委托
  */
@@ -86,4 +86,6 @@
 - (void)sendMessage:(ChatMessageDataModel *)msg;
 
 - (void)scrollToBottom:(BOOL)animate;
+
+- (void)setupViews;
 @end

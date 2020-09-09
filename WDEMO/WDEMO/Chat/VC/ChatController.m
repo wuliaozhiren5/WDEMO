@@ -11,6 +11,9 @@
 #import "ChatMessageDataModel.h"
 #import "ChatMemberListView.h"
 #import "ChatMessageYYDataModel.h"
+#import "EnterMessageDataModel.h"
+#import "TipMessageDataModel.h"
+#import "FaceMessageDataModel.h"
 
 @interface ChatController () <TInputControllerDelegate, TMessageControllerDelegate>
 
@@ -80,6 +83,23 @@
     [self creatInputController];
     //人员列表
     [self creatChatMemberListView];
+    //
+    [self createChatData];
+
+}
+
+- (void)createChatData {
+     
+    TipMessageDataModel *tipMsgModel = [[TipMessageDataModel alloc]init];
+    tipMsgModel.content = @"欢迎和更多的人一起看剧聊剧！畅所欲言！看剧期间严禁出现违法违规、低俗色情、人身攻击，谈论政治等内容。发布违规言论会在当前直播间被永久禁言，请文明发言哦～";
+    tipMsgModel.type = ChatMessageTypeTip;
+    [_messageController sendMessage:tipMsgModel];
+    
+    EnterMessageDataModel *enterMsgModel = [[EnterMessageDataModel alloc]init];
+//    enterMsgModel.content = @"一起来看剧啦";
+    enterMsgModel.type = ChatMessageTypeEnter;
+    [_messageController sendMessage:enterMsgModel];
+
     
 }
 
@@ -185,10 +205,21 @@
     //直接发送系统样式
     //    [_messageController sendMessage:msg];
     
+//    //    直接发送yytext样式
+//    ChatMessageYYDataModel *msgModel = [[ChatMessageYYDataModel alloc]init];
+//    msgModel.content = msg.content;
+//    [_messageController sendMessage:msgModel];
+    
+    
     //    直接发送yytext样式
-    ChatMessageYYDataModel *msgModel = [[ChatMessageYYDataModel alloc]init];
-    msgModel.content = msg.content;
-    [_messageController sendMessage:msgModel];
+    FaceMessageDataModel *faceMsgModel = [[FaceMessageDataModel alloc]init];
+    faceMsgModel.content = msg.content;
+    faceMsgModel.type = ChatMessageTypeFace;
+    [_messageController sendMessage:faceMsgModel];
+    
+  
+    
+
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {
         [self.delegate chatController:self didSendMessage:msg];

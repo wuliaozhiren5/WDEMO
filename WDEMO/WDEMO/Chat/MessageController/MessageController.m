@@ -21,33 +21,17 @@
 
 @property (nonatomic, strong) NSMutableArray *uiMsgs;
 @property (nonatomic, strong) NSMutableArray *heightCache;
-//为了渐变图层
-//渐变效果
-@property (nonatomic, strong) CAGradientLayer *gradient;
+
 @end
 
 @implementation MessageController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(TResponderTextViewboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-    
+    self.isFull = NO;
+    self.messageListCellWidth = HalfScreenChatViewWidth;
     [self setupViews];
 }
-
-//- (void)keyboardWillHide:(NSNotification *)notification {
-//    self.chatMemberListView.hidden = NO;
-//}
-//
-//- (void)keyboardWillShow:(NSNotification *)notification {
-//    self.chatMemberListView.hidden = YES;
-//}
-//
-//- (void)keyboardWillChangeFrame:(NSNotification *)notification {
-//}
 
 - (void)dealloc {
     //    [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -62,82 +46,35 @@
 }
 
 - (void)setupViews {
-    
     //点击退出编辑模式
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapViewController)];
     tap.delegate = self;
     [self.view addGestureRecognizer:tap];
     
-    //为了渐变图层
-//    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
-//    self.tableView.dataSource = self;
-//    self.tableView.delegate = self;
-//    [self.view addSubview:self.tableView];
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self.view);
-//    }];
-    
+    self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+
     self.tableView.estimatedRowHeight = 0;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.backgroundColor = [UIColor clearColor];
-//    self.tableView.backgroundColor = MessageViewColor;
+
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }
     
     [self.tableView registerClass:[ChatMessageCell class] forCellReuseIdentifier:ChatMessageCell_ReuseId];
     [self.tableView registerClass:[TipMessageCell class] forCellReuseIdentifier:TipMessageCell_ReuseId];
     [self.tableView registerClass:[FaceMessageCell class] forCellReuseIdentifier:FaceMessageCell_ReuseId];
     [self.tableView registerClass:[EnterMessageCell class] forCellReuseIdentifier:EnterMessageCell_ReuseId];
     
-    UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 54)];
-    self.tableView.tableHeaderView = headerView;
-    
-    UIView *footerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 24)];
-    self.tableView.tableFooterView = footerView;
-    
     _heightCache = [NSMutableArray array];
     _uiMsgs = [[NSMutableArray alloc] init];
-
-    //为了渐变图层
-    //[self creatColorView];
-
 }
-
-//为了渐变图层
-//- (void)creatColorView {
-//    CGFloat startPoint = 60.0 / self.tableView.superview.bounds.size.height;
-//    CGFloat endPoint = 120 / self.tableView.superview.bounds.size.height;
-//    //渐变背景
-//    CAGradientLayer *gradient = [CAGradientLayer layer];
-//    gradient.frame = self.tableView.superview.bounds;
-//    gradient.colors = @[(id)[UIColor clearColor].CGColor,(id)[UIColor blackColor].CGColor];
-//    gradient.startPoint = CGPointMake(0, startPoint);
-//    gradient.endPoint = CGPointMake(0, endPoint);
-//    _gradient = gradient;
-//
-//    [self addGradient];
-//}
-//
-//- (void)addGradient {
-//   self.tableView.superview.layer.mask = _gradient;
-//}
-//
-//- (void)removeGradient {
-//   self.tableView.superview.layer.mask = nil;
-//}
-
-//-(void)setHiddenHeader:(BOOL)hiddenHeader {
-//    _hiddenHeader = hiddenHeader;
-//    if (!_hiddenHeader) {
-//        UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 54)];
-//        self.tableView.tableHeaderView = headerView;
-//        //为了渐变图层
-////        [self addGradient];
-//    } else {
-//        UIView *headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 0, 0)];
-//        self.tableView.tableHeaderView = headerView;
-//        //为了渐变图层
-////        [self removeGradient];
-//    }
-//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return _uiMsgs.count;
@@ -156,10 +93,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  
     ChatMessageDataModel *data = _uiMsgs[indexPath.row];
     ChatMessageCell *messageCell = nil;
-    
-    data.type = ChatMessageTypeTextFace;
+    data.type = ChatMessageTypeFace;
 //    data.type = ChatMessageTypeTip;
 //        data.type = ChatMessageTypeEnter;
     
@@ -168,7 +105,7 @@
         case ChatMessageTypeTip:
             reuseId = TipMessageCell_ReuseId;
             break;
-        case ChatMessageTypeTextFace:
+        case ChatMessageTypeFace:
             reuseId = FaceMessageCell_ReuseId;
             break;
         case ChatMessageTypeEnter:
@@ -178,12 +115,11 @@
             reuseId = ChatMessageCell_ReuseId;
             break;
     }
-    
-  
+     
     messageCell =(ChatMessageCell *)[tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     messageCell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    if ([data isMemberOfClass:NSClassFromString(@"ChatMessageYYDataModel")]) {
+//    if ([data isMemberOfClass:NSClassFromString(@"ChatMessageYYDataModel")]) {
         
         ChatMessageYYDataModel *cellData = (ChatMessageYYDataModel *)data;
         [messageCell fillWithYYData:cellData];
@@ -198,19 +134,21 @@
 //            [ws didSelectUserNickName:user];
 //        };
         
-    } else if ([data isMemberOfClass:NSClassFromString(@"ChatMessageDataModel")]) {
-        [messageCell fillWithData:data];
-    }else {
-        
-    }
+//    } else if ([data isMemberOfClass:NSClassFromString(@"ChatMessageDataModel")]) {
+//        [messageCell fillWithData:data];
+//    }else {
+//
+//    }
     
     return messageCell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
 }
 
+//- (void)didSelectUserNickName:(RRIMUser *)user{
+//    NSLog(@"点击了用户昵称:YYLabel");
+//}
 - (void)scrollToBottom:(BOOL)animate {
     if (_uiMsgs.count > 0) {
         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animate];

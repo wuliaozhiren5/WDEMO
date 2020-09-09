@@ -10,24 +10,28 @@
 
 @implementation EnterMessageDataModel
 
-- (NSAttributedString *)yyEnterMessageWithString:(NSString *)string {
+- (NSMutableAttributedString *)yyStringWithServerString:(NSString *)string{
+    return [self yyEnterMessageWithString:self.content];;
+}
+
+- (NSMutableAttributedString *)yyEnterMessageWithString:(NSString *)string {
     
     //nikename
     UIFont *namefont = [UIFont systemFontOfSize:12];
     CGFloat lineSpacing = 6.0;
-
+    
     //nickname
-    NSString *name = @"用户冲冲冲";
+    NSString *name = @"用户300冲冲冲";
     //    NSString *name = self.sender.nickName;
     NSMutableAttributedString *nameStr = [[NSMutableAttributedString alloc] initWithString:name];
     nameStr.lineSpacing = lineSpacing;
     nameStr.lineBreakMode = NSLineBreakByCharWrapping;
     nameStr.font = namefont;
-    nameStr.color = [UIColor redColor];
+    nameStr.color = ChatTextColor;
     
     __weak __typeof(self) ws = self;;
     [nameStr setTextHighlightRange:nameStr.rangeOfAll
-                             color:[UIColor redColor]//RGBA(84, 84, 84, 1)
+                             color:ChatTextColor//RGBA(84, 84, 84, 1)
                    backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.220]
                          tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
         //自定义代码，此处根据需要调整
@@ -37,12 +41,12 @@
         }
     }];
     
-    NSString *enter = @"一起来看剧啦";
+    NSString *enter = string ? string :@"一起来看剧啦";
     NSMutableAttributedString *enterStr = [[NSMutableAttributedString alloc] initWithString:enter];
     enterStr.lineSpacing = lineSpacing;
     enterStr.lineBreakMode = NSLineBreakByCharWrapping;
     enterStr.font = namefont;
-    enterStr.color = EnterUserContenTextColor;
+    enterStr.color = ChatNameColor;
     
     //最后结果str
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc]initWithString:@""];
@@ -52,9 +56,7 @@
     
     [attrStr appendAttributedString:nameStr];
     [attrStr appendAttributedString:enterStr];
-    
-    //    self.yyNameStr = nameStr;
-    
+
     return attrStr;
 }
 

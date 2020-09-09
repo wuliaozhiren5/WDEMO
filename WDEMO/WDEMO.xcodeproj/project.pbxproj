@@ -111,7 +111,7 @@
 		F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9302508F502002505AE /* HalfScreenMessageController.m */; };
 		F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9372508F79A002505AE /* TipMessageDataModel.m */; };
 		F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */; };
-		F5B5A93E2508F7B5002505AE /* TextFaceMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93D2508F7B5002505AE /* TextFaceMessageDataModel.m */; };
+		F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */; };
 		F5C7261824E1258000B16639 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261724E1257F00B16639 /* ListModel.m */; };
 		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
 		F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */; };
@@ -389,8 +389,8 @@
 		F5B5A9372508F79A002505AE /* TipMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipMessageDataModel.m; sourceTree = "<group>"; };
 		F5B5A9392508F7A6002505AE /* EnterMessageDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterMessageDataModel.h; sourceTree = "<group>"; };
 		F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterMessageDataModel.m; sourceTree = "<group>"; };
-		F5B5A93C2508F7B5002505AE /* TextFaceMessageDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TextFaceMessageDataModel.h; sourceTree = "<group>"; };
-		F5B5A93D2508F7B5002505AE /* TextFaceMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TextFaceMessageDataModel.m; sourceTree = "<group>"; };
+		F5B5A93C2508F7B5002505AE /* FaceMessageDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageDataModel.h; sourceTree = "<group>"; };
+		F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageDataModel.m; sourceTree = "<group>"; };
 		F5C7261624E1257F00B16639 /* ListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
 		F5C7261724E1257F00B16639 /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		F5C7261924E1317B00B16639 /* ListModelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelCell.h; sourceTree = "<group>"; };
@@ -1046,8 +1046,8 @@
 				F5B5A9372508F79A002505AE /* TipMessageDataModel.m */,
 				F5B5A9392508F7A6002505AE /* EnterMessageDataModel.h */,
 				F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */,
-				F5B5A93C2508F7B5002505AE /* TextFaceMessageDataModel.h */,
-				F5B5A93D2508F7B5002505AE /* TextFaceMessageDataModel.m */,
+				F5B5A93C2508F7B5002505AE /* FaceMessageDataModel.h */,
+				F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1369,7 +1369,7 @@
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
 				F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */,
-				F5B5A93E2508F7B5002505AE /* TextFaceMessageDataModel.m in Sources */,
+				F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */,
 				A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */,
 				F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */,
 				F5F3664924C8287C008BA221 /* ChatKit.m in Sources */,
