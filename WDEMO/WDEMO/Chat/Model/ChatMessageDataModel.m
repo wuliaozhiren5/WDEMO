@@ -167,8 +167,7 @@
     _bubbleSize = CGSizeMake(size.width + 9 * 2  , size.height + 9 * 2  );
     _textSize = CGSizeMake(size.width , size.height);
     
-    size = CGSizeMake(rect.size.width + 12 * 2 + 9 * 2, rect.size.height + 6 * 2 + 9 * 2 );
-    
+    size = CGSizeMake(rect.size.width + 12 * 2 + 9 * 2, rect.size.height + 6 * 2 + 9 * 2 ); 
     return size;
 }
 

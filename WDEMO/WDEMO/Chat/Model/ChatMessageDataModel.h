@@ -54,7 +54,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign)CGSize textSize;
 @property (nonatomic, assign)CGSize bubbleSize;
 
-
+//计算高度
+- (CGFloat)heightOfWidth:(CGFloat)width;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -22,6 +22,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIImageView *bubbleView;
 
+@property (nonatomic, assign) CGFloat cellWidth;
+
 - (void)fillWithData:(ChatMessageDataModel *)data;
 - (void)fillWithYYData:(ChatMessageYYDataModel *)data;
 @end

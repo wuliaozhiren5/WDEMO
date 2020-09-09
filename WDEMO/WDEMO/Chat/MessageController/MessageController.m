@@ -58,11 +58,11 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
-
+    
     self.tableView.estimatedRowHeight = 0;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     self.tableView.backgroundColor = [UIColor clearColor];
-
+    
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
@@ -87,18 +87,23 @@
     }
     ChatMessageDataModel *data = _uiMsgs[indexPath.row];
     //    height = [data heightOfWidth:Screen_Width];
-    height = data.contentSize.height;
+    //    height = data.contentSize.height;
+    if (_isFull) {
+        height = [data heightOfWidth:TTextMessageCell_Text_Width_Max_Full_NEW(self.messageListCellWidth)];
+    } else {
+        height = [data heightOfWidth:TTextMessageCell_Text_Width_Max_Half_NEW(self.messageListCellWidth)];
+    }
     [_heightCache insertObject:[NSNumber numberWithFloat:height] atIndex:indexPath.row];
     return height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  
+    
     ChatMessageDataModel *data = _uiMsgs[indexPath.row];
     ChatMessageCell *messageCell = nil;
     data.type = ChatMessageTypeFace;
-//    data.type = ChatMessageTypeTip;
-//        data.type = ChatMessageTypeEnter;
+    //    data.type = ChatMessageTypeTip;
+    //        data.type = ChatMessageTypeEnter;
     
     NSString *reuseId = nil;
     switch (data.type) {
@@ -115,30 +120,35 @@
             reuseId = ChatMessageCell_ReuseId;
             break;
     }
-     
+    
     messageCell =(ChatMessageCell *)[tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     messageCell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-//    if ([data isMemberOfClass:NSClassFromString(@"ChatMessageYYDataModel")]) {
-        
-        ChatMessageYYDataModel *cellData = (ChatMessageYYDataModel *)data;
-        [messageCell fillWithYYData:cellData];
-      
-//        __weak __typeof(self) ws = self;
-        cellData.clickNickName = ^() {
-            NSLog(@"点击了用户昵称:YYLabel");
-        };
-//        __weak __typeof(self) ws = self;;
-//        data.clickNickName = ^(RRIMUser *user) {
-//            //NSLog(@"点击了用户昵称");
-//            [ws didSelectUserNickName:user];
-//        };
-        
-//    } else if ([data isMemberOfClass:NSClassFromString(@"ChatMessageDataModel")]) {
-//        [messageCell fillWithData:data];
-//    }else {
-//
-//    }
+    //    if ([data isMemberOfClass:NSClassFromString(@"ChatMessageYYDataModel")]) {
+    
+    ChatMessageYYDataModel *cellData = (ChatMessageYYDataModel *)data;
+    if (_isFull) {
+        messageCell.cellWidth = TTextMessageCell_Text_Width_Max_Full_NEW(self.messageListCellWidth);
+    } else {
+        messageCell.cellWidth = TTextMessageCell_Text_Width_Max_Half_NEW(self.messageListCellWidth);
+    }
+    [messageCell fillWithYYData:cellData];
+    
+    //        __weak __typeof(self) ws = self;
+    cellData.clickNickName = ^() {
+        NSLog(@"MessageController：点击了用户昵称:YYLabel");
+    };
+    //        __weak __typeof(self) ws = self;;
+    //        data.clickNickName = ^(RRIMUser *user) {
+    //            //NSLog(@"点击了用户昵称");
+    //            [ws didSelectUserNickName:user];
+    //        };
+    
+    //    } else if ([data isMemberOfClass:NSClassFromString(@"ChatMessageDataModel")]) {
+    //        [messageCell fillWithData:data];
+    //    }else {
+    //
+    //    }
     
     return messageCell;
 }
@@ -179,22 +189,22 @@
 //    }
 //    return YES;
 //}
- - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     // 点击的view的类名
     NSLog(@"%@", NSStringFromClass([touch.view class]));
     // 点击了tableViewCell，view的类名为UITableViewCellContentView，则不接收Touch点击事件
-//    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
-//        return NO;
-//    }
+    //    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
+    //        return NO;
+    //    }
     if ([NSStringFromClass([touch.view class]) isEqualToString:@"YYLabel"]) {
-         return NO;
+        return NO;
     }
     return  YES;
 }
 
 #pragma mark - UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
- 
+    
 }
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
     [self didTapViewController];

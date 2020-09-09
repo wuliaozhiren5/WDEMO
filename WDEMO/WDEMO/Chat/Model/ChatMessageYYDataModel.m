@@ -247,45 +247,41 @@
     return attrStr;
 }
 
--(YYTextLayout *)layout {
-    if (!_layout) {
-        //文本布局计算
-        CGSize size = CGSizeMake(TTextMessageCell_Text_Width_Max, CGFLOAT_MAX);
-        _layout = [YYTextLayout layoutWithContainerSize:size text:self.yyAttributedString];
-    }
-    return _layout;
-}
-
+//-(YYTextLayout *)layout {
+//    if (!_layout) {
+//        //文本布局计算
+//        CGSize size = CGSizeMake(TTextMessageCell_Text_Width_Max, CGFLOAT_MAX);
+//        _layout = [YYTextLayout layoutWithContainerSize:size text:self.yyAttributedString];
+//    }
+//    return _layout;
+//}
 
 - (CGSize)contentSize {
-    
-    //    CGRect rect = [self.attributedString boundingRectWithSize:CGSizeMake(TTextMessageCell_Text_Width_Max, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
-    //    CGSize size = rect.size;
     
     CGRect rect = self.layout.textBoundingRect;
     CGSize size = self.layout.textBoundingSize;
     
-    self.bubbleOrigin = CGPointMake(12, 6);
-    self.textOrigin = CGPointMake(9, 9);
-    self.bubbleSize = CGSizeMake(size.width + 9 * 2  , size.height + 9 * 2  );
-    self.textSize = CGSizeMake(size.width , size.height);
+//    self.bubbleOrigin = CGPointMake(TTextMessageCell_Bubble_LeftMargin, TTextMessageCell_Bubble_TopMargin);
+//    self.textOrigin = CGPointMake(TTextMessageCell_BubbleText_Margin, TTextMessageCell_BubbleText_Margin);
+//    self.bubbleSize = CGSizeMake(size.width + TTextMessageCell_BubbleText_Margin * 2  , size.height + TTextMessageCell_BubbleText_Margin * 2  );
+//    self.textSize = CGSizeMake(size.width , size.height);
     
-    size = CGSizeMake(rect.size.width + 12 * 2 + 9 * 2, rect.size.height + 6 * 2 + 9 * 2 );
-    
+    size = CGSizeMake(rect.size.width + TTextMessageCell_Bubble_LeftMargin * 2 + TTextMessageCell_BubbleText_Margin * 2, rect.size.height + TTextMessageCell_Bubble_TopMargin * 2 + TTextMessageCell_BubbleText_Margin * 2 );
     return size;
 }
-
-
+ 
 - (CGFloat)heightOfWidth:(CGFloat)width {
     CGFloat height = 0;
     
+    //文本布局计算
+    CGSize size = CGSizeMake(width, CGFLOAT_MAX);
+    self.layout = [YYTextLayout layoutWithContainerSize:size text:self.yyAttributedString];
+    
     CGSize containerSize = [self contentSize];
-    height += containerSize.height  ;
-    //    height += self.cellLayout.messageInsets.top + self.cellLayout.messageInsets.bottom;
-    
-    if (height < 55)
-        height = 55;
-    
+    height += containerSize.height;
+ 
+//    if (height < 55)
+//        height = 55;
     return height;
 }
 @end

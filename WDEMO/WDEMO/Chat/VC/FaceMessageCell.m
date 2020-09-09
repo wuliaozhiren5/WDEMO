@@ -43,15 +43,35 @@
 
 - (void)fillWithYYData:(ChatMessageYYDataModel *)data {
     
+    //    //聊天气泡
+    //    self.bubbleView.backgroundColor = ChatBubbleColor;
+    //    self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y, data.bubbleSize.width, data.bubbleSize.height);
+    //
+    //    self.yyContent.attributedText = data.yyAttributedString;
+    //    self.yyContent.origin =  CGPointMake(data.textOrigin.x, data.textOrigin.y);
+    //    self.yyContent.size = data.layout.textBoundingSize;
+    //    self.yyContent.textLayout = data.layout;
+    
+    CGSize yySize = CGSizeMake(self.cellWidth, CGFLOAT_MAX);
+    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:data.yyAttributedString];
+    //    CGRect rect = layout.textBoundingRect;
+    CGSize size = layout.textBoundingSize;
+    
+    CGPoint textOrigin = CGPointZero;
+    CGPoint bubbleOrigin = CGPointZero;
+    CGSize  textSize = CGSizeZero;
+    CGSize  bubbleSize = CGSizeZero;
+    
+    bubbleOrigin = CGPointMake(TTextMessageCell_Bubble_LeftMargin, TTextMessageCell_Bubble_TopMargin);
+    textOrigin = CGPointMake(TTextMessageCell_BubbleText_Margin, TTextMessageCell_BubbleText_Margin);
+    bubbleSize = CGSizeMake(size.width + TTextMessageCell_BubbleText_Margin * 2, size.height + TTextMessageCell_BubbleText_Margin * 2);
+    textSize = CGSizeMake(size.width, size.height);
+    
+    self.yyContent.attributedText = data.yyAttributedString;
     //聊天气泡
     self.bubbleView.backgroundColor = ChatBubbleColor;
-    self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y, data.bubbleSize.width, data.bubbleSize.height);
-  
-    self.yyContent.attributedText = data.yyAttributedString;
-    self.yyContent.origin =  CGPointMake(data.textOrigin.x, data.textOrigin.y);
-    self.yyContent.size = data.layout.textBoundingSize;
-    self.yyContent.textLayout = data.layout;
-    
+    self.bubbleView.frame = CGRectMake(bubbleOrigin.x, bubbleOrigin.y, bubbleSize.width, bubbleSize.height);
+    self.yyContent.frame = CGRectMake(textOrigin.x, textOrigin.y, textSize.width, textSize.height);
 }
 
 @end
