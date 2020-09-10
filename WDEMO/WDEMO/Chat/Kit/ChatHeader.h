@@ -17,6 +17,13 @@
 #define Is_Iphone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define Is_IPhoneX (Screen_Width >=375.0f && Screen_Height >=812.0f && Is_Iphone)
 
+#define kDevice_iPhoneX \
+({BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+}\
+(isPhoneX);})
+
 #define StatusBar_Height    (Is_IPhoneX ? (44.0):(20.0))
 #define TabBar_Height       (Is_IPhoneX ? (49.0 + 34.0):(49.0))
 #define NavBar_Height       (44)
@@ -24,7 +31,13 @@
 #define Bottom_SafeHeight   (Is_IPhoneX ? (34.0):(0))
 #define RGBA(r, g, b, a)    [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:a]
 #define RGB(r, g, b)    [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1.f]
-
+ 
+//全屏下SafeArea
+#define Full_Top_SafeHeight    (kDevice_iPhoneX ? (0):(0))
+#define Full_Left_SafeHeight   (kDevice_iPhoneX ? (44.0):(0))
+#define Full_Bottom_SafeHeight (kDevice_iPhoneX ? (21.0):(0))
+#define Full_Right_SafeHeight  (kDevice_iPhoneX ? (44.0):(0))
+ 
 #define  MessageViewColor  RGBA(0, 0, 0, 0.7)
 //inputview背景色
 #define  InputBarBackgroundColor RGB(33, 33, 33)

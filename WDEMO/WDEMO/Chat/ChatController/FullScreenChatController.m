@@ -31,22 +31,27 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    //    [_inputController reset];
-    
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
     //页面消失，最小化，键盘，人员列表问题
-    //    [self didTapInMessageController:nil];
+    [self didTapInMessageController:nil];
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+
 }
 
 - (void)setupViews {
@@ -60,7 +65,7 @@
     [self creatMessageController];
     //input
     [self creatInputController];
-    
+    //动画
     [self showAnimation];
     
     //制造数据
@@ -126,14 +131,22 @@
  }
  */
 
-- (void)showAnimation {
-    self.animationFinished = NO;
+- (void)hiddenFrame {
     self.messageController.view.frame = CGRectMake(self.view.frame.size.width, 0, 270, self.view.frame.size.height -  TTextView_Height);
     self.inputController.view.frame = CGRectMake(270, self.view.frame.size.height - TTextView_Height, self.view.frame.size.width, TTextView_Height);
+}
+
+- (void)showFrame {
+    self.messageController.view.frame = CGRectMake(self.view.frame.size.width - 270 - Full_Right_SafeHeight, 0, 270, self.view.frame.size.height -  TTextView_Height);
+    self.inputController.view.frame = CGRectMake(Full_Left_SafeHeight, self.view.frame.size.height - TTextView_Height, self.view.frame.size.width- Full_Left_SafeHeight - Full_Right_SafeHeight, TTextView_Height);
+}
+
+- (void)showAnimation {
+    self.animationFinished = NO;
+    [self hiddenFrame];
     [UIView animateWithDuration:0.25
                      animations:^{
-        self.messageController.view.frame = CGRectMake(self.view.frame.size.width - 270, 0, 270, self.view.frame.size.height -  TTextView_Height);
-        self.inputController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height, self.view.frame.size.width, TTextView_Height);
+        [self showFrame];
     }
                      completion:^(BOOL finished) {
         if (finished) {
@@ -144,12 +157,10 @@
 
 - (void)hiddenAnimation {
     self.animationFinished = NO;
-    self.messageController.view.frame = CGRectMake(self.view.frame.size.width - 270, 0, 270, self.view.frame.size.height -  TTextView_Height);
-    self.inputController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height, self.view.frame.size.width, TTextView_Height);
+    [self showFrame];
     [UIView animateWithDuration:0.25
                      animations:^{
-        self.messageController.view.frame = CGRectMake(self.view.frame.size.width, 0, 270, self.view.frame.size.height -  TTextView_Height);
-        self.inputController.view.frame = CGRectMake(270, self.view.frame.size.height - TTextView_Height, self.view.frame.size.width, TTextView_Height);
+        [self hiddenFrame];
     }
                      completion:^(BOOL finished) {
         if (finished) {

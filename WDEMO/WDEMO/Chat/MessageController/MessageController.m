@@ -153,12 +153,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 }
 
-//- (void)didSelectUserNickName:(RRIMUser *)user{
-//    NSLog(@"点击了用户昵称:YYLabel");
-//}
+- (void)didSelectUserNickName:(id)user{
+    NSLog(@"MessageController：点击了用户昵称:YYLabel");
+}
+
 - (void)scrollToBottom:(BOOL)animate {
     if (_uiMsgs.count > 0) {
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animate];
+        NSInteger count = _uiMsgs.count;
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:count - 1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:animate];
+        });
     }
 }
 
@@ -167,6 +171,12 @@
     if(_delegate && [_delegate respondsToSelector:@selector(didTapInMessageController:)]){
         [_delegate didTapInMessageController:self];
     }
+}
+
+- (void)sendMessages:(NSArray *)msgs {
+    _uiMsgs = [msgs mutableCopy];
+    [self.tableView reloadData];
+    [self scrollToBottom:NO];
 }
 
 - (void)sendMessage:(ChatMessageDataModel *)msg {

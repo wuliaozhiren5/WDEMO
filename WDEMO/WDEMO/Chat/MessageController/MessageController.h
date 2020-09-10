@@ -78,6 +78,12 @@
 @property (nonatomic, assign) CGFloat messageListCellWidth;
 
 /**
+*  设置聊天消息
+*  @param msg 消息单元数据
+*/
+- (void)sendMessages:(NSArray *)msgs;
+
+/**
  *  发送消息
  *  本函数整合调用了 IM SDK 的发送接口，可以轻松接入 SDK。
  *
