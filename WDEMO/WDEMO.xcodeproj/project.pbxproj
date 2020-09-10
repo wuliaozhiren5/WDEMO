@@ -60,6 +60,8 @@
 		F507113024E2A6A700AD5306 /* MYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F507112F24E2A6A700AD5306 /* MYPerson.m */; };
 		F507113324E2A6BE00AD5306 /* MYCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113224E2A6BE00AD5306 /* MYCar.m */; };
 		F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113624E2AB9400AD5306 /* IsEqualViewController.m */; };
+		F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */; };
+		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
 		F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */; };
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
@@ -288,6 +290,10 @@
 		F507113224E2A6BE00AD5306 /* MYCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYCar.m; sourceTree = "<group>"; };
 		F507113524E2AB9400AD5306 /* IsEqualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsEqualViewController.h; sourceTree = "<group>"; };
 		F507113624E2AB9400AD5306 /* IsEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsEqualViewController.m; sourceTree = "<group>"; };
+		F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfScreenInputController.m; sourceTree = "<group>"; };
+		F53293EC2509C6FE00E06D42 /* HalfScreenInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenInputController.h; sourceTree = "<group>"; };
+		F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenInputController.m; sourceTree = "<group>"; };
+		F53293EE2509C6FE00E06D42 /* FullScreenInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenInputController.h; sourceTree = "<group>"; };
 		F53F668A24FE2E2200770055 /* UIImage+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GradientColor.h"; sourceTree = "<group>"; };
 		F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GradientColor.m"; sourceTree = "<group>"; };
 		F53F669024FE454000770055 /* PasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextField.h; sourceTree = "<group>"; };
@@ -766,6 +772,15 @@
 			path = "判断对象是否相等";
 			sourceTree = "<group>";
 		};
+		F53293EA2509C4C500E06D42 /* ChatController */ = {
+			isa = PBXGroup;
+			children = (
+				F57B52A124C7DF2700940696 /* ChatController.h */,
+				F57B52A224C7DF2700940696 /* ChatController.m */,
+			);
+			path = ChatController;
+			sourceTree = "<group>";
+		};
 		F553E18C24CA8D1100DA5625 /* Face */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,8 +805,6 @@
 				F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */,
 				F57B529E24C7DECF00940696 /* ChatViewController.h */,
 				F57B529F24C7DECF00940696 /* ChatViewController.m */,
-				F57B52A124C7DF2700940696 /* ChatController.h */,
-				F57B52A224C7DF2700940696 /* ChatController.m */,
 				F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */,
 				F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */,
 				F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */,
@@ -841,6 +854,7 @@
 		F57B529D24C7DEB100940696 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F53293EA2509C4C500E06D42 /* ChatController */,
 				F5B5A9352508F53D002505AE /* InputController */,
 				F5B5A9342508F509002505AE /* MessageController */,
 				F5DEB2A324CE76B6009A6767 /* Kit */,
@@ -865,8 +879,6 @@
 				F553E11E24CA800200DA5625 /* InputBar.m */,
 				F5DEB32E24CEF5E3009A6767 /* NoInputBar.h */,
 				F5DEB32F24CEF5E3009A6767 /* NoInputBar.m */,
-				F553E12024CA800200DA5625 /* InputController.h */,
-				F553E12224CA800200DA5625 /* InputController.m */,
 				F553E12124CA800200DA5625 /* TResponderTextView.h */,
 				F553E11D24CA800200DA5625 /* TResponderTextView.m */,
 			);
@@ -963,6 +975,12 @@
 		F5B5A9352508F53D002505AE /* InputController */ = {
 			isa = PBXGroup;
 			children = (
+				F553E12024CA800200DA5625 /* InputController.h */,
+				F553E12224CA800200DA5625 /* InputController.m */,
+				F53293EE2509C6FE00E06D42 /* FullScreenInputController.h */,
+				F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */,
+				F53293EC2509C6FE00E06D42 /* HalfScreenInputController.h */,
+				F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */,
 			);
 			path = InputController;
 			sourceTree = "<group>";
@@ -1357,6 +1375,7 @@
 				F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */,
 				F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */,
 				F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */,
+				F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */,
 				F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */,
 				F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */,
 				A459C29424C174A300A3B5FF /* Plist.m in Sources */,
@@ -1381,6 +1400,7 @@
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
+				F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
 				F5609CA62502222100A13C15 /* WWCBaseNavigationController.m in Sources */,
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,

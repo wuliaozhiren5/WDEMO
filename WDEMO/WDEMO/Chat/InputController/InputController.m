@@ -65,27 +65,31 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     _inputBar.backgroundColor = InputBarBackgroundColor;
     _inputBar.delegate = self;
     [self.view addSubview:_inputBar];
-
+    
     _bottomBar = [[NoInputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
     _bottomBar.backgroundColor = [UIColor clearColor];
     [self.view addSubview:_bottomBar];
- 
+    
     [_bottomBar.faceButton addTarget:self action:@selector(clickBottomBarFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_bottomBar.textViewBtn addTarget:self action:@selector(clickBottomBarTextViewBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_bottomBar.playListBtn addTarget:self action:@selector(clickBottomBarPlayListBtn:) forControlEvents:UIControlEventTouchUpInside];
-     
+    
     _bottomBar.hidden = NO;
     _inputBar.hidden = YES;
- 
+    [self setInputStyle];
 }
 
+- (void)setInputStyle {
+    _bottomBar.frame = CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height);
+    [_bottomBar halfStyle];
+}
 - (void)clickBottomBarFaceBtn:(UIButton *)sender {
     _bottomBar.hidden = YES;
     _inputBar.hidden = NO;
     [_inputBar clickFaceBtn:sender];
     if (_delegate && [_delegate respondsToSelector:@selector(inputControllerDidTouchFace:)]){
-          [_delegate inputControllerDidTouchFace:self];
-      }
+        [_delegate inputControllerDidTouchFace:self];
+    }
 }
 
 - (void)clickBottomBarTextViewBtn:(UIButton *)sender {
@@ -98,11 +102,11 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 }
 
 - (void)clickBottomBarPlayListBtn:(UIButton *)sender {
-  if (_delegate && [_delegate respondsToSelector:@selector(inputControllerDidTouchPlayList:)]){
-       [_delegate inputControllerDidTouchPlayList:self];
-   }
+    if (_delegate && [_delegate respondsToSelector:@selector(inputControllerDidTouchPlayList:)]){
+        [_delegate inputControllerDidTouchPlayList:self];
+    }
 }
- 
+
 - (void)keyboardWillHide:(NSNotification *)notification
 { 
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
@@ -119,8 +123,8 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
         //        [self hideMoreAnimation];
     }
     else{
-//        [self hideFaceAnimation:NO];
-//        [self hideMoreAnimation:NO];
+        //        [self hideFaceAnimation:NO];
+        //        [self hideMoreAnimation:NO];
     }
     _status = Input_Status_Input_Keyboard;
 }
@@ -296,11 +300,8 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
         if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
             [_delegate inputController:self didSendMessage:data];
         }
-        
     }
-    
 }
-
 
 - (void)faceView:(FaceView *)faceView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {

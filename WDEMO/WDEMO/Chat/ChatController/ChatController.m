@@ -17,7 +17,6 @@
 
 @interface ChatController () <TInputControllerDelegate, TMessageControllerDelegate>
 
-@property (nonatomic, strong) ChatMemberListView *chatMemberListView;
 //毛玻璃
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 //人员列表背景
@@ -85,27 +84,26 @@
     [self creatChatMemberListView];
     //
     [self createChatData];
-
+    
 }
 
 - (void)createChatData {
-     
+    
     TipMessageDataModel *tipMsgModel = [[TipMessageDataModel alloc]init];
     tipMsgModel.content = @"欢迎和更多的人一起看剧聊剧！畅所欲言！看剧期间严禁出现违法违规、低俗色情、人身攻击，谈论政治等内容。发布违规言论会在当前直播间被永久禁言，请文明发言哦～";
     tipMsgModel.type = ChatMessageTypeTip;
     [_messageController sendMessage:tipMsgModel];
     
     EnterMessageDataModel *enterMsgModel = [[EnterMessageDataModel alloc]init];
-//    enterMsgModel.content = @"一起来看剧啦";
+    //    enterMsgModel.content = @"一起来看剧啦";
     enterMsgModel.type = ChatMessageTypeEnter;
     [_messageController sendMessage:enterMsgModel];
-
     
 }
 
 - (void)creatMessageController {
     //message
-    _messageController = [[MessageController alloc] init];
+    _messageController = [[HalfScreenMessageController alloc] init];
     _messageController.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight);
     _messageController.delegate = self;
     [self addChildViewController:_messageController];
@@ -114,7 +112,7 @@
 
 - (void)creatInputController{
     //input
-    _inputController = [[InputController alloc] init];
+    _inputController = [[HalfScreenInputController alloc] init];
     _inputController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight, self.view.frame.size.width, TTextView_Height + Bottom_SafeHeight);
     _inputController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     _inputController.delegate = self;
@@ -128,17 +126,19 @@
     colorView.frame = CGRectMake(0, 0, self.view.frame.size.width, 60);
     [self.view addSubview:colorView];
     _memberListColorBlackView = colorView;
-    
+
     //Member
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
     layout.itemSize = CGSizeMake(30, 30);
-    layout.minimumLineSpacing = 10;
-    layout.minimumInteritemSpacing = 10;
-    layout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    layout.minimumLineSpacing = 9;
+    layout.minimumInteritemSpacing = 9;
+    layout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.chatMemberListView = [[ChatMemberListView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 60) collectionViewLayout:layout];
-    self.chatMemberListView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.chatMemberListView];
+    _chatMemberListView = [[ChatMemberListView alloc]initWithFrame:CGRectMake(10, 0, self.view.frame.size.width - 10 * 2, 60) collectionViewLayout:layout];
+    //    _chatMemberListView.roomModel = _roomModel;
+    //    _chatMemberListView.memberListViewDelegate = self;
+    _chatMemberListView.backgroundColor = [UIColor clearColor];
+    [colorView addSubview:_chatMemberListView];
 }
 
 - (void)creatBackgroundImageView {
@@ -205,10 +205,10 @@
     //直接发送系统样式
     //    [_messageController sendMessage:msg];
     
-//    //    直接发送yytext样式
-//    ChatMessageYYDataModel *msgModel = [[ChatMessageYYDataModel alloc]init];
-//    msgModel.content = msg.content;
-//    [_messageController sendMessage:msgModel];
+    //    //    直接发送yytext样式
+    //    ChatMessageYYDataModel *msgModel = [[ChatMessageYYDataModel alloc]init];
+    //    msgModel.content = msg.content;
+    //    [_messageController sendMessage:msgModel];
     
     
     //    直接发送yytext样式
@@ -217,9 +217,9 @@
     faceMsgModel.type = ChatMessageTypeFace;
     [_messageController sendMessage:faceMsgModel];
     
-  
     
-
+    
+    
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {
         [self.delegate chatController:self didSendMessage:msg];
@@ -228,15 +228,15 @@
 
 - (void)inputControllerDidTouchFace:(InputController *)inputController {
     //键盘出现时，处理UI，人员列表
-//    self.chatMemberListView.hidden = YES;
-//    _messageController.hiddenHeader = YES;
+    _memberListColorBlackView.hidden = YES;
+    _messageController.hiddenHeader = YES;
     
 }
 
 - (void)inputControllerDidTouchTextView:(InputController *)inputController {
     //键盘出现时，处理UI，人员列表
-//    self.chatMemberListView.hidden = YES;
-//    _messageController.hiddenHeader = YES;
+    _memberListColorBlackView.hidden = YES;
+    _messageController.hiddenHeader = YES;
     
 }
 
@@ -248,7 +248,8 @@
 //- (void)didTapInMessageController:(ChatMessageController *)controller {
 - (void)didTapInMessageController:(MessageController *)controller {
     //键盘消失时，处理UI，人员列表
-//    selfvvvController.hiddenHeader = NO;
+    _memberListColorBlackView.hidden = NO;
+    _messageController.hiddenHeader = NO;
     
     [_inputController reset];
 }

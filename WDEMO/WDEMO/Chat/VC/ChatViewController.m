@@ -26,10 +26,23 @@
     _chat.view.frame =CGRectMake(0, 200, self.view.bounds.size.width, self.view.bounds.size.height - 200);
     [self addChildViewController:_chat];
     [self.view addSubview:_chat.view];
+    
+    
+    UIButton *goBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
+    //    [goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [goBtn setTitle:@"gobtn" forState:UIControlStateNormal];
+    goBtn.backgroundColor = [UIColor grayColor];
+    [goBtn addTarget:self action:@selector(clickgoBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:goBtn];
+  
+    
 }
- 
-- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageDataModel *)msgCellData;
-{
+
+-(void)clickgoBtn:(UIButton *)btn {
+    
+}
+
+- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageDataModel *)msgCellData{
     //  to do
 }
 

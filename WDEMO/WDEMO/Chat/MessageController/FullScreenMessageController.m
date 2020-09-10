@@ -14,15 +14,15 @@
 
 @implementation FullScreenMessageController
  
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//}
-//
-//- (void)setupViews {
-//    self.isFull = YES;
-//    self.messageListCellWidth = FullScreenChatViewWidth;
-//    [super setupViews]; 
-//}
+- (void)viewDidLoad {
+    [super viewDidLoad];
+}
+
+- (void)setupViews {
+    self.isFull = YES;
+    self.messageListCellWidth = FullScreenChatViewWidth;
+    [super setupViews]; 
+}
 /*
 #pragma mark - Navigation
 

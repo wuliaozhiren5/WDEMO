@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIButton *playListBtn;
 
+- (void)halfStyle;
+
+- (void)fullStyle;
 @end
 
 NS_ASSUME_NONNULL_END

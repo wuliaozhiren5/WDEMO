@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HalfScreenMessageController : MessageController
 
-//@property (nonatomic, assign) BOOL hiddenHeader;
+@property (nonatomic, assign) BOOL hiddenHeader;
 
 @end
 

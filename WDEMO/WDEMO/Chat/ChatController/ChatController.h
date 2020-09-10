@@ -7,10 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "InputController.h"
+//#import "InputController.h"
 //#import "ChatMessageController.h"
-#import "MessageController.h"
+//#import "MessageController.h"
+#import "HalfScreenMessageController.h"
+#import "HalfScreenInputController.h"
+
 #import "ChatMessageDataModel.h"
+#import "ChatMemberListView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 @class ChatController;
@@ -39,7 +43,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  聊天消息控制器的详细信息请参考 Section\Chat\TUIMessageController.h
  */
 //@property(nonatomic, strong) ChatMessageController *messageController;
-@property(nonatomic, strong) MessageController *messageController;
+@property(nonatomic, strong) HalfScreenMessageController *messageController;
 
 /**
  *  ChatKit 信息输入控制器。
@@ -47,7 +51,12 @@ NS_ASSUME_NONNULL_BEGIN
  *  同时 TUIInputController 整合了消息的发送功能，您可以直接使用 TUIInputController 进行消息的输入采集与发送。
  *  信息输入控制器的详细信息请参考 Section\Chat\Input\TUIInputController.h
  */
-@property(nonatomic, strong) InputController *inputController;
+@property(nonatomic, strong) HalfScreenInputController *inputController;
+
+/**
+*  人员列表
+*/
+@property (nonatomic, strong) ChatMemberListView *chatMemberListView;
 
 /**
  *  被委托类，负责实现并执行 ChatControllerDelegate 的委托函数

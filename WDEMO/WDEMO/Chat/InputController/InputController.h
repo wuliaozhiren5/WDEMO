@@ -103,4 +103,6 @@
  *  即无论当前 InputController 处于何种状态，都将其重置为初始化后的状态。
  */
 - (void)reset;
+
+ - (void)setInputStyle;
 @end
