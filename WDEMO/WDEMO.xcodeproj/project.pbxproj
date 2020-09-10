@@ -135,6 +135,7 @@
 		F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */; };
 		F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */; };
 		F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3665524C82E5C008BA221 /* ChatImageCache.m */; };
+		F5F37087250A594400118FC4 /* ChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F37086250A594400118FC4 /* ChatManager.m */; };
 		F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10224D3C158007DB7F3 /* YYViewController.m */; };
 		F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10724D40311007DB7F3 /* TipMessageCell.m */; };
 		F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10B24D4081A007DB7F3 /* ChatMessageYYDataModel.m */; };
@@ -440,6 +441,8 @@
 		F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChatKitResource.bundle; sourceTree = "<group>"; };
 		F5F3665424C82E5B008BA221 /* ChatImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatImageCache.h; sourceTree = "<group>"; };
 		F5F3665524C82E5C008BA221 /* ChatImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatImageCache.m; sourceTree = "<group>"; };
+		F5F37085250A594400118FC4 /* ChatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatManager.h; sourceTree = "<group>"; };
+		F5F37086250A594400118FC4 /* ChatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatManager.m; sourceTree = "<group>"; };
 		F5F4F10124D3C158007DB7F3 /* YYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYViewController.h; sourceTree = "<group>"; };
 		F5F4F10224D3C158007DB7F3 /* YYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYViewController.m; sourceTree = "<group>"; };
 		F5F4F10724D40311007DB7F3 /* TipMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipMessageCell.m; sourceTree = "<group>"; };
@@ -851,6 +854,7 @@
 		F57B529D24C7DEB100940696 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F5F37084250A593100118FC4 /* ChatManager */,
 				F5F370832509D3AD00118FC4 /* ChatCell */,
 				F53293EA2509C4C500E06D42 /* ChatController */,
 				F5B5A9352508F53D002505AE /* InputController */,
@@ -1140,6 +1144,15 @@
 			path = ChatCell;
 			sourceTree = "<group>";
 		};
+		F5F37084250A593100118FC4 /* ChatManager */ = {
+			isa = PBXGroup;
+			children = (
+				F5F37085250A594400118FC4 /* ChatManager.h */,
+				F5F37086250A594400118FC4 /* ChatManager.m */,
+			);
+			path = ChatManager;
+			sourceTree = "<group>";
+		};
 		F5F4F10024D3BF23007DB7F3 /* YY */ = {
 			isa = PBXGroup;
 			children = (
@@ -1418,6 +1431,7 @@
 				F5609CA62502222100A13C15 /* WWCBaseNavigationController.m in Sources */,
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
 				F5609CA92502235400A13C15 /* WWCBaseTabBarController.m in Sources */,
+				F5F37087250A594400118FC4 /* ChatManager.m in Sources */,
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
 				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,
 				F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */,
