@@ -31,8 +31,12 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param controller 委托者，当前聊天控制器。
  *  @param msgCellData TUIMessageCellData 即将发送的 msgCellData 。
  */
-- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageDataModel *)msgCellData;
+//- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageDataModel *)msgCellData;
+- (void)chatController:(UIViewController *)controller didSendMessage:(ChatMessageDataModel *)msgCellData;
 
+- (void)clickPlayListButton;
+
+- (void)hiddenChatController:(UIViewController *)controller;
 @end
 
 @interface ChatController : UIViewController

@@ -10,6 +10,8 @@
 #import "ChatHeader.h"
 #import "ChatMessageDataModel.h"
 #import "ChatMemberListView.h"
+
+#import "ChatMessageDataModel.h"
 #import "ChatMessageYYDataModel.h"
 #import "EnterMessageDataModel.h"
 #import "TipMessageDataModel.h"
@@ -82,7 +84,7 @@
     [self creatInputController];
     //人员列表
     [self creatChatMemberListView];
-    //
+    //制造数据
     [self createChatData];
     
 }
@@ -210,16 +212,11 @@
     //    msgModel.content = msg.content;
     //    [_messageController sendMessage:msgModel];
     
-    
     //    直接发送yytext样式
     FaceMessageDataModel *faceMsgModel = [[FaceMessageDataModel alloc]init];
     faceMsgModel.content = msg.content;
     faceMsgModel.type = ChatMessageTypeFace;
     [_messageController sendMessage:faceMsgModel];
-    
-    
-    
-    
     
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {
         [self.delegate chatController:self didSendMessage:msg];

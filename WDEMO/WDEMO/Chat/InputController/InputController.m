@@ -315,6 +315,14 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
 }
 
+- (BOOL)isInputEditing {
+    if(_status == Input_Status_Input){
+        return NO;
+    } else {
+        return YES;
+    }
+}
+
 #pragma mark - lazy load
 - (FaceView *)faceView
 {

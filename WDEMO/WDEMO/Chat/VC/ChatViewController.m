@@ -63,4 +63,41 @@
     [super viewDidDisappear:animated];
 }
 
+
+-(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    
+//    if ([UIDevice currentDevice].orientation ==UIDeviceOrientationLandscapeLeft||[UIDevice currentDevice].orientation ==UIDeviceOrientationLandscapeRight){
+//         UIWindow*window= [UIApplication sharedApplication].keyWindow;
+//        _playerView.frame=CGRectMake(0, 0, size.width,size.height);
+//        _playerView.player.view.frame=CGRectMake(0, 0, size.width,size.height);
+//        _playerView.mediaControl.fullScreenBtn.selected=YES;
+//        _playerView.isFullScreen=YES;
+//        [window addSubview:_playerView];
+//    }else{
+//       _playerView.frame=CGRectMake(0, 0, size.width, size.width/16*9);
+//       _playerView.player.view.frame=CGRectMake(0, 0, size.width, size.width/16*9);
+//        _playerView.mediaControl.fullScreenBtn.selected=NO;
+//        _playerView.isFullScreen=NO;
+//        [_headerView addSubview:_playerView];
+//        
+//    }
+    
+}
+
+//是否自动旋转
+//返回导航控制器的顶层视图控制器的自动旋转属性，因为导航控制器是以栈的原因叠加VC的
+//topViewController是其最顶层的视图控制器，
+-(BOOL)shouldAutorotate{
+    return YES;
+}
+
+//支持哪些屏幕方向
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+}
+
+//默认方向
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationPortrait;
+}
 @end

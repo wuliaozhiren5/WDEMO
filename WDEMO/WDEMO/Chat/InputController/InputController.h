@@ -98,6 +98,11 @@
 @property (nonatomic, weak) id<TInputControllerDelegate> delegate;
 
 /**
+*  编辑状态 是否正在编辑
+*/
+@property(nonatomic, assign, getter=isInputEditing) BOOL inputEditing;
+
+/**
  *  重置当前输入控制器。
  *  如果当前有表情视图或者“更多“视图正在显示，则收起相应视图，并将当前状态设置为 Input_Status_Input。
  *  即无论当前 InputController 处于何种状态，都将其重置为初始化后的状态。

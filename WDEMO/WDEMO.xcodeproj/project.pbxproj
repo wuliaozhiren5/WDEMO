@@ -62,6 +62,7 @@
 		F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113624E2AB9400AD5306 /* IsEqualViewController.m */; };
 		F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */; };
 		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
+		F53293F32509CE0E00E06D42 /* FullScreenChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293F22509CE0D00E06D42 /* FullScreenChatController.m */; };
 		F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */; };
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
@@ -294,6 +295,8 @@
 		F53293EC2509C6FE00E06D42 /* HalfScreenInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenInputController.h; sourceTree = "<group>"; };
 		F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenInputController.m; sourceTree = "<group>"; };
 		F53293EE2509C6FE00E06D42 /* FullScreenInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenInputController.h; sourceTree = "<group>"; };
+		F53293F12509CE0B00E06D42 /* FullScreenChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenChatController.h; sourceTree = "<group>"; };
+		F53293F22509CE0D00E06D42 /* FullScreenChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenChatController.m; sourceTree = "<group>"; };
 		F53F668A24FE2E2200770055 /* UIImage+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GradientColor.h"; sourceTree = "<group>"; };
 		F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GradientColor.m"; sourceTree = "<group>"; };
 		F53F669024FE454000770055 /* PasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextField.h; sourceTree = "<group>"; };
@@ -777,6 +780,8 @@
 			children = (
 				F57B52A124C7DF2700940696 /* ChatController.h */,
 				F57B52A224C7DF2700940696 /* ChatController.m */,
+				F53293F12509CE0B00E06D42 /* FullScreenChatController.h */,
+				F53293F22509CE0D00E06D42 /* FullScreenChatController.m */,
 			);
 			path = ChatController;
 			sourceTree = "<group>";
@@ -1474,6 +1479,7 @@
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */,
+				F53293F32509CE0E00E06D42 /* FullScreenChatController.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
 				F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */,
 			);
