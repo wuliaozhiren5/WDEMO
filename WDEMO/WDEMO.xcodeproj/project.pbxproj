@@ -800,14 +800,6 @@
 		F553E1A224CA938300DA5625 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				F553E1DF24CAC69F00DA5625 /* ChatMessageCell.h */,
-				F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */,
-				F5F4F10824D40311007DB7F3 /* TipMessageCell.h */,
-				F5F4F10724D40311007DB7F3 /* TipMessageCell.m */,
-				F57A6A7824CFCA9700D51E01 /* EnterMessageCell.h */,
-				F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */,
-				F57A6A7524CFCA8400D51E01 /* FaceMessageCell.h */,
-				F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */,
 				F57B529E24C7DECF00940696 /* ChatViewController.h */,
 				F57B529F24C7DECF00940696 /* ChatViewController.m */,
 				F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */,
@@ -859,6 +851,7 @@
 		F57B529D24C7DEB100940696 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F5F370832509D3AD00118FC4 /* ChatCell */,
 				F53293EA2509C4C500E06D42 /* ChatController */,
 				F5B5A9352508F53D002505AE /* InputController */,
 				F5B5A9342508F509002505AE /* MessageController */,
@@ -1130,6 +1123,21 @@
 				F564D5E824F7550C00A02FA2 /* RACViewController.m */,
 			);
 			path = ReactiveObjC;
+			sourceTree = "<group>";
+		};
+		F5F370832509D3AD00118FC4 /* ChatCell */ = {
+			isa = PBXGroup;
+			children = (
+				F553E1DF24CAC69F00DA5625 /* ChatMessageCell.h */,
+				F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */,
+				F5F4F10824D40311007DB7F3 /* TipMessageCell.h */,
+				F5F4F10724D40311007DB7F3 /* TipMessageCell.m */,
+				F57A6A7824CFCA9700D51E01 /* EnterMessageCell.h */,
+				F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */,
+				F57A6A7524CFCA8400D51E01 /* FaceMessageCell.h */,
+				F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */,
+			);
+			path = ChatCell;
 			sourceTree = "<group>";
 		};
 		F5F4F10024D3BF23007DB7F3 /* YY */ = {

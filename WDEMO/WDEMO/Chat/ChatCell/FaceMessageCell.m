@@ -32,12 +32,12 @@
 
 - (void)fillWithData:(ChatMessageDataModel *)data {
     
-    self.content.attributedText = data.attributedString;
-    //聊天气泡
-    self.bubbleView.backgroundColor = ChatBubbleColor;
-    
-    self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
-    self.content.frame = CGRectMake(data.textOrigin.x, data.textOrigin.y,data.textSize.width,  data.textSize.height);
+//    self.content.attributedText = data.attributedString;
+//    //聊天气泡
+//    self.bubbleView.backgroundColor = ChatBubbleColor;
+//    
+//    self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
+//    self.content.frame = CGRectMake(data.textOrigin.x, data.textOrigin.y,data.textSize.width,  data.textSize.height);
     
 }
 

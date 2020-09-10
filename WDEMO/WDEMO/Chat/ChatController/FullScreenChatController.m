@@ -88,7 +88,7 @@
     [_messageController sendMessage:tipMsgModel];
     
     EnterMessageDataModel *enterMsgModel = [[EnterMessageDataModel alloc]init];
-    //    enterMsgModel.content = @"一起来看剧啦";
+    enterMsgModel.content = @"一起来看剧啦!";
     enterMsgModel.type = ChatMessageTypeEnter;
     [_messageController sendMessage:enterMsgModel];
     
@@ -189,14 +189,22 @@
     //    msgModel.content = msg.content;
     //    [_messageController sendMessage:msgModel];
     
-    //    直接发送yytext样式
+    //直接发送yytext样式
     FaceMessageDataModel *faceMsgModel = [[FaceMessageDataModel alloc]init];
     faceMsgModel.content = msg.content;
     faceMsgModel.type = ChatMessageTypeFace;
     [_messageController sendMessage:faceMsgModel];
+
+    //直接发送系统样式
+    ChatMessageDataModel *msgModel = [[ChatMessageDataModel alloc]init];
+    msgModel.content = msg.content;
+    msgModel.type = ChatMessageTypeSystemAttributedString;
+    [_messageController sendMessage:msgModel];
+    
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {
         [self.delegate chatController:self didSendMessage:msg];
     }
+ 
 }
 
 - (void)inputControllerDidTouchFace:(InputController *)inputController {

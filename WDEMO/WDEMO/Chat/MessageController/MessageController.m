@@ -101,9 +101,9 @@
     
     ChatMessageDataModel *data = _uiMsgs[indexPath.row];
     ChatMessageCell *messageCell = nil;
-    data.type = ChatMessageTypeFace;
-    //    data.type = ChatMessageTypeTip;
-    //        data.type = ChatMessageTypeEnter;
+//    data.type = ChatMessageTypeFace;
+//    data.type = ChatMessageTypeTip;
+//    data.type = ChatMessageTypeEnter;
     
     NSString *reuseId = nil;
     switch (data.type) {
@@ -121,35 +121,32 @@
             break;
     }
     
-    messageCell =(ChatMessageCell *)[tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
+    messageCell = (ChatMessageCell *)[tableView dequeueReusableCellWithIdentifier:reuseId forIndexPath:indexPath];
     messageCell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    //    if ([data isMemberOfClass:NSClassFromString(@"ChatMessageYYDataModel")]) {
-    
-    ChatMessageYYDataModel *cellData = (ChatMessageYYDataModel *)data;
     if (_isFull) {
         messageCell.cellWidth = TTextMessageCell_Text_Width_Max_Full_NEW(self.messageListCellWidth);
     } else {
         messageCell.cellWidth = TTextMessageCell_Text_Width_Max_Half_NEW(self.messageListCellWidth);
     }
-    [messageCell fillWithYYData:cellData];
     
-    //        __weak __typeof(self) ws = self;
-    cellData.clickNickName = ^() {
-        NSLog(@"MessageController：点击了用户昵称:YYLabel");
-    };
-    //        __weak __typeof(self) ws = self;;
-    //        data.clickNickName = ^(RRIMUser *user) {
-    //            //NSLog(@"点击了用户昵称");
-    //            [ws didSelectUserNickName:user];
-    //        };
     
-    //    } else if ([data isMemberOfClass:NSClassFromString(@"ChatMessageDataModel")]) {
-    //        [messageCell fillWithData:data];
-    //    }else {
-    //
-    //    }
-    
+    if ([data isMemberOfClass:NSClassFromString(@"ChatMessageDataModel")]) {
+        [messageCell fillWithData:data];
+    } else if ([data isKindOfClass:NSClassFromString(@"ChatMessageYYDataModel")]) {
+        ChatMessageYYDataModel *cellData = (ChatMessageYYDataModel *)data;
+        [messageCell fillWithYYData:cellData];
+        //        __weak __typeof(self) ws = self;
+        cellData.clickNickName = ^() {
+            NSLog(@"MessageController：点击了用户昵称:YYLabel");
+        };
+        //        __weak __typeof(self) ws = self;;
+        //        data.clickNickName = ^(RRIMUser *user) {
+        //            //NSLog(@"点击了用户昵称");
+        //            [ws didSelectUserNickName:user];
+        //        };
+    } else {
+    }
+     
     return messageCell;
 }
 

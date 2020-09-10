@@ -71,7 +71,7 @@
     [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14], NSForegroundColorAttributeName:ChatTextColor} range:NSMakeRange(0, attributedString.length)];
     
     //nickname
-    NSString *name = @"用户XXX:";
+    NSString *name = @"用户小小白";
     //    NSString *name = self.sender.nickName;
     NSDictionary *dictAttr = @{NSFontAttributeName:[UIFont systemFontOfSize:12],NSForegroundColorAttributeName:ChatNameColor};
     NSAttributedString *nameStr = [[NSAttributedString alloc]initWithString:name attributes:dictAttr];
@@ -159,21 +159,32 @@
 
 - (CGSize)contentSize
 {
-    CGRect rect = [self.attributedString boundingRectWithSize:CGSizeMake(TTextMessageCell_Text_Width_Max, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
-    CGSize size = rect.size;
+//    //old
+//    CGRect rect = [self.attributedString boundingRectWithSize:CGSizeMake(TTextMessageCell_Text_Width_Max, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+//    CGSize size = rect.size;
+//
+//    _bubbleOrigin = CGPointMake(12, 6);
+//    _textOrigin = CGPointMake(9, 9);
+//    _bubbleSize = CGSizeMake(size.width + 9 * 2  , size.height + 9 * 2  );
+//    _textSize = CGSizeMake(size.width , size.height);
+//
+//    size = CGSizeMake(rect.size.width + 12 * 2 + 9 * 2, rect.size.height + 6 * 2 + 9 * 2 );
+//    return size;
     
-    _bubbleOrigin = CGPointMake(12, 6);
-    _textOrigin = CGPointMake(9, 9);
-    _bubbleSize = CGSizeMake(size.width + 9 * 2  , size.height + 9 * 2  );
-    _textSize = CGSizeMake(size.width , size.height);
     
-    size = CGSizeMake(rect.size.width + 12 * 2 + 9 * 2, rect.size.height + 6 * 2 + 9 * 2 ); 
+//    CGRect rect = [self.attributedString boundingRectWithSize:CGSizeMake(TTextMessageCell_Text_Width_Max, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+    CGRect rect = [self.attributedString boundingRectWithSize:self.layoutSize options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+    CGSize size = CGSizeMake(rect.size.width + TTextMessageCell_Bubble_LeftMargin * 2 + TTextMessageCell_BubbleText_Margin * 2, rect.size.height + TTextMessageCell_Bubble_TopMargin * 2 + TTextMessageCell_BubbleText_Margin * 2 );
     return size;
 }
 
 
 - (CGFloat)heightOfWidth:(CGFloat)width {
     CGFloat height = 0;
+    
+    //文本布局计算
+    CGSize size = CGSizeMake(width, CGFLOAT_MAX);
+    self.layoutSize = size;
     
     CGSize containerSize = [self contentSize];
     height += containerSize.height  ;
@@ -184,4 +195,5 @@
     
     return height;
 }
+
 @end

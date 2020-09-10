@@ -44,18 +44,36 @@
 
 - (void)fillWithData:(ChatMessageDataModel *)data {
     
+//    self.content.attributedText = data.attributedString;
+//    //聊天气泡
+//    //    self.bubbleView.backgroundColor = ChatBubbleColor;
+//    //    公告气泡
+//    self.bubbleView.backgroundColor = NoticeBubbleColor;
+//
+//    self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
+//    self.content.frame = CGRectMake(data.textOrigin.x, data.textOrigin.y,data.textSize.width,  data.textSize.height);
+     
+    CGRect rect = [data.attributedString boundingRectWithSize:CGSizeMake(self.cellWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+    CGSize size = rect.size;
+      
+    CGPoint textOrigin = CGPointZero;
+    CGPoint bubbleOrigin = CGPointZero;
+    CGSize  textSize = CGSizeZero;
+    CGSize  bubbleSize = CGSizeZero;
+    
+    bubbleOrigin = CGPointMake(TTextMessageCell_Bubble_LeftMargin, TTextMessageCell_Bubble_TopMargin);
+    textOrigin = CGPointMake(TTextMessageCell_BubbleText_Margin, TTextMessageCell_BubbleText_Margin);
+    bubbleSize = CGSizeMake(size.width + TTextMessageCell_BubbleText_Margin * 2, size.height + TTextMessageCell_BubbleText_Margin * 2);
+    textSize = CGSizeMake(size.width, size.height);
+    
     self.content.attributedText = data.attributedString;
     //聊天气泡
-    //    self.bubbleView.backgroundColor = ChatBubbleColor;
-    //    公告气泡
-    self.bubbleView.backgroundColor = NoticeBubbleColor;
-    
-    self.bubbleView.frame = CGRectMake(data.bubbleOrigin.x, data.bubbleOrigin.y,data.bubbleSize.width,  data.bubbleSize.height);
-    self.content.frame = CGRectMake(data.textOrigin.x, data.textOrigin.y,data.textSize.width,  data.textSize.height);
-    
+    self.bubbleView.backgroundColor = ChatBubbleColor;
+    self.bubbleView.frame = CGRectMake(bubbleOrigin.x, bubbleOrigin.y, bubbleSize.width, bubbleSize.height);
+    self.content.frame = CGRectMake(textOrigin.x, textOrigin.y, textSize.width, textSize.height);
 }
+
 - (void)fillWithYYData:(ChatMessageYYDataModel *)data {
-    
 }
 
 -(UILabel *)content{

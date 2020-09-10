@@ -21,6 +21,8 @@ typedef NS_ENUM(NSInteger, ChatMessageType) {
     ChatMessageTypeFace,
     ChatMessageTypeTip,
     ChatMessageTypeEnter,
+    ChatMessageTypeSystemAttributedString,//iOS系统的NSAttributedString
+
 };
 
 NS_ASSUME_NONNULL_BEGIN
@@ -47,12 +49,15 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *nickname;
 @property (nonatomic, assign) BOOL isVip;
 
-//todo delete
-@property (nonatomic, assign)CGSize contentSize;
-@property (nonatomic, assign)CGPoint textOrigin;
-@property (nonatomic, assign)CGPoint bubbleOrigin;
-@property (nonatomic, assign)CGSize textSize;
-@property (nonatomic, assign)CGSize bubbleSize;
+////todo delete
+//@property (nonatomic, assign)CGSize contentSize;
+//@property (nonatomic, assign)CGPoint textOrigin;
+//@property (nonatomic, assign)CGPoint bubbleOrigin;
+//@property (nonatomic, assign)CGSize textSize;
+//@property (nonatomic, assign)CGSize bubbleSize;
+
+//布局
+@property (nonatomic, assign) CGSize layoutSize;
 
 //计算高度
 - (CGFloat)heightOfWidth:(CGFloat)width;
