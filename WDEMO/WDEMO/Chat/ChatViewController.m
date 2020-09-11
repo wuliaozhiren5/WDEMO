@@ -8,10 +8,13 @@
 
 #import "ChatViewController.h"
 #import "ChatController.h"
+#import "FullScreenChatController.h"
 
 @interface ChatViewController () <ChatControllerDelegate>
 
-@property (nonatomic, strong) ChatController *chat;
+@property (nonatomic, strong) ChatController *halfChat;
+
+@property (nonatomic, strong) FullScreenChatController *fullChat;
 
 @end
 
@@ -20,12 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+
     self.view.backgroundColor = [UIColor grayColor];
-    _chat = [[ChatController alloc] init];
-    _chat.delegate = self;
-    _chat.view.frame =CGRectMake(0, 200, self.view.bounds.size.width, self.view.bounds.size.height - 200);
-    [self addChildViewController:_chat];
-    [self.view addSubview:_chat.view];
+    
+    _halfChat = [[ChatController alloc] init];
+//    _halfChat.delegate = self;
+    _halfChat.view.frame =CGRectMake(0, 200, self.view.bounds.size.width, self.view.bounds.size.height - 200);
+    [self addChildViewController:_halfChat];
+    [self.view addSubview:_halfChat.view];
     
     
     UIButton *goBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
@@ -34,11 +41,17 @@
     goBtn.backgroundColor = [UIColor grayColor];
     [goBtn addTarget:self action:@selector(clickgoBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:goBtn];
-  
-    
+
 }
 
 -(void)clickgoBtn:(UIButton *)btn {
+    _fullChat = [[FullScreenChatController alloc] init];
+    //    _fullChat.delegate = self;
+    _fullChat.view.frame =CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
+    [self addChildViewController:_fullChat];
+    [self.view addSubview:_fullChat.view];
+    
+    _halfChat.view.hidden = YES;
     
 }
 
@@ -84,20 +97,20 @@
     
 }
 
-//是否自动旋转
-//返回导航控制器的顶层视图控制器的自动旋转属性，因为导航控制器是以栈的原因叠加VC的
-//topViewController是其最顶层的视图控制器，
--(BOOL)shouldAutorotate{
-    return YES;
-}
-
-//支持哪些屏幕方向
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-    return UIInterfaceOrientationMaskAllButUpsideDown;
-}
-
-//默认方向
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-    return UIInterfaceOrientationPortrait;
-}
+////是否自动旋转
+////返回导航控制器的顶层视图控制器的自动旋转属性，因为导航控制器是以栈的原因叠加VC的
+////topViewController是其最顶层的视图控制器，
+//-(BOOL)shouldAutorotate{
+//    return YES;
+//}
+//
+////支持哪些屏幕方向
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//    return UIInterfaceOrientationMaskAllButUpsideDown;
+//}
+//
+////默认方向
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+//    return UIInterfaceOrientationPortrait;
+//}
 @end

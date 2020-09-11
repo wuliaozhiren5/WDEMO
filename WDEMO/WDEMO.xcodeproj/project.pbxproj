@@ -803,8 +803,6 @@
 		F553E1A224CA938300DA5625 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				F57B529E24C7DECF00940696 /* ChatViewController.h */,
-				F57B529F24C7DECF00940696 /* ChatViewController.m */,
 				F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */,
 				F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */,
 				F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */,
@@ -854,6 +852,8 @@
 		F57B529D24C7DEB100940696 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F57B529E24C7DECF00940696 /* ChatViewController.h */,
+				F57B529F24C7DECF00940696 /* ChatViewController.m */,
 				F5F37084250A593100118FC4 /* ChatManager */,
 				F5F370832509D3AD00118FC4 /* ChatCell */,
 				F53293EA2509C4C500E06D42 /* ChatController */,

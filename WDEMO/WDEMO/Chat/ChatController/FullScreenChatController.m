@@ -27,6 +27,8 @@
     // Do any additional setup after loading the view.
     self.animationFinished = YES;
     [self setupViews];
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -62,7 +64,7 @@
     [self.view addSubview:tapControl];
 
     //message
-    [self creatMessageController];
+     [self creatMessageController];
     //input
     [self creatInputController];
     //动画
@@ -102,7 +104,7 @@
     //message
     _messageController = [[FullScreenMessageController alloc] init];
 //    _messageController.view.frame = CGRectMake(self.view.frame.size.width - 270, 0, 270, self.view.frame.size.height -  TTextView_Height);
-    self.messageController.view.frame = CGRectMake(self.view.frame.size.width, 0, 270, self.view.frame.size.height -  TTextView_Height);
+    self.messageController.view.frame = CGRectMake(self.view.frame.size.width, 0, 270, self.view.frame.size.height - TTextView_Height);
     _messageController.delegate = self;
     [self addChildViewController:_messageController];
     [self.view addSubview:_messageController.view];
@@ -113,7 +115,7 @@
     //input
     _inputController = [[FullScreenInputController alloc] init];
 //    _inputController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height, self.view.frame.size.width, TTextView_Height);
-    _inputController.view.frame = CGRectMake(270, self.view.frame.size.height - TTextView_Height, self.view.frame.size.width, TTextView_Height);
+    _inputController.view.frame = CGRectMake(270 + Full_Left_SafeHeight + Full_Right_SafeHeight, self.view.frame.size.height - TTextView_Height, self.view.frame.size.width - Full_Left_SafeHeight - Full_Right_SafeHeight, TTextView_Height);
     _inputController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
     _inputController.delegate = self;
     [self addChildViewController:_inputController];
@@ -132,13 +134,13 @@
  */
 
 - (void)hiddenFrame {
-    self.messageController.view.frame = CGRectMake(self.view.frame.size.width, 0, 270, self.view.frame.size.height -  TTextView_Height);
-    self.inputController.view.frame = CGRectMake(270, self.view.frame.size.height - TTextView_Height, self.view.frame.size.width, TTextView_Height);
+    self.messageController.view.origin = CGPointMake(self.view.frame.size.width, 0);
+    self.inputController.view.origin = CGPointMake(270 + Full_Left_SafeHeight + Full_Right_SafeHeight, self.view.frame.size.height - TTextView_Height);
 }
 
 - (void)showFrame {
-    self.messageController.view.frame = CGRectMake(self.view.frame.size.width - 270 - Full_Right_SafeHeight, 0, 270, self.view.frame.size.height -  TTextView_Height);
-    self.inputController.view.frame = CGRectMake(Full_Left_SafeHeight, self.view.frame.size.height - TTextView_Height, self.view.frame.size.width- Full_Left_SafeHeight - Full_Right_SafeHeight, TTextView_Height);
+    self.messageController.view.origin = CGPointMake(self.view.frame.size.width - 270 - Full_Right_SafeHeight, 0);
+    self.inputController.view.origin = CGPointMake(Full_Left_SafeHeight, self.view.frame.size.height - TTextView_Height);
 }
 
 - (void)showAnimation {
