@@ -114,7 +114,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define TFaceCell_ReuseId @"TFaceCell"
 
 //text view
-#define TTextView_Height (51)
+#define TTextView_Height (52)
 #define TTextView_Button_Size CGSizeMake(30, 30)
 #define TTextView_Margin 9
 #define TTextView_TextView_Height_Min (TTextView_Height - 2 * TTextView_Margin)
@@ -124,6 +124,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #define TTextView_RightMargin 15
 //#define TTextView_MidMargin 4
 
+#define NoTTextView_Height (48)
 #define NoTTextView_LeftMargin 11
 #define NoTTextView_MidMargin 4
 
