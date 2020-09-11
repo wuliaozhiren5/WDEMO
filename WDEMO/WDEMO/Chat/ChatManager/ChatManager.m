@@ -121,6 +121,11 @@
     [_fullChat.view removeFromSuperview];
     _fullChat = nil;
 }
+
+- (void)chatControllerKeyboardReset {
+    [_halfChat keyboardReset];
+    [_fullChat keyboardReset];
+}
   
 - (NSOperationQueue *)queue {
     if (!_queue) {

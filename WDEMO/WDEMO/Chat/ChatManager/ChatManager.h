@@ -40,6 +40,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)readMessage;
 //移除全屏聊天
 - (void)removeFullChat;
+//手动隐藏键盘
+- (void)chatControllerKeyboardReset;
 @end
 
 NS_ASSUME_NONNULL_END

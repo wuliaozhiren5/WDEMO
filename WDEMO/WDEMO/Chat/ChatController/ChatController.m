@@ -180,6 +180,10 @@
     [_messageController sendMessage:message];
 }
 
+- (void)keyboardReset {
+    [self didTapInMessageController:nil];
+}
+
 #pragma mark- TInputControllerDelegate
 - (void)inputController:(InputController *)inputController didChangeHeight:(CGFloat)height {
     __weak __typeof(self) ws = self;;

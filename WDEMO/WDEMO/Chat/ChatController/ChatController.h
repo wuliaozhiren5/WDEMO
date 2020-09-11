@@ -73,6 +73,9 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)sendMessage:(ChatMessageDataModel *)msg;
 
+//手动隐藏键盘
+- (void)keyboardReset;
+
 @end
 
 NS_ASSUME_NONNULL_END
