@@ -800,7 +800,7 @@
 			path = Face;
 			sourceTree = "<group>";
 		};
-		F553E1A224CA938300DA5625 /* VC */ = {
+		F553E1A224CA938300DA5625 /* Other */ = {
 			isa = PBXGroup;
 			children = (
 				F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */,
@@ -808,7 +808,7 @@
 				F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */,
 				F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */,
 			);
-			path = VC;
+			path = Other;
 			sourceTree = "<group>";
 		};
 		F5609CA32502195A00A13C15 /* 屏幕旋转 */ = {
@@ -862,7 +862,7 @@
 				F5DEB2A324CE76B6009A6767 /* Kit */,
 				F5DEB2A224CE7667009A6767 /* Model */,
 				F57B52AE24C7E86F00940696 /* Input */,
-				F553E1A224CA938300DA5625 /* VC */,
+				F553E1A224CA938300DA5625 /* Other */,
 				F553E18C24CA8D1100DA5625 /* Face */,
 			);
 			path = Chat;

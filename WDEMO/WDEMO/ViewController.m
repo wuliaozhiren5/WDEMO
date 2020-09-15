@@ -290,11 +290,11 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)clickFullChat {
-    
-    FullScreenChatController *vc= [[FullScreenChatController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
-}
+//-(void)clickFullChat {
+//    
+//    FullScreenChatController *vc= [[FullScreenChatController alloc]init];
+//    [self.navigationController pushViewController:vc animated:YES];
+//}
 
 -(void)clickYYText {
     
