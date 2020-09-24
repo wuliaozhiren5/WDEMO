@@ -17,6 +17,7 @@
 @interface FullScreenChatController () <TInputControllerDelegate, TMessageControllerDelegate>
 
 @property(nonatomic, assign) BOOL animationFinished;
+@property(nonatomic, assign) BOOL isShowMessageInput;
 
 @end
 
@@ -26,6 +27,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.animationFinished = YES;
+    self.isShowMessageInput = NO;
     [self setupViews];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 
@@ -145,6 +147,7 @@
 
 - (void)showAnimation {
     self.animationFinished = NO;
+    self.isShowMessageInput = YES;
     [self hiddenFrame];
     [UIView animateWithDuration:0.25
                      animations:^{
@@ -168,6 +171,7 @@
         if (finished) {
             self.animationFinished = YES;
             [self.view removeFromSuperview];
+            self.isShowMessageInput = NO;
             if (self.delegate && [self.delegate respondsToSelector:@selector(hiddenChatController:)]) {
                 [self.delegate hiddenChatController:self];
             }
@@ -177,6 +181,17 @@
 
 - (void)keyboardReset {
     [self didTapInMessageController:nil];
+}
+
+- (BOOL)isInputEditing {
+    BOOL isInputEditing = NO;
+    //编辑中
+    if (_inputController.isInputEditing || self.isShowMessageInput) {
+        isInputEditing = YES;
+    } else {
+        isInputEditing = NO;
+    }
+    return isInputEditing;
 }
 
 #pragma mark- TInputControllerDelegate

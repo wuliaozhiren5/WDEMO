@@ -184,6 +184,10 @@
     [self didTapInMessageController:nil];
 }
 
+- (BOOL)isInputEditing {
+    return self.inputController.isInputEditing;;
+}
+
 #pragma mark- TInputControllerDelegate
 - (void)inputController:(InputController *)inputController didChangeHeight:(CGFloat)height {
     __weak __typeof(self) ws = self;;

@@ -80,8 +80,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self clickChat];
-//    [self clickFullChat];
-    
+ 
     //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
     //    self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -168,52 +167,50 @@
     
 }
 
+-(void)clickPassword {
+    /*
+        //修改密码
+        ChangePasswordVC *vc= [[ChangePasswordVC alloc]init];
+        vc.title = @"修改密码";
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
+        
+        //设置密码 没有密码
+        SetPasswordVC *vc3 = [[SetPasswordVC alloc]init];
+        vc3.title = @"设置密码 没有密码";
+        [self.navigationController pushViewController:vc3 animated:YES];
+        
+        //设置密码 注册时候（可跳过）
+        RegisterSetPasswordVC *vc4 = [[RegisterSetPasswordVC alloc]init];
+        vc4.title = @"设置密码 注册时候（可跳过）";
+        [self.navigationController pushViewController:vc4 animated:YES];
+        
+        //重置密码 忘记密码 需要：手机号phone，验证码code
+        ForgetPasswordResetPasswordVC *vc2 = [[ForgetPasswordResetPasswordVC alloc]init];
+        vc2.phone = @"";
+        vc2.code = @"";
+        vc2.title = @"重置密码 忘记密码 手机号 验证码";
+        [self.navigationController pushViewController:vc2 animated:YES];
+        
+        //重置密码 存量用户
+        NeedResetPasswordVC *vc1 = [[NeedResetPasswordVC alloc]init];
+        vc1.title = @"重置密码 存量用户";
+        [self.navigationController pushViewController:vc1 animated:YES];
+        
+        */
+}
+
 -(void)clickTagList1 {
     
-    //    LZTagListVC *vc= [[LZTagListVC alloc]init];
-    //    vc.hidesBottomBarWhenPushed = YES;
-    //    [self.navigationController pushViewController:vc animated:YES];
+        LZTagListVC *vc= [[LZTagListVC alloc]init];
+        vc.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:vc animated:YES];
     
     //    WScrollViewController *vc= [[WScrollViewController alloc]init];
     //    vc.hidesBottomBarWhenPushed = YES;
     //    [self.navigationController pushViewController:vc animated:YES];
     
-    
-     /*
-     //修改密码
-     ChangePasswordVC *vc= [[ChangePasswordVC alloc]init];
-     vc.title = @"修改密码";
-     vc.hidesBottomBarWhenPushed = YES;
-     [self.navigationController pushViewController:vc animated:YES];
      
-     //设置密码 没有密码
-     SetPasswordVC *vc3 = [[SetPasswordVC alloc]init];
-     vc3.title = @"设置密码 没有密码";
-     [self.navigationController pushViewController:vc3 animated:YES];
-     
-     //设置密码 注册时候（可跳过）
-     RegisterSetPasswordVC *vc4 = [[RegisterSetPasswordVC alloc]init];
-     vc4.title = @"设置密码 注册时候（可跳过）";
-     [self.navigationController pushViewController:vc4 animated:YES];
-     
-     //重置密码 忘记密码 需要：手机号phone，验证码code
-     ForgetPasswordResetPasswordVC *vc2 = [[ForgetPasswordResetPasswordVC alloc]init];
-     vc2.phone = @"";
-     vc2.code = @"";
-     vc2.title = @"重置密码 忘记密码 手机号 验证码";
-     [self.navigationController pushViewController:vc2 animated:YES];
-     
-     //重置密码 存量用户
-     NeedResetPasswordVC *vc1 = [[NeedResetPasswordVC alloc]init];
-     vc1.title = @"重置密码 存量用户";
-     [self.navigationController pushViewController:vc1 animated:YES];
-     
-     */
-    
-    AllScreenViewController *all = [[AllScreenViewController alloc]init];
-    all.title = @"全屏";
-    all.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:all animated:YES];
 }
 
 -(void)clickTagList2 {

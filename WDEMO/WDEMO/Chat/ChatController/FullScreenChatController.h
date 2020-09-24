@@ -22,6 +22,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<ChatControllerDelegate> delegate;
 
+/**
+*  编辑状态 是否正在编辑
+*/
+@property(nonatomic, assign, getter=isInputEditing) BOOL inputEditing;
+
 //出场动画
 - (void)showAnimation;
 

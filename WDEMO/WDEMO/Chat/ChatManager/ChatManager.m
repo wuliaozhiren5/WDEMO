@@ -126,7 +126,19 @@
     [_halfChat keyboardReset];
     [_fullChat keyboardReset];
 }
-  
+
+- (BOOL)isInputEditing {
+    BOOL isInputEditing = NO;
+    BOOL halfInputEditing = _halfChat.isInputEditing;
+    BOOL fullInputEditing = _fullChat.isInputEditing;
+    if (halfInputEditing || fullInputEditing) {
+        isInputEditing = YES;
+    } else {
+        isInputEditing = NO;
+    }
+    return isInputEditing;
+}
+
 - (NSOperationQueue *)queue {
     if (!_queue) {
         _queue = [[NSOperationQueue alloc] init];

@@ -68,6 +68,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, weak) id<ChatControllerDelegate> delegate;
 
 /**
+*  编辑状态 是否正在编辑
+*/
+@property(nonatomic, assign, getter=isInputEditing) BOOL inputEditing;
+
+
+/**
  *  发送自定义的个性化消息
  *
  */
