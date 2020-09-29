@@ -1,5 +1,5 @@
 //
-//  RRSeeLivingModel.h
+//  SeeLivingModel.h
 //  WDEMO
 //
 //  Created by rrtv on 2020/8/12.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RRSeeLivingModel : NSObject
+@interface SeeLivingModel : NSObject
 
 @end
 

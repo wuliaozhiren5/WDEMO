@@ -107,8 +107,8 @@
 		F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A889B824F65D6000DB73ED /* RACLoginViewController.m */; };
 		F5A889BC24F65D9000DB73ED /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A889BB24F65D9000DB73ED /* LoginViewModel.m */; };
 		F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F12924E3C12B00F611E6 /* TestViewController.m */; };
-		F5A9F13924E3D44B00F611E6 /* RRSeeLivingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13824E3D44A00F611E6 /* RRSeeLivingBaseCell.m */; };
-		F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */; };
+		F5A9F13924E3D44B00F611E6 /* SeeLivingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13824E3D44A00F611E6 /* SeeLivingBaseCell.m */; };
+		F5A9F13C24E3EC2400F611E6 /* SeeLivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */; };
 		F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B30F6524F8D3F8003DFB2E /* RAC.md */; };
 		F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A92F2508F502002505AE /* FullScreenMessageController.m */; };
 		F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9302508F502002505AE /* HalfScreenMessageController.m */; };
@@ -386,10 +386,10 @@
 		F5A889BB24F65D9000DB73ED /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
 		F5A9F12824E3C12B00F611E6 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		F5A9F12924E3C12B00F611E6 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		F5A9F13724E3D44A00F611E6 /* RRSeeLivingBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRSeeLivingBaseCell.h; sourceTree = "<group>"; };
-		F5A9F13824E3D44A00F611E6 /* RRSeeLivingBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRSeeLivingBaseCell.m; sourceTree = "<group>"; };
-		F5A9F13A24E3EC2400F611E6 /* RRSeeLivingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRSeeLivingModel.h; sourceTree = "<group>"; };
-		F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRSeeLivingModel.m; sourceTree = "<group>"; };
+		F5A9F13724E3D44A00F611E6 /* SeeLivingBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeeLivingBaseCell.h; sourceTree = "<group>"; };
+		F5A9F13824E3D44A00F611E6 /* SeeLivingBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeeLivingBaseCell.m; sourceTree = "<group>"; };
+		F5A9F13A24E3EC2400F611E6 /* SeeLivingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeeLivingModel.h; sourceTree = "<group>"; };
+		F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeeLivingModel.m; sourceTree = "<group>"; };
 		F5B30F6524F8D3F8003DFB2E /* RAC.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RAC.md; sourceTree = "<group>"; };
 		F5B5A92E2508F501002505AE /* HalfScreenMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenMessageController.h; sourceTree = "<group>"; };
 		F5B5A92F2508F502002505AE /* FullScreenMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenMessageController.m; sourceTree = "<group>"; };
@@ -635,10 +635,10 @@
 				6783C8551FB941EE0040C02B /* ViewController.m */,
 				F5A9F12824E3C12B00F611E6 /* TestViewController.h */,
 				F5A9F12924E3C12B00F611E6 /* TestViewController.m */,
-				F5A9F13724E3D44A00F611E6 /* RRSeeLivingBaseCell.h */,
-				F5A9F13824E3D44A00F611E6 /* RRSeeLivingBaseCell.m */,
-				F5A9F13A24E3EC2400F611E6 /* RRSeeLivingModel.h */,
-				F5A9F13B24E3EC2400F611E6 /* RRSeeLivingModel.m */,
+				F5A9F13724E3D44A00F611E6 /* SeeLivingBaseCell.h */,
+				F5A9F13824E3D44A00F611E6 /* SeeLivingBaseCell.m */,
+				F5A9F13A24E3EC2400F611E6 /* SeeLivingModel.h */,
+				F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */,
 				F5C7261924E1317B00B16639 /* ListModelCell.h */,
 				F5C7261A24E1317B00B16639 /* ListModelCell.m */,
 				A459C29224C174A300A3B5FF /* Plist.h */,
@@ -1397,13 +1397,13 @@
 				F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */,
 				F5A8898E24F6078E00DB73ED /* OrderViewModel.m in Sources */,
 				F5D0FC0D24E0F99800CAADF8 /* UIImage+TUIKIT.m in Sources */,
-				F5A9F13924E3D44B00F611E6 /* RRSeeLivingBaseCell.m in Sources */,
+				F5A9F13924E3D44B00F611E6 /* SeeLivingBaseCell.m in Sources */,
 				F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */,
 				F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */,
 				F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */,
 				F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */,
 				F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */,
-				F5A9F13C24E3EC2400F611E6 /* RRSeeLivingModel.m in Sources */,
+				F5A9F13C24E3EC2400F611E6 /* SeeLivingModel.m in Sources */,
 				A459C29424C174A300A3B5FF /* Plist.m in Sources */,
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
 				F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */,

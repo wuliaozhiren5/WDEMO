@@ -18,9 +18,9 @@
 #import "TestViewController.h"
 #import <Masonry/Masonry.h>
 #import "WCollectionViewCell.h"
-#import "RRSeeLivingBaseCell.h"
+#import "SeeLivingBaseCell.h"
 
-@interface TestViewController ()<UICollectionViewDelegate, UICollectionViewDataSource,RRSeeLivingCellDelegate>
+@interface TestViewController ()<UICollectionViewDelegate, UICollectionViewDataSource,SeeLivingCellDelegate>
 
 @property(strong , nonatomic)UICollectionView *collectionView;
 @property(copy , nonatomic)NSArray *data;
@@ -167,16 +167,16 @@
 }
 
 
-#pragma mark -- RRSeeLivingCellDelegate
-- (void)seeLivingCell:(RRSeeLivingBaseCell *)cell subscribe:(RRSeeLivingModel *)data {
+#pragma mark -- SeeLivingCellDelegate
+- (void)seeLivingCell:(SeeLivingBaseCell *)cell subscribe:(SeeLivingModel *)data {
     
 }
 
-- (void)seeLivingCell:(RRSeeLivingBaseCell *)cell firstLook:(RRSeeLivingModel *)data {
+- (void)seeLivingCell:(SeeLivingBaseCell *)cell firstLook:(SeeLivingModel *)data {
     
 }
 
-- (void)seeLivingCell:(RRSeeLivingBaseCell *)cell seeLiving:(RRSeeLivingModel *)data {
+- (void)seeLivingCell:(SeeLivingBaseCell *)cell seeLiving:(SeeLivingModel *)data {
     
 }
 

@@ -1,14 +1,14 @@
 //
-//  RRSeeLivingBaseCell.m
+//  SeeLivingBaseCell.m
 //  WDEMO
 //
 //  Created by rrtv on 2020/8/12.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import "RRSeeLivingBaseCell.h"
+#import "SeeLivingBaseCell.h"
 #import <Masonry/Masonry.h>
-@implementation RRSeeLivingBaseCell
+@implementation SeeLivingBaseCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
