@@ -39,8 +39,11 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+        //隐藏分割线
 //        self.selectionStyle = UITableViewCellSelectionStyleNone;
-         
+        //分割线
+//        self.separatorInset = UIEdgeInsetsMake(0, 21, 0, 21);
+
         self.avatarImageView.frame = CGRectMake(10, 10, 40, 40);
         self.firstLabel.frame = CGRectMake(60, 10, 200, 20);
         self.secondLabel.frame = CGRectMake(60, 30, 200, 20);
