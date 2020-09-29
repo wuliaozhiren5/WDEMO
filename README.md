@@ -26,8 +26,17 @@ UncaughtExceptionHandler
 
 .plist
 
-cell:  - (void)fillWithData:(id)data;  
+
+
+//填充数据
+cell:  - (void)fillWithData:(id)data; 
+//计算高度
+cell:  + (CGFloat)heightForCellWithModel:(id)model;
+cell:  + (CGFloat)cellHeightWithModel:(id)model;
+//创建布局
 view: - (void)setupViews;
+
+
 
 git
 

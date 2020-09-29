@@ -57,7 +57,15 @@
 }
 
 - (void)fillWithData:(id)data {
-    
+    //todo
+}
+
++ (CGFloat)heightForCellWithModel:(id)model {
+    return 44;
+}
+
++ (CGFloat)cellHeightWithModel:(id)model {
+    return 44;
 }
 
 //lazy

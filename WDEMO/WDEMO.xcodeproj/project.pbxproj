@@ -93,6 +93,7 @@
 		F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */; };
 		F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D225008B6A004991D3 /* PasswordVC.m */; };
 		F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D525008D76004991D3 /* ChangePasswordVC.m */; };
+		F5710B4225232263009DEE02 /* 富文本.md in Resources */ = {isa = PBXBuildFile; fileRef = F5710B4125232263009DEE02 /* 富文本.md */; };
 		F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */; };
 		F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
@@ -358,6 +359,7 @@
 		F566A1D225008B6A004991D3 /* PasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordVC.m; sourceTree = "<group>"; };
 		F566A1D425008D76004991D3 /* ChangePasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
 		F566A1D525008D76004991D3 /* ChangePasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
+		F5710B4125232263009DEE02 /* 富文本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "富文本.md"; sourceTree = "<group>"; };
 		F57A6A7524CFCA8400D51E01 /* FaceMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageCell.h; sourceTree = "<group>"; };
 		F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageCell.m; sourceTree = "<group>"; };
 		F57A6A7824CFCA9700D51E01 /* EnterMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterMessageCell.h; sourceTree = "<group>"; };
@@ -1019,6 +1021,7 @@
 			children = (
 				F5D0FBFD24E0E6CB00CAADF8 /* AttributedTextViewController.h */,
 				F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */,
+				F5710B4125232263009DEE02 /* 富文本.md */,
 			);
 			path = "富文本";
 			sourceTree = "<group>";
@@ -1304,6 +1307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5710B4225232263009DEE02 /* 富文本.md in Resources */,
 				F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */,
 				F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */,
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,

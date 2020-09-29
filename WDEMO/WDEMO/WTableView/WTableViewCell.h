@@ -18,9 +18,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIImageView *avatarImageView;
 
+//填充数据
 - (void)fillWithData:(id)data;
- 
 
+//计算高度
++ (CGFloat)heightForCellWithModel:(id)model;
++ (CGFloat)cellHeightWithModel:(id)model;
 @end
 
 NS_ASSUME_NONNULL_END
