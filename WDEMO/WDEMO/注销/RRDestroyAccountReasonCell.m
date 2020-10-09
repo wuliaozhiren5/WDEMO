@@ -165,10 +165,9 @@
         _textView.tintColor = kCOLOR_00BBFF;
         NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
         paragraphStyle.lineSpacing = 3;// 字体的行间距
-        NSDictionary *attributes = @{ NSFontAttributeName:_textView.font ,
+        NSDictionary *attributes = @{NSFontAttributeName:_textView.font,
         NSForegroundColorAttributeName:kCOLOR_333333,
-            NSParagraphStyleAttributeName:paragraphStyle
-                                     };
+            NSParagraphStyleAttributeName:paragraphStyle};
         _textView.typingAttributes = attributes;
 
     }
