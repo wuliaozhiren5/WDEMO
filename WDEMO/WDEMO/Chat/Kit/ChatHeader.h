@@ -11,7 +11,8 @@
 
 #define Version 4
 
-
+#define SCREEN_WIDTH        [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT       [UIScreen mainScreen].bounds.size.height
 #define Screen_Width        [UIScreen mainScreen].bounds.size.width
 #define Screen_Height       [UIScreen mainScreen].bounds.size.height
 #define Is_Iphone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)

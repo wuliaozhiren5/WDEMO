@@ -132,6 +132,7 @@
 		F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */; };
 		F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32724CEBB66009A6767 /* MessageController.m */; };
 		F5DEB33024CEF5E3009A6767 /* NoInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32F24CEF5E3009A6767 /* NoInputBar.m */; };
+		F5E4785E25301177001AE2AE /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E4785D25301177001AE2AE /* WebVC.m */; };
 		F5F3664924C8287C008BA221 /* ChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3664824C8287C008BA221 /* ChatKit.m */; };
 		F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */; };
 		F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */; };
@@ -437,6 +438,8 @@
 		F5DEB32824CEBB66009A6767 /* MessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageController.h; sourceTree = "<group>"; };
 		F5DEB32E24CEF5E3009A6767 /* NoInputBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoInputBar.h; sourceTree = "<group>"; };
 		F5DEB32F24CEF5E3009A6767 /* NoInputBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoInputBar.m; sourceTree = "<group>"; };
+		F5E4785C25301177001AE2AE /* WebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
+		F5E4785D25301177001AE2AE /* WebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
 		F5F3664724C8287B008BA221 /* ChatKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKit.h; sourceTree = "<group>"; };
 		F5F3664824C8287C008BA221 /* ChatKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKit.m; sourceTree = "<group>"; };
 		F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChatKitFace.bundle; sourceTree = "<group>"; };
@@ -598,6 +601,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5E4785B25301154001AE2AE /* WebView */,
 				F5609CAB2502236700A13C15 /* TabBarController */,
 				F5609CAA2502236400A13C15 /* NavigationController */,
 				F5609CA32502195A00A13C15 /* 屏幕旋转 */,
@@ -1093,6 +1097,15 @@
 			path = Kit;
 			sourceTree = "<group>";
 		};
+		F5E4785B25301154001AE2AE /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				F5E4785C25301177001AE2AE /* WebVC.h */,
+				F5E4785D25301177001AE2AE /* WebVC.m */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 		F5F346F024ED5964006AAEA3 /* 枚举 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1416,6 +1429,7 @@
 				F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */,
 				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
+				F5E4785E25301177001AE2AE /* WebVC.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
 				F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */,
 				F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */,
