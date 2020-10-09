@@ -64,7 +64,8 @@
 #import "NeedResetPasswordVC.h"
 //全屏
 #import "AllScreenViewController.h"
-
+//webview
+#import "WebVC.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
@@ -80,7 +81,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     
 //    [self clickChat];
- 
+    [self clickWebView];
     //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
     //    self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -343,6 +344,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+-(void)clickWebView {
+    WebVC *vc= [[WebVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (NSTimer *)timer {
     if (!_timer || _timer.isValid) {

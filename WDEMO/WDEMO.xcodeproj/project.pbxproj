@@ -133,6 +133,8 @@
 		F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32724CEBB66009A6767 /* MessageController.m */; };
 		F5DEB33024CEF5E3009A6767 /* NoInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32F24CEF5E3009A6767 /* NoInputBar.m */; };
 		F5E4785E25301177001AE2AE /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E4785D25301177001AE2AE /* WebVC.m */; };
+		F5E4786825303C93001AE2AE /* WKWebView.md in Resources */ = {isa = PBXBuildFile; fileRef = F5E4786725303C93001AE2AE /* WKWebView.md */; };
+		F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */ = {isa = PBXBuildFile; fileRef = F5E4786D25303C9E001AE2AE /* 屏幕旋转.md */; };
 		F5F3664924C8287C008BA221 /* ChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3664824C8287C008BA221 /* ChatKit.m */; };
 		F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */; };
 		F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */; };
@@ -440,6 +442,8 @@
 		F5DEB32F24CEF5E3009A6767 /* NoInputBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoInputBar.m; sourceTree = "<group>"; };
 		F5E4785C25301177001AE2AE /* WebVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WebVC.h; sourceTree = "<group>"; };
 		F5E4785D25301177001AE2AE /* WebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
+		F5E4786725303C93001AE2AE /* WKWebView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = WKWebView.md; sourceTree = "<group>"; };
+		F5E4786D25303C9E001AE2AE /* 屏幕旋转.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "屏幕旋转.md"; sourceTree = "<group>"; };
 		F5F3664724C8287B008BA221 /* ChatKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKit.h; sourceTree = "<group>"; };
 		F5F3664824C8287C008BA221 /* ChatKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKit.m; sourceTree = "<group>"; };
 		F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChatKitFace.bundle; sourceTree = "<group>"; };
@@ -820,6 +824,7 @@
 		F5609CA32502195A00A13C15 /* 屏幕旋转 */ = {
 			isa = PBXGroup;
 			children = (
+				F5E4786D25303C9E001AE2AE /* 屏幕旋转.md */,
 				F5609CAF25024E2600A13C15 /* AllScreenViewController.h */,
 				F5609CAE25024E2600A13C15 /* AllScreenViewController.m */,
 				F5609CA02502194B00A13C15 /* AllScreenViewController.h */,
@@ -1100,6 +1105,7 @@
 		F5E4785B25301154001AE2AE /* WebView */ = {
 			isa = PBXGroup;
 			children = (
+				F5E4786725303C93001AE2AE /* WKWebView.md */,
 				F5E4785C25301177001AE2AE /* WebVC.h */,
 				F5E4785D25301177001AE2AE /* WebVC.m */,
 			);
@@ -1326,8 +1332,10 @@
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
 				F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */,
+				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
+				F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */,
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
 				6783C8591FB941EE0040C02B /* Main.storyboard in Resources */,
 			);
@@ -1684,7 +1692,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1734,7 +1742,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
