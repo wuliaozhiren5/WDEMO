@@ -112,6 +112,12 @@
         decisionHandler(WKNavigationActionPolicyAllow);
     }
     
+    /* 简单判断host，真实App代码中，需要更精确判断itunes链接 */
+    if ([navigationAction.request.URL.host isEqualToString:@"itunes.apple.com"] &&
+                 [[UIApplication sharedApplication] openURL:navigationAction.request.URL]) {
+        decisionHandler(WKNavigationActionPolicyCancel);
+    }
+    
 }
 //接收到相应数据后，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
@@ -124,6 +130,8 @@
 }
 
 - (void)jumpApp{
+    
+    //rrmj://tieba/open?
     NSString *urlString = @"DemoBScheme://";//没有参数
     NSURL *url = [NSURL URLWithString:urlString];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
