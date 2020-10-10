@@ -5,10 +5,9 @@
 //  Created by rrtv on 2020/9/29.
 //  Copyright © 2020 RRMJ. All rights reserved.
 //
-
 #define kTiebaImageViewWidth     (KWidth - 21 * 2 - 4.5 * 2)/3
-#define kTiebaLongContentwidth   KWidth - 21 * 2
-#define kTiebaShortContentwidth  KWidth - 21 * 2 - 13 - kTiebaImageViewWidth
+#define kTiebaLongContentWidth   KWidth - 21 * 2
+#define kTiebaShortContentWidth  KWidth - 21 * 2 - 13 - kTiebaImageViewWidth
 
 #import "RRSeasonTiebaHotDiscussionBaseCell.h"
 @interface RRSeasonTiebaHotDiscussionBaseCell ()
@@ -35,7 +34,6 @@
         [self.contentView addSubview:self.authorNameLabel];
         [self.contentView addSubview:self.discussionCountLabel];
         [self.contentView addSubview:self.line];
-        
     }
     return self;
 }
@@ -161,7 +159,7 @@
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraph range:NSMakeRange(0, attributedString.length)];
     self.contentLabel.attributedText = attributedString;
     self.contentLabel.numberOfLines = 3;
-    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake(kTiebaLongContentwidth, MAXFLOAT)];
+    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake(kTiebaLongContentWidth, MAXFLOAT)];
     NSLog(@"hot width = %f, hot height = %f",size.width, size.height);
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -206,8 +204,33 @@
 }
 
 //计算高度
-+ (CGFloat)cellHeightWithModel:(id)model{
-    return 44;
++ (CGFloat)cellHeightWithModel:(id)model {
+//    return 44;
+    //标题栏：42
+    //底部的头像昵称评论栏：42
+    //图片高度：kTiebaImageViewWidth     (KWidth - 21 * 2 - 4.5 * 2)/3
+    //文字高度：动态
+     
+    NSString *contentStr = @"经典角色超人稳居第一，蜘蛛侠、钢铁侠紧随请后，有没有你心目中的英雄呢经典角色超人稳居后有没有你心目中的英雄呢经典角色超人稳居…经典角色超人稳居第一，蜘蛛侠、钢铁侠紧随请后，有没有你心目中的英雄呢经典角色超人稳居后有没有你心目中的英雄呢经典角色超人稳居";;
+  
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:contentStr];
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc]init];
+    paragraph.lineSpacing = 6;
+    paragraph.alignment = NSTextAlignmentJustified;
+    paragraph.lineBreakMode = NSLineBreakByTruncatingTail;
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraph range:NSMakeRange(0, attributedString.length)];
+   
+    UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    contentLabel.numberOfLines = 3;
+    contentLabel.font = RR_COMMONFONT(15);
+    contentLabel.textColor = kCOLOR_dynamicProvider_333333_DADBDC;
+    contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    contentLabel.textAlignment = NSTextAlignmentJustified;
+    contentLabel.attributedText = attributedString;
+    CGSize size = [contentLabel sizeThatFits:CGSizeMake(kTiebaLongContentWidth, MAXFLOAT)];
+//    NSLog(@"hot width = %f, hot height = %f",size.width, size.height);
+   return 42 + 42 + size.height;
+     
 }
 @end
 
@@ -256,7 +279,7 @@
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraph range:NSMakeRange(0, attributedString.length)];
     self.contentLabel.attributedText = attributedString;
     self.contentLabel.numberOfLines = 0;
-    //    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake(kTiebaShortContentwidth, MAXFLOAT)];
+    //    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake(kTiebaShortContentWidth, MAXFLOAT)];
     //    NSLog(@"hot width = %f, hot height = %f",size.width, size.height);
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -299,14 +322,21 @@
     [self.contentLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.mas_equalTo(self.singlePictureView);
         make.leading.mas_equalTo(21);
-        make.width.mas_equalTo(kTiebaShortContentwidth);
+        make.width.mas_equalTo(kTiebaShortContentWidth);
         make.height.mas_lessThanOrEqualTo(kTiebaImageViewWidth);
     }];
 }
 
 //计算高度
-+ (CGFloat)cellHeightWithModel:(id)model{
-    return 44;
++ (CGFloat)cellHeightWithModel:(id)model {
+//    return 44;
+    //标题栏：45
+    //底部的头像昵称评论栏：42
+    //图片高度：kTiebaImageViewWidth     (KWidth - 21 * 2 - 4.5 * 2)/3
+    //文字高度：等于图片高度
+ 
+   return 45 + 42 + kTiebaImageViewWidth;
+     
 }
 
 -(UIImageView *)singlePictureView {
@@ -375,7 +405,7 @@
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraph range:NSMakeRange(0, attributedString.length)];
     self.contentLabel.attributedText = attributedString;
     self.contentLabel.numberOfLines = 3;
-    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake(kTiebaLongContentwidth, MAXFLOAT)];
+    CGSize size = [self.contentLabel sizeThatFits:CGSizeMake(kTiebaLongContentWidth, MAXFLOAT)];
     NSLog(@"hot width = %f, hot height = %f",size.width, size.height);
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -427,7 +457,32 @@
 }
 
 //计算高度
-+ (CGFloat)cellHeightWithModel:(id)model{
-    return 44;
++ (CGFloat)cellHeightWithModel:(id)model {
+//    return 44;
+    //标题栏：42
+    //底部的头像昵称评论栏：42
+    //图片高度：kTiebaImageViewWidth     (KWidth - 21 * 2 - 4.5 * 2)/3
+    //文字高度：动态
+     
+    NSString *contentStr = @"经典角色超人稳居第一，蜘蛛侠、钢铁侠紧随请后，有没有你心目中的英雄呢经典角色超人稳居后有没有你心目中的英雄呢经典角色超人稳居…经典角色超人稳居第一，蜘蛛侠、钢铁侠紧随请后，有没有你心目中的英雄呢经典角色超人稳居后有没有你心目中的英雄呢经典角色超人稳居";;
+  
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:contentStr];
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc]init];
+    paragraph.lineSpacing = 6;
+    paragraph.alignment = NSTextAlignmentJustified;
+    paragraph.lineBreakMode = NSLineBreakByTruncatingTail;
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraph range:NSMakeRange(0, attributedString.length)];
+   
+    UILabel *contentLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    contentLabel.numberOfLines = 3;
+    contentLabel.font = RR_COMMONFONT(15);
+    contentLabel.textColor = kCOLOR_dynamicProvider_333333_DADBDC;
+    contentLabel.lineBreakMode = NSLineBreakByTruncatingTail;
+    contentLabel.textAlignment = NSTextAlignmentJustified;
+    contentLabel.attributedText = attributedString;
+    CGSize size = [contentLabel sizeThatFits:CGSizeMake(kTiebaLongContentWidth, MAXFLOAT)];
+//    NSLog(@"hot width = %f, hot height = %f",size.width, size.height);
+   return 42 + 42 + kTiebaImageViewWidth + size.height + 6;
+     
 }
 @end

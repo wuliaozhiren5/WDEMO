@@ -1,8 +1,8 @@
 //
-//  WWCBaseTabBarController.h
+//  BaseViewController.h
 //  WDEMO
 //
-//  Created by rrtv on 2020/9/4.
+//  Created by rrtv on 2020/10/10.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WWCBaseTabBarController : UITabBarController
+@interface BaseViewController : UIViewController
 
 @end
 

@@ -60,6 +60,7 @@
 		F507113024E2A6A700AD5306 /* MYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F507112F24E2A6A700AD5306 /* MYPerson.m */; };
 		F507113324E2A6BE00AD5306 /* MYCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113224E2A6BE00AD5306 /* MYCar.m */; };
 		F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113624E2AB9400AD5306 /* IsEqualViewController.m */; };
+		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
 		F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */; };
 		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
 		F53293F32509CE0E00E06D42 /* FullScreenChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293F22509CE0D00E06D42 /* FullScreenChatController.m */; };
@@ -83,8 +84,8 @@
 		F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C9B250215ED00A13C15 /* NeedResetPasswordVC.m */; };
 		F5609C9F250216BE00A13C15 /* RegisterSetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C9E250216BE00A13C15 /* RegisterSetPasswordVC.m */; };
 		F5609CA22502194C00A13C15 /* AllScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA12502194C00A13C15 /* AllScreenViewController.m */; };
-		F5609CA62502222100A13C15 /* WWCBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA52502222100A13C15 /* WWCBaseNavigationController.m */; };
-		F5609CA92502235400A13C15 /* WWCBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA82502235300A13C15 /* WWCBaseTabBarController.m */; };
+		F5609CA62502222100A13C15 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA52502222100A13C15 /* BaseNavigationController.m */; };
+		F5609CA92502235400A13C15 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA82502235300A13C15 /* BaseTabBarController.m */; };
 		F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */ = {isa = PBXBuildFile; fileRef = F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */; };
 		F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CAE25024E2600A13C15 /* AllScreenViewController.m */; };
 		F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F564D5E824F7550C00A02FA2 /* RACViewController.m */; };
@@ -296,6 +297,8 @@
 		F507113224E2A6BE00AD5306 /* MYCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYCar.m; sourceTree = "<group>"; };
 		F507113524E2AB9400AD5306 /* IsEqualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsEqualViewController.h; sourceTree = "<group>"; };
 		F507113624E2AB9400AD5306 /* IsEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsEqualViewController.m; sourceTree = "<group>"; };
+		F5200DC92531536E004637DD /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		F5200DCA2531536E004637DD /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfScreenInputController.m; sourceTree = "<group>"; };
 		F53293EC2509C6FE00E06D42 /* HalfScreenInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenInputController.h; sourceTree = "<group>"; };
 		F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenInputController.m; sourceTree = "<group>"; };
@@ -343,10 +346,10 @@
 		F5609C9E250216BE00A13C15 /* RegisterSetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterSetPasswordVC.m; sourceTree = "<group>"; };
 		F5609CA02502194B00A13C15 /* AllScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllScreenViewController.h; sourceTree = "<group>"; };
 		F5609CA12502194C00A13C15 /* AllScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllScreenViewController.m; sourceTree = "<group>"; };
-		F5609CA42502222000A13C15 /* WWCBaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWCBaseNavigationController.h; sourceTree = "<group>"; };
-		F5609CA52502222100A13C15 /* WWCBaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWCBaseNavigationController.m; sourceTree = "<group>"; };
-		F5609CA72502235300A13C15 /* WWCBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWCBaseTabBarController.h; sourceTree = "<group>"; };
-		F5609CA82502235300A13C15 /* WWCBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWCBaseTabBarController.m; sourceTree = "<group>"; };
+		F5609CA42502222000A13C15 /* BaseNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		F5609CA52502222100A13C15 /* BaseNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		F5609CA72502235300A13C15 /* BaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseTabBarController.h; sourceTree = "<group>"; };
+		F5609CA82502235300A13C15 /* BaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarController.m; sourceTree = "<group>"; };
 		F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "暗黑模式 深色模式.md"; sourceTree = "<group>"; };
 		F5609CAE25024E2600A13C15 /* AllScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllScreenViewController.m; sourceTree = "<group>"; };
 		F5609CAF25024E2600A13C15 /* AllScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllScreenViewController.h; sourceTree = "<group>"; };
@@ -605,9 +608,9 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5200DB22531526D004637DD /* 贴吧 */,
 				F5E4785B25301154001AE2AE /* WebView */,
-				F5609CAB2502236700A13C15 /* TabBarController */,
-				F5609CAA2502236400A13C15 /* NavigationController */,
+				F5609CAB2502236700A13C15 /* BaseController */,
 				F5609CA32502195A00A13C15 /* 屏幕旋转 */,
 				F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */,
 				F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */,
@@ -788,6 +791,13 @@
 			path = "判断对象是否相等";
 			sourceTree = "<group>";
 		};
+		F5200DB22531526D004637DD /* 贴吧 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "贴吧";
+			sourceTree = "<group>";
+		};
 		F53293EA2509C4C500E06D42 /* ChatController */ = {
 			isa = PBXGroup;
 			children = (
@@ -833,22 +843,17 @@
 			path = "屏幕旋转";
 			sourceTree = "<group>";
 		};
-		F5609CAA2502236400A13C15 /* NavigationController */ = {
+		F5609CAB2502236700A13C15 /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
-				F5609CA42502222000A13C15 /* WWCBaseNavigationController.h */,
-				F5609CA52502222100A13C15 /* WWCBaseNavigationController.m */,
+				F5609CA42502222000A13C15 /* BaseNavigationController.h */,
+				F5609CA52502222100A13C15 /* BaseNavigationController.m */,
+				F5609CA72502235300A13C15 /* BaseTabBarController.h */,
+				F5609CA82502235300A13C15 /* BaseTabBarController.m */,
+				F5200DC92531536E004637DD /* BaseViewController.h */,
+				F5200DCA2531536E004637DD /* BaseViewController.m */,
 			);
-			path = NavigationController;
-			sourceTree = "<group>";
-		};
-		F5609CAB2502236700A13C15 /* TabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				F5609CA72502235300A13C15 /* WWCBaseTabBarController.h */,
-				F5609CA82502235300A13C15 /* WWCBaseTabBarController.m */,
-			);
-			path = TabBarController;
+			path = BaseController;
 			sourceTree = "<group>";
 		};
 		F5668FB424C6D818007D452E /* CPU */ = {
@@ -1414,6 +1419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */,
+				F5200DCB2531536E004637DD /* BaseViewController.m in Sources */,
 				677BADD71FC412A700E7A3FF /* WConstants.m in Sources */,
 				F553E14424CA82E700DA5625 /* ChatKitConfig.m in Sources */,
 				F5A8898524F605C600DB73ED /* OrderViewController.m in Sources */,
@@ -1454,9 +1460,9 @@
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
-				F5609CA62502222100A13C15 /* WWCBaseNavigationController.m in Sources */,
+				F5609CA62502222100A13C15 /* BaseNavigationController.m in Sources */,
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
-				F5609CA92502235400A13C15 /* WWCBaseTabBarController.m in Sources */,
+				F5609CA92502235400A13C15 /* BaseTabBarController.m in Sources */,
 				F5F37087250A594400118FC4 /* ChatManager.m in Sources */,
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
 				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,

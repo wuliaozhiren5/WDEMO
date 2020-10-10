@@ -1,18 +1,18 @@
 //
-//  WWCBaseNavigationController.m
+//  BaseNavigationController.m
 //  WDEMO
 //
 //  Created by rrtv on 2020/9/4.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import "WWCBaseNavigationController.h"
+#import "BaseNavigationController.h"
 
-@interface WWCBaseNavigationController ()
+@interface BaseNavigationController ()
 
 @end
 
-@implementation WWCBaseNavigationController
+@implementation BaseNavigationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

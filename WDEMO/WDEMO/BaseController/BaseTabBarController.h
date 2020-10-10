@@ -1,5 +1,5 @@
 //
-//  WWCBaseNavigationController.h
+//  BaseTabBarController.h
 //  WDEMO
 //
 //  Created by rrtv on 2020/9/4.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WWCBaseNavigationController : UINavigationController
+@interface BaseTabBarController : UITabBarController
 
 @end
 

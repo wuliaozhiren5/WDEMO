@@ -1,18 +1,18 @@
 //
-//  WWCBaseTabBarController.m
+//  BaseTabBarController.m
 //  WDEMO
 //
 //  Created by rrtv on 2020/9/4.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import "WWCBaseTabBarController.h"
+#import "BaseTabBarController.h"
 
-@interface WWCBaseTabBarController ()
+@interface BaseTabBarController ()
 
 @end
 
-@implementation WWCBaseTabBarController
+@implementation BaseTabBarController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
