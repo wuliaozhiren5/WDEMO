@@ -9,6 +9,8 @@
 //https://cloud.tencent.com/developer/article/1445877
 #import "WebVC.h"
 #import "ChatHeader.h"
+#import "WMacros.h"
+#import <YYKit/YYKit.h>
 
 @interface WebVC () <WKUIDelegate, WKNavigationDelegate, SKStoreProductViewControllerDelegate>
 
@@ -61,23 +63,23 @@
 //        }];
     
     
-    //提示框
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"可能离开人人视频，打开第三方应用" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-    
-    }];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"继续" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        
-//        [self jumpApp];
-    }];
-    [alertController addAction:cancelAction];
-    [alertController addAction:confirmAction];
-    [self presentViewController:alertController animated:YES completion:nil];
+//    //提示框
+//    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"可能离开人人视频，打开第三方应用" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+//
+//    }];
+//    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"继续" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//
+////        [self jumpApp];
+//    }];
+//    [alertController addAction:cancelAction];
+//    [alertController addAction:confirmAction];
+//    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - WKNavigationDelegate
 // 页面开始加载时调用
-- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation{
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
     NSLog(@"页面开始加载时调用");
 }
 // 页面加载完成之后调用
@@ -95,30 +97,25 @@
 }
 //请求之前，决定是否要跳转:用户点击网页上的链接，需要打开新页面时，将先调用这个方法。
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-    
-    //允许页面跳转
-    //    NSLog(@"%@=========tw============",navigationAction.request.URL);
-    //如果是跳转一个新页面
-    //    if (navigationAction.targetFrame == nil) {
-    //        [webView loadRequest:navigationAction.request];
-    //    }
-    //
-    //    decisionHandler(WKNavigationActionPolicyAllow);
-    
-    
+//    跳转逻辑
+//    1.是否已安装app，否直接跳转AppStore，是弹出提示框
+//    2.弹出提示框后，点击否关闭，点击是跳转App
+
+    NSString *urlString = [navigationAction.request.URL absoluteString];
     if ([navigationAction.request.URL.scheme caseInsensitiveCompare:@"rrmj"] == NSOrderedSame) {
+        [self jumpWithUrl:urlString];
+        decisionHandler(WKNavigationActionPolicyAllow);
+    }
+    /* 简单判断host，真实App代码中，需要更精确判断itunes链接 */
+    else if ([navigationAction.request.URL.host isEqualToString:@"itunes.apple.com"]) {
+        //跳AppStore
+        [self jumpAppWithUrl:urlString];
         decisionHandler(WKNavigationActionPolicyCancel);
     } else {
         decisionHandler(WKNavigationActionPolicyAllow);
     }
-    
-    /* 简单判断host，真实App代码中，需要更精确判断itunes链接 */
-    if ([navigationAction.request.URL.host isEqualToString:@"itunes.apple.com"] &&
-                 [[UIApplication sharedApplication] openURL:navigationAction.request.URL]) {
-        decisionHandler(WKNavigationActionPolicyCancel);
-    }
-    
 }
+
 //接收到相应数据后，决定是否跳转
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler{
     
@@ -129,39 +126,79 @@
     }
 }
 
-- (void)jumpApp{
-    
-    //rrmj://tieba/open?
-    NSString *urlString = @"DemoBScheme://";//没有参数
-    NSURL *url = [NSURL URLWithString:urlString];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-        [[UIApplication sharedApplication] openURL:url options:@{} completionHandler:^(BOOL success) {
-            
-        }];
-    }
-    else {
-        NSLog(@"没有该应用");
-        
-        [self jumpAppStore];
+- (void)jumpAlertWithUrl:(NSString *)urlString {
+    //提示框
+//    @weakify(self);
+//    @strongify(self);
 
-    }
-
+    WS(weakSelf)
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"可能离开人人视频，打开第三方应用" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"继续" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [weakSelf jumpAppWithUrl:urlString];
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:confirmAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)jumpAppStore {
-    
-//    NSURL *url = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id1142110895"];
-//    if ([[UIApplication sharedApplication] canOpenURL:url]) {
-//        [[UIApplication sharedApplication]openURL:url options:@{UIApplicationOpenURLOptionsSourceApplicationKey:@YES} completionHandler:^(BOOL success) {
-//            if (success) {
-//                NSLog(@"10以后可以跳转url");
-//            }else{
-//                NSLog(@"10以后不可以跳转url");
-//            }
-//        }];
-//    } else {}
-    
-    
+- (void)jumpWithUrl:(NSString *)urlString {
+    //rrmj://tieba/open?
+//    NSString *urlString = @"DemoBScheme://";//没有参数
+    urlString = @"DemoBScheme://";//没有参数
+    NSURL *url = [NSURL URLWithString:urlString];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        //安装了该应用
+        [self jumpAlertWithUrl:urlString];
+    } else {
+        //没有安装该应用
+    }
+}
+
+- (void)jumpAppWithUrl:(NSString *)urlString {
+    NSURL *url = [NSURL URLWithString:urlString];
+    if (@available(iOS 10.0, *)){
+        [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionsSourceApplicationKey:@YES} completionHandler:^(BOOL success) {
+            if (success) {
+                NSLog(@"10以后可以跳转url");
+            }else{
+                NSLog(@"10以后不可以跳转url");
+            }
+        }];
+    }else{
+        BOOL success = [[UIApplication sharedApplication] openURL:url];
+        if (success) {
+            NSLog(@"10以前可以跳转url");
+        }else{
+            NSLog(@"10以前不可以跳转url");
+        }
+    }
+}
+
+//暂时不用
+- (void)jumpAppStoreWithUrl:(NSString *)urlString {
+    NSURL *url = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id1142110895"];
+    if (@available(iOS 10.0, *)){
+        [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionsSourceApplicationKey:@YES} completionHandler:^(BOOL success) {
+            if (success) {
+                NSLog(@"10以后可以跳转url");
+            }else{
+                NSLog(@"10以后不可以跳转url");
+            }
+        }];
+    }else{
+        BOOL success = [[UIApplication sharedApplication] openURL:url];
+        if (success) {
+            NSLog(@"10以前可以跳转url");
+        }else{
+            NSLog(@"10以前不可以跳转url");
+        }
+    }
+}
+
+//暂时不用
+- (void)jumpAppStoreInApp {
     //2:实现代理SKStoreProductViewControllerDelegate
     SKStoreProductViewController *storeProductViewContorller = [[SKStoreProductViewController alloc] init];
     storeProductViewContorller.delegate = self;
@@ -169,17 +206,16 @@
     [storeProductViewContorller loadProductWithParameters: @{SKStoreProductParameterITunesItemIdentifier : @"1142110895"} completionBlock:^(BOOL result, NSError *error) {
         //回调
         if(error){
-             NSLog(@"错误%@",error);
+            NSLog(@"错误%@",error);
         }else{
             //应用界面
             [self presentViewController:storeProductViewContorller animated:YES completion:nil];
         }
     }];
-    
 }
 
 #pragma mark - SKStoreProductViewControllerDelegate
-- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController{
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
