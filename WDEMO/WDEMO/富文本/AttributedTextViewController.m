@@ -36,8 +36,7 @@
  }
  */
 
-//https://www.jianshu.com/p/c2b8a7940d4d
-//https://blog.csdn.net/smilebigdear/article/details/70054561
+
 //常用：设置行高
 - (void)hanggao {
     NSString *contentStr = @"阿斯顿就离开撒的饭卡上阿斯顿就离开撒的ref 被用来给DOM元素或子组件注册引用信息。引用信息会根据父组件的 $refs 对象进行注册。如果在普通的DOM元素上使用，引用信息就是元素; 如果用在子组件上，引用信息就是组件实例.注意：只要想要在Vue中直接操作DOM元素，就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册";
