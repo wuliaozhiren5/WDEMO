@@ -23,6 +23,7 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc]initWithFrame:self.contentView.bounds];
         _titleLabel.frame = self.contentView.bounds;
+        _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.font = [UIFont systemFontOfSize:12.0];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
 //        _titleLabel.frame = CGRectMake(10, 10, 50, 50);

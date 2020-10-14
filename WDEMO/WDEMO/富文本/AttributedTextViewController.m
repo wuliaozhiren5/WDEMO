@@ -9,7 +9,7 @@
 #import "AttributedTextViewController.h"
 
 @interface AttributedTextViewController ()
-
+@property (nonatomic, strong) UILabel *titleLab;
 @end
 
 @implementation AttributedTextViewController
@@ -18,28 +18,71 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self textway1];
+//    [self textway1];
     
-//    [self textway2];
-
+    //    [self textway2];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.titleLab];
+    [self hanggao];
 }
 
 /*
-#pragma mark - Navigation
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//https://www.jianshu.com/p/c2b8a7940d4d
+//https://blog.csdn.net/smilebigdear/article/details/70054561
+//常用：设置行高
+- (void)hanggao {
+    NSString *contentStr = @"阿斯顿就离开撒的饭卡上阿斯顿就离开撒的ref 被用来给DOM元素或子组件注册引用信息。引用信息会根据父组件的 $refs 对象进行注册。如果在普通的DOM元素上使用，引用信息就是元素; 如果用在子组件上，引用信息就是组件实例.注意：只要想要在Vue中直接操作DOM元素，就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册";
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:contentStr];
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc]init];
+    //行间距
+    paragraph.lineSpacing = 6;
+    //对齐方式两边对齐
+//    paragraph.alignment = NSTextAlignmentJustified;
+//    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
+    //重要
+    //重要
+    //重要
+    //字体一定要设置 不然计算大小会出问题，之前也不用设置，好奇怪啊
+    //颜色的可以不用设置，不设置的话可以适配暗黑模式，设置了暗黑模式就不起作用了，个人理解
+    [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],
+                                      NSForegroundColorAttributeName: [UIColor blackColor],
+                                      NSParagraphStyleAttributeName:paragraph}
+                              range:NSMakeRange(0, attributedString.length)];
+  
+    self.titleLab.attributedText = attributedString;
+
+    NSLog(@"/////////////////////////////////////////////////////////////////");
+
+    //计算高度方法1
+    CGSize size = [self.titleLab sizeThatFits:CGSizeMake(320.0, MAXFLOAT)];
+    NSLog(@"计算高度方法1：text width = %f, text height = %f", size.width, size.height);
+//    self.titleLab.frame = CGRectMake(0, 0, size.width, size.height);
+ 
+    //计算高度方法2
+    CGRect rect = [attributedString boundingRectWithSize:CGSizeMake(320.0, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+    CGSize size2 = rect.size;
+    NSLog(@"计算高度方法2：text width = %f, text height = %f", size2.width, size2.height);
+//    NSLog(@" size2 =  %@", NSStringFromCGSize(size2));
+
+    
+    self.titleLab.frame = CGRectMake(0, 0, 320.0, size2.height);
+     
 }
-*/
-
 
 - (void)textway1 {
     NSString *str = @"人生若只如初见，何事悲风秋画扇。\n等闲变却故人心，却道故人心易变。\n骊山语罢清宵半，泪雨霖铃终不怨。\n何如薄幸锦衣郎，比翼连枝当日愿。";
     //创建NSMutableAttributedString
     NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc]initWithString:str];
-
+    
     //设置字体和设置字体的范围
     [attrStr addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:30.0f] range:NSMakeRange(0, 3)];
     //添加文字颜色
@@ -48,7 +91,7 @@
     [attrStr addAttribute:NSBackgroundColorAttributeName value:[UIColor orangeColor] range:NSMakeRange(17, 7)];
     //添加下划线
     [attrStr addAttribute:NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlineStyleSingle] range:NSMakeRange(8, 7)];
-
+    
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(60, 100, 200, 0)];
     label.backgroundColor = [UIColor greenColor];
     //自动换行
@@ -62,27 +105,27 @@
 
 
 - (void)textway2 {
-   //初始化NSMutableAttributedString
+    //初始化NSMutableAttributedString
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]init];
-
+    
     //设置字体格式和大小
     NSString *str0 = @"设置字体格式和大小";
     NSDictionary *dictAttr0 = @{NSFontAttributeName:[UIFont systemFontOfSize:14]};
     NSAttributedString *attr0 = [[NSAttributedString alloc]initWithString:str0 attributes:dictAttr0];
     [attributedString appendAttributedString:attr0];
-
+    
     //设置字体颜色
     NSString *str1 = @"\n设置字体颜色\n";
     NSDictionary *dictAttr1 = @{NSForegroundColorAttributeName:[UIColor purpleColor]};
     NSAttributedString *attr1 = [[NSAttributedString alloc]initWithString:str1 attributes:dictAttr1];
     [attributedString appendAttributedString:attr1];
-
+    
     //设置字体背景颜色
     NSString *str2 = @"设置字体背景颜色\n";
     NSDictionary *dictAttr2 = @{NSBackgroundColorAttributeName:[UIColor cyanColor]};
     NSAttributedString *attr2 = [[NSAttributedString alloc]initWithString:str2 attributes:dictAttr2];
     [attributedString appendAttributedString:attr2];
-
+    
     /*
      注：NSLigatureAttributeName设置连体属性，取值为NSNumber对象（整数），1表示使用默认的连体字符，0表示不使用，2表示使用所有连体符号（iOS不支持2）。而且并非所有的字符之间都有组合符合。如 fly ，f和l会连起来。
      */
@@ -91,42 +134,42 @@
     NSDictionary *dictAttr3 = @{NSFontAttributeName:[UIFont fontWithName:@"futura" size:14],NSLigatureAttributeName:[NSNumber numberWithInteger:1]};
     NSAttributedString *attr3 = [[NSAttributedString alloc]initWithString:str3 attributes:dictAttr3];
     [attributedString appendAttributedString:attr3];
-
+    
     /*!
      注：NSKernAttributeName用来设置字符之间的间距，取值为NSNumber对象（整数），负值间距变窄，正值间距变宽
      */
-
+    
     NSString *str4 = @"\n设置字符间距";
     NSDictionary *dictAttr4 = @{NSKernAttributeName:@(4)};
     NSAttributedString *attr4 = [[NSAttributedString alloc]initWithString:str4 attributes:dictAttr4];
     [attributedString appendAttributedString:attr4];
-
+    
     /*!
      注：NSStrikethroughStyleAttributeName设置删除线，取值为NSNumber对象，枚举NSUnderlineStyle中的值。NSStrikethroughColorAttributeName设置删除线的颜色。并可以将Style和Pattern相互 取与 获取不同的效果
      */
-
+    
     NSString *str51 = @"\n设置删除线为细单实线,颜色为红色";
     NSDictionary *dictAttr51 = @{NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle),NSStrikethroughColorAttributeName:[UIColor redColor]};
     NSAttributedString *attr51 = [[NSAttributedString alloc]initWithString:str51 attributes:dictAttr51];
     [attributedString appendAttributedString:attr51];
-
-
+    
+    
     NSString *str52 = @"\n设置删除线为粗单实线,颜色为红色";
     NSDictionary *dictAttr52 = @{NSStrikethroughStyleAttributeName:@(NSUnderlineStyleThick),NSStrikethroughColorAttributeName:[UIColor redColor]};
     NSAttributedString *attr52 = [[NSAttributedString alloc]initWithString:str52 attributes:dictAttr52];
     [attributedString appendAttributedString:attr52];
-
+    
     NSString *str53 = @"\n设置删除线为细单实线,颜色为红色";
     NSDictionary *dictAttr53 = @{NSStrikethroughStyleAttributeName:@(NSUnderlineStyleDouble),NSStrikethroughColorAttributeName:[UIColor redColor]};
     NSAttributedString *attr53 = [[NSAttributedString alloc]initWithString:str53 attributes:dictAttr53];
     [attributedString appendAttributedString:attr53];
-
-
+    
+    
     NSString *str54 = @"\n设置删除线为细单虚线,颜色为红色";
     NSDictionary *dictAttr54 = @{NSStrikethroughStyleAttributeName:@(NSUnderlineStyleSingle|NSUnderlinePatternDot),NSStrikethroughColorAttributeName:[UIColor redColor]};
     NSAttributedString *attr54 = [[NSAttributedString alloc]initWithString:str54 attributes:dictAttr54];
     [attributedString appendAttributedString:attr54];
-
+    
     /*!
      NSStrokeWidthAttributeName 设置笔画的宽度，取值为NSNumber对象（整数），负值填充效果，正值是中空效果。NSStrokeColorAttributeName  设置填充部分颜色，取值为UIColor对象。
      设置中间部分颜色可以使用 NSForegroundColorAttributeName 属性来进行
@@ -136,7 +179,7 @@
     NSDictionary *dictAttr6 = @{NSStrokeWidthAttributeName:@(2),NSStrokeColorAttributeName:[UIColor blueColor]};
     NSAttributedString *attr6 = [[NSAttributedString alloc]initWithString:str6 attributes:dictAttr6];
     [attributedString appendAttributedString:attr6];
-
+    
     //设置阴影属性，取值为NSShadow对象
     NSString *str7 = @"设置阴影属性\n";
     NSShadow *shadow = [[NSShadow alloc]init];
@@ -146,13 +189,13 @@
     NSDictionary *dictAttr7 = @{NSShadowAttributeName:shadow};
     NSAttributedString *attr7 = [[NSAttributedString alloc]initWithString:str7 attributes:dictAttr7];
     [attributedString appendAttributedString:attr7];
-
+    
     //设置文本特殊效果，取值为NSString类型，目前只有一个可用效果  NSTextEffectLetterpressStyle（凸版印刷效果）
     NSString *str8 = @"设置特殊效果\n";
     NSDictionary *dictAttr8 = @{NSTextEffectAttributeName:NSTextEffectLetterpressStyle};
     NSAttributedString *attr8 = [[NSAttributedString alloc]initWithString:str8 attributes:dictAttr8];
     [attributedString appendAttributedString:attr8];
-
+    
     //设置文本附件，取值为NSTextAttachment对象，常用于文字的图文混排
     NSString *str9 = @"文字的图文混排\n";
     NSTextAttachment *textAttachment = [[NSTextAttachment alloc]init];
@@ -161,7 +204,7 @@
     NSDictionary *dictAttr9 = @{NSAttachmentAttributeName:textAttachment};
     NSAttributedString *attr9 = [[NSAttributedString alloc]initWithString:str9 attributes:dictAttr9];
     [attributedString appendAttributedString:attr9];
-
+    
     /*!
      添加下划线 NSUnderlineStyleAttributeName。设置下划线的颜色 NSUnderlineColorAttributeName，对象为 UIColor。使用方式同删除线一样。
      */
@@ -170,7 +213,7 @@
     NSDictionary *dictAttr10 = @{NSUnderlineStyleAttributeName:@(NSUnderlineStyleSingle),NSUnderlineColorAttributeName:[UIColor redColor]};
     NSAttributedString *attr10 = [[NSAttributedString alloc]initWithString:str10 attributes:dictAttr10];
     [attributedString appendAttributedString:attr10];
-
+    
     /*!
      NSBaselineOffsetAttributeName 设置基线偏移值。取值为NSNumber （float），正值上偏，负值下偏
      */
@@ -179,7 +222,7 @@
     NSDictionary *dictAttr11 = @{NSBaselineOffsetAttributeName:@(-10)};
     NSAttributedString *attr11 = [[NSAttributedString alloc]initWithString:str11 attributes:dictAttr11];
     [attributedString appendAttributedString:attr11];
-
+    
     /*!
      NSObliquenessAttributeName 设置字体倾斜度，取值为 NSNumber（float），正值右倾，负值左倾
      */
@@ -188,7 +231,7 @@
     NSDictionary *dictAttr12 = @{NSObliquenessAttributeName:@(0.5)};
     NSAttributedString *attr12 = [[NSAttributedString alloc]initWithString:str12 attributes:dictAttr12];
     [attributedString appendAttributedString:attr12];
-
+    
     /*!
      NSExpansionAttributeName 设置字体的横向拉伸，取值为NSNumber （float），正值拉伸 ，负值压缩
      */
@@ -197,7 +240,7 @@
     NSDictionary *dictAttr13 = @{NSExpansionAttributeName:@(0.5)};
     NSAttributedString *attr13 = [[NSAttributedString alloc]initWithString:str13 attributes:dictAttr13];
     [attributedString appendAttributedString:attr13];
-
+    
     /*!
      NSWritingDirectionAttributeName 设置文字的书写方向，取值为以下组合
      @[@(NSWritingDirectionLeftToRight | NSWritingDirectionEmbedding)]
@@ -212,7 +255,7 @@
     NSDictionary *dictAttr14 = @{NSWritingDirectionAttributeName:@[@(NSWritingDirectionRightToLeft | NSWritingDirectionEmbedding)]};
     NSAttributedString *attr14 = [[NSAttributedString alloc]initWithString:str14 attributes:dictAttr14];
     [attributedString appendAttributedString:attr14];
-
+    
     /*!
      NSVerticalGlyphFormAttributeName 设置文字排版方向，取值为NSNumber对象（整数），0表示横排文本，1表示竖排文本  在iOS中只支持0
      */
@@ -221,7 +264,7 @@
     NSDictionary *dictAttr15 = @{NSVerticalGlyphFormAttributeName:@(0)};
     NSAttributedString *attr15 = [[NSAttributedString alloc]initWithString:str15 attributes:dictAttr15];
     [attributedString appendAttributedString:attr15];
-
+    
     //段落样式
     NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc]init];
     //行间距
@@ -234,10 +277,10 @@
     paragraph.firstLineHeadIndent = 30;
     //调整全部文字的缩进像素
     paragraph.headIndent = 10;
-
+    
     //添加段落设置
     [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraph range:NSMakeRange(0, attributedString.length)];
-
+    
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(60, 100, 300, 0)];
     label.backgroundColor = [UIColor lightGrayColor];
     //自动换行
@@ -247,5 +290,20 @@
     //label高度自适应
     [label sizeToFit];
     [self.view addSubview:label];
+}
+
+- (UILabel *)titleLab {
+    if (!_titleLab) {
+        _titleLab = [[UILabel alloc] init];
+        _titleLab.frame = CGRectMake(0, 0, 320, 320);
+        _titleLab.numberOfLines = 0;
+        _titleLab.backgroundColor = [UIColor systemGrayColor];
+        //        _titleLab.textColor = [UIColor blackColor];
+        //        _titleLab.font = [UIFont systemFontOfSize:15];
+        //        _titleLab.textAlignment = NSTextAlignmentJustified;
+        //        _titleLab.numberOfLines = 2;
+        //        _titleLab.lineBreakMode = NSLineBreakByTruncatingTail;
+    }
+    return _titleLab;
 }
 @end
