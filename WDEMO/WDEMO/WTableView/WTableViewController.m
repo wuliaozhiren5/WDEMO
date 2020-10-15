@@ -37,9 +37,9 @@
     
     //codecell
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
-  
+    
     [self.tableView registerClass:[WTableViewCell class] forCellReuseIdentifier:NSStringFromClass([WTableViewCell class])];
- 
+    
     
     //iOS11
     self.tableView.estimatedRowHeight = 0;
@@ -54,11 +54,11 @@
     
     [self.view addSubview:self.tableView];
     
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.trailing.top.bottom.equalTo(self.view);
-//    }];
+    //    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.leading.trailing.top.bottom.equalTo(self.view);
+    //    }];
     self.tableView.frame = self.view.bounds;
-
+    
     //header
     self.tableView.tableHeaderView = [[UIView alloc]initWithFrame:CGRectZero];
     //footer
@@ -124,17 +124,17 @@
 
 - (void)goPlayerVC:(UIButton *)sender
 {
- 
+    
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark -- UITableViewDataSource
 
@@ -160,15 +160,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
- 
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
-     
+    
+    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
+    
     WTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WTableViewCell class]) forIndexPath:indexPath];
     
     //cell的右边有一个小箭头，距离右边有十几像素；
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     //设置cell分割线的edge可以设置去除指定cell的分割线
-    cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0); 
+    cell.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
     //tableviewCell点击取消选中变灰效果
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
@@ -213,8 +213,15 @@
 #pragma mark -- UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    点击效果
+    //    点击效果
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    //iOS 中获取当前点击的cell
+    //非自定义cell
+    UITableViewCell *cell = (UITableViewCell *)[tableView cellForRowAtIndexPath:indexPath];
+    //自定义cell
+    //NewsTableViewCell * cell = (NewsTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    NSLog(@"%@",cell);
 }
 
 ////指定哪些行的 cell 可以进行编辑(UITableViewDataSource 协议方法)

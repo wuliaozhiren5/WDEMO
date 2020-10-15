@@ -117,9 +117,14 @@
 //
 #pragma mark -- UICollectionViewDelegate
 //UICollectionView被选中时调用的方法
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    //iOS 中获取当前点击的cell
+    //一般情况，cell不是自定义
+    UICollectionViewCell *cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath]; //即为要得到的cell
+    //自定义的cell
+//    TitleViewCell * cell = (TitleViewCell *)[self collectionView:collectionView cellForItemAtIndexPath:indexPath];//即为要得到的cell
+    NSLog(@"%@",cell);
+
 }
 
 //返回这个UICollectionView是否可以被选择
