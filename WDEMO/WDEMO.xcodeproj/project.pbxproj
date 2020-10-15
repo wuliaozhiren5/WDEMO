@@ -95,6 +95,8 @@
 		F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D225008B6A004991D3 /* PasswordVC.m */; };
 		F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D525008D76004991D3 /* ChangePasswordVC.m */; };
 		F5710B4225232263009DEE02 /* 富文本.md in Resources */ = {isa = PBXBuildFile; fileRef = F5710B4125232263009DEE02 /* 富文本.md */; };
+		F574E76D2537FCEF00DCD4D7 /* AppTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F574E76C2537FCEF00DCD4D7 /* AppTabBarController.m */; };
+		F574E7742537FD2300DCD4D7 /* AppNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F574E7732537FD2300DCD4D7 /* AppNavigationController.m */; };
 		F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */; };
 		F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
@@ -366,6 +368,10 @@
 		F566A1D425008D76004991D3 /* ChangePasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
 		F566A1D525008D76004991D3 /* ChangePasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
 		F5710B4125232263009DEE02 /* 富文本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "富文本.md"; sourceTree = "<group>"; };
+		F574E76B2537FCEF00DCD4D7 /* AppTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTabBarController.h; sourceTree = "<group>"; };
+		F574E76C2537FCEF00DCD4D7 /* AppTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTabBarController.m; sourceTree = "<group>"; };
+		F574E7722537FD2300DCD4D7 /* AppNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppNavigationController.h; sourceTree = "<group>"; };
+		F574E7732537FD2300DCD4D7 /* AppNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppNavigationController.m; sourceTree = "<group>"; };
 		F57A6A7524CFCA8400D51E01 /* FaceMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageCell.h; sourceTree = "<group>"; };
 		F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageCell.m; sourceTree = "<group>"; };
 		F57A6A7824CFCA9700D51E01 /* EnterMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterMessageCell.h; sourceTree = "<group>"; };
@@ -610,6 +616,8 @@
 			children = (
 				F5200DB22531526D004637DD /* 贴吧 */,
 				F5E4785B25301154001AE2AE /* WebView */,
+				F574E76A2537FCB200DCD4D7 /* TabBarController */,
+				F574E7692537FCB000DCD4D7 /* NavigationController */,
 				F5609CAB2502236700A13C15 /* BaseController */,
 				F5609CA32502195A00A13C15 /* 屏幕旋转 */,
 				F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */,
@@ -863,6 +871,24 @@
 				F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */,
 			);
 			path = CPU;
+			sourceTree = "<group>";
+		};
+		F574E7692537FCB000DCD4D7 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				F574E7722537FD2300DCD4D7 /* AppNavigationController.h */,
+				F574E7732537FD2300DCD4D7 /* AppNavigationController.m */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
+		F574E76A2537FCB200DCD4D7 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F574E76B2537FCEF00DCD4D7 /* AppTabBarController.h */,
+				F574E76C2537FCEF00DCD4D7 /* AppTabBarController.m */,
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		F57B529D24C7DEB100940696 /* Chat */ = {
@@ -1443,6 +1469,7 @@
 				F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */,
 				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
+				F574E7742537FD2300DCD4D7 /* AppNavigationController.m in Sources */,
 				F5E4785E25301177001AE2AE /* WebVC.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
 				F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */,
@@ -1459,6 +1486,7 @@
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */,
+				F574E76D2537FCEF00DCD4D7 /* AppTabBarController.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
 				F5609CA62502222100A13C15 /* BaseNavigationController.m in Sources */,
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
