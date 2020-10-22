@@ -104,6 +104,8 @@
 		F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F581D21724EAB684008AC679 /* WScrollViewController.m */; };
 		F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */ = {isa = PBXBuildFile; fileRef = F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */; };
 		F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */; };
+		F5A763BF253D952D00A76C6E /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A763BE253D952D00A76C6E /* Book.m */; };
+		F5A763C6253D956800A76C6E /* Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A763C5253D956800A76C6E /* Attributes.m */; };
 		F5A8898524F605C600DB73ED /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A8898424F605C600DB73ED /* OrderViewController.m */; };
 		F5A8898B24F6074A00DB73ED /* OrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A8898A24F6074A00DB73ED /* OrderModel.m */; };
 		F5A8898E24F6078E00DB73ED /* OrderViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A8898D24F6078E00DB73ED /* OrderViewModel.m */; };
@@ -386,6 +388,10 @@
 		F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+buttonType.h"; sourceTree = "<group>"; };
 		F5A51F3524FC98430054A4DD /* PasswordTextFieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextFieldView.h; sourceTree = "<group>"; };
 		F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordTextFieldView.m; sourceTree = "<group>"; };
+		F5A763BD253D952D00A76C6E /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		F5A763BE253D952D00A76C6E /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		F5A763C4253D956800A76C6E /* Attributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Attributes.h; sourceTree = "<group>"; };
+		F5A763C5253D956800A76C6E /* Attributes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Attributes.m; sourceTree = "<group>"; };
 		F5A8898324F605C600DB73ED /* OrderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderViewController.h; sourceTree = "<group>"; };
 		F5A8898424F605C600DB73ED /* OrderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OrderViewController.m; sourceTree = "<group>"; };
 		F5A8898924F6074A00DB73ED /* OrderModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OrderModel.h; sourceTree = "<group>"; };
@@ -614,6 +620,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5A763BC253D94D900A76C6E /* YYmodel测试 */,
 				F5200DB22531526D004637DD /* 贴吧 */,
 				F5E4785B25301154001AE2AE /* WebView */,
 				F574E76A2537FCB200DCD4D7 /* TabBarController */,
@@ -961,6 +968,17 @@
 				F5609C9E250216BE00A13C15 /* RegisterSetPasswordVC.m */,
 			);
 			path = Password;
+			sourceTree = "<group>";
+		};
+		F5A763BC253D94D900A76C6E /* YYmodel测试 */ = {
+			isa = PBXGroup;
+			children = (
+				F5A763BD253D952D00A76C6E /* Book.h */,
+				F5A763BE253D952D00A76C6E /* Book.m */,
+				F5A763C4253D956800A76C6E /* Attributes.h */,
+				F5A763C5253D956800A76C6E /* Attributes.m */,
+			);
+			path = "YYmodel测试";
 			sourceTree = "<group>";
 		};
 		F5A8898F24F607BA00DB73ED /* View */ = {
@@ -1492,6 +1510,7 @@
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
 				F5609CA92502235400A13C15 /* BaseTabBarController.m in Sources */,
 				F5F37087250A594400118FC4 /* ChatManager.m in Sources */,
+				F5A763BF253D952D00A76C6E /* Book.m in Sources */,
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
 				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,
 				F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */,
@@ -1533,6 +1552,7 @@
 				F5A889BC24F65D9000DB73ED /* LoginViewModel.m in Sources */,
 				F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */,
 				F5609C9F250216BE00A13C15 /* RegisterSetPasswordVC.m in Sources */,
+				F5A763C6253D956800A76C6E /* Attributes.m in Sources */,
 				F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */,
 				F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
