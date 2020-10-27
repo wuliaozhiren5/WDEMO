@@ -642,8 +642,8 @@
 				F5C7261524E1252B00B16639 /* 列表Model */,
 				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 深色模式 */,
 				F5D0FBFC24E0E6A300CAADF8 /* Mask */,
-				F5D0FBFB24E0E65500CAADF8 /* 富文本 */,
-				F5F4F10024D3BF23007DB7F3 /* YY */,
+				F5D0FBFB24E0E65500CAADF8 /* 系统富文本 */,
+				F5F4F10024D3BF23007DB7F3 /* YYText富文本YY富文本 */,
 				F57B529D24C7DEB100940696 /* Chat */,
 				F5668FB424C6D818007D452E /* CPU */,
 				A459C28824C1642B00A3B5FF /* Crash */,
@@ -1074,14 +1074,14 @@
 			path = "注销";
 			sourceTree = "<group>";
 		};
-		F5D0FBFB24E0E65500CAADF8 /* 富文本 */ = {
+		F5D0FBFB24E0E65500CAADF8 /* 系统富文本 */ = {
 			isa = PBXGroup;
 			children = (
 				F5D0FBFD24E0E6CB00CAADF8 /* AttributedTextViewController.h */,
 				F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */,
 				F5710B4125232263009DEE02 /* 富文本.md */,
 			);
-			path = "富文本";
+			path = "系统富文本";
 			sourceTree = "<group>";
 		};
 		F5D0FBFC24E0E6A300CAADF8 /* Mask */ = {
@@ -1224,13 +1224,13 @@
 			path = ChatManager;
 			sourceTree = "<group>";
 		};
-		F5F4F10024D3BF23007DB7F3 /* YY */ = {
+		F5F4F10024D3BF23007DB7F3 /* YYText富文本YY富文本 */ = {
 			isa = PBXGroup;
 			children = (
 				F5F4F10124D3C158007DB7F3 /* YYViewController.h */,
 				F5F4F10224D3C158007DB7F3 /* YYViewController.m */,
 			);
-			path = YY;
+			path = "YYText富文本YY富文本";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

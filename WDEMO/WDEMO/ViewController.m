@@ -118,7 +118,7 @@
         [ListModel initWithTitle:@"TwoList" detail:@"上下一对一联动的Collection" type:ListModelTypeTwoCollectionList],
         [ListModel initWithTitle:@"Crash" detail:@"抓取崩溃信息" type:ListModelTypeCrash],
         [ListModel initWithTitle:@"Chat" detail:@"聊天UI" type:ListModelTypeChat],
-        [ListModel initWithTitle:@"YYText" detail:@"YYText富文本" type:ListModelTypeYYText],
+        [ListModel initWithTitle:@"YYText" detail:@"YYText富文本YY富文本" type:ListModelTypeYYText],
         [ListModel initWithTitle:@"Mask" detail:@"遮罩" type:ListModelTypeMask],
         [ListModel initWithTitle:@"AttributedText" detail:@"系统富文本" type:ListModelTypeAttributedText],
         [ListModel initWithTitle:@"IsEqua" detail:@"判断对象是否相等" type:ListModelTypeIsEqual],

@@ -8,8 +8,8 @@
 
 #import "WConstants.h"
 
-NSString * const  MyOwnConstant = @"myOwnConstant";
-NSString * const  YetAnotherConstant = @"yetAnotherConstant";
+NSString * const MyOwnConstant = @"myOwnConstant";
+NSString * const YetAnotherConstant = @"yetAnotherConstant";
 
 @implementation WConstants
 

@@ -44,6 +44,9 @@
     NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc]init];
     //行间距
     paragraph.lineSpacing = 6;
+    //正确的实现行间距
+    paragraph.lineSpacing = 6 - (self.titleLab.font.lineHeight - self.titleLab.font.pointSize);
+
     //对齐方式两边对齐
 //    paragraph.alignment = NSTextAlignmentJustified;
 //    paragraph.lineBreakMode = NSLineBreakByWordWrapping;
