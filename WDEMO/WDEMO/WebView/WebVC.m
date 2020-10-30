@@ -52,8 +52,11 @@
 //    //加载
 //    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://www.baidu.com/"]]];
 //    [self.view addSubview:self.webView];
-    
-    NSString *url = @"https://tieba.baidu.com/p/6923827559?share=9105&fr=share&see_lz=0&sfc=copy&client_type=2&client_version=11.8.8.0&st=1599213271&unique=7CDCCDB1578C4B084BF25717FFE4C5ED&pn=0";
+
+    //测试代码
+    //    NSString *url = @"https://tieba.baidu.com/p/6923827559?share=9105&fr=share&see_lz=0&sfc=copy&client_type=2&client_version=11.8.8.0&st=1599213271&unique=7CDCCDB1578C4B084BF25717FFE4C5ED&pn=0";
+        NSString *url = @"https://tieba.baidu.com/p/6996560391?from=renrenvideo2020&fr=share";
+
     //加载
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
     [self.view addSubview:self.webView];
@@ -84,35 +87,40 @@
 }
 // 页面加载完成之后调用
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    self.title = webView.title;
     NSLog(@"页面加载完成之后调用");
 }
 //页面跳转失败
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    
 }
 //加载报错,通常来说如果页面出现不存在等问题，会走这里，如果需要对空白页面进行处理，在这里处理
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    
 }
 //请求之前，决定是否要跳转:用户点击网页上的链接，需要打开新页面时，将先调用这个方法。
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
-//    跳转逻辑
-//    1.是否已安装app，否直接跳转AppStore，是弹出提示框
-//    2.弹出提示框后，点击否关闭，点击是跳转App
-
+    //    跳转逻辑
+    //    1.是否已安装app，否直接跳转AppStore，是弹出提示框
+    //    2.弹出提示框后，点击否关闭，点击是跳转App
     NSString *urlString = [navigationAction.request.URL absoluteString];
     if ([navigationAction.request.URL.scheme caseInsensitiveCompare:@"rrmj"] == NSOrderedSame) {
-        [self jumpWithUrl:urlString];
-        decisionHandler(WKNavigationActionPolicyAllow);
+        if([urlString hasPrefix:@"rrmj://tieba/open"]){
+            [self jumpWithUrl:urlString];
+        }
+        decisionHandler(WKNavigationActionPolicyCancel);
     }
     /* 简单判断host，真实App代码中，需要更精确判断itunes链接 */
     else if ([navigationAction.request.URL.host isEqualToString:@"itunes.apple.com"]) {
         //跳AppStore
-        [self jumpAppWithUrl:urlString];
+        [self jumpAppStoreInAppWithUrl:urlString];
         decisionHandler(WKNavigationActionPolicyCancel);
     } else {
-        decisionHandler(WKNavigationActionPolicyAllow);
+        //在iOS应用内对Universal Links跳转做拦截，屏蔽自动跳转app
+        if (@available(iOS 9.0, *)){
+            //返回+2的枚举值
+            decisionHandler(WKNavigationActionPolicyAllow + 2);
+        } else {
+            decisionHandler(WKNavigationActionPolicyAllow);
+            
+        }
     }
 }
 
@@ -126,40 +134,37 @@
     }
 }
 
-- (void)jumpAlertWithUrl:(NSString *)urlString {
-    //提示框
-//    @weakify(self);
-//    @strongify(self);
-
-    WS(weakSelf)
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"可能离开人人视频，打开第三方应用" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-    }];
-    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"继续" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [weakSelf jumpAppWithUrl:urlString];
-    }];
-    [alertController addAction:cancelAction];
-    [alertController addAction:confirmAction];
-    [self presentViewController:alertController animated:YES completion:nil];
-}
-
 - (void)jumpWithUrl:(NSString *)urlString {
     //rrmj://tieba/open?
-//    NSString *urlString = @"DemoBScheme://";//没有参数
-    urlString = @"DemoBScheme://";//没有参数
-    NSURL *url = [NSURL URLWithString:urlString];
-    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+    NSDictionary *paramDict = [self parameterWithURL:urlString];
+    NSString *jumpAppUrlString = paramDict[@"jump"];
+    NSString *jumpAppStoreUrlString = paramDict[@"appid"];
+    NSURL *jumpAppUrl = [NSURL URLWithString:jumpAppUrlString];
+    if ([[UIApplication sharedApplication] canOpenURL:jumpAppUrl]) {
         //安装了该应用
-        [self jumpAlertWithUrl:urlString];
+        //提示框
+        WS(weakSelf)
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"可能离开人人视频，打开第三方应用" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        }];
+        UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"继续" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [weakSelf jumpAppWithUrl:jumpAppUrlString];
+        }];
+        [alertController addAction:cancelAction];
+        [alertController addAction:confirmAction];
+        [self presentViewController:alertController animated:YES completion:nil];
     } else {
-        //没有安装该应用
+        if (jumpAppStoreUrlString) {
+            //没有安装该应用
+            [self jumpAppStoreInAppWithUrl:jumpAppStoreUrlString];
+        }
     }
 }
 
 - (void)jumpAppWithUrl:(NSString *)urlString {
     NSURL *url = [NSURL URLWithString:urlString];
     if (@available(iOS 10.0, *)){
-        [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionsSourceApplicationKey:@YES} completionHandler:^(BOOL success) {
+        [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionsSourceApplicationKey : @YES} completionHandler:^(BOOL success) {
             if (success) {
                 NSLog(@"10以后可以跳转url");
             }else{
@@ -170,14 +175,38 @@
         BOOL success = [[UIApplication sharedApplication] openURL:url];
         if (success) {
             NSLog(@"10以前可以跳转url");
-        }else{
+        } else {
             NSLog(@"10以前不可以跳转url");
         }
     }
 }
 
-//暂时不用
-- (void)jumpAppStoreWithUrl:(NSString *)urlString {
+- (void)jumpAppStoreInAppWithUrl:(NSString *)urlString {
+    NSArray* allElements = [urlString componentsSeparatedByString:@"id"];
+    if (allElements.count > 1) {
+        NSString *appId = allElements[1];
+        //2:实现代理SKStoreProductViewControllerDelegate
+        SKStoreProductViewController *storeProductViewContorller = [[SKStoreProductViewController alloc] init];
+        storeProductViewContorller.delegate = self;
+        [storeProductViewContorller loadProductWithParameters: @{SKStoreProductParameterITunesItemIdentifier : appId} completionBlock:^(BOOL result, NSError *error) {
+            //回调
+            if (error) {
+                NSLog(@"错误%@",error);
+            } else {
+                //应用界面
+                [self presentViewController:storeProductViewContorller animated:YES completion:nil];
+            }
+        }];
+    }else {
+        return;
+    }
+}
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//old
+//暂时不用  app外跳转AppStore
+- (void)DEMOjumpAppStoreWithUrl:(NSString *)urlString {
     NSURL *url = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id1142110895"];
     if (@available(iOS 10.0, *)){
         [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionsSourceApplicationKey:@YES} completionHandler:^(BOOL success) {
@@ -196,9 +225,10 @@
         }
     }
 }
-
-//暂时不用
-- (void)jumpAppStoreInApp {
+ 
+//old
+//暂时不用  app内跳转AppStore
+- (void)DEMOjumpAppStoreWithUrl:(NSString *)urlString {
     //2:实现代理SKStoreProductViewControllerDelegate
     SKStoreProductViewController *storeProductViewContorller = [[SKStoreProductViewController alloc] init];
     storeProductViewContorller.delegate = self;
@@ -213,10 +243,30 @@
         }
     }];
 }
+ 
 
 #pragma mark - SKStoreProductViewControllerDelegate
 - (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+ 
+/**
+ 获取url的所有参数
+ @param url 需要提取参数的url
+ @return NSDictionary
+ */
+-(NSDictionary *)parameterWithURL:(NSString *) url {
 
+    NSMutableDictionary *parm = [[NSMutableDictionary alloc]init];
+ 
+    //传入url创建url组件类
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithString:url];
+ 
+    //回调遍历所有参数，添加入字典
+    [urlComponents.queryItems enumerateObjectsUsingBlock:^(NSURLQueryItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [parm setObject:obj.value forKey:obj.name];
+    }];
+ 
+    return parm;
+}
 @end

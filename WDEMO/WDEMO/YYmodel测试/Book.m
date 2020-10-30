@@ -14,6 +14,14 @@
     return @{@"name" : @"n",
              @"page" : @"p",
              @"desc" : @"ext.desc",
-             @"bookID" : @[@"id",@"ID",@"book_id"]};
+             @"bookID" : @[@"id", @"ID", @"book_id"]};
 }
 @end
+
+
+//+ (NSDictionary *)modelCustomPropertyMapper {
+//    return @{
+//        @"seasonId" : @[@"sId", @"id"],
+//        @"classify" : @[@"type", @"classify"],
+//    };
+//}

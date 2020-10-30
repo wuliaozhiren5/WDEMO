@@ -157,6 +157,9 @@
     //    textView.backgroundColor= [UIColor grayColor];
     //    [self.view addSubview:textView];
     
+    CGFloat f = 1.1;
+    NSLog(@"%f",f);
+    
 }
 
 - (void)didReceiveMemoryWarning {
