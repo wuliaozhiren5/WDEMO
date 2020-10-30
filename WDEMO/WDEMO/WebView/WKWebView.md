@@ -30,7 +30,8 @@ https://www.jianshu.com/p/856d9dd214be
 
 
 
-
-
+JS
+WebViewJavascriptBridge
+pod 'WebViewJavascriptBridge', '~> 6.0'
 ```
  

@@ -201,12 +201,11 @@
         return;
     }
 }
-
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+ 
+ 
 //old
 //暂时不用  app外跳转AppStore
-- (void)DEMOjumpAppStoreWithUrl:(NSString *)urlString {
+- (void)DEMOjumpAppStoreOutAppWithUrl:(NSString *)urlString {
     NSURL *url = [NSURL URLWithString:@"itms-apps://itunes.apple.com/app/id1142110895"];
     if (@available(iOS 10.0, *)){
         [[UIApplication sharedApplication] openURL:url options:@{UIApplicationOpenURLOptionsSourceApplicationKey:@YES} completionHandler:^(BOOL success) {
@@ -228,7 +227,7 @@
  
 //old
 //暂时不用  app内跳转AppStore
-- (void)DEMOjumpAppStoreWithUrl:(NSString *)urlString {
+- (void)DEMOjumpAppStoreInAppWithUrl:(NSString *)urlString {
     //2:实现代理SKStoreProductViewControllerDelegate
     SKStoreProductViewController *storeProductViewContorller = [[SKStoreProductViewController alloc] init];
     storeProductViewContorller.delegate = self;
