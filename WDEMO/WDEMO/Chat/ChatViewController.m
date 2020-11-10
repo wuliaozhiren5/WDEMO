@@ -18,6 +18,8 @@
 #import "FaceMessageDataModel.h"
 
 @interface ChatViewController () <ChatControllerDelegate>
+//半屏
+@property (nonatomic, strong) UIView *halfPlyerView;
 
 @property (nonatomic, strong) ChatManager *chatManager;
 
@@ -39,6 +41,9 @@
     CGFloat player_width = Screen_Width;
     CGFloat player_height = player_width * 9 / 16;
 
+    _halfPlyerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, player_height)];
+    _halfPlyerView.backgroundColor = [UIColor blackColor];
+    [self.view addSubview:_halfPlyerView];
     //创建聊天界面
     self.chatManager = [[ChatManager alloc] init];
  
@@ -49,14 +54,19 @@
     [self.view addSubview:_halfChat.view];
     self.chatManager.halfChat = _halfChat;
 
-    
-    UIButton *goBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
+    UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 20, 44, 44)];
     //    [goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
-    [goBtn setTitle:@"gobtn" forState:UIControlStateNormal];
-    goBtn.backgroundColor = [UIColor grayColor];
-    [goBtn addTarget:self action:@selector(clickgoBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:goBtn];
+    [backBtn setTitle:@"<" forState:UIControlStateNormal];
+    backBtn.backgroundColor = [UIColor clearColor];
+    [backBtn addTarget:self action:@selector(clickBackBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_halfPlyerView addSubview:backBtn];
     
+    UIButton *fullScreenBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width - 44 , player_height - 44, 44, 44)];
+    //    [goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [fullScreenBtn setTitle:@"全屏" forState:UIControlStateNormal];
+    fullScreenBtn.backgroundColor = [UIColor clearColor];
+    [fullScreenBtn addTarget:self action:@selector(clickFullScreenBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_halfPlyerView addSubview:fullScreenBtn];
     
     return;
     
@@ -78,7 +88,11 @@
     });
 }
 
--(void)clickgoBtn:(UIButton *)btn {
+-(void)clickBackBtn:(UIButton *)btn {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)clickFullScreenBtn:(UIButton *)btn {
     if (!self.chatManager.fullChat) {
         _fullChat = [[FullScreenChatController alloc] init];
         _fullChat.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
@@ -86,7 +100,7 @@
         [self addChildViewController:_fullChat];
         [self.view addSubview:_fullChat.view];
         self.chatManager.fullChat = _fullChat;
-        _halfChat.view.hidden = YES;
+//        _halfChat.view.hidden = YES;
     } else {
         [self addChildViewController:self.chatManager.fullChat];
         [self.view addSubview:self.chatManager.fullChat.view];
@@ -144,22 +158,23 @@
     
 }
 
-////是否自动旋转
-////返回导航控制器的顶层视图控制器的自动旋转属性，因为导航控制器是以栈的原因叠加VC的
-////topViewController是其最顶层的视图控制器，
-//-(BOOL)shouldAutorotate{
-//    return YES;
-//}
-//
-////支持哪些屏幕方向
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+//是否自动旋转
+//返回导航控制器的顶层视图控制器的自动旋转属性，因为导航控制器是以栈的原因叠加VC的
+//topViewController是其最顶层的视图控制器，
+-(BOOL)shouldAutorotate{
+    return YES;
+}
+
+//支持哪些屏幕方向
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
 //    return UIInterfaceOrientationMaskAllButUpsideDown;
-//}
-//
-////默认方向
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-//    return UIInterfaceOrientationPortrait;
-//}
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+//默认方向
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationPortrait;
+}
  
 
 - (void)createChatData {
