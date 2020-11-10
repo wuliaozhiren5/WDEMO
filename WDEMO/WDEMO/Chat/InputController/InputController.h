@@ -79,10 +79,10 @@
  */
 @property (nonatomic, strong) InputBar *inputBar;
 
-/**
- *  假的输入条
- */
-@property (nonatomic, strong) NoInputBar *bottomBar;
+///**
+// *  假的输入条
+// */
+//@property (nonatomic, strong) NoInputBar *bottomBar;
 
 
 ///**
@@ -110,4 +110,12 @@
 - (void)reset;
 
  - (void)setInputStyle;
+
+//点击按钮
+- (void)clickBottomBarFaceBtn:(UIButton *)sender; 
+- (void)clickBottomBarTextViewBtn:(UIButton *)sender;
+
+- (void)showInView:(UIView *)view;
+- (void)show;
+- (void)hidden;
 @end

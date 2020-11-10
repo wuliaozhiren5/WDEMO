@@ -36,20 +36,19 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     self.view.backgroundColor = [UIColor grayColor];
     
-    
+    CGFloat player_width = Screen_Width;
+    CGFloat player_height = player_width * 9 / 16;
+
     //创建聊天界面
     self.chatManager = [[ChatManager alloc] init];
  
     _halfChat = [[ChatController alloc] init];
     _halfChat.delegate = self;
-    _halfChat.view.frame = CGRectMake(0, 200, self.view.bounds.size.width, self.view.bounds.size.height - 200);
+    _halfChat.view.frame = CGRectMake(0, player_height, self.view.bounds.size.width, self.view.bounds.size.height - player_height);
     [self addChildViewController:_halfChat];
     [self.view addSubview:_halfChat.view];
-    
     self.chatManager.halfChat = _halfChat;
-    
-    
-    
+
     
     UIButton *goBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, 200)];
     //    [goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
@@ -59,7 +58,9 @@
     [self.view addSubview:goBtn];
     
     
+    return;
     
+    //线程
     //线程1
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         @synchronized(self){
@@ -72,27 +73,25 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         sleep(1);
         @synchronized(self){
-            NSLog(@"23423");
+            NSLog(@"23423--");
         }
     });
-
 }
 
 -(void)clickgoBtn:(UIButton *)btn {
-    
-    if (!_fullChat) {
+    if (!self.chatManager.fullChat) {
         _fullChat = [[FullScreenChatController alloc] init];
+        _fullChat.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
         _fullChat.delegate = self;
+        [self addChildViewController:_fullChat];
+        [self.view addSubview:_fullChat.view];
         self.chatManager.fullChat = _fullChat;
+        _halfChat.view.hidden = YES;
     } else {
-        
-        
+        [self addChildViewController:self.chatManager.fullChat];
+        [self.view addSubview:self.chatManager.fullChat.view];
+        [self.chatManager.fullChat showAnimation];
     }
-    _fullChat.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
-    [self addChildViewController:_fullChat];
-    [self.view addSubview:_fullChat.view];
-    _halfChat.view.hidden = YES;
-
 }
 
 - (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageDataModel *)msgCellData{

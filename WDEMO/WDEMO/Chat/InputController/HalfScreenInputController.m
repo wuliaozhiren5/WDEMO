@@ -21,7 +21,7 @@
 }
 
 - (void)setInputStyle {
-    self.bottomBar.frame = CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height);
-    [self.bottomBar halfStyle];
+//    self.bottomBar.frame = CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height);
+//    [self.bottomBar halfStyle];
 }
 @end

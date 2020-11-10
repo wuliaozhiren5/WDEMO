@@ -61,9 +61,9 @@
 		F507113324E2A6BE00AD5306 /* MYCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113224E2A6BE00AD5306 /* MYCar.m */; };
 		F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113624E2AB9400AD5306 /* IsEqualViewController.m */; };
 		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
+		F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293F22509CE0D00E06D42 /* FullScreenChatController.m */; };
 		F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */; };
 		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
-		F53293F32509CE0E00E06D42 /* FullScreenChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293F22509CE0D00E06D42 /* FullScreenChatController.m */; };
 		F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */; };
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
@@ -128,11 +128,14 @@
 		F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlertView.m */; };
 		F5CE3D2224E6901800B20C80 /* RRDestroyAccountReasonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1D24E6901700B20C80 /* RRDestroyAccountReasonCell.m */; };
 		F5CE3D2324E6901800B20C80 /* RRDestroyAccountAgreenmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */; };
+		F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */; };
+		F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */; };
 		F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */; };
 		F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0124E0E70500CAADF8 /* MaskViewController.m */; };
 		F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0524E0F91800CAADF8 /* UIColor+TUIDarkMode.m */; };
 		F5D0FC0A24E0F91800CAADF8 /* UIImage+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0624E0F91800CAADF8 /* UIImage+TUIDarkMode.m */; };
 		F5D0FC0D24E0F99800CAADF8 /* UIImage+TUIKIT.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0C24E0F99700CAADF8 /* UIImage+TUIKIT.m */; };
+		F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */; };
 		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
 		F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */; };
 		F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32724CEBB66009A6767 /* MessageController.m */; };
@@ -379,7 +382,7 @@
 		F57A6A7824CFCA9700D51E01 /* EnterMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterMessageCell.h; sourceTree = "<group>"; };
 		F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterMessageCell.m; sourceTree = "<group>"; };
 		F57B529E24C7DECF00940696 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
-		F57B529F24C7DECF00940696 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		F57B529F24C7DECF00940696 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		F57B52A124C7DF2700940696 /* ChatController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
 		F57B52A224C7DF2700940696 /* ChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
 		F581D21624EAB684008AC679 /* WScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WScrollViewController.h; sourceTree = "<group>"; };
@@ -436,6 +439,10 @@
 		F5CE3D1D24E6901700B20C80 /* RRDestroyAccountReasonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountReasonCell.m; sourceTree = "<group>"; };
 		F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountAgreenmentViewController.m; sourceTree = "<group>"; };
 		F5CE3D2424E6930C00B20C80 /* ACMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACMacros.h; sourceTree = "<group>"; };
+		F5D056F325594D5F008CC230 /* FullScreenChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullScreenChatBottomInputBarViewController.h; sourceTree = "<group>"; };
+		F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullScreenChatBottomInputBarViewController.m; sourceTree = "<group>"; };
+		F5D056FA25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfScreenChatBottomInputBarViewController.h; sourceTree = "<group>"; };
+		F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfScreenChatBottomInputBarViewController.m; sourceTree = "<group>"; };
 		F5D0FBFD24E0E6CB00CAADF8 /* AttributedTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedTextViewController.h; sourceTree = "<group>"; };
 		F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedTextViewController.m; sourceTree = "<group>"; };
 		F5D0FC0024E0E70400CAADF8 /* MaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskViewController.h; sourceTree = "<group>"; };
@@ -447,6 +454,8 @@
 		F5D0FC0B24E0F99700CAADF8 /* UIImage+TUIKIT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TUIKIT.h"; sourceTree = "<group>"; };
 		F5D0FC0C24E0F99700CAADF8 /* UIImage+TUIKIT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TUIKIT.m"; sourceTree = "<group>"; };
 		F5D0FC0E24E0FA5900CAADF8 /* THeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THeader.h; sourceTree = "<group>"; };
+		F5D54BFE2553F35400787EBB /* ChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatBottomInputBarViewController.h; sourceTree = "<group>"; };
+		F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatBottomInputBarViewController.m; sourceTree = "<group>"; };
 		F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListView.h; sourceTree = "<group>"; };
 		F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMemberListView.m; sourceTree = "<group>"; };
 		F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListCell.h; sourceTree = "<group>"; };
@@ -679,6 +688,12 @@
 				6783C85F1FB941EE0040C02B /* Info.plist */,
 				6783C8601FB941EE0040C02B /* main.m */,
 				67535E832390C6560009F882 /* InfoPlist.strings */,
+				F5D54BFE2553F35400787EBB /* ChatBottomInputBarViewController.h */,
+				F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */,
+				F5D056F325594D5F008CC230 /* FullScreenChatBottomInputBarViewController.h */,
+				F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */,
+				F5D056FA25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.h */,
+				F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */,
 			);
 			path = WDEMO;
 			sourceTree = "<group>";
@@ -1483,6 +1498,7 @@
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
 				F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */,
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
+				F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */,
 				F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */,
 				F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */,
 				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
@@ -1503,6 +1519,7 @@
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
+				F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */,
 				F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */,
 				F574E76D2537FCEF00DCD4D7 /* AppTabBarController.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
@@ -1515,6 +1532,8 @@
 				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,
 				F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */,
 				F5A8899524F612A000DB73ED /* OrderCell.m in Sources */,
+				F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */,
+				F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */,
 				F53F669224FE454000770055 /* PasswordTextField.m in Sources */,
 				A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */,
 				F553E12A24CA800200DA5625 /* InputController.m in Sources */,
@@ -1581,7 +1600,6 @@
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */,
-				F53293F32509CE0E00E06D42 /* FullScreenChatController.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
 				F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */,
 			);

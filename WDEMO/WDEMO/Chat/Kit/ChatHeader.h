@@ -15,6 +15,12 @@
 #define SCREEN_HEIGHT       [UIScreen mainScreen].bounds.size.height
 #define Screen_Width        [UIScreen mainScreen].bounds.size.width
 #define Screen_Height       [UIScreen mainScreen].bounds.size.height
+
+#define Half_Screen_Width        Screen_Width < Screen_Height ? Screen_Width : Screen_Height
+#define Half_Screen_Height       Screen_Width < Screen_Height ? Screen_Height : Screen_Width
+#define Full_Screen_Width        Screen_Width < Screen_Height ? Screen_Height : Screen_Width
+#define Full_Screen_Height       Screen_Width < Screen_Height ? Screen_Width : Screen_Height
+
 #define Is_Iphone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define Is_IPhoneX (Screen_Width >=375.0f && Screen_Height >=812.0f && Is_Iphone)
 
@@ -204,4 +210,7 @@ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 
 #define ChatViewWidth               Screen_Width < Screen_Height ? [UIScreen mainScreen].bounds.size.width : 270
  
+#define kPlayer_Width   SCREEN_WIDTH
+#define kPlayer_Height  (kPlayer_Width * 9 / 16)
+
 #endif /* ChatHeader_h */

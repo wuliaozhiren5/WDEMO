@@ -34,12 +34,13 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     [super viewDidLoad];
     [self setupViews];
 }
-- (void)viewWillAppear:(BOOL)animated
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-}
+
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+//}
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -51,41 +52,74 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
     self.navigationController.interactivePopGestureRecognizer.delaysTouchesBegan = NO;
 }
+//
+//- (void)viewDidDisappear:(BOOL)animated
+//{
+//    [[NSNotificationCenter defaultCenter] removeObserver:self];
+//}
 
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
+- (void)hideInputView:(id)sender {
+    //退出
+    [self hidden];
 }
 
+- (void)showInView:(UIView *)view {
+    self.view.frame = view.bounds;
+    [view addSubview:self.view];
+    
+    //添加通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+}
+
+- (void)show {
+    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+    [self showInView:window];
+}
+
+- (void)hidden {
+    [self reset];
+    [self.view removeFromSuperview];
+    //移除通知
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+   
 - (void)setupViews
 {
+    //点击移除
+    UIControl *control = [[UIControl alloc]initWithFrame:self.view.bounds];
+    [control addTarget:self action:@selector(hideInputView:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:control];
+    
     //    self.view.backgroundColor = [UIColor d_colorWithColorLight:TInput_Background_Color dark:TInput_Background_Color_Dark];
     _status = Input_Status_Input;
-    _inputBar = [[InputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
+    _inputBar = [[InputBar alloc] initWithFrame:CGRectMake(0, Screen_Height - TTextView_Height - Bottom_SafeHeight, self.view.frame.size.width, TTextView_Height)];
     _inputBar.backgroundColor = InputBarBackgroundColor;
     _inputBar.delegate = self;
     [self.view addSubview:_inputBar];
     
-    _bottomBar = [[NoInputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
-    _bottomBar.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:_bottomBar];
-    
-    [_bottomBar.faceButton addTarget:self action:@selector(clickBottomBarFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_bottomBar.textViewBtn addTarget:self action:@selector(clickBottomBarTextViewBtn:) forControlEvents:UIControlEventTouchUpInside];
-    [_bottomBar.playListBtn addTarget:self action:@selector(clickBottomBarPlayListBtn:) forControlEvents:UIControlEventTouchUpInside];
-    
-    _bottomBar.hidden = NO;
-    _inputBar.hidden = YES;
+//    _bottomBar = [[NoInputBar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height)];
+//    _bottomBar.backgroundColor = [UIColor clearColor];
+//    [self.view addSubview:_bottomBar];
+//
+//    [_bottomBar.faceButton addTarget:self action:@selector(clickBottomBarFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
+//    [_bottomBar.textViewBtn addTarget:self action:@selector(clickBottomBarTextViewBtn:) forControlEvents:UIControlEventTouchUpInside];
+//    [_bottomBar.playListBtn addTarget:self action:@selector(clickBottomBarPlayListBtn:) forControlEvents:UIControlEventTouchUpInside];
+//
+//    _bottomBar.hidden = NO;
+//    _inputBar.hidden = YES;
     [self setInputStyle];
 }
 
 - (void)setInputStyle {
-    _bottomBar.frame = CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height);
-    [_bottomBar halfStyle];
+//    _bottomBar.frame = CGRectMake(0, 0, self.view.frame.size.width, TTextView_Height);
+//    [_bottomBar halfStyle];
 }
+
 - (void)clickBottomBarFaceBtn:(UIButton *)sender {
-    _bottomBar.hidden = YES;
-    _inputBar.hidden = NO;
+//    _bottomBar.hidden = YES;
+//    _inputBar.hidden = NO;
     [_inputBar clickFaceBtn:sender];
     if (_delegate && [_delegate respondsToSelector:@selector(inputControllerDidTouchFace:)]){
         [_delegate inputControllerDidTouchFace:self];
@@ -93,8 +127,8 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 }
 
 - (void)clickBottomBarTextViewBtn:(UIButton *)sender {
-    _bottomBar.hidden = YES;
-    _inputBar.hidden = NO;
+//    _bottomBar.hidden = YES;
+//    _inputBar.hidden = NO;
     [_inputBar clickKeyboardBtn:sender];
     if (_delegate && [_delegate respondsToSelector:@selector(inputControllerDidTouchTextView:)]){
         [_delegate inputControllerDidTouchTextView:self];
@@ -107,8 +141,31 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     }
 }
 
+//键盘变化
+- (void)inputViewDidChangeHeight:(CGFloat)height {
+    __weak __typeof(self) ws = self;
+    [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+//        CGRect msgFrame = ws.messageController.view.frame;
+//        msgFrame.size.height = ws.view.frame.size.height - height;
+//        ws.messageController.view.frame = msgFrame;
+//
+//        CGRect inputFrame = ws.inputController.view.frame;
+//        inputFrame.origin.y = msgFrame.origin.y + msgFrame.size.height;
+//        inputFrame.size.height = height;
+//        ws.inputController.view.frame = inputFrame;
+//
+//        [ws.messageController scrollToBottom:NO];
+        
+        CGRect newFrame = ws.inputBar.frame;
+        newFrame.origin.y = Screen_Height - height;
+        ws.inputBar.frame = newFrame;
+    } completion:nil];
+}
+
 - (void)keyboardWillHide:(NSNotification *)notification
-{ 
+{
+    //内部变化
+    [self inputViewDidChangeHeight:_inputBar.frame.size.height + Bottom_SafeHeight];
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
         [_delegate inputController:self didChangeHeight:_inputBar.frame.size.height + Bottom_SafeHeight];
     }
@@ -132,6 +189,9 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
 - (void)keyboardWillChangeFrame:(NSNotification *)notification
 {
     CGRect keyboardFrame = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    
+    //内部变化
+    [self inputViewDidChangeHeight:keyboardFrame.size.height + _inputBar.frame.size.height];
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
         [_delegate inputController:self didChangeHeight:keyboardFrame.size.height + _inputBar.frame.size.height];
     }
@@ -164,15 +224,19 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     frame.origin.y = Screen_Height;
     self.faceView.frame = frame;
     
-    frame.origin.y = self.faceView.frame.origin.y + self.faceView.frame.size.height;
+//    frame.origin.y = self.faceView.frame.origin.y + self.faceView.frame.size.height;
     
     __weak __typeof(self) ws = self;;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+//        CGRect newFrame = ws.faceView.frame;
+//        newFrame.origin.y = ws.inputBar.frame.origin.y + ws.inputBar.frame.size.height;
+//        ws.faceView.frame = newFrame;
+//
+//        newFrame.origin.y = ws.faceView.frame.origin.y + ws.faceView.frame.size.height;
         CGRect newFrame = ws.faceView.frame;
-        newFrame.origin.y = ws.inputBar.frame.origin.y + ws.inputBar.frame.size.height;
+        newFrame.origin.y = Screen_Height - self.faceView.frame.size.height - Bottom_SafeHeight;
         ws.faceView.frame = newFrame;
         
-        newFrame.origin.y = ws.faceView.frame.origin.y + ws.faceView.frame.size.height;
     } completion:nil];
 }
 
@@ -191,6 +255,9 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     [_inputBar.inputTextView resignFirstResponder];
     [self showFaceAnimation];
     _status = Input_Status_Input_Face;
+    
+    //内部变化
+    [self inputViewDidChangeHeight:_inputBar.frame.size.height + self.faceView.frame.size.height  + Bottom_SafeHeight];
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
         [_delegate inputController:self didChangeHeight:_inputBar.frame.size.height + self.faceView.frame.size.height  + Bottom_SafeHeight];
     }
@@ -218,14 +285,17 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     else if(_status == Input_Status_Input_More){
         //        [self showMoreAnimation];
     }
+    
+    CGFloat height = self.view.frame.size.height - _inputBar.frame.origin.y;
+    //内部变化
+    [self inputViewDidChangeHeight:height + offset];
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
-        [_delegate inputController:self didChangeHeight:self.view.frame.size.height + offset];
+        [_delegate inputController:self didChangeHeight:height + offset];
     }
 }
 - (void)inputBarTextViewDidChange:(InputBar *)textView {
     NSString *str = textView.inputTextView.text;
     [_faceView showButton:str];
-    
 }
 
 - (void)inputBar:(InputBar *)textView didSendText:(NSString *)text
@@ -242,7 +312,8 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
         [_delegate inputController:self didSendMessage:data];
     }
-    
+    //退出
+    [self hidden];
 }
 
 
@@ -259,13 +330,14 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
     _status = Input_Status_Input;
     [_inputBar.inputTextView resignFirstResponder];
     [_inputBar keyboardHidden];
+    
+    //内部变化
+    [self inputViewDidChangeHeight:_inputBar.frame.size.height + Bottom_SafeHeight];
     if (_delegate && [_delegate respondsToSelector:@selector(inputController:didChangeHeight:)]){
         [_delegate inputController:self didChangeHeight:_inputBar.frame.size.height + Bottom_SafeHeight];
     }
-    
-    _bottomBar.hidden = NO;
-    _inputBar.hidden = YES;
-    
+//    _bottomBar.hidden = NO;
+//    _inputBar.hidden = YES;
 }
 
 
@@ -293,13 +365,15 @@ typedef NS_ENUM(NSUInteger, InputStatus) {
         //大于100字
         
     }else {
-        
+        //清空输入框
         [_inputBar clearInput];
         ChatMessageDataModel *data = [[ChatMessageDataModel alloc] init];
         data.content = sp;
         if(_delegate && [_delegate respondsToSelector:@selector(inputController:didSendMessage:)]){
             [_delegate inputController:self didSendMessage:data];
         }
+        //退出
+        [self hidden];
     }
 }
 

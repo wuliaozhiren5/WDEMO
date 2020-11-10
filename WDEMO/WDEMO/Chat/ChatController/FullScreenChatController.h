@@ -10,6 +10,7 @@
 #import "FullScreenMessageController.h"
 #import "ChatController.h"
 #import "FullScreenInputController.h"
+#import "FullScreenChatBottomInputBarViewController.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -19,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, strong) FullScreenMessageController *messageController;
 
 @property(nonatomic, strong) FullScreenInputController *inputController;
+
+@property (nonatomic, strong) FullScreenChatBottomInputBarViewController *chatBottomInputBarViewController;
 
 @property (nonatomic, weak) id<ChatControllerDelegate> delegate;
 

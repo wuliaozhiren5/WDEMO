@@ -22,7 +22,7 @@
 - (void)setupViews {
     self.isFull = NO;
     self.messageListCellWidth = HalfScreenChatViewWidth;
-    [super setupViews];
+    [super setupViews]; 
     [self addTableViewHeaderAndFooter];
 }
 

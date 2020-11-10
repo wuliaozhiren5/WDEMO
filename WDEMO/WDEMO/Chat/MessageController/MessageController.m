@@ -55,9 +55,22 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+    
+    if (self.isFull) {
+        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+    } else {
+        //        播放器的高度          kPlayer_Height
+        //        底部的输入框的高度     TTextView_Height
+        //        安全区               Bottom_SafeHeight
+//        self.tableView.frame = CGRectMake(0, 0, Screen_Width, Screen_Height - kPlayer_Height - TTextView_Height - Bottom_SafeHeight);
+         
+        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.view);
+        }];
+    }
+
     
     self.tableView.estimatedRowHeight = 0;
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];

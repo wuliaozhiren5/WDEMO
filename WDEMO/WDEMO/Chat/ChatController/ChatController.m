@@ -16,15 +16,21 @@
 #import "EnterMessageDataModel.h"
 #import "TipMessageDataModel.h"
 #import "FaceMessageDataModel.h"
+//底部的输入框
+//#import "ChatBottomInputBar.h"
+//#import "ChatBottomInputBarViewController.h"
+#import "HalfScreenChatBottomInputBarViewController.h"
 
 @interface ChatController () <TInputControllerDelegate, TMessageControllerDelegate>
-
 //毛玻璃
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 //人员列表背景
 @property (nonatomic, strong) UIView *memberListColorBlackView;
 //人员列表
 @property(nonatomic, strong) NSArray *membersArray;
+
+@property (nonatomic, strong) HalfScreenChatBottomInputBarViewController *chatBottomInputBarViewController;
+
 
 @end
 
@@ -80,8 +86,8 @@
     [self creatBackgroundImageView];
     //message
     [self creatMessageController];
-    //input
-    [self creatInputController];
+    //底部的inputview:chatBottomInputBar
+    [self creatChatBottomInputBarViewController];
     //人员列表
     [self creatChatMemberListView];
     //制造数据
@@ -112,15 +118,63 @@
     [self.view addSubview:_messageController.view];
 }
 
-- (void)creatInputController{
-    //input
-    _inputController = [[HalfScreenInputController alloc] init];
-    _inputController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight, self.view.frame.size.width, TTextView_Height + Bottom_SafeHeight);
-    _inputController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
-    _inputController.delegate = self;
-    [self addChildViewController:_inputController];
-    [self.view addSubview:_inputController.view];
+//底部bar
+- (void)creatChatBottomInputBarViewController {
+    _chatBottomInputBarViewController = [[HalfScreenChatBottomInputBarViewController alloc] init];
+    _chatBottomInputBarViewController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight, self.view.frame.size.width, TTextView_Height + Bottom_SafeHeight);
+    _chatBottomInputBarViewController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin; 
+    [_chatBottomInputBarViewController halfStyle];
+    [self addChildViewController:_chatBottomInputBarViewController];
+    [self.view addSubview:_chatBottomInputBarViewController.view];
+    
+    //    todo  delegate
+    [_chatBottomInputBarViewController.faceButton addTarget:self action:@selector(clickBottomBarFaceBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_chatBottomInputBarViewController.textViewBtn addTarget:self action:@selector(clickBottomBarTextViewBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_chatBottomInputBarViewController.playListBtn addTarget:self action:@selector(clickBottomBarPlayListBtn:) forControlEvents:UIControlEventTouchUpInside];
+    
 }
+
+- (HalfScreenInputController *)inputController {
+    if (!_inputController) {
+        _inputController = [[HalfScreenInputController alloc] init];
+        _inputController.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height);
+        _inputController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+        _inputController.delegate = self;
+    }
+    return _inputController;
+}
+
+//- (void)showInputView {
+//    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+//    [window addSubview:self.inputController.view];
+//}
+//
+//- (void)hideInputView {
+//    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+//    [window addSubview:self.inputController.view];
+//}
+
+//- (void)creatInputController {
+//    //input
+//    if (!_inputController) {
+//        _inputController = [[HalfScreenInputController alloc] init];
+////        _inputController.view.frame = CGRectMake(0, self.view.frame.size.height - TTextView_Height - Bottom_SafeHeight, self.view.frame.size.width, TTextView_Height + Bottom_SafeHeight);
+////        _inputController.view.frame = self.view.bounds;
+//        _inputController.view.autoresizingMask = UIViewAutoresizingFlexibleTopMargin;
+////        _inputController.delegate = self;
+//
+////        [self addChildViewController:_inputController];
+////        [self.view addSubview:_inputController.view];
+////        _inputController.view.backgroundColor = [UIColor whiteColor];
+//
+//        _inputController.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height);
+//
+//
+//    } else {
+//    }
+//    UIWindow *window = [UIApplication sharedApplication].delegate.window;
+//    [window addSubview:_inputController.view];
+//}
 
 - (void)creatChatMemberListView {
     //渐变遮罩
@@ -128,7 +182,7 @@
     colorView.frame = CGRectMake(0, 0, self.view.frame.size.width, 60);
     [self.view addSubview:colorView];
     _memberListColorBlackView = colorView;
-
+    
     //Member
     UICollectionViewFlowLayout * layout = [[UICollectionViewFlowLayout alloc]init];
     layout.itemSize = CGSizeMake(30, 30);
@@ -190,6 +244,7 @@
 
 #pragma mark- TInputControllerDelegate
 - (void)inputController:(InputController *)inputController didChangeHeight:(CGFloat)height {
+    return;
     __weak __typeof(self) ws = self;;
     [UIView animateWithDuration:0.3 delay:0 options:UIViewAnimationOptionCurveEaseOut animations:^{
         CGRect msgFrame = ws.messageController.view.frame;
@@ -229,6 +284,7 @@
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {
         [self.delegate chatController:self didSendMessage:msg];
     }
+    
 }
 
 - (void)inputControllerDidTouchFace:(InputController *)inputController {
@@ -255,8 +311,20 @@
     //键盘消失时，处理UI，人员列表
     _memberListColorBlackView.hidden = NO;
     _messageController.hiddenHeader = NO;
-    
     [_inputController reset];
 }
 
+- (void)clickBottomBarFaceBtn:(UIButton *)sender {
+    [self.inputController show];
+    [self.inputController clickBottomBarFaceBtn:nil];
+}
+
+- (void)clickBottomBarTextViewBtn:(UIButton *)sender {
+    [self.inputController show];
+    [self.inputController clickBottomBarTextViewBtn:nil];
+}
+
+- (void)clickBottomBarPlayListBtn:(UIButton *)sender {
+
+}
 @end
