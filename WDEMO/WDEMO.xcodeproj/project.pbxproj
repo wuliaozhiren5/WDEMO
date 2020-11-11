@@ -143,6 +143,7 @@
 		F5E4785E25301177001AE2AE /* WebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E4785D25301177001AE2AE /* WebVC.m */; };
 		F5E4786825303C93001AE2AE /* WKWebView.md in Resources */ = {isa = PBXBuildFile; fileRef = F5E4786725303C93001AE2AE /* WKWebView.md */; };
 		F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */ = {isa = PBXBuildFile; fileRef = F5E4786D25303C9E001AE2AE /* 屏幕旋转.md */; };
+		F5EB7C0E255B96740006FC64 /* YYmodel使用.md in Resources */ = {isa = PBXBuildFile; fileRef = F5EB7C0D255B96740006FC64 /* YYmodel使用.md */; };
 		F5F3664924C8287C008BA221 /* ChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3664824C8287C008BA221 /* ChatKit.m */; };
 		F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */; };
 		F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */; };
@@ -468,6 +469,7 @@
 		F5E4785D25301177001AE2AE /* WebVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WebVC.m; sourceTree = "<group>"; };
 		F5E4786725303C93001AE2AE /* WKWebView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = WKWebView.md; sourceTree = "<group>"; };
 		F5E4786D25303C9E001AE2AE /* 屏幕旋转.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "屏幕旋转.md"; sourceTree = "<group>"; };
+		F5EB7C0D255B96740006FC64 /* YYmodel使用.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "YYmodel使用.md"; sourceTree = "<group>"; };
 		F5F3664724C8287B008BA221 /* ChatKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKit.h; sourceTree = "<group>"; };
 		F5F3664824C8287C008BA221 /* ChatKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKit.m; sourceTree = "<group>"; };
 		F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChatKitFace.bundle; sourceTree = "<group>"; };
@@ -988,6 +990,7 @@
 		F5A763BC253D94D900A76C6E /* YYmodel测试 */ = {
 			isa = PBXGroup;
 			children = (
+				F5EB7C0D255B96740006FC64 /* YYmodel使用.md */,
 				F5A763BD253D952D00A76C6E /* Book.h */,
 				F5A763BE253D952D00A76C6E /* Book.m */,
 				F5A763C4253D956800A76C6E /* Attributes.h */,
@@ -1393,6 +1396,7 @@
 				F5710B4225232263009DEE02 /* 富文本.md in Resources */,
 				F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */,
 				F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */,
+				F5EB7C0E255B96740006FC64 /* YYmodel使用.md in Resources */,
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
 				F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */,

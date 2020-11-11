@@ -23,7 +23,7 @@ model 转 json
 demo
 NSArray *array = [NSArray modelArrayWithClass:[AllSeasonCategorySectionModel class] json:result.data];
 
-xxx *response = [xxx modelWithDictionary:result.data];
+xxxModel *response = [xxxModel modelWithDictionary:result.data];
 
 
 int main() {
