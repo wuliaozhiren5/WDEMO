@@ -1,6 +1,12 @@
+YYModel使用教程
+https://www.jianshu.com/p/79f52e42840f
+
+
 ```
 //数组取值
 [self.array objectOrNilAtIndex:10];
+//字典 
+NSString *type = [dictionary stringValueForKey:@"Type" default:nil];
 
 
 json 转 Model
