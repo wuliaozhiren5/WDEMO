@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+//// JSON:
 
 NS_ASSUME_NONNULL_BEGIN
 @interface Shadow : NSObject

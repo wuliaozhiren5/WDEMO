@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 //    },
 //    "ID" : 100010
 //}
-// Model:
+
 @interface Book : NSObject
 @property NSString *name;
 @property NSInteger page;
