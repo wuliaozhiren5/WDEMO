@@ -90,24 +90,23 @@
     [self creatChatBottomInputBarViewController];
     //人员列表
     [self creatChatMemberListView];
-    //制造数据
-    [self createChatData];
-    
+//    //制造数据
+//    [self createChatData];
 }
 
-- (void)createChatData {
-    
-    TipMessageDataModel *tipMsgModel = [[TipMessageDataModel alloc]init];
-    tipMsgModel.content = @"欢迎和更多的人一起看剧聊剧！畅所欲言！看剧期间严禁出现违法违规、低俗色情、人身攻击，谈论政治等内容。发布违规言论会在当前直播间被永久禁言，请文明发言哦～";
-    tipMsgModel.type = ChatMessageTypeTip;
-    [_messageController sendMessage:tipMsgModel];
-    
-    EnterMessageDataModel *enterMsgModel = [[EnterMessageDataModel alloc]init];
-    //    enterMsgModel.content = @"一起来看剧啦";
-    enterMsgModel.type = ChatMessageTypeEnter;
-    [_messageController sendMessage:enterMsgModel];
-    
-}
+//- (void)createChatData {
+//
+//    TipMessageDataModel *tipMsgModel = [[TipMessageDataModel alloc]init];
+//    tipMsgModel.content = @"欢迎和更多的人一起看剧聊剧！畅所欲言！看剧期间严禁出现违法违规、低俗色情、人身攻击，谈论政治等内容。发布违规言论会在当前直播间被永久禁言，请文明发言哦～";
+//    tipMsgModel.type = ChatMessageTypeTip;
+//    [_messageController sendMessage:tipMsgModel];
+//
+//    EnterMessageDataModel *enterMsgModel = [[EnterMessageDataModel alloc]init];
+//    enterMsgModel.content = @"一起来看剧啦1234567890";
+//    enterMsgModel.type = ChatMessageTypeEnter;
+//    [_messageController sendMessage:enterMsgModel];
+//
+//}
 
 - (void)creatMessageController {
     //message
@@ -266,7 +265,7 @@
 }
 
 - (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageDataModel *)msg {
-    
+    /*
     //直接发送系统样式
     //    [_messageController sendMessage:msg];
     
@@ -280,7 +279,7 @@
     faceMsgModel.content = msg.content;
     faceMsgModel.type = ChatMessageTypeFace;
     [_messageController sendMessage:faceMsgModel];
-    
+    */
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {
         [self.delegate chatController:self didSendMessage:msg];
     }

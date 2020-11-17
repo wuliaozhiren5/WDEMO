@@ -68,6 +68,7 @@
     [fullScreenBtn addTarget:self action:@selector(clickFullScreenBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_halfPlyerView addSubview:fullScreenBtn];
     
+    [self createChatMessage];
     return;
     
     //线程
@@ -106,21 +107,10 @@
         [self.view addSubview:self.chatManager.fullChat.view];
         [self.chatManager.fullChat showAnimation];
     }
+    //填充数据
+    [self.chatManager fullChatControllerSetChatMessage];
 }
 
-- (void)chatController:(ChatController *)controller didSendMessage:(ChatMessageDataModel *)msgCellData{
-    //todo
-}
-
-- (void)clickPlayListButton {
-    //todo
-}
-
-
-- (void)hiddenChatController:(nonnull UIViewController *)controller {
-    //todo
-}
- 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 }
@@ -176,18 +166,64 @@
     return UIInterfaceOrientationPortrait;
 }
  
+//制造数据
+- (void)createChatMessage {
+    [self createChatTipMessage];
+    [self createChatEnterMessage];
+}
 
-- (void)createChatData {
-    
+//制造公告消息
+- (void)createChatTipMessage {
+    //公告消息
     TipMessageDataModel *tipMsgModel = [[TipMessageDataModel alloc]init];
     tipMsgModel.content = @"欢迎和更多的人一起看剧聊剧！畅所欲言！看剧期间严禁出现违法违规、低俗色情、人身攻击，谈论政治等内容。发布违规言论会在当前直播间被永久禁言，请文明发言哦～";
     tipMsgModel.type = ChatMessageTypeTip;
-//    [_messageController sendMessage:tipMsgModel];
-    
-    EnterMessageDataModel *enterMsgModel = [[EnterMessageDataModel alloc]init];
-    //    enterMsgModel.content = @"一起来看剧啦";
-    enterMsgModel.type = ChatMessageTypeEnter;
-//    [_messageController sendMessage:enterMsgModel];
-    
+    NSArray *tipArray = @[tipMsgModel];
+    [self.chatManager sendMessages:tipArray];
 }
+
+//制造进入房间消息
+- (void)createChatEnterMessage {
+    //进入房间消息
+    EnterMessageDataModel *enterMsgModel = [[EnterMessageDataModel alloc]init];
+    enterMsgModel.content = @"一起来看剧啦1234567890";
+    enterMsgModel.type = ChatMessageTypeEnter;
+    NSArray *enterArray = @[enterMsgModel];
+    [self.chatManager sendMessages:enterArray];
+}
+
+#pragma mark ChatControllerDelegate
+- (void)chatController:(UIViewController *)controller didSendMessage:(ChatMessageDataModel *)msgCellData {
+    //发送IM聊天消息
+    //todo
+    
+    //    //    直接发送yytext样式
+    //    ChatMessageYYDataModel *msgModel = [[ChatMessageYYDataModel alloc]init];
+    //    msgModel.content = msg.content;
+    //    [_messageController sendMessage:msgModel];
+    
+    //直接发送yytext样式
+    FaceMessageDataModel *faceMsgModel = [[FaceMessageDataModel alloc]init];
+    faceMsgModel.content = msgCellData.content;
+    faceMsgModel.type = ChatMessageTypeFace;
+
+    //直接发送系统样式
+    ChatMessageDataModel *msgModel = [[ChatMessageDataModel alloc]init];
+    msgModel.content = msgCellData.content;
+    msgModel.type = ChatMessageTypeSystemAttributedString;
+    
+    NSArray *msgArray = @[faceMsgModel, msgModel];
+    [self.chatManager sendMessages:msgArray];
+
+}
+
+- (void)clickPlayListButton {
+    //todo 列表
+}
+
+- (void)hiddenChatController:(UIViewController *)controller {
+    //todo 半屏幕隐藏聊天界面
+}
+
+ 
 @end

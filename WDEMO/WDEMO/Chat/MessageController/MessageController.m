@@ -193,12 +193,14 @@
 }
 
 - (void)sendMessage:(ChatMessageDataModel *)msg {
-    [self.tableView beginUpdates];
-    [_uiMsgs addObject:msg];
-    [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0]]
-                          withRowAnimation:UITableViewRowAnimationFade];
-    [self.tableView endUpdates];
-    [self scrollToBottom:YES];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView beginUpdates];
+        [_uiMsgs addObject:msg];
+        [self.tableView insertRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:_uiMsgs.count - 1 inSection:0]]
+                              withRowAnimation:UITableViewRowAnimationFade];
+        [self.tableView endUpdates];
+        [self scrollToBottom:YES];
+    });
 }
 
 #pragma mark - UIGestureRecognizerDelegate

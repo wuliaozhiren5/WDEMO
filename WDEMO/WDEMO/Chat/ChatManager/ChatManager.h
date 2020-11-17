@@ -10,6 +10,7 @@
 #import "ChatController.h"
 #import "FullScreenChatController.h"
 //#import "RRIMMessageElem.h"
+#import "ChatMessageDataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,7 +35,8 @@ NS_ASSUME_NONNULL_BEGIN
 */
 @property(nonatomic, assign, getter=isInputEditing) BOOL inputEditing;
 
-//- (void)sendMessages:(NSArray<RRIMMessageElem*> *)msgArray;
+- (void)sendMessages:(NSArray<ChatMessageDataModel*> *)msgArray;
+//成员
 //- (void)setMembers:(NSArray<RRIMUser*> *)userArray;
 //- (void)addMembers:(NSArray<RRIMUser*> *)userArray;
 //- (void)deleteMembers:(NSArray<RRIMUser*> *)userArray;

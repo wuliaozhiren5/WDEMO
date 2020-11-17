@@ -7,6 +7,11 @@
 //
 
 #import "ChatManager.h"
+#import "ChatMessageYYDataModel.h"
+#import "TipMessageDataModel.h"
+#import "EnterMessageDataModel.h"
+#import "FaceMessageDataModel.h"
+
 @interface ChatManager ()
  
 @property (nonatomic, copy, readwrite) NSArray *msgsArray;
@@ -25,28 +30,28 @@
     }
     return self;
 }
-
-//- (void)sendMessage:(RRIMMessageElem *)message {
+ 
+- (void)sendMessage:(ChatMessageDataModel *)message {
 //    message.creatorId = _roomModel.creatorId;
-//    //    [self.msgsArray addObject:msg];
-//    NSMutableArray *temp = [NSMutableArray arrayWithArray:self.msgsArray];
-//    [temp addObject:message];
-//    self.msgsArray = temp;
-//    
-//    [_halfChat.messageController sendMessage:message];
-//    [_fullChat.messageController sendMessage:message];
+    //    [self.msgsArray addObject:msg];
+    NSMutableArray *temp = [NSMutableArray arrayWithArray:self.msgsArray];
+    [temp addObject:message];
+    self.msgsArray = temp;
+
+    [_halfChat sendMessage:message];
+    [_fullChat sendMessage:message];
 //    self.unreadMessageCount += 1;
-//}
-//
-//- (void)sendMessages:(NSArray *)msgArray {
-//    __weak __typeof(self) ws = self;
-//    for (RRIMMessageElem *message in msgArray) {
-//        [self.queue addOperationWithBlock:^{
-//            [ws sendMessage:message];
-//        }];
-//    }
-//}
-// 
+}
+
+- (void)sendMessages:(NSArray<ChatMessageDataModel*> *)msgArray {
+    __weak __typeof(self) ws = self;
+    for (ChatMessageDataModel *message in msgArray) {
+        [self.queue addOperationWithBlock:^{
+            [ws sendMessage:message];
+        }];
+    }
+}
+
 //- (void)setMembers:(NSArray<RRIMUser*> *)userArray {
 //    if (self.resetUserListNextTime) {
 //        WS(weakSelf);

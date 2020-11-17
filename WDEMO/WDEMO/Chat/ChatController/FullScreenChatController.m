@@ -75,8 +75,8 @@
     [self creatChatBottomInputBarViewController];
     //动画
     [self showAnimation];
-    //制造数据
-    [self createChatData];
+//    //制造数据
+//    [self createChatData];
 }
 
 //隐藏
@@ -92,19 +92,20 @@
     }
 }
 
-- (void)createChatData {
-    
-    TipMessageDataModel *tipMsgModel = [[TipMessageDataModel alloc]init];
-    tipMsgModel.content = @"欢迎和更多的人一起看剧聊剧！畅所欲言！看剧期间严禁出现违法违规、低俗色情、人身攻击，谈论政治等内容。发布违规言论会在当前直播间被永久禁言，请文明发言哦～";
-    tipMsgModel.type = ChatMessageTypeTip;
-    [_messageController sendMessage:tipMsgModel];
-    
-    EnterMessageDataModel *enterMsgModel = [[EnterMessageDataModel alloc]init];
-    enterMsgModel.content = @"一起来看剧啦!";
-    enterMsgModel.type = ChatMessageTypeEnter;
-    [_messageController sendMessage:enterMsgModel];
-    
-}
+//- (void)createChatData {
+//
+//    TipMessageDataModel *tipMsgModel = [[TipMessageDataModel alloc]init];
+//    tipMsgModel.content = @"欢迎和更多的人一起看剧聊剧！畅所欲言！看剧期间严禁出现违法违规、低俗色情、人身攻击，谈论政治等内容。发布违规言论会在当前直播间被永久禁言，请文明发言哦～";
+//    tipMsgModel.type = ChatMessageTypeTip;
+//    [_messageController sendMessage:tipMsgModel];
+//
+//    EnterMessageDataModel *enterMsgModel = [[EnterMessageDataModel alloc]init];
+//    enterMsgModel.content = @"一起来看剧啦!";
+//    enterMsgModel.type = ChatMessageTypeEnter;
+//    [_messageController sendMessage:enterMsgModel];
+//
+//}
+
 - (void)creatMessageController {
     //message
     _messageController = [[FullScreenMessageController alloc] init];
@@ -222,6 +223,9 @@
     return isInputEditing;
 }
 
+- (void)sendMessage:(ChatMessageDataModel *)message {
+    [_messageController sendMessage:message];
+}
 #pragma mark- TInputControllerDelegate
 - (void)inputController:(InputController *)inputController didChangeHeight:(CGFloat)height {
     return;
@@ -241,7 +245,7 @@
 }
 
 - (void)inputController:(InputController *)inputController didSendMessage:(ChatMessageDataModel *)msg {
-     
+    /*
     //直接发送系统样式
     //    [_messageController sendMessage:msg];
     
@@ -261,7 +265,7 @@
     msgModel.content = msg.content;
     msgModel.type = ChatMessageTypeSystemAttributedString;
     [_messageController sendMessage:msgModel];
-    
+    */
     if (self.delegate && [self.delegate respondsToSelector:@selector(chatController:didSendMessage:)]) {
         [self.delegate chatController:self didSendMessage:msg];
     }
