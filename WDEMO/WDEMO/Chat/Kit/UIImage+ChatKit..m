@@ -42,7 +42,7 @@
 
 + (UIImage *)roomOwnimage {
     //房主
-    UIView *room = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 24, 12)];
+    UIView *room = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 24, 12.1)];
     room.backgroundColor = RGB(0, 187, 255);
     room.layer.cornerRadius = 3.0;
     UILabel *roomLabel = [[UILabel alloc]initWithFrame:room.frame];
