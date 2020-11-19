@@ -31,7 +31,8 @@
     
     UIImage *imageRet = [[UIImage alloc]init];
     //UIGraphicsBeginImageContextWithOptions(区域大小, 是否是非透明的, 屏幕密度);
-    UIGraphicsBeginImageContextWithOptions(view.frame.size, YES, [UIScreen mainScreen].scale);
+    //NO透明，YES不透明
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, [UIScreen mainScreen].scale);
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
     imageRet = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
