@@ -8,6 +8,7 @@
 
 #import "IsEqualViewController.h"
 #import "MYPerson.h"
+#import "WPerson.h"
 
 @interface IsEqualViewController ()
 
@@ -19,10 +20,24 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self test1];
-    [self test2];
-    [self test3];
+//    [self test1];
+//    [self test2];
+//    [self test3];
+     
+    //iOS开发 之 不要告诉我你真的懂isEqual与hash!
+    //https://www.jianshu.com/p/915356e280fc
 
+    WPerson *person1 = [[WPerson alloc] init];
+    person1.name = @"123";
+    person1.birthday = [NSDate date];
+    WPerson *person2 = [[WPerson alloc] init];
+    person2.name = @"123";
+    person2.birthday = person1.birthday;
+    NSLog(@"[person1 isEqual:person2] = %@", [person1 isEqual:person2] ? @"YES" : @"NO");
+    NSMutableSet *set = [NSMutableSet set];
+    [set addObject:person1];
+    [set addObject:person2];
+    NSLog(@"set count = %ld", set.count);
 }
 
 /*

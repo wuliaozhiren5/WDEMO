@@ -145,6 +145,7 @@
 		F5E4786825303C93001AE2AE /* WKWebView.md in Resources */ = {isa = PBXBuildFile; fileRef = F5E4786725303C93001AE2AE /* WKWebView.md */; };
 		F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */ = {isa = PBXBuildFile; fileRef = F5E4786D25303C9E001AE2AE /* 屏幕旋转.md */; };
 		F5EB7C0E255B96740006FC64 /* YYmodel使用.md in Resources */ = {isa = PBXBuildFile; fileRef = F5EB7C0D255B96740006FC64 /* YYmodel使用.md */; };
+		F5F30DB3256652CC00DD2597 /* WPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F30DB2256652CC00DD2597 /* WPerson.m */; };
 		F5F3664924C8287C008BA221 /* ChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3664824C8287C008BA221 /* ChatKit.m */; };
 		F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */; };
 		F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */; };
@@ -473,6 +474,8 @@
 		F5E4786725303C93001AE2AE /* WKWebView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = WKWebView.md; sourceTree = "<group>"; };
 		F5E4786D25303C9E001AE2AE /* 屏幕旋转.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "屏幕旋转.md"; sourceTree = "<group>"; };
 		F5EB7C0D255B96740006FC64 /* YYmodel使用.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "YYmodel使用.md"; sourceTree = "<group>"; };
+		F5F30DB1256652CC00DD2597 /* WPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPerson.h; sourceTree = "<group>"; };
+		F5F30DB2256652CC00DD2597 /* WPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPerson.m; sourceTree = "<group>"; };
 		F5F3664724C8287B008BA221 /* ChatKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKit.h; sourceTree = "<group>"; };
 		F5F3664824C8287C008BA221 /* ChatKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatKit.m; sourceTree = "<group>"; };
 		F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChatKitFace.bundle; sourceTree = "<group>"; };
@@ -822,6 +825,8 @@
 				F507113224E2A6BE00AD5306 /* MYCar.m */,
 				F507113524E2AB9400AD5306 /* IsEqualViewController.h */,
 				F507113624E2AB9400AD5306 /* IsEqualViewController.m */,
+				F5F30DB1256652CC00DD2597 /* WPerson.h */,
+				F5F30DB2256652CC00DD2597 /* WPerson.m */,
 			);
 			path = "判断对象是否相等";
 			sourceTree = "<group>";
@@ -1523,6 +1528,7 @@
 				A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */,
 				A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */,
 				F507113024E2A6A700AD5306 /* MYPerson.m in Sources */,
+				F5F30DB3256652CC00DD2597 /* WPerson.m in Sources */,
 				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
 				F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */,
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
