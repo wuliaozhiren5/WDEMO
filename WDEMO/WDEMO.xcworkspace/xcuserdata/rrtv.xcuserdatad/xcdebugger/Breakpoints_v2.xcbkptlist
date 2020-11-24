@@ -72,7 +72,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0154D1E9-C3E1-44B0-A09F-5746B2318DB7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WDEMO/&#x63d0;&#x793a;&#x7684;&#x6761;/FollowTips.m"
@@ -88,7 +88,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "3B471EF8-C6B8-46AF-95E1-E2FE021E64C1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "WDEMO/&#x63d0;&#x793a;&#x7684;&#x6761;/FollowTips.m"
@@ -113,22 +113,6 @@
             startingLineNumber = "102"
             endingLineNumber = "102"
             landmarkName = "-clickFollowBtn:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7BD7D5EA-1DB6-4E41-A160-03FF73C89416"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "WDEMO/&#x63d0;&#x793a;&#x7684;&#x6761;/FollowTips.m"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-autoHidden"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

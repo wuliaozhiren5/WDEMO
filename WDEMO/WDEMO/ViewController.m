@@ -69,6 +69,8 @@
 //提示条
 #import "FollowTips.h"
 
+#import <Lottie/Lottie.h>
+
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource, CAAnimationDelegate>
@@ -190,6 +192,9 @@
     
     
 //    [self createFollowTipsTimerWithDuration:25.0];
+    
+    
+    [self LOTAnimation];
 }
 
 - (void)createFollowTipsTimerWithDuration:(CGFloat)duration {
@@ -699,6 +704,23 @@
     //    富文本AttributedString总结（三）之链接属性的设置
     //    https://www.jianshu.com/p/aecb9e426459
     
+}
+
+//json动画
+- (void)LOTAnimation {
+    LOTAnimationView *lottieView = [LOTAnimationView animationNamed:@"data"];
+//    lottieView.loopAnimation = YES;
+    lottieView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.view addSubview:lottieView];
+    [lottieView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(@60);
+        make.width.height.offset(60);
+    }];
+    [lottieView play];
+    
+//    [lottieView playWithCompletion:^(BOOL animationFinished) {
+//
+//    }];
 }
 @end
 

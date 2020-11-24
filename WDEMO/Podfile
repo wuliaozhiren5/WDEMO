@@ -16,5 +16,5 @@ pod 'YYKit', '~> 1.0'
 #HUD
 pod 'MBProgressHUD', '~> 1.2.0'
 #动画
-pod 'lottie-ios' '~> 2.5.3'
+pod 'lottie-ios', '~> 2.5.3'
 end

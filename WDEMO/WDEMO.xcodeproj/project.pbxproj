@@ -131,6 +131,10 @@
 		F5CE3D2324E6901800B20C80 /* RRDestroyAccountAgreenmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */; };
 		F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */; };
 		F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */; };
+		F5D0CC70256CD751000C85A4 /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D0CC6B256CD751000C85A4 /* img_1.png */; };
+		F5D0CC71256CD751000C85A4 /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D0CC6C256CD751000C85A4 /* img_0.png */; };
+		F5D0CC72256CD751000C85A4 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = F5D0CC6D256CD751000C85A4 /* data.json */; };
+		F5D0CC73256CD751000C85A4 /* 追剧引导-1.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5D0CC6E256CD751000C85A4 /* 追剧引导-1.gif */; };
 		F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */; };
 		F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0124E0E70500CAADF8 /* MaskViewController.m */; };
 		F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0524E0F91800CAADF8 /* UIColor+TUIDarkMode.m */; };
@@ -449,6 +453,10 @@
 		F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullScreenChatBottomInputBarViewController.m; sourceTree = "<group>"; };
 		F5D056FA25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfScreenChatBottomInputBarViewController.h; sourceTree = "<group>"; };
 		F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HalfScreenChatBottomInputBarViewController.m; sourceTree = "<group>"; };
+		F5D0CC6B256CD751000C85A4 /* img_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_1.png; sourceTree = "<group>"; };
+		F5D0CC6C256CD751000C85A4 /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
+		F5D0CC6D256CD751000C85A4 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		F5D0CC6E256CD751000C85A4 /* 追剧引导-1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "追剧引导-1.gif"; sourceTree = "<group>"; };
 		F5D0FBFD24E0E6CB00CAADF8 /* AttributedTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributedTextViewController.h; sourceTree = "<group>"; };
 		F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributedTextViewController.m; sourceTree = "<group>"; };
 		F5D0FC0024E0E70400CAADF8 /* MaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaskViewController.h; sourceTree = "<group>"; };
@@ -640,6 +648,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5D0CC68256CD751000C85A4 /* 追剧引导-动效 */,
 				F5D138BE256795FF008CC29A /* 提示的条 */,
 				F5A763BC253D94D900A76C6E /* YYmodel测试 */,
 				F5200DB22531526D004637DD /* 贴吧 */,
@@ -1106,6 +1115,25 @@
 			path = "注销";
 			sourceTree = "<group>";
 		};
+		F5D0CC68256CD751000C85A4 /* 追剧引导-动效 */ = {
+			isa = PBXGroup;
+			children = (
+				F5D0CC6A256CD751000C85A4 /* images */,
+				F5D0CC6D256CD751000C85A4 /* data.json */,
+				F5D0CC6E256CD751000C85A4 /* 追剧引导-1.gif */,
+			);
+			path = "追剧引导-动效";
+			sourceTree = "<group>";
+		};
+		F5D0CC6A256CD751000C85A4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				F5D0CC6B256CD751000C85A4 /* img_1.png */,
+				F5D0CC6C256CD751000C85A4 /* img_0.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		F5D0FBFB24E0E65500CAADF8 /* 系统富文本 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1421,8 +1449,12 @@
 				F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */,
 				F5EB7C0E255B96740006FC64 /* YYmodel使用.md in Resources */,
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
+				F5D0CC73256CD751000C85A4 /* 追剧引导-1.gif in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
 				F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */,
+				F5D0CC71256CD751000C85A4 /* img_0.png in Resources */,
+				F5D0CC70256CD751000C85A4 /* img_1.png in Resources */,
+				F5D0CC72256CD751000C85A4 /* data.json in Resources */,
 				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
