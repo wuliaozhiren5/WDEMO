@@ -271,4 +271,19 @@
 //- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    return @"删除";
 //}
+
+
+- (void)everyCell {
+    [self.tableView.visibleCells enumerateObjectsUsingBlock:^(__kindof UITableViewCell * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        if ([obj isKindOfClass:[RRSeasonTopTableViewCell class]]) {
+//            [(RRSeasonTopTableViewCell *)obj showLiveButtonGuideView:[self.view convertRect:obj.contentView.frame toView:self.fatherVC.view]];
+//        }
+    }];
+    
+    
+    for (UITableViewCell *cell in self.tableView.visibleCells) {
+        
+    }
+     
+}
 @end
