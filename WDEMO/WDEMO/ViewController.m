@@ -66,12 +66,18 @@
 #import "AllScreenViewController.h"
 //webview
 #import "WebVC.h"
+//提示条
+#import "FollowTips.h"
 
-@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+#define angle2Rad(angle) ((angle) / 180.0 *M_PI)
+
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource, CAAnimationDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, copy) NSArray *data;
 @property (nonatomic, strong) NSTimer *timer;
+//追剧提示定时器
+@property (nonatomic, strong) NSTimer *followTipsTimer;
 
 @end
 
@@ -86,7 +92,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"首页";
-    [self clickChat];
+//    [self clickChat];
 //    [self clickWebView];
     //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
@@ -137,7 +143,8 @@
         
     ];
     self.data = array;
-    
+
+    //列表tableview
     [self setupViews];
     
     //    //cup memory监控
@@ -165,6 +172,96 @@
     
     CGFloat f = 1.1;
     NSLog(@"%f",f);
+    //房主
+//    UIImageView *imageV = [[UIImageView alloc]init];;
+//    imageV.image = [UIImage roomOwnimage];
+//    imageV.frame = CGRectMake(50, 50, 50, 50);
+//    [self.view addSubview:imageV];
+//    [self shakeAnimationForView:imageV];
+//    [self longPress:imageV];
+    
+    
+    FollowTips *tips = [[FollowTips alloc]initWithFrame:CGRectMake(0, 200, 320, 50)];
+    [tips show];
+    
+//    //强制移除
+//    [tips removeFromSuperview];
+//    tips = nil;
+    
+    
+//    [self createFollowTipsTimerWithDuration:25.0];
+}
+
+- (void)createFollowTipsTimerWithDuration:(CGFloat)duration {
+    if (duration <= 0) {
+        return;
+    }
+    CGFloat seconds = duration * 0.2;//20%
+    //停止定时器
+    [self stopFollowTipsTimer];
+ 
+    NSTimer *timer = [NSTimer timerWithTimeInterval:seconds target:self selector:@selector(showFollowTips) userInfo:nil repeats:NO];
+    [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+    self.followTipsTimer = timer;
+}
+
+- (void)stopFollowTipsTimer  {
+  if (self.followTipsTimer) {
+      [self.followTipsTimer invalidate];
+      self.followTipsTimer = nil;
+  }
+}
+
+- (void)showFollowTips {
+ 
+}
+
+
+/**
+ * 抖动效果
+ *
+ * @param view 要抖动的view
+ */
+- (void)shakeAnimationForView:(UIView *) view {
+    CALayer *viewLayer = view.layer;
+    CGPoint position = viewLayer.position;
+    CGPoint x = CGPointMake(position.x + 2, position.y);
+    CGPoint y = CGPointMake(position.x - 2, position.y);
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+    [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault]];
+    [animation setFromValue:[NSValue valueWithCGPoint:x]];
+    [animation setToValue:[NSValue valueWithCGPoint:y]];
+    [animation setAutoreverses:YES];
+    [animation setDuration:.06];
+    [animation setRepeatCount:5];
+    [viewLayer addAnimation:animation forKey:nil];
+    
+    animation.delegate = self;
+}
+
+- (void)longPress:(UIView *) view {
+    
+    //创建动画对象
+    CAKeyframeAnimation *anim = [CAKeyframeAnimation animation];
+    
+    anim.keyPath = @"transform.rotation";
+    anim.values = @[@(angle2Rad(-5)),@(angle2Rad(5))];
+//    anim.repeatCount = MAXFLOAT;
+//    anim.duration = 1;
+    
+    anim.repeatCount = 3;
+//    anim.duration = 0.5;
+    
+    anim.autoreverses = YES;
+    [view.layer addAnimation:anim forKey:nil];
+    
+}
+
+- (void)animationDidStart:(CAAnimation *)anim {
+    
+}
+ 
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     
 }
 

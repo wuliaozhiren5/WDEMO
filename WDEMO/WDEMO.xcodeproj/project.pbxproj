@@ -136,6 +136,7 @@
 		F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0524E0F91800CAADF8 /* UIColor+TUIDarkMode.m */; };
 		F5D0FC0A24E0F91800CAADF8 /* UIImage+TUIDarkMode.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0624E0F91800CAADF8 /* UIImage+TUIDarkMode.m */; };
 		F5D0FC0D24E0F99800CAADF8 /* UIImage+TUIKIT.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0C24E0F99700CAADF8 /* UIImage+TUIKIT.m */; };
+		F5D138CC25679690008CC29A /* FollowTips.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D138CB25679690008CC29A /* FollowTips.m */; };
 		F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */; };
 		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
 		F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */; };
@@ -459,6 +460,8 @@
 		F5D0FC0B24E0F99700CAADF8 /* UIImage+TUIKIT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+TUIKIT.h"; sourceTree = "<group>"; };
 		F5D0FC0C24E0F99700CAADF8 /* UIImage+TUIKIT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+TUIKIT.m"; sourceTree = "<group>"; };
 		F5D0FC0E24E0FA5900CAADF8 /* THeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = THeader.h; sourceTree = "<group>"; };
+		F5D138CA25679690008CC29A /* FollowTips.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FollowTips.h; sourceTree = "<group>"; };
+		F5D138CB25679690008CC29A /* FollowTips.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowTips.m; sourceTree = "<group>"; };
 		F5D54BFE2553F35400787EBB /* ChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatBottomInputBarViewController.h; sourceTree = "<group>"; };
 		F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatBottomInputBarViewController.m; sourceTree = "<group>"; };
 		F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListView.h; sourceTree = "<group>"; };
@@ -637,6 +640,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5D138BE256795FF008CC29A /* 提示的条 */,
 				F5A763BC253D94D900A76C6E /* YYmodel测试 */,
 				F5200DB22531526D004637DD /* 贴吧 */,
 				F5E4785B25301154001AE2AE /* WebView */,
@@ -1144,6 +1148,15 @@
 			path = Theme;
 			sourceTree = "<group>";
 		};
+		F5D138BE256795FF008CC29A /* 提示的条 */ = {
+			isa = PBXGroup;
+			children = (
+				F5D138CA25679690008CC29A /* FollowTips.h */,
+				F5D138CB25679690008CC29A /* FollowTips.m */,
+			);
+			path = "提示的条";
+			sourceTree = "<group>";
+		};
 		F5DEB2A224CE7667009A6767 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1549,6 +1562,7 @@
 				F5A8899524F612A000DB73ED /* OrderCell.m in Sources */,
 				F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */,
 				F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */,
+				F5D138CC25679690008CC29A /* FollowTips.m in Sources */,
 				F53F669224FE454000770055 /* PasswordTextField.m in Sources */,
 				A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */,
 				F553E12A24CA800200DA5625 /* InputController.m in Sources */,
