@@ -19,4 +19,7 @@ pod 'MBProgressHUD', '~> 1.2.0'
 #动画
 pod 'lottie-ios', '~> 2.5.3'
 #pod 'FLAnimatedImage', '~> 1.0'
+#Aspects是一个简洁高效的用于使iOS支持AOP面向切面编程的库
+#https://www.jianshu.com/p/10d342ae6ccd
+pod 'AspectsV1.4.2', '~> 1.4.2’
 end

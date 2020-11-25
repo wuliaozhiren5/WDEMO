@@ -14,6 +14,7 @@ PODS:
   - AFNetworking/Serialization (3.2.1)
   - AFNetworking/UIKit (3.2.1):
     - AFNetworking/NSURLSession
+  - AspectsV1.4.2 (1.4.2)
   - lottie-ios (2.5.3)
   - Masonry (1.0.2)
   - MBProgressHUD (1.2.0)
@@ -28,6 +29,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 3.0)
+  - AspectsV1.4.2 (~> 1.4.2)
   - lottie-ios (~> 2.5.3)
   - Masonry (~> 1.0.1)
   - MBProgressHUD (~> 1.2.0)
@@ -39,6 +41,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - AspectsV1.4.2
     - lottie-ios
     - Masonry
     - MBProgressHUD
@@ -49,6 +52,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  AspectsV1.4.2: a8b168606776215f5ba4790b95ff315df336aca9
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -57,6 +61,6 @@ SPEC CHECKSUMS:
   SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 343db5495e389243cca6ed085b8f4e13e0084ac2
+PODFILE CHECKSUM: 84d9c0bd8d1eade575a0408a80d79f28fa57baca
 
 COCOAPODS: 1.9.3
