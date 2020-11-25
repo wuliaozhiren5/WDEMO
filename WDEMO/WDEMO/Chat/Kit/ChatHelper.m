@@ -27,8 +27,8 @@
         UIImage *image = nil;
         
         if ([path containsString:@".gif"]) { //支持动图
-//            image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:path]];
-            image = [UIImage sd_animatedGIFWithData:[NSData dataWithContentsOfFile:path]];
+            image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:path]];
+//            image = [UIImage sd_animatedGIFWithData:[NSData dataWithContentsOfFile:path]];
             
             if(complete){
                 complete(path, image);
