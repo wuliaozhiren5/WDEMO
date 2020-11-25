@@ -3,7 +3,8 @@ inhibit_all_warnings!
 
 target "WDEMO" do
 #图片
-pod 'SDWebImage', '~>3.8'
+pod 'SDWebImage', '~> 5.0'
+
 #网络请求
 pod 'MJRefresh'
 pod 'AFNetworking','~> 3.0’
@@ -17,4 +18,5 @@ pod 'YYKit', '~> 1.0'
 pod 'MBProgressHUD', '~> 1.2.0'
 #动画
 pod 'lottie-ios', '~> 2.5.3'
+#pod 'FLAnimatedImage', '~> 1.0'
 end

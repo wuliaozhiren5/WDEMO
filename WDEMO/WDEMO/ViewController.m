@@ -29,6 +29,9 @@
 
 //HUB
 #import <MBProgressHUD/MBProgressHUD.h>
+#import <SDWebImage/SDAnimatedImageView.h>
+#import <SDWebImage/UIImageView+WebCache.h>
+
 #import "YYViewController.h"
 #import "MaskViewController.h"
 
@@ -147,7 +150,7 @@
     self.data = array;
 
     //列表tableview
-    [self setupViews];
+//    [self setupViews];
     
     //    //cup memory监控
     //    [self.timer fire];
@@ -174,17 +177,46 @@
     
     CGFloat f = 1.1;
     NSLog(@"%f",f);
-    //房主
-//    UIImageView *imageV = [[UIImageView alloc]init];;
-//    imageV.image = [UIImage roomOwnimage];
-//    imageV.frame = CGRectMake(50, 50, 50, 50);
-//    [self.view addSubview:imageV];
+//    房主
+    UIImageView *imageV = [[UIImageView alloc]init];;
+    imageV.image = [UIImage roomOwnimage];
+    imageV.frame = CGRectMake(50, 50, 50, 50);
+    [self.view addSubview:imageV];
 //    [self shakeAnimationForView:imageV];
 //    [self longPress:imageV];
     
+    [imageV removeFromSuperview];
     
-    FollowTips *tips = [[FollowTips alloc]initWithFrame:CGRectMake(0, 200, 320, 50)];
-    [tips show];
+   
+    NSLog(@"%@",imageV.superview);
+    if (!imageV.superview) {
+        imageV = nil;
+    }
+//    imageV = nil;
+    [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@0);
+        make.leading.equalTo(@0);
+        make.width.mas_equalTo(213);
+        make.height.mas_equalTo(45);
+    }];
+    
+    
+    
+//    sd_animatedGIFNamed
+//    UIImageView *gifV = [[UIImageView alloc]init];;
+//    gifV.image = [UIImage sd_animatedGIFNamed:@"w-追剧引导-一次"];
+//    gifV.frame = CGRectMake(50, 50, 50, 50);
+//    [self.view addSubview:gifV];
+ 
+    //gif
+    SDAnimatedImageView *imageView = [SDAnimatedImageView new];
+    SDAnimatedImage *animatedImage = [SDAnimatedImage imageNamed:@"w-追剧引导-一次.gif"];
+    imageView.image = animatedImage;
+    imageView.frame = CGRectMake(50, 50, 50, 50);
+    [self.view addSubview:imageView];
+    
+//    FollowTips *tips = [[FollowTips alloc]initWithFrame:CGRectMake(0, 200, 320, 50)];
+//    [tips show];
     
 //    //强制移除
 //    [tips removeFromSuperview];
@@ -194,7 +226,25 @@
 //    [self createFollowTipsTimerWithDuration:25.0];
     
     
-    [self LOTAnimation];
+//    [self LOTAnimation];
+
+    
+//    //线程
+//    //线程1
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        @synchronized(self){
+//            NSLog(@"23423");
+//            sleep(10);
+//        }
+//    });
+//
+//    //线程2
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        sleep(1);
+//        @synchronized(self){
+//            NSLog(@"23423--------");
+//        }
+//    });
 }
 
 - (void)createFollowTipsTimerWithDuration:(CGFloat)duration {
@@ -277,6 +327,14 @@
 
 -(void)clickTagListBtn:(UIButton *)btn {
     
+    TagListViewController *vc= [[TagListViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    NSLog(@"self？？？？--------");
+
+    @synchronized(self){
+        NSLog(@"？？？？--------");
+    }
 }
 
 -(void)clickPassword {
@@ -709,13 +767,19 @@
 //json动画
 - (void)LOTAnimation {
     LOTAnimationView *lottieView = [LOTAnimationView animationNamed:@"data"];
-//    lottieView.loopAnimation = YES;
-    lottieView.contentMode = UIViewContentModeScaleAspectFit;
+    
+    lottieView.frame = CGRectMake(0, 100, 320, 320);
+    
+//    lottieView.frame = self.view.bounds;
+    lottieView.loopAnimation = YES;
+//    lottieView.contentMode = UIViewContentModeScaleAspectFit;
+//    lottieView.animationSpeed = 0.5
+
     [self.view addSubview:lottieView];
-    [lottieView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(@60);
-        make.width.height.offset(60);
-    }];
+//    [lottieView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(@60);
+//        make.width.height.offset(60);
+//    }];
     [lottieView play];
     
 //    [lottieView playWithCompletion:^(BOOL animationFinished) {

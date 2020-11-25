@@ -84,7 +84,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         sleep(1);
         @synchronized(self){
-            NSLog(@"23423--");
+            NSLog(@"23423--------");
         }
     });
 }
