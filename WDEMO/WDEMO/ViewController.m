@@ -30,6 +30,7 @@
 //HUB
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SDWebImage/SDAnimatedImageView.h>
+#import <SDWebImage/UIImage+GIF.h>
 #import <SDWebImage/UIImageView+WebCache.h>
 
 #import "YYViewController.h"
@@ -84,6 +85,9 @@
 //追剧提示定时器
 @property (nonatomic, strong) NSTimer *followTipsTimer;
 
+
+@property (nonatomic, strong) UIImageView *removeImageView;
+
 @end
 
 @implementation ViewController
@@ -97,8 +101,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.title = @"首页";
-//    [self clickChat];
-//    [self clickWebView];
+    //    [self clickChat];
+    //    [self clickWebView];
     //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
     //    self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -148,9 +152,9 @@
         
     ];
     self.data = array;
-
+    
     //列表tableview
-//    [self setupViews];
+    //    [self setupViews];
     
     //    //cup memory监控
     //    [self.timer fire];
@@ -177,75 +181,159 @@
     
     CGFloat f = 1.1;
     NSLog(@"%f",f);
-//    房主
+    
+    ////    房主
+    //    UIImageView *imageV = [[UIImageView alloc]init];;
+    //    imageV.image = [UIImage roomOwnimage];
+    //    imageV.frame = CGRectMake(50, 50, 50, 50);
+    //    [self.view addSubview:imageV];
+    ////    [self shakeAnimationForView:imageV];
+    ////    [self longPress:imageV];
+    //
+    ////    [imageV removeFromSuperview];
+    //
+    //
+    //    NSLog(@"%@",imageV.superview);
+    //    if (!imageV.superview) {
+    //        imageV = nil;
+    //    }
+    ////    imageV = nil;
+    //    [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.top.equalTo(@0);
+    //        make.leading.equalTo(@0);
+    //        make.width.mas_equalTo(213);
+    //        make.height.mas_equalTo(45);
+    //    }];
+    
+  
+    FollowTips *tips = [[FollowTips alloc]initWithFrame:CGRectMake(0, 200, 320, 50)];
+    [tips show];
+    tips.followTipHidden = ^{
+        
+    };
+    //    //强制移除
+    //    [tips removeFromSuperview];
+    //    tips = nil;
+    
+    
+    //    [self createFollowTipsTimerWithDuration:25.0];
+    
+
+    
+    
+    //    //线程
+    //    //线程1
+    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    //        @synchronized(self){
+    //            NSLog(@"23423");
+    //            sleep(10);
+    //        }
+    //    });
+    //
+    //    //线程2
+    //    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    //        sleep(1);
+    //        @synchronized(self){
+    //            NSLog(@"23423--------");
+    //        }
+    //    });
+    
+    
+    
+    
+    return;
+    //展示gif
+    [self testGIF];
+    //主线程 remove nil 修改约束 会不会崩溃测试
+    [self testRemoveBug];
+    //json 动画
+    [self LOTAnimation];
+    //房主
+    [self createRoomOwnimage];
+
+    
+}
+
+//房主
+- (void)createRoomOwnimage {
+    UIImageView *imageV = [[UIImageView alloc]init];;
+    imageV.image = [UIImage roomOwnimage];
+    imageV.frame = CGRectMake(150, 50, 40, 20);
+    [self.view addSubview:imageV];
+ 
+}
+
+- (void)testGIF {
+    //GIF：sdwebimage
+    UIImageView *gifV = [[UIImageView alloc]init];;
+    //        gifV.image = [UIImage sd_animatedGIFNamed:@"w-追剧引导-一次"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"w-追剧引导-一次" ofType:@"gif"];
+    gifV.image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:path]];
+    gifV.frame = CGRectMake(50, 50, 50, 50);
+    [self.view addSubview:gifV];
+    
+    //gif 可以一次
+    //sd_animatedGIFNamed
+    SDAnimatedImageView *imageView = [SDAnimatedImageView new];
+    SDAnimatedImage *animatedImage = [SDAnimatedImage imageNamed:@"w-追剧引导-一次.gif"];
+    imageView.image = animatedImage;
+    imageView.frame = CGRectMake(50, 100, 50, 50);
+    [self.view addSubview:imageView];
+}
+
+
+- (void)testRemoveBug {
+    [self createImage];
+//    [self removeImage];
+//    [self changeImage];
+    
+    WS(weakSelf)
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf removeImage];
+    });
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf changeImage];
+    });
+}
+
+- (void)changeImage {
+    NSLog(@"--==变化mas_updateConstraints==--"); 
+    [self.removeImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@10);
+        make.leading.equalTo(@10);
+        make.width.mas_equalTo(45);
+        make.height.mas_equalTo(45);
+    }];
+}
+- (void)removeImage {
+    [self.removeImageView removeFromSuperview];
+    for (int i = 0; i< 20000; i++) {
+        NSLog(@"--==第%d次==--",i);
+    }
+    self.removeImageView = nil;
+}
+
+- (void)createImage {
     UIImageView *imageV = [[UIImageView alloc]init];;
     imageV.image = [UIImage roomOwnimage];
     imageV.frame = CGRectMake(50, 50, 50, 50);
     [self.view addSubview:imageV];
-//    [self shakeAnimationForView:imageV];
-//    [self longPress:imageV];
-    
-    [imageV removeFromSuperview];
-    
-   
-    NSLog(@"%@",imageV.superview);
-    if (!imageV.superview) {
-        imageV = nil;
-    }
-//    imageV = nil;
+    self.removeImageView = imageV;
     [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
         make.leading.equalTo(@0);
-        make.width.mas_equalTo(213);
-        make.height.mas_equalTo(45);
+        make.width.mas_equalTo(50);
+        make.height.mas_equalTo(50);
     }];
     
-    
-    
-//    sd_animatedGIFNamed
-//    UIImageView *gifV = [[UIImageView alloc]init];;
-//    gifV.image = [UIImage sd_animatedGIFNamed:@"w-追剧引导-一次"];
-//    gifV.frame = CGRectMake(50, 50, 50, 50);
-//    [self.view addSubview:gifV];
- 
-    //gif
-    SDAnimatedImageView *imageView = [SDAnimatedImageView new];
-    SDAnimatedImage *animatedImage = [SDAnimatedImage imageNamed:@"w-追剧引导-一次.gif"];
-    imageView.image = animatedImage;
-    imageView.frame = CGRectMake(50, 50, 50, 50);
-    [self.view addSubview:imageView];
-    
-//    FollowTips *tips = [[FollowTips alloc]initWithFrame:CGRectMake(0, 200, 320, 50)];
-//    [tips show];
-    
-//    //强制移除
-//    [tips removeFromSuperview];
-//    tips = nil;
-    
-    
-//    [self createFollowTipsTimerWithDuration:25.0];
-    
-    
-//    [self LOTAnimation];
-
-    
-//    //线程
-//    //线程1
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        @synchronized(self){
-//            NSLog(@"23423");
-//            sleep(10);
-//        }
-//    });
-//
-//    //线程2
-//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        sleep(1);
-//        @synchronized(self){
-//            NSLog(@"23423--------");
-//        }
-//    });
+    //
+    //        NSLog(@"%@",imageV.superview);
+    //        if (!imageV.superview) {
+    //            imageV = nil;
+    //        }
+    //    //    imageV = nil;
 }
+
 
 - (void)createFollowTipsTimerWithDuration:(CGFloat)duration {
     if (duration <= 0) {
@@ -254,21 +342,21 @@
     CGFloat seconds = duration * 0.2;//20%
     //停止定时器
     [self stopFollowTipsTimer];
- 
+    
     NSTimer *timer = [NSTimer timerWithTimeInterval:seconds target:self selector:@selector(showFollowTips) userInfo:nil repeats:NO];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
     self.followTipsTimer = timer;
 }
 
 - (void)stopFollowTipsTimer  {
-  if (self.followTipsTimer) {
-      [self.followTipsTimer invalidate];
-      self.followTipsTimer = nil;
-  }
+    if (self.followTipsTimer) {
+        [self.followTipsTimer invalidate];
+        self.followTipsTimer = nil;
+    }
 }
 
 - (void)showFollowTips {
- 
+    
 }
 
 
@@ -301,11 +389,11 @@
     
     anim.keyPath = @"transform.rotation";
     anim.values = @[@(angle2Rad(-5)),@(angle2Rad(5))];
-//    anim.repeatCount = MAXFLOAT;
-//    anim.duration = 1;
+    //    anim.repeatCount = MAXFLOAT;
+    //    anim.duration = 1;
     
     anim.repeatCount = 3;
-//    anim.duration = 0.5;
+    //    anim.duration = 0.5;
     
     anim.autoreverses = YES;
     [view.layer addAnimation:anim forKey:nil];
@@ -315,7 +403,7 @@
 - (void)animationDidStart:(CAAnimation *)anim {
     
 }
- 
+
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     
 }
@@ -331,7 +419,7 @@
     [self.navigationController pushViewController:vc animated:YES];
     
     NSLog(@"self？？？？--------");
-
+    
     @synchronized(self){
         NSLog(@"？？？？--------");
     }
@@ -339,48 +427,48 @@
 
 -(void)clickPassword {
     /*
-        //修改密码
-        ChangePasswordVC *vc= [[ChangePasswordVC alloc]init];
-        vc.title = @"修改密码";
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
-        
-        //设置密码 没有密码
-        SetPasswordVC *vc3 = [[SetPasswordVC alloc]init];
-        vc3.title = @"设置密码 没有密码";
-        [self.navigationController pushViewController:vc3 animated:YES];
-        
-        //设置密码 注册时候（可跳过）
-        RegisterSetPasswordVC *vc4 = [[RegisterSetPasswordVC alloc]init];
-        vc4.title = @"设置密码 注册时候（可跳过）";
-        [self.navigationController pushViewController:vc4 animated:YES];
-        
-        //重置密码 忘记密码 需要：手机号phone，验证码code
-        ForgetPasswordResetPasswordVC *vc2 = [[ForgetPasswordResetPasswordVC alloc]init];
-        vc2.phone = @"";
-        vc2.code = @"";
-        vc2.title = @"重置密码 忘记密码 手机号 验证码";
-        [self.navigationController pushViewController:vc2 animated:YES];
-        
-        //重置密码 存量用户
-        NeedResetPasswordVC *vc1 = [[NeedResetPasswordVC alloc]init];
-        vc1.title = @"重置密码 存量用户";
-        [self.navigationController pushViewController:vc1 animated:YES];
-        
-        */
+     //修改密码
+     ChangePasswordVC *vc= [[ChangePasswordVC alloc]init];
+     vc.title = @"修改密码";
+     vc.hidesBottomBarWhenPushed = YES;
+     [self.navigationController pushViewController:vc animated:YES];
+     
+     //设置密码 没有密码
+     SetPasswordVC *vc3 = [[SetPasswordVC alloc]init];
+     vc3.title = @"设置密码 没有密码";
+     [self.navigationController pushViewController:vc3 animated:YES];
+     
+     //设置密码 注册时候（可跳过）
+     RegisterSetPasswordVC *vc4 = [[RegisterSetPasswordVC alloc]init];
+     vc4.title = @"设置密码 注册时候（可跳过）";
+     [self.navigationController pushViewController:vc4 animated:YES];
+     
+     //重置密码 忘记密码 需要：手机号phone，验证码code
+     ForgetPasswordResetPasswordVC *vc2 = [[ForgetPasswordResetPasswordVC alloc]init];
+     vc2.phone = @"";
+     vc2.code = @"";
+     vc2.title = @"重置密码 忘记密码 手机号 验证码";
+     [self.navigationController pushViewController:vc2 animated:YES];
+     
+     //重置密码 存量用户
+     NeedResetPasswordVC *vc1 = [[NeedResetPasswordVC alloc]init];
+     vc1.title = @"重置密码 存量用户";
+     [self.navigationController pushViewController:vc1 animated:YES];
+     
+     */
 }
 
 -(void)clickTagList1 {
     
-        LZTagListVC *vc= [[LZTagListVC alloc]init];
-        vc.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:vc animated:YES];
+    LZTagListVC *vc= [[LZTagListVC alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
     
     //    WScrollViewController *vc= [[WScrollViewController alloc]init];
     //    vc.hidesBottomBarWhenPushed = YES;
     //    [self.navigationController pushViewController:vc animated:YES];
     
-     
+    
 }
 
 -(void)clickTagList2 {
@@ -767,24 +855,22 @@
 //json动画
 - (void)LOTAnimation {
     LOTAnimationView *lottieView = [LOTAnimationView animationNamed:@"data"];
-    
-    lottieView.frame = CGRectMake(0, 100, 320, 320);
-    
-//    lottieView.frame = self.view.bounds;
+    lottieView.frame = CGRectMake(50, 150, 50, 50);
+    //    lottieView.frame = self.view.bounds;
     lottieView.loopAnimation = YES;
-//    lottieView.contentMode = UIViewContentModeScaleAspectFit;
-//    lottieView.animationSpeed = 0.5
-
+    //    lottieView.contentMode = UIViewContentModeScaleAspectFit;
+    //    lottieView.animationSpeed = 0.5
+    
     [self.view addSubview:lottieView];
-//    [lottieView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(@60);
-//        make.width.height.offset(60);
-//    }];
+    //    [lottieView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.center.equalTo(@60);
+    //        make.width.height.offset(60);
+    //    }];
     [lottieView play];
     
-//    [lottieView playWithCompletion:^(BOOL animationFinished) {
-//
-//    }];
+    //    [lottieView playWithCompletion:^(BOOL animationFinished) {
+    //
+    //    }];
 }
 @end
 

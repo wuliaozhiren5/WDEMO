@@ -664,6 +664,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5CED5D325749B33002CF42C /* 单例 */,
 				F548D0C0256E2EE900357E64 /* 追剧-动效-11-25 */,
 				F5D138BE256795FF008CC29A /* 提示的条 */,
 				F5A763BC253D94D900A76C6E /* YYmodel测试 */,
@@ -1156,6 +1157,13 @@
 				F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */,
 			);
 			path = "注销";
+			sourceTree = "<group>";
+		};
+		F5CED5D325749B33002CF42C /* 单例 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "单例";
 			sourceTree = "<group>";
 		};
 		F5D0FBFB24E0E65500CAADF8 /* 系统富文本 */ = {
