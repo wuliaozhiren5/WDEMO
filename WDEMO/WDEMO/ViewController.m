@@ -74,6 +74,10 @@
 #import "FollowTips.h"
 
 #import <Lottie/Lottie.h>
+//红点管理器
+#import "CollectionRedPointManager.h"
+
+#import <ReactiveObjC/ReactiveObjC.h>
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -238,8 +242,14 @@
     //        }
     //    });
     
-    
-    
+    CollectionRedPointManager *manager = [CollectionRedPointManager sharedInstance];
+    [RACObserve(manager, isShowRedPoint) subscribeNext:^(id x) {
+        NSLog(@"%@",x);
+        NSLog(@"success");
+    }]; 
+    manager.isShowRedPoint = YES;
+    manager.isShowRedPoint = NO;
+
     
     return;
     //展示gif
