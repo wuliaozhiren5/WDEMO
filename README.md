@@ -24,7 +24,9 @@ UIAlertController
 
 UncaughtExceptionHandler
 
-.plist
+.plist plist文件
+
+
 
 
 
@@ -36,6 +38,8 @@ cell:  + (CGFloat)cellHeightWithModel:(id)model;
 //创建布局
 view: - (void)setupViews;
 
+
+UI缩写： Btn Lab Lab View VC
 
 
 git

@@ -22,4 +22,9 @@ pod 'lottie-ios', '~> 2.5.3'
 #Aspects是一个简洁高效的用于使iOS支持AOP面向切面编程的库
 #https://www.jianshu.com/p/10d342ae6ccd
 pod 'AspectsV1.4.2', '~> 1.4.2’
+
+#下载
+#pod 'YCDownloadSession', '~> 2.0.2', :subspecs => ['Core', 'Mgr']
+#网络
+#pod 'YTKNetwork'
 end
