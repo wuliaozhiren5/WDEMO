@@ -78,6 +78,8 @@
 #import "CollectionRedPointManager.h"
 
 #import <ReactiveObjC/ReactiveObjC.h>
+//xib
+#import "xibView.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -158,7 +160,7 @@
     self.data = array;
     
     //列表tableview
-    //    [self setupViews];
+    [self setupViews];
     
     //    //cup memory监控
     //    [self.timer fire];
@@ -210,11 +212,11 @@
     //    }];
     
   
-    FollowTips *tips = [[FollowTips alloc]initWithFrame:CGRectMake(0, 200, 320, 50)];
-    [tips show];
-    tips.followTipHidden = ^{
-        
-    };
+//    FollowTips *tips = [[FollowTips alloc]initWithFrame:CGRectMake(0, 200, 320, 50)];
+//    [tips show];
+//    tips.followTipHidden = ^{
+//    };
+    
     //    //强制移除
     //    [tips removeFromSuperview];
     //    tips = nil;
@@ -250,6 +252,10 @@
     manager.isShowRedPoint = YES;
     manager.isShowRedPoint = NO;
 
+    //create xib
+    xibView *xib = [xibView initWithXib];
+    xib.frame = CGRectMake(0, 0, 100, 210);
+    [self.view addSubview:xib];
     
     return;
     //展示gif

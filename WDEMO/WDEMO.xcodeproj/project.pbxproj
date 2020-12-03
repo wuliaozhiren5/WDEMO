@@ -134,6 +134,10 @@
 		F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9372508F79A002505AE /* TipMessageDataModel.m */; };
 		F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */; };
 		F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */; };
+		F5C0A20425788B92004EBD94 /* UIColor+color.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C0A20325788B92004EBD94 /* UIColor+color.m */; };
+		F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C0A2092578950D004EBD94 /* WTableViewCell.xib */; };
+		F5C0A21F2578BBC2004EBD94 /* xibView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C0A21E2578BBC2004EBD94 /* xibView.m */; };
+		F5C0A2292578BBD4004EBD94 /* xibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C0A2282578BBD4004EBD94 /* xibView.xib */; };
 		F5C7261824E1258000B16639 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261724E1257F00B16639 /* ListModel.m */; };
 		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
 		F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */; };
@@ -456,6 +460,12 @@
 		F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterMessageDataModel.m; sourceTree = "<group>"; };
 		F5B5A93C2508F7B5002505AE /* FaceMessageDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageDataModel.h; sourceTree = "<group>"; };
 		F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageDataModel.m; sourceTree = "<group>"; };
+		F5C0A20225788B91004EBD94 /* UIColor+color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+color.h"; sourceTree = "<group>"; };
+		F5C0A20325788B92004EBD94 /* UIColor+color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+color.m"; sourceTree = "<group>"; };
+		F5C0A2092578950D004EBD94 /* WTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WTableViewCell.xib; sourceTree = "<group>"; };
+		F5C0A21D2578BBC2004EBD94 /* xibView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xibView.h; sourceTree = "<group>"; };
+		F5C0A21E2578BBC2004EBD94 /* xibView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xibView.m; sourceTree = "<group>"; };
+		F5C0A2282578BBD4004EBD94 /* xibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = xibView.xib; sourceTree = "<group>"; };
 		F5C7261624E1257F00B16639 /* ListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
 		F5C7261724E1257F00B16639 /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		F5C7261924E1317B00B16639 /* ListModelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelCell.h; sourceTree = "<group>"; };
@@ -639,6 +649,7 @@
 				675852A7231D21A700C5CF7E /* WTableViewController.m */,
 				675852A9231D23F700C5CF7E /* WTableViewCell.h */,
 				675852AA231D23F700C5CF7E /* WTableViewCell.m */,
+				F5C0A2092578950D004EBD94 /* WTableViewCell.xib */,
 			);
 			path = WTableView;
 			sourceTree = "<group>";
@@ -670,6 +681,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5C0A21C2578BB49004EBD94 /* xibViewDemo */,
 				F5CED5D325749B33002CF42C /* 单例 */,
 				F548D0C0256E2EE900357E64 /* 追剧-动效-11-25 */,
 				F5D138BE256795FF008CC29A /* 提示的条 */,
@@ -1138,6 +1150,16 @@
 			path = InputController;
 			sourceTree = "<group>";
 		};
+		F5C0A21C2578BB49004EBD94 /* xibViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F5C0A21D2578BBC2004EBD94 /* xibView.h */,
+				F5C0A21E2578BBC2004EBD94 /* xibView.m */,
+				F5C0A2282578BBD4004EBD94 /* xibView.xib */,
+			);
+			path = xibViewDemo;
+			sourceTree = "<group>";
+		};
 		F5C7261524E1252B00B16639 /* 列表Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -1151,6 +1173,8 @@
 			isa = PBXGroup;
 			children = (
 				F5CE3D2424E6930C00B20C80 /* ACMacros.h */,
+				F5C0A20225788B91004EBD94 /* UIColor+color.h */,
+				F5C0A20325788B92004EBD94 /* UIColor+color.m */,
 				F5CE3D1624E6901700B20C80 /* RRDestroyAccountAlertView.h */,
 				F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlertView.m */,
 				F5CE3D1824E6901700B20C80 /* RRDestroyAccountReasonCell.h */,
@@ -1487,6 +1511,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5710B4225232263009DEE02 /* 富文本.md in Resources */,
+				F5C0A2292578BBD4004EBD94 /* xibView.xib in Resources */,
 				F548D0E9256E2EEA00357E64 /* 追剧引导-1.gif in Resources */,
 				F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */,
 				F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */,
@@ -1495,6 +1520,7 @@
 				F548D0DA256E2EEA00357E64 /* amwayPlayerGuide_0.png in Resources */,
 				F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */,
 				F548D101256E384300357E64 /* img_1.png in Resources */,
+				F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */,
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
 				F548D0E8256E2EEA00357E64 /* w-追剧引导-一次.gif in Resources */,
@@ -1612,6 +1638,7 @@
 				F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */,
 				F5CED5DA25749C7D002CF42C /* CollectionRedPointManager.m in Sources */,
 				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
+				F5C0A21F2578BBC2004EBD94 /* xibView.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				F574E7742537FD2300DCD4D7 /* AppNavigationController.m in Sources */,
 				F5E4785E25301177001AE2AE /* WebVC.m in Sources */,
@@ -1695,6 +1722,7 @@
 				F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,
+				F5C0A20425788B92004EBD94 /* UIColor+color.m in Sources */,
 				F53F669B24FE484700770055 /* NSString+Password.m in Sources */,
 				F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */,
 				F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */,

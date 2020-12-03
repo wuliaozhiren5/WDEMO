@@ -18,6 +18,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIImageView *avatarImageView;
 
+@property (weak, nonatomic) IBOutlet UILabel *xibLab;
+
 //填充数据
 - (void)fillWithData:(id)data;
 

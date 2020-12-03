@@ -33,11 +33,12 @@
     self.tableView.dataSource=self;
     
     //xib cell
-    [self.tableView registerNib:[UINib nibWithNibName:@"RechargeDetailCell" bundle:nil] forCellReuseIdentifier:@"RechargeDetailCell"];
+//    [self.tableView registerNib:[UINib nibWithNibName:@"WTableViewCell" bundle:nil] forCellReuseIdentifier:@"WTableViewCell"];
     
     //codecell
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     
+    //codecell
     [self.tableView registerClass:[WTableViewCell class] forCellReuseIdentifier:NSStringFromClass([WTableViewCell class])];
     
     
@@ -159,12 +160,11 @@
 //返回每行cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
     //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
-    
     WTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WTableViewCell class]) forIndexPath:indexPath];
-    
+//    cell.firstLabel.text = [NSString stringWithFormat:@"section = %zi", indexPath.section];
+//    cell.secondLabel.text = [NSString stringWithFormat:@"row = %zi", indexPath.row];
+    cell.xibLab.text = [NSString stringWithFormat:@"section = %zi ,row = %zi", indexPath.section, indexPath.row];
     //cell的右边有一个小箭头，距离右边有十几像素；
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     //设置cell分割线的edge可以设置去除指定cell的分割线

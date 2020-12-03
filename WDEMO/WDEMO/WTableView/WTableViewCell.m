@@ -130,7 +130,21 @@
         [self.contentView addSubview:_rightLabel];
     }
     return _rightLabel;
-    
 }
 
+//xib
++ (instancetype)classObjWithNib {
+    NSArray * array = [[NSBundle mainBundle] loadNibNamed:@"WTableViewCell" owner:self options:nil];
+    return array.firstObject;
+}
+
+//xib
+//一般是自定义类,需要提供一个遍历构造方法,方便使用
++ (instancetype)initWithXib {
+    return [[[NSBundle mainBundle] loadNibNamed:@"WTableViewCell" owner:nil options:nil] lastObject];// lastObject 可改为 firstObject，该数组只有一个元素，写哪个都行，看个人习惯。
+}
+ 
++ (NSString *)cellIndentifier{
+    return @"WTableViewCell";
+}
 @end
