@@ -33,14 +33,25 @@
     return self;
 }
 
+//清除小红点
+- (void)cleanRedPoint {
+    self.isShowRedPoint = NO;
+}
+
+//显示小红点
+- (void)showRedPoint {
+    //未登录
+//    if (![UserInfoConfig isLogined]) {
+//        [self cleanRedPoint];
+//        return;
+//    }
+    //已登录
+    [self reuqestUserSubscriptionRedPointDisplay];
+}
 
 //请求小红点接口
 - (void)reuqestUserSubscriptionRedPointDisplay {
-//    //未登录
-//    if (![UserInfoConfig isLogined]) {
-//        self.isShowRedPoint = NO;
-//        return;
-//    }
+    //正在请求中
     if (self.isRequesting) {
         return;
     }
@@ -55,7 +66,6 @@
         isShow = NO;
         isShow = YES; 
         self.isShowRedPoint = isShow;
-        
     });
 }
 @end

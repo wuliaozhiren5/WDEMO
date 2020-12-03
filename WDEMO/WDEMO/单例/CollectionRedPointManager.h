@@ -15,6 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isShowRedPoint;
 //单例
 + (instancetype)sharedInstance;
+//清除小红点
+- (void)cleanRedPoint;
+//显示小红点
+- (void)showRedPoint;
 @end
 
 NS_ASSUME_NONNULL_END
