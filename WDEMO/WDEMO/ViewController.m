@@ -74,12 +74,9 @@
 #import "FollowTips.h"
 
 #import <Lottie/Lottie.h>
-//红点管理器
-#import "CollectionRedPointManager.h"
-
+ 
 #import <ReactiveObjC/ReactiveObjC.h>
-//xib
-#import "xibView.h"
+
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -223,9 +220,7 @@
     
     
     //    [self createFollowTipsTimerWithDuration:25.0];
-    
-
-    
+     
     
     //    //线程
     //    //线程1
@@ -243,21 +238,10 @@
     //            NSLog(@"23423--------");
     //        }
     //    });
-    
-    CollectionRedPointManager *manager = [CollectionRedPointManager sharedInstance];
-    [RACObserve(manager, isShowRedPoint) subscribeNext:^(id x) {
-        NSLog(@"%@",x);
-        NSLog(@"success");
-    }]; 
-    manager.isShowRedPoint = YES;
-    manager.isShowRedPoint = NO;
-
-    //create xib
-    xibView *xib = [xibView initWithXib];
-    xib.frame = CGRectMake(0, 0, 100, 210);
-    [self.view addSubview:xib];
-    
+     
     return;
+    
+    
     //展示gif
     [self testGIF];
     //主线程 remove nil 修改约束 会不会崩溃测试
@@ -266,8 +250,7 @@
     [self LOTAnimation];
     //房主
     [self createRoomOwnimage];
-
-    
+ 
 }
 
 //房主
@@ -282,8 +265,8 @@
 - (void)testGIF {
     //GIF：sdwebimage
     UIImageView *gifV = [[UIImageView alloc]init];;
-    //        gifV.image = [UIImage sd_animatedGIFNamed:@"w-追剧引导-一次"];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"w-追剧引导-一次" ofType:@"gif"];
+    //        gifV.image = [UIImage sd_animatedGIFNamed:@"追剧引导-白色-一次"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"追剧引导-白色-一次" ofType:@"gif"];
     gifV.image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:path]];
     gifV.frame = CGRectMake(50, 50, 50, 50);
     [self.view addSubview:gifV];
@@ -291,7 +274,7 @@
     //gif 可以一次
     //sd_animatedGIFNamed
     SDAnimatedImageView *imageView = [SDAnimatedImageView new];
-    SDAnimatedImage *animatedImage = [SDAnimatedImage imageNamed:@"w-追剧引导-一次.gif"];
+    SDAnimatedImage *animatedImage = [SDAnimatedImage imageNamed:@"追剧引导-白色-一次.gif"];
     imageView.image = animatedImage;
     imageView.frame = CGRectMake(50, 100, 50, 50);
     [self.view addSubview:imageView];
