@@ -41,3 +41,42 @@ https://cloud.tencent.com/developer/article/1328768
 //https://www.jianshu.com/p/59557fedfb3c
  
 ```
+
+
+
+
+#RAC Cell复用时的清理
+```
+-(void)createSubviews{
+    self.lookSignal = [RACSubject subject];
+}
+
+-(void)buttonAction:(UIButton *)sender{
+    [self.lookSignal sendNext:_model];
+}
+
+vc中
+[[cell.lookSignal  takeUntil:cell.rac_prepareForReuseSignal] subscribeNext:^(id  _Nullable x) {
+            @strongify(self);
+
+//            RRSearchSeasonNewDataModel *model = x;
+//                NSDictionary *parm = @{@"seasonId":model.ID,
+//                                                      @"isMovie":@"0",
+//                                                      @"seasonName":model.title
+//                               };
+//             [self pushPlayDetailVC:parm];
+            
+        }];
+
+
+
+
+//vc中
+//button
+[[[self.cancelButton
+    rac_signalForControlEvents:UIControlEventTouchUpInside]
+    takeUntil:self.rac_prepareForReuseSignal]
+    subscribeNext:^(UIButton *x) {
+    // do other things
+}];
+```
