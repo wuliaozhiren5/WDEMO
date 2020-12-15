@@ -24,6 +24,11 @@
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:self.titleLab];
     [self hanggao];
+ 
+    //常用
+    //AttributedString 颜色 字号
+    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"全部"
+                                                                               attributes: @{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor blackColor]}];
 }
 
 /*
