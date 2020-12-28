@@ -90,6 +90,7 @@
 		F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E19924CA8DE200DA5625 /* FaceAttachment.m */; };
 		F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */; };
 		F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */; };
+		F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F55E5B5A258C58B700C1DECD /* ScoreView.m */; };
 		F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C922502134800A13C15 /* SetPasswordVC.m */; };
 		F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C98250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m */; };
 		F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C9B250215ED00A13C15 /* NeedResetPasswordVC.m */; };
@@ -387,6 +388,8 @@
 		F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMessageDataModel.m; sourceTree = "<group>"; };
 		F553E1DF24CAC69F00DA5625 /* ChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCell.h; sourceTree = "<group>"; };
 		F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCell.m; sourceTree = "<group>"; };
+		F55E5B59258C58B700C1DECD /* ScoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreView.h; sourceTree = "<group>"; };
+		F55E5B5A258C58B700C1DECD /* ScoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreView.m; sourceTree = "<group>"; };
 		F5609C912502134800A13C15 /* SetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordVC.h; sourceTree = "<group>"; };
 		F5609C922502134800A13C15 /* SetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordVC.m; sourceTree = "<group>"; };
 		F5609C97250214FC00A13C15 /* ForgetPasswordResetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordResetPasswordVC.h; sourceTree = "<group>"; };
@@ -709,6 +712,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F55E5B58258C589400C1DECD /* ScoreView */,
 				F5872CAF257DDD0300341B57 /* 组件化解藕 */,
 				F5C0A21C2578BB49004EBD94 /* xibViewDemo */,
 				F5CED5D325749B33002CF42C /* 单例 */,
@@ -976,6 +980,15 @@
 				F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		F55E5B58258C589400C1DECD /* ScoreView */ = {
+			isa = PBXGroup;
+			children = (
+				F55E5B59258C58B700C1DECD /* ScoreView.h */,
+				F55E5B5A258C58B700C1DECD /* ScoreView.m */,
+			);
+			path = ScoreView;
 			sourceTree = "<group>";
 		};
 		F5609CA32502195A00A13C15 /* 屏幕旋转 */ = {
@@ -1796,6 +1809,7 @@
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
+				F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */,
 				F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
 				F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */,

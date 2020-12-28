@@ -76,7 +76,8 @@
 #import <Lottie/Lottie.h>
  
 #import <ReactiveObjC/ReactiveObjC.h>
-
+//评分
+#import "ScoreView.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -239,6 +240,17 @@
     //        }
     //    });
      
+    
+    //评分ScoreView
+    ScoreView *scoreView = [[ScoreView alloc] initWithFrame:CGRectMake(0, 200, 200, 200)];
+    [scoreView createScoreViewWithCount:0 width:0 height:0 spacing:0];
+    [scoreView createScoreViewWithCount:10 width:20 height:20 spacing:10];
+    [self.view addSubview:scoreView];
+    [scoreView score:1.9];
+    [scoreView score:1.9];
+
+    [scoreView score:2];
+
     return;
     
     

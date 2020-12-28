@@ -44,13 +44,15 @@
 
 //常用：设置行高
 - (void)hanggao {
+    UIFont *textFont = self.titleLab.font;
+//    UIFont *textFont = [UIFont systemFontOfSize:16]; 
     NSString *contentStr = @"阿斯顿就离开撒的饭卡上阿斯顿就离开撒的ref 被用来给DOM元素或子组件注册引用信息。引用信息会根据父组件的 $refs 对象进行注册。如果在普通的DOM元素上使用，引用信息就是元素; 如果用在子组件上，引用信息就是组件实例.注意：只要想要在Vue中直接操作DOM元素，就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册";
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:contentStr];
     NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc]init];
     //行间距
     paragraph.lineSpacing = 6;
     //正确的实现行间距
-    paragraph.lineSpacing = 6 - (self.titleLab.font.lineHeight - self.titleLab.font.pointSize);
+    paragraph.lineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
 
     //对齐方式两边对齐
 //    paragraph.alignment = NSTextAlignmentJustified;
@@ -60,7 +62,7 @@
     //重要
     //字体一定要设置 不然计算大小会出问题，之前也不用设置，好奇怪啊
     //颜色的可以不用设置，不设置的话可以适配暗黑模式，设置了暗黑模式就不起作用了，个人理解
-    [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],
+    [attributedString addAttributes:@{NSFontAttributeName:textFont,
                                       NSForegroundColorAttributeName: [UIColor blackColor],
                                       NSParagraphStyleAttributeName:paragraph}
                               range:NSMakeRange(0, attributedString.length)];

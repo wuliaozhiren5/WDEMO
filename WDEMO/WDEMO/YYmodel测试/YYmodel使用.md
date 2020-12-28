@@ -1,7 +1,7 @@
 YYModel使用教程
 https://www.jianshu.com/p/79f52e42840f
-
-
+《一篇文章全吃透》—YYModel的使用技巧
+https://blog.csdn.net/u012946824/article/details/51788527
 ```
 //数组取值
 [self.array objectOrNilAtIndex:10];
