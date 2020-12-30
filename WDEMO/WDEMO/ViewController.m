@@ -78,6 +78,8 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 //评分
 #import "ScoreView.h"
+//编辑bar
+#import "UserEditBar.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -248,11 +250,13 @@
     [self.view addSubview:scoreView];
     [scoreView score:1.9];
     [scoreView score:1.9];
-
     [scoreView score:2];
-
+ 
+    //编辑
+    UserEditBar *userEditBar = [[UserEditBar alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 40)];
+    userEditBar.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:userEditBar];
     return;
-    
     
     //展示gif
     [self testGIF];
