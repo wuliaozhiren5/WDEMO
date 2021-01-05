@@ -78,8 +78,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 //评分
 #import "ScoreView.h"
-//编辑bar
-#import "UserEditBar.h"
+
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -244,7 +243,7 @@
     
     
     //评分ScoreView
-    ScoreView *scoreView = [[ScoreView alloc] initWithFrame:CGRectMake(0, 200, 200, 200)];
+    ScoreView *scoreView = [[ScoreView alloc] initWithFrame:CGRectMake(0, 200, 200, 40)];
     [scoreView createScoreViewWithCount:0 width:0 height:0 spacing:0];
     [scoreView createScoreViewWithCount:10 width:20 height:20 spacing:10];
     [self.view addSubview:scoreView];
@@ -252,32 +251,16 @@
     [scoreView score:1.9];
     [scoreView score:2];
  
+   
     
-    //编辑
-    UserEditBar *userEditBar = [[UserEditBar alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 40)];
-    userEditBar.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:userEditBar];
-    WS(weakSelf)
-    userEditBar.selectClick = ^(BOOL isAll) {
-        if (isAll) {
-            [userEditBar deleteCount:10];
-        } else {
-            [userEditBar deleteCount:0];
-        }
-    };
-    userEditBar.deleteClick = ^{ 
-    };
-    
-    return;
-    
-    //展示gif
-    [self testGIF];
+//    //展示gif
+//    [self testGIF];
     //主线程 remove nil 修改约束 会不会崩溃测试
-    [self testRemoveBug];
-    //json 动画
-    [self LOTAnimation];
-    //房主
-    [self createRoomOwnimage];
+//    [self testRemoveBug];
+//    //json 动画
+//    [self LOTAnimation];
+//    //房主
+//    [self createRoomOwnimage];
  
 }
 

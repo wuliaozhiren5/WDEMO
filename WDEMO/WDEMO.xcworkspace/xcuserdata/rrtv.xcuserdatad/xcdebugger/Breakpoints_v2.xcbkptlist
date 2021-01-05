@@ -62,8 +62,8 @@
             filePath = "WDEMO/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "444"
-            endingLineNumber = "444"
+            startingLineNumber = "427"
+            endingLineNumber = "427"
             landmarkName = "-clickTagListBtn:"
             landmarkType = "7">
          </BreakpointContent>
