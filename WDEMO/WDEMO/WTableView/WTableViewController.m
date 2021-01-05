@@ -162,7 +162,6 @@
         [ListModel initWithTitle:@"999999" detail:@"编辑简单的网格9" type:ListModelTypeCollectionView ids:@"9"],
     ];
     self.data = array;
-
 //    NSSet
 //    self.deleteArray = [NSMutableSet set];
 //    [self.deleteArray addObject:@"1"];
@@ -178,7 +177,6 @@
 - (void)setupViews {
     [self createNavLeftBtn];
     [self createNavRightBtn];
-
 }
 
 - (void)goPlayerVC:(UIButton *)sender {
@@ -520,12 +518,16 @@
 
 - (void)delete {
     if (self.deleteArray.count > 0) {
-        //转成NSString
+        //转成 NSString
         NSArray *tempArray = [self.deleteArray allObjects];
         NSString *tempString = [tempArray componentsJoinedByString:@","];//分隔符逗号
-        
+        NSLog(@"%@", tempString);
         //请求接口
-        
+        /*
+         请求接口
+         请求接口
+         请求接口
+         */
         NSMutableArray *temp = [NSMutableArray array];
         NSLog(@"%@",temp);
         for(int i = 0; i < self.data.count; i++) {
@@ -541,11 +543,10 @@
         //退出编辑模式
         [self endEdit];
         
-        //小于一个刷新
+        //小于一个 请求数据
         if (self.data.count < 1) {
 //            [self refreshData];
         }
-     
     }
 }
 
