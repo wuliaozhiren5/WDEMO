@@ -551,21 +551,4 @@
 }
 
  
-- (void)edit {
-//    //编辑
-//    UserEditBar *userEditBar = [[UserEditBar alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 40)];
-//    userEditBar.backgroundColor = [UIColor grayColor];
-//    [self.view addSubview:userEditBar];
-//    WS(weakSelf)
-//    userEditBar.selectClick = ^(BOOL isAll) {
-//        if (isAll) {
-//            [userEditBar deleteCount:10];
-//        } else {
-//            [userEditBar deleteCount:0];
-//        }
-//    };
-//    userEditBar.deleteClick = ^{
-//    };
-}
- 
 @end
