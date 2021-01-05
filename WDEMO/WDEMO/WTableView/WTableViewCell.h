@@ -18,13 +18,21 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIImageView *avatarImageView;
 
+@property (nonatomic, strong) UILabel *leftLabel;
+
+@property (nonatomic, strong) UILabel *rightLabel;
+
+@property (nonatomic, strong) UIImageView *nextImage;
+
+@property (nonatomic, strong) UIButton *selectBtn;
+
 @property (weak, nonatomic) IBOutlet UILabel *xibLab;
 
 //填充数据
 - (void)fillWithData:(id)data;
 
 //计算高度
-+ (CGFloat)heightForCellWithModel:(id)model;
+//+ (CGFloat)heightForCellWithModel:(id)model;
 + (CGFloat)cellHeightWithModel:(id)model;
 @end
 

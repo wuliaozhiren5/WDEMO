@@ -36,26 +36,45 @@
     [self addSubview:self.line];
 }
 
+- (void)reset {
+    self.selectBtn.selected = NO;
+    self.deleteBtn.enabled = NO;
+}
+
+- (void)isAllSelected:(BOOL)isAll {
+    self.selectBtn.selected = isAll;
+}
+
 - (void)deleteCount:(NSInteger)count {
     if (count > 0) {
         self.deleteBtn.enabled = YES;
+        NSString *str = [NSString stringWithFormat:@"删除(%zi)", count];
+        [_deleteBtn setTitle:str forState:UIControlStateNormal];
     } else {
         self.deleteBtn.enabled = NO;
     }
-
 }
 
+//全选/取消全选
 - (void)clickSelectBtn:(UIButton *)btn {
     BOOL isSelected = !btn.isSelected;
     //全选：YES
     //取消全选：NO
     btn.selected = isSelected;
 //    self.bingWatcgVC.isUserEditing = isSelected;
+    
+//    [self deleteCount:11];
+    
+    if (self.selectClick) {
+        self.selectClick(isSelected);
+    }
 }
 
+//删除
 - (void)clickDeleteBtn:(UIButton *)btn {
-   
-
+    if (self.deleteClick) {
+        self.deleteClick();
+    }
 }
 
 - (UIView *)line {
@@ -86,11 +105,11 @@
         [_deleteBtn addTarget:self action:@selector(clickDeleteBtn:) forControlEvents:UIControlEventTouchUpInside];
 //        _editBtn.titleLabel.font = [UIFont systemFontOfSize:13];
         [_deleteBtn setTitle:@"删除" forState:UIControlStateNormal];
-        [_deleteBtn setTitle:@"删除" forState:UIControlStateSelected];
-        [_deleteBtn setTitle:@"删除()" forState:UIControlStateSelected];
+        [_deleteBtn setTitle:@"删除" forState:UIControlStateDisabled];
+//        [_deleteBtn setTitle:@"删除()" forState:UIControlStateSelected];
         [_deleteBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [_deleteBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateDisabled];
-        [_deleteBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
+        [_deleteBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+//        [_deleteBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
         //不可编辑
         _deleteBtn.enabled = NO;
     }

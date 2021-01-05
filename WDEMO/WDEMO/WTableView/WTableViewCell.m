@@ -16,11 +16,11 @@
 //
 //@property (nonatomic, strong) UIImageView *avatarImageView;
 
-@property (nonatomic, strong) UILabel *leftLabel;
-
-@property (nonatomic, strong) UILabel *rightLabel;
-
-@property (nonatomic, strong) UIImageView *nextImage;
+//@property (nonatomic, strong) UILabel *leftLabel;
+//
+//@property (nonatomic, strong) UILabel *rightLabel;
+//
+//@property (nonatomic, strong) UIImageView *nextImage;
 
 @end
 
@@ -29,32 +29,31 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         //隐藏分割线
-//        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        //        self.selectionStyle = UITableViewCellSelectionStyleNone;
         //分割线
-//        self.separatorInset = UIEdgeInsetsMake(0, 21, 0, 21);
-
+        //        self.separatorInset = UIEdgeInsetsMake(0, 21, 0, 21);
+        
         self.avatarImageView.frame = CGRectMake(10, 10, 40, 40);
         self.firstLabel.frame = CGRectMake(60, 10, 200, 20);
         self.secondLabel.frame = CGRectMake(60, 30, 200, 20);
         self.rightLabel.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 100, 0, 80, 60);
-
         self.nextImage.frame = CGRectMake([UIScreen mainScreen].bounds.size.width -40, 20, 20, 20);
-
-        self.firstLabel.text = @"firstLabel"; 
-        self.secondLabel.text = @"secondLabel"; 
-        self.rightLabel.text = @"rightLabel";
         
+        self.firstLabel.text = @"firstLabel";
+        self.secondLabel.text = @"secondLabel";
+        self.rightLabel.text = @"rightLabel";
     } else {}
     return self;
 }
@@ -73,7 +72,6 @@
 
 //lazy
 -(UIImageView *)avatarImageView {
-    
     if (!_avatarImageView) {
         _avatarImageView = [[UIImageView alloc]init];
         _avatarImageView.frame = CGRectMake(0, 0, 40, 40);
@@ -84,7 +82,6 @@
 }
 
 -(UIImageView *)nextImage {
-    
     if (!_nextImage) {
         _nextImage = [[UIImageView alloc]init];
         _nextImage.frame = CGRectMake(0, 0, 40, 40);
@@ -95,9 +92,7 @@
     return _nextImage;
 }
 
-
--(UILabel *)firstLabel
-{
+-(UILabel *)firstLabel {
     if (!_firstLabel) {
         _firstLabel = [[UILabel alloc] init];
         _firstLabel.frame = CGRectMake(0, 0, 40, 40);
@@ -105,11 +100,9 @@
         
     }
     return _firstLabel;
-    
 }
 
--(UILabel *)secondLabel
-{
+-(UILabel *)secondLabel {
     if (!_secondLabel) {
         _secondLabel = [[UILabel alloc] init];
         _secondLabel.frame = CGRectMake(0, 0, 40, 40);
@@ -117,12 +110,9 @@
         
     }
     return _secondLabel;
-    
 }
 
-
--(UILabel *)rightLabel
-{
+-(UILabel *)rightLabel {
     if (!_rightLabel) {
         _rightLabel = [[UILabel alloc] init];
         _rightLabel.frame = CGRectMake(0, 0, 40, 40);
@@ -130,6 +120,19 @@
         [self.contentView addSubview:_rightLabel];
     }
     return _rightLabel;
+}
+
+-(UIButton *)selectBtn {
+    if (!_selectBtn) {
+        _selectBtn = [[UIButton alloc] init];
+        _selectBtn.frame = CGRectMake(10, 0, 40, 40);
+        _selectBtn.hidden = YES;
+        [_selectBtn setImage:[UIImage imageNamed:@"ic_common_checkbox_selected"] forState:UIControlStateSelected];
+        [_selectBtn setImage:[UIImage imageNamed:@"ic_common_checkbox"] forState:UIControlStateNormal];
+        
+        [self.contentView addSubview:_selectBtn];
+    }
+    return _selectBtn;
 }
 
 //xib
@@ -143,8 +146,8 @@
 + (instancetype)initWithXib {
     return [[[NSBundle mainBundle] loadNibNamed:@"WTableViewCell" owner:nil options:nil] lastObject];// lastObject 可改为 firstObject，该数组只有一个元素，写哪个都行，看个人习惯。
 }
- 
-+ (NSString *)cellIndentifier{
+
++ (NSString *)cellIndentifier {
     return @"WTableViewCell";
 }
 @end

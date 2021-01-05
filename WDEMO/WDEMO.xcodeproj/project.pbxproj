@@ -717,6 +717,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F53FFE5F259DA1D600ABE946 /* xx */,
 				F51DC311259C5D600079AFC8 /* URLencodeURLdecode */,
 				F51535EC259B292B007E3416 /* EditBar */,
 				F55E5B58258C589400C1DECD /* ScoreView */,
@@ -744,7 +745,7 @@
 				F581D21524EAB65A008AC679 /* ScrollView */,
 				F5CE3D1424E6901700B20C80 /* 注销 */,
 				F507113424E2AA6D00AD5306 /* 判断对象是否相等 */,
-				F5C7261524E1252B00B16639 /* 列表Model */,
+				F5C7261524E1252B00B16639 /* 列表数据优化 */,
 				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 深色模式 */,
 				F5D0FBFC24E0E6A300CAADF8 /* Mask */,
 				F5D0FBFB24E0E65500CAADF8 /* 系统富文本 */,
@@ -952,6 +953,13 @@
 				F53293F22509CE0D00E06D42 /* FullScreenChatController.m */,
 			);
 			path = ChatController;
+			sourceTree = "<group>";
+		};
+		F53FFE5F259DA1D600ABE946 /* xx */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xx;
 			sourceTree = "<group>";
 		};
 		F548D0C0256E2EE900357E64 /* 追剧-动效-11-25 */ = {
@@ -1263,13 +1271,13 @@
 			path = xibViewDemo;
 			sourceTree = "<group>";
 		};
-		F5C7261524E1252B00B16639 /* 列表Model */ = {
+		F5C7261524E1252B00B16639 /* 列表数据优化 */ = {
 			isa = PBXGroup;
 			children = (
 				F5C7261624E1257F00B16639 /* ListModel.h */,
 				F5C7261724E1257F00B16639 /* ListModel.m */,
 			);
-			path = "列表Model";
+			path = "列表数据优化";
 			sourceTree = "<group>";
 		};
 		F5CE3D1424E6901700B20C80 /* 注销 */ = {

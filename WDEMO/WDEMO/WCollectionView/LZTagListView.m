@@ -114,7 +114,7 @@
     WaterFlowLayout *layout = [[WaterFlowLayout alloc]init];
     layout.delegate = self;
    
-//    //CS测试
+//    //CS测试 CustomLayout
 //    CustomLayout *layout = [[CustomLayout alloc]init];
 //    layout.delegate = self;
     
@@ -318,9 +318,8 @@
             
             break;
         case 1:
-            
             return 100;
-            
+//            return 100 + arc4random() % 100;
             break;
         case 2:
             
@@ -362,9 +361,9 @@
     }
 }
 
-//CS测试
+//CS测试 CustomLayout
 // 每个区多少列
-- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnNumberAtSection:(NSInteger )section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnNumberAtSection:(NSInteger)section {
     
     switch (section) {
         case 0:

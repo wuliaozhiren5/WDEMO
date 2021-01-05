@@ -13,8 +13,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ListModelCell : WTableViewCell
 
-- (void)fillWithData:(ListModel *)data;
+@property (nonatomic, assign) BOOL isUserEditState;//编辑状态
+//@property (nonatomic, assign) BOOL isSelectedState;//被选中状态
 
+//填充数据
+- (void)fillWithData:(ListModel *)data;
+//计算高度
++ (CGFloat)cellHeightWithModel:(ListModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -9,14 +9,19 @@
 #import "ListModel.h"
 
 @implementation ListModel
++ (instancetype)initWithTitle:(NSString *)title detail:(NSString *)detail type:(ListModelType)type {
+    return [self initWithTitle:title detail:detail type:type ids:@""];
+}
 
-+(instancetype)initWithTitle:(NSString *)title detail:(NSString *)detail type:(ListModelType)type {
++ (instancetype)initWithTitle:(NSString *)title detail:(NSString *)detail type:(ListModelType)type ids:(NSString *)ids {
     
     ListModel *model = [ListModel alloc];
     model.title = title;
     model.detail = detail;
     model.type = type;
-    
+    model.isSelected = NO;
+    model.ids = ids;
+
 //    switch (type)
 //    {
 //        case ListModelTypeNone:

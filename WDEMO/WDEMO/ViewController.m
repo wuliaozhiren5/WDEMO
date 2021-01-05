@@ -241,7 +241,7 @@
     //            NSLog(@"23423--------");
     //        }
     //    });
-     
+    
     
     //评分ScoreView
     ScoreView *scoreView = [[ScoreView alloc] initWithFrame:CGRectMake(0, 200, 200, 200)];
@@ -252,10 +252,22 @@
     [scoreView score:1.9];
     [scoreView score:2];
  
+    
     //编辑
     UserEditBar *userEditBar = [[UserEditBar alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 40)];
     userEditBar.backgroundColor = [UIColor grayColor];
     [self.view addSubview:userEditBar];
+    WS(weakSelf)
+    userEditBar.selectClick = ^(BOOL isAll) {
+        if (isAll) {
+            [userEditBar deleteCount:10];
+        } else {
+            [userEditBar deleteCount:0];
+        }
+    };
+    userEditBar.deleteClick = ^{ 
+    };
+    
     return;
     
     //展示gif
@@ -505,8 +517,8 @@
 }
 
 -(void)clickTableView {
-    
     WTableViewController *vc= [[WTableViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

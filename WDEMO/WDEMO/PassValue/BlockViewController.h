@@ -22,7 +22,7 @@ typedef void(^ButtonClickBlock)(NSString * _Nonnull str);//不可以为空
 
 //写法2
 @property(nonatomic,copy) void (^valueBlcok)(void);
-
+@property(nonatomic,copy) void (^valueBlcok1)(BOOL isShow);
 
 //- (void)startWithCompletionBlock:(void (^)(JsonModel *result, NSError *error))block; 
 - (void)startWithCompletionBlock:(void (^)(id result, NSError *error))block;

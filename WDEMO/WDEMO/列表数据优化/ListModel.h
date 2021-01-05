@@ -36,12 +36,14 @@ typedef NS_ENUM(NSInteger, ListModelType) {
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ListModel : NSObject
+@property (nonatomic, copy) NSString *ids;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *detail;
 @property (nonatomic, assign) ListModelType type;
+@property (nonatomic, assign) BOOL isSelected;//被选中状态
 
-+(instancetype)initWithTitle:(NSString *)title detail:(NSString *)detail type:(ListModelType)type;
-
++ (instancetype)initWithTitle:(NSString *)title detail:(NSString *)detail type:(ListModelType)type ids:(NSString *)ids;
++ (instancetype)initWithTitle:(NSString *)title detail:(NSString *)detail type:(ListModelType)type;
 @end
 
 NS_ASSUME_NONNULL_END
