@@ -717,9 +717,13 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
-				F53FFE5F259DA1D600ABE946 /* LoadingVIew */,
+				F5B95DFC25A5EA6300911FF8 /* xxx */,
+				F5B95DFB25A5EA5B00911FF8 /* 个人主页 */,
+				F5B95DFA25A5EA3C00911FF8 /* 广告无限滚动 */,
+				F5B95DF925A5EA2100911FF8 /* 瀑布流 */,
+				F53FFE5F259DA1D600ABE946 /* 加载LoadingVIew */,
 				F51DC311259C5D600079AFC8 /* URLencodeURLdecode */,
-				F51535EC259B292B007E3416 /* EditBar */,
+				F51535EC259B292B007E3416 /* 全选删除EditBar */,
 				F55E5B58258C589400C1DECD /* ScoreView */,
 				F5872CAF257DDD0300341B57 /* 组件化解藕 */,
 				F5C0A21C2578BB49004EBD94 /* xibViewDemo */,
@@ -920,13 +924,13 @@
 			path = "判断对象是否相等";
 			sourceTree = "<group>";
 		};
-		F51535EC259B292B007E3416 /* EditBar */ = {
+		F51535EC259B292B007E3416 /* 全选删除EditBar */ = {
 			isa = PBXGroup;
 			children = (
 				F51535ED259B2960007E3416 /* UserEditBar.h */,
 				F51535EE259B2960007E3416 /* UserEditBar.m */,
 			);
-			path = EditBar;
+			path = "全选删除EditBar";
 			sourceTree = "<group>";
 		};
 		F51DC311259C5D600079AFC8 /* URLencodeURLdecode */ = {
@@ -955,11 +959,11 @@
 			path = ChatController;
 			sourceTree = "<group>";
 		};
-		F53FFE5F259DA1D600ABE946 /* LoadingVIew */ = {
+		F53FFE5F259DA1D600ABE946 /* 加载LoadingVIew */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = LoadingVIew;
+			path = "加载LoadingVIew";
 			sourceTree = "<group>";
 		};
 		F548D0C0256E2EE900357E64 /* 追剧-动效-11-25 */ = {
@@ -1256,6 +1260,34 @@
 				F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */,
 			);
 			path = InputController;
+			sourceTree = "<group>";
+		};
+		F5B95DF925A5EA2100911FF8 /* 瀑布流 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "瀑布流";
+			sourceTree = "<group>";
+		};
+		F5B95DFA25A5EA3C00911FF8 /* 广告无限滚动 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "广告无限滚动";
+			sourceTree = "<group>";
+		};
+		F5B95DFB25A5EA5B00911FF8 /* 个人主页 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "个人主页";
+			sourceTree = "<group>";
+		};
+		F5B95DFC25A5EA6300911FF8 /* xxx */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = xxx;
 			sourceTree = "<group>";
 		};
 		F5C0A21C2578BB49004EBD94 /* xibViewDemo */ = {
