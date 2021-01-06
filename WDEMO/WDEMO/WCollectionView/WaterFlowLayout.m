@@ -13,30 +13,35 @@
 static const NSInteger DefaultColumnCount = 3;
 
 /** 每一列之间的间距    */
-static const CGFloat DefaultColumnMargin = 10;
+static const CGFloat DefaultInteritemSpacing = 10;
 
 /** 每一行之间的间距    */
-static const CGFloat DefaultRowMargin = 10;
+static const CGFloat DefaultLineSpacing = 10;
 
 /** 内边距    */
-static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
+static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
 
 @interface WaterFlowLayout ()
 
-/** 存放所有的布局属性 */
-@property (nonatomic, strong) NSMutableArray *attrsArray;
-
-/** 存放所有列的当前高度 */
-@property (nonatomic, strong) NSMutableArray *columnHeights;
-
-/** 内容的高度 */
-@property (nonatomic, assign) CGFloat contentHeight;
-
-//记录上个区最高的把一列的高度
-@property (nonatomic, assign) CGFloat lastContentHeight;
-
+//行间距
+@property (nonatomic, assign) CGFloat lineSpacing;
+//列间距
+@property (nonatomic, assign) CGFloat interitemSpacing;
+//列数
+@property (nonatomic, assign) NSInteger columnCount;
+//每个senction的内边距
+@property (nonatomic, assign) UIEdgeInsets sectionInset;
 //每个区的区头和上个区的区尾的距离
-@property (nonatomic, assign) CGFloat spacingWithLastSection;
+@property (nonatomic, assign) CGFloat sectionSpacing;
+//存放所有的布局属性
+@property (nonatomic, strong) NSMutableArray *attrsArray;
+//存放所有列的当前高度
+@property (nonatomic, strong) NSMutableArray *columnHeights;
+//内容的高度
+@property (nonatomic, assign) CGFloat contentHeight;
+//第一行元素的开始的位置：头的高度+内边距 header.size.height + sectionInset.top
+@property (nonatomic, assign) CGFloat lastContentHeight;
+@property (nonatomic, assign) CGFloat contentStartOffsetX;
 
 @end
 
@@ -75,26 +80,12 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
     
     self.contentHeight = 0;
     self.lastContentHeight = 0;
-    self.spacingWithLastSection = 0;
+    self.sectionSpacing = 0;
     
-    self.rowMargin = DefaultRowMargin;
-    self.columnMargin = DefaultColumnMargin;
+    self.lineSpacing = DefaultLineSpacing;
+    self.interitemSpacing = DefaultInteritemSpacing;
     self.columnCount = DefaultColumnCount;
-    self.edgeInsets = DefaultEdgeInsets;
-    
-    //    for (NSInteger i = 0; i < DefaultColumnCount; i++) {
-    //        [self.columnHeights addObject:@(self.edgeInsets.top)];
-    //    }
-    
-    //    //开始创建每一个cell对应的布局属性
-    //    NSInteger count = [self.collectionView numberOfItemsInSection:0];
-    //    for (NSInteger i = 0; i < count; i++) {
-    //        // 创建位置
-    //        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
-    //        // 获取indexPath位置cell对应的布局属性
-    //        UICollectionViewLayoutAttributes *attrs = [self layoutAttributesForItemAtIndexPath:indexPath];
-    //        [self.attrsArray addObject:attrs];
-    //    }
+    self.sectionInset = DefaultSectionInset;
     
     // 一共有多少个区
     NSInteger section = [self.collectionView numberOfSections];
@@ -109,16 +100,16 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
             self.columnCount = [self.delegate collectionView:self.collectionView layout:self columnNumberInSection:indexPath.section];
         }
         if ([self.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
-            self.edgeInsets = [self.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:indexPath.section];
+            self.sectionInset = [self.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:indexPath.section];
         }
         if ([self.delegate respondsToSelector:@selector(collectionView:layout:minimumLineSpacingForSectionAtIndex:)]) {
-            self.rowMargin = [self.delegate collectionView:self.collectionView layout:self minimumLineSpacingForSectionAtIndex:indexPath.section];
+            self.lineSpacing = [self.delegate collectionView:self.collectionView layout:self minimumLineSpacingForSectionAtIndex:indexPath.section];
         }
         if ([self.delegate respondsToSelector:@selector(collectionView:layout:minimumInteritemSpacingForSectionAtIndex:)]) {
-            self.columnMargin = [self.delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:indexPath.section];
+            self.interitemSpacing = [self.delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:indexPath.section];
         }
-        if ([self.delegate respondsToSelector:@selector(collectionView:layout:spacingWithLastSectionForSectionAtIndex:)]) {
-            self.spacingWithLastSection = [self.delegate collectionView:self.collectionView layout:self spacingWithLastSectionForSectionAtIndex:indexPath.section];
+        if ([self.delegate respondsToSelector:@selector(collectionView:layout:minimumSectionSpacingInSection:)]) {
+            self.sectionSpacing = [self.delegate collectionView:self.collectionView layout:self minimumSectionSpacingInSection:indexPath.section];
         }
         
         //1 初始化 header
@@ -132,7 +123,7 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
         
         //2 初始化区的 y 值
         for (NSInteger i = 0; i < self.columnCount; i++) {
-            //            [self.columnHeights addObject:@(self.edgeInsets.top)];
+            //            [self.columnHeights addObject:@(self.sectionInset.top)];
             [self.columnHeights addObject:@(self.contentHeight)];
         }
         
@@ -144,7 +135,6 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
             UICollectionViewLayoutAttributes * attrs = [self layoutAttributesForItemAtIndexPath:index];
             [self.attrsArray addObject:attrs];
         }
-        
         
         //4 初始化 footer
         //获取footer的UICollectionViewLayoutAttributes
@@ -171,16 +161,16 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
         self.columnCount = [self.delegate collectionView:self.collectionView layout:self columnNumberInSection:indexPath.section];
     }
     if ([self.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
-        self.edgeInsets = [self.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:indexPath.section];
+        self.sectionInset = [self.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:indexPath.section];
     }
     if ([self.delegate respondsToSelector:@selector(collectionView:layout:minimumLineSpacingForSectionAtIndex:)]) {
-        self.rowMargin = [self.delegate collectionView:self.collectionView layout:self minimumLineSpacingForSectionAtIndex:indexPath.section];
+        self.lineSpacing = [self.delegate collectionView:self.collectionView layout:self minimumLineSpacingForSectionAtIndex:indexPath.section];
     }
     if ([self.delegate respondsToSelector:@selector(collectionView:layout:minimumInteritemSpacingForSectionAtIndex:)]) {
-        self.columnMargin = [self.delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:indexPath.section];
+        self.interitemSpacing = [self.delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:indexPath.section];
     }
-    if ([self.delegate respondsToSelector:@selector(collectionView:layout:spacingWithLastSectionForSectionAtIndex:)]) {
-        self.spacingWithLastSection = [self.delegate collectionView:self.collectionView layout:self spacingWithLastSectionForSectionAtIndex:indexPath.section];
+    if ([self.delegate respondsToSelector:@selector(collectionView:layout:minimumSectionSpacingInSection:)]) {
+        self.sectionSpacing = [self.delegate collectionView:self.collectionView layout:self minimumSectionSpacingInSection:indexPath.section];
     }
     
     // 创建布局属性
@@ -190,7 +180,7 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
     CGFloat collectionViewW = self.collectionView.frame.size.width;
     
     //设置布局属性的frame
-    CGFloat w = (collectionViewW - self.edgeInsets.left - self.edgeInsets.right - (self.columnCount - 1) * self.columnMargin) / self.columnCount;
+    CGFloat w = (collectionViewW - self.sectionInset.left - self.sectionInset.right - (self.columnCount - 1) * self.interitemSpacing) / self.columnCount;
     
     CGFloat h =  [self.delegate collectionView:self.collectionView layout:self heightForRowAtIndexPath:indexPath itemWidth:w];
     
@@ -210,10 +200,10 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
         }
     }
     
-    CGFloat x = self.edgeInsets.left + destColumn * (w + self.columnMargin);
+    CGFloat x = self.sectionInset.left + destColumn * (w + self.interitemSpacing);
     CGFloat y = minColumnHeight;
     if (y != self.lastContentHeight) {
-        y += self.rowMargin;
+        y += self.lineSpacing;
     }
     
     attrs.frame = CGRectMake(x, y, w, h);
@@ -229,21 +219,6 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
     return attrs;
     
 }
-
-//- (CGSize)collectionViewContentSize
-//{
-////    CGFloat maxColumnHeight = [self.columnHeights[0] doubleValue];
-////
-////    for (NSInteger i = 1; i < DefaultColumnCount; i++) {
-////        // 取得第i列的高度
-////        CGFloat columnHeight = [self.columnHeights[i] doubleValue];
-////
-////        if (maxColumnHeight < columnHeight) {
-////            maxColumnHeight = columnHeight;
-////        }
-////    }
-//    return CGSizeMake(0, self.contentHeight + self.edgeInsets.bottom);
-//}
 
 /**
  * 内容的高度
@@ -262,12 +237,12 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
             headerReferenceSize = [_delegate collectionView:self.collectionView layout:self referenceSizeForHeaderInSection:indexPath.section];
         }
         
-        self.contentHeight += (indexPath.section == 0) ? 0 : self.spacingWithLastSection;
+        self.contentHeight += (indexPath.section == 0) ? 0 : self.sectionSpacing;
         
         attributes.frame = CGRectMake(0, self.contentHeight, headerReferenceSize.width, headerReferenceSize.height);
         
         self.contentHeight += headerReferenceSize.height;
-        self.contentHeight += self.edgeInsets.top;
+        self.contentHeight += self.sectionInset.top;
         
     } else if ([elementKind isEqualToString:UICollectionElementKindSectionFooter] ){
         CGSize footerReferenceSize;
@@ -275,7 +250,7 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
             footerReferenceSize = [_delegate collectionView:self.collectionView layout:self referenceSizeForFooterInSection:indexPath.section];
         }
         
-        self.contentHeight += self.edgeInsets.bottom;
+        self.contentHeight += self.sectionInset.bottom;
         
         attributes.frame = CGRectMake(0, self.contentHeight, footerReferenceSize.width, footerReferenceSize.height);
         

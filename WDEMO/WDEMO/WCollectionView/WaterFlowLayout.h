@@ -40,18 +40,11 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
 // footer
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
-
 //本区区头和上个区区尾的间距
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout spacingWithLastSectionForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumSectionSpacingInSection:(NSInteger)section;
 
 @end
 
 @interface WaterFlowLayout : UICollectionViewLayout
 @property (nonatomic ,weak) id<WaterFlowLayoutDelegate> delegate;
-
-@property (nonatomic, assign) CGFloat rowMargin;
-@property (nonatomic, assign) CGFloat columnMargin;
-@property (nonatomic, assign) NSInteger columnCount;
-@property (nonatomic, assign) UIEdgeInsets edgeInsets;
-
 @end
