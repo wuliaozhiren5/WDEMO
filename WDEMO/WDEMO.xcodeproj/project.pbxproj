@@ -724,7 +724,7 @@
 				F53FFE5F259DA1D600ABE946 /* 加载LoadingVIew */,
 				F51DC311259C5D600079AFC8 /* URLencodeURLdecode */,
 				F51535EC259B292B007E3416 /* 全选删除EditBar */,
-				F55E5B58258C589400C1DECD /* ScoreView */,
+				F55E5B58258C589400C1DECD /* 评分只是展示ScoreView */,
 				F5872CAF257DDD0300341B57 /* 组件化解藕 */,
 				F5C0A21C2578BB49004EBD94 /* xibViewDemo */,
 				F5CED5D325749B33002CF42C /* 单例 */,
@@ -1018,13 +1018,13 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		F55E5B58258C589400C1DECD /* ScoreView */ = {
+		F55E5B58258C589400C1DECD /* 评分只是展示ScoreView */ = {
 			isa = PBXGroup;
 			children = (
 				F55E5B59258C58B700C1DECD /* ScoreView.h */,
 				F55E5B5A258C58B700C1DECD /* ScoreView.m */,
 			);
-			path = ScoreView;
+			path = "评分只是展示ScoreView";
 			sourceTree = "<group>";
 		};
 		F5609CA32502195A00A13C15 /* 屏幕旋转 */ = {
