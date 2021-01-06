@@ -314,23 +314,20 @@
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForRowAtIndexPath:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth {
     switch (indexPath.section) {
         case 0:
-            
             return 100;
-            
+//            return 100 + arc4random() % 100;
             break;
         case 1:
             return 100;
-            //            return 100 + arc4random() % 100;
+//            return 100 + arc4random() % 100;
             break;
         case 2:
-            
             return 100;
-            
+//            return 100 + arc4random() % 100;
             break;
         default:
             
             return 0;
-            
             break;
     }
 }
