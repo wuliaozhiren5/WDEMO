@@ -30,7 +30,7 @@
     //    flowLayout.scrollDirection= UICollectionViewScrollDirectionVertical;
     
     //设置senction的内边距
-    flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5);
+    flowLayout.sectionInset = UIEdgeInsetsMake(20, 20, 20, 20);
     //    Math中的round/ceil/floorf方法总结
     flowLayout.itemSize = CGSizeMake(100, 100);
     //    设置同一列中间隔的cell最小间距

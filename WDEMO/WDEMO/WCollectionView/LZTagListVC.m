@@ -9,6 +9,7 @@
 
 #import "LZTagListVC.h"
 #import "LZTagListView.h"
+#import <Masonry/Masonry.h>
 
 @interface LZTagListVC ()
 @property (nonatomic, strong) LZTagListView *tagListView;
@@ -44,9 +45,9 @@
     [self.view addSubview:_tagListView];
 //    _tagListView.frame= self.view.bounds;
     
-//    [_tagListView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self.view);
-//    }];
+    [_tagListView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
     
 }
 @end

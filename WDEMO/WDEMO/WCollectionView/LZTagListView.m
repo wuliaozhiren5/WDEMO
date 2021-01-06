@@ -13,6 +13,7 @@
 #import "CustomLayout.h"
 //#import "ImageScrollView.h"
 #import "WMacros.h"
+#import <Masonry/Masonry.h>
 
 @interface LZTagListView ()<LZTagSegmentedControlDelegate, UICollectionViewDelegate, UICollectionViewDataSource, WaterFlowLayoutDelegate>
 
@@ -136,10 +137,10 @@
     [self addSubview:self.collectionView];
     
     self.collectionView.frame = self.bounds;
-//    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.trailing.top.bottom.equalTo(self);
-////        make.height.equalTo(@40);
-//    }];
+    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.leading.trailing.top.bottom.equalTo(self);
+//        make.height.equalTo(@40);
+    }];
     
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"ListHeader"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
@@ -389,15 +390,31 @@
     }
 }
 
-
+// 每个区的边距
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    
+    UIEdgeInsets edgeInsets = {5, 5, 5, 5};
+    return edgeInsets;
+}
+//每一行之间的间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    
+    return 0;
+}
+//每一列之间的间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    
+    return 0;
+}
+ 
 //// header
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
   
     switch (section) {
-        case 0:
-            
-            return CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH / IMAGEPLAYERVIEW_SCALE + 40);
-
+        case 0: 
+//            return CGSizeMake(SCREEN_WIDTH, SCREEN_WIDTH / IMAGEPLAYERVIEW_SCALE + 40);
+            return CGSizeMake(SCREEN_WIDTH, 100);
+            return CGSizeZero;
             break;
         default:
             return CGSizeZero;
@@ -405,11 +422,19 @@
     }
 }
 
-//// footer
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
-//   
-//    return CGSizeZero;
-//}
+// footer
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
+    
+    switch (section) {
+        case 0:
+            return CGSizeMake(SCREEN_WIDTH, 100);
+            return CGSizeZero;
+            break;
+        default:
+            return CGSizeZero;
+            break;
+    }
+}
 
 //定义并返回每个headerView或footerView
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
