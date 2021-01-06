@@ -41,6 +41,9 @@
 // footer
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
 
+//本区区头和上个区区尾的间距
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout spacingWithLastSectionForSectionAtIndex:(NSInteger)section;
+
 @end
 
 @interface WaterFlowLayout : UICollectionViewLayout

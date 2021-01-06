@@ -10,7 +10,7 @@
 #import <AssetsLibrary/AssetsLibrary.h>
 
 /** 默认的列数    */
-static const NSInteger DefaultColumnCpunt = 3;
+static const NSInteger DefaultColumnCount = 3;
 
 /** 每一列之间的间距    */
 static const CGFloat DefaultColumnMargin = 10;
@@ -32,6 +32,11 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
 /** 内容的高度 */
 @property (nonatomic, assign) CGFloat contentHeight;
 
+//记录上个区最高的把一列的高度
+@property (nonatomic, assign) CGFloat lastContentHeight;
+
+//每个区的区头和上个区的区尾的距离
+@property (nonatomic, assign) CGFloat spacingWithLastSection;
 
 @end
 
@@ -61,7 +66,7 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
 //    if ([self.delegate respondsToSelector:@selector(columnCountInWaterflowLayout:)]) {
 //        return [self.delegate columnCountInWaterflowLayout:self];
 //    } else {
-//        return DefaultColumnCpunt;
+//        return DefaultColumnCount;
 //    }
 //}
 //
@@ -104,29 +109,31 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
     [self.attrsArray removeAllObjects];
     
     self.contentHeight = 0;
+    self.lastContentHeight = 0;
+    self.spacingWithLastSection = 10;
     
     self.rowMargin = DefaultRowMargin;
     self.columnMargin = DefaultColumnMargin;
-    self.columnCount = DefaultColumnCpunt;
+    self.columnCount = DefaultColumnCount;
     self.edgeInsets = DefaultEdgeInsets;
     
-//    for (NSInteger i = 0; i < DefaultColumnCpunt; i++) {
-//        [self.columnHeights addObject:@(self.edgeInsets.top)];
-//    }
+    //    for (NSInteger i = 0; i < DefaultColumnCount; i++) {
+    //        [self.columnHeights addObject:@(self.edgeInsets.top)];
+    //    }
     
-//    //开始创建每一个cell对应的布局属性
-//    NSInteger count = [self.collectionView numberOfItemsInSection:0];
-//    for (NSInteger i = 0; i < count; i++) {
-//        // 创建位置
-//        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
-//        // 获取indexPath位置cell对应的布局属性
-//        UICollectionViewLayoutAttributes *attrs = [self layoutAttributesForItemAtIndexPath:indexPath];
-//        [self.attrsArray addObject:attrs];
-//    }
+    //    //开始创建每一个cell对应的布局属性
+    //    NSInteger count = [self.collectionView numberOfItemsInSection:0];
+    //    for (NSInteger i = 0; i < count; i++) {
+    //        // 创建位置
+    //        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i inSection:0];
+    //        // 获取indexPath位置cell对应的布局属性
+    //        UICollectionViewLayoutAttributes *attrs = [self layoutAttributesForItemAtIndexPath:indexPath];
+    //        [self.attrsArray addObject:attrs];
+    //    }
     
     // 一共有多少个区
     NSInteger section = [self.collectionView numberOfSections];
-
+    
     for (NSInteger i = 0 ; i < section; i++) {
         
         //每个区
@@ -145,23 +152,25 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
         if ([self.delegate respondsToSelector:@selector(collectionView:layout:minimumInteritemSpacingForSectionAtIndex:)]) {
             self.columnMargin = [self.delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:indexPath.section];
         }
-      
+        if ([self.delegate respondsToSelector:@selector(collectionView:layout:spacingWithLastSectionForSectionAtIndex:)]) {
+            self.spacingWithLastSection = [self.delegate collectionView:self.collectionView layout:self spacingWithLastSectionForSectionAtIndex:indexPath.section];
+        }
         
         //1 初始化 header
         //获取header的UICollectionViewLayoutAttributes
         UICollectionViewLayoutAttributes *headerAttrs = [self layoutAttributesForSupplementaryViewOfKind:UICollectionElementKindSectionHeader atIndexPath:indexPath];
         [self.attrsArray addObject:headerAttrs];
-  
-        [self.columnHeights removeAllObjects];
- 
         
-       //2 初始化区的 y 值
-        for (NSInteger i = 0; i < DefaultColumnCpunt; i++) {
+        //清空
+        [self.columnHeights removeAllObjects];
+        self.lastContentHeight = self.contentHeight;
+        
+        //2 初始化区的 y 值
+        for (NSInteger i = 0; i < self.columnCount; i++) {
             //            [self.columnHeights addObject:@(self.edgeInsets.top)];
-            [self.columnHeights addObject:@(self.contentHeight)]; 
+            [self.columnHeights addObject:@(self.contentHeight)];
         }
         
-
         //3 每个区中有多少 item
         //获取item的UICollectionViewLayoutAttributes
         NSInteger count = [self.collectionView numberOfItemsInSection:i];
@@ -205,6 +214,9 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
     if ([self.delegate respondsToSelector:@selector(collectionView:layout:minimumInteritemSpacingForSectionAtIndex:)]) {
         self.columnMargin = [self.delegate collectionView:self.collectionView layout:self minimumInteritemSpacingForSectionAtIndex:indexPath.section];
     }
+    if ([self.delegate respondsToSelector:@selector(collectionView:layout:spacingWithLastSectionForSectionAtIndex:)]) {
+        self.spacingWithLastSection = [self.delegate collectionView:self.collectionView layout:self spacingWithLastSectionForSectionAtIndex:indexPath.section];
+    }
     
     // 创建布局属性
     UICollectionViewLayoutAttributes *attrs = [UICollectionViewLayoutAttributes layoutAttributesForCellWithIndexPath:indexPath];
@@ -212,13 +224,12 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
     //collectionView的宽度
     CGFloat collectionViewW = self.collectionView.frame.size.width;
     
-    // 设置布局属性的frame
-    CGFloat w = (collectionViewW - self.edgeInsets.left - self.edgeInsets.right -(self.columnCount - 1) * self.columnMargin) / self.columnCount;
+    //设置布局属性的frame
+    CGFloat w = (collectionViewW - self.edgeInsets.left - self.edgeInsets.right - (self.columnCount - 1) * self.columnMargin) / self.columnCount;
     
-//    CGFloat h = [self.delegate WaterFlowLayout:self heightForRowAtIndexPath:indexPath.item itemWidth:w];
     CGFloat h =  [self.delegate collectionView:self.collectionView layout:self heightForRowAtIndexPath:indexPath itemWidth:w];
     
-    // 找出最短的那一列
+    //找出最短的那一列
     NSInteger destColumn = 0;
     
     CGFloat minColumnHeight = [self.columnHeights[0] doubleValue];
@@ -236,7 +247,7 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
     
     CGFloat x = self.edgeInsets.left + destColumn * (w + self.columnMargin);
     CGFloat y = minColumnHeight;
-    if (y != self.edgeInsets.top) {
+    if (y != self.lastContentHeight) {
         y += self.rowMargin;
     }
     
@@ -258,7 +269,7 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
 //{
 ////    CGFloat maxColumnHeight = [self.columnHeights[0] doubleValue];
 ////
-////    for (NSInteger i = 1; i < DefaultColumnCpunt; i++) {
+////    for (NSInteger i = 1; i < DefaultColumnCount; i++) {
 ////        // 取得第i列的高度
 ////        CGFloat columnHeight = [self.columnHeights[i] doubleValue];
 ////
@@ -275,7 +286,7 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
 - (CGSize)collectionViewContentSize {
     return CGSizeMake(self.collectionView.frame.size.width, self.contentHeight);
 }
- 
+
 - (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
     
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:elementKind withIndexPath:indexPath];
@@ -283,9 +294,12 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
     if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {
         CGSize headerReferenceSize;
         if ([_delegate respondsToSelector:@selector(collectionView:layout:referenceSizeForHeaderInSection:)]) {
-             headerReferenceSize = [_delegate collectionView:self.collectionView layout:self referenceSizeForHeaderInSection:indexPath.section];
+            headerReferenceSize = [_delegate collectionView:self.collectionView layout:self referenceSizeForHeaderInSection:indexPath.section];
         }
-        attributes.frame = CGRectMake(0,  self.contentHeight, headerReferenceSize.width, headerReferenceSize.height);
+        
+        self.contentHeight += (indexPath.section == 0) ? 0 : self.spacingWithLastSection;
+        
+        attributes.frame = CGRectMake(0, self.contentHeight, headerReferenceSize.width, headerReferenceSize.height);
         
         self.contentHeight += headerReferenceSize.height;
         self.contentHeight += self.edgeInsets.top;
@@ -293,15 +307,17 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
     } else if ([elementKind isEqualToString:UICollectionElementKindSectionFooter] ){
         CGSize footerReferenceSize;
         if ([_delegate respondsToSelector:@selector(collectionView:layout:referenceSizeForFooterInSection:)]) {
-             footerReferenceSize = [_delegate collectionView:self.collectionView layout:self referenceSizeForFooterInSection:indexPath.section];
+            footerReferenceSize = [_delegate collectionView:self.collectionView layout:self referenceSizeForFooterInSection:indexPath.section];
         }
+        
+        self.contentHeight += self.edgeInsets.bottom;
+        
         attributes.frame = CGRectMake(0, self.contentHeight, footerReferenceSize.width, footerReferenceSize.height);
         
         self.contentHeight += footerReferenceSize.height;
-        self.contentHeight += self.edgeInsets.bottom;
     }
     
     return attributes;
 }
- 
+
 @end

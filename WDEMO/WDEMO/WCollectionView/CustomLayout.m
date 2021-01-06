@@ -8,7 +8,7 @@
 
 #import "CustomLayout.h"
 
-static const NSInteger DefaultColumnCpunt = 3;
+static const NSInteger DefaultColumnCount = 3;
 
 @interface CustomLayout ()
 
@@ -200,7 +200,7 @@ static const NSInteger DefaultColumnCpunt = 3;
     if (_columnCount) {
         return _columnCount;
     }  else {}
-    return DefaultColumnCpunt;
+    return DefaultColumnCount;
 }
 
 
@@ -214,7 +214,7 @@ static const NSInteger DefaultColumnCpunt = 3;
 
 -(NSMutableArray *)columnHeights {
     if (!_columnHeights) {
-        _columnHeights = [NSMutableArray arrayWithCapacity:DefaultColumnCpunt];
+        _columnHeights = [NSMutableArray arrayWithCapacity:DefaultColumnCount];
         
     }  else {}
     return _columnHeights;
