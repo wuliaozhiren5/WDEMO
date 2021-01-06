@@ -43,41 +43,6 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
 @implementation WaterFlowLayout
 
 #pragma mark - 数据处理
-//- (CGFloat)rowMargin
-//{
-//    if ([self.delegate respondsToSelector:@selector(rowMarginInWaterflowLayout:)]) {
-//        return [self.delegate rowMarginInWaterflowLayout:self];
-//    } else {
-//        return DefaultRowMargin;
-//    }
-//}
-//
-//- (CGFloat)columnMargin
-//{
-//    if ([self.delegate respondsToSelector:@selector(columnMarginInWaterflowLayout:)]) {
-//        return [self.delegate columnMarginInWaterflowLayout:self];
-//    } else {
-//        return DefaultColumnMargin;
-//    }
-//}
-//
-//- (NSInteger)columnCount
-//{
-//    if ([self.delegate respondsToSelector:@selector(columnCountInWaterflowLayout:)]) {
-//        return [self.delegate columnCountInWaterflowLayout:self];
-//    } else {
-//        return DefaultColumnCount;
-//    }
-//}
-//
-//- (UIEdgeInsets)edgeInsets
-//{
-//    if ([self.delegate respondsToSelector:@selector(edgeInsetsInWaterflowLayout:)]) {
-//        return [self.delegate edgeInsetsInWaterflowLayout:self];
-//    } else {
-//        return DefaultEdgeInsets;
-//    }
-//}
 
 - (NSMutableArray *)attrsArray
 {
@@ -110,7 +75,7 @@ static const UIEdgeInsets DefaultEdgeInsets = { 10, 10, 10, 10 };
     
     self.contentHeight = 0;
     self.lastContentHeight = 0;
-    self.spacingWithLastSection = 10;
+    self.spacingWithLastSection = 0;
     
     self.rowMargin = DefaultRowMargin;
     self.columnMargin = DefaultColumnMargin;
