@@ -717,7 +717,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
-				F53FFE5F259DA1D600ABE946 /* xx */,
+				F53FFE5F259DA1D600ABE946 /* LoadingVIew */,
 				F51DC311259C5D600079AFC8 /* URLencodeURLdecode */,
 				F51535EC259B292B007E3416 /* EditBar */,
 				F55E5B58258C589400C1DECD /* ScoreView */,
@@ -955,11 +955,11 @@
 			path = ChatController;
 			sourceTree = "<group>";
 		};
-		F53FFE5F259DA1D600ABE946 /* xx */ = {
+		F53FFE5F259DA1D600ABE946 /* LoadingVIew */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = xx;
+			path = LoadingVIew;
 			sourceTree = "<group>";
 		};
 		F548D0C0256E2EE900357E64 /* 追剧-动效-11-25 */ = {
