@@ -69,6 +69,7 @@
 		F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */; };
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
+		F543282925A6D62C0082236C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F543282825A6D62C0082236C /* ScoreViewController.m */; };
 		F548D0D7256E2EEA00357E64 /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = F548D0C2256E2EE900357E64 /* img_0.png */; };
 		F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */ = {isa = PBXBuildFile; fileRef = F548D0C3256E2EE900357E64 /* amwayPlayerGuide_3.png */; };
 		F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F548D0C4256E2EE900357E64 /* amwayPlayerGuide_2.png */; };
@@ -109,8 +110,6 @@
 		F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D225008B6A004991D3 /* PasswordVC.m */; };
 		F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D525008D76004991D3 /* ChangePasswordVC.m */; };
 		F5710B4225232263009DEE02 /* 富文本.md in Resources */ = {isa = PBXBuildFile; fileRef = F5710B4125232263009DEE02 /* 富文本.md */; };
-		F574E76D2537FCEF00DCD4D7 /* AppTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F574E76C2537FCEF00DCD4D7 /* AppTabBarController.m */; };
-		F574E7742537FD2300DCD4D7 /* AppNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F574E7732537FD2300DCD4D7 /* AppNavigationController.m */; };
 		F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */; };
 		F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
@@ -357,6 +356,8 @@
 		F53F669124FE454000770055 /* PasswordTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordTextField.m; sourceTree = "<group>"; };
 		F53F669924FE484700770055 /* NSString+Password.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Password.h"; sourceTree = "<group>"; };
 		F53F669A24FE484700770055 /* NSString+Password.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Password.m"; sourceTree = "<group>"; };
+		F543282725A6D62C0082236C /* ScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
+		F543282825A6D62C0082236C /* ScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
 		F548D0C2256E2EE900357E64 /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
 		F548D0C3256E2EE900357E64 /* amwayPlayerGuide_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amwayPlayerGuide_3.png; sourceTree = "<group>"; };
 		F548D0C4256E2EE900357E64 /* amwayPlayerGuide_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amwayPlayerGuide_2.png; sourceTree = "<group>"; };
@@ -425,10 +426,6 @@
 		F566A1D425008D76004991D3 /* ChangePasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
 		F566A1D525008D76004991D3 /* ChangePasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
 		F5710B4125232263009DEE02 /* 富文本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "富文本.md"; sourceTree = "<group>"; };
-		F574E76B2537FCEF00DCD4D7 /* AppTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppTabBarController.h; sourceTree = "<group>"; };
-		F574E76C2537FCEF00DCD4D7 /* AppTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppTabBarController.m; sourceTree = "<group>"; };
-		F574E7722537FD2300DCD4D7 /* AppNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppNavigationController.h; sourceTree = "<group>"; };
-		F574E7732537FD2300DCD4D7 /* AppNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppNavigationController.m; sourceTree = "<group>"; };
 		F57A6A7524CFCA8400D51E01 /* FaceMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageCell.h; sourceTree = "<group>"; };
 		F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageCell.m; sourceTree = "<group>"; };
 		F57A6A7824CFCA9700D51E01 /* EnterMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterMessageCell.h; sourceTree = "<group>"; };
@@ -733,8 +730,6 @@
 				F5A763BC253D94D900A76C6E /* YYmodel测试 */,
 				F5200DB22531526D004637DD /* 贴吧 */,
 				F5E4785B25301154001AE2AE /* WebView */,
-				F574E76A2537FCB200DCD4D7 /* TabBarController */,
-				F574E7692537FCB000DCD4D7 /* NavigationController */,
 				F5609CAB2502236700A13C15 /* BaseController */,
 				F5609CA32502195A00A13C15 /* 屏幕旋转 */,
 				F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */,
@@ -1023,6 +1018,8 @@
 			children = (
 				F55E5B59258C58B700C1DECD /* ScoreView.h */,
 				F55E5B5A258C58B700C1DECD /* ScoreView.m */,
+				F543282725A6D62C0082236C /* ScoreViewController.h */,
+				F543282825A6D62C0082236C /* ScoreViewController.m */,
 			);
 			path = "评分只是展示ScoreView";
 			sourceTree = "<group>";
@@ -1059,24 +1056,6 @@
 				F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */,
 			);
 			path = CPU;
-			sourceTree = "<group>";
-		};
-		F574E7692537FCB000DCD4D7 /* NavigationController */ = {
-			isa = PBXGroup;
-			children = (
-				F574E7722537FD2300DCD4D7 /* AppNavigationController.h */,
-				F574E7732537FD2300DCD4D7 /* AppNavigationController.m */,
-			);
-			path = NavigationController;
-			sourceTree = "<group>";
-		};
-		F574E76A2537FCB200DCD4D7 /* TabBarController */ = {
-			isa = PBXGroup;
-			children = (
-				F574E76B2537FCEF00DCD4D7 /* AppTabBarController.h */,
-				F574E76C2537FCEF00DCD4D7 /* AppTabBarController.m */,
-			);
-			path = TabBarController;
 			sourceTree = "<group>";
 		};
 		F57B529D24C7DEB100940696 /* Chat */ = {
@@ -1793,7 +1772,6 @@
 				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
 				F5C0A21F2578BBC2004EBD94 /* xibView.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
-				F574E7742537FD2300DCD4D7 /* AppNavigationController.m in Sources */,
 				F5E4785E25301177001AE2AE /* WebVC.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
 				F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */,
@@ -1814,7 +1792,6 @@
 				F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */,
 				F5872CD1257DF62400341B57 /* SettingModuleHandler+setting.m in Sources */,
 				F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */,
-				F574E76D2537FCEF00DCD4D7 /* AppTabBarController.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
 				F5609CA62502222100A13C15 /* BaseNavigationController.m in Sources */,
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
@@ -1836,6 +1813,7 @@
 				F5D0FC0A24E0F91800CAADF8 /* UIImage+TUIDarkMode.m in Sources */,
 				F5872CF3257DFCBD00341B57 /* SharedInstanceVC.m in Sources */,
 				F553E19B24CA8DE200DA5625 /* NSAttributedString+FaceString.m in Sources */,
+				F543282925A6D62C0082236C /* ScoreViewController.m in Sources */,
 				F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */,
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,

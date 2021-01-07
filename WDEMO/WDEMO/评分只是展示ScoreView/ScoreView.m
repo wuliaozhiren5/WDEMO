@@ -15,7 +15,6 @@
 @end
 
 @implementation ScoreView
-
 /*
  // Only override drawRect: if you perform custom drawing.
  // An empty implementation adversely affects performance during animation.
@@ -37,13 +36,6 @@
     return self;
 }
 
-- (NSMutableArray *)imageViewArray {
-    if (!_imageViewArray) {
-        _imageViewArray = [NSMutableArray array];
-    }
-    return _imageViewArray;
-}
-
 - (void)createScoreViewWithCount:(NSInteger)count
                            width:(CGFloat)width
                           height:(CGFloat)height
@@ -60,6 +52,7 @@
     for (NSInteger i = 0; i < n; i++) {
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.frame = CGRectMake((starWidth + starSpacing) * i, 0, starWidth, starHeight);
+        imageView.center = CGPointMake(imageView.center.x, self.frame.size.height/2.0);
         imageView.image = [UIImage imageNamed:@"ic_common_star_grey"];
         [self addSubview:imageView];
         [self.imageViewArray addObject:imageView];
@@ -91,4 +84,51 @@
     }
 }
 
+- (NSMutableArray *)imageViewArray {
+    if (!_imageViewArray) {
+        _imageViewArray = [NSMutableArray array];
+    }
+    return _imageViewArray;
+}
+@end
+
+@interface ScoreTitleView ()
+@property (strong, nonatomic)UILabel *scoreTitleLabel;
+@property (strong, nonatomic)UIFont *scoreTitleFont;
+@property (strong, nonatomic)UIColor *scoreTitleColor;
+@property (assign, nonatomic)CGFloat scoreTitleSpacing;
+@end
+
+@implementation ScoreTitleView
+- (void)createScoreViewTitleWithTitltFont:(UIFont *)titltFont
+                               titltColor:(UIColor *)titltColor
+                             titltSpacing:(CGFloat)titltSpacing {
+    UIFont *scoreTitleFont = titltFont ? titltFont: [UIFont systemFontOfSize:10];
+    UIColor *scoreTitleColor = titltColor ? titltColor: [UIColor grayColor];
+    CGFloat scoreTitleSpacing = titltSpacing > 0 ? titltSpacing : 5;
+    self.scoreTitleFont = scoreTitleFont;
+    self.scoreTitleColor = scoreTitleColor;
+    self.scoreTitleSpacing = scoreTitleSpacing;
+    
+    self.scoreTitleLabel.font = scoreTitleFont;
+    self.scoreTitleLabel.textColor = scoreTitleColor;
+}
+
+- (void)scoreTitleStr:(NSString *)titleStr {
+    self.scoreTitleLabel.text = titleStr;
+    UIImageView *lastImageView = self.imageViewArray.lastObject;
+    CGSize size = [self.scoreTitleLabel sizeThatFits:CGSizeZero];
+    self.scoreTitleLabel.frame = CGRectMake(lastImageView.frame.origin.x + lastImageView.frame.size.width + self.scoreTitleSpacing, 0, size.width, size.height);
+    self.scoreTitleLabel.center = CGPointMake(self.scoreTitleLabel.center.x, self.frame.size.height/2.0);
+}
+
+-(UILabel *)scoreTitleLabel {
+    if (!_scoreTitleLabel) {
+        _scoreTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        _scoreTitleLabel.font =[UIFont systemFontOfSize:10];
+        _scoreTitleLabel.textColor = [UIColor blackColor];
+        [self addSubview:_scoreTitleLabel];
+    }
+    return _scoreTitleLabel;
+}
 @end

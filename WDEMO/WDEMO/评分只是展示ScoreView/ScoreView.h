@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ScoreView : UIView
-
 /// Description
 /// @param count 个数
 /// @param width 宽
@@ -22,7 +21,18 @@ NS_ASSUME_NONNULL_BEGIN
                           height:(CGFloat)height
                          spacing:(CGFloat)spacing;
 - (void)score:(CGFloat)score;
+@end
 
+/// 组装成了带文字样式的
+@interface ScoreTitleView : ScoreView
+/// Description
+/// @param titltFont 字体
+/// @param titltColor 颜色
+/// @param titltSpacing 与星星的间距
+- (void)createScoreViewTitleWithTitltFont:(UIFont *)titltFont
+                               titltColor:(UIColor *)titltColor
+                             titltSpacing:(CGFloat)titltSpacing;
+- (void)scoreTitleStr:(NSString *)titleStr;
 @end
 
 NS_ASSUME_NONNULL_END

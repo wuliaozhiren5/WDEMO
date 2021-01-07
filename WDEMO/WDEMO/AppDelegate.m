@@ -8,8 +8,8 @@
 
 #import "AppDelegate.h"
 #import "CJAppUncaughtExceptionHandler.h"
-#import "AppNavigationController.h"
-#import "AppTabBarController.h"
+#import "BaseNavigationController.h"
+#import "BaseTabBarController.h"
 #import "ViewController.h"
 
 @interface AppDelegate ()
@@ -46,13 +46,13 @@
     
     
     // 设置窗口的跟控制器
-    AppTabBarController * tabbarVC = [[AppTabBarController alloc]init];
+    BaseTabBarController * tabbarVC = [[BaseTabBarController alloc]init];
     
     // 添加子控制器
 //    UIViewController * VC01 = [[UIViewController alloc]init];
     ViewController * VC01 = [[ViewController alloc]init];
     // 添加子导航控制器
-    AppNavigationController * NavVC01 = [[AppNavigationController alloc]initWithRootViewController:VC01];
+    BaseNavigationController * NavVC01 = [[BaseNavigationController alloc]initWithRootViewController:VC01];
     // 设置标题
     NavVC01.tabBarItem.title = @"精华";
     // 设置默认图片
@@ -63,7 +63,7 @@
     [tabbarVC addChildViewController:NavVC01];
     
     UIViewController * VC02 = [[UIViewController alloc]init];
-    AppNavigationController * NavVC02 = [[AppNavigationController alloc]initWithRootViewController:VC02];
+    BaseNavigationController * NavVC02 = [[BaseNavigationController alloc]initWithRootViewController:VC02];
     NavVC02.tabBarItem.title = @"新帖";
     NavVC02.tabBarItem.image = [UIImage imageNamed:@"tabBar_new_icon"];
     NavVC02.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_new_click_icon"];
@@ -72,7 +72,7 @@
     [tabbarVC addChildViewController:NavVC02];
     
     UIViewController * VC03 = [[UIViewController alloc]init];
-    AppNavigationController * NavVC03 = [[AppNavigationController alloc]initWithRootViewController:VC03];
+    BaseNavigationController * NavVC03 = [[BaseNavigationController alloc]initWithRootViewController:VC03];
     NavVC03.tabBarItem.title = @"关注";
     NavVC03.tabBarItem.image = [UIImage imageNamed:@"tabBar_friendTrends_icon"];
     NavVC03.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_friendTrends_click_icon"];
@@ -81,15 +81,13 @@
     [tabbarVC addChildViewController:NavVC03];
     
     UIViewController * VC04 = [[UIViewController alloc]init];
-    AppNavigationController * NavVC04 = [[AppNavigationController alloc]initWithRootViewController:VC04];
+    BaseNavigationController * NavVC04 = [[BaseNavigationController alloc]initWithRootViewController:VC04];
     NavVC04.tabBarItem.title = @"我";
     NavVC04.tabBarItem.image = [UIImage imageNamed:@"tabBar_me_icon"];
     NavVC04.tabBarItem.selectedImage = [UIImage imageNamed:@"tabBar_me_click_icon"];
     
     NavVC04.view.backgroundColor = [UIColor greenColor];
     [tabbarVC addChildViewController:NavVC04];
-    
-    
     
     self.window.rootViewController = tabbarVC;
     

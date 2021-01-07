@@ -29,7 +29,9 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeDestroyAccount,//用户注销
     ListModelTypeReactiveObjC,//RAC
     ListModelTypeReactiveObjCLogin,//RAC Login
+    ListModelTypeScore,//评分只是展示
     ListModelTypeTest,//测试页面
+    
     
 };
 

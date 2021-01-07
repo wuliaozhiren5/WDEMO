@@ -78,6 +78,7 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 //评分
 #import "ScoreView.h"
+#import "ScoreViewController.h"
 
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
@@ -132,6 +133,8 @@
     
     
     NSArray * array = @[
+        
+        [ListModel initWithTitle:@"ScoreView" detail:@"评分只是展示ScoreView" type:ListModelTypeScore],
         [ListModel initWithTitle:@"TagList1" detail:@"瀑布流" type:ListModelTypeTagList1],
         [ListModel initWithTitle:@"TagList2" detail:@"瀑布流优化" type:ListModelTypeTagList2],
         [ListModel initWithTitle:@"3DTouch" detail:@"3DTouch" type:ListModelType3DTouch],
@@ -240,18 +243,7 @@
     //            NSLog(@"23423--------");
     //        }
     //    });
-    
-    
-    //评分ScoreView
-    ScoreView *scoreView = [[ScoreView alloc] initWithFrame:CGRectMake(0, 200, 200, 40)];
-    [scoreView createScoreViewWithCount:0 width:0 height:0 spacing:0];
-    [scoreView createScoreViewWithCount:10 width:20 height:20 spacing:10];
-    [self.view addSubview:scoreView];
-    [scoreView score:1.9];
-    [scoreView score:1.9];
-    [scoreView score:2];
- 
-   
+     
     
 //    //展示gif
 //    [self testGIF];
@@ -260,8 +252,7 @@
 //    //json 动画
 //    [self LOTAnimation];
 //    //房主
-//    [self createRoomOwnimage];
- 
+//    [self createRoomOwnimage]; 
 }
 
 //房主
@@ -605,6 +596,12 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)clickScore {
+    //评分
+    ScoreViewController *vc= [[ScoreViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)clickTest {
     //横向滚动的collectionView
     TestViewController *vc= [[TestViewController alloc]init];
@@ -821,6 +818,11 @@
         case ListModelTypeReactiveObjCLogin:
         {
             [self clickReactiveObjCLogin];
+        }
+            break;
+        case ListModelTypeScore:
+        {
+            [self clickScore];
         }
             break;
         case ListModelTypeTest:
