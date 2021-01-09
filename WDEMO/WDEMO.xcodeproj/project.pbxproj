@@ -64,6 +64,10 @@
 		F50D6D7525A9580D00B8C415 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D7425A9580D00B8C415 /* SearchViewController.m */; };
 		F50D6D8025A9581B00B8C415 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D7F25A9581B00B8C415 /* SearchResultViewController.m */; };
 		F50D6D8625A95AD300B8C415 /* 瀑布流.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D8525A95AD300B8C415 /* 瀑布流.md */; };
+		F50D6D9125A9618300B8C415 /* 首页PageController.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9025A9618300B8C415 /* 首页PageController.md */; };
+		F50D6D9725A9672200B8C415 /* 加载LoadingVIew.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9625A9672200B8C415 /* 加载LoadingVIew.md */; };
+		F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */; };
+		F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6DA225A9675700B8C415 /* 个人主页.md */; };
 		F51535EF259B2960007E3416 /* UserEditBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51535EE259B2960007E3416 /* UserEditBar.m */; };
 		F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */ = {isa = PBXBuildFile; fileRef = F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */; };
 		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
@@ -350,6 +354,10 @@
 		F50D6D7E25A9581B00B8C415 /* SearchResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
 		F50D6D7F25A9581B00B8C415 /* SearchResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		F50D6D8525A95AD300B8C415 /* 瀑布流.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "瀑布流.md"; sourceTree = "<group>"; };
+		F50D6D9025A9618300B8C415 /* 首页PageController.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "首页PageController.md"; sourceTree = "<group>"; };
+		F50D6D9625A9672200B8C415 /* 加载LoadingVIew.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "加载LoadingVIew.md"; sourceTree = "<group>"; };
+		F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "广告banner无限滚动.md"; sourceTree = "<group>"; };
+		F50D6DA225A9675700B8C415 /* 个人主页.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "个人主页.md"; sourceTree = "<group>"; };
 		F51535ED259B2960007E3416 /* UserEditBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserEditBar.h; sourceTree = "<group>"; };
 		F51535EE259B2960007E3416 /* UserEditBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserEditBar.m; sourceTree = "<group>"; };
 		F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "URLencode与URLdecode.md"; sourceTree = "<group>"; };
@@ -725,13 +733,13 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F53FFE5F259DA1D600ABE946 /* 加载LoadingVIew */,
+				F5B95DFB25A5EA5B00911FF8 /* 个人主页 */,
+				F5B95DFA25A5EA3C00911FF8 /* 广告banner无限滚动 */,
+				F50D6D8F25A9613000B8C415 /* 首页PageController */,
+				F5B95DF925A5EA2100911FF8 /* 瀑布流布局 */,
 				F50D6D7225A957C000B8C415 /* 搜索页面 */,
 				F50D6D6225A94E9500B8C415 /* 全选编辑页面 */,
-				F5B95DFC25A5EA6300911FF8 /* xxx */,
-				F5B95DFB25A5EA5B00911FF8 /* 个人主页 */,
-				F5B95DFA25A5EA3C00911FF8 /* 广告无限滚动 */,
-				F5B95DF925A5EA2100911FF8 /* 瀑布流布局 */,
-				F53FFE5F259DA1D600ABE946 /* 加载LoadingVIew */,
 				F51DC311259C5D600079AFC8 /* URLencodeURLdecode */,
 				F51535EC259B292B007E3416 /* 全选删除EditBar */,
 				F55E5B58258C589400C1DECD /* 评分只是展示ScoreView */,
@@ -948,6 +956,14 @@
 			path = "搜索页面";
 			sourceTree = "<group>";
 		};
+		F50D6D8F25A9613000B8C415 /* 首页PageController */ = {
+			isa = PBXGroup;
+			children = (
+				F50D6D9025A9618300B8C415 /* 首页PageController.md */,
+			);
+			path = "首页PageController";
+			sourceTree = "<group>";
+		};
 		F51535EC259B292B007E3416 /* 全选删除EditBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -986,6 +1002,7 @@
 		F53FFE5F259DA1D600ABE946 /* 加载LoadingVIew */ = {
 			isa = PBXGroup;
 			children = (
+				F50D6D9625A9672200B8C415 /* 加载LoadingVIew.md */,
 			);
 			path = "加载LoadingVIew";
 			sourceTree = "<group>";
@@ -1282,25 +1299,20 @@
 			path = "瀑布流布局";
 			sourceTree = "<group>";
 		};
-		F5B95DFA25A5EA3C00911FF8 /* 广告无限滚动 */ = {
+		F5B95DFA25A5EA3C00911FF8 /* 广告banner无限滚动 */ = {
 			isa = PBXGroup;
 			children = (
+				F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */,
 			);
-			path = "广告无限滚动";
+			path = "广告banner无限滚动";
 			sourceTree = "<group>";
 		};
 		F5B95DFB25A5EA5B00911FF8 /* 个人主页 */ = {
 			isa = PBXGroup;
 			children = (
+				F50D6DA225A9675700B8C415 /* 个人主页.md */,
 			);
 			path = "个人主页";
-			sourceTree = "<group>";
-		};
-		F5B95DFC25A5EA6300911FF8 /* xxx */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = xxx;
 			sourceTree = "<group>";
 		};
 		F5C0A21C2578BB49004EBD94 /* xibViewDemo */ = {
@@ -1686,6 +1698,7 @@
 				F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */,
 				F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */,
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
+				F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */,
 				F5872CFD257DFF5900341B57 /* 追剧引导-暗黑-循环.gif in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
 				F548D0E7256E2EEA00357E64 /* data.json in Resources */,
@@ -1694,6 +1707,7 @@
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
 				F548D0E6256E2EEA00357E64 /* amwayPlayerZan.json in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
+				F50D6D9725A9672200B8C415 /* 加载LoadingVIew.md in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
 				F5872CD8257DFAC600341B57 /* xib使用.md in Resources */,
 				F548D0D7256E2EEA00357E64 /* img_0.png in Resources */,
@@ -1703,6 +1717,8 @@
 				F548D0E2256E2EEA00357E64 /* amwayPlayerGuide_1.png in Resources */,
 				6783C8591FB941EE0040C02B /* Main.storyboard in Resources */,
 				F548D0E5256E2EEA00357E64 /* amwayPlayerGuide.json in Resources */,
+				F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */,
+				F50D6D9125A9618300B8C415 /* 首页PageController.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
