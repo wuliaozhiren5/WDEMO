@@ -79,7 +79,8 @@
 //评分
 #import "ScoreView.h"
 #import "ScoreViewController.h"
-
+//编辑页面
+#import "ListEditViewController.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -154,10 +155,11 @@
         [ListModel initWithTitle:@"DestroyAccount" detail:@"用户注销" type:ListModelTypeDestroyAccount],
         [ListModel initWithTitle:@"ReactiveObjC" detail:@"RAC" type:ListModelTypeReactiveObjC],
         [ListModel initWithTitle:@"登录" detail:@"RAC login" type:ListModelTypeReactiveObjCLogin],
+        
+        [ListModel initWithTitle:@"ListEdit" detail:@"列表编辑" type:ListModelTypeListEdit],
+
         [ListModel initWithTitle:@"Test" detail:@"测试" type:ListModelTypeTest],
-        
-        
-        
+
     ];
     self.data = array;
     
@@ -602,6 +604,13 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)clickListEdit {
+    //列表编辑
+    ListEditViewController *vc1= [[ListEditViewController alloc]init];
+    vc1.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc1 animated:YES];
+}
+
 - (void)clickTest {
     //横向滚动的collectionView
     TestViewController *vc= [[TestViewController alloc]init];
@@ -823,6 +832,11 @@
         case ListModelTypeScore:
         {
             [self clickScore];
+        }
+            break;
+        case ListModelTypeListEdit:
+        {
+            [self clickListEdit];
         }
             break;
         case ListModelTypeTest:

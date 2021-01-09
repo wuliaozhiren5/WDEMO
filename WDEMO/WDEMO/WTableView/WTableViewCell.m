@@ -129,7 +129,7 @@
         _selectBtn.hidden = YES;
         [_selectBtn setImage:[UIImage imageNamed:@"ic_common_checkbox_selected"] forState:UIControlStateSelected];
         [_selectBtn setImage:[UIImage imageNamed:@"ic_common_checkbox"] forState:UIControlStateNormal];
-        
+        _selectBtn.userInteractionEnabled = NO;
         [self.contentView addSubview:_selectBtn];
     }
     return _selectBtn;
