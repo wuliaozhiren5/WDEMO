@@ -81,6 +81,8 @@
 #import "ScoreViewController.h"
 //编辑页面
 #import "ListEditViewController.h"
+//搜索
+#import "SearchViewController.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -110,6 +112,7 @@
     self.title = @"首页";
     //    [self clickChat];
     //    [self clickWebView];
+    
     //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
     //    self.edgesForExtendedLayout = UIRectEdgeNone;
@@ -155,11 +158,11 @@
         [ListModel initWithTitle:@"DestroyAccount" detail:@"用户注销" type:ListModelTypeDestroyAccount],
         [ListModel initWithTitle:@"ReactiveObjC" detail:@"RAC" type:ListModelTypeReactiveObjC],
         [ListModel initWithTitle:@"登录" detail:@"RAC login" type:ListModelTypeReactiveObjCLogin],
-        
         [ListModel initWithTitle:@"ListEdit" detail:@"列表编辑" type:ListModelTypeListEdit],
-
+        [ListModel initWithTitle:@"Search" detail:@"搜索" type:ListModelTypeSearch],
+        [ListModel initWithTitle:@"WKWebView" detail:@"网页" type:ListModelTypeWebView],
+ 
         [ListModel initWithTitle:@"Test" detail:@"测试" type:ListModelTypeTest],
-
     ];
     self.data = array;
     
@@ -593,8 +596,13 @@
 
 - (void)clickReactiveObjCLogin {
     //    RACLoginViewController *vc= [[RACLoginViewController alloc]init];
-    
     RACViewController *vc= [[RACViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)clickWebView {
+    WebVC *vc= [[WebVC alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -606,19 +614,21 @@
 
 - (void)clickListEdit {
     //列表编辑
-    ListEditViewController *vc1= [[ListEditViewController alloc]init];
-    vc1.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc1 animated:YES];
+    ListEditViewController *vc= [[ListEditViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickSearch {
+    //列表编辑
+    SearchViewController *vc= [[SearchViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)clickTest {
     //横向滚动的collectionView
     TestViewController *vc= [[TestViewController alloc]init];
-    [self.navigationController pushViewController:vc animated:YES];
-}
-
--(void)clickWebView {
-    WebVC *vc= [[WebVC alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -829,6 +839,11 @@
             [self clickReactiveObjCLogin];
         }
             break;
+        case ListModelTypeWebView:
+        {
+            [self clickWebView];
+        }
+            break;
         case ListModelTypeScore:
         {
             [self clickScore];
@@ -837,6 +852,11 @@
         case ListModelTypeListEdit:
         {
             [self clickListEdit];
+        }
+            break;
+        case ListModelTypeSearch:
+        {
+            [self clickSearch];
         }
             break;
         case ListModelTypeTest:

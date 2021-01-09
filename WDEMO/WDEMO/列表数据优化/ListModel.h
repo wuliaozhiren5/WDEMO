@@ -31,7 +31,9 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeReactiveObjCLogin,//RAC Login
     ListModelTypeScore,//评分只是展示
     ListModelTypeListEdit,//列表编辑
-
+    ListModelTypeSearch,//搜索
+    ListModelTypeWebView,//网页
+    
     ListModelTypeTest,//测试页面
 };
 

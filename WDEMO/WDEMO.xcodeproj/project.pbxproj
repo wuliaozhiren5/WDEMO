@@ -61,6 +61,9 @@
 		F507113324E2A6BE00AD5306 /* MYCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113224E2A6BE00AD5306 /* MYCar.m */; };
 		F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113624E2AB9400AD5306 /* IsEqualViewController.m */; };
 		F50D6D6525A94EBE00B8C415 /* ListEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D6425A94EBE00B8C415 /* ListEditViewController.m */; };
+		F50D6D7525A9580D00B8C415 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D7425A9580D00B8C415 /* SearchViewController.m */; };
+		F50D6D8025A9581B00B8C415 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D7F25A9581B00B8C415 /* SearchResultViewController.m */; };
+		F50D6D8625A95AD300B8C415 /* 瀑布流.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D8525A95AD300B8C415 /* 瀑布流.md */; };
 		F51535EF259B2960007E3416 /* UserEditBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51535EE259B2960007E3416 /* UserEditBar.m */; };
 		F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */ = {isa = PBXBuildFile; fileRef = F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */; };
 		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
@@ -342,6 +345,11 @@
 		F507113624E2AB9400AD5306 /* IsEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsEqualViewController.m; sourceTree = "<group>"; };
 		F50D6D6325A94EBE00B8C415 /* ListEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListEditViewController.h; sourceTree = "<group>"; };
 		F50D6D6425A94EBE00B8C415 /* ListEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListEditViewController.m; sourceTree = "<group>"; };
+		F50D6D7325A9580D00B8C415 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		F50D6D7425A9580D00B8C415 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		F50D6D7E25A9581B00B8C415 /* SearchResultViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultViewController.h; sourceTree = "<group>"; };
+		F50D6D7F25A9581B00B8C415 /* SearchResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
+		F50D6D8525A95AD300B8C415 /* 瀑布流.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "瀑布流.md"; sourceTree = "<group>"; };
 		F51535ED259B2960007E3416 /* UserEditBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserEditBar.h; sourceTree = "<group>"; };
 		F51535EE259B2960007E3416 /* UserEditBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserEditBar.m; sourceTree = "<group>"; };
 		F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "URLencode与URLdecode.md"; sourceTree = "<group>"; };
@@ -717,6 +725,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F50D6D7225A957C000B8C415 /* 搜索页面 */,
 				F50D6D6225A94E9500B8C415 /* 全选编辑页面 */,
 				F5B95DFC25A5EA6300911FF8 /* xxx */,
 				F5B95DFB25A5EA5B00911FF8 /* 个人主页 */,
@@ -930,6 +939,17 @@
 				F50D6D6425A94EBE00B8C415 /* ListEditViewController.m */,
 			);
 			path = "全选编辑页面";
+			sourceTree = "<group>";
+		};
+		F50D6D7225A957C000B8C415 /* 搜索页面 */ = {
+			isa = PBXGroup;
+			children = (
+				F50D6D7325A9580D00B8C415 /* SearchViewController.h */,
+				F50D6D7425A9580D00B8C415 /* SearchViewController.m */,
+				F50D6D7E25A9581B00B8C415 /* SearchResultViewController.h */,
+				F50D6D7F25A9581B00B8C415 /* SearchResultViewController.m */,
+			);
+			path = "搜索页面";
 			sourceTree = "<group>";
 		};
 		F51535EC259B292B007E3416 /* 全选删除EditBar */ = {
@@ -1257,6 +1277,7 @@
 		F5B95DF925A5EA2100911FF8 /* 瀑布流 */ = {
 			isa = PBXGroup;
 			children = (
+				F50D6D8525A95AD300B8C415 /* 瀑布流.md */,
 			);
 			path = "瀑布流";
 			sourceTree = "<group>";
@@ -1676,6 +1697,7 @@
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
 				F5872CD8257DFAC600341B57 /* xib使用.md in Resources */,
 				F548D0D7256E2EEA00357E64 /* img_0.png in Resources */,
+				F50D6D8625A95AD300B8C415 /* 瀑布流.md in Resources */,
 				F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */,
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
 				F548D0E2256E2EEA00357E64 /* amwayPlayerGuide_1.png in Resources */,
@@ -1759,6 +1781,7 @@
 				F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */,
 				F5200DCB2531536E004637DD /* BaseViewController.m in Sources */,
 				677BADD71FC412A700E7A3FF /* WConstants.m in Sources */,
+				F50D6D8025A9581B00B8C415 /* SearchResultViewController.m in Sources */,
 				F553E14424CA82E700DA5625 /* ChatKitConfig.m in Sources */,
 				F5A8898524F605C600DB73ED /* OrderViewController.m in Sources */,
 				F5609CA22502194C00A13C15 /* AllScreenViewController.m in Sources */,
@@ -1859,6 +1882,7 @@
 				F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */,
 				F5A889BC24F65D9000DB73ED /* LoginViewModel.m in Sources */,
 				F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */,
+				F50D6D7525A9580D00B8C415 /* SearchViewController.m in Sources */,
 				F5609C9F250216BE00A13C15 /* RegisterSetPasswordVC.m in Sources */,
 				F5A763C6253D956800A76C6E /* Attributes.m in Sources */,
 				F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */,
