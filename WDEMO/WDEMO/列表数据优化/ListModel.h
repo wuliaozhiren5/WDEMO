@@ -12,11 +12,11 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeNone = 0,
     ListModelTypeTagList1,
     ListModelTypeTagList2,
-    ListModelType3DTouch,
-    ListModelTypeSystemAlter,
+    ListModelType3DTouch,//3DTouch
+    ListModelTypeSystemAlter,//SystemAlter
     ListModelTypeTableView,
     ListModelTypeCollectionView,
-    ListModelTypePassValue,
+    ListModelTypePassValue,//传值
     ListModelTypeLanguage,//语言切换
     ListModelTypeFont,//字体
     ListModelTypeTwoCollectionList,//上下一对一联动的Collection 
@@ -34,6 +34,11 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeSearch,//搜索
     ListModelTypeWebView,//网页
     
+//    ListModelTypeLoadingView,
+//    ListModelTypeBanner,
+//    ListModelTypePageController,
+//    ListModelTypePerson,
+
     ListModelTypeTest,//测试页面
 };
 

@@ -65,7 +65,7 @@
 		F50D6D8025A9581B00B8C415 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D7F25A9581B00B8C415 /* SearchResultViewController.m */; };
 		F50D6D8625A95AD300B8C415 /* 瀑布流.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D8525A95AD300B8C415 /* 瀑布流.md */; };
 		F50D6D9125A9618300B8C415 /* 首页PageController.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9025A9618300B8C415 /* 首页PageController.md */; };
-		F50D6D9725A9672200B8C415 /* 加载LoadingVIew.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9625A9672200B8C415 /* 加载LoadingVIew.md */; };
+		F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9625A9672200B8C415 /* 加载LoadingView.md */; };
 		F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */; };
 		F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6DA225A9675700B8C415 /* 个人主页.md */; };
 		F51535EF259B2960007E3416 /* UserEditBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51535EE259B2960007E3416 /* UserEditBar.m */; };
@@ -355,7 +355,7 @@
 		F50D6D7F25A9581B00B8C415 /* SearchResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultViewController.m; sourceTree = "<group>"; };
 		F50D6D8525A95AD300B8C415 /* 瀑布流.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "瀑布流.md"; sourceTree = "<group>"; };
 		F50D6D9025A9618300B8C415 /* 首页PageController.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "首页PageController.md"; sourceTree = "<group>"; };
-		F50D6D9625A9672200B8C415 /* 加载LoadingVIew.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "加载LoadingVIew.md"; sourceTree = "<group>"; };
+		F50D6D9625A9672200B8C415 /* 加载LoadingView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "加载LoadingView.md"; sourceTree = "<group>"; };
 		F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "广告banner无限滚动.md"; sourceTree = "<group>"; };
 		F50D6DA225A9675700B8C415 /* 个人主页.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "个人主页.md"; sourceTree = "<group>"; };
 		F51535ED259B2960007E3416 /* UserEditBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserEditBar.h; sourceTree = "<group>"; };
@@ -733,7 +733,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
-				F53FFE5F259DA1D600ABE946 /* 加载LoadingVIew */,
+				F53FFE5F259DA1D600ABE946 /* 加载LoadingView */,
 				F5B95DFB25A5EA5B00911FF8 /* 个人主页 */,
 				F5B95DFA25A5EA3C00911FF8 /* 广告banner无限滚动 */,
 				F50D6D8F25A9613000B8C415 /* 首页PageController */,
@@ -999,12 +999,12 @@
 			path = ChatController;
 			sourceTree = "<group>";
 		};
-		F53FFE5F259DA1D600ABE946 /* 加载LoadingVIew */ = {
+		F53FFE5F259DA1D600ABE946 /* 加载LoadingView */ = {
 			isa = PBXGroup;
 			children = (
-				F50D6D9625A9672200B8C415 /* 加载LoadingVIew.md */,
+				F50D6D9625A9672200B8C415 /* 加载LoadingView.md */,
 			);
-			path = "加载LoadingVIew";
+			path = "加载LoadingView";
 			sourceTree = "<group>";
 		};
 		F548D0C0256E2EE900357E64 /* 追剧-动效-11-25 */ = {
@@ -1707,7 +1707,7 @@
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
 				F548D0E6256E2EEA00357E64 /* amwayPlayerZan.json in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
-				F50D6D9725A9672200B8C415 /* 加载LoadingVIew.md in Resources */,
+				F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
 				F5872CD8257DFAC600341B57 /* xib使用.md in Resources */,
 				F548D0D7256E2EEA00357E64 /* img_0.png in Resources */,
