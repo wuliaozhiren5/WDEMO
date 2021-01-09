@@ -152,6 +152,14 @@ static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
 }
 
 /**
+ * 内容的高度
+ */
+- (CGSize)collectionViewContentSize
+{
+    return CGSizeMake(self.collectionView.frame.size.width, self.contentHeight);
+}
+
+/**
  * 返回indexPath位置cell对应的布局属性
  */
 - (UICollectionViewLayoutAttributes *)layoutAttributesForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -221,14 +229,10 @@ static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
 }
 
 /**
- * 内容的高度
+ * 返回indexPath位置header和footer对应的布局属性
  */
-- (CGSize)collectionViewContentSize {
-    return CGSizeMake(self.collectionView.frame.size.width, self.contentHeight);
-}
-
-- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath {
-    
+- (UICollectionViewLayoutAttributes *)layoutAttributesForSupplementaryViewOfKind:(NSString *)elementKind atIndexPath:(NSIndexPath *)indexPath
+{
     UICollectionViewLayoutAttributes *attributes = [UICollectionViewLayoutAttributes layoutAttributesForSupplementaryViewOfKind:elementKind withIndexPath:indexPath];
     
     if ([elementKind isEqualToString:UICollectionElementKindSectionHeader]) {

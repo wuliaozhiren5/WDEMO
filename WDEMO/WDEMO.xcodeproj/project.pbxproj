@@ -730,7 +730,7 @@
 				F5B95DFC25A5EA6300911FF8 /* xxx */,
 				F5B95DFB25A5EA5B00911FF8 /* 个人主页 */,
 				F5B95DFA25A5EA3C00911FF8 /* 广告无限滚动 */,
-				F5B95DF925A5EA2100911FF8 /* 瀑布流 */,
+				F5B95DF925A5EA2100911FF8 /* 瀑布流布局 */,
 				F53FFE5F259DA1D600ABE946 /* 加载LoadingVIew */,
 				F51DC311259C5D600079AFC8 /* URLencodeURLdecode */,
 				F51535EC259B292B007E3416 /* 全选删除EditBar */,
@@ -1274,12 +1274,12 @@
 			path = InputController;
 			sourceTree = "<group>";
 		};
-		F5B95DF925A5EA2100911FF8 /* 瀑布流 */ = {
+		F5B95DF925A5EA2100911FF8 /* 瀑布流布局 */ = {
 			isa = PBXGroup;
 			children = (
 				F50D6D8525A95AD300B8C415 /* 瀑布流.md */,
 			);
-			path = "瀑布流";
+			path = "瀑布流布局";
 			sourceTree = "<group>";
 		};
 		F5B95DFA25A5EA3C00911FF8 /* 广告无限滚动 */ = {
