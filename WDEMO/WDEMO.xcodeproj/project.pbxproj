@@ -836,10 +836,6 @@
 				6783C8851FB944B80040C02B /* LZTagListCell.m */,
 				6783C88A1FB944B80040C02B /* LZTagSegmentedControl.h */,
 				6783C88B1FB944B80040C02B /* LZTagSegmentedControl.m */,
-				6783C88C1FB944B80040C02B /* CustomLayout.h */,
-				6783C88D1FB944B80040C02B /* CustomLayout.m */,
-				6783C88E1FB944B80040C02B /* WaterFlowLayout.h */,
-				6783C88F1FB944B80040C02B /* WaterFlowLayout.m */,
 				F5668FAC24C6C0B9007D452E /* WCollectionViewController.h */,
 				F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */,
 				F5668FAF24C6C11C007D452E /* WCollectionViewCell.h */,
@@ -1278,6 +1274,10 @@
 			isa = PBXGroup;
 			children = (
 				F50D6D8525A95AD300B8C415 /* 瀑布流.md */,
+				6783C88C1FB944B80040C02B /* CustomLayout.h */,
+				6783C88D1FB944B80040C02B /* CustomLayout.m */,
+				6783C88E1FB944B80040C02B /* WaterFlowLayout.h */,
+				6783C88F1FB944B80040C02B /* WaterFlowLayout.m */,
 			);
 			path = "瀑布流布局";
 			sourceTree = "<group>";
