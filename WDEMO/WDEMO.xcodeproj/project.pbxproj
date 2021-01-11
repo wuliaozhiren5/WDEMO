@@ -111,6 +111,8 @@
 		F5609CA92502235400A13C15 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA82502235300A13C15 /* BaseTabBarController.m */; };
 		F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */ = {isa = PBXBuildFile; fileRef = F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */; };
 		F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CAE25024E2600A13C15 /* AllScreenViewController.m */; };
+		F563DABE25AC24B80079474B /* ScorllBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DABD25AC24B80079474B /* ScorllBannerViewController.m */; };
+		F563DAC525AC24E20079474B /* SearchResultSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DAC425AC24E20079474B /* SearchResultSubViewController.m */; };
 		F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F564D5E824F7550C00A02FA2 /* RACViewController.m */; };
 		F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */; };
 		F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB024C6C11C007D452E /* WCollectionViewCell.m */; };
@@ -432,6 +434,10 @@
 		F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "暗黑模式 深色模式.md"; sourceTree = "<group>"; };
 		F5609CAE25024E2600A13C15 /* AllScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllScreenViewController.m; sourceTree = "<group>"; };
 		F5609CAF25024E2600A13C15 /* AllScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllScreenViewController.h; sourceTree = "<group>"; };
+		F563DABC25AC24B80079474B /* ScorllBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScorllBannerViewController.h; sourceTree = "<group>"; };
+		F563DABD25AC24B80079474B /* ScorllBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScorllBannerViewController.m; sourceTree = "<group>"; };
+		F563DAC325AC24E20079474B /* SearchResultSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultSubViewController.h; sourceTree = "<group>"; };
+		F563DAC425AC24E20079474B /* SearchResultSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultSubViewController.m; sourceTree = "<group>"; };
 		F564D5E724F7550C00A02FA2 /* RACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewController.h; sourceTree = "<group>"; };
 		F564D5E824F7550C00A02FA2 /* RACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
 		F5668FAC24C6C0B9007D452E /* WCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewController.h; sourceTree = "<group>"; };
@@ -952,6 +958,8 @@
 				F50D6D7425A9580D00B8C415 /* SearchViewController.m */,
 				F50D6D7E25A9581B00B8C415 /* SearchResultViewController.h */,
 				F50D6D7F25A9581B00B8C415 /* SearchResultViewController.m */,
+				F563DAC325AC24E20079474B /* SearchResultSubViewController.h */,
+				F563DAC425AC24E20079474B /* SearchResultSubViewController.m */,
 			);
 			path = "搜索页面";
 			sourceTree = "<group>";
@@ -1303,6 +1311,8 @@
 			isa = PBXGroup;
 			children = (
 				F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */,
+				F563DABC25AC24B80079474B /* ScorllBannerViewController.h */,
+				F563DABD25AC24B80079474B /* ScorllBannerViewController.m */,
 			);
 			path = "广告banner无限滚动";
 			sourceTree = "<group>";
@@ -1913,6 +1923,8 @@
 				F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,
+				F563DABE25AC24B80079474B /* ScorllBannerViewController.m in Sources */,
+				F563DAC525AC24E20079474B /* SearchResultSubViewController.m in Sources */,
 				F5C0A20425788B92004EBD94 /* UIColor+color.m in Sources */,
 				F53F669B24FE484700770055 /* NSString+Password.m in Sources */,
 				F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */,

@@ -1,23 +1,22 @@
 //
-//  BaseViewController.m
+//  ScorllBannerViewController.m
 //  WDEMO
 //
-//  Created by rrtv on 2020/10/10.
-//  Copyright © 2020 wwc. All rights reserved.
+//  Created by rrtv on 2021/1/11.
+//  Copyright © 2021 wwc. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ScorllBannerViewController.h"
 
-@interface BaseViewController ()
+@interface ScorllBannerViewController ()
 
 @end
 
-@implementation BaseViewController
+@implementation ScorllBannerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 /*

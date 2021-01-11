@@ -1,23 +1,22 @@
 //
-//  BaseViewController.m
+//  SearchResultSubViewController.m
 //  WDEMO
 //
-//  Created by rrtv on 2020/10/10.
-//  Copyright © 2020 wwc. All rights reserved.
+//  Created by rrtv on 2021/1/11.
+//  Copyright © 2021 wwc. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "SearchResultSubViewController.h"
 
-@interface BaseViewController ()
+@interface SearchResultSubViewController ()
 
 @end
 
-@implementation BaseViewController
+@implementation SearchResultSubViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 /*
