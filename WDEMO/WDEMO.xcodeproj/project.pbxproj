@@ -113,8 +113,16 @@
 		F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CAE25024E2600A13C15 /* AllScreenViewController.m */; };
 		F563DABE25AC24B80079474B /* ScorllBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DABD25AC24B80079474B /* ScorllBannerViewController.m */; };
 		F563DAC525AC24E20079474B /* SearchResultSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DAC425AC24E20079474B /* SearchResultSubViewController.m */; };
+		F563DADA25AC26790079474B /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DACD25AC26790079474B /* WMPageController.m */; };
+		F563DADB25AC26790079474B /* UIViewController+WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DACE25AC26790079474B /* UIViewController+WMPageController.m */; };
+		F563DADC25AC26790079474B /* WMMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DAD425AC26790079474B /* WMMenuItem.m */; };
+		F563DADD25AC26790079474B /* WMScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DAD525AC26790079474B /* WMScrollView.m */; };
+		F563DADE25AC26790079474B /* WMMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DAD625AC26790079474B /* WMMenuView.m */; };
+		F563DADF25AC26790079474B /* WMProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DAD725AC26790079474B /* WMProgressView.m */; };
+		F563DAE625AC27020079474B /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DAE525AC27020079474B /* HomePageViewController.m */; };
+		F563DAF525AC2C2C0079474B /* WMCustomizedPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DAF325AC2C2C0079474B /* WMCustomizedPageController.m */; };
 		F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F564D5E824F7550C00A02FA2 /* RACViewController.m */; };
-		F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */; };
+		F5668FAE24C6C0B9007D452E /* HorizontalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FAD24C6C0B9007D452E /* HorizontalCollectionViewController.m */; };
 		F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB024C6C11C007D452E /* WCollectionViewCell.m */; };
 		F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */; };
 		F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D225008B6A004991D3 /* PasswordVC.m */; };
@@ -139,6 +147,7 @@
 		F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFA257DFF5900341B57 /* 追剧引导-暗黑-一次.gif */; };
 		F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */; };
 		F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */ = {isa = PBXBuildFile; fileRef = F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */; };
+		F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */; };
 		F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */; };
 		F5A763BF253D952D00A76C6E /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A763BE253D952D00A76C6E /* Book.m */; };
 		F5A763C6253D956800A76C6E /* Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A763C5253D956800A76C6E /* Attributes.m */; };
@@ -438,10 +447,26 @@
 		F563DABD25AC24B80079474B /* ScorllBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScorllBannerViewController.m; sourceTree = "<group>"; };
 		F563DAC325AC24E20079474B /* SearchResultSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultSubViewController.h; sourceTree = "<group>"; };
 		F563DAC425AC24E20079474B /* SearchResultSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultSubViewController.m; sourceTree = "<group>"; };
+		F563DACD25AC26790079474B /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
+		F563DACE25AC26790079474B /* UIViewController+WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+WMPageController.m"; sourceTree = "<group>"; };
+		F563DAD025AC26790079474B /* WMScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMScrollView.h; sourceTree = "<group>"; };
+		F563DAD125AC26790079474B /* WMMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuItem.h; sourceTree = "<group>"; };
+		F563DAD225AC26790079474B /* WMMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMMenuView.h; sourceTree = "<group>"; };
+		F563DAD325AC26790079474B /* WMProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMProgressView.h; sourceTree = "<group>"; };
+		F563DAD425AC26790079474B /* WMMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuItem.m; sourceTree = "<group>"; };
+		F563DAD525AC26790079474B /* WMScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMScrollView.m; sourceTree = "<group>"; };
+		F563DAD625AC26790079474B /* WMMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMMenuView.m; sourceTree = "<group>"; };
+		F563DAD725AC26790079474B /* WMProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMProgressView.m; sourceTree = "<group>"; };
+		F563DAD825AC26790079474B /* WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMPageController.h; sourceTree = "<group>"; };
+		F563DAD925AC26790079474B /* UIViewController+WMPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WMPageController.h"; sourceTree = "<group>"; };
+		F563DAE425AC27020079474B /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		F563DAE525AC27020079474B /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		F563DAF325AC2C2C0079474B /* WMCustomizedPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMCustomizedPageController.m; sourceTree = "<group>"; };
+		F563DAF425AC2C2C0079474B /* WMCustomizedPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMCustomizedPageController.h; sourceTree = "<group>"; };
 		F564D5E724F7550C00A02FA2 /* RACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewController.h; sourceTree = "<group>"; };
 		F564D5E824F7550C00A02FA2 /* RACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
-		F5668FAC24C6C0B9007D452E /* WCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewController.h; sourceTree = "<group>"; };
-		F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCollectionViewController.m; sourceTree = "<group>"; };
+		F5668FAC24C6C0B9007D452E /* HorizontalCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HorizontalCollectionViewController.h; sourceTree = "<group>"; };
+		F5668FAD24C6C0B9007D452E /* HorizontalCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HorizontalCollectionViewController.m; sourceTree = "<group>"; };
 		F5668FAF24C6C11C007D452E /* WCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WCollectionViewCell.h; sourceTree = "<group>"; };
 		F5668FB024C6C11C007D452E /* WCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WCollectionViewCell.m; sourceTree = "<group>"; };
 		F5668FB824C6DB69007D452E /* CpuMemoryUsage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CpuMemoryUsage.h; sourceTree = "<group>"; };
@@ -483,6 +508,8 @@
 		F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "追剧引导-白色-一次.gif"; sourceTree = "<group>"; };
 		F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+buttonType.m"; sourceTree = "<group>"; };
 		F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+buttonType.h"; sourceTree = "<group>"; };
+		F5A4890A25AC4CCB0046B52C /* VerticalCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalCollectionViewController.h; sourceTree = "<group>"; };
+		F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionViewController.m; sourceTree = "<group>"; };
 		F5A51F3524FC98430054A4DD /* PasswordTextFieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextFieldView.h; sourceTree = "<group>"; };
 		F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordTextFieldView.m; sourceTree = "<group>"; };
 		F5A763BD253D952D00A76C6E /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
@@ -739,84 +766,83 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
-				F53FFE5F259DA1D600ABE946 /* 加载LoadingView */,
+				673AE91F1FC7F1A50002D304 /* 3DTouch */,
+				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 深色模式 */,
+				F5F346F124ED596C006AAEA3 /* 常量 */,
+				F5CED5D325749B33002CF42C /* 单例 */,
 				F5B95DFB25A5EA5B00911FF8 /* 个人主页 */,
 				F5B95DFA25A5EA3C00911FF8 /* 广告banner无限滚动 */,
-				F50D6D8F25A9613000B8C415 /* 首页PageController */,
-				F5B95DF925A5EA2100911FF8 /* 瀑布流布局 */,
-				F50D6D7225A957C000B8C415 /* 搜索页面 */,
-				F50D6D6225A94E9500B8C415 /* 全选编辑页面 */,
-				F51DC311259C5D600079AFC8 /* URLencodeURLdecode */,
-				F51535EC259B292B007E3416 /* 全选删除EditBar */,
-				F55E5B58258C589400C1DECD /* 评分只是展示ScoreView */,
-				F5872CAF257DDD0300341B57 /* 组件化解藕 */,
-				F5C0A21C2578BB49004EBD94 /* xibViewDemo */,
-				F5CED5D325749B33002CF42C /* 单例 */,
-				F548D0C0256E2EE900357E64 /* 追剧-动效-11-25 */,
-				F5D138BE256795FF008CC29A /* 提示的条 */,
-				F5A763BC253D94D900A76C6E /* YYmodel测试 */,
-				F5200DB22531526D004637DD /* 贴吧 */,
-				F5E4785B25301154001AE2AE /* WebView */,
-				F5609CAB2502236700A13C15 /* BaseController */,
-				F5609CA32502195A00A13C15 /* 屏幕旋转 */,
-				F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */,
-				F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */,
-				F53F668A24FE2E2200770055 /* UIImage+GradientColor.h */,
-				F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */,
-				F5A51F2B24FC952C0054A4DD /* Password */,
-				F5F346F324ED59CB006AAEA3 /* ReactiveObjC */,
 				F5F346F224ED5970006AAEA3 /* 宏 */,
-				F5F346F124ED596C006AAEA3 /* 常量 */,
-				F5F346F024ED5964006AAEA3 /* 枚举 */,
-				F581D21524EAB65A008AC679 /* ScrollView */,
-				F5CE3D1424E6901700B20C80 /* 注销 */,
-				F507113424E2AA6D00AD5306 /* 判断对象是否相等 */,
+				F53FFE5F259DA1D600ABE946 /* 加载LoadingView */,
 				F5C7261524E1252B00B16639 /* 列表数据优化 */,
-				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 深色模式 */,
-				F5D0FBFC24E0E6A300CAADF8 /* Mask */,
+				F5F346F024ED5964006AAEA3 /* 枚举 */,
+				F507113424E2AA6D00AD5306 /* 判断对象是否相等 */,
+				F55E5B58258C589400C1DECD /* 评分只是展示ScoreView */,
+				F5609CA32502195A00A13C15 /* 屏幕旋转 */,
+				F5B95DF925A5EA2100911FF8 /* 瀑布流布局 */,
+				F50D6D6225A94E9500B8C415 /* 全选编辑页面 */,
+				F50D6D8F25A9613000B8C415 /* 首页PageController */,
+				F50D6D7225A957C000B8C415 /* 搜索页面 */,
+				F5D138BE256795FF008CC29A /* 提示的条 */,
+				F5200DB22531526D004637DD /* 贴吧 */,
 				F5D0FBFB24E0E65500CAADF8 /* 系统富文本 */,
-				F5F4F10024D3BF23007DB7F3 /* YYText富文本YY富文本 */,
-				F57B529D24C7DEB100940696 /* Chat */,
-				F5668FB424C6D818007D452E /* CPU */,
-				A459C28824C1642B00A3B5FF /* Crash */,
-				A479987D24BAB2A80079F72D /* CollectionView */,
-				A4F2C08D24B97F27005922B1 /* TagLIst */,
 				67535E6C2390B8DF0009F882 /* 语言包 */,
+				F5CE3D1424E6901700B20C80 /* 注销 */,
+				F548D0C0256E2EE900357E64 /* 追剧-动效-11-25 */,
 				67535E6A2390B8DF0009F882 /* 字体 */,
-				67B7E5F12321185A00C494EF /* PassValue */,
+				F5872CAF257DDD0300341B57 /* 组件化解藕 */,
 				67AB47F6231E07C200C837BB /* AlertController */,
-				67303347210AED2F001471D8 /* CenterBar */,
-				673AE91F1FC7F1A50002D304 /* 3DTouch */,
-				6783C8831FB944B80040C02B /* WCollectionView */,
-				675852A5231D211000C5CF7E /* WTableView */,
 				6783C8511FB941EE0040C02B /* AppDelegate.h */,
 				6783C8521FB941EE0040C02B /* AppDelegate.m */,
-				6783C8541FB941EE0040C02B /* ViewController.h */,
-				6783C8551FB941EE0040C02B /* ViewController.m */,
-				F5A9F12824E3C12B00F611E6 /* TestViewController.h */,
-				F5A9F12924E3C12B00F611E6 /* TestViewController.m */,
-				F5A9F13724E3D44A00F611E6 /* SeeLivingBaseCell.h */,
-				F5A9F13824E3D44A00F611E6 /* SeeLivingBaseCell.m */,
-				F5A9F13A24E3EC2400F611E6 /* SeeLivingModel.h */,
-				F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */,
-				F5C7261924E1317B00B16639 /* ListModelCell.h */,
-				F5C7261A24E1317B00B16639 /* ListModelCell.m */,
-				A459C29224C174A300A3B5FF /* Plist.h */,
-				A459C29324C174A300A3B5FF /* Plist.m */,
-				A4F9DC1924D66049009FB2EA /* UIImage+size.h */,
-				A4F9DC1A24D66049009FB2EA /* UIImage+size.m */,
-				6783C8571FB941EE0040C02B /* Main.storyboard */,
 				6783C85A1FB941EE0040C02B /* Assets.xcassets */,
-				6783C85C1FB941EE0040C02B /* LaunchScreen.storyboard */,
-				6783C85F1FB941EE0040C02B /* Info.plist */,
-				6783C8601FB941EE0040C02B /* main.m */,
-				67535E832390C6560009F882 /* InfoPlist.strings */,
+				F5609CAB2502236700A13C15 /* BaseController */,
+				67303347210AED2F001471D8 /* CenterBar */,
+				F57B529D24C7DEB100940696 /* Chat */,
 				F5D54BFE2553F35400787EBB /* ChatBottomInputBarViewController.h */,
 				F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */,
 				F5D056F325594D5F008CC230 /* FullScreenChatBottomInputBarViewController.h */,
 				F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */,
 				F5D056FA25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.h */,
 				F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */,
+				A479987D24BAB2A80079F72D /* CollectionView */,
+				F5668FB424C6D818007D452E /* CPU */,
+				A459C28824C1642B00A3B5FF /* Crash */,
+				6783C85F1FB941EE0040C02B /* Info.plist */,
+				67535E832390C6560009F882 /* InfoPlist.strings */,
+				6783C85C1FB941EE0040C02B /* LaunchScreen.storyboard */,
+				F5C7261924E1317B00B16639 /* ListModelCell.h */,
+				F5C7261A24E1317B00B16639 /* ListModelCell.m */,
+				6783C8601FB941EE0040C02B /* main.m */,
+				6783C8571FB941EE0040C02B /* Main.storyboard */,
+				F5D0FBFC24E0E6A300CAADF8 /* Mask */,
+				67B7E5F12321185A00C494EF /* PassValue */,
+				F5A51F2B24FC952C0054A4DD /* Password */,
+				A459C29224C174A300A3B5FF /* Plist.h */,
+				A459C29324C174A300A3B5FF /* Plist.m */,
+				F5F346F324ED59CB006AAEA3 /* ReactiveObjC */,
+				F581D21524EAB65A008AC679 /* ScrollView */,
+				F5A9F13724E3D44A00F611E6 /* SeeLivingBaseCell.h */,
+				F5A9F13824E3D44A00F611E6 /* SeeLivingBaseCell.m */,
+				F5A9F13A24E3EC2400F611E6 /* SeeLivingModel.h */,
+				F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */,
+				A4F2C08D24B97F27005922B1 /* TagLIst */,
+				F5A9F12824E3C12B00F611E6 /* TestViewController.h */,
+				F5A9F12924E3C12B00F611E6 /* TestViewController.m */,
+				F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */,
+				F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */,
+				F53F668A24FE2E2200770055 /* UIImage+GradientColor.h */,
+				F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */,
+				A4F9DC1924D66049009FB2EA /* UIImage+size.h */,
+				A4F9DC1A24D66049009FB2EA /* UIImage+size.m */,
+				F51DC311259C5D600079AFC8 /* URLencodeURLdecode */,
+				6783C8541FB941EE0040C02B /* ViewController.h */,
+				6783C8551FB941EE0040C02B /* ViewController.m */,
+				6783C8831FB944B80040C02B /* WCollectionView */,
+				F5E4785B25301154001AE2AE /* WebView */,
+				675852A5231D211000C5CF7E /* WTableView */,
+				F5C0A21C2578BB49004EBD94 /* xibViewDemo */,
+				F5A763BC253D94D900A76C6E /* YYmodel测试 */,
+				F5F4F10024D3BF23007DB7F3 /* YYText富文本YY富文本 */,
 			);
 			path = WDEMO;
 			sourceTree = "<group>";
@@ -850,8 +876,10 @@
 				6783C8851FB944B80040C02B /* LZTagListCell.m */,
 				6783C88A1FB944B80040C02B /* LZTagSegmentedControl.h */,
 				6783C88B1FB944B80040C02B /* LZTagSegmentedControl.m */,
-				F5668FAC24C6C0B9007D452E /* WCollectionViewController.h */,
-				F5668FAD24C6C0B9007D452E /* WCollectionViewController.m */,
+				F5668FAC24C6C0B9007D452E /* HorizontalCollectionViewController.h */,
+				F5668FAD24C6C0B9007D452E /* HorizontalCollectionViewController.m */,
+				F5A4890A25AC4CCB0046B52C /* VerticalCollectionViewController.h */,
+				F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */,
 				F5668FAF24C6C11C007D452E /* WCollectionViewCell.h */,
 				F5668FB024C6C11C007D452E /* WCollectionViewCell.m */,
 			);
@@ -945,6 +973,8 @@
 		F50D6D6225A94E9500B8C415 /* 全选编辑页面 */ = {
 			isa = PBXGroup;
 			children = (
+				F51535ED259B2960007E3416 /* UserEditBar.h */,
+				F51535EE259B2960007E3416 /* UserEditBar.m */,
 				F50D6D6325A94EBE00B8C415 /* ListEditViewController.h */,
 				F50D6D6425A94EBE00B8C415 /* ListEditViewController.m */,
 			);
@@ -968,17 +998,13 @@
 			isa = PBXGroup;
 			children = (
 				F50D6D9025A9618300B8C415 /* 首页PageController.md */,
+				F563DAE425AC27020079474B /* HomePageViewController.h */,
+				F563DAE525AC27020079474B /* HomePageViewController.m */,
+				F563DAF425AC2C2C0079474B /* WMCustomizedPageController.h */,
+				F563DAF325AC2C2C0079474B /* WMCustomizedPageController.m */,
+				F563DACC25AC26790079474B /* WMPageController */,
 			);
 			path = "首页PageController";
-			sourceTree = "<group>";
-		};
-		F51535EC259B292B007E3416 /* 全选删除EditBar */ = {
-			isa = PBXGroup;
-			children = (
-				F51535ED259B2960007E3416 /* UserEditBar.h */,
-				F51535EE259B2960007E3416 /* UserEditBar.m */,
-			);
-			path = "全选删除EditBar";
 			sourceTree = "<group>";
 		};
 		F51DC311259C5D600079AFC8 /* URLencodeURLdecode */ = {
@@ -1101,6 +1127,33 @@
 				F5200DCA2531536E004637DD /* BaseViewController.m */,
 			);
 			path = BaseController;
+			sourceTree = "<group>";
+		};
+		F563DACC25AC26790079474B /* WMPageController */ = {
+			isa = PBXGroup;
+			children = (
+				F563DAD925AC26790079474B /* UIViewController+WMPageController.h */,
+				F563DACE25AC26790079474B /* UIViewController+WMPageController.m */,
+				F563DACF25AC26790079474B /* WMMenuView */,
+				F563DAD825AC26790079474B /* WMPageController.h */,
+				F563DACD25AC26790079474B /* WMPageController.m */,
+			);
+			path = WMPageController;
+			sourceTree = "<group>";
+		};
+		F563DACF25AC26790079474B /* WMMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				F563DAD025AC26790079474B /* WMScrollView.h */,
+				F563DAD125AC26790079474B /* WMMenuItem.h */,
+				F563DAD225AC26790079474B /* WMMenuView.h */,
+				F563DAD325AC26790079474B /* WMProgressView.h */,
+				F563DAD425AC26790079474B /* WMMenuItem.m */,
+				F563DAD525AC26790079474B /* WMScrollView.m */,
+				F563DAD625AC26790079474B /* WMMenuView.m */,
+				F563DAD725AC26790079474B /* WMProgressView.m */,
+			);
+			path = WMMenuView;
 			sourceTree = "<group>";
 		};
 		F5668FB424C6D818007D452E /* CPU */ = {
@@ -1820,6 +1873,7 @@
 				F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */,
 				F5872CE6257DFB9F00341B57 /* SettingModuleVC.m in Sources */,
 				F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */,
+				F563DADA25AC26790079474B /* WMPageController.m in Sources */,
 				F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */,
 				F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */,
 				F5A9F13C24E3EC2400F611E6 /* SeeLivingModel.m in Sources */,
@@ -1829,6 +1883,7 @@
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
 				F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */,
 				F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */,
+				F563DAE625AC27020079474B /* HomePageViewController.m in Sources */,
 				F50D6D6525A94EBE00B8C415 /* ListEditViewController.m in Sources */,
 				F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */,
 				F5CED5DA25749C7D002CF42C /* CollectionRedPointManager.m in Sources */,
@@ -1837,7 +1892,7 @@
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				F5E4785E25301177001AE2AE /* WebVC.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
-				F5668FAE24C6C0B9007D452E /* WCollectionViewController.m in Sources */,
+				F5668FAE24C6C0B9007D452E /* HorizontalCollectionViewController.m in Sources */,
 				F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */,
 				A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */,
 				F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */,
@@ -1850,15 +1905,18 @@
 				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
 				F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */,
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
+				F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */,
 				F5872CD1257DF62400341B57 /* SettingModuleHandler+setting.m in Sources */,
 				F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
+				F563DADB25AC26790079474B /* UIViewController+WMPageController.m in Sources */,
 				F5609CA62502222100A13C15 /* BaseNavigationController.m in Sources */,
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
 				F5609CA92502235400A13C15 /* BaseTabBarController.m in Sources */,
+				F563DADF25AC26790079474B /* WMProgressView.m in Sources */,
 				F5872CDF257DFAF300341B57 /* xibVC.m in Sources */,
 				F5F37087250A594400118FC4 /* ChatManager.m in Sources */,
 				F5A763BF253D952D00A76C6E /* Book.m in Sources */,
@@ -1879,6 +1937,7 @@
 				F543282925A6D62C0082236C /* ScoreViewController.m in Sources */,
 				F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */,
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
+				F563DADC25AC26790079474B /* WMMenuItem.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
 				F553E17E24CA888800DA5625 /* ChatHelper.m in Sources */,
 				F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */,
@@ -1888,6 +1947,7 @@
 				6783C8931FB944B80040C02B /* LZTagSegmentedControl.m in Sources */,
 				F553E12924CA800200DA5625 /* FaceView.m in Sources */,
 				673AE9251FC7F5BD0002D304 /* ForceTouchListVC.m in Sources */,
+				F563DADD25AC26790079474B /* WMScrollView.m in Sources */,
 				6783C8921FB944B80040C02B /* LZTagListView.m in Sources */,
 				6730334C210AED3D001471D8 /* PersonalCenterBarBtn.m in Sources */,
 				F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */,
@@ -1904,6 +1964,7 @@
 				F5C7261824E1258000B16639 /* ListModel.m in Sources */,
 				67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */,
 				A479989224BAEBCE0079F72D /* SmallBigCollectionViewCell.m in Sources */,
+				F563DADE25AC26790079474B /* WMMenuView.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
 				F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */,
 				F5A889BC24F65D9000DB73ED /* LoginViewModel.m in Sources */,
@@ -1920,6 +1981,7 @@
 				F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */,
 				F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
+				F563DAF525AC2C2C0079474B /* WMCustomizedPageController.m in Sources */,
 				F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,

@@ -148,16 +148,16 @@
 
 - (void)createData {
     NSArray *array = @[
-        [ListModel initWithTitle:@"000000" detail:@"编辑简单的列表0" type:ListModelTypeCollectionView ids:@"0"],
-        [ListModel initWithTitle:@"111111" detail:@"编辑简单的列表1" type:ListModelTypeTagList1 ids:@"1"],
-        [ListModel initWithTitle:@"222222" detail:@"编辑简单的列表2" type:ListModelTypeTagList2 ids:@"2"],
-        [ListModel initWithTitle:@"333333" detail:@"编辑简单的列表3" type:ListModelType3DTouch ids:@"3"],
-        [ListModel initWithTitle:@"444444" detail:@"编辑简单的列表4" type:ListModelTypeSystemAlter ids:@"4"],
-        [ListModel initWithTitle:@"555555" detail:@"编辑简单的列表5" type:ListModelTypeTableView ids:@"5"],
-        [ListModel initWithTitle:@"666666" detail:@"编辑简单的网格6" type:ListModelTypeCollectionView ids:@"6"],
-        [ListModel initWithTitle:@"777777" detail:@"编辑简单的网格7" type:ListModelTypeCollectionView ids:@"7"],
-        [ListModel initWithTitle:@"888888" detail:@"编辑简单的网格8" type:ListModelTypeCollectionView ids:@"8"],
-        [ListModel initWithTitle:@"999999" detail:@"编辑简单的网格9" type:ListModelTypeCollectionView ids:@"9"],
+        [ListModel initWithTitle:@"000000" detail:@"编辑简单的列表0" type:ListModelTypeNone ids:@"0"],
+        [ListModel initWithTitle:@"111111" detail:@"编辑简单的列表1" type:ListModelTypeNone ids:@"1"],
+        [ListModel initWithTitle:@"222222" detail:@"编辑简单的列表2" type:ListModelTypeNone ids:@"2"],
+        [ListModel initWithTitle:@"333333" detail:@"编辑简单的列表3" type:ListModelTypeNone ids:@"3"],
+        [ListModel initWithTitle:@"444444" detail:@"编辑简单的列表4" type:ListModelTypeNone ids:@"4"],
+        [ListModel initWithTitle:@"555555" detail:@"编辑简单的列表5" type:ListModelTypeNone ids:@"5"],
+        [ListModel initWithTitle:@"666666" detail:@"编辑简单的网格6" type:ListModelTypeNone ids:@"6"],
+        [ListModel initWithTitle:@"777777" detail:@"编辑简单的网格7" type:ListModelTypeNone ids:@"7"],
+        [ListModel initWithTitle:@"888888" detail:@"编辑简单的网格8" type:ListModelTypeNone ids:@"8"],
+        [ListModel initWithTitle:@"999999" detail:@"编辑简单的网格9" type:ListModelTypeNone ids:@"9"],
     ];
     self.data = array;
 //    NSSet

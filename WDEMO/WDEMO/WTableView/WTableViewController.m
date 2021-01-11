@@ -135,16 +135,16 @@
 
 - (void)createData {
     NSArray *array = @[
-        [ListModel initWithTitle:@"000000" detail:@"简单的列表展示0" type:ListModelTypeCollectionView ids:@"0"],
-        [ListModel initWithTitle:@"111111" detail:@"简单的列表展示1" type:ListModelTypeTagList1 ids:@"1"],
-        [ListModel initWithTitle:@"222222" detail:@"简单的列表展示2" type:ListModelTypeTagList2 ids:@"2"],
-        [ListModel initWithTitle:@"333333" detail:@"简单的列表展示3" type:ListModelType3DTouch ids:@"3"],
-        [ListModel initWithTitle:@"444444" detail:@"简单的列表展示4" type:ListModelTypeSystemAlter ids:@"4"],
-        [ListModel initWithTitle:@"555555" detail:@"简单的列表展示5" type:ListModelTypeTableView ids:@"5"],
-        [ListModel initWithTitle:@"666666" detail:@"简单的列表展示6" type:ListModelTypeCollectionView ids:@"6"],
-        [ListModel initWithTitle:@"777777" detail:@"简单的列表展示7" type:ListModelTypeCollectionView ids:@"7"],
-        [ListModel initWithTitle:@"888888" detail:@"简单的列表展示8" type:ListModelTypeCollectionView ids:@"8"],
-        [ListModel initWithTitle:@"999999" detail:@"简单的列表展示9" type:ListModelTypeCollectionView ids:@"9"],
+        [ListModel initWithTitle:@"000000" detail:@"简单的列表展示0" type:ListModelTypeNone ids:@"0"],
+        [ListModel initWithTitle:@"111111" detail:@"简单的列表展示1" type:ListModelTypeNone ids:@"1"],
+        [ListModel initWithTitle:@"222222" detail:@"简单的列表展示2" type:ListModelTypeNone ids:@"2"],
+        [ListModel initWithTitle:@"333333" detail:@"简单的列表展示3" type:ListModelTypeNone ids:@"3"],
+        [ListModel initWithTitle:@"444444" detail:@"简单的列表展示4" type:ListModelTypeNone ids:@"4"],
+        [ListModel initWithTitle:@"555555" detail:@"简单的列表展示5" type:ListModelTypeNone ids:@"5"],
+        [ListModel initWithTitle:@"666666" detail:@"简单的列表展示6" type:ListModelTypeNone ids:@"6"],
+        [ListModel initWithTitle:@"777777" detail:@"简单的列表展示7" type:ListModelTypeNone ids:@"7"],
+        [ListModel initWithTitle:@"888888" detail:@"简单的列表展示8" type:ListModelTypeNone ids:@"8"],
+        [ListModel initWithTitle:@"999999" detail:@"简单的列表展示9" type:ListModelTypeNone ids:@"9"],
     ];
     self.data = array;
 
@@ -169,7 +169,6 @@
  */
 
 #pragma mark -- UITableViewDataSource
-
 //返回分组数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {

@@ -11,7 +11,8 @@
 #import "ForceTouchListVC.h"
 #import "AlterViewController.h"
 #import "WTableViewController.h"
-#import "WCollectionViewController.h"
+#import "HorizontalCollectionViewController.h"
+#import "VerticalCollectionViewController.h"
 
 #import "PassValueViewController.h"
 #import "FontViewControlle.h"
@@ -83,6 +84,10 @@
 #import "ListEditViewController.h"
 //搜索
 #import "SearchViewController.h"
+//PageVC
+#import "HomePageViewController.h"
+#import "WMCustomizedPageController.h"
+
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -144,7 +149,8 @@
         [ListModel initWithTitle:@"3DTouch" detail:@"3DTouch" type:ListModelType3DTouch],
         [ListModel initWithTitle:@"SystemAlter" detail:@"系统提示框" type:ListModelTypeSystemAlter],
         [ListModel initWithTitle:@"TableView" detail:@"简单的列表" type:ListModelTypeTableView],
-        [ListModel initWithTitle:@"CollectionView" detail:@"简单的网格" type:ListModelTypeCollectionView],
+        [ListModel initWithTitle:@"VerticalCollectionView" detail:@"简单的垂直网格" type:ListModelTypeVerticalCollectionView],
+        [ListModel initWithTitle:@"HorizontalCollectionVie" detail:@"简单的水平网格" type:ListModelTypeHorizontalCollectionView],
         [ListModel initWithTitle:@"PassValue" detail:@"传值" type:ListModelTypePassValue],
         [ListModel initWithTitle:@"Language" detail:@"语言切换" type:ListModelTypeLanguage],
         [ListModel initWithTitle:@"Font" detail:@"字体" type:ListModelTypeFont],
@@ -161,7 +167,11 @@
         [ListModel initWithTitle:@"ListEdit" detail:@"列表编辑" type:ListModelTypeListEdit],
         [ListModel initWithTitle:@"Search" detail:@"搜索" type:ListModelTypeSearch],
         [ListModel initWithTitle:@"WKWebView" detail:@"网页" type:ListModelTypeWebView],
- 
+        [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
+
+        
+        
+        
         [ListModel initWithTitle:@"Test" detail:@"测试" type:ListModelTypeTest],
     ];
     self.data = array;
@@ -501,9 +511,15 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
--(void)clickCollectionView {
+-(void)clickVerticalCollectionView {
     
-    WCollectionViewController *vc= [[WCollectionViewController alloc]init];
+    VerticalCollectionViewController *vc= [[VerticalCollectionViewController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)clickHorizontalCollectionView {
+    
+    HorizontalCollectionViewController *vc= [[HorizontalCollectionViewController alloc]init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -624,6 +640,19 @@
     SearchViewController *vc= [[SearchViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickPageController {
+    
+    HomePageViewController *vc= [[HomePageViewController alloc]init];
+    vc.selectIndex = 1;
+    vc.automaticallyCalculatesItemWidths = YES;
+      
+    vc.titleSizeSelected = 16;
+     
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+  
 }
 
 - (void)clickTest {
@@ -769,9 +798,14 @@
             [self clickTableView];
         }
             break;
-        case ListModelTypeCollectionView:
+        case ListModelTypeVerticalCollectionView:
         {
-            [self clickCollectionView];
+            [self clickVerticalCollectionView];
+        }
+            break;
+        case ListModelTypeHorizontalCollectionView:
+        {
+            [self clickHorizontalCollectionView];
         }
             break;
         case ListModelTypePassValue:
@@ -857,6 +891,11 @@
         case ListModelTypeSearch:
         {
             [self clickSearch];
+        }
+            break;
+        case ListModelTypePageController:
+        {
+            [self clickPageController];
         }
             break;
         case ListModelTypeTest:

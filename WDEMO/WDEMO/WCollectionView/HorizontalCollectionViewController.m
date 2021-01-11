@@ -1,22 +1,22 @@
 //
-//  WCollectionViewController.m
+//  HorizontalCollectionViewController.m
 //  WDEMO
 //
 //  Created by rrtv on 2020/7/21.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 
-#import "WCollectionViewController.h"
+#import "HorizontalCollectionViewController.h"
 #import <Masonry/Masonry.h>
 #import "WCollectionViewCell.h"
 
-@interface WCollectionViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface HorizontalCollectionViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property(strong , nonatomic)UICollectionView *collectionView;
 
 @end
 
-@implementation WCollectionViewController
+@implementation HorizontalCollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

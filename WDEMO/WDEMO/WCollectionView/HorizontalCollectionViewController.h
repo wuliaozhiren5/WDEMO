@@ -1,5 +1,5 @@
 //
-//  WCollectionViewController.h
+//  HorizontalCollectionViewController.h
 //  WDEMO
 //
 //  Created by rrtv on 2020/7/21.
@@ -10,8 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WCollectionViewController : UIViewController
+@interface HorizontalCollectionViewController : UIViewController
 
 @end
 
 NS_ASSUME_NONNULL_END
+
+ 

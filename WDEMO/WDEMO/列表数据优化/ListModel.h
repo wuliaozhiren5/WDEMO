@@ -15,7 +15,8 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelType3DTouch,//3DTouch
     ListModelTypeSystemAlter,//SystemAlter
     ListModelTypeTableView,
-    ListModelTypeCollectionView,
+    ListModelTypeVerticalCollectionView,//垂直网格
+    ListModelTypeHorizontalCollectionView,//水平网格
     ListModelTypePassValue,//传值
     ListModelTypeLanguage,//语言切换
     ListModelTypeFont,//字体
@@ -34,6 +35,7 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeSearch,//搜索
     ListModelTypeWebView,//网页
     
+    ListModelTypePageController,
 //    ListModelTypeLoadingView,
 //    ListModelTypeBanner,
 //    ListModelTypePageController,

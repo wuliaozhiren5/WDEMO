@@ -8,7 +8,7 @@
 
 #import "SearchViewController.h"
 #import "ACMacros.h"
-
+#import "UIColor+color.h"
 @interface SearchViewController ()<SearchBarDelegate>
 
 @end
@@ -26,10 +26,9 @@
 - (void)setupViews {
     UISearchBar * bar = [[UISearchBar alloc]initWithFrame:CGRectMake(0, 100, 375, 52)];
     [self.view addSubview:bar];
- 
-
-    SearchBar *searchBar = [[SearchBar alloc] initWithFrame:CGRectMake(0, 0, 375, 52)];
-    searchBar.backgroundColor = [UIColor darkGrayColor];
+  
+    SearchBar *searchBar = [[SearchBar alloc] initWithFrame:CGRectMake(0, 0 , KWidth, 52)];
+//    searchBar.backgroundColor = [UIColor darkGrayColor];
     searchBar.delegate = self;
     [self.view addSubview:searchBar];
 }
@@ -93,17 +92,19 @@
 }
 
 - (void)setupViews {
-    
+    self.backgroundColor = kCOLOR_FFFFFF; 
     [self addSubview:self.cancelBtn];
     [self addSubview:self.textView];
     [self.textView addSubview:self.iconImageView];
     [self.textView addSubview:self.deleteBtn];
     [self.textView addSubview:self.textField];
 
-    self.cancelBtn.backgroundColor = [UIColor greenColor];
-    self.textField.backgroundColor = self.textView.backgroundColor = [UIColor grayColor];
+//    self.cancelBtn.backgroundColor = [UIColor greenColor];
+//    self.textField.backgroundColor = self.textView.backgroundColor = [UIColor grayColor];
     self.iconImageView.backgroundColor = [UIColor redColor];
- 
+    self.deleteBtn.backgroundColor = [UIColor redColor];
+
+// 
     [self.textField becomeFirstResponder];
 }
 
@@ -161,7 +162,7 @@
 - (UIView *)textView {
     if (!_textView) {
         _textView = [[UIView alloc] initWithFrame:CGRectMake(16, 11, self.width - 16 - _cancelBtn.frame.size.width, 30)];
-        _textView.backgroundColor = [UIColor grayColor];
+        _textView.backgroundColor = kCOLOR_F5F5F5;//kCOLOR_F5F6F7;
         _textView.layer.cornerRadius = 15;
         _textView.layer.masksToBounds = YES;
      }
@@ -171,7 +172,7 @@
 - (UIImageView *)iconImageView {
     if (!_iconImageView) {
         _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(12, 7.5, 15, 15)];
-        _iconImageView.image = [UIImage imageNamed:@""];
+        _iconImageView.image = [UIImage imageNamed:@"ic_nav_search"];
      }
     return _iconImageView;;
 }
@@ -189,8 +190,8 @@
 - (UIButton *)deleteBtn {
     if (!_deleteBtn) {
         _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(_textView.frame.size.width - 40, 0, 40, 30)];
-        [_deleteBtn setTitle:@"X" forState:UIControlStateNormal];
-//        [_deleteBtn setImage:[UIImage imageNamed:@"ic_common_checkbox"] forState:UIControlStateNormal];
+//        [_deleteBtn setTitle:@"X" forState:UIControlStateNormal];
+        [_deleteBtn setImage:[UIImage imageNamed:@"search_x"] forState:UIControlStateNormal];
 //        [_deleteBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_deleteBtn addTarget:self action:@selector(clickDeleteBtn:)forControlEvents:UIControlEventTouchUpInside];
         _deleteBtn.hidden = YES;
@@ -202,9 +203,9 @@
     if (!_cancelBtn) {
         _cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.width - 60, 0, 60, 52)];
         [_cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
-//        [_cancelBtn setImage:[UIImage imageNamed:@"ic_common_checkbox"] forState:UIControlStateNormal];
-
-//        [_cancelBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [_cancelBtn setTitleColor:kCOLOR_dynamicProvider_222222_DADBDC forState:UIControlStateNormal];
+        
+        _cancelBtn.titleLabel.font = RR_COMMONFONT(14);
         [_cancelBtn addTarget:self action:@selector(clickCancelBtn:)forControlEvents:UIControlEventTouchUpInside];
      }
     return _cancelBtn;;
