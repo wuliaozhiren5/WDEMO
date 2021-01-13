@@ -359,33 +359,33 @@
     }
 }
 
-//CS测试 CustomLayout
-// 每个区多少列
-- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnNumberAtSection:(NSInteger)section {
-    
-    switch (section) {
-        case 0:
-            
-            return 1;
-            
-            break;
-        case 1:
-            
-            return 2;
-            
-            break;
-        case 2:
-            
-            return 3;
-            
-            break;
-        default:
-            
-            return 0;
-            
-            break;
-    }
-}
+////CS测试 CustomLayout
+//// 每个区多少列
+//- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnNumberAtSection:(NSInteger)section {
+//
+//    switch (section) {
+//        case 0:
+//
+//            return 1;
+//
+//            break;
+//        case 1:
+//
+//            return 2;
+//
+//            break;
+//        case 2:
+//
+//            return 3;
+//
+//            break;
+//        default:
+//
+//            return 0;
+//
+//            break;
+//    }
+//}
 
 // 每个区的边距
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
