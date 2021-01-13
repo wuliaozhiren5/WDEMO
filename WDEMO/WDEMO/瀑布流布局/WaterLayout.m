@@ -224,7 +224,7 @@ static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
         if ([_delegate respondsToSelector:@selector(collectionView:layout:referenceSizeForHeaderInSection:)]) {
             headerReferenceSize = [_delegate collectionView:self.collectionView layout:self referenceSizeForHeaderInSection:indexPath.section];
         }
-                
+        
         attributes.frame = CGRectMake(0, self.contentHeight, headerReferenceSize.width, headerReferenceSize.height);
         
         self.contentHeight += headerReferenceSize.height;
