@@ -48,7 +48,8 @@
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
     [self.collectionView registerClass:[WCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([WCollectionViewCell class])];
-    
+    [self.collectionView registerNib:[UINib nibWithNibName:@"WCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"xib"];
+ 
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];
     [self.collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionFooter withReuseIdentifier:@"Footer"];
     
@@ -102,10 +103,17 @@
     //    cell.contentView.backgroundColor = [UIColor grayColor];
     //    return cell;
     
-    WCollectionViewCell *cell = (WCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([WCollectionViewCell class]) forIndexPath:indexPath];
-    cell.contentView.backgroundColor = [UIColor grayColor];
-    NSString *str = [NSString stringWithFormat:@"%zi:%zi", indexPath.section, indexPath.row];
-    cell.titleLabel.text = str;
+    //代码
+//    WCollectionViewCell *cell = (WCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([WCollectionViewCell class]) forIndexPath:indexPath];
+//    cell.contentView.backgroundColor = [UIColor grayColor];
+//    NSString *str = [NSString stringWithFormat:@"%zi:%zi", indexPath.section, indexPath.row];
+//    cell.titleLabel.text = str;
+    
+    //xib
+    WCollectionViewCell *cell = (WCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"xib" forIndexPath:indexPath];
+ 
+    NSString *str = [NSString stringWithFormat:@"xib=%zi:%zi", indexPath.section, indexPath.row];
+    cell.xibLabel.text = str;
     return cell;
     
     

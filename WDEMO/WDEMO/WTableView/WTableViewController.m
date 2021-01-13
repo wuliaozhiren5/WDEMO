@@ -197,7 +197,7 @@
     WTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WTableViewCell class]) forIndexPath:indexPath];
     cell.firstLabel.text = [NSString stringWithFormat:@"cell_section = %zi", indexPath.section];
     cell.secondLabel.text = [NSString stringWithFormat:@"cell_row = %zi", indexPath.row];
-    cell.xibLab.text = [NSString stringWithFormat:@"section = %zi ,row = %zi", indexPath.section, indexPath.row];
+    cell.xibLabel.text = [NSString stringWithFormat:@"section = %zi ,row = %zi", indexPath.section, indexPath.row];
     
 //    //ListModelCell
 //    ListModelCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ListModelCell class]) forIndexPath:indexPath];

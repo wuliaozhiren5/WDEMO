@@ -10,6 +10,10 @@
 
 @implementation WCollectionViewCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

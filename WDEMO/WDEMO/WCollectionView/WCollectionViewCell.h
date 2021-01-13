@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface WCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, strong) UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *xibLabel;
 
 @end
 

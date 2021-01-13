@@ -1,12 +1,12 @@
 //
-//  RRWaterLayout.m
+//  WaterLayout.m
 //  WDEMO
 //
 //  Created by rrtv on 2021/1/13.
 //  Copyright © 2021 wwc. All rights reserved.
 //
 
-#import "RRWaterLayout.h"
+#import "WaterLayout.h"
 /** 默认的列数    */
 static const NSInteger DefaultColumnCount = 3;
 
@@ -19,7 +19,7 @@ static const CGFloat DefaultLineSpacing = 10;
 /** 内边距    */
 static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
 
-@interface RRWaterLayout ()
+@interface WaterLayout ()
 //行间距
 @property (nonatomic, assign) CGFloat lineSpacing;
 //列间距
@@ -38,7 +38,7 @@ static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
 @property (nonatomic, assign) CGFloat contentStartOffsetY;
 
 @end
-@implementation RRWaterLayout
+@implementation WaterLayout
 #pragma mark - 数据处理
 
 - (NSMutableArray *)attrsArray
@@ -209,8 +209,7 @@ static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
     if (self.contentHeight < columnHeight) {
         self.contentHeight = columnHeight;
     }
-    return attrs;
-    
+    return attrs;    
 }
 
 /**

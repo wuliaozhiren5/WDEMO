@@ -10,3 +10,5 @@ https://www.cnblogs.com/oumygade/p/4270043.html
 自定义UITableViewCell（registerNib: 与 registerClass: 的区别）
 https://blog.csdn.net/youngsblog/article/details/44536143
 
+[_tableView registerNib:[UINib nibWithNibName:@"xxxxxCell" bundle:nil] forCellReuseIdentifier:kCellIdentify];
+xxxxxCell *cell = [tableView dequeueReusableCellWithIdentifier:kCellIdentify forIndexPath:indexPath];

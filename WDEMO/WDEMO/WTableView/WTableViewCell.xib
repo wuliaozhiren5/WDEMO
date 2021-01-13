@@ -31,7 +31,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="xibLab" destination="BGf-T3-mKV" id="SsN-OC-Gbt"/>
+                <outlet property="xibLabel" destination="BGf-T3-mKV" id="Ay0-cB-kyR"/>
             </connections>
             <point key="canvasLocation" x="-1337.68115942029" y="-158.70535714285714"/>
         </tableViewCell>

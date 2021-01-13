@@ -26,7 +26,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIButton *selectBtn;
 
-@property (weak, nonatomic) IBOutlet UILabel *xibLab;
+@property (weak, nonatomic) IBOutlet UILabel *xibLabel;
 
 //填充数据
 - (void)fillWithData:(id)data;

@@ -101,7 +101,8 @@
 		F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E19924CA8DE200DA5625 /* FaceAttachment.m */; };
 		F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */; };
 		F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */; };
-		F556CBCB25AEA11600B590D2 /* RRWaterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F556CBCA25AEA11600B590D2 /* RRWaterLayout.m */; };
+		F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F556CBCA25AEA11600B590D2 /* WaterLayout.m */; };
+		F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */; };
 		F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F55E5B5A258C58B700C1DECD /* ScoreView.m */; };
 		F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C922502134800A13C15 /* SetPasswordVC.m */; };
 		F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C98250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m */; };
@@ -425,8 +426,9 @@
 		F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMessageDataModel.m; sourceTree = "<group>"; };
 		F553E1DF24CAC69F00DA5625 /* ChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCell.h; sourceTree = "<group>"; };
 		F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCell.m; sourceTree = "<group>"; };
-		F556CBC925AEA11600B590D2 /* RRWaterLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRWaterLayout.h; sourceTree = "<group>"; };
-		F556CBCA25AEA11600B590D2 /* RRWaterLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRWaterLayout.m; sourceTree = "<group>"; };
+		F556CBC925AEA11600B590D2 /* WaterLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterLayout.h; sourceTree = "<group>"; };
+		F556CBCA25AEA11600B590D2 /* WaterLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterLayout.m; sourceTree = "<group>"; };
+		F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WCollectionViewCell.xib; sourceTree = "<group>"; };
 		F55E5B59258C58B700C1DECD /* ScoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreView.h; sourceTree = "<group>"; };
 		F55E5B5A258C58B700C1DECD /* ScoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreView.m; sourceTree = "<group>"; };
 		F5609C912502134800A13C15 /* SetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordVC.h; sourceTree = "<group>"; };
@@ -885,6 +887,7 @@
 				F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */,
 				F5668FAF24C6C11C007D452E /* WCollectionViewCell.h */,
 				F5668FB024C6C11C007D452E /* WCollectionViewCell.m */,
+				F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */,
 			);
 			path = WCollectionView;
 			sourceTree = "<group>";
@@ -1359,8 +1362,8 @@
 				6783C88D1FB944B80040C02B /* CustomLayout.m */,
 				6783C88E1FB944B80040C02B /* WaterFlowLayout.h */,
 				6783C88F1FB944B80040C02B /* WaterFlowLayout.m */,
-				F556CBC925AEA11600B590D2 /* RRWaterLayout.h */,
-				F556CBCA25AEA11600B590D2 /* RRWaterLayout.m */,
+				F556CBC925AEA11600B590D2 /* WaterLayout.h */,
+				F556CBCA25AEA11600B590D2 /* WaterLayout.m */,
 			);
 			path = "瀑布流布局";
 			sourceTree = "<group>";
@@ -1759,6 +1762,7 @@
 				F548D0EA256E2EEA00357E64 /* amwayGuide.json in Resources */,
 				F548D0DA256E2EEA00357E64 /* amwayPlayerGuide_0.png in Resources */,
 				F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */,
+				F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */,
 				F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */,
 				F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */,
 				F548D101256E384300357E64 /* img_1.png in Resources */,
@@ -1963,7 +1967,7 @@
 				F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
 				F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */,
-				F556CBCB25AEA11600B590D2 /* RRWaterLayout.m in Sources */,
+				F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */,
 				F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */,
 				F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
