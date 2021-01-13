@@ -1,6 +1,6 @@
 //
 //  WaterLayout.h
-//  WDEMO
+//  DEMO
 //
 //  Created by rrtv on 2021/1/13.
 //  Copyright © 2021 wwc. All rights reserved.
@@ -11,20 +11,20 @@
 
 @protocol RRWaterLayoutDelegate <NSObject, UICollectionViewDelegateFlowLayout>
 @required
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForRowAtIndexPath:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(WaterLayout *)collectionViewLayout heightForRowAtIndexPath:(NSIndexPath *)indexPath itemWidth:(CGFloat)itemWidth;
 @optional
 // 每个区多少列
-- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnNumberInSection:(NSInteger )section;
+- (NSInteger)collectionView:(UICollectionView *)collectionView layout:(WaterLayout *)collectionViewLayout columnNumberInSection:(NSInteger )section;
 // 每个区的边距
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(WaterLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section;
 //每一行之间的间距
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(WaterLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section;
 //每一列之间的间距
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(WaterLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section;
 //header
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(WaterLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section;
 //footer
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(WaterLayout *)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section;
 @end
 
 @interface WaterLayout : UICollectionViewLayout
