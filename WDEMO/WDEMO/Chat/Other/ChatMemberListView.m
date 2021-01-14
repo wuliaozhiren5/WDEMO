@@ -76,7 +76,4 @@
     NSLog(@"点击头像");
 }
 
--(BOOL)collectionView:(UICollectionView *)collectionView UICollectionViewDelegate:(NSIndexPath *)indexPath {
-    return YES;
-}
 @end

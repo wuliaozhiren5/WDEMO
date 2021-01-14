@@ -215,6 +215,7 @@
             cell.contentView.backgroundColor = [UIColor redColor];
             //    cell.tagStr = _tagArr[indexPath.item];
             cell.tagStr = @"全部0";
+            cell.tagBtn.userInteractionEnabled = NO;
             return cell;
         }
             
@@ -226,6 +227,7 @@
             cell.contentView.backgroundColor = [UIColor redColor];
             //    cell.tagStr = _tagArr[indexPath.item];
             cell.tagStr = @"全部1";
+            cell.tagBtn.userInteractionEnabled = NO;
             return cell;
         }
             
@@ -237,6 +239,7 @@
             cell.contentView.backgroundColor = [UIColor redColor];
             //    cell.tagStr = _tagArr[indexPath.item];
             cell.tagStr = @"全部2";
+            cell.tagBtn.userInteractionEnabled = NO;
             return cell;
         }
             
@@ -249,6 +252,8 @@
 //UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    UICollectionViewCell *cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath]; //即为要得到的cell
+    NSLog(@"%@",cell);
     //    UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     //
     //    if (cell.frame.size.width/2 + cell.frame.origin.x - self.collectionView.frame.size.width/2 <=0) {
@@ -279,12 +284,6 @@
     //                     }];
 }
 
-//返回这个UICollectionView是否可以被选择
--(BOOL)collectionView:(UICollectionView *)collectionView UICollectionViewDelegate:(NSIndexPath *)indexPath
-{
-    return YES;
-}
-//
 //- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
 //    
 //    UIFont *font = [UIFont systemFontOfSize:15.0];
