@@ -41,7 +41,7 @@ static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
 @property (nonatomic, assign) CGFloat contentHeight;
 //第一行元素的开始的位置：头的高度+内边距 header.size.height + sectionInset.top
 @property (nonatomic, assign) CGFloat lastContentHeight;
-@property (nonatomic, assign) CGFloat contentStartOffsetX;
+@property (nonatomic, assign) CGFloat contentStartPosition;
 
 @end
 

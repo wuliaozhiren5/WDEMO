@@ -35,7 +35,7 @@ static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
 //内容的高度
 @property (nonatomic, assign) CGFloat contentHeight;
 //第一行元素的开始的位置：头的高度+内边距 header.size.height + sectionInset.top
-@property (nonatomic, assign) CGFloat contentStartOffsetY;
+@property (nonatomic, assign) CGFloat contentStartPosition;
 
 @end
 @implementation WaterLayout
@@ -71,7 +71,7 @@ static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
     [self.attrsArray removeAllObjects];
     
     self.contentHeight = 0;
-    self.contentStartOffsetY = 0;
+    self.contentStartPosition = 0;
     
     self.lineSpacing = DefaultLineSpacing;
     self.interitemSpacing = DefaultInteritemSpacing;
@@ -107,7 +107,7 @@ static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
         
         //清空
         [self.columnHeights removeAllObjects];
-        self.contentStartOffsetY = self.contentHeight;
+        self.contentStartPosition = self.contentHeight;
         
         //2 初始化区的 y 值
         for (NSInteger i = 0; i < self.columnCount; i++) {
@@ -195,7 +195,7 @@ static const UIEdgeInsets DefaultSectionInset = {10, 10, 10, 10};
     
     CGFloat x = self.sectionInset.left + destColumn * (w + self.interitemSpacing);
     CGFloat y = minColumnHeight;
-    if (y != self.contentStartOffsetY) {
+    if (y != self.contentStartPosition) {
         y += self.lineSpacing;
     }
     
