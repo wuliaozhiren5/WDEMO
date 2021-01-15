@@ -192,7 +192,7 @@
 {
     //UITableViewCell
     //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
-
+    //    cell.textLabel.text = [NSString stringWithFormat:@"section = %zi ,row = %zi", indexPath.section, indexPath.row];
     //WTableViewCell
     WTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WTableViewCell class]) forIndexPath:indexPath];
     cell.firstLabel.text = [NSString stringWithFormat:@"cell_section = %zi", indexPath.section];
