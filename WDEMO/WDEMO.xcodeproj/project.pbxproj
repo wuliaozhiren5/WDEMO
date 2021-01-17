@@ -149,6 +149,7 @@
 		F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFA257DFF5900341B57 /* 追剧引导-暗黑-一次.gif */; };
 		F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */; };
 		F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */ = {isa = PBXBuildFile; fileRef = F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */; };
+		F597A9BD25B44600006D9172 /* UIView+RedPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F597A9BC25B44600006D9172 /* UIView+RedPoint.m */; };
 		F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */; };
 		F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */; };
 		F5A763BF253D952D00A76C6E /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A763BE253D952D00A76C6E /* Book.m */; };
@@ -513,6 +514,8 @@
 		F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "追剧引导-白色-一次.gif"; sourceTree = "<group>"; };
 		F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+buttonType.m"; sourceTree = "<group>"; };
 		F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+buttonType.h"; sourceTree = "<group>"; };
+		F597A9BB25B44600006D9172 /* UIView+RedPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+RedPoint.h"; sourceTree = "<group>"; };
+		F597A9BC25B44600006D9172 /* UIView+RedPoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+RedPoint.m"; sourceTree = "<group>"; };
 		F5A4890A25AC4CCB0046B52C /* VerticalCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalCollectionViewController.h; sourceTree = "<group>"; };
 		F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionViewController.m; sourceTree = "<group>"; };
 		F5A51F3524FC98430054A4DD /* PasswordTextFieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextFieldView.h; sourceTree = "<group>"; };
@@ -771,6 +774,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F597A9BA25B445B9006D9172 /* 小红点 */,
 				673AE91F1FC7F1A50002D304 /* 3DTouch */,
 				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 深色模式 */,
 				F5F346F124ED596C006AAEA3 /* 常量 */,
@@ -1247,6 +1251,15 @@
 				F5872CD0257DF62400341B57 /* SettingModuleHandler+setting.m */,
 			);
 			path = OCModuleCallBack;
+			sourceTree = "<group>";
+		};
+		F597A9BA25B445B9006D9172 /* 小红点 */ = {
+			isa = PBXGroup;
+			children = (
+				F597A9BB25B44600006D9172 /* UIView+RedPoint.h */,
+				F597A9BC25B44600006D9172 /* UIView+RedPoint.m */,
+			);
+			path = "小红点";
 			sourceTree = "<group>";
 		};
 		F5A51F2B24FC952C0054A4DD /* Password */ = {
@@ -1992,6 +2005,7 @@
 				F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
 				F563DAF525AC2C2C0079474B /* WMCustomizedPageController.m in Sources */,
+				F597A9BD25B44600006D9172 /* UIView+RedPoint.m in Sources */,
 				F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,
