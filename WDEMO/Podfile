@@ -30,6 +30,9 @@ pod 'AspectsV1.4.2', '~> 1.4.2’
 
 #空白数据集显示框架
 #pod 'DZNEmptyDataSet'
+#首页tabPageController
+#pod 'WMPageController', '~> 2.4.0' 
+#KVO
 #pod 'KVOController'
 
 end
