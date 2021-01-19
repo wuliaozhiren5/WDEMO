@@ -87,7 +87,10 @@
 //PageVC
 #import "HomePageViewController.h"
 #import "WMCustomizedPageController.h"
-
+//红点
+#import "UIView+RedPoint.h"
+//阴影
+#import "UIView+Shadow.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -204,6 +207,20 @@
     
     CGFloat f = 1.1;
     NSLog(@"%f",f);
+  
+//        [UIView createRedViewWithRect:CGRectMake(20, 20, 10, 10) bySuperView:imageV];
+
+    
+    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    view.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:view];
+//小红点
+//    [UIView createRedViewWithPoint:CGPointMake(10, 10) bySuperView:view];
+//    [UIView createRedViewWithRect:CGRectMake(0, 0, 30, 30) bySuperView:view];
+
+//阴影
+//    [view setShadowWithOffsetX:0 offsetY:5 Blur:15 Spread:1];
+    
     
     ////    房主
     //    UIImageView *imageV = [[UIImageView alloc]init];;

@@ -62,8 +62,8 @@
             filePath = "WDEMO/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "433"
-            endingLineNumber = "433"
+            startingLineNumber = "450"
+            endingLineNumber = "450"
             landmarkName = "-clickTagListBtn:"
             landmarkType = "7">
          </BreakpointContent>
@@ -112,8 +112,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
             endingLineNumber = "46"
-            landmarkName = "-numbersOfChildControllersInPageController:"
-            landmarkType = "7">
+            landmarkName = "HomePageViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

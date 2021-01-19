@@ -68,6 +68,7 @@
 		F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9625A9672200B8C415 /* 加载LoadingView.md */; };
 		F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */; };
 		F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6DA225A9675700B8C415 /* 个人主页.md */; };
+		F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F511C70B25B6918800581063 /* UIView+Shadow.m */; };
 		F51535EF259B2960007E3416 /* UserEditBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51535EE259B2960007E3416 /* UserEditBar.m */; };
 		F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */ = {isa = PBXBuildFile; fileRef = F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */; };
 		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
@@ -372,6 +373,8 @@
 		F50D6D9625A9672200B8C415 /* 加载LoadingView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "加载LoadingView.md"; sourceTree = "<group>"; };
 		F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "广告banner无限滚动.md"; sourceTree = "<group>"; };
 		F50D6DA225A9675700B8C415 /* 个人主页.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "个人主页.md"; sourceTree = "<group>"; };
+		F511C70A25B6918800581063 /* UIView+Shadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
+		F511C70B25B6918800581063 /* UIView+Shadow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
 		F51535ED259B2960007E3416 /* UserEditBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserEditBar.h; sourceTree = "<group>"; };
 		F51535EE259B2960007E3416 /* UserEditBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserEditBar.m; sourceTree = "<group>"; };
 		F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "URLencode与URLdecode.md"; sourceTree = "<group>"; };
@@ -1258,6 +1261,8 @@
 			children = (
 				F597A9BB25B44600006D9172 /* UIView+RedPoint.h */,
 				F597A9BC25B44600006D9172 /* UIView+RedPoint.m */,
+				F511C70A25B6918800581063 /* UIView+Shadow.h */,
+				F511C70B25B6918800581063 /* UIView+Shadow.m */,
 			);
 			path = "小红点";
 			sourceTree = "<group>";
@@ -2031,6 +2036,7 @@
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
+				F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */,
 				F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
 				F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */,

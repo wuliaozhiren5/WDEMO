@@ -11,8 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface UIView (RedPoint)
-//在View上添加红点
-+ (void)createRedViewWith:(CGPoint)point bySuperView:(UIView *)view;
+ 
+/// 在View上添加红点
+/// @param point point description
+/// @param view view description
++ (void)createRedViewWithPoint:(CGPoint)point bySuperView:(UIView *)view;
 + (void)createRedViewWithRect:(CGRect)rect bySuperView:(UIView *)view;
 //在view清除
 + (void)cleanRedViewBySuperView:(UIView *)view;
