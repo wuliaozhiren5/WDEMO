@@ -108,7 +108,8 @@
         [self.chatManager.fullChat showAnimation];
     }
     //填充数据
-    [self.chatManager fullChatControllerSetChatMessage];
+    //todo
+//    [self.chatManager fullChatControllerSetChatMessage];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

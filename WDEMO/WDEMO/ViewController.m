@@ -661,11 +661,18 @@
 
 - (void)clickPageController {
     
-    HomePageViewController *vc= [[HomePageViewController alloc]init];
-    vc.selectIndex = 1;
-    vc.automaticallyCalculatesItemWidths = YES;
-      
-    vc.titleSizeSelected = 16;
+//    UIViewController *vc0 = [[UIViewController alloc] init];
+//    UIViewController *vc1 = [[UIViewController alloc] init];
+//    UIViewController *vc2 = [[UIViewController alloc] init];
+    NSString *title0 = @"111111";
+    NSString *title1 = @"222222";
+    NSString *title2 = @"333333";
+
+    HomePageViewController *vc= [[HomePageViewController alloc] initWithViewControllerClasses:@[[UIViewController class], [UIViewController class] , [UIViewController class]]
+                                                                               andTheirTitles:@[title0, title1, title2]];
+//    vc.selectIndex = 1;
+//    vc.automaticallyCalculatesItemWidths = YES; 
+//    vc.titleSizeSelected = 16;
      
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];

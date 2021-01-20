@@ -113,7 +113,7 @@
     
     //修改 wwc
     UIColor *topColor  = [UIColor d_colorWithColorLight:kCOLOR_CACBCC dark:kCOLOR_414141];
-    UIColor *bottomColor = [UIColor d_colorWithColorLight:kCOLOR_DADBDC dark:kCOLOR_353535];
+    UIColor *bottomColor = [UIColor d_colorWithColorLight:kCOLOR_DADBDC dark:kCOLOR_212121];
     UIImage *bgImg = [UIImage gradientColorImageFromColors:@[topColor, bottomColor] gradientType:GradientTypeLeftToRight imgSize:self.frame.size];
     self.backgroundColor = [UIColor colorWithPatternImage:bgImg];
 }

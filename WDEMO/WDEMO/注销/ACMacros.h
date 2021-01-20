@@ -164,20 +164,36 @@
 #define RR_MEDIUMFONT(FONTSIZE) ([UIFont fontWithName:@"PingFangSC-Medium" size:(FONTSIZE)] ?: [UIFont fontWithName:@"Helvetica-Bold" size:(FONTSIZE)])
 #define RR_BOLDFONT(FONTSIZE)   ([UIFont fontWithName:@"PingFangSC-Semibold" size:(FONTSIZE)] ?: [UIFont fontWithName:@"Helvetica-Bold" size:(FONTSIZE)])
 
+
+#define FontWithSize(size) [UIFont adaptFontWithSize:size]
+#define BoldFontWithSize(size) [UIFont adaptBoldFontWithSize:size]
+#define MediumFontWithSize(size) [UIFont adaptMediumFontWithSize:size]
+
 // 颜色(RGB)
 #define RGBCOLOR(r, g, b)       [UIColor colorWithRed:(r) green:(g) blue:(b) alpha:1]
 #define RGB(r, g, b)            [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
 #define RGBACOLOR(r, g, b, a)   [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
 #define ColorFromRGBA(rgbValue,alphaValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:alphaValue]
 
-
+#define AdaptHeightByIpad1(height)  height
+//((height)/768.f * kScreenCurrentHeight)
+#define AdaptWidthByIpad1(width)  width
+//((width)/1024.f * kScreenCurrentWidth)
 
  #pragma mark ---字体颜色---
 
+#define kCOLOR_AppBackground  kCOLOR_dynamicProvider_FFFFFF_212121
+
 //字体色
 #define kCOLOR_dynamicProvider_333333_DADBDC      [UIColor colorWithDynamicProviderColor:@[RGB(0x33, 0x33, 0x33),RGB(0xda, 0xdb, 0xdc)]]
+#define kCOLOR_dynamicProvider_222222_E5E7EB      [UIColor colorWithDynamicProviderColor:@[RGB(0x22, 0x22, 0x22),RGB(0xe5, 0xe7, 0xeb)]]
+#define kCOLOR_dynamicProvider_85888F_6D7380      [UIColor colorWithDynamicProviderColor:@[RGB(0x85, 0x88, 0x8F),RGB(0x6d, 0x73, 0x80)]]
 //次级字体色
 #define kCOLOR_919699       RGB(0x91, 0x96, 0x99)
+#define kCOLOR_85888F       RGB(0x85, 0x88, 0x8F)
+//全部分类新加的字体颜色
+#define kCOLOR_898A91       RGB(0x89, 0x8A, 0x91)
+
 //辅助字体色 或者按钮线
 #define kCOLOR_dynamicProvider_CACBCC_616466       [UIColor colorWithDynamicProviderColor:@[RGB(0xCA, 0xCB, 0xCC),RGB(0x61, 0x64, 0x66)]]
 //不可点击态
@@ -192,9 +208,12 @@
 
 //模块背景色  二级回复,帖子里的转发内容
 #define kCOLOR_dynamicProvider_F6F7F8_2A2A2A [UIColor colorWithDynamicProviderColor:@[RGB(0xF6, 0xF7, 0xF8),RGB(0x2a, 0x2a, 0x2a)]]
+#define kCOLOR_dynamicProvider_F7F8FA_2A2A2A [UIColor colorWithDynamicProviderColor:@[RGB(0xF7, 0xF8, 0xFA),RGB(0x2a, 0x2a, 0x2a)]]
 //输入框背景色 搜索讨论弹幕
 #define kCOLOR_dynamicProvider_F2F4F5_2E2E2E       [UIColor colorWithDynamicProviderColor:@[RGB(0xF2, 0xF4, 0xF5),RGB(0x2E, 0x2E, 0x2E)]]
-
+//输入框背景色 搜索结果页面
+#define kCOLOR_dynamicProvider_F2F4F5_2D2E33       [UIColor colorWithDynamicProviderColor:@[RGB(0xF2, 0xF4, 0xF5),RGB(0x2D, 0x2E, 0x33)]]
+ 
  #pragma mark ---卡片背景色---
 #define kCOLOR_dynamicProvider_FFFFFF_2C2C2C       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x2c, 0x2c, 0x2c)]]
 
@@ -214,13 +233,13 @@
 //按钮
 #define kCOLOR_EDCEFF  RGB(0xed, 0xce, 0xff)
 #define kCOLOR_CACBCC  RGB(0xca, 0xcb, 0xcc)
-#define kCOLOR_CACBCC  RGB(0xca, 0xcb, 0xcc)
 
 //按钮二级 不可点击
 #define kCOLOR_DBB258       RGB(0xDB, 0xB2, 0x58)
 
 //三级按钮
 #define kCOLOR_F2F4F5 RGB(0xF2, 0xF4, 0xF5)
+#define kCOLOR_F2F4F7 RGB(0xF2, 0xF4, 0xF7)
 
 //毛玻璃
 #define kCOLOR_effectView_000000_Alpha04 [RGB(0x00, 0x00, 0x00) colorWithAlphaComponent:0.4];
@@ -240,12 +259,19 @@
 //app背景主题色
 #define kCOLOR_dynamicProvider_FFFFFF_212121       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x21, 0x21, 0x21)]]
 
+#define kCOLOR_dynamicProvider_FFFFFF_292B31       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x29, 0x2b, 0x31)]]
+
 #define kCOLOR_dynamicProvider_000000_212121       [UIColor colorWithDynamicProviderColor:@[RGB(0x00, 0x00, 0x00),RGB(0x21, 0x21, 0x21)]]
 
 
 #define kCOLOR_dynamicProvider_FFFFFF_919699       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x91, 0x96, 0x99)]]
 
+#define kCOLOR_dynamicProvider_FAFAFA_242424       [UIColor colorWithDynamicProviderColor:@[RGB(0xfa, 0xfa, 0xfa),RGB(0x24, 0x24, 0x24)]]
 
+//我的页面背景色
+#define kCOLOR_dynamicProvider_F6F8FA_1F2126       [UIColor colorWithDynamicProviderColor:@[RGB(0xf6, 0xf8, 0xfa),RGB(0x1f, 0x21, 0x26)]]
+#define kCOLOR_dynamicProvider_CED0D2_4D5056      [UIColor colorWithDynamicProviderColor:@[RGB(0xce, 0xd0, 0xd2),RGB(0x4d, 0x50, 0x56)]]
+#define kCOLOR_dynamicProvider_E6E7E8A100_E6E7E8A008      [UIColor colorWithDynamicProviderColor:@[RGBACOLOR(0xE6, 0xE7, 0xE8 ,1),RGBACOLOR(0xE6, 0xE7, 0xE8 ,0.08)]]
 #define kCOLOR_C8C8C8       RGB(0xc8, 0xc8, 0xc8)
 #define kCOLOR_dynamicProvider_C8C8C8_414141 [UIColor colorWithDynamicProviderColor:@[RGB(0xc8, 0xc8, 0xc8),RGB(0x41, 0x41, 0x41)]]
 
@@ -280,8 +306,11 @@
 
 #define kCOLOR_dynamicProvider_FFFFFF_DADBDC       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0xda, 0xdb, 0xdc)]]
  
+#define kCOLOR_dynamicProvider_222222_E5E7E8      [UIColor colorWithDynamicProviderColor:@[RGB(0x22, 0x22, 0x22),RGB(0xe5, 0xe7, 0xe8)]]
+
 #define kCOLOR_FFFFFF RGB(0xff, 0xff, 0xff)
 #define kCOLOR_333333  RGB(0x33, 0x33, 0x33)
+#define kCOLOR_FFFFFFAlpha03 [RGB(0xff, 0xff, 0xff) colorWithAlphaComponent:0.3]
 
 
 #define kCOLOR_dynamicProvider_777777_919699      [UIColor colorWithDynamicProviderColor:@[RGB(0x77, 0x77, 0x77),RGB(0x91, 0x96, 0x99)]]
@@ -302,10 +331,6 @@
 
 
 #define  kCOLOR_dynamicProvider_comment_CACBCC [UIColor colorWithDynamicProviderColor:@[RGB(0xCA, 0xCB, 0xCC),RGB(0xff, 0x61, 0x7b)]]
-
-
-#define kCOLOR_F6F7F8  RGB(0xF6, 0xF7, 0xF8)
-
 
 
 #define kCOLOR_777777       RGB(0x77, 0x77, 0x77)
@@ -348,6 +373,8 @@
 #define kCOLOR_dynamicProvider_1FCC9E_1FAC86   [UIColor colorWithDynamicProviderColor:@[RGB(0x1F, 0xCC, 0x9E), RGB(0x1F, 0xAC, 0x86)]]
 
 
+#define kCOLOR_505a6a RGB(0x50, 0x5a, 0x6a)
+
 #define kCOLOR_BABBBC       RGB(0xBA, 0xBB, 0xBC)
 
 #define kCOLOR_008FFA       RGB(0x00, 0x8F, 0xFA)
@@ -359,6 +386,7 @@
 #define kCOLOR_00D6E2       RGB(0x00, 0xD6, 0xE2)
 #define kCOLOR_575757       RGB(0x57, 0x57, 0x57)
 #define kCOLOR_F5F5F5       RGB(0xf5, 0xf5, 0xf5)
+#define kCOLOR_F5F6F7       RGB(0xf5, 0xf6, 0xf7)
 #define kCOLOR_26F3FF       RGB(0x26, 0xF3, 0xFF)
 #define kCOLOR_272727       RGB(0x27, 0x27, 0x27)
 #define kCOLOR_F9001E       RGB(0xf9, 0x00, 0x1e)
@@ -368,6 +396,7 @@
 #define kCOLOR_666666       RGB(0x66, 0x66, 0x66)
 #define kCOLOR_FFED00       RGB(0xFF, 0xED, 0x00)
 #define kCOLOR_85FFF0       RGB(0x85, 0xFF, 0xF0)
+#define kCOLOR_85888F       RGB(0x85, 0x88, 0x8F)
 #define kCOLOR_FFC3E2       RGB(0xFF, 0xC3, 0xE2)
 #define kCOLOR_FF6666       RGB(0xFF, 0x66, 0x66)
 #define kCOLOR_FCFCFC       RGB(0xFC, 0xFC, 0xFC)
@@ -380,6 +409,7 @@
 #define kCOLOR_7FC8FF       RGB(0x7F, 0xC8, 0xFF)
 #define kCOLOR_F6F6F6       RGB(0xf6, 0xf6, 0xf6)
 #define kCOLOR_1890FF       RGB(0x18, 0x90, 0xff)
+#define kCOLOR_9CA5B5       RGB(0x9c, 0xa5, 0xb5)
 #define kCOLOR_E0233D       RGB(0xe0, 0x23, 0x3d)
 #define kCOLOR_FF5B0E       RGB(0xff, 0x5b, 0x0e)
 #define kCOLOR_0059DD       RGB(0x00, 0x59, 0xdd)
@@ -411,7 +441,15 @@
 #define kCOLOR_EBEBEB       RGB(0xEB, 0xEB, 0xEB)
 #define kCOLOR_4D9FFF       RGB(0x4D, 0x9F, 0xFF)
 
+#define kCOLOR_FFBB00       RGB(0xFF, 0xBB, 0x00)
+#define kCOLOR_1FCC39       RGB(0x1F, 0xCC, 0x39)
+#define kCOLOR_131F2F       RGB(0x13, 0x1F, 0x2F)
 
+#define kCOLOR_FAF4EA       RGB(0xfa, 0xf4, 0xea)
+#define kCOLOR_87530C       RGB(0x87, 0x53, 0x0c)
+#define kCOLOR_B68540       RGB(0xb6, 0x85, 0x40)
+#define kCOLOR_F7E2C3       RGB(0xf7, 0xe2, 0xc3)
+#define kCOLOR_FBF5EB       RGB(0xfb, 0xf5, 0xeb)
 
 #define kCOLOR_FF667F       RGB(0xFF, 0x66, 0x7F)
 
@@ -429,7 +467,18 @@
 #define kCOLOR_2E2E2E       RGB(0x2E, 0x2E, 0x2E)
 #define kCOLOR_616466       RGB(0x61, 0x64, 0x66)
 #define kCOLOR_2A2A2A       RGB(0x2A, 0x2A, 0x2A)
-#define kCOLOR_353535       RGB(0x35, 0x35, 0x35)
+#define kCOLOR_FF5E79       RGB(0xFF, 0x5E, 0x79)
+
+#define kCOLOR_202020       RGB(0x20, 0x20, 0x20)
+#define kCOLOR_2E2E2E       RGB(0x2E, 0x2E, 0x2E)
+#define kCOLOR_FFEFC5       RGB(0xFF, 0xEF, 0xC5)
+#define kCOLOR_FAF0DD       RGB(0xFA, 0xF0, 0xDD)
+#define kCOLOR_E5E7EB       RGB(0xe5, 0xE7, 0xE8)
+#define kCOLOR_292B31       RGB(0x29, 0x2b, 0x31)
+#define kCOLOR_6D7380       RGB(0x6d, 0x73, 0x80)
+#define kCOLOR_1F2126       RGB(0x1f, 0x21, 0x26)
+#define kCOLOR_0091FF       RGB(0x00, 0x91, 0xFF)
+
 
 #define Proportion [UIScreen mainScreen].bounds.size.width / 375
 static inline CGFloat windowFloorf(CGFloat value) {
@@ -463,77 +512,10 @@ static inline CGFloat windowFloorf(CGFloat value) {
 
 #define kDevice_Is_iPhoneX  ([RRAppConfig config].isiPhoneX)
 #define iPhone5_5s_5c ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
-//static inline CGFloat statusMarginToTop() {
-//    if (kDevice_Is_iPhoneX) {
-//        return 44;
-//    } else {
-//        return 20;
-//    }
-//}
-//
-////iphone的安全边距，其中右和下是负值，是为了方便填写约束
-//static inline UIEdgeInsets appMargin() {
-//    CGFloat top = 0;
-//    CGFloat bottom = 0;
-//    CGFloat left = 0;
-//    CGFloat right = 0;
-//    if (@available(iOS 11.0, *)) {
-//        UIEdgeInsets insets = [UIApplication sharedApplication].keyWindow.safeAreaInsets;
-//        //iphonex系列为44，使用安全区域，其他的忽略statusbar的非q安全区域，直接取0
-//        top = insets.top > 40 ? insets.top : 0;
-//        bottom = -insets.bottom;
-//        left = insets.left;
-//        right = -insets.right;
-//    }
-//    return UIEdgeInsetsMake(top, left, bottom, right);
-//}
-//
-////播放器高度
-//static inline CGFloat playerViewHeight() {
-//    return appMargin().top + KHomeWidth / 750 * 421;
-//}
-//
-////剧荒短视频播放器高度
-//static inline CGFloat amwayPlayerHeight() {
-//    return (KHeight + appMargin().bottom - kBottomBarHeight);
-//}
-//
-//static inline CGFloat navMarginToTop() {
-//    return 60;
-//}
-//
-//static inline CGFloat bottomMarginToBottom() {
-//    if (@available(iOS 11.0, *)) {
-//        return [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom;
-//    }
-//    return 0;
-//}
-//
-//static inline CGFloat dealValue(CGFloat value) {
-//    return ceilf(value * [[UIScreen mainScreen] scale]) / [[UIScreen mainScreen] scale];
-//}
-//
-//static inline CGFloat floorValue(CGFloat value) {
-//    return floorf(value * [[UIScreen mainScreen] scale]) / [[UIScreen mainScreen] scale];
-//}
-//
-//// View 圆角
-//static inline void ViewRadius(UIView *view, CGFloat radius) {
-//    view.layer.masksToBounds = YES;
-//    view.layer.cornerRadius = radius;
-//}
-//
-//// View 圆角并描边
-//static inline void ViewBorderRadius(UIView *view, CGFloat radius, CGFloat borderWidth, UIColor *borderColor) {
-//    ViewRadius(view, radius);
-//    view.layer.borderWidth = borderWidth;
-//    view.layer.borderColor = borderColor.CGColor;
-//}
-//
-//static inline id nib2Obj(NSString *name, id owner){
-//    NSArray *result = [[NSBundle mainBundle] loadNibNamed:name owner:owner options:nil];
-//    return result.count > 0 ? result[0] : nil;
-//}
+ 
+#define seasonVideoCategoryForm(seasonModel) (seasonModel.classify.length ? seasonModel.classify : (seasonModel.isMovie ? kRRUmengEventVideoCategory1Movie : kRRUmengEventVideoCategory1Series))
+
+#define seasonVideoForm(item)   (item.dramaType.length ? item.dramaType : ([item.dramaType isEqualToString:@"MOVIE"])? kRRUmengEventVideoCategory1Movie : kRRUmengEventVideoCategory1Series)
 
 // 是否iPhone5
 #define isiPhone5               ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? \
@@ -547,6 +529,7 @@ static inline CGFloat windowFloorf(CGFloat value) {
                                 NO)
 #define IsIOS9 ([[UIDevice currentDevice].systemVersion doubleValue] >= 9.0)
 #define IsIOS10 ([[UIDevice currentDevice].systemVersion doubleValue] >= 10.0)
+#define IsIOS14 ([[UIDevice currentDevice].systemVersion doubleValue] >= 14.0)
 
 // 是否IOS7
 #define isIOS7                  ([[[UIDevice currentDevice]systemVersion]floatValue] >= 7.0)
@@ -567,6 +550,13 @@ static inline CGFloat windowFloorf(CGFloat value) {
 #define RRSafeEndOfCollectionViewCell   \
     [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"errorCell"];\
     return [collectionView dequeueReusableCellWithReuseIdentifier:@"errorCell" forIndexPath:indexPath];
+
+#define kRRShowPIP @"kRRShowPIP"
+
+
+#define RRSafeEndOfCollectionReusableView   \
+    [collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:kind withReuseIdentifier:@"errorHeader"]; \
+    return [collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:@"errorHeader" forIndexPath:indexPath];
 
 #define RRSafeEndOfTableViewCell   \
     [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"errorCell"];\
