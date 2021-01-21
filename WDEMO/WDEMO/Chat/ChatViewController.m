@@ -17,7 +17,10 @@
 #import "TipMessageDataModel.h"
 #import "FaceMessageDataModel.h"
 
-@interface ChatViewController () <ChatControllerDelegate>
+@interface ChatViewController () <ChatControllerDelegate> {
+    CGFloat _playerWidth;
+    CGFloat _playerHeight;
+}
 //半屏
 @property (nonatomic, strong) UIView *halfPlyerView;
 
@@ -42,6 +45,9 @@
     
     CGFloat player_width = Screen_Width;
     CGFloat player_height = player_width * 9 / 16;
+    _playerWidth = player_width;
+    _playerHeight = player_height;
+    
     
     _halfPlyerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, player_height)];
     _halfPlyerView.backgroundColor = [UIColor blackColor];
@@ -232,10 +238,8 @@
         //        [_headerView addSubview:_playerView];
         //
         
-        _halfPlyerView.frame=CGRectMake(0, 0, size.width,size.height);
+        _halfPlyerView.frame=CGRectMake(0, 0, _playerWidth, _playerHeight);
         [self.view bringSubviewToFront:_halfPlyerView];
-        
-        
     }
     
 }
@@ -258,8 +262,7 @@
     return UIInterfaceOrientationPortrait;
 }
 
-
-
+//旋转
 - (void)setOrientation:(BOOL)fullscreen {
     if (fullscreen) {
         //首先设置UIInterfaceOrientationUnknown欺骗系统，避免可能出现直接设置无效的情况
