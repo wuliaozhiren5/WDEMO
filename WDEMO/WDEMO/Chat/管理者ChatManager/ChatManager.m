@@ -11,7 +11,8 @@
 #import "TipMessageDataModel.h"
 #import "EnterMessageDataModel.h"
 #import "FaceMessageDataModel.h"
-
+#import "ChatController.h"
+#import "FullScreenChatController.h"
 @interface ChatManager ()
  
 @property (nonatomic, copy, readwrite) NSArray *msgsArray;
@@ -111,8 +112,36 @@
 //    }];
 //}
  
-- (void)fullChatControllerSetChatMessage {
-    [_fullChat.messageController sendMessages:self.msgsArray];
+//- (void)fullChatControllerSetChatMessage {
+//    [_fullChat.messageController sendMessages:self.msgsArray];
+//    if (_halfChat && _halfChat.delegate) {
+//        _fullChat.delegate = _halfChat.delegate;
+//    }
+//}
+
+- (void)createHalfChat {
+     _halfChat = [[ChatController alloc] init];
+}
+
+//- (ChatController *)createHalfChat {
+////    _halfChat = [[ChatController alloc] init];
+//    if (!_halfChat) {
+//        _halfChat = [[ChatController alloc] init];
+//    }
+//    return _halfChat;
+//}
+//
+//- (FullScreenChatController *)createFullChat {
+////    _halfChat = [[ChatController alloc] init];
+//    _fullChat = [[FullScreenChatController alloc] initWithMessages:self.msgsArray];
+////    _fullChat.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height);
+//    if (_halfChat && _halfChat.delegate) {
+//        _fullChat.delegate = _halfChat.delegate;
+//    }
+//}
+- (void)createFullChat {
+    _fullChat = [[FullScreenChatController alloc] initWithMessages:self.msgsArray];
+//    _fullChat.view.frame = CGRectMake(0, 0, Screen_Width, Screen_Height);
     if (_halfChat && _halfChat.delegate) {
         _fullChat.delegate = _halfChat.delegate;
     }

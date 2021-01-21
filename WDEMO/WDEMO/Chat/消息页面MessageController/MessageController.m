@@ -26,11 +26,27 @@
 
 @implementation MessageController
 
+- (instancetype)initWithMessages:(NSArray *)messages {
+    self = [super init];
+    if (self) {
+        if (messages) {
+            _uiMsgs = [messages mutableCopy];
+        } else {
+            _uiMsgs = [NSMutableArray array];
+        }
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    self.isFull = NO;
-    self.messageListCellWidth = HalfScreenChatViewWidth;
-    [self setupViews];
+    [super viewDidLoad];;
+    _isFull = NO;
+    _messageListCellWidth = HalfScreenChatViewWidth;
+    _heightCache = [NSMutableArray array];
+    //    _uiMsgs = [NSMutableArray array];
+    if (!_uiMsgs) {
+        _uiMsgs = [NSMutableArray array];
+    }
 }
 
 - (void)dealloc {
@@ -85,8 +101,8 @@
     [self.tableView registerClass:[FaceMessageCell class] forCellReuseIdentifier:FaceMessageCell_ReuseId];
     [self.tableView registerClass:[EnterMessageCell class] forCellReuseIdentifier:EnterMessageCell_ReuseId];
     
-    _heightCache = [NSMutableArray array];
-    _uiMsgs = [[NSMutableArray alloc] init];
+//    _heightCache = [NSMutableArray array];
+//    _uiMsgs = [[NSMutableArray alloc] init];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -186,11 +202,11 @@
     }
 }
 
-- (void)sendMessages:(NSArray *)msgs {
-    _uiMsgs = [msgs mutableCopy];
-    [self.tableView reloadData];
-    [self scrollToBottom:NO];
-}
+//- (void)sendMessages:(NSArray *)msgs {
+//    _uiMsgs = [msgs mutableCopy];
+//    [self.tableView reloadData];
+//    [self scrollToBottom:NO];
+//}
 
 - (void)sendMessage:(ChatMessageDataModel *)msg {
     dispatch_async(dispatch_get_main_queue(), ^{

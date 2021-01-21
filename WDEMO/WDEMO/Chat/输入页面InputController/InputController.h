@@ -9,7 +9,7 @@
   ******************************************************************************/
 #import <UIKit/UIKit.h>
 #import "InputBar.h"
-#import "NoInputBar.h"
+//#import "NoInputBar.h"
 #import "FaceView.h"
 #import "ChatMessageDataModel.h"
 

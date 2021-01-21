@@ -46,7 +46,6 @@
     [self.view addSubview:_halfPlyerView];
     //创建聊天界面
     self.chatManager = [[ChatManager alloc] init];
- 
     _halfChat = [[ChatController alloc] init];
     _halfChat.delegate = self;
     _halfChat.view.frame = CGRectMake(0, player_height, self.view.bounds.size.width, self.view.bounds.size.height - player_height);
@@ -95,7 +94,9 @@
 
 -(void)clickFullScreenBtn:(UIButton *)btn {
     if (!self.chatManager.fullChat) {
-        _fullChat = [[FullScreenChatController alloc] init];
+//        _fullChat = [[FullScreenChatController alloc] init];
+        [self.chatManager createFullChat];
+        _fullChat = self.chatManager.fullChat ;
         _fullChat.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
         _fullChat.delegate = self;
         [self addChildViewController:_fullChat];

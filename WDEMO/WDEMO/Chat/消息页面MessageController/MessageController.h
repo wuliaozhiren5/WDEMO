@@ -81,7 +81,11 @@
 *  设置聊天消息
 *  @param msg 消息单元数据
 */
-- (void)sendMessages:(NSArray *)msgs;
+//- (void)sendMessages:(NSArray *)msgs;
+
+/// 设置聊天消息
+/// @param messages 设置聊天消息messages
+- (instancetype)initWithMessages:(NSArray *)messages;
 
 /**
  *  发送消息

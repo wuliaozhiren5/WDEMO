@@ -813,12 +813,6 @@
 				F5609CAB2502236700A13C15 /* BaseController */,
 				67303347210AED2F001471D8 /* CenterBar */,
 				F57B529D24C7DEB100940696 /* Chat */,
-				F5D54BFE2553F35400787EBB /* ChatBottomInputBarViewController.h */,
-				F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */,
-				F5D056F325594D5F008CC230 /* FullScreenChatBottomInputBarViewController.h */,
-				F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */,
-				F5D056FA25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.h */,
-				F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */,
 				A479987D24BAB2A80079F72D /* CollectionView */,
 				F5668FB424C6D818007D452E /* CPU */,
 				A459C28824C1642B00A3B5FF /* Crash */,
@@ -1040,7 +1034,7 @@
 			path = "贴吧";
 			sourceTree = "<group>";
 		};
-		F53293EA2509C4C500E06D42 /* ChatController */ = {
+		F53293EA2509C4C500E06D42 /* 聊天控制器ChatController */ = {
 			isa = PBXGroup;
 			children = (
 				F57B52A124C7DF2700940696 /* ChatController.h */,
@@ -1048,7 +1042,7 @@
 				F53293F12509CE0B00E06D42 /* FullScreenChatController.h */,
 				F53293F22509CE0D00E06D42 /* FullScreenChatController.m */,
 			);
-			path = ChatController;
+			path = "聊天控制器ChatController";
 			sourceTree = "<group>";
 		};
 		F53FFE5F259DA1D600ABE946 /* 加载LoadingView */ = {
@@ -1186,13 +1180,14 @@
 		F57B529D24C7DEB100940696 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				F598056925B860EB004F9D48 /* 底部假的输入框ChatBottomInputBarViewController */,
 				F57B529E24C7DECF00940696 /* ChatViewController.h */,
 				F57B529F24C7DECF00940696 /* ChatViewController.m */,
-				F5F37084250A593100118FC4 /* ChatManager */,
+				F5F37084250A593100118FC4 /* 管理者ChatManager */,
 				F5F370832509D3AD00118FC4 /* ChatCell */,
-				F53293EA2509C4C500E06D42 /* ChatController */,
-				F5B5A9352508F53D002505AE /* InputController */,
-				F5B5A9342508F509002505AE /* MessageController */,
+				F53293EA2509C4C500E06D42 /* 聊天控制器ChatController */,
+				F5B5A9352508F53D002505AE /* 输入页面InputController */,
+				F5B5A9342508F509002505AE /* 消息页面MessageController */,
 				F5DEB2A324CE76B6009A6767 /* Kit */,
 				F5DEB2A224CE7667009A6767 /* Model */,
 				F57B52AE24C7E86F00940696 /* Input */,
@@ -1270,6 +1265,19 @@
 				F511C70B25B6918800581063 /* UIView+Shadow.m */,
 			);
 			path = "小红点";
+			sourceTree = "<group>";
+		};
+		F598056925B860EB004F9D48 /* 底部假的输入框ChatBottomInputBarViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F5D54BFE2553F35400787EBB /* ChatBottomInputBarViewController.h */,
+				F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */,
+				F5D056F325594D5F008CC230 /* FullScreenChatBottomInputBarViewController.h */,
+				F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */,
+				F5D056FA25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.h */,
+				F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */,
+			);
+			path = "底部假的输入框ChatBottomInputBarViewController";
 			sourceTree = "<group>";
 		};
 		F5A51F2B24FC952C0054A4DD /* Password */ = {
@@ -1351,7 +1359,7 @@
 			path = RACLogin;
 			sourceTree = "<group>";
 		};
-		F5B5A9342508F509002505AE /* MessageController */ = {
+		F5B5A9342508F509002505AE /* 消息页面MessageController */ = {
 			isa = PBXGroup;
 			children = (
 				F5DEB32824CEBB66009A6767 /* MessageController.h */,
@@ -1361,10 +1369,10 @@
 				F5B5A92E2508F501002505AE /* HalfScreenMessageController.h */,
 				F5B5A9302508F502002505AE /* HalfScreenMessageController.m */,
 			);
-			path = MessageController;
+			path = "消息页面MessageController";
 			sourceTree = "<group>";
 		};
-		F5B5A9352508F53D002505AE /* InputController */ = {
+		F5B5A9352508F53D002505AE /* 输入页面InputController */ = {
 			isa = PBXGroup;
 			children = (
 				F553E12024CA800200DA5625 /* InputController.h */,
@@ -1374,7 +1382,7 @@
 				F53293EC2509C6FE00E06D42 /* HalfScreenInputController.h */,
 				F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */,
 			);
-			path = InputController;
+			path = "输入页面InputController";
 			sourceTree = "<group>";
 		};
 		F5B95DF925A5EA2100911FF8 /* 瀑布流布局 */ = {
@@ -1615,13 +1623,13 @@
 			path = ChatCell;
 			sourceTree = "<group>";
 		};
-		F5F37084250A593100118FC4 /* ChatManager */ = {
+		F5F37084250A593100118FC4 /* 管理者ChatManager */ = {
 			isa = PBXGroup;
 			children = (
 				F5F37085250A594400118FC4 /* ChatManager.h */,
 				F5F37086250A594400118FC4 /* ChatManager.m */,
 			);
-			path = ChatManager;
+			path = "管理者ChatManager";
 			sourceTree = "<group>";
 		};
 		F5F4F10024D3BF23007DB7F3 /* YYText富文本YY富文本 */ = {

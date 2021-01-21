@@ -40,14 +40,17 @@ NS_ASSUME_NONNULL_BEGIN
 //- (void)setMembers:(NSArray<RRIMUser*> *)userArray;
 //- (void)addMembers:(NSArray<RRIMUser*> *)userArray;
 //- (void)deleteMembers:(NSArray<RRIMUser*> *)userArray;
-//全屏时：为聊天页面添加聊天数据
-- (void)fullChatControllerSetChatMessage;
+
 //标记为已读状态
 - (void)readMessage;
 //移除全屏聊天
 - (void)removeFullChat;
 //手动隐藏键盘
 - (void)chatControllerKeyboardReset;
+
+- (void)createHalfChat;
+
+- (void)createFullChat;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -30,6 +30,8 @@ NS_ASSUME_NONNULL_BEGIN
 */
 @property(nonatomic, assign, getter=isInputEditing) BOOL inputEditing;
 
+- (instancetype)initWithMessages:(NSArray *)messages;
+
 //出场动画
 - (void)showAnimation;
 

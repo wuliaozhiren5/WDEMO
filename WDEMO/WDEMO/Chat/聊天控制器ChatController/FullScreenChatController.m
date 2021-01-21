@@ -18,10 +18,18 @@
 
 @property(nonatomic, assign) BOOL animationFinished;
 @property(nonatomic, assign) BOOL isShowMessageInput;
-
+@property (nonatomic, strong) NSArray *messages;
 @end
 
 @implementation FullScreenChatController
+
+- (instancetype)initWithMessages:(NSArray *)messages {
+    self = [super init];
+    if (self) {
+        _messages = messages;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -108,7 +116,8 @@
 
 - (void)creatMessageController {
     //message
-    _messageController = [[FullScreenMessageController alloc] init];
+//    _messageController = [[FullScreenMessageController alloc] init];
+    _messageController = [[FullScreenMessageController alloc] initWithMessages:self.messages];
 //    _messageController.view.frame = CGRectMake(self.view.frame.size.width - 270, 0, 270, self.view.frame.size.height -  TTextView_Height);
     self.messageController.view.frame = CGRectMake(self.view.frame.size.width, 0, 270, self.view.frame.size.height - TTextView_Height);
     _messageController.delegate = self;
