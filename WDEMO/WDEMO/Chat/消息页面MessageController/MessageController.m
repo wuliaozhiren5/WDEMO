@@ -47,6 +47,8 @@
     if (!_uiMsgs) {
         _uiMsgs = [NSMutableArray array];
     }
+    [self setupViews];
+
 }
 
 - (void)dealloc {

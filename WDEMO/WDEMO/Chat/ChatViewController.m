@@ -21,6 +21,8 @@
 //半屏
 @property (nonatomic, strong) UIView *halfPlyerView;
 
+//@property (nonatomic, strong) UIView *fullPlyerView;
+
 @property (nonatomic, strong) ChatManager *chatManager;
 
 @property (nonatomic, strong) ChatController *halfChat;
@@ -40,7 +42,7 @@
     
     CGFloat player_width = Screen_Width;
     CGFloat player_height = player_width * 9 / 16;
-
+    
     _halfPlyerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, player_height)];
     _halfPlyerView.backgroundColor = [UIColor blackColor];
     [self.view addSubview:_halfPlyerView];
@@ -52,7 +54,7 @@
     [self addChildViewController:_halfChat];
     [self.view addSubview:_halfChat.view];
     self.chatManager.halfChat = _halfChat;
-
+    
     UIButton *backBtn = [[UIButton alloc]initWithFrame:CGRectMake(0, 20, 44, 44)];
     //    [goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
     [backBtn setTitle:@"<" forState:UIControlStateNormal];
@@ -63,9 +65,18 @@
     UIButton *fullScreenBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width - 44 , player_height - 44, 44, 44)];
     //    [goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
     [fullScreenBtn setTitle:@"全屏" forState:UIControlStateNormal];
+    [fullScreenBtn setTitle:@"半屏" forState:UIControlStateSelected];
     fullScreenBtn.backgroundColor = [UIColor clearColor];
     [fullScreenBtn addTarget:self action:@selector(clickFullScreenBtn:) forControlEvents:UIControlEventTouchUpInside];
     [_halfPlyerView addSubview:fullScreenBtn];
+    
+    
+    UIButton *fullChatBtn = [[UIButton alloc]initWithFrame:CGRectMake(320 , 50, 44, 44)];
+    //    [goBtn setImage:[UIImage imageNamed:@"btn_upgradeaccount_close"] forState:UIControlStateNormal];
+    [fullChatBtn setTitle:@"chat" forState:UIControlStateNormal];
+    fullChatBtn.backgroundColor = [UIColor clearColor];
+    [fullChatBtn addTarget:self action:@selector(clickFullChatBtn:) forControlEvents:UIControlEventTouchUpInside];
+    [_halfPlyerView addSubview:fullChatBtn];
     
     [self createChatMessage];
     return;
@@ -78,7 +89,7 @@
             sleep(10);
         }
     });
-
+    
     //线程2
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         sleep(1);
@@ -93,8 +104,16 @@
 }
 
 -(void)clickFullScreenBtn:(UIButton *)btn {
+    BOOL isSelected = btn.isSelected;
+    btn.selected = !isSelected;
+    [self setOrientation:!isSelected];
+    
+    
+}
+
+-(void)clickFullChatBtn:(UIButton *)btn {
     if (!self.chatManager.fullChat) {
-//        _fullChat = [[FullScreenChatController alloc] init];
+        //        _fullChat = [[FullScreenChatController alloc] init];
         [self.chatManager createFullChat];
         _fullChat = self.chatManager.fullChat ;
         _fullChat.view.frame = CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height);
@@ -102,7 +121,7 @@
         [self addChildViewController:_fullChat];
         [self.view addSubview:_fullChat.view];
         self.chatManager.fullChat = _fullChat;
-//        _halfChat.view.hidden = YES;
+        //        _halfChat.view.hidden = YES;
     } else {
         [self addChildViewController:self.chatManager.fullChat];
         [self.view addSubview:self.chatManager.fullChat.view];
@@ -110,7 +129,7 @@
     }
     //填充数据
     //todo
-//    [self.chatManager fullChatControllerSetChatMessage];
+    //    [self.chatManager fullChatControllerSetChatMessage];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -130,44 +149,7 @@
 }
 
 
--(void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
-    
-    //    if ([UIDevice currentDevice].orientation ==UIDeviceOrientationLandscapeLeft||[UIDevice currentDevice].orientation ==UIDeviceOrientationLandscapeRight){
-    //         UIWindow*window= [UIApplication sharedApplication].keyWindow;
-    //        _playerView.frame=CGRectMake(0, 0, size.width,size.height);
-    //        _playerView.player.view.frame=CGRectMake(0, 0, size.width,size.height);
-    //        _playerView.mediaControl.fullScreenBtn.selected=YES;
-    //        _playerView.isFullScreen=YES;
-    //        [window addSubview:_playerView];
-    //    }else{
-    //       _playerView.frame=CGRectMake(0, 0, size.width, size.width/16*9);
-    //       _playerView.player.view.frame=CGRectMake(0, 0, size.width, size.width/16*9);
-    //        _playerView.mediaControl.fullScreenBtn.selected=NO;
-    //        _playerView.isFullScreen=NO;
-    //        [_headerView addSubview:_playerView];
-    //
-    //    }
-    
-}
 
-//是否自动旋转
-//返回导航控制器的顶层视图控制器的自动旋转属性，因为导航控制器是以栈的原因叠加VC的
-//topViewController是其最顶层的视图控制器，
--(BOOL)shouldAutorotate{
-    return YES;
-}
-
-//支持哪些屏幕方向
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
-//    return UIInterfaceOrientationMaskAllButUpsideDown;
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-//默认方向
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
-    return UIInterfaceOrientationPortrait;
-}
- 
 //制造数据
 - (void)createChatMessage {
     [self createChatTipMessage];
@@ -208,7 +190,7 @@
     FaceMessageDataModel *faceMsgModel = [[FaceMessageDataModel alloc]init];
     faceMsgModel.content = msgCellData.content;
     faceMsgModel.type = ChatMessageTypeFace;
-
+    
     //直接发送系统样式
     ChatMessageDataModel *msgModel = [[ChatMessageDataModel alloc]init];
     msgModel.content = msgCellData.content;
@@ -216,7 +198,7 @@
     
     NSArray *msgArray = @[faceMsgModel, msgModel];
     [self.chatManager sendMessages:msgArray];
-
+    
 }
 
 - (void)clickPlayListButton {
@@ -227,5 +209,72 @@
     //todo 半屏幕隐藏聊天界面
 }
 
- 
+
+//屏幕旋转之后，屏幕的宽高互换，我们借此判断重新布局
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator{
+    
+    if ([UIDevice currentDevice].orientation ==UIDeviceOrientationLandscapeLeft||[UIDevice currentDevice].orientation ==UIDeviceOrientationLandscapeRight){
+        //         UIWindow*window= [UIApplication sharedApplication].keyWindow;
+        //        _playerView.frame=CGRectMake(0, 0, size.width,size.height);
+        //        _playerView.player.view.frame=CGRectMake(0, 0, size.width,size.height);
+        //        _playerView.mediaControl.fullScreenBtn.selected=YES;
+        //        _playerView.isFullScreen=YES;
+        //        [window addSubview:_playerView];
+        
+        _halfPlyerView.frame=CGRectMake(0, 0, size.width,size.height);
+        [self.view bringSubviewToFront:_halfPlyerView];
+        
+    }else{
+        //       _playerView.frame=CGRectMake(0, 0, size.width, size.width/16*9);
+        //       _playerView.player.view.frame=CGRectMake(0, 0, size.width, size.width/16*9);
+        //        _playerView.mediaControl.fullScreenBtn.selected=NO;
+        //        _playerView.isFullScreen=NO;
+        //        [_headerView addSubview:_playerView];
+        //
+        
+        _halfPlyerView.frame=CGRectMake(0, 0, size.width,size.height);
+        [self.view bringSubviewToFront:_halfPlyerView];
+        
+        
+    }
+    
+}
+
+//是否自动旋转
+//返回导航控制器的顶层视图控制器的自动旋转属性，因为导航控制器是以栈的原因叠加VC的
+//topViewController是其最顶层的视图控制器，
+-(BOOL)shouldAutorotate{
+    return YES;
+}
+
+//支持哪些屏幕方向
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskAllButUpsideDown;
+    //    return UIInterfaceOrientationMaskPortrait;
+}
+
+//默认方向
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    return UIInterfaceOrientationPortrait;
+}
+
+
+
+- (void)setOrientation:(BOOL)fullscreen {
+    if (fullscreen) {
+        //首先设置UIInterfaceOrientationUnknown欺骗系统，避免可能出现直接设置无效的情况
+        NSNumber *resetOrientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationUnknown];
+        [[UIDevice currentDevice] setValue:resetOrientationTarget forKey:@"orientation"];
+        NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationLandscapeLeft];
+        [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
+    } else {
+        NSNumber *resetOrientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationUnknown];
+        [[UIDevice currentDevice] setValue:resetOrientationTarget forKey:@"orientation"];
+        NSNumber *orientationTarget = [NSNumber numberWithInt:UIInterfaceOrientationPortrait];
+        [[UIDevice currentDevice] setValue:orientationTarget forKey:@"orientation"];
+    }
+}
+
 @end
+
+
