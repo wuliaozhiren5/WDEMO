@@ -68,6 +68,7 @@
 		F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9625A9672200B8C415 /* 加载LoadingView.md */; };
 		F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */; };
 		F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */ = {isa = PBXBuildFile; fileRef = F50D6DA225A9675700B8C415 /* 个人主页.md */; };
+		F50E841D25BEDDE6009767FE /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E841C25BEDDE6009767FE /* SearchBar.m */; };
 		F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F511C70B25B6918800581063 /* UIView+Shadow.m */; };
 		F51535EF259B2960007E3416 /* UserEditBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51535EE259B2960007E3416 /* UserEditBar.m */; };
 		F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */ = {isa = PBXBuildFile; fileRef = F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */; };
@@ -377,6 +378,8 @@
 		F50D6D9625A9672200B8C415 /* 加载LoadingView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "加载LoadingView.md"; sourceTree = "<group>"; };
 		F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "广告banner无限滚动.md"; sourceTree = "<group>"; };
 		F50D6DA225A9675700B8C415 /* 个人主页.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "个人主页.md"; sourceTree = "<group>"; };
+		F50E841B25BEDDE6009767FE /* SearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBar.h; sourceTree = "<group>"; };
+		F50E841C25BEDDE6009767FE /* SearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBar.m; sourceTree = "<group>"; };
 		F511C70A25B6918800581063 /* UIView+Shadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
 		F511C70B25B6918800581063 /* UIView+Shadow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
 		F51535ED259B2960007E3416 /* UserEditBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserEditBar.h; sourceTree = "<group>"; };
@@ -1003,6 +1006,8 @@
 		F50D6D7225A957C000B8C415 /* 搜索页面 */ = {
 			isa = PBXGroup;
 			children = (
+				F50E841B25BEDDE6009767FE /* SearchBar.h */,
+				F50E841C25BEDDE6009767FE /* SearchBar.m */,
 				F52A098625B6EBE2008BDDEE /* SearchBarController.h */,
 				F52A098725B6EBE2008BDDEE /* SearchBarController.m */,
 				F50D6D7325A9580D00B8C415 /* SearchViewController.h */,
@@ -1932,6 +1937,7 @@
 				F553E14424CA82E700DA5625 /* ChatKitConfig.m in Sources */,
 				F5A8898524F605C600DB73ED /* OrderViewController.m in Sources */,
 				F5609CA22502194C00A13C15 /* AllScreenViewController.m in Sources */,
+				F50E841D25BEDDE6009767FE /* SearchBar.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
 				F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */,
 				F5A8898E24F6078E00DB73ED /* OrderViewModel.m in Sources */,

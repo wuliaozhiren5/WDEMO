@@ -1,17 +1,16 @@
 //
-//  SearchBarController.m
+//  SearchBar.m
 //  WDEMO
 //
-//  Created by rrtv on 2021/1/19.
+//  Created by rrtv on 2021/1/25.
 //  Copyright © 2021 wwc. All rights reserved.
 //
 
-#import "SearchBarController.h"
+#import "SearchBar.h"
 #import "ACMacros.h"
 #import "UIColor+color.h"
 #import "THeader.h"
-
-@interface SearchBarController ()<UITextFieldDelegate>
+@interface SearchBar ()<UITextFieldDelegate>
 //输入框复试图
 @property (nonatomic, strong) UIView *textView;
 //icon
@@ -26,22 +25,23 @@
 @property (nonatomic, assign) CGFloat height;
 @end
 
-@implementation SearchBarController
+@implementation SearchBar
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-
-    self.width = Screen_Width;//self.view.frame.size.width;
-    self.height = 52;//self.view.frame.size.height;
-    [self setupViews];
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.width = self.frame.size.width;
+        self.height = self.frame.size.height;
+        [self setupViews];
+    }
+    return self;
 }
 
 - (void)setupViews {
-    self.view.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_212121;
-    [self.view addSubview:self.cancelBtn];
-    [self.view addSubview:self.textView];
+    self.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_212121;
+    [self addSubview:self.cancelBtn];
+    [self addSubview:self.textView];
     [self.textView addSubview:self.iconImageView];
     [self.textView addSubview:self.deleteBtn];
     [self.textView addSubview:self.textField];
@@ -79,6 +79,13 @@
 //- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
 //    return YES;
 //}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSInteger kMaxLength = 20;
+    NSInteger strLength = textField.text.length - range.length + string.length;
+    return (strLength <= kMaxLength);
+//    TOAST(@"最多输入20个字符");
+}
  
 - (void)textFieldDidChange:(UITextField *)textField {
     NSLog(@"textField - 输入框内容改变,当前内容为: %@",textField.text);
@@ -147,7 +154,7 @@
 - (UIImageView *)iconImageView {
     if (!_iconImageView) {
         _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(12, 7.5, 15, 15)];
-        _iconImageView.image = [UIImage imageNamed:@"ic_nav_search"];
+        _iconImageView.image = [UIImage imageNamed:@"ic_search_results_bar_28"];
      }
     return _iconImageView;;
 }
@@ -170,7 +177,7 @@
     if (!_deleteBtn) {
         _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(_textView.frame.size.width - 40, 0, 40, 30)];
 //        [_deleteBtn setTitle:@"X" forState:UIControlStateNormal];
-        [_deleteBtn setImage:[UIImage imageNamed:@"search_x"] forState:UIControlStateNormal];
+        [_deleteBtn setImage:[UIImage imageNamed:@"ic_search_results_bar_close_28"] forState:UIControlStateNormal];
 //        [_deleteBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [_deleteBtn addTarget:self action:@selector(clickDeleteBtn:)forControlEvents:UIControlEventTouchUpInside];
         _deleteBtn.hidden = YES;
@@ -189,3 +196,4 @@
     return _cancelBtn;;
 }
 @end
+ 

@@ -91,6 +91,7 @@
     
     self.window.rootViewController = tabbarVC;
     
+//    self.window.rootViewController = NavVC01;
     // 显示窗口
     [self.window makeKeyAndVisible];
     
