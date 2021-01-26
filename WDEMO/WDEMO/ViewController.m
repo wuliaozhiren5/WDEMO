@@ -284,9 +284,82 @@
 //    //json 动画
 //    [self LOTAnimation];
 //    //房主
-//    [self createRoomOwnimage]; 
+//    [self createRoomOwnimage];
+    
+    
+    
+    [self trycatch];
+
+
+    [self calculate];
+    
+
 }
 
+- (void)trycatch {
+    //    iOS - try~catch捕获异常防止崩溃简单实用
+    //    https://www.cnblogs.com/adampei-bobo/p/7444040.html
+        
+        //创建可变数组
+        NSMutableArray * arrM = @[].mutableCopy;
+    //    NSMutableArray * arrM = @[].copy;
+
+        // 创建nil对象
+        NSString * str = @"";
+        // 测试try cash
+        @try {
+            //此处写可能出现崩溃的代码
+            //数组插入nil对象
+            [arrM addObject:str];
+        } @catch (NSException *exception) {
+            //捕获到异常要执行的代码
+            NSLog(@"exc == %@, 最后我弹了一个弹框说这样不合适",exception);
+        } @finally {
+            //不管能不能捕获到异常都会执行的方法
+            NSLog(@"最后");
+        }
+        
+}
+
+- (void)calculate {
+    //    iOS查找子字符串(含多个字符串)在父字符串中的所有位置
+    //http://www.manongjc.com/article/94493.html
+    
+    //    方法的调用
+        NSArray *array = [self calculateSubStringCount:@"abcd1234556abcd" str:@"abcd"];
+}
+/**
+ 查找子字符串在父字符串中的所有位置
+ @param content 父字符串
+ @param tab 子字符串
+ @return 返回位置数组
+ */
+- (NSMutableArray*)calculateSubStringCount:(NSString *)content str:(NSString *)tab {
+    int location = 0;
+    NSMutableArray *locationArr = [NSMutableArray new];
+    NSRange range = [content rangeOfString:tab];
+    if (range.location == NSNotFound){
+        return locationArr;
+    }
+    //声明一个临时字符串,记录截取之后的字符串
+    NSString * subStr = content;
+    while (range.location != NSNotFound) {
+        if (location == 0) {
+            location += range.location;
+        } else {
+            location += range.location + tab.length;
+        }
+        //记录位置
+        NSNumber *number = [NSNumber numberWithUnsignedInteger:location];
+        [locationArr addObject:number];
+        //每次记录之后,把找到的字串截取掉
+        subStr = [subStr substringFromIndex:range.location + range.length];
+        NSLog(@"subStr %@",subStr);
+        range = [subStr rangeOfString:tab];
+        NSLog(@"rang %@",NSStringFromRange(range));
+    }
+    return locationArr;
+}
 //房主
 - (void)createRoomOwnimage {
     UIImageView *imageV = [[UIImageView alloc]init];;
