@@ -23,7 +23,7 @@
     //使用
     SettingModuleHandler *handler = [[SettingModuleHandler alloc]init];
     NSString *user = [handler.setting.delegate userId];
-  
+    NSLog(@"user = %@", user);
 }
 
 /*
