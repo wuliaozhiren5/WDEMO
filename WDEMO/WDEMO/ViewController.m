@@ -75,7 +75,7 @@
 #import "FollowTips.h"
 
 #import <Lottie/Lottie.h>
- 
+
 #import <ReactiveObjC/ReactiveObjC.h>
 //评分
 #import "ScoreView.h"
@@ -171,7 +171,6 @@
         [ListModel initWithTitle:@"Search" detail:@"搜索" type:ListModelTypeSearch],
         [ListModel initWithTitle:@"WKWebView" detail:@"网页" type:ListModelTypeWebView],
         [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
-
         
         
         
@@ -207,19 +206,19 @@
     
     CGFloat f = 1.1;
     NSLog(@"%f",f);
-  
-//        [UIView createRedViewWithRect:CGRectMake(20, 20, 10, 10) bySuperView:imageV];
-
+    
+    //        [UIView createRedViewWithRect:CGRectMake(20, 20, 10, 10) bySuperView:imageV];
+    
     
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
     view.backgroundColor = [UIColor grayColor];
     [self.view addSubview:view];
-//小红点
-//    [UIView createRedViewWithPoint:CGPointMake(10, 10) bySuperView:view];
-//    [UIView createRedViewWithRect:CGRectMake(0, 0, 30, 30) bySuperView:view];
-
-//阴影
-//    [view setShadowWithOffsetX:0 offsetY:5 Blur:15 Spread:1];
+    //小红点
+    //    [UIView createRedViewWithPoint:CGPointMake(10, 10) bySuperView:view];
+    //    [UIView createRedViewWithRect:CGRectMake(0, 0, 30, 30) bySuperView:view];
+    
+    //阴影
+    //    [view setShadowWithOffsetX:0 offsetY:5 Blur:15 Spread:1];
     
     
     ////    房主
@@ -245,11 +244,11 @@
     //        make.height.mas_equalTo(45);
     //    }];
     
-  
-//    FollowTips *tips = [[FollowTips alloc]initWithFrame:CGRectMake(0, 200, 320, 50)];
-//    [tips show];
-//    tips.followTipHidden = ^{
-//    };
+    
+    //    FollowTips *tips = [[FollowTips alloc]initWithFrame:CGRectMake(0, 200, 320, 50)];
+    //    [tips show];
+    //    tips.followTipHidden = ^{
+    //    };
     
     //    //强制移除
     //    [tips removeFromSuperview];
@@ -257,7 +256,7 @@
     
     
     //    [self createFollowTipsTimerWithDuration:25.0];
-     
+    
     
     //    //线程
     //    //线程1
@@ -275,58 +274,60 @@
     //            NSLog(@"23423--------");
     //        }
     //    });
-     
     
-//    //展示gif
-//    [self testGIF];
+    
+    //    //展示gif
+    //    [self testGIF];
     //主线程 remove nil 修改约束 会不会崩溃测试
-//    [self testRemoveBug];
-//    //json 动画
-//    [self LOTAnimation];
-//    //房主
-//    [self createRoomOwnimage];
+    //    [self testRemoveBug];
+    //    //json 动画
+    //    [self LOTAnimation];
+    //    //房主
+    //    [self createRoomOwnimage];
     
     
     
     [self trycatch];
-
-
+    
+    
     [self calculate];
     
-
+    
 }
 
 - (void)trycatch {
     //    iOS - try~catch捕获异常防止崩溃简单实用
     //    https://www.cnblogs.com/adampei-bobo/p/7444040.html
-        
-        //创建可变数组
-        NSMutableArray * arrM = @[].mutableCopy;
+    
+    //创建可变数组
+    NSMutableArray * arrM = @[].mutableCopy;
     //    NSMutableArray * arrM = @[].copy;
-
-        // 创建nil对象
-        NSString * str = @"";
-        // 测试try cash
-        @try {
-            //此处写可能出现崩溃的代码
-            //数组插入nil对象
-            [arrM addObject:str];
-        } @catch (NSException *exception) {
-            //捕获到异常要执行的代码
-            NSLog(@"exc == %@, 最后我弹了一个弹框说这样不合适",exception);
-        } @finally {
-            //不管能不能捕获到异常都会执行的方法
-            NSLog(@"最后");
-        }
-        
+    
+    // 创建nil对象
+    NSString * str = @"";
+    // 测试try cash
+    @try {
+        //此处写可能出现崩溃的代码
+        //数组插入nil对象
+        [arrM addObject:str];
+    } @catch (NSException *exception) {
+        //捕获到异常要执行的代码
+        NSLog(@"exc == %@, 最后我弹了一个弹框说这样不合适",exception);
+    } @finally {
+        //不管能不能捕获到异常都会执行的方法
+        NSLog(@"最后");
+    }
+    
 }
 
 - (void)calculate {
     //    iOS查找子字符串(含多个字符串)在父字符串中的所有位置
     //http://www.manongjc.com/article/94493.html
+    //    iOS 查找字符串 相同 子字符串的位置 range
+    //https://cloud.tencent.com/developer/article/1034363
     
     //    方法的调用
-        NSArray *array = [self calculateSubStringCount:@"abcd1234556abcd" str:@"abcd"];
+    NSArray *array = [self calculateSubStringCount:@"abcd1234556abcd" str:@"abcd"];
 }
 /**
  查找子字符串在父字符串中的所有位置
@@ -360,13 +361,14 @@
     }
     return locationArr;
 }
+
 //房主
 - (void)createRoomOwnimage {
     UIImageView *imageV = [[UIImageView alloc]init];;
     imageV.image = [UIImage roomOwnimage];
     imageV.frame = CGRectMake(150, 50, 40, 20);
     [self.view addSubview:imageV];
- 
+    
 }
 
 - (void)testGIF {
@@ -390,8 +392,8 @@
 
 - (void)testRemoveBug {
     [self createImage];
-//    [self removeImage];
-//    [self changeImage];
+    //    [self removeImage];
+    //    [self changeImage];
     
     WS(weakSelf)
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -403,7 +405,7 @@
 }
 
 - (void)changeImage {
-    NSLog(@"--==变化mas_updateConstraints==--"); 
+    NSLog(@"--==变化mas_updateConstraints==--");
     [self.removeImageView  mas_updateConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@10);
         make.leading.equalTo(@10);
@@ -734,22 +736,22 @@
 
 - (void)clickPageController {
     
-//    UIViewController *vc0 = [[UIViewController alloc] init];
-//    UIViewController *vc1 = [[UIViewController alloc] init];
-//    UIViewController *vc2 = [[UIViewController alloc] init];
+    //    UIViewController *vc0 = [[UIViewController alloc] init];
+    //    UIViewController *vc1 = [[UIViewController alloc] init];
+    //    UIViewController *vc2 = [[UIViewController alloc] init];
     NSString *title0 = @"111111";
     NSString *title1 = @"222222";
     NSString *title2 = @"333333";
-
+    
     HomePageViewController *vc= [[HomePageViewController alloc] initWithViewControllerClasses:@[[UIViewController class], [UIViewController class] , [UIViewController class]]
                                                                                andTheirTitles:@[title0, title1, title2]];
-//    vc.selectIndex = 1;
-//    vc.automaticallyCalculatesItemWidths = YES; 
-//    vc.titleSizeSelected = 16;
-     
+    //    vc.selectIndex = 1;
+    //    vc.automaticallyCalculatesItemWidths = YES;
+    //    vc.titleSizeSelected = 16;
+    
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-  
+    
 }
 
 - (void)clickTest {
