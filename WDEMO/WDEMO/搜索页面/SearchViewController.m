@@ -8,10 +8,11 @@
 
 #import "SearchViewController.h"
 #import "SearchBar.h"
-//#import "SearchBarController.h"
+#import "SearchBarController.h"
 //#import "ACMacros.h"
 #import "UIColor+color.h"
 #import "THeader.h"
+#import "ChatViewController.h"
 
 @interface SearchViewController () <SearchBarDelegate>
 //@property (nonatomic, strong) SearchBarController *searchBar;
@@ -28,7 +29,8 @@
     
 //    self.navigationController.navigationBar.translucent = NO;
     //    self.automaticallyAdjustsScrollViewInsets = NO;
-    
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+
     [self setupViews];
     
 }
@@ -45,15 +47,17 @@
 }
 
 - (void)setupViews {
-//    SearchBarController *searchBar = [[SearchBarController alloc] init];
+    
+//    UIView *barView = [[UIView alloc]initWithFrame:CGRectMake(0, 20, Screen_Width, 52)];
+//    [self.view addSubview:barView];
 //
-//    searchBar.view.backgroundColor = [UIColor grayColor];
-//    searchBar.view.frame = CGRectMake(0, 20, Screen_Width, 10);
-//    searchBar.delegate = self;
-//
-//    [self addChildViewController:searchBar];
-//    [self.view addSubview:searchBar.view];
-//    [searchBar didMoveToParentViewController:self];
+//    SearchBarController *searchBar1 = [[SearchBarController alloc] init];
+////    searchBar1.view.backgroundColor = [UIColor grayColor];
+//    searchBar1.view.frame = CGRectMake(0, 0, Screen_Width, 52);
+//    searchBar1.delegate = self;
+//    [self addChildViewController:searchBar1];
+//    [barView addSubview:searchBar1.view];
+//    [searchBar1 didMoveToParentViewController:self];
     
 
 //    self.searchBar = searchBar;
@@ -70,18 +74,24 @@
     
 //        UIViewController *vc = [[UIViewController alloc] init];
 //    //    vc.view.frame = CGRectMake(0, 0, Screen_Width, 52);
-//        vc.view.backgroundColor = [UIColor grayColor];
-//        vc.view.frame = CGRectMake(0, 0, Screen_Width, 10);
+//        vc.view.backgroundColor = [UIColor redColor];
+//        vc.view.frame = CGRectMake(0, 100, Screen_Width, 10);
 //    [self.view addSubview:vc.view];
 //
 //  [self addChildViewController:vc];
-
-    
+ 
     SearchBar *searchBar = [[SearchBar alloc] initWithFrame:CGRectMake(0, 20, Screen_Width, 52)];
     searchBar.backgroundColor = [UIColor whiteColor];
     searchBar.delegate = self;
     [self.view addSubview:searchBar];
     self.searchBar = searchBar;
+    
+//    ChatViewController *chat = [[ChatViewController alloc] init];
+//    chat.view.backgroundColor = [UIColor grayColor];
+//    chat.view.frame = CGRectMake(0, 100, Screen_Width, 380);
+//    [self addChildViewController:chat];
+//    [self.view addSubview:chat.view];
+//    [chat didMoveToParentViewController:self];
 }
 
 #pragma mark - SearchBarDelegate
