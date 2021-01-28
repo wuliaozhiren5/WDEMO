@@ -185,6 +185,7 @@
 		F5CE3D2324E6901800B20C80 /* RRDestroyAccountAgreenmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1E24E6901700B20C80 /* RRDestroyAccountAgreenmentViewController.m */; };
 		F5CED5DA25749C7D002CF42C /* CollectionRedPointManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CED5D925749C7D002CF42C /* CollectionRedPointManager.m */; };
 		F5CED5E525749E84002CF42C /* XXClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CED5E425749E84002CF42C /* XXClass.m */; };
+		F5CEF81C25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CEF81A25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m */; };
 		F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */; };
 		F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */; };
 		F5D05B5D25BAAF9B00A4C6EC /* RGB十六进制颜色.md in Resources */ = {isa = PBXBuildFile; fileRef = F5D05B5C25BAAF9B00A4C6EC /* RGB十六进制颜色.md */; };
@@ -590,6 +591,8 @@
 		F5CED5D925749C7D002CF42C /* CollectionRedPointManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollectionRedPointManager.m; sourceTree = "<group>"; };
 		F5CED5E325749E84002CF42C /* XXClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXClass.h; sourceTree = "<group>"; };
 		F5CED5E425749E84002CF42C /* XXClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXClass.m; sourceTree = "<group>"; };
+		F5CEF81A25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
+		F5CEF81B25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
 		F5D056F325594D5F008CC230 /* FullScreenChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullScreenChatBottomInputBarViewController.h; sourceTree = "<group>"; };
 		F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullScreenChatBottomInputBarViewController.m; sourceTree = "<group>"; };
 		F5D056FA25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfScreenChatBottomInputBarViewController.h; sourceTree = "<group>"; };
@@ -1409,6 +1412,8 @@
 			isa = PBXGroup;
 			children = (
 				F50D6D8525A95AD300B8C415 /* 瀑布流.md */,
+				F5CEF81B25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.h */,
+				F5CEF81A25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m */,
 				6783C88C1FB944B80040C02B /* CustomLayout.h */,
 				6783C88D1FB944B80040C02B /* CustomLayout.m */,
 				6783C88E1FB944B80040C02B /* WaterFlowLayout.h */,
@@ -2092,6 +2097,7 @@
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
+				F5CEF81C25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */,
 				F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
