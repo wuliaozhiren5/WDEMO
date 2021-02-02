@@ -59,7 +59,7 @@
 		A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9DC1A24D66049009FB2EA /* UIImage+size.m */; };
 		F505AC2325C936F600F43298 /* 约束动画.md in Resources */ = {isa = PBXBuildFile; fileRef = F505AC2225C936F600F43298 /* 约束动画.md */; };
 		F505AC3425C940D100F43298 /* 抗拉伸抗压缩.md in Resources */ = {isa = PBXBuildFile; fileRef = F505AC3225C940D000F43298 /* 抗拉伸抗压缩.md */; };
-		F505AC3525C940D100F43298 /* 空白的副本.md in Resources */ = {isa = PBXBuildFile; fileRef = F505AC3325C940D100F43298 /* 空白的副本.md */; };
+		F505AC3525C940D100F43298 /* addChildViewController.md in Resources */ = {isa = PBXBuildFile; fileRef = F505AC3325C940D100F43298 /* addChildViewController.md */; };
 		F507113024E2A6A700AD5306 /* MYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F507112F24E2A6A700AD5306 /* MYPerson.m */; };
 		F507113324E2A6BE00AD5306 /* MYCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113224E2A6BE00AD5306 /* MYCar.m */; };
 		F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113624E2AB9400AD5306 /* IsEqualViewController.m */; };
@@ -368,7 +368,7 @@
 		A4F9DC1A24D66049009FB2EA /* UIImage+size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+size.m"; sourceTree = "<group>"; };
 		F505AC2225C936F600F43298 /* 约束动画.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "约束动画.md"; sourceTree = "<group>"; };
 		F505AC3225C940D000F43298 /* 抗拉伸抗压缩.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "抗拉伸抗压缩.md"; sourceTree = "<group>"; };
-		F505AC3325C940D100F43298 /* 空白的副本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白的副本.md"; sourceTree = "<group>"; };
+		F505AC3325C940D100F43298 /* addChildViewController.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = addChildViewController.md; sourceTree = "<group>"; };
 		F507112E24E2A6A700AD5306 /* MYPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYPerson.h; sourceTree = "<group>"; };
 		F507112F24E2A6A700AD5306 /* MYPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYPerson.m; sourceTree = "<group>"; };
 		F507113124E2A6BE00AD5306 /* MYCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MYCar.h; sourceTree = "<group>"; };
@@ -804,7 +804,6 @@
 				F505AC3125C940BC00F43298 /* 抗拉伸抗压缩 */,
 				F505AC2C25C9392A00F43298 /* 约束动画 */,
 				F5D05B6D25BAB16500A4C6EC /* 空白.md */,
-				F505AC3325C940D100F43298 /* 空白的副本.md */,
 				F532073D25C14F92000CD755 /* 新手引导页GuideView */,
 				F5D05B5B25BAAF4900A4C6EC /* RGB十六进制颜色 */,
 				F5D05B6225BAB08E00A4C6EC /* 阴影 */,
@@ -1012,6 +1011,7 @@
 		F505AC3A25C9445000F43298 /* addChildViewController */ = {
 			isa = PBXGroup;
 			children = (
+				F505AC3325C940D100F43298 /* addChildViewController.md */,
 			);
 			path = addChildViewController;
 			sourceTree = "<group>";
@@ -1889,7 +1889,7 @@
 				F5872CFD257DFF5900341B57 /* 追剧引导-暗黑-循环.gif in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
 				F548D0E7256E2EEA00357E64 /* data.json in Resources */,
-				F505AC3525C940D100F43298 /* 空白的副本.md in Resources */,
+				F505AC3525C940D100F43298 /* addChildViewController.md in Resources */,
 				F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */,
 				F5D05B6E25BAB16600A4C6EC /* 空白.md in Resources */,
 				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
