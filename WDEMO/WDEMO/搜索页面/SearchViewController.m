@@ -92,6 +92,38 @@
 //    [self addChildViewController:chat];
 //    [self.view addSubview:chat.view];
 //    [chat didMoveToParentViewController:self];
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    //    ChatViewController *chat = [[ChatViewController alloc] init];
+    //    chat.view.backgroundColor = [UIColor grayColor];
+    //    chat.view.frame = CGRectMake(0, 100, Screen_Width, 380);
+    //    [self addChildViewController:chat];
+    //    [self.view addSubview:chat.view];
+    //    [chat didMoveToParentViewController:self];
+    
+    
+    //    ChatViewController *chat = [[ChatViewController alloc] init];
+    //    chat.view.backgroundColor = [UIColor grayColor];
+    //    chat.view.frame = CGRectMake(0, 100, Screen_Width, 380);
+    //    [self addChildViewController:chat];
+    //    [self.view addSubview:chat.view];
+    //    [chat didMoveToParentViewController:self];
+    
+    //    ChatViewController *chat = [[ChatViewController alloc] init];
+    //    chat.view.backgroundColor = [UIColor grayColor];
+    //    chat.view.frame = CGRectMake(0, 100, Screen_Width, 380);
+    //    [self addChildViewController:chat];
+    //    [self.view addSubview:chat.view];
+    //    [chat didMoveToParentViewController:self];
+    
+    //    ChatViewController *chat = [[ChatViewController alloc] init];
+    //    chat.view.backgroundColor = [UIColor grayColor];
+    //    chat.view.frame = CGRectMake(0, 100, Screen_Width, 380);
+    //    [self addChildViewController:chat];
+    //    [self.view addSubview:chat.view];
+    //    [chat didMoveToParentViewController:self];
+
 }
 
 #pragma mark - SearchBarDelegate
