@@ -292,6 +292,22 @@
     
     [self calculate];
     
+    [self redView];
+    
+}
+- (void)redView {
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
+    imageView.image = [UIImage imageNamed:@"1"];
+    
+    imageView.backgroundColor = [UIColor redColor];
+
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:imageView.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(25, 5)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc]init];
+    maskLayer.frame = imageView.bounds;
+    maskLayer.path = maskPath.CGPath;
+    imageView.layer.mask = maskLayer;
+    [self.view addSubview:imageView];
+  
     
 }
 
