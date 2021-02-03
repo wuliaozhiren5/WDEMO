@@ -290,9 +290,9 @@
     [self trycatch];
     
     
-    [self calculate];
-    
-    [self redView];
+//    [self calculate];
+//    
+//    [self redView];
     
 }
 - (void)redView {
