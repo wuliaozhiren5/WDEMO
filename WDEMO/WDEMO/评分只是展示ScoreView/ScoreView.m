@@ -10,8 +10,11 @@
 @interface ScoreView ()
 
 @property (copy, nonatomic)NSMutableArray *imageViewArray;
+@property (assign, nonatomic)NSInteger count;
 @property (assign, nonatomic)CGFloat score;
-
+@property (assign, nonatomic)NSString *defaultStarImageName;
+@property (assign, nonatomic)NSString *halfStarImageName;
+@property (assign, nonatomic)NSString *fullStarImageName;
 @end
 
 @implementation ScoreView
@@ -25,6 +28,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        [self setStarImageName];
     }
     return self;
 }
@@ -32,8 +36,43 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        [self setStarImageName];
     }
     return self;
+}
+
+- (void)setStarImageName {
+    _count = 5;
+    _defaultStarImageName = @"ic_common_star_grey";
+    _halfStarImageName = @"ic_common_star_halfblue";
+    _fullStarImageName = @"ic_common_star_blue";
+}
+
+- (NSMutableArray *)imageViewArray {
+    if (!_imageViewArray) {
+        _imageViewArray = [NSMutableArray array];
+    }
+    return _imageViewArray;
+}
+
+- (void)createScoreViewWithCount:(NSInteger)count
+                           width:(CGFloat)width
+                          height:(CGFloat)height
+                         spacing:(CGFloat)spacing
+            defaultStarImageName:(NSString *)defaultStarImageName
+               halfStarImageName:(NSString *)halfStarImageName
+               fullStarImageName:(NSString *)fullStarImageName {
+                  
+    if (defaultStarImageName) {
+        _defaultStarImageName = defaultStarImageName;
+    }
+    if (halfStarImageName) {
+        _halfStarImageName = halfStarImageName;
+    }
+    if (fullStarImageName) {
+        _fullStarImageName = fullStarImageName;
+    }
+    [self createScoreViewWithCount:count width:width height:height spacing:spacing];
 }
 
 - (void)createScoreViewWithCount:(NSInteger)count
@@ -44,16 +83,16 @@
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     //清空数组
     [self.imageViewArray removeAllObjects];
-    NSInteger starCount = count > 0 ? count : 5;
+    NSInteger starCount = count > 0 ? count : _count;
     CGFloat starWidth = width > 0 ? width : 9;
     CGFloat starHeight = height > 0 ? height : 9;
     CGFloat starSpacing = spacing > 0 ? spacing : 3;
     NSInteger n = starCount;
+    _count = n;
     for (NSInteger i = 0; i < n; i++) {
         UIImageView *imageView = [[UIImageView alloc] init];
         imageView.frame = CGRectMake((starWidth + starSpacing) * i, 0, starWidth, starHeight);
-        imageView.center = CGPointMake(imageView.center.x, self.frame.size.height/2.0);
-        imageView.image = [UIImage imageNamed:@"ic_common_star_grey"];
+        imageView.image = [UIImage imageNamed:self.defaultStarImageName];
         [self addSubview:imageView];
         [self.imageViewArray addObject:imageView];
     }
@@ -64,6 +103,7 @@
         return;
     }
     _score = score;
+    CGFloat value = 100 / _count;//中间值 100 / 5 = 20
     //    score 0.0-10.0
     //    CGFloat starScore = score * 10;
     CGFloat temp = score * 10;;
@@ -72,23 +112,16 @@
         UIImageView *imageView = self.imageViewArray[i];
         if (temp <= 0.0 ) {
             //无星
-            imageView.image = [UIImage imageNamed:@"ic_common_star_grey"];
-        } else if (temp > 0.0 && temp < 10.0) {
+            imageView.image = [UIImage imageNamed:self.defaultStarImageName];
+        } else if (temp > 0.0 && temp < value) {
             //半星
-            imageView.image = [UIImage imageNamed:@"ic_common_star_halfblue"];
+            imageView.image = [UIImage imageNamed:self.halfStarImageName];
         } else {
             //全星
-            imageView.image = [UIImage imageNamed:@"ic_common_star_blue"];
+            imageView.image = [UIImage imageNamed:self.fullStarImageName];
         }
-        temp = temp - 10.0;
+        temp = temp - value;
     }
-}
-
-- (NSMutableArray *)imageViewArray {
-    if (!_imageViewArray) {
-        _imageViewArray = [NSMutableArray array];
-    }
-    return _imageViewArray;
 }
 @end
 
@@ -125,7 +158,7 @@
 -(UILabel *)scoreTitleLabel {
     if (!_scoreTitleLabel) {
         _scoreTitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-        _scoreTitleLabel.font =[UIFont systemFontOfSize:10];
+        _scoreTitleLabel.font = [UIFont systemFontOfSize:10];
         _scoreTitleLabel.textColor = [UIColor blackColor];
         [self addSubview:_scoreTitleLabel];
     }

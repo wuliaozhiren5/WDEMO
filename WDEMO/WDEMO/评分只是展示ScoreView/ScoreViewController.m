@@ -21,16 +21,16 @@
     
     //评分ScoreView
     ScoreView *scoreView = [[ScoreView alloc] initWithFrame:CGRectMake(0, 100, 100, 40)];
-    [scoreView createScoreViewWithCount:10 width:20 height:20 spacing:10];
+    [scoreView createScoreViewWithCount:5 width:20 height:20 spacing:10];
     [self.view addSubview:scoreView];
     [scoreView score:1.9];
     [scoreView score:1.9];
     [scoreView score:2];
     scoreView.backgroundColor = [UIColor grayColor];
      
-    ScoreTitleView *scoreTitleView = [[ScoreTitleView alloc] initWithFrame:CGRectMake(0, 200, 320, 40)];
+    ScoreTitleView *scoreTitleView = [[ScoreTitleView alloc] initWithFrame:CGRectMake(0, 200, 320, 20)];
     [scoreTitleView createScoreViewWithCount:5 width:20 height:20 spacing:10];
-    [scoreTitleView createScoreViewTitleWithTitltFont:[UIFont systemFontOfSize:20] titltColor:[UIColor blueColor] titltSpacing:10];
+    [scoreTitleView createScoreViewTitleWithTitltFont:[UIFont boldSystemFontOfSize:20] titltColor:[UIColor blueColor] titltSpacing:10];
     [self.view addSubview:scoreTitleView];
     [scoreTitleView score:2.1];
     [scoreTitleView scoreTitleStr:@"豆瓣评分2.1"];
