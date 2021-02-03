@@ -98,7 +98,49 @@
     }
 }
 
+/*
+规则
+5星: 9.5~10
+4星半：8.5~9.4
+4星：7.5~8.4
+3星半：6.5～7.4
+3星：5.5～6.4
+2星半：4.5～5.4
+2星：3.5～4.4
+1星半：2.5～3.4
+1星：1.5～2.4
+半星：0.1～1.4（一般不会出现该情况）
+0星：暂无评分 （5.0版本中处理成不展示评分）
+*/
 - (void)score:(CGFloat)score {
+    if (_score == score) {
+        return;
+    }
+    _score = score; 
+    if (score > 0 && score < 0.5) {
+        score = 0.5;
+    }
+    CGFloat temp = (score + 0.5) / 2.0 * 10;
+    CGFloat value = 10.0;
+    NSInteger n = self.imageViewArray.count;
+    for (NSInteger i = 0; i < n; i++) {
+        UIImageView *imageView = self.imageViewArray[i];
+        if (temp < 5.0 ) {
+            //无星
+            imageView.image = [UIImage imageNamed:self.defaultStarImageName];
+        } else if (temp >= 5.0 && temp < value) {
+            //半星
+            imageView.image = [UIImage imageNamed:self.halfStarImageName];
+        } else {
+            //全星
+            imageView.image = [UIImage imageNamed:self.fullStarImageName];
+        }
+        temp = temp - value;
+    }
+}
+
+
+- (void)oldscore:(CGFloat)score {
     if (_score == score) {
         return;
     }
