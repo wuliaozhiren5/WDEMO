@@ -30,7 +30,17 @@
     
     
     [self target];
+    
 }
+
+//rac用来检测bug
+- (void)RACbug {
+    [[self.view rac_signalForSelector:@selector(removeFromSuperview)] subscribeNext:^(RACTuple * x) {
+        NSLog(@"rac用来检测bug");
+        NSLog(@"%@,%@",x.first,x.second);
+    }];
+}
+
 - (void)setupViews {
     //    UINavigationBar与UITabBar半透明：会被遮挡；不透明，不会被遮挡
     self.navigationController.navigationBar.translucent = NO;
