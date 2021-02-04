@@ -41,6 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param score  score 0.0-10.0
 - (void)score:(CGFloat)score;
 
+- (void)scoreAll:(CGFloat)score;
 @end
 
 /// 组装成了带文字样式的

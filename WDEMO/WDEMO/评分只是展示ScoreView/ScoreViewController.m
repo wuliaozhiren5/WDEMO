@@ -26,8 +26,12 @@
     [scoreView score:1.9];
     [scoreView score:1.9];
     [scoreView score:2];
+    
+//    [scoreView scoreAll:10];
     scoreView.backgroundColor = [UIColor grayColor];
-     
+    
+    
+    
     ScoreTitleView *scoreTitleView = [[ScoreTitleView alloc] initWithFrame:CGRectMake(0, 200, 320, 20)];
     [scoreTitleView createScoreViewWithCount:5 width:20 height:20 spacing:10];
     [scoreTitleView createScoreViewTitleWithTitltFont:[UIFont boldSystemFontOfSize:20] titltColor:[UIColor blueColor] titltSpacing:10];

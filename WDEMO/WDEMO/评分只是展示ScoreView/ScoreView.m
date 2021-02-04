@@ -139,8 +139,7 @@
     }
 }
 
-
-- (void)oldscore:(CGFloat)score {
+- (void)scoreAll:(CGFloat)score {
     if (_score == score) {
         return;
     }
@@ -152,10 +151,10 @@
     NSInteger n = self.imageViewArray.count;
     for (NSInteger i = 0; i < n; i++) {
         UIImageView *imageView = self.imageViewArray[i];
-        if (temp <= 0.0 ) {
+        if (temp <= 0 ) {
             //无星
             imageView.image = [UIImage imageNamed:self.defaultStarImageName];
-        } else if (temp > 0.0 && temp < value) {
+        } else if (temp > 0 && temp < value) {
             //半星
             imageView.image = [UIImage imageNamed:self.halfStarImageName];
         } else {
