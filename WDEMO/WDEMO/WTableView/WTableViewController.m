@@ -62,6 +62,8 @@
     } else {
         //        self.automaticallyAdjustsScrollViewInsets = NO;
     }
+    
+    
     //------
     self.tableView.frame = self.view.bounds;
     [self.view addSubview:self.tableView];
