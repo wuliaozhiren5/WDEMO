@@ -91,6 +91,8 @@
 #import "UIView+RedPoint.h"
 //阴影
 #import "UIView+Shadow.h"
+//归档解档
+#import "KeyedArchiverViewController.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -146,6 +148,7 @@
     
     NSArray * array = @[
         
+        [ListModel initWithTitle:@"Archiver" detail:@"归档解档" type:ListModelTypeArchiver],
         [ListModel initWithTitle:@"ScoreView" detail:@"评分只是展示ScoreView" type:ListModelTypeScore],
         [ListModel initWithTitle:@"TagList1" detail:@"瀑布流" type:ListModelTypeTagList1],
         [ListModel initWithTitle:@"TagList2" detail:@"瀑布流优化" type:ListModelTypeTagList2],
@@ -769,6 +772,13 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
+ 
+- (void)clickArchiver {
+    //横向滚动的collectionView
+    KeyedArchiverViewController *vc= [[KeyedArchiverViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES; 
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 - (void)clickTest {
     //横向滚动的collectionView
@@ -1011,6 +1021,11 @@
         case ListModelTypePageController:
         {
             [self clickPageController];
+        }
+            break;
+        case ListModelTypeArchiver:
+        {
+            [self clickArchiver];
         }
             break;
         case ListModelTypeTest:

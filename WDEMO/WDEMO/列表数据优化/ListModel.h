@@ -34,6 +34,7 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeListEdit,//列表编辑
     ListModelTypeSearch,//搜索
     ListModelTypeWebView,//网页
+    ListModelTypeArchiver,//归档解档
     
     ListModelTypePageController,
 //    ListModelTypeLoadingView,
