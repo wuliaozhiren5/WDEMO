@@ -36,12 +36,12 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeWebView,//网页
     ListModelTypeArchiver,//归档解档
     
-    ListModelTypePageController,
+    ListModelTypePageController,//app首页
+    ListModelTypePersonalHomepage,//个人主页
+    
 //    ListModelTypeLoadingView,
 //    ListModelTypeBanner,
-//    ListModelTypePageController,
-//    ListModelTypePerson,
-
+ 
     ListModelTypeTest,//测试页面
 };
 

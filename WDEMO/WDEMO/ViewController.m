@@ -93,6 +93,8 @@
 #import "UIView+Shadow.h"
 //归档解档
 #import "KeyedArchiverViewController.h"
+//个人主页
+#import "PersonalHomepageVC.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -147,9 +149,9 @@
     
     
     NSArray * array = @[
-        
-        [ListModel initWithTitle:@"Archiver" detail:@"归档解档" type:ListModelTypeArchiver],
-        [ListModel initWithTitle:@"ScoreView" detail:@"评分只是展示ScoreView" type:ListModelTypeScore],
+        [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
+        [ListModel initWithTitle:@"个人主页" detail:@"PersonalHomepage" type:ListModelTypePersonalHomepage],
+
         [ListModel initWithTitle:@"TagList1" detail:@"瀑布流" type:ListModelTypeTagList1],
         [ListModel initWithTitle:@"TagList2" detail:@"瀑布流优化" type:ListModelTypeTagList2],
         [ListModel initWithTitle:@"3DTouch" detail:@"3DTouch" type:ListModelType3DTouch],
@@ -173,8 +175,11 @@
         [ListModel initWithTitle:@"ListEdit" detail:@"列表编辑" type:ListModelTypeListEdit],
         [ListModel initWithTitle:@"Search" detail:@"搜索" type:ListModelTypeSearch],
         [ListModel initWithTitle:@"WKWebView" detail:@"网页" type:ListModelTypeWebView],
-        [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
-        
+        [ListModel initWithTitle:@"ScoreView" detail:@"评分只是展示ScoreView" type:ListModelTypeScore],
+        [ListModel initWithTitle:@"Archiver" detail:@"归档解档" type:ListModelTypeArchiver],
+//        [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
+//        [ListModel initWithTitle:@"个人主页" detail:@"PersonalHomepage" type:ListModelTypePersonalHomepage],
+
         
         
         [ListModel initWithTitle:@"Test" detail:@"测试" type:ListModelTypeTest],
@@ -772,7 +777,14 @@
     [self.navigationController pushViewController:vc animated:YES];
     
 }
- 
+
+- (void)clickPersonalHomepage {
+    //个人主页
+    PersonalHomepageVC *vc= [[PersonalHomepageVC alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)clickArchiver {
     //横向滚动的collectionView
     KeyedArchiverViewController *vc= [[KeyedArchiverViewController alloc]init];
@@ -1021,6 +1033,11 @@
         case ListModelTypePageController:
         {
             [self clickPageController];
+        }
+            break;
+        case ListModelTypePersonalHomepage:
+        {
+            [self clickPersonalHomepage];
         }
             break;
         case ListModelTypeArchiver:
