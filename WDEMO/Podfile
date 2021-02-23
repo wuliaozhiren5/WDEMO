@@ -32,6 +32,10 @@ pod 'AspectsV1.4.2', '~> 1.4.2’
 #pod 'DZNEmptyDataSet'
 #首页tabPageController
 #pod 'WMPageController', '~> 2.4.0' 
+#一个支持多选、选原图和视频的图片选择器，同时有预览功能，支持iOS6+。
+#pod 'TZImagePickerController'
+#类似微博主页、简书主页、QQ联系人页面等效果。多页面嵌套，既可以上下滑动，也可以左右滑动切换页面。支持HeaderView悬浮、支持下拉刷新、上拉加载更多。
+#pod 'JXPagingView/Pager'
 #KVO
 #pod 'KVOController'
 

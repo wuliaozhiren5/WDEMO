@@ -81,6 +81,7 @@
 		F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293F22509CE0D00E06D42 /* FullScreenChatController.m */; };
 		F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */; };
 		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
+		F534736E25E357F400F01CC6 /* iOS仿抖音短视频.md in Resources */ = {isa = PBXBuildFile; fileRef = F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */; };
 		F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */; };
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
@@ -176,6 +177,7 @@
 		F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9372508F79A002505AE /* TipMessageDataModel.m */; };
 		F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */; };
 		F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */; };
+		F5BFBBFC25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BFBBFA25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m */; };
 		F5C0A20425788B92004EBD94 /* UIColor+color.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C0A20325788B92004EBD94 /* UIColor+color.m */; };
 		F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C0A2092578950D004EBD94 /* WTableViewCell.xib */; };
 		F5C0A21F2578BBC2004EBD94 /* xibView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C0A21E2578BBC2004EBD94 /* xibView.m */; };
@@ -412,6 +414,7 @@
 		F53293EE2509C6FE00E06D42 /* FullScreenInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenInputController.h; sourceTree = "<group>"; };
 		F53293F12509CE0B00E06D42 /* FullScreenChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenChatController.h; sourceTree = "<group>"; };
 		F53293F22509CE0D00E06D42 /* FullScreenChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenChatController.m; sourceTree = "<group>"; };
+		F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS仿抖音短视频.md"; sourceTree = "<group>"; };
 		F53F668A24FE2E2200770055 /* UIImage+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GradientColor.h"; sourceTree = "<group>"; };
 		F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GradientColor.m"; sourceTree = "<group>"; };
 		F53F669024FE454000770055 /* PasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextField.h; sourceTree = "<group>"; };
@@ -582,6 +585,8 @@
 		F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterMessageDataModel.m; sourceTree = "<group>"; };
 		F5B5A93C2508F7B5002505AE /* FaceMessageDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageDataModel.h; sourceTree = "<group>"; };
 		F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageDataModel.m; sourceTree = "<group>"; };
+		F5BFBBF925E4A0B80068358F /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
+		F5BFBBFA25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
 		F5C0A20225788B91004EBD94 /* UIColor+color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+color.h"; sourceTree = "<group>"; };
 		F5C0A20325788B92004EBD94 /* UIColor+color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+color.m"; sourceTree = "<group>"; };
 		F5C0A2092578950D004EBD94 /* WTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WTableViewCell.xib; sourceTree = "<group>"; };
@@ -824,6 +829,7 @@
 			isa = PBXGroup;
 			children = (
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
+				F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */,
 				F5F701F025CD28560000D5A9 /* 归档解档 */,
 				F505AC3A25C9445000F43298 /* addChildViewController */,
 				F505AC3125C940BC00F43298 /* 抗拉伸抗压缩 */,
@@ -1471,9 +1477,9 @@
 		F5B95DF925A5EA2100911FF8 /* 瀑布流布局 */ = {
 			isa = PBXGroup;
 			children = (
+				F5BFBC0625E4A5560068358F /* CHTCollectionViewWaterfallLayout */,
+				F5BFBBF825E4A0B80068358F /* UICollectionViewLeftAlignedLayout */,
 				F50D6D8525A95AD300B8C415 /* 瀑布流.md */,
-				F5CEF81B25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.h */,
-				F5CEF81A25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m */,
 				6783C88C1FB944B80040C02B /* CustomLayout.h */,
 				6783C88D1FB944B80040C02B /* CustomLayout.m */,
 				6783C88E1FB944B80040C02B /* WaterFlowLayout.h */,
@@ -1502,6 +1508,24 @@
 				F50D6DA225A9675700B8C415 /* 个人主页.md */,
 			);
 			path = "个人主页";
+			sourceTree = "<group>";
+		};
+		F5BFBBF825E4A0B80068358F /* UICollectionViewLeftAlignedLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F5BFBBF925E4A0B80068358F /* UICollectionViewLeftAlignedLayout.h */,
+				F5BFBBFA25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m */,
+			);
+			path = UICollectionViewLeftAlignedLayout;
+			sourceTree = "<group>";
+		};
+		F5BFBC0625E4A5560068358F /* CHTCollectionViewWaterfallLayout */ = {
+			isa = PBXGroup;
+			children = (
+				F5CEF81B25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.h */,
+				F5CEF81A25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m */,
+			);
+			path = CHTCollectionViewWaterfallLayout;
 			sourceTree = "<group>";
 		};
 		F5C0A21C2578BB49004EBD94 /* xibViewDemo */ = {
@@ -1953,6 +1977,7 @@
 				F548D0E7256E2EEA00357E64 /* data.json in Resources */,
 				F505AC3525C940D100F43298 /* addChildViewController.md in Resources */,
 				F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */,
+				F534736E25E357F400F01CC6 /* iOS仿抖音短视频.md in Resources */,
 				F5D05B6E25BAB16600A4C6EC /* 归档解档.md in Resources */,
 				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
@@ -2210,6 +2235,7 @@
 				F5CEF81C25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */,
 				F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */,
+				F5BFBBFC25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
 				F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */,
 			);
