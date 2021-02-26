@@ -74,6 +74,7 @@
 		F50E841D25BEDDE6009767FE /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E841C25BEDDE6009767FE /* SearchBar.m */; };
 		F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F511C70B25B6918800581063 /* UIView+Shadow.m */; };
 		F51535EF259B2960007E3416 /* UserEditBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51535EE259B2960007E3416 /* UserEditBar.m */; };
+		F518ED3725E8DDAC00260125 /* 图片压缩.md in Resources */ = {isa = PBXBuildFile; fileRef = F518ED3625E8DDAC00260125 /* 图片压缩.md */; };
 		F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */ = {isa = PBXBuildFile; fileRef = F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */; };
 		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
 		F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A098725B6EBE2008BDDEE /* SearchBarController.m */; };
@@ -403,6 +404,7 @@
 		F511C70B25B6918800581063 /* UIView+Shadow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
 		F51535ED259B2960007E3416 /* UserEditBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserEditBar.h; sourceTree = "<group>"; };
 		F51535EE259B2960007E3416 /* UserEditBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserEditBar.m; sourceTree = "<group>"; };
+		F518ED3625E8DDAC00260125 /* 图片压缩.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "图片压缩.md"; sourceTree = "<group>"; };
 		F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "URLencode与URLdecode.md"; sourceTree = "<group>"; };
 		F5200DC92531536E004637DD /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		F5200DCA2531536E004637DD /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
@@ -830,6 +832,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F518ED3625E8DDAC00260125 /* 图片压缩.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
 				F5BFBC0B25E523BC0068358F /* 弹幕.md */,
 				F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */,
@@ -1992,6 +1995,7 @@
 				F5872CD8257DFAC600341B57 /* xib使用.md in Resources */,
 				F548D0D7256E2EEA00357E64 /* img_0.png in Resources */,
 				F50D6D8625A95AD300B8C415 /* 瀑布流.md in Resources */,
+				F518ED3725E8DDAC00260125 /* 图片压缩.md in Resources */,
 				F5F701F225CD2C1F0000D5A9 /* 空白.md in Resources */,
 				F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */,
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
