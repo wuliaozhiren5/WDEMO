@@ -62,8 +62,8 @@
             filePath = "WDEMO/ViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "553"
-            endingLineNumber = "553"
+            startingLineNumber = "567"
+            endingLineNumber = "567"
             landmarkName = "-clickTagListBtn:"
             landmarkType = "7">
          </BreakpointContent>
@@ -161,6 +161,22 @@
             startingLineNumber = "293"
             endingLineNumber = "293"
             landmarkName = "-addEmoji:path:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8B7AA9E5-0096-455B-92F8-13C9CC8C54FA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WDEMO/ViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "-label"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

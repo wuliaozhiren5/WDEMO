@@ -63,6 +63,7 @@
 		F507113024E2A6A700AD5306 /* MYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F507112F24E2A6A700AD5306 /* MYPerson.m */; };
 		F507113324E2A6BE00AD5306 /* MYCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113224E2A6BE00AD5306 /* MYCar.m */; };
 		F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113624E2AB9400AD5306 /* IsEqualViewController.m */; };
+		F509136D25EF917B00A2E217 /* UILabel文字.md in Resources */ = {isa = PBXBuildFile; fileRef = F509136C25EF917B00A2E217 /* UILabel文字.md */; };
 		F50D6D6525A94EBE00B8C415 /* ListEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D6425A94EBE00B8C415 /* ListEditViewController.m */; };
 		F50D6D7525A9580D00B8C415 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D7425A9580D00B8C415 /* SearchViewController.m */; };
 		F50D6D8025A9581B00B8C415 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D7F25A9581B00B8C415 /* SearchResultViewController.m */; };
@@ -387,6 +388,7 @@
 		F507113224E2A6BE00AD5306 /* MYCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYCar.m; sourceTree = "<group>"; };
 		F507113524E2AB9400AD5306 /* IsEqualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsEqualViewController.h; sourceTree = "<group>"; };
 		F507113624E2AB9400AD5306 /* IsEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsEqualViewController.m; sourceTree = "<group>"; };
+		F509136C25EF917B00A2E217 /* UILabel文字.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UILabel文字.md"; sourceTree = "<group>"; };
 		F50D6D6325A94EBE00B8C415 /* ListEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListEditViewController.h; sourceTree = "<group>"; };
 		F50D6D6425A94EBE00B8C415 /* ListEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListEditViewController.m; sourceTree = "<group>"; };
 		F50D6D7325A9580D00B8C415 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -832,6 +834,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F509136C25EF917B00A2E217 /* UILabel文字.md */,
 				F518ED3625E8DDAC00260125 /* 图片压缩.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
 				F5BFBC0B25E523BC0068358F /* 弹幕.md */,
@@ -2004,6 +2007,7 @@
 				F548D0E5256E2EEA00357E64 /* amwayPlayerGuide.json in Resources */,
 				F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */,
 				F50D6D9125A9618300B8C415 /* 首页PageController.md in Resources */,
+				F509136D25EF917B00A2E217 /* UILabel文字.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
