@@ -42,7 +42,7 @@
 - (void)creatColorLabel{
 //    使用CAGradientLayer还可以处理文字渐变效果
     NSString* str = textstr1;
-    UILabel* lab = [[UILabel alloc] initWithFrame:CGRectMake(60, 100, 200, 200)];
+    UILabel* lab = [[UILabel alloc] initWithFrame:CGRectMake(60, 0, 200, 200)];
     lab.numberOfLines = 0;
     lab.text = str;
     lab.font = [UIFont systemFontOfSize:13];
