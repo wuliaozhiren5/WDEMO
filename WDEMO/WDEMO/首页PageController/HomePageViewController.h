@@ -8,6 +8,7 @@
 
 #import "WMPageController.h"
 #import "WMCustomizedPageController.h"
+#import "THeader.h"
 
 @interface HomePageViewController : WMPageController
 //@property (nonatomic, assign) WMMenuViewPosition menuViewPosition; 

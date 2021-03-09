@@ -110,11 +110,11 @@
 
 //内容
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
-    return CGRectMake(0, 40, 320, 320);
+    return CGRectMake(0, 40, Screen_Width, Screen_Height - 64); //64 = 导航栏 + 状态栏
 }
 
 //菜单，头
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
-    return CGRectMake(0, 0, 320, 40);
+    return CGRectMake(0, 0, Screen_Width, 40);
 }
 @end

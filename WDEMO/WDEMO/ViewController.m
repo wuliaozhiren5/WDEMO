@@ -778,11 +778,11 @@
 //    return pageVC;
     
     UIViewController *vc0 = [UIViewController new];
-    vc0.view.backgroundColor = [UIColor redColor];
+    vc0.view.backgroundColor = [UIColor lightGrayColor];
     UIViewController *vc1 = [UIViewController new];
-    vc1.view.backgroundColor = [UIColor greenColor];
+    vc1.view.backgroundColor = [UIColor darkGrayColor];
     UIViewController *vc2 = [UIViewController new];
-    vc2.view.backgroundColor = [UIColor blueColor];
+    vc2.view.backgroundColor = [UIColor systemGrayColor];
 
     NSArray *viewControllers = @[vc0, vc1, vc2];
     NSArray *titles = @[@"first",@"second",@"third"];
@@ -790,11 +790,18 @@
     vc.viewControllers = viewControllers;
     
     vc.selectIndex = 1;
-    vc.title = @"123";
+    vc.title = @"首页样式";
+    //带下划线
     vc.menuViewStyle = WMMenuViewStyleLine;
+    ///** 是否自动通过字符串计算 MenuItem 的宽度，默认为 NO. */
     vc.automaticallyCalculatesItemWidths = YES;
-    
-    //小横线
+    //菜单对齐方式
+    vc.menuViewLayoutMode = WMMenuViewLayoutModeLeft;
+    //间隙
+    vc.itemMargin = 10;
+    /** MenuView 内部视图与左右的间距 */
+    vc.menuViewContentMargin = 10;
+    //底部小横线样式，小红线长度
     vc.progressViewIsNaughty = YES;
     vc.progressWidth = 10;
 //        vc.selectIndex = 1;
