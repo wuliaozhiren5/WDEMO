@@ -10,6 +10,7 @@
 #import "WMCustomizedPageController.h"
 
 @interface HomePageViewController : WMPageController
-//@property (nonatomic, assign) WMMenuViewPosition menuViewPosition;
+//@property (nonatomic, assign) WMMenuViewPosition menuViewPosition; 
+@property (nonatomic, nullable, copy) NSArray<UIViewController *> *viewControllers;
 @end
 

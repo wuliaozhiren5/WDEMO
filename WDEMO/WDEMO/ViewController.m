@@ -759,19 +759,47 @@
 }
 
 - (void)clickPageController {
+     
+//    OneViewTableTableViewController * oneVc  = [OneViewTableTableViewController new];
+//    oneVc.delegate = self;
+//    SecondViewTableViewController * twoVc  = [SecondViewTableViewController new];
+//    twoVc.delegate = self;
+//    ThirdViewCollectionViewController * thirdVc  = [ThirdViewCollectionViewController new];
+//    thirdVc.delegate = self;
+     
+     
+//    WMPageController *pageVC = [[WMPageController alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
+//    [pageVC setViewFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+//    pageVC.delegate = self;
+//    pageVC.menuItemWidth = 85;
+//    pageVC.menuHeight = 44;
+//    pageVC.postNotification = YES;
+//    pageVC.bounces = YES;
+//    return pageVC;
     
-    //    UIViewController *vc0 = [[UIViewController alloc] init];
-    //    UIViewController *vc1 = [[UIViewController alloc] init];
-    //    UIViewController *vc2 = [[UIViewController alloc] init];
-    NSString *title0 = @"111111";
-    NSString *title1 = @"222222";
-    NSString *title2 = @"333333";
+    UIViewController *vc0 = [UIViewController new];
+    vc0.view.backgroundColor = [UIColor redColor];
+    UIViewController *vc1 = [UIViewController new];
+    vc1.view.backgroundColor = [UIColor greenColor];
+    UIViewController *vc2 = [UIViewController new];
+    vc2.view.backgroundColor = [UIColor blueColor];
+
+    NSArray *viewControllers = @[vc0, vc1, vc2];
+    NSArray *titles = @[@"first",@"second",@"third"];
+    HomePageViewController *vc= [[HomePageViewController alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
+    vc.viewControllers = viewControllers;
     
-    HomePageViewController *vc= [[HomePageViewController alloc] initWithViewControllerClasses:@[[UIViewController class], [UIViewController class] , [UIViewController class]]
-                                                                               andTheirTitles:@[title0, title1, title2]];
-    //    vc.selectIndex = 1;
-    //    vc.automaticallyCalculatesItemWidths = YES;
-    //    vc.titleSizeSelected = 16;
+    vc.selectIndex = 1;
+    vc.title = @"123";
+    vc.menuViewStyle = WMMenuViewStyleLine;
+    vc.automaticallyCalculatesItemWidths = YES;
+    
+    //小横线
+    vc.progressViewIsNaughty = YES;
+    vc.progressWidth = 10;
+//        vc.selectIndex = 1;
+//        vc.automaticallyCalculatesItemWidths = YES;
+//        vc.titleSizeSelected = 16;
     
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];

@@ -95,23 +95,25 @@
 //}
 //
 
-//- (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
-//    return 10;
-//}
-//
-//- (__kindof UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
-//    return [[UIViewController alloc] init];
-//}
-//
-//- (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
-//    return @"NONE";
-//}
 
+- (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
+    return self.titles.count;
+}
 
+- (__kindof UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
+    return self.viewControllers[index];
+}
+
+- (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
+    return self.titles[index];
+}
+
+//内容
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
     return CGRectMake(0, 40, 320, 320);
 }
 
+//菜单，头
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
     return CGRectMake(0, 0, 320, 40);
 }
