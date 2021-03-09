@@ -9,13 +9,8 @@
 #import "MainTouchTableTableView.h"
 
 @implementation MainTouchTableTableView
-
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+//是否支持多时候触发，返回YES，则可以多个手势一起触发方法，返回NO则为互斥
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer {
+    return YES;
 }
-*/
-
 @end

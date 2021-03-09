@@ -1,17 +1,14 @@
 //
 //  OneViewTableTableViewController.h
-//  WDEMO
+//  HeaderViewAndPageView
 //
-//  Created by rrtv on 2021/2/19.
-//  Copyright © 2021 wwc. All rights reserved.
+//  Created by su on 16/8/8.
+//  Copyright © 2016年 susu. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "ParentClassScrollViewController.h"
-
-NS_ASSUME_NONNULL_BEGIN
 
 @interface OneViewTableTableViewController : ParentClassScrollViewController
 
 @end
-
-NS_ASSUME_NONNULL_END

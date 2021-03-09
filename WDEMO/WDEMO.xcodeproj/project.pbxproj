@@ -158,6 +158,9 @@
 		F5872CFD257DFF5900341B57 /* 追剧引导-暗黑-循环.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CF9257DFF5900341B57 /* 追剧引导-暗黑-循环.gif */; };
 		F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFA257DFF5900341B57 /* 追剧引导-暗黑-一次.gif */; };
 		F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */; };
+		F593574825F7466A008CF0D8 /* OneViewTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */; };
+		F593574925F7466A008CF0D8 /* ThirdViewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574625F7466A008CF0D8 /* ThirdViewCollectionViewController.m */; };
+		F593574A25F7466A008CF0D8 /* SecondViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574725F7466A008CF0D8 /* SecondViewTableViewController.m */; };
 		F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */ = {isa = PBXBuildFile; fileRef = F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */; };
 		F597A9BD25B44600006D9172 /* UIView+RedPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F597A9BC25B44600006D9172 /* UIView+RedPoint.m */; };
 		F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */; };
@@ -208,9 +211,6 @@
 		F5D138CC25679690008CC29A /* FollowTips.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D138CB25679690008CC29A /* FollowTips.m */; };
 		F5D4EB5825DF6A6E00F807EF /* MainTouchTableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB5725DF6A6E00F807EF /* MainTouchTableTableView.m */; };
 		F5D4EB6325DF6A8700F807EF /* ParentClassScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB6225DF6A8700F807EF /* ParentClassScrollViewController.m */; };
-		F5D4EB6A25DF6AA000F807EF /* OneViewTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB6925DF6AA000F807EF /* OneViewTableTableViewController.m */; };
-		F5D4EB7125DF6AAF00F807EF /* SecondViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB7025DF6AAF00F807EF /* SecondViewTableViewController.m */; };
-		F5D4EB7825DF6AB700F807EF /* ThirdViewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB7725DF6AB700F807EF /* ThirdViewCollectionViewController.m */; };
 		F5D4EB8425DF6B5500F807EF /* PersonalHomepageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB8325DF6B5500F807EF /* PersonalHomepageVC.m */; };
 		F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */; };
 		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
@@ -549,6 +549,12 @@
 		F5872CF9257DFF5900341B57 /* 追剧引导-暗黑-循环.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "追剧引导-暗黑-循环.gif"; sourceTree = "<group>"; };
 		F5872CFA257DFF5900341B57 /* 追剧引导-暗黑-一次.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "追剧引导-暗黑-一次.gif"; sourceTree = "<group>"; };
 		F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "追剧引导-白色-一次.gif"; sourceTree = "<group>"; };
+		F593574225F74669008CF0D8 /* OneViewTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewTableTableViewController.h; sourceTree = "<group>"; };
+		F593574325F7466A008CF0D8 /* SecondViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewTableViewController.h; sourceTree = "<group>"; };
+		F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewTableTableViewController.m; sourceTree = "<group>"; };
+		F593574525F7466A008CF0D8 /* ThirdViewCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewCollectionViewController.h; sourceTree = "<group>"; };
+		F593574625F7466A008CF0D8 /* ThirdViewCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewCollectionViewController.m; sourceTree = "<group>"; };
+		F593574725F7466A008CF0D8 /* SecondViewTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewTableViewController.m; sourceTree = "<group>"; };
 		F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+buttonType.m"; sourceTree = "<group>"; };
 		F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+buttonType.h"; sourceTree = "<group>"; };
 		F597A9BB25B44600006D9172 /* UIView+RedPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+RedPoint.h"; sourceTree = "<group>"; };
@@ -644,12 +650,6 @@
 		F5D4EB5725DF6A6E00F807EF /* MainTouchTableTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTouchTableTableView.m; sourceTree = "<group>"; };
 		F5D4EB6125DF6A8700F807EF /* ParentClassScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentClassScrollViewController.h; sourceTree = "<group>"; };
 		F5D4EB6225DF6A8700F807EF /* ParentClassScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentClassScrollViewController.m; sourceTree = "<group>"; };
-		F5D4EB6825DF6AA000F807EF /* OneViewTableTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewTableTableViewController.h; sourceTree = "<group>"; };
-		F5D4EB6925DF6AA000F807EF /* OneViewTableTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewTableTableViewController.m; sourceTree = "<group>"; };
-		F5D4EB6F25DF6AAF00F807EF /* SecondViewTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewTableViewController.h; sourceTree = "<group>"; };
-		F5D4EB7025DF6AAF00F807EF /* SecondViewTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewTableViewController.m; sourceTree = "<group>"; };
-		F5D4EB7625DF6AB700F807EF /* ThirdViewCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdViewCollectionViewController.h; sourceTree = "<group>"; };
-		F5D4EB7725DF6AB700F807EF /* ThirdViewCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThirdViewCollectionViewController.m; sourceTree = "<group>"; };
 		F5D4EB8225DF6B5500F807EF /* PersonalHomepageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalHomepageVC.h; sourceTree = "<group>"; };
 		F5D4EB8325DF6B5500F807EF /* PersonalHomepageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalHomepageVC.m; sourceTree = "<group>"; };
 		F5D54BFE2553F35400787EBB /* ChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatBottomInputBarViewController.h; sourceTree = "<group>"; };
@@ -875,32 +875,22 @@
 				67AB47F6231E07C200C837BB /* AlertController */,
 				6783C8511FB941EE0040C02B /* AppDelegate.h */,
 				6783C8521FB941EE0040C02B /* AppDelegate.m */,
+				6783C8541FB941EE0040C02B /* ViewController.h */,
+				6783C8551FB941EE0040C02B /* ViewController.m */,
+				6783C85C1FB941EE0040C02B /* LaunchScreen.storyboard */,
+				6783C8571FB941EE0040C02B /* Main.storyboard */,
 				6783C85A1FB941EE0040C02B /* Assets.xcassets */,
-				F5609CAB2502236700A13C15 /* BaseController */,
-				67303347210AED2F001471D8 /* CenterBar */,
-				F57B529D24C7DEB100940696 /* Chat */,
-				A479987D24BAB2A80079F72D /* CollectionView */,
-				F5668FB424C6D818007D452E /* CPU */,
-				A459C28824C1642B00A3B5FF /* Crash */,
 				6783C85F1FB941EE0040C02B /* Info.plist */,
 				67535E832390C6560009F882 /* InfoPlist.strings */,
-				6783C85C1FB941EE0040C02B /* LaunchScreen.storyboard */,
 				F5C7261924E1317B00B16639 /* ListModelCell.h */,
 				F5C7261A24E1317B00B16639 /* ListModelCell.m */,
 				6783C8601FB941EE0040C02B /* main.m */,
-				6783C8571FB941EE0040C02B /* Main.storyboard */,
-				F5D0FBFC24E0E6A300CAADF8 /* Mask */,
-				67B7E5F12321185A00C494EF /* PassValue */,
-				F5A51F2B24FC952C0054A4DD /* Password */,
 				A459C29224C174A300A3B5FF /* Plist.h */,
 				A459C29324C174A300A3B5FF /* Plist.m */,
-				F5F346F324ED59CB006AAEA3 /* ReactiveObjC */,
-				F581D21524EAB65A008AC679 /* ScrollView */,
 				F5A9F13724E3D44A00F611E6 /* SeeLivingBaseCell.h */,
 				F5A9F13824E3D44A00F611E6 /* SeeLivingBaseCell.m */,
 				F5A9F13A24E3EC2400F611E6 /* SeeLivingModel.h */,
 				F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */,
-				A4F2C08D24B97F27005922B1 /* TagLIst */,
 				F5A9F12824E3C12B00F611E6 /* TestViewController.h */,
 				F5A9F12924E3C12B00F611E6 /* TestViewController.m */,
 				F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */,
@@ -909,9 +899,19 @@
 				F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */,
 				A4F9DC1924D66049009FB2EA /* UIImage+size.h */,
 				A4F9DC1A24D66049009FB2EA /* UIImage+size.m */,
+				F5609CAB2502236700A13C15 /* BaseController */,
+				67303347210AED2F001471D8 /* CenterBar */,
+				F57B529D24C7DEB100940696 /* Chat */,
+				A479987D24BAB2A80079F72D /* CollectionView */,
+				F5668FB424C6D818007D452E /* CPU */,
+				A459C28824C1642B00A3B5FF /* Crash */,
+				F5D0FBFC24E0E6A300CAADF8 /* Mask */,
+				67B7E5F12321185A00C494EF /* PassValue */,
+				F5A51F2B24FC952C0054A4DD /* Password */,
+				F5F346F324ED59CB006AAEA3 /* ReactiveObjC */,
+				F581D21524EAB65A008AC679 /* ScrollView */,
+				A4F2C08D24B97F27005922B1 /* TagLIst */,
 				F51DC311259C5D600079AFC8 /* URLencodeURLdecode */,
-				6783C8541FB941EE0040C02B /* ViewController.h */,
-				6783C8551FB941EE0040C02B /* ViewController.m */,
 				6783C8831FB944B80040C02B /* WCollectionView */,
 				F5E4785B25301154001AE2AE /* WebView */,
 				675852A5231D211000C5CF7E /* WTableView */,
@@ -1512,8 +1512,10 @@
 		F5B95DFB25A5EA5B00911FF8 /* 个人主页 */ = {
 			isa = PBXGroup;
 			children = (
+				F5D4EB8225DF6B5500F807EF /* PersonalHomepageVC.h */,
+				F5D4EB8325DF6B5500F807EF /* PersonalHomepageVC.m */,
 				F5D4EB1325DF683700F807EF /* ParentClass */,
-				F5D4EB7D25DF6ABE00F807EF /* 个人主页vc */,
+				F5D4EB7D25DF6ABE00F807EF /* subvc */,
 				F50D6DA225A9675700B8C415 /* 个人主页.md */,
 			);
 			path = "个人主页";
@@ -1673,19 +1675,17 @@
 			path = ParentClass;
 			sourceTree = "<group>";
 		};
-		F5D4EB7D25DF6ABE00F807EF /* 个人主页vc */ = {
+		F5D4EB7D25DF6ABE00F807EF /* subvc */ = {
 			isa = PBXGroup;
 			children = (
-				F5D4EB8225DF6B5500F807EF /* PersonalHomepageVC.h */,
-				F5D4EB8325DF6B5500F807EF /* PersonalHomepageVC.m */,
-				F5D4EB6825DF6AA000F807EF /* OneViewTableTableViewController.h */,
-				F5D4EB6925DF6AA000F807EF /* OneViewTableTableViewController.m */,
-				F5D4EB6F25DF6AAF00F807EF /* SecondViewTableViewController.h */,
-				F5D4EB7025DF6AAF00F807EF /* SecondViewTableViewController.m */,
-				F5D4EB7625DF6AB700F807EF /* ThirdViewCollectionViewController.h */,
-				F5D4EB7725DF6AB700F807EF /* ThirdViewCollectionViewController.m */,
+				F593574225F74669008CF0D8 /* OneViewTableTableViewController.h */,
+				F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */,
+				F593574325F7466A008CF0D8 /* SecondViewTableViewController.h */,
+				F593574725F7466A008CF0D8 /* SecondViewTableViewController.m */,
+				F593574525F7466A008CF0D8 /* ThirdViewCollectionViewController.h */,
+				F593574625F7466A008CF0D8 /* ThirdViewCollectionViewController.m */,
 			);
-			path = "个人主页vc";
+			path = subvc;
 			sourceTree = "<group>";
 		};
 		F5DEB2A224CE7667009A6767 /* Model */ = {
@@ -2094,6 +2094,7 @@
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
 				F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */,
 				F5A8898E24F6078E00DB73ED /* OrderViewModel.m in Sources */,
+				F593574925F7466A008CF0D8 /* ThirdViewCollectionViewController.m in Sources */,
 				F5D0FC0D24E0F99800CAADF8 /* UIImage+TUIKIT.m in Sources */,
 				F5A9F13924E3D44B00F611E6 /* SeeLivingBaseCell.m in Sources */,
 				F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */,
@@ -2107,7 +2108,6 @@
 				A459C29424C174A300A3B5FF /* Plist.m in Sources */,
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
 				F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */,
-				F5D4EB7125DF6AAF00F807EF /* SecondViewTableViewController.m in Sources */,
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
 				F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */,
 				F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */,
@@ -2123,6 +2123,7 @@
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
 				F5668FAE24C6C0B9007D452E /* HorizontalCollectionViewController.m in Sources */,
 				F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */,
+				F593574825F7466A008CF0D8 /* OneViewTableTableViewController.m in Sources */,
 				A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */,
 				F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */,
 				F5F3664924C8287C008BA221 /* ChatKit.m in Sources */,
@@ -2165,8 +2166,6 @@
 				F5872CF3257DFCBD00341B57 /* SharedInstanceVC.m in Sources */,
 				F553E19B24CA8DE200DA5625 /* NSAttributedString+FaceString.m in Sources */,
 				F543282925A6D62C0082236C /* ScoreViewController.m in Sources */,
-				F5D4EB7825DF6AB700F807EF /* ThirdViewCollectionViewController.m in Sources */,
-				F5D4EB6A25DF6AA000F807EF /* OneViewTableTableViewController.m in Sources */,
 				F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */,
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
 				F563DADC25AC26790079474B /* WMMenuItem.m in Sources */,
@@ -2199,6 +2198,7 @@
 				F5C7261824E1258000B16639 /* ListModel.m in Sources */,
 				67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */,
 				A479989224BAEBCE0079F72D /* SmallBigCollectionViewCell.m in Sources */,
+				F593574A25F7466A008CF0D8 /* SecondViewTableViewController.m in Sources */,
 				F563DADE25AC26790079474B /* WMMenuView.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
 				F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */,
