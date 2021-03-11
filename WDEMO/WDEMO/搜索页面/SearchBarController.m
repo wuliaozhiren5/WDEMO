@@ -9,8 +9,7 @@
 #import "SearchBarController.h"
 #import "ACMacros.h"
 #import "UIColor+color.h"
-#import "THeader.h"
-
+#import "THeader.h" 
 @interface SearchBarController ()<UITextFieldDelegate>
 //输入框复试图
 @property (nonatomic, strong) UIView *textView;
@@ -39,7 +38,7 @@
 }
 
 - (void)setupViews {
-    self.view.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_212121;
+    self.view.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
     [self.view addSubview:self.cancelBtn];
     [self.view addSubview:self.textView];
     [self.textView addSubview:self.iconImageView];

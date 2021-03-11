@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+//水平布局
 @interface HorizontalCollectionViewController : UIViewController
 
 @end

@@ -10,8 +10,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ParentClassScrollViewController : UIViewController
-
+@protocol scrollDelegate <NSObject>
+//切换tab
+-(void)scrollViewChangeTab:(UIScrollView *)scrollView;
+//滚动
+-(void)scrollDidScroll:(UIScrollView *)scrollView; 
 @end
 
+@interface ParentClassScrollViewController : UIViewController
+@property(strong, nonatomic)UIScrollView *scrollView; 
+@property(nonatomic,weak)id<scrollDelegate>delegate;
+
+@end
 NS_ASSUME_NONNULL_END

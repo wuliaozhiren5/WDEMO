@@ -63,14 +63,14 @@
 #define kSettingSeasonPlayYES_373 @"美剧连播默认YES"     //美剧连播默认YES
 #define kSettingSeasonPlay      @"美剧连播"     //是否开启美剧连播
 
-#define  ISDisplayNoticeView        @"isFriestSubscibe"// 是否展示追剧介绍view
+#define  ISDisplayedNoticeView        @"isDisplayedSubscibe"// 是否展示过追剧介绍view
+#define  ISDisplayedSubscibePush      @"isDisplayedSubscibePush"// 是否展示过追剧打开推送提示
 
 #define RRUserPreferedPlayClarity   @"RRUserPreferedPlayClarity"//清晰度设置新字段
 //允许流量播放开关通知
 #define KRRSettingTypeAllow3GPlay @"KRRSettingTypeAllow3GPlay"
 
 //450
-#define RRUserPlayInBackground              @"RRUserPlayInBackground"
 #define RRUserPreferedPlayQualityCode       @"RRUserPreferedPlayQualityCode"
 #define RRUserPreferedDownloadQualityCode   @"RRUserPreferedDownloadQualityCode"
 
@@ -94,7 +94,7 @@
 #define kDownJoinStr @"{|R|}"//腾讯源的数组下载的分隔符
 #define kPlayJoinStr @"RR"//腾讯源的数组下载的分隔符 -- 针对已经下载完毕的，不然组成NSUrl
 
-
+//#import "HTTPStreamingServer.h"
 #define KLocaPlaylUrl [NSString stringWithFormat:@"http://127.0.0.1:%lu",(unsigned long)[HTTPStreamingServer sharedInstance].port]
 
 #define V3_Home_CellMargin (9.0)//3.0首页cell的间距
@@ -110,6 +110,10 @@
 #define kDefaultLoginUserAgreementAndProviderCheckMark     @"kDefaultLoginUserAgreementAndProviderCheckMark_4.3.5"
 #define kDefaultLoginProviderOpen     @"kDefaultLoginProviderOpen_4.3.5"
 
+#define kDefaultAmwayUnreadCount        @"kDefaultAmwayUnreadCount"
+#define kDefaultLastOpenAppTimestamp    @"kDefaultLastOpenAppTimestamp"
+#define kDefaultTodayAmwayNotifyCount   @"kDefaultTodayAmwayNotifyCount"
+
 //弹幕设置显示区域通知
 #define DanmuSettingDisplayAreaNotification @"DanmuPopViewCellTypeDisplayArea"
 
@@ -123,8 +127,12 @@
 //我的页面任务id
 #define kMyMaxMissionId @"kMyMaxMissionId"
 
-//最短时间间隔
+//热启动最短时间间隔
 #define MinTimeCount @"minTimeCount"
+//外贴片最小展示时长
+#define RRPlayerAdSkipTime @"RRPlayerAdSkipTime"
+//中插贴片最小展示时长
+#define RRPlayerAdMiddleSkipTime @"RRPlayerAdMiddleSkipTime"
 
 #define UpdateMemeryInformation  @"UpdateMemeryInformation"//下载模块更新内存展示信息
 #define DownLoadingMaxCount 100 //最大缓存中列表的数量
@@ -143,7 +151,7 @@
 #define KDarkMode  [RRMJTool isDarkMode]
 
 //轮播图的比例
-#define KCycleScrollViewRatio  (175.0/333.0)
+#define KCycleScrollViewRatio  (230.0/375.0)
 
 /* ****************************************************************************************************************** */
 #pragma mark - Funtion Method (宏 方法)
@@ -159,6 +167,8 @@
 #define FONT(NAME, FONTSIZE)    ([UIFont fontWithName:(NAME) size:(FONTSIZE)] ?: [UIFont systemFontOfSize:(FONTSIZE)])
 #define MEDIUMFONT(FONTSIZE)    [UIFont fontWithName:@"Helvetica-Bold" size:(FONTSIZE)]
 #define DINAlternateBold(FONTSIZE)    [UIFont fontWithName:@"DINAlternate-Bold" size:(FONTSIZE)] ?: [UIFont boldSystemFontOfSize:(FONTSIZE)]
+
+#define BebasNeue(FONTSIZE)    [UIFont fontWithName:@"BebasNeue-Regular" size:(FONTSIZE)] ?: [UIFont systemFontOfSize:(FONTSIZE)]
 
 #define RR_COMMONFONT(FONTSIZE) ([UIFont fontWithName:@"PingFangSC-Regular" size:(FONTSIZE)] ?: [UIFont systemFontOfSize:FONTSIZE])
 #define RR_MEDIUMFONT(FONTSIZE) ([UIFont fontWithName:@"PingFangSC-Medium" size:(FONTSIZE)] ?: [UIFont fontWithName:@"Helvetica-Bold" size:(FONTSIZE)])
@@ -182,11 +192,13 @@
 
  #pragma mark ---字体颜色---
 
-#define kCOLOR_AppBackground  kCOLOR_dynamicProvider_FFFFFF_212121
+#define kCOLOR_AppBackground  kCOLOR_dynamicProvider_FFFFFF_1F2126
 
 //字体色
 #define kCOLOR_dynamicProvider_333333_DADBDC      [UIColor colorWithDynamicProviderColor:@[RGB(0x33, 0x33, 0x33),RGB(0xda, 0xdb, 0xdc)]]
 #define kCOLOR_dynamicProvider_222222_E5E7EB      [UIColor colorWithDynamicProviderColor:@[RGB(0x22, 0x22, 0x22),RGB(0xe5, 0xe7, 0xeb)]]
+#define kCOLOR_dynamicProvider_333333_E5E7EB      [UIColor colorWithDynamicProviderColor:@[RGB(0x33, 0x33, 0x33),RGB(0xe5, 0xe7, 0xeb)]]
+
 #define kCOLOR_dynamicProvider_85888F_6D7380      [UIColor colorWithDynamicProviderColor:@[RGB(0x85, 0x88, 0x8F),RGB(0x6d, 0x73, 0x80)]]
 //次级字体色
 #define kCOLOR_919699       RGB(0x91, 0x96, 0x99)
@@ -204,6 +216,12 @@
 #define kCOLOR_dynamicProvider_E6E7E8_333333       [UIColor colorWithDynamicProviderColor:@[RGB(0xE6, 0xE7, 0xE8),RGB(0x33, 0x33, 0x33)]]
 
 
+//空态页面按钮颜色
+#define kCOLOR_1890FFAlpha011  [RGB(0x18, 0x90, 0xFF) colorWithAlphaComponent:0.11]
+
+
+
+
  #pragma mark ---背景色---
 
 //模块背景色  二级回复,帖子里的转发内容
@@ -211,9 +229,13 @@
 #define kCOLOR_dynamicProvider_F7F8FA_2A2A2A [UIColor colorWithDynamicProviderColor:@[RGB(0xF7, 0xF8, 0xFA),RGB(0x2a, 0x2a, 0x2a)]]
 //输入框背景色 搜索讨论弹幕
 #define kCOLOR_dynamicProvider_F2F4F5_2E2E2E       [UIColor colorWithDynamicProviderColor:@[RGB(0xF2, 0xF4, 0xF5),RGB(0x2E, 0x2E, 0x2E)]]
+
+//
+#define kCOLOR_dynamicProvider_F2F4F7_2D2E33       [UIColor colorWithDynamicProviderColor:@[RGB(0xF2, 0xF4, 0xF7),RGB(0x2D, 0x2E, 0x33)]]
+
 //输入框背景色 搜索结果页面
 #define kCOLOR_dynamicProvider_F2F4F5_2D2E33       [UIColor colorWithDynamicProviderColor:@[RGB(0xF2, 0xF4, 0xF5),RGB(0x2D, 0x2E, 0x33)]]
- 
+
  #pragma mark ---卡片背景色---
 #define kCOLOR_dynamicProvider_FFFFFF_2C2C2C       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x2c, 0x2c, 0x2c)]]
 
@@ -256,22 +278,22 @@
 //卡片背景颜色
 #define kCOLOR_dynamicProvider_FFFFFF_2C2C2C       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x2c, 0x2c, 0x2c)]]
 
-//app背景主题色
-#define kCOLOR_dynamicProvider_FFFFFF_212121       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x21, 0x21, 0x21)]]
-
 #define kCOLOR_dynamicProvider_FFFFFF_292B31       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x29, 0x2b, 0x31)]]
 
-#define kCOLOR_dynamicProvider_000000_212121       [UIColor colorWithDynamicProviderColor:@[RGB(0x00, 0x00, 0x00),RGB(0x21, 0x21, 0x21)]]
+//#define kCOLOR_dynamicProvider_000000_212121       [UIColor colorWithDynamicProviderColor:@[RGB(0x00, 0x00, 0x00),RGB(0x21, 0x21, 0x21)]]
 
 
 #define kCOLOR_dynamicProvider_FFFFFF_919699       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x91, 0x96, 0x99)]]
 
 #define kCOLOR_dynamicProvider_FAFAFA_242424       [UIColor colorWithDynamicProviderColor:@[RGB(0xfa, 0xfa, 0xfa),RGB(0x24, 0x24, 0x24)]]
 
+//搜索结果页面背景色
+#define kCOLOR_dynamicProvider_FFFFFF_1F2126       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x1f, 0x21, 0x26)]]
 //我的页面背景色
 #define kCOLOR_dynamicProvider_F6F8FA_1F2126       [UIColor colorWithDynamicProviderColor:@[RGB(0xf6, 0xf8, 0xfa),RGB(0x1f, 0x21, 0x26)]]
 #define kCOLOR_dynamicProvider_CED0D2_4D5056      [UIColor colorWithDynamicProviderColor:@[RGB(0xce, 0xd0, 0xd2),RGB(0x4d, 0x50, 0x56)]]
 #define kCOLOR_dynamicProvider_E6E7E8A100_E6E7E8A008      [UIColor colorWithDynamicProviderColor:@[RGBACOLOR(0xE6, 0xE7, 0xE8 ,1),RGBACOLOR(0xE6, 0xE7, 0xE8 ,0.08)]]
+#define kCOLOR_dynamicProvider_E6E7E8_373940  [UIColor colorWithDynamicProviderColor:@[RGB(0xE6, 0xE7, 0xE8),RGB(0x37, 0x39, 0x40)]]
 #define kCOLOR_C8C8C8       RGB(0xc8, 0xc8, 0xc8)
 #define kCOLOR_dynamicProvider_C8C8C8_414141 [UIColor colorWithDynamicProviderColor:@[RGB(0xc8, 0xc8, 0xc8),RGB(0x41, 0x41, 0x41)]]
 
@@ -372,8 +394,9 @@
 #define KCOLOR_1FCC9E       RGB(0x1F, 0xCC, 0x9E)
 #define kCOLOR_dynamicProvider_1FCC9E_1FAC86   [UIColor colorWithDynamicProviderColor:@[RGB(0x1F, 0xCC, 0x9E), RGB(0x1F, 0xAC, 0x86)]]
 
+#define kCOLOR_dynamicProvider_BABBBC_515152   [UIColor colorWithDynamicProviderColor:@[RGB(0xBA, 0xBB, 0xBC), RGB(0x51, 0x51, 0x52)]]
 
-#define kCOLOR_505a6a RGB(0x50, 0x5a, 0x6a)
+#define kCOLOR_505A6A       RGB(0x50, 0x5A, 0x6A)
 
 #define kCOLOR_BABBBC       RGB(0xBA, 0xBB, 0xBC)
 
@@ -478,15 +501,24 @@
 #define kCOLOR_6D7380       RGB(0x6d, 0x73, 0x80)
 #define kCOLOR_1F2126       RGB(0x1f, 0x21, 0x26)
 #define kCOLOR_0091FF       RGB(0x00, 0x91, 0xFF)
+#define kCOLOR_E5E7E8       RGB(0xE5, 0xE7, 0xE8)
+#define kCOLOR_B17BFF       RGB(0xB1, 0x7B, 0xFF)
+
 
 
 #define Proportion [UIScreen mainScreen].bounds.size.width / 375
+
+
+#define  kNavigationBottom    (statusMarginToTop() + )
+
+
 static inline CGFloat windowFloorf(CGFloat value) {
     return floorf(value * [[UIScreen mainScreen] scale]) / [[UIScreen mainScreen] scale];
 }
 #define kCOLOR_00BFFF       RGB(0x00, 0xBF, 0xFF)
 #define kCOLOR_FF617B       RGB(0xFF, 0x61, 0x7B)
 
+#define kCOLOR_dynamicProvider_EBEDF0_DADBDC      [UIColor colorWithDynamicProviderColor:@[RGB(0xEB, 0xED, 0xF0),RGB(0x37, 0x39, 0x40)]]
 
 
 
@@ -495,7 +527,7 @@ static inline CGFloat windowFloorf(CGFloat value) {
 #define WHITECOLOR_WITH_ALPHA(ALPHA)    [UIColor colorWithRed:1 green:1 blue:1 alpha:ALPHA]
 
 //导航条背景颜色
-#define NavColor         kCOLOR_dynamicProvider_FFFFFF_212121
+#define NavColor         kCOLOR_dynamicProvider_FFFFFF_1F2126
 //页面背景色
 #define BLACKCOLOR       [UIColor colorWithRed:241/ 255.0 green:241/ 255.0 blue:241/255.0 alpha:1]
 //Cell背景色
@@ -510,9 +542,102 @@ static inline CGFloat windowFloorf(CGFloat value) {
 //分割线颜色
 #define LineColor      kCOLOR_dynamicProvider_EEEEEE
 
-#define kDevice_Is_iPhoneX  ([RRAppConfig config].isiPhoneX)
-#define iPhone5_5s_5c ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
- 
+//#define kDevice_Is_iPhoneX  ([RRAppConfig config].isiPhoneX)
+//#define iPhone5_5s_5c ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+//static inline CGFloat statusMarginToTop() {
+//    if (kDevice_Is_iPhoneX) {
+//        return 44;
+//    } else {
+//        return 20;
+//    }
+//}
+//
+////iphone的安全边距，其中右和下是负值，是为了方便填写约束
+//static inline UIEdgeInsets appMargin() {
+//    CGFloat top = 0;
+//    CGFloat bottom = 0;
+//    CGFloat left = 0;
+//    CGFloat right = 0;
+//    if (@available(iOS 11.0, *)) {
+//        UIEdgeInsets insets = [UIApplication sharedApplication].keyWindow.safeAreaInsets;
+//        //iphonex系列为44，使用安全区域，其他的忽略statusbar的非q安全区域，直接取0
+//        top = insets.top > 40 ? insets.top : 0;
+//        bottom = -insets.bottom;
+//        left = insets.left;
+//        right = -insets.right;
+//    }
+//    return UIEdgeInsetsMake(top, left, bottom, right);
+//}
+//
+////播放器高度
+//static inline CGFloat playerViewHeight() {
+//    return appMargin().top + KHomeWidth / 750 * 421;
+//}
+//
+////快看短视频播放器高度
+//static inline CGFloat amwayPlayerHeight() {
+//    return (KHeight + appMargin().bottom - kBottomBarHeight);
+//}
+//
+//static inline CGFloat navMarginToTop() {
+//    return 60;
+//}
+//
+//static inline CGFloat bottomMarginToBottom() {
+//    if (@available(iOS 11.0, *)) {
+//        return [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom;
+//    }
+//    return 0;
+//}
+//
+//static inline CGFloat dealValue(CGFloat value) {
+//    return ceilf(value * [[UIScreen mainScreen] scale]) / [[UIScreen mainScreen] scale];
+//}
+//
+//static inline CGFloat floorValue(CGFloat value) {
+//    return floorf(value * [[UIScreen mainScreen] scale]) / [[UIScreen mainScreen] scale];
+//}
+//
+//// View 圆角
+//static inline void ViewRadius(UIView *view, CGFloat radius) {
+//    view.layer.masksToBounds = YES;
+//    view.layer.cornerRadius = radius;
+//}
+//
+//// View 圆角并描边
+//static inline void ViewBorderRadius(UIView *view, CGFloat radius, CGFloat borderWidth, UIColor *borderColor) {
+//    ViewRadius(view, radius);
+//    view.layer.borderWidth = borderWidth;
+//    view.layer.borderColor = borderColor.CGColor;
+//}
+//
+//static inline id nib2Obj(NSString *name, id owner){
+//    NSArray *result = [[NSBundle mainBundle] loadNibNamed:name owner:owner options:nil];
+//    return result.count > 0 ? result[0] : nil;
+//}
+//
+////剧集卡片一行个数
+//static inline NSInteger rr_recommendSeasonLineItemCount() {
+//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+//        return 3;
+//    }
+//    if (KHomeWidth >= 1024) {
+//        return 6;
+//    }
+//    return 5;
+//}
+//
+//static inline NSInteger rr_recommendSeasonPageSize() {
+//    switch (rr_recommendSeasonLineItemCount()) {
+//        case 5:
+//            return 25;
+//        case 6:
+//            return 24;
+//        default:
+//            return 15;
+//    }
+//}
+
 #define seasonVideoCategoryForm(seasonModel) (seasonModel.classify.length ? seasonModel.classify : (seasonModel.isMovie ? kRRUmengEventVideoCategory1Movie : kRRUmengEventVideoCategory1Series))
 
 #define seasonVideoForm(item)   (item.dramaType.length ? item.dramaType : ([item.dramaType isEqualToString:@"MOVIE"])? kRRUmengEventVideoCategory1Movie : kRRUmengEventVideoCategory1Series)
@@ -536,6 +661,10 @@ static inline CGFloat windowFloorf(CGFloat value) {
 
 // 是否iPad
 #define isApplePad              (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+
+
+#define KIphoneSEWith              375
+
 
 // RGB颜色转换（16进制->10进制）
 #define UIColorFromRGB(rgbValue)\

@@ -778,7 +778,7 @@
 //    return pageVC;
     
     UIViewController *vc0 = [UIViewController new];
-    vc0.view.backgroundColor = [UIColor lightGrayColor];
+    vc0.view.backgroundColor = [UIColor grayColor];
     UIViewController *vc1 = [UIViewController new];
     vc1.view.backgroundColor = [UIColor darkGrayColor];
     UIViewController *vc2 = [UIViewController new];

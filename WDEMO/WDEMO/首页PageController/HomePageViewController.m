@@ -110,11 +110,73 @@
 
 //内容
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
-    return CGRectMake(0, 40, Screen_Width, Screen_Height - 64); //64 = 导航栏 + 状态栏
+    
+    CGFloat top = 0;
+    if (@available(iOS 11.0, *)) {
+        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
+        NSLog(@"%f",a);
+        top = a;
+    } else {
+        top = 0;
+    }
+    
+    CGFloat menuHeight = self.menuHeight > 0 ? self.menuHeight : 44;
+    return CGRectMake(0, menuHeight, Screen_Width, Screen_Height - top - 44 - menuHeight - 1); //64 = 导航栏 + 状态栏
 }
 
 //菜单，头
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
-    return CGRectMake(0, 0, Screen_Width, 40);
+    CGFloat menuHeight = self.menuHeight > 0 ? self.menuHeight : 44;
+    return CGRectMake(0, 0, Screen_Width, menuHeight);
 }
 @end
+
+
+/*
+ 
+ iOS判断刘海屏幕机型
+ https://www.jianshu.com/p/392489853d92
+
+ 
+if (@available(iOS 11.0, *)) {
+        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom;
+        NSLog(@"%f",a);
+    } else {
+        // Fallback on earlier versions
+    }
+ 
+ 
+ #define IPHONE_X \
+ ({BOOL isPhoneX = NO;\
+ if (@available(iOS 11.0, *)) {\
+ isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
+ }\
+ (isPhoneX);})
+ 
+ 
+ 
+ 
+ #define isIphoneX ({\
+ BOOL isPhoneX = NO;\
+ if (@available(iOS 11.0, *)) {\
+     if (!UIEdgeInsetsEqualToEdgeInsets([UIApplication sharedApplication].delegate.window.safeAreaInsets, UIEdgeInsetsZero)) {\
+     isPhoneX = YES;\
+     }\
+ }\
+ isPhoneX;\
+ })
+ 
+ 
+ 
+ 
+ func isiPhoneXScreen() -> Bool {
+         guard #available(iOS 11.0, *) else {
+             return false
+         }
+  
+         return UIApplication.shared.windows[0].safeAreaInsets != UIEdgeInsets.zero
+ }
+
+*/
+
+

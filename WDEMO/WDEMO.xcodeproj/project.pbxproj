@@ -230,6 +230,15 @@
 		F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10224D3C158007DB7F3 /* YYViewController.m */; };
 		F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10724D40311007DB7F3 /* TipMessageCell.m */; };
 		F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10B24D4081A007DB7F3 /* ChatMessageYYDataModel.m */; };
+		F5F5B44525FA1DFE0069491B /* RRActoFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F5B43625FA1DFE0069491B /* RRActoFooter.xib */; };
+		F5F5B44625FA1DFE0069491B /* RRActorHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5F5B43725FA1DFE0069491B /* RRActorHeader.xib */; };
+		F5F5B44725FA1DFE0069491B /* RRActorFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B43925FA1DFE0069491B /* RRActorFooter.m */; };
+		F5F5B44825FA1DFE0069491B /* RRActorInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B43A25FA1DFE0069491B /* RRActorInfoCell.m */; };
+		F5F5B44925FA1DFE0069491B /* RRActorHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B43C25FA1DFE0069491B /* RRActorHeader.m */; };
+		F5F5B44A25FA1DFE0069491B /* RRActorInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B43D25FA1DFE0069491B /* RRActorInfoVC.m */; };
+		F5F5B44B25FA1DFE0069491B /* RRActorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B43E25FA1DFE0069491B /* RRActorVC.m */; };
+		F5F5B44C25FA1DFE0069491B /* RRActorIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B44025FA1DFE0069491B /* RRActorIntroCell.m */; };
+		F5F5B44D25FA1DFE0069491B /* RRActorVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B44325FA1DFE0069491B /* RRActorVideoVC.m */; };
 		F5F701F225CD2C1F0000D5A9 /* 空白.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F701F125CD2C1F0000D5A9 /* 空白.md */; };
 		F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */; };
 /* End PBXBuildFile section */
@@ -683,6 +692,22 @@
 		F5F4F10824D40311007DB7F3 /* TipMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipMessageCell.h; sourceTree = "<group>"; };
 		F5F4F10A24D4081A007DB7F3 /* ChatMessageYYDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMessageYYDataModel.h; sourceTree = "<group>"; };
 		F5F4F10B24D4081A007DB7F3 /* ChatMessageYYDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMessageYYDataModel.m; sourceTree = "<group>"; };
+		F5F5B43525FA1DFE0069491B /* RRActorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorVC.h; sourceTree = "<group>"; };
+		F5F5B43625FA1DFE0069491B /* RRActoFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RRActoFooter.xib; sourceTree = "<group>"; };
+		F5F5B43725FA1DFE0069491B /* RRActorHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RRActorHeader.xib; sourceTree = "<group>"; };
+		F5F5B43825FA1DFE0069491B /* RRActorVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorVideoVC.h; sourceTree = "<group>"; };
+		F5F5B43925FA1DFE0069491B /* RRActorFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorFooter.m; sourceTree = "<group>"; };
+		F5F5B43A25FA1DFE0069491B /* RRActorInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorInfoCell.m; sourceTree = "<group>"; };
+		F5F5B43B25FA1DFE0069491B /* RRActorIntroCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorIntroCell.h; sourceTree = "<group>"; };
+		F5F5B43C25FA1DFE0069491B /* RRActorHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorHeader.m; sourceTree = "<group>"; };
+		F5F5B43D25FA1DFE0069491B /* RRActorInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorInfoVC.m; sourceTree = "<group>"; };
+		F5F5B43E25FA1DFE0069491B /* RRActorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorVC.m; sourceTree = "<group>"; };
+		F5F5B43F25FA1DFE0069491B /* RRActorHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorHeader.h; sourceTree = "<group>"; };
+		F5F5B44025FA1DFE0069491B /* RRActorIntroCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorIntroCell.m; sourceTree = "<group>"; };
+		F5F5B44125FA1DFE0069491B /* RRActorInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorInfoCell.h; sourceTree = "<group>"; };
+		F5F5B44225FA1DFE0069491B /* RRActorFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorFooter.h; sourceTree = "<group>"; };
+		F5F5B44325FA1DFE0069491B /* RRActorVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorVideoVC.m; sourceTree = "<group>"; };
+		F5F5B44425FA1DFE0069491B /* RRActorIntroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorIntroVC.h; sourceTree = "<group>"; };
 		F5F701F125CD2C1F0000D5A9 /* 空白.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白.md"; sourceTree = "<group>"; };
 		F5F701F725CD2E290000D5A9 /* KeyedArchiverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyedArchiverViewController.h; sourceTree = "<group>"; };
 		F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyedArchiverViewController.m; sourceTree = "<group>"; };
@@ -834,6 +859,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5F5B43425FA1DFE0069491B /* Actor */,
 				F509136C25EF917B00A2E217 /* UILabel文字.md */,
 				F518ED3625E8DDAC00260125 /* 图片压缩.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
@@ -1805,6 +1831,29 @@
 			path = "YYText富文本YY富文本";
 			sourceTree = "<group>";
 		};
+		F5F5B43425FA1DFE0069491B /* Actor */ = {
+			isa = PBXGroup;
+			children = (
+				F5F5B43625FA1DFE0069491B /* RRActoFooter.xib */,
+				F5F5B44225FA1DFE0069491B /* RRActorFooter.h */,
+				F5F5B43925FA1DFE0069491B /* RRActorFooter.m */,
+				F5F5B43F25FA1DFE0069491B /* RRActorHeader.h */,
+				F5F5B43C25FA1DFE0069491B /* RRActorHeader.m */,
+				F5F5B43725FA1DFE0069491B /* RRActorHeader.xib */,
+				F5F5B44125FA1DFE0069491B /* RRActorInfoCell.h */,
+				F5F5B43A25FA1DFE0069491B /* RRActorInfoCell.m */,
+				F5F5B44425FA1DFE0069491B /* RRActorIntroVC.h */,
+				F5F5B43D25FA1DFE0069491B /* RRActorInfoVC.m */,
+				F5F5B43B25FA1DFE0069491B /* RRActorIntroCell.h */,
+				F5F5B44025FA1DFE0069491B /* RRActorIntroCell.m */,
+				F5F5B43525FA1DFE0069491B /* RRActorVC.h */,
+				F5F5B43E25FA1DFE0069491B /* RRActorVC.m */,
+				F5F5B43825FA1DFE0069491B /* RRActorVideoVC.h */,
+				F5F5B44325FA1DFE0069491B /* RRActorVideoVC.m */,
+			);
+			path = Actor;
+			sourceTree = "<group>";
+		};
 		F5F701F025CD28560000D5A9 /* 归档解档 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1957,6 +2006,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F5B44625FA1DFE0069491B /* RRActorHeader.xib in Resources */,
 				F5710B4225232263009DEE02 /* 富文本.md in Resources */,
 				F5C0A2292578BBD4004EBD94 /* xibView.xib in Resources */,
 				F5872CEC257DFC9E00341B57 /* 单例.md in Resources */,
@@ -1992,6 +2042,7 @@
 				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
 				F548D0E6256E2EEA00357E64 /* amwayPlayerZan.json in Resources */,
+				F5F5B44525FA1DFE0069491B /* RRActoFooter.xib in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
 				F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
@@ -2086,6 +2137,7 @@
 				F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */,
 				F5200DCB2531536E004637DD /* BaseViewController.m in Sources */,
 				677BADD71FC412A700E7A3FF /* WConstants.m in Sources */,
+				F5F5B44C25FA1DFE0069491B /* RRActorIntroCell.m in Sources */,
 				F50D6D8025A9581B00B8C415 /* SearchResultViewController.m in Sources */,
 				F553E14424CA82E700DA5625 /* ChatKitConfig.m in Sources */,
 				F5A8898524F605C600DB73ED /* OrderViewController.m in Sources */,
@@ -2133,6 +2185,7 @@
 				F507113024E2A6A700AD5306 /* MYPerson.m in Sources */,
 				F5F30DB3256652CC00DD2597 /* WPerson.m in Sources */,
 				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
+				F5F5B44925FA1DFE0069491B /* RRActorHeader.m in Sources */,
 				F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */,
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
 				F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */,
@@ -2147,12 +2200,14 @@
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
 				F5609CA92502235400A13C15 /* BaseTabBarController.m in Sources */,
 				F563DADF25AC26790079474B /* WMProgressView.m in Sources */,
+				F5F5B44825FA1DFE0069491B /* RRActorInfoCell.m in Sources */,
 				F5872CDF257DFAF300341B57 /* xibVC.m in Sources */,
 				F5F37087250A594400118FC4 /* ChatManager.m in Sources */,
 				F5A763BF253D952D00A76C6E /* Book.m in Sources */,
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
 				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,
 				F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */,
+				F5F5B44B25FA1DFE0069491B /* RRActorVC.m in Sources */,
 				F5A8899524F612A000DB73ED /* OrderCell.m in Sources */,
 				F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */,
 				F5CED5E525749E84002CF42C /* XXClass.m in Sources */,
@@ -2193,6 +2248,7 @@
 				F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */,
 				F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */,
 				F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */,
+				F5F5B44725FA1DFE0069491B /* RRActorFooter.m in Sources */,
 				F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
 				F5C7261824E1258000B16639 /* ListModel.m in Sources */,
@@ -2212,6 +2268,7 @@
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
+				F5F5B44D25FA1DFE0069491B /* RRActorVideoVC.m in Sources */,
 				F51535EF259B2960007E3416 /* UserEditBar.m in Sources */,
 				F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */,
 				F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */,
@@ -2241,6 +2298,7 @@
 				F5A8898B24F6074A00DB73ED /* OrderModel.m in Sources */,
 				F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */,
 				F5CE3D2224E6901800B20C80 /* RRDestroyAccountReasonCell.m in Sources */,
+				F5F5B44A25FA1DFE0069491B /* RRActorInfoVC.m in Sources */,
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,

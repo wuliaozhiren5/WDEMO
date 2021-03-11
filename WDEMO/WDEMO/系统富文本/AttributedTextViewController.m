@@ -68,7 +68,10 @@
                               range:NSMakeRange(0, attributedString.length)];
   
     self.titleLab.attributedText = attributedString;
-
+//    重要
+//    问题解决办法：
+//    在设置 attributedText 后，在对 lineBreakMode 进行一下设置，这样就会出现想要的结果了。
+    
     NSLog(@"/////////////////////////////////////////////////////////////////");
 
     //计算高度方法1

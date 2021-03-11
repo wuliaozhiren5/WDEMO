@@ -10,7 +10,6 @@
 
 @interface ThirdViewCollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
-
 @property (nonatomic, strong)UICollectionView *collectionView;
 @end
 
@@ -51,7 +50,7 @@ static NSString * const reuseIdentifier = @"Cell";
 //定义展示的UICollectionViewCell的个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 5;
+    return 15;
 }
 //定义展示的Section的个数
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

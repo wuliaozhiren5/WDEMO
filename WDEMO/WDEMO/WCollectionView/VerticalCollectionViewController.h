@@ -9,7 +9,7 @@
 #import "BaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
-
+//垂直布局
 @interface VerticalCollectionViewController : BaseViewController
 
 @end

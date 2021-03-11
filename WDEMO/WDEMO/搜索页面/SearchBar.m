@@ -39,7 +39,7 @@
 }
 
 - (void)setupViews {
-    self.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_212121;
+    self.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
     [self addSubview:self.cancelBtn];
     [self addSubview:self.textView];
     [self.textView addSubview:self.iconImageView];
