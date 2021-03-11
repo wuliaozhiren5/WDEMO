@@ -239,6 +239,8 @@
 		F5F5B44B25FA1DFE0069491B /* RRActorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B43E25FA1DFE0069491B /* RRActorVC.m */; };
 		F5F5B44C25FA1DFE0069491B /* RRActorIntroCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B44025FA1DFE0069491B /* RRActorIntroCell.m */; };
 		F5F5B44D25FA1DFE0069491B /* RRActorVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B44325FA1DFE0069491B /* RRActorVideoVC.m */; };
+		F5F5B47025FA3AE50069491B /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5F5B46F25FA3AE50069491B /* bg.jpg */; };
+		F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5F5B47525FA3AE90069491B /* avatar.jpg */; };
 		F5F701F225CD2C1F0000D5A9 /* 空白.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F701F125CD2C1F0000D5A9 /* 空白.md */; };
 		F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */; };
 /* End PBXBuildFile section */
@@ -708,6 +710,8 @@
 		F5F5B44225FA1DFE0069491B /* RRActorFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorFooter.h; sourceTree = "<group>"; };
 		F5F5B44325FA1DFE0069491B /* RRActorVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorVideoVC.m; sourceTree = "<group>"; };
 		F5F5B44425FA1DFE0069491B /* RRActorIntroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorIntroVC.h; sourceTree = "<group>"; };
+		F5F5B46F25FA3AE50069491B /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		F5F5B47525FA3AE90069491B /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
 		F5F701F125CD2C1F0000D5A9 /* 空白.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白.md"; sourceTree = "<group>"; };
 		F5F701F725CD2E290000D5A9 /* KeyedArchiverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyedArchiverViewController.h; sourceTree = "<group>"; };
 		F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyedArchiverViewController.m; sourceTree = "<group>"; };
@@ -1538,6 +1542,8 @@
 		F5B95DFB25A5EA5B00911FF8 /* 个人主页 */ = {
 			isa = PBXGroup;
 			children = (
+				F5F5B47525FA3AE90069491B /* avatar.jpg */,
+				F5F5B46F25FA3AE50069491B /* bg.jpg */,
 				F5D4EB8225DF6B5500F807EF /* PersonalHomepageVC.h */,
 				F5D4EB8325DF6B5500F807EF /* PersonalHomepageVC.m */,
 				F5D4EB1325DF683700F807EF /* ParentClass */,
@@ -2027,6 +2033,7 @@
 				F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */,
 				F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */,
 				F548D101256E384300357E64 /* img_1.png in Resources */,
+				F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */,
 				F5872CFC257DFF5900341B57 /* 追剧引导-白色-循环.gif in Resources */,
 				F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */,
 				F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */,
@@ -2034,6 +2041,7 @@
 				F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */,
 				F5872CFD257DFF5900341B57 /* 追剧引导-暗黑-循环.gif in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
+				F5F5B47025FA3AE50069491B /* bg.jpg in Resources */,
 				F548D0E7256E2EEA00357E64 /* data.json in Resources */,
 				F505AC3525C940D100F43298 /* addChildViewController.md in Resources */,
 				F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */,

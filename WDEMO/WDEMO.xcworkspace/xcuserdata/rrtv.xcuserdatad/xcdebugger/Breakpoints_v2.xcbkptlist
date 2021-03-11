@@ -190,9 +190,9 @@
             filePath = "WDEMO/&#x4e2a;&#x4eba;&#x4e3b;&#x9875;/PersonalHomepageVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
-            landmarkName = "-scrollViewDidScroll:"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "-scrollViewChangeTab:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
