@@ -27,6 +27,8 @@
     _myTableView.showsHorizontalScrollIndicator = NO;
     [self.view addSubview:_myTableView];
     
+    self.scrollView = _myTableView;
+
     _myTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // 下拉刷新
     _myTableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{

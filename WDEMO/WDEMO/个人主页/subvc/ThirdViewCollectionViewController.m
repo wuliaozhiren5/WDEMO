@@ -39,6 +39,9 @@ static NSString * const reuseIdentifier = @"Cell";
     self.collectionView.directionalLockEnabled = YES;
     [self.view addSubview:self.collectionView];
     
+    self.scrollView = self.collectionView;
+
+    
 }
 
 - (void)didReceiveMemoryWarning {
