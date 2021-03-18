@@ -297,7 +297,7 @@
     switch (section) {
         case 2:
         {
-            UIEdgeInsets edgeInsets = {0, 16, 0, 16};
+            UIEdgeInsets edgeInsets = {0, 16, 16, 16};
             return edgeInsets;
         }
             break;

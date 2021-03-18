@@ -6,12 +6,12 @@
 //  Copyright © 2021 RRMJ. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ParentClassScrollViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 //演员动态，演员视频
-@interface RRActorVideoVC : BaseViewController
-
+@interface RRActorVideoVC : ParentClassScrollViewController
+@property (nonatomic, copy) NSString *actorId;
 @end
 
 NS_ASSUME_NONNULL_END

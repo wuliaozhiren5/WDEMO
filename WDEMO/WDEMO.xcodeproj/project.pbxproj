@@ -1181,11 +1181,13 @@
 			path = "聊天控制器ChatController";
 			sourceTree = "<group>";
 		};
-		F5358C2226034E4C00C69FC4 /* New Group */ = {
+		F5358C2226034E4C00C69FC4 /* ActorIntroVC */ = {
 			isa = PBXGroup;
 			children = (
+				F5F5B44425FA1DFE0069491B /* RRActorIntroVC.h */,
+				F5F5B43D25FA1DFE0069491B /* RRActorInfoVC.m */,
 			);
-			path = "New Group";
+			path = ActorIntroVC;
 			sourceTree = "<group>";
 		};
 		F53FFE5F259DA1D600ABE946 /* 加载LoadingView */ = {
@@ -1853,7 +1855,7 @@
 		F5F5B43425FA1DFE0069491B /* Actor */ = {
 			isa = PBXGroup;
 			children = (
-				F5358C2226034E4C00C69FC4 /* New Group */,
+				F5358C2226034E4C00C69FC4 /* ActorIntroVC */,
 				F5D2128F25FF567100C7DCC1 /* RRActorIntroAndWorksVC.h */,
 				F5D2129025FF567100C7DCC1 /* RRActorIntroAndWorksVC.m */,
 				F5F5B43625FA1DFE0069491B /* RRActoFooter.xib */,
@@ -1864,8 +1866,6 @@
 				F5F5B43725FA1DFE0069491B /* RRActorHeader.xib */,
 				F5F5B44125FA1DFE0069491B /* RRActorInfoCell.h */,
 				F5F5B43A25FA1DFE0069491B /* RRActorInfoCell.m */,
-				F5F5B44425FA1DFE0069491B /* RRActorIntroVC.h */,
-				F5F5B43D25FA1DFE0069491B /* RRActorInfoVC.m */,
 				F5F5B43B25FA1DFE0069491B /* RRActorIntroCell.h */,
 				F5F5B44025FA1DFE0069491B /* RRActorIntroCell.m */,
 				F5F5B43525FA1DFE0069491B /* RRActorVC.h */,

@@ -16,7 +16,6 @@
 #import "ACMacros.h"
 #import "UIColor+color.h"
  
- 
 @interface RRActorIntroVC ()<UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -267,6 +266,22 @@
 #pragma mark -- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     switch (indexPath.section) {
+        case 0:
+        {
+//            RRActorIntroVC *vc= [[RRActorIntroVC alloc]init];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:vc animated:YES];
+ 
+        }
+            break;
+        case 1:
+        {
+//            RRActorIntroVC *vc= [[RRActorIntroVC alloc]init];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:vc animated:YES];
+ 
+        }
+            break;
         case 2:
         {
 //            RRActorIntroVC *vc= [[RRActorIntroVC alloc]init];
@@ -278,6 +293,7 @@
             [vc didMoveToParentViewController:topVC];
             [topVC.view addSubview:vc.view];
             [vc show];
+            
         }
             break;
         default:

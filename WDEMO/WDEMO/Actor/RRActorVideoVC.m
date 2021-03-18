@@ -45,6 +45,22 @@
 //    self.loadingView.center = CGPointMake(self.view.centerX, self.view.centerY - 99 - appMargin().top);
 //    self.noDataView.center = self.loadingView.center;
 //    [self refreshData];
+    
+    [self createTipsLab];
+}
+
+- (void)createTipsLab {
+    
+    //更多精彩短视频即将上线，敬请期待
+    NSString *tipString = @"更多精彩短视频即将上线，敬请期待";
+    UILabel *tipsLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, KWidth, KWidth)];
+    tipsLab.font = SYSTEMFONT(15);
+    tipsLab.textAlignment = NSTextAlignmentCenter;
+    tipsLab.text = tipString;
+    [self.collectionView addSubview:tipsLab];
+//    [tipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self.collectionView);
+//    }];
 }
 
 - (void)setupViews {
@@ -110,7 +126,8 @@
 //    footer.stateLabel.font = [UIFont systemFontOfSize:12];
 //    footer.stateLabel.textColor = kCOLOR_85888F;
 //    self.collectionView.mj_footer = footer;
-    
+    self.scrollView = self.collectionView;
+
 }
 
 #pragma mark --UICollectionViewDataSource
@@ -151,7 +168,8 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:CHTCollectionElementKindSectionHeader]){
         RRActorHeader *header = (RRActorHeader *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([RRActorHeader class]) forIndexPath:indexPath];
-        NSString *text = @"休闲鞋";
+        NSString *text = @"";
+        header.backgroundColor = [UIColor grayColor];
         header.titleLab.text = text;
         return header;
      } else if ([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
@@ -173,8 +191,7 @@
 //    RRSearchVideoNewDataModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.item];
 //    CGFloat height = [RRSearchResultVideoCollectionViewCell heightForCellWithModel:model];
 //    CGFloat width = (KWidth - 16 - 16 - 8) / 2;
-     
- 
+      
     return CGSizeMake(KWidth, KWidth);
  
 }
@@ -196,12 +213,12 @@
 
 // 每个区的边距
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    UIEdgeInsets edgeInsets = {12, 16, 12, 16};
+    UIEdgeInsets edgeInsets = {6, 16, 6, 16};
     return edgeInsets;
 }
 
 // header的高度
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForHeaderInSection:(NSInteger)section {
-    return 41.0;
+    return 42.0;
 }
 @end

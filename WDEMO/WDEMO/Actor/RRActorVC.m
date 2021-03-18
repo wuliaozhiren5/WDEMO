@@ -21,8 +21,6 @@
 #import "RRActorIntroAndWorksVC.h"
 #import "RRActorVideoVC.h"
  
-
-
 const CGFloat headViewHeight = 256;
 
 @interface RRActorVC ()<UITableViewDelegate, UITableViewDataSource, scrollDelegate, WMPageControllerDelegate>
@@ -422,7 +420,7 @@ const CGFloat headViewHeight = 256;
 - (WMPageController *)p_defaultController {
     RRActorIntroAndWorksVC *oneVc  = [RRActorIntroAndWorksVC new];
     oneVc.delegate = self;
-    RRActorIntroAndWorksVC *twoVc  = [RRActorIntroAndWorksVC new];
+    RRActorVideoVC *twoVc  = [RRActorVideoVC new];
     twoVc.delegate = self;
   
     NSArray *viewControllers = @[oneVc,twoVc];
