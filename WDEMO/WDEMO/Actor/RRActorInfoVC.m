@@ -15,8 +15,8 @@
 #import <Masonry/Masonry.h>
 #import "ACMacros.h"
 #import "UIColor+color.h"
-
-
+ 
+ 
 @interface RRActorIntroVC ()<UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -27,12 +27,27 @@
 @property (nonatomic, assign) BOOL isShowMore;    //是否显示更多数据 默认NO
 //@property (nonatomic, assign) BOOL isNoOtherData; //是否没有其他数据 默认NO
 
+@property (nonatomic, assign) BOOL isHalf;          //半屏
+ 
+@property (nonatomic, strong) UIView *topBar;
+@property (nonatomic, strong) UILabel *titleLab;
+@property (nonatomic, strong) UIButton *closeBtn;          //半屏
 @end
 
 @implementation RRActorIntroVC
 
+- (instancetype)initWithIsHalf:(BOOL)isHalf {
+    self = [super init];
+    if (self) {
+        self.isHalf = isHalf;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"明星简介";
+
     // Do any additional setup after loading the view.
 //    self.isShowMore = NO;
 //    self.isNoOtherData = NO;
@@ -97,10 +112,38 @@
  
     [self.view addSubview:self.collectionView];
     
-    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
-    }];
+//    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(self.view);
+//    }];
     
+    if (!self.isHalf) {
+        [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@0);
+            make.leading.trailing.bottom.equalTo(@0);
+        }];
+    } else {
+        
+        [self.view addSubview:self.topBar];
+        [self.topBar addSubview:self.titleLab];
+        [self.topBar addSubview:self.closeBtn];
+        [self.topBar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.leading.trailing.equalTo(@0);
+            make.height.equalTo(@49);
+        }];
+        [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(@16);
+            make.trailing.equalTo(@-49);
+            make.top.bottom.equalTo(@0);
+        }];
+        [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.bottom.equalTo(@0);
+            make.width.height.equalTo(@49);
+        }];
+        [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.topBar.mas_bottom);
+            make.leading.trailing.bottom.equalTo(@0);
+        }];
+    }
 //    WS(weakSelf)
 //    MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
 ////        [weakSelf loadMoreData];
@@ -128,7 +171,7 @@
             return 1;
             break;
         case 2:
-            return 5;
+            return 10;
             break;
         default:
             return 0;
@@ -161,7 +204,7 @@
         case 0:
         {
             RRActorIntroCell *cell = (RRActorIntroCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRActorIntroCell class]) forIndexPath:indexPath];
-            cell.backgroundColor = [UIColor redColor];
+//            cell.backgroundColor = [UIColor redColor];
 //            [cell.moreBtn addTarget:self action:@selector(clickActorInfoCellMoreBtn:) forControlEvents:(UIControlEventTouchUpInside)];
 ////            cell.isNoOtherData = self.isNoOtherData;
 //            cell.isShowMore = self.isShowMore;
@@ -171,7 +214,7 @@
              break;
         case 1:{
             RRActorInfoCell *cell = (RRActorInfoCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRActorInfoCell class]) forIndexPath:indexPath];
-            cell.backgroundColor = [UIColor grayColor];
+//            cell.backgroundColor = [UIColor grayColor];
             [cell.moreBtn addTarget:self action:@selector(clickActorInfoCellMoreBtn:) forControlEvents:(UIControlEventTouchUpInside)];
 //            cell.isNoOtherData = self.isNoOtherData;
             cell.isShowMore = self.isShowMore;
@@ -223,23 +266,54 @@
  
 #pragma mark -- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.section) {
+        case 2:
+        {
+//            RRActorIntroVC *vc= [[RRActorIntroVC alloc]init];
+//            vc.hidesBottomBarWhenPushed = YES;
+//            [self.navigationController pushViewController:vc animated:YES];
+            RRActorIntroVC *vc = [[RRActorIntroVC alloc] initWithIsHalf:YES];
+            UIViewController *topVC = self;
+            [topVC addChildViewController:vc];
+            [vc didMoveToParentViewController:topVC];
+            [topVC.view addSubview:vc.view];
+            [vc show];
+        }
+            break;
+        default:
+            return;
+            break;
+    }
     
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 //指定项单元格的大小。
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    RRSearchVideoNewDataModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.item];
-//    CGFloat height = [RRSearchResultVideoCollectionViewCell heightForCellWithModel:model];
-//    CGFloat width = (KWidth - 16 - 16 - 8) / 2;
-     
+    
     NSInteger section = indexPath.section;
     switch (section) {
         case 0:
             return CGSizeMake(KWidth, 80);
             break;
         case 1:
-            return CGSizeMake(KWidth, KWidth);
+        {
+            CGFloat height = [RRActorInfoCell cellHeightWithModel:nil isShowMore:self.isShowMore];
+//            CGFloat showHeight = height;//显示的高度
+//            //按钮  28
+//            if (height <= 66) {
+//                //不显示more按钮                16
+//                showHeight += 16;
+//            } else {
+//                //显示more按钮                  36
+//                showHeight = 66 + 36;
+//            }
+//            //状态发生变化 显示全部
+//            if (self.isShowMore) {
+//                showHeight = height + 36;
+//            }
+            return CGSizeMake(KWidth, height);
+        }
             break;
         case 2:
         {
@@ -314,6 +388,59 @@
 - (void)clickActorInfoCellMoreBtn:(UIButton *)btn {
     self.isShowMore = !self.isShowMore;
     [self.collectionView reloadData];
-    
+}
+
+- (UIView *)topBar {
+    if (!_topBar) {
+        _topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+//        _topBar.backgroundColor = [UIColor redColor];
+    }
+    return _topBar;
+}
+
+- (UILabel *)titleLab {
+    if (!_titleLab) {
+        _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+        _titleLab.text = @"明星简介";
+        _titleLab.font = SYSTEMFONT(17);
+    }
+    return _titleLab;
+}
+
+-(UIButton *)closeBtn {
+    if (!_closeBtn) {
+        _closeBtn = [[UIButton alloc] init];
+        _closeBtn.frame = CGRectMake(0, 0, 40, 40);
+        [_closeBtn setImage:IMAGENAME(@"ic_search_results_bar_close_28") forState:UIControlStateNormal];
+        [_closeBtn addTarget:self action:@selector(clickCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _closeBtn;
+}
+
+-(void)clickCloseBtn:(UIButton *)btn {
+    [self dismiss];
+}
+
+- (void)show {
+    if (!self.isHalf) {
+        return;
+    }
+    self.view.frame = CGRectMake(0, KHeight, KWidth, KHeight - 256);
+    [UIView animateWithDuration:0.25 animations:^{
+        self.view.frame = CGRectMake(0, 256, KWidth, KHeight - 256);
+    }];
+}
+
+- (void)dismiss {
+    if (!self.isHalf) {
+        return;
+    }
+    [UIView animateWithDuration:0.25 animations:^{
+        self.view.frame = CGRectMake(0, KHeight, KWidth, KHeight - 256);
+    } completion:^(BOOL finished) {
+        [self willMoveToParentViewController:nil];
+        [self removeFromParentViewController];
+        [self.view removeFromSuperview];
+    }];
 }
 @end

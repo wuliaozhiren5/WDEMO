@@ -15,7 +15,8 @@
 #import <Masonry/Masonry.h>
 #import "ACMacros.h"
 #import "UIColor+color.h"
- 
+
+#import "RRActorIntroVC.h"
 
 @interface RRActorIntroAndWorksVC ()<UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 
@@ -34,19 +35,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.isShowMore = NO;
-//    self.isNoOtherData = NO;
-//    self.customTabbar.hidden = NO;
- //    self.dataSource = [[RRDataSource alloc] init];
-//    self.pageSize = @"10";
-//    [self createData];
+    //    self.isShowMore = NO;
+    //    self.isNoOtherData = NO;
+    //    self.customTabbar.hidden = NO;
+    //    self.dataSource = [[RRDataSource alloc] init];
+    //    self.pageSize = @"10";
+    //    [self createData];
     [self setupViews];
-//    self.loadingView.hidden = NO;
-//    self.loadingView.center = CGPointMake(self.view.centerX, self.view.centerY - 99 - appMargin().top);
-//    self.noDataView.center = self.loadingView.center;
-//    [self refreshData];
+    //    self.loadingView.hidden = NO;
+    //    self.loadingView.center = CGPointMake(self.view.centerX, self.view.centerY - 99 - appMargin().top);
+    //    self.noDataView.center = self.loadingView.center;
+    //    [self refreshData];
     
- 
+    
 }
 
 - (void)setupViews {
@@ -66,24 +67,24 @@
     self.collectionView.showsVerticalScrollIndicator =NO;
     //    self.collectionView.backgroundColor = kCOLOR_AppBackground;
     self.collectionView.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
-
+    
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
     
     //code cell
     [self.collectionView registerClass:[RRActorIntroCell class] forCellWithReuseIdentifier:NSStringFromClass([RRActorIntroCell class])];
     [self.collectionView registerClass:[RRActorInfoCell class] forCellWithReuseIdentifier:NSStringFromClass([RRActorInfoCell class])];
     //xib cell
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorIntroCell" bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([RRActorIntroCell class])];
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorInfoCell" bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([RRActorInfoCell class])];
-
+    //    [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorIntroCell" bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([RRActorIntroCell class])];
+    //    [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorInfoCell" bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([RRActorInfoCell class])];
+    
     
     //xib header footer
     [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorHeader" bundle:nil] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRActorHeader class])];
     [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorFooter" bundle:nil] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([RRActorFooter class])];
     //code header footer
-//    [self.collectionView registerClass:[RRActorHeader class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRActorHeader class])];
-//    [self.collectionView registerClass:[RRActorFooter class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([RRActorFooter class])];
- 
+    //    [self.collectionView registerClass:[RRActorHeader class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRActorHeader class])];
+    //    [self.collectionView registerClass:[RRActorFooter class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([RRActorFooter class])];
+    
     [self.view addSubview:self.collectionView];
     
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -91,18 +92,18 @@
         make.leading.trailing.bottom.equalTo(@0);
     }];
     
-//    WS(weakSelf)
-//    MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
-////        [weakSelf loadMoreData];
-//    }];
-//    [footer setTitle:@"" forState:MJRefreshStateIdle];
-//    //    [footer setTitle:@"" forState:MJRefreshStateRefreshing];
-//    [footer setTitle:@"已经到底啦～" forState:MJRefreshStateNoMoreData];
-//    footer.stateLabel.font = [UIFont systemFontOfSize:12];
-//    footer.stateLabel.textColor = kCOLOR_85888F;
-//    self.collectionView.mj_footer = footer;
+    //    WS(weakSelf)
+    //    MJRefreshAutoStateFooter *footer = [MJRefreshAutoStateFooter footerWithRefreshingBlock:^{
+    ////        [weakSelf loadMoreData];
+    //    }];
+    //    [footer setTitle:@"" forState:MJRefreshStateIdle];
+    //    //    [footer setTitle:@"" forState:MJRefreshStateRefreshing];
+    //    [footer setTitle:@"已经到底啦～" forState:MJRefreshStateNoMoreData];
+    //    footer.stateLabel.font = [UIFont systemFontOfSize:12];
+    //    footer.stateLabel.textColor = kCOLOR_85888F;
+    //    self.collectionView.mj_footer = footer;
     
-    self.scrollView = self.collectionView; 
+    self.scrollView = self.collectionView;
 }
 
 #pragma mark --UICollectionViewDataSource
@@ -119,54 +120,36 @@
             return 1;
             break;
         case 2:
-            return 5;
+            return 10;
             break;
         default:
             return 0;
             break;
     }
-
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    RRSearchResultVideoCollectionViewCell *cell = (RRSearchResultVideoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRSearchResultVideoCollectionViewCell class]) forIndexPath:indexPath];
-//    RRSearchVideoNewDataModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.item];
-//    cell.model = model;
-//    if (!model.rr_contentContext) {
-//        RRUmengContentContext *context = [[RRUmengContentContext alloc] init];
-//        context.contentName = model.title;
-//        context.contentID = @(model.ID).stringValue;
-//        context.contentType = kRRUmengEventVideoTypeValueShortVideo;
-//        context.page = self.rr_UMemgPageName;
-//        context.channel = self.rr_UMemgChannelName;
-//        context.location = @(indexPath.row).stringValue;
-//        context.searchKeyword = self.searchWord;
-//        model.rr_contentContext = context;
-//    }
-//    cell.rr_statisticsExposureModel = model;
-//    return cell;
     
     NSInteger section = indexPath.section;
     switch (section) {
         case 0:
         {
             RRActorIntroCell *cell = (RRActorIntroCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRActorIntroCell class]) forIndexPath:indexPath];
-            cell.backgroundColor = [UIColor redColor];
-//            [cell.moreBtn addTarget:self action:@selector(clickActorInfoCellMoreBtn:) forControlEvents:(UIControlEventTouchUpInside)];
-////            cell.isNoOtherData = self.isNoOtherData;
-//            cell.isShowMore = self.isShowMore;
-//            cell.model = nil;
+            //            cell.backgroundColor = [UIColor redColor];
+            //            [cell.moreBtn addTarget:self action:@selector(clickActorInfoCellMoreBtn:) forControlEvents:(UIControlEventTouchUpInside)];
+            ////            cell.isNoOtherData = self.isNoOtherData;
+            //            cell.isShowMore = self.isShowMore;
+            //            cell.model = nil;
             return cell;
         }
-             break;
+            break;
         case 1:{
             RRActorInfoCell *cell = (RRActorInfoCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRActorInfoCell class]) forIndexPath:indexPath];
-            cell.backgroundColor = [UIColor grayColor];
+            //            cell.backgroundColor = [UIColor grayColor];
             [cell.moreBtn addTarget:self action:@selector(clickActorInfoCellMoreBtn:) forControlEvents:(UIControlEventTouchUpInside)];
-//            cell.isNoOtherData = self.isNoOtherData;
             cell.isShowMore = self.isShowMore;
-//            cell.model = nil;
+            cell.model = nil;
             return cell;
         }
             break;
@@ -186,9 +169,6 @@
         RRActorHeader *header = (RRActorHeader *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([RRActorHeader class]) forIndexPath:indexPath];
         NSInteger section = indexPath.section;
         NSString *text = @"";
-        //        明星简介
-        //        明星信息
-        //        作品集
         switch (section) {
             case 0:
                 text = @"明星简介";
@@ -204,32 +184,61 @@
         }
         header.titleLab.text = text;
         return header;
-     } else if ([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
+    } else if ([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
         RRActorFooter *footer = (RRActorFooter *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([RRActorFooter class]) forIndexPath:indexPath];
         return footer;
     } else {
         RRSafeEndOfCollectionReusableView;
     }
 }
- 
+
 #pragma mark -- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    switch (indexPath.section) {
+        case 2:
+        {
+            RRActorIntroVC *vc= [[RRActorIntroVC alloc]init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+      
+        }
+            break;
+        default:
+            return;
+            break;
+    }
+     
+
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
 //指定项单元格的大小。
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    RRSearchVideoNewDataModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.item];
-//    CGFloat height = [RRSearchResultVideoCollectionViewCell heightForCellWithModel:model];
-//    CGFloat width = (KWidth - 16 - 16 - 8) / 2;
+    
     NSInteger section = indexPath.section;
     switch (section) {
         case 0:
             return CGSizeMake(KWidth, 80);
             break;
         case 1:
-            return CGSizeMake(KWidth, KWidth);
+        {
+            CGFloat height = [RRActorInfoCell cellHeightWithModel:nil isShowMore:self.isShowMore];
+            //            CGFloat showHeight = height;//显示的高度
+            //            //按钮  28
+            //            if (height <= 66) {
+            //                //不显示more按钮                16
+            //                showHeight += 16;
+            //            } else {
+            //                //显示more按钮                  36
+            //                showHeight = 66 + 36;
+            //            }
+            //            //状态发生变化 显示全部
+            //            if (self.isShowMore) {
+            //                showHeight = height + 36;
+            //            }
+            return CGSizeMake(KWidth, height);
+        }
             break;
         case 2:
         {
@@ -243,6 +252,7 @@
             break;
     }
 }
+
 
 // 每个区多少列
 - (NSInteger)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout columnCountForSection:(NSInteger)section {
@@ -259,17 +269,32 @@
 
 //每一行之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 16.0;
+    
+    switch (section) {
+        case 2:
+            return 16.0;;
+            break;
+        default:
+            return 0.0;
+            break;
+    }
 }
 
 //每一列之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumColumnSpacingForSectionAtIndex:(NSInteger)section {
-    return 8.0;
+    switch (section) {
+        case 2:
+            return 8.0;;
+            break;
+        default:
+            return 0.0;
+            break;
+    }
 }
 
 // 每个区的边距
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-     switch (section) {
+    switch (section) {
         case 2:
         {
             UIEdgeInsets edgeInsets = {0, 16, 0, 16};
@@ -287,13 +312,12 @@
 
 // header的高度
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForHeaderInSection:(NSInteger)section {
-  
+    
     switch (section) {
         case 0:
-            //半屏
-//            return 49.0;
-//            //全屏
-            return 0.0;
+            
+            return 41.0;
+            //            return 0.0;
             break;
         default:
             return 41.0;

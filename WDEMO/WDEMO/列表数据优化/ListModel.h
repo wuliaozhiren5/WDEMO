@@ -37,8 +37,9 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeArchiver,//归档解档
     
     ListModelTypePageController,//app首页
-    ListModelTypePersonalHomepage,//个人主页
-    
+    ListModelTypePersonalHomePage,//个人主页
+    ListModelTypeActorHomePage,//个人主页
+
 //    ListModelTypeLoadingView,
 //    ListModelTypeBanner,
  

@@ -94,7 +94,10 @@
 //归档解档
 #import "KeyedArchiverViewController.h"
 //个人主页
-#import "PersonalHomepageVC.h"
+#import "PersonalHomePageVC.h"
+//个人主页
+#import "RRActorVC.h"
+#import "RRActorIntroVC.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -149,8 +152,12 @@
     
     
     NSArray * array = @[
+        
+        
         [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
-        [ListModel initWithTitle:@"个人主页" detail:@"PersonalHomepage" type:ListModelTypePersonalHomepage],
+        [ListModel initWithTitle:@"Personal个人主页" detail:@"PersonalHomePage" type:ListModelTypePersonalHomePage],
+        [ListModel initWithTitle:@"Actor个人主页" detail:@"ActorHomePage" type:ListModelTypeActorHomePage],
+
 
         [ListModel initWithTitle:@"TagList1" detail:@"瀑布流" type:ListModelTypeTagList1],
         [ListModel initWithTitle:@"TagList2" detail:@"瀑布流优化" type:ListModelTypeTagList2],
@@ -218,9 +225,10 @@
     //        [UIView createRedViewWithRect:CGRectMake(20, 20, 10, 10) bySuperView:imageV];
     
     
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-    view.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:view];
+//    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+//    view.backgroundColor = [UIColor grayColor];
+//    [self.view addSubview:view];
+    
     //小红点
     //    [UIView createRedViewWithPoint:CGPointMake(10, 10) bySuperView:view];
     //    [UIView createRedViewWithRect:CGRectMake(0, 0, 30, 30) bySuperView:view];
@@ -813,11 +821,20 @@
     
 }
 
-- (void)clickPersonalHomepage {
+- (void)clickPersonalHomePage {
     //个人主页
-    PersonalHomepageVC *vc= [[PersonalHomepageVC alloc]init];
+    PersonalHomePageVC *vc= [[PersonalHomePageVC alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickActorHomePage {
+    //个人主页
+    RRActorVC *vc= [[RRActorVC alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+
 }
 
 - (void)clickArchiver {
@@ -1070,9 +1087,14 @@
             [self clickPageController];
         }
             break;
-        case ListModelTypePersonalHomepage:
+        case ListModelTypePersonalHomePage:
         {
-            [self clickPersonalHomepage];
+            [self clickPersonalHomePage];
+        }
+            break;
+        case ListModelTypeActorHomePage:
+        {
+            [self clickActorHomePage];
         }
             break;
         case ListModelTypeArchiver:

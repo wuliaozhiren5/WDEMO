@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) id model;
 
++ (CGFloat)cellHeightWithModel:(id)model;
++ (CGFloat)cellHeightWithModel:(id)model isShowMore:(BOOL)isShowMore;
+ 
 @end
 
 NS_ASSUME_NONNULL_END

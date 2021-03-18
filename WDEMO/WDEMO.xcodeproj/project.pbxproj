@@ -84,6 +84,7 @@
 		F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */; };
 		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
 		F534736E25E357F400F01CC6 /* iOS仿抖音短视频.md in Resources */ = {isa = PBXBuildFile; fileRef = F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */; };
+		F5358C1926032C1200C69FC4 /* RRActorSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5358C1726032C1200C69FC4 /* RRActorSubVC.m */; };
 		F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */; };
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
@@ -212,7 +213,7 @@
 		F5D2129125FF567100C7DCC1 /* RRActorIntroAndWorksVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D2129025FF567100C7DCC1 /* RRActorIntroAndWorksVC.m */; };
 		F5D4EB5825DF6A6E00F807EF /* MainTouchTableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB5725DF6A6E00F807EF /* MainTouchTableTableView.m */; };
 		F5D4EB6325DF6A8700F807EF /* ParentClassScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB6225DF6A8700F807EF /* ParentClassScrollViewController.m */; };
-		F5D4EB8425DF6B5500F807EF /* PersonalHomepageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB8325DF6B5500F807EF /* PersonalHomepageVC.m */; };
+		F5D4EB8425DF6B5500F807EF /* PersonalHomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB8325DF6B5500F807EF /* PersonalHomePageVC.m */; };
 		F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */; };
 		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
 		F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */; };
@@ -432,6 +433,8 @@
 		F53293F12509CE0B00E06D42 /* FullScreenChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenChatController.h; sourceTree = "<group>"; };
 		F53293F22509CE0D00E06D42 /* FullScreenChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenChatController.m; sourceTree = "<group>"; };
 		F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS仿抖音短视频.md"; sourceTree = "<group>"; };
+		F5358C1726032C1200C69FC4 /* RRActorSubVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorSubVC.m; sourceTree = "<group>"; };
+		F5358C1826032C1200C69FC4 /* RRActorSubVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorSubVC.h; sourceTree = "<group>"; };
 		F53F668A24FE2E2200770055 /* UIImage+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GradientColor.h"; sourceTree = "<group>"; };
 		F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GradientColor.m"; sourceTree = "<group>"; };
 		F53F669024FE454000770055 /* PasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextField.h; sourceTree = "<group>"; };
@@ -664,8 +667,8 @@
 		F5D4EB5725DF6A6E00F807EF /* MainTouchTableTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTouchTableTableView.m; sourceTree = "<group>"; };
 		F5D4EB6125DF6A8700F807EF /* ParentClassScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentClassScrollViewController.h; sourceTree = "<group>"; };
 		F5D4EB6225DF6A8700F807EF /* ParentClassScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParentClassScrollViewController.m; sourceTree = "<group>"; };
-		F5D4EB8225DF6B5500F807EF /* PersonalHomepageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalHomepageVC.h; sourceTree = "<group>"; };
-		F5D4EB8325DF6B5500F807EF /* PersonalHomepageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalHomepageVC.m; sourceTree = "<group>"; };
+		F5D4EB8225DF6B5500F807EF /* PersonalHomePageVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalHomePageVC.h; sourceTree = "<group>"; };
+		F5D4EB8325DF6B5500F807EF /* PersonalHomePageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalHomePageVC.m; sourceTree = "<group>"; };
 		F5D54BFE2553F35400787EBB /* ChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatBottomInputBarViewController.h; sourceTree = "<group>"; };
 		F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatBottomInputBarViewController.m; sourceTree = "<group>"; };
 		F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListView.h; sourceTree = "<group>"; };
@@ -1178,6 +1181,13 @@
 			path = "聊天控制器ChatController";
 			sourceTree = "<group>";
 		};
+		F5358C2226034E4C00C69FC4 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		F53FFE5F259DA1D600ABE946 /* 加载LoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1547,8 +1557,8 @@
 			children = (
 				F5F5B47525FA3AE90069491B /* avatar.jpg */,
 				F5F5B46F25FA3AE50069491B /* bg.jpg */,
-				F5D4EB8225DF6B5500F807EF /* PersonalHomepageVC.h */,
-				F5D4EB8325DF6B5500F807EF /* PersonalHomepageVC.m */,
+				F5D4EB8225DF6B5500F807EF /* PersonalHomePageVC.h */,
+				F5D4EB8325DF6B5500F807EF /* PersonalHomePageVC.m */,
 				F5D4EB1325DF683700F807EF /* ParentClass */,
 				F5D4EB7D25DF6ABE00F807EF /* subvc */,
 				F50D6DA225A9675700B8C415 /* 个人主页.md */,
@@ -1843,6 +1853,7 @@
 		F5F5B43425FA1DFE0069491B /* Actor */ = {
 			isa = PBXGroup;
 			children = (
+				F5358C2226034E4C00C69FC4 /* New Group */,
 				F5D2128F25FF567100C7DCC1 /* RRActorIntroAndWorksVC.h */,
 				F5D2129025FF567100C7DCC1 /* RRActorIntroAndWorksVC.m */,
 				F5F5B43625FA1DFE0069491B /* RRActoFooter.xib */,
@@ -1859,6 +1870,8 @@
 				F5F5B44025FA1DFE0069491B /* RRActorIntroCell.m */,
 				F5F5B43525FA1DFE0069491B /* RRActorVC.h */,
 				F5F5B43E25FA1DFE0069491B /* RRActorVC.m */,
+				F5358C1826032C1200C69FC4 /* RRActorSubVC.h */,
+				F5358C1726032C1200C69FC4 /* RRActorSubVC.m */,
 				F5F5B43825FA1DFE0069491B /* RRActorVideoVC.h */,
 				F5F5B44325FA1DFE0069491B /* RRActorVideoVC.m */,
 			);
@@ -2230,12 +2243,13 @@
 				A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */,
 				F553E12A24CA800200DA5625 /* InputController.m in Sources */,
 				F5D0FC0A24E0F91800CAADF8 /* UIImage+TUIDarkMode.m in Sources */,
-				F5D4EB8425DF6B5500F807EF /* PersonalHomepageVC.m in Sources */,
+				F5D4EB8425DF6B5500F807EF /* PersonalHomePageVC.m in Sources */,
 				F5872CF3257DFCBD00341B57 /* SharedInstanceVC.m in Sources */,
 				F553E19B24CA8DE200DA5625 /* NSAttributedString+FaceString.m in Sources */,
 				F543282925A6D62C0082236C /* ScoreViewController.m in Sources */,
 				F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */,
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
+				F5358C1926032C1200C69FC4 /* RRActorSubVC.m in Sources */,
 				F563DADC25AC26790079474B /* WMMenuItem.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
 				F553E17E24CA888800DA5625 /* ChatHelper.m in Sources */,

@@ -77,45 +77,26 @@
     
     //按钮
     self.moreBtn.hidden = NO;
-    if (height <= 69) {
+    if (height <= 66) {
         //不显示more按钮
         self.moreBtn.hidden = YES;
     } else {
         //显示more按钮
         self.moreBtn.hidden = NO;
-        showHeight = 69;
+        showHeight = 66;
     }
     
     //状态发生变化 显示全部
     if (self.isShowMore) {
         showHeight = height;
     }
-   
-    //状态发生变化
-//    if (!self.isNoOtherData) {
-//        if (!self.isShowMore) {
-//            if (height <= 69) {
-//                //不显示more按钮
-//             } else {
-//                //显示more按钮
-//                height = 69;
-//             }
-//        } else {
-//
-//        }
-//    } else {
-//
-//    }
-
+    self.moreBtn.selected = self.isShowMore;
+    
     [self.titleLab mas_updateConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@(showHeight));
     }];
 }
-
-- (void)clickMoreBtn:(UIButton *)btn {
-    
-}
-
+  
 - (UILabel *)titleLab {
     if (!_titleLab) {
         _titleLab = [[UILabel alloc] init];
@@ -136,10 +117,64 @@
         //        [_moreBtn setTitle:@"查看作品" forState:UIControlStateNormal];
         //        [_moreBtn setTitleColor:kCOLOR_1890FF forState:UIControlStateNormal];
         //        _moreBtn.backgroundColor = [kCOLOR_1890FF colorWithAlphaComponent:0.1];
-        [_moreBtn setImage:IMAGENAME(@"ic_search_follow_n") forState:UIControlStateNormal];
-        [_moreBtn setImage:IMAGENAME(@"ic_search_follow_h") forState:UIControlStateSelected];
+        [_moreBtn setImage:IMAGENAME(@"ic_more_down_gray24") forState:UIControlStateNormal];
+        [_moreBtn setImage:IMAGENAME(@"ic_more_up_gray24") forState:UIControlStateSelected];
 //        [_moreBtn addTarget:self action:@selector(clickMoreBtn:) forControlEvents:(UIControlEventTouchUpInside)];
     }
     return _moreBtn;
+}
+ 
++ (CGFloat)cellHeightWithModel:(id)model {
+    UIFont *textFont = RR_COMMONFONT(14);
+//    NSString *contentStr = model.desc;
+    NSString *contentStr= @"阿斯顿就离开撒的饭卡上阿斯顿就离开撒的ref 被用来给DOM元素或子组件注册引用信息。引用信息会根据父组件的 $refs 对象进行注册。如果在普通的DOM元素上使用，引用信息就是元素; 如果用在子组件上，引用信息就是组件实例.注意：只要想要在Vue中直接操作DOM元素，就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册就必须用ref属性进行注册";
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:contentStr];
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc]init];
+    paragraph.lineSpacing = 9 - (textFont.lineHeight - textFont.pointSize);
+    [attributedString addAttributes:@{NSFontAttributeName:textFont,
+                                      //                                      NSForegroundColorAttributeName: [UIColor blackColor],
+                                      NSParagraphStyleAttributeName:paragraph}
+                              range:NSMakeRange(0, attributedString.length)];
+    //计算高度
+    CGRect rect = [attributedString boundingRectWithSize:CGSizeMake(KWidth - 16 * 2, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
+    CGSize size  = rect.size;
+    CGFloat height = size.height;//真实的高度
+//    CGFloat showHeight = height;//显示的高度
+    
+//    //按钮  28
+////    self.moreBtn.hidden = NO;
+//    if (height <= 69) {
+//        //不显示more按钮                16
+////        self.moreBtn.hidden = YES;
+//    } else {
+//        //显示more按钮                  36
+////        self.moreBtn.hidden = NO;
+//        showHeight = 69;
+//    }
+//
+//    //状态发生变化 显示全部
+//    if (self.isShowMore) {
+//        showHeight = height;
+//    }
+    
+    return height;
+}
+
++ (CGFloat)cellHeightWithModel:(id)model isShowMore:(BOOL)isShowMore {
+    CGFloat height = [self cellHeightWithModel:model];
+    CGFloat showHeight = height;//显示的高度
+    //按钮  28
+    if (height <= 66) {
+        //不显示more按钮                16
+        showHeight += 16;
+    } else {
+        //显示more按钮                  36
+        showHeight = 66 + 36;
+    }
+    //状态发生变化 显示全部
+    if (isShowMore) {
+        showHeight = height + 36;
+    }
+    return showHeight;
 }
 @end

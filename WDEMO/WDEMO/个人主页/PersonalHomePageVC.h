@@ -1,5 +1,5 @@
 //
-//  PersonalHomepageVC.h
+//  PersonalHomePageVC.h
 //  WDEMO
 //
 //  Created by rrtv on 2021/2/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PersonalHomepageVC : UIViewController
+@interface PersonalHomePageVC : UIViewController
 
 @end
 

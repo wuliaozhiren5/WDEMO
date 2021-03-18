@@ -1,12 +1,12 @@
 //
-//  PersonalHomepageVC.m
+//  PersonalHomePageVC.m
 //  WDEMO
 //
 //  Created by rrtv on 2021/2/19.
 //  Copyright © 2021 wwc. All rights reserved.
 //
 
-#import "PersonalHomepageVC.h"
+#import "PersonalHomePageVC.h"
 #import "THeader.h"
 #import "OneViewTableTableViewController.h"
 #import "SecondViewTableViewController.h"
@@ -19,12 +19,11 @@
 
 static CGFloat const headViewHeight = 256;
 
-@interface PersonalHomepageVC ()<UITableViewDelegate,UITableViewDataSource,WMPageControllerDelegate,scrollDelegate>
+@interface PersonalHomePageVC ()<UITableViewDelegate, UITableViewDataSource, scrollDelegate, WMPageControllerDelegate>
 //tableview
 @property(nonatomic ,strong)MainTouchTableTableView *mainTableView;
-
-@property(nonatomic,strong) UIScrollView * parentScrollView;
-
+//scrollView
+@property(nonatomic,strong) UIScrollView *parentScrollView;
 //header 头
 @property(nonatomic,strong)UIImageView *headImageView;//头部图片
 @property(nonatomic,strong)UIImageView *avatarImage;
@@ -42,13 +41,13 @@ static CGFloat const headViewHeight = 256;
 @property (nonatomic, assign) CGFloat navigationbarHeight;
 @end
 
-@implementation PersonalHomepageVC
+@implementation PersonalHomePageVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = @"PersonalHomepageVC";
+    self.title = @"个人主页";
     
     [self.view addSubview:self.mainTableView];
     
@@ -93,6 +92,18 @@ static CGFloat const headViewHeight = 256;
     
     self.statusbarHeight = [self getStatusBarHight];
     self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
+    
+    
+//    CGFloat top = 0;
+//    if (@available(iOS 11.0, *)) {
+//        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
+//        NSLog(@"%f",a);
+//        top = a;
+//    } else {
+//        top = 0;
+//    }
+//    self.statusbarHeight = top;//[self getStatusBarHight];
+//    self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
 }
 
 //iOS 10、设置导航栏全透明
@@ -317,6 +328,15 @@ static CGFloat const headViewHeight = 256;
     //    }
     
     
+    //导航栏
+    CGFloat minAlphaOffset = self.navigationbarHeight + self.statusbarHeight;
+    CGFloat maxAlphaOffset = headViewHeight;
+    CGFloat offset = scrollView.contentOffset.y;
+    CGFloat alpha = 1 + (offset + minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
+ 
+    //滑动渐变颜色
+    [self.navigationController.navigationBar setBackgroundImage:[self imageWithBgColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:alpha]] forBarMetrics:UIBarMetricsDefault];// 颜色自己设置 渐变开始的位置自己算
+    
     /**
      * 处理头部视图
      */
@@ -333,11 +353,25 @@ static CGFloat const headViewHeight = 256;
         CGRect avatarF = CGRectMake(f.size.width/2-40, (f.size.height-headViewHeight)+56, 80, 80);
         _avatarImage.frame = avatarF;
         _countentLabel.frame = CGRectMake((f.size.width-Screen_Width)/2+40, (f.size.height-headViewHeight)+172, Screen_Width-80, 36);
-    } else {
-        
-        //透明度
-        self.headImageView.alpha = 1+yOffset/headViewHeight;
     }
+//    else无用
+//    else {
+//        CGFloat minAlphaOffset = self.navigationbarHeight + self.statusbarHeight;
+//        CGFloat maxAlphaOffset = headViewHeight;
+//        CGFloat offset = scrollView.contentOffset.y;
+//        CGFloat alpha = (-offset) / (maxAlphaOffset - minAlphaOffset);
+//        _headImageView.alpha = alpha;
+
+        
+        
+//        CGFloat height = headViewHeight - self.navigationbarHeight - self.statusbarHeight;
+        //透明度
+//        CGFloat alpha = -yOffset/height;
+//        self.headImageView.alpha = alpha;
+         
+//        _headImageView.frame=CGRectMake(0, -headViewHeight, Screen_Width, headViewHeight);
+
+//    }
 }
 
 #pragma mark --tableDelegate
@@ -431,7 +465,6 @@ static CGFloat const headViewHeight = 256;
     NSLog(@"%@",viewController);
 }
 
-
 #pragma mark -- lazy 懒加载
 -(UIImageView *)headImageView
 {
@@ -466,7 +499,7 @@ static CGFloat const headViewHeight = 256;
 
 - (MainTouchTableTableView *)mainTableView {
     if (_mainTableView == nil) {
-        _mainTableView= [[MainTouchTableTableView alloc]initWithFrame:CGRectMake(0,0, Screen_Width,Screen_Height)];
+        _mainTableView= [[MainTouchTableTableView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.showsVerticalScrollIndicator = NO;
@@ -481,4 +514,14 @@ static CGFloat const headViewHeight = 256;
     // Dispose of any resources that can be recreated.
 }
 
+-(UIImage *)imageWithBgColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
 @end
