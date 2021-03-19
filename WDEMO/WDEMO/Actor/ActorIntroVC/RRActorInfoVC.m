@@ -333,8 +333,8 @@
             break;
         case 2:
         {
-            CGFloat width = floor((KWidth - 16 - 16 - 8 - 8) / 3.0);
-            CGFloat height = width * 183 / 109;
+            CGFloat width = (KWidth - 16 - 16 - 8 - 8) / 3.0;
+            CGFloat height = ceil(width * 183 / 109) + 1;
             return CGSizeMake(width, height);
         }
             break;

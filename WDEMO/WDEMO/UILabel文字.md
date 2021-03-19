@@ -8,6 +8,10 @@ https://blog.csdn.net/iosrookie/article/details/47974103
 ios获取UILabel每行显示的文字
 https://www.jianshu.com/p/65a07b6013c7
 
+
+iOS超过行数的label在末尾加“全文”“更多”
+https://www.jianshu.com/p/b34cfc7c4530
+
 swift
 iOS获取UILabel每行文字
 https://www.jianshu.com/p/bd098e0ccaef

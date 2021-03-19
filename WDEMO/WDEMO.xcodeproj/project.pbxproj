@@ -89,6 +89,7 @@
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
 		F543282925A6D62C0082236C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F543282825A6D62C0082236C /* ScoreViewController.m */; };
+		F545BC172604808200D63C6E /* ceil_floor_round.md in Resources */ = {isa = PBXBuildFile; fileRef = F545BC162604808200D63C6E /* ceil_floor_round.md */; };
 		F548D0D7256E2EEA00357E64 /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = F548D0C2256E2EE900357E64 /* img_0.png */; };
 		F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */ = {isa = PBXBuildFile; fileRef = F548D0C3256E2EE900357E64 /* amwayPlayerGuide_3.png */; };
 		F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F548D0C4256E2EE900357E64 /* amwayPlayerGuide_2.png */; };
@@ -443,6 +444,7 @@
 		F53F669A24FE484700770055 /* NSString+Password.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Password.m"; sourceTree = "<group>"; };
 		F543282725A6D62C0082236C /* ScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
 		F543282825A6D62C0082236C /* ScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
+		F545BC162604808200D63C6E /* ceil_floor_round.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ceil_floor_round.md; sourceTree = "<group>"; };
 		F548D0C2256E2EE900357E64 /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
 		F548D0C3256E2EE900357E64 /* amwayPlayerGuide_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amwayPlayerGuide_3.png; sourceTree = "<group>"; };
 		F548D0C4256E2EE900357E64 /* amwayPlayerGuide_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amwayPlayerGuide_2.png; sourceTree = "<group>"; };
@@ -873,6 +875,7 @@
 				F509136C25EF917B00A2E217 /* UILabel文字.md */,
 				F518ED3625E8DDAC00260125 /* 图片压缩.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
+				F545BC162604808200D63C6E /* ceil_floor_round.md */,
 				F5BFBC0B25E523BC0068358F /* 弹幕.md */,
 				F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */,
 				F5F701F025CD28560000D5A9 /* 归档解档 */,
@@ -2035,6 +2038,7 @@
 				F5C0A2292578BBD4004EBD94 /* xibView.xib in Resources */,
 				F5872CEC257DFC9E00341B57 /* 单例.md in Resources */,
 				F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */,
+				F545BC172604808200D63C6E /* ceil_floor_round.md in Resources */,
 				F548D0E9256E2EEA00357E64 /* 追剧引导-1.gif in Resources */,
 				F5BFBC0C25E523BC0068358F /* 弹幕.md in Resources */,
 				F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */,
