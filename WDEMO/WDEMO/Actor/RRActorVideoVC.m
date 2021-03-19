@@ -213,7 +213,7 @@
 
 // 每个区的边距
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    UIEdgeInsets edgeInsets = {6, 16, 6, 16};
+    UIEdgeInsets edgeInsets = {6, 16, 16, 16};
     return edgeInsets;
 }
 
