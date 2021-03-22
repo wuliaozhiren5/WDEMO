@@ -184,6 +184,9 @@
 		F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9372508F79A002505AE /* TipMessageDataModel.m */; };
 		F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */; };
 		F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */; };
+		F5B7DC3B2608813D00B1E497 /* 代码格式化工具.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B7DC3A2608813C00B1E497 /* 代码格式化工具.md */; };
+		F5B7DC432608814B00B1E497 /* clang-format-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = F5B7DC412608814B00B1E497 /* clang-format-master.zip */; };
+		F5B7DC442608814B00B1E497 /* XcodeClangFormat.zip in Resources */ = {isa = PBXBuildFile; fileRef = F5B7DC422608814B00B1E497 /* XcodeClangFormat.zip */; };
 		F5BFBBFC25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BFBBFA25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m */; };
 		F5BFBC0C25E523BC0068358F /* 弹幕.md in Resources */ = {isa = PBXBuildFile; fileRef = F5BFBC0B25E523BC0068358F /* 弹幕.md */; };
 		F5C0A20425788B92004EBD94 /* UIColor+color.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C0A20325788B92004EBD94 /* UIColor+color.m */; };
@@ -613,6 +616,9 @@
 		F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterMessageDataModel.m; sourceTree = "<group>"; };
 		F5B5A93C2508F7B5002505AE /* FaceMessageDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageDataModel.h; sourceTree = "<group>"; };
 		F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageDataModel.m; sourceTree = "<group>"; };
+		F5B7DC3A2608813C00B1E497 /* 代码格式化工具.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "代码格式化工具.md"; sourceTree = "<group>"; };
+		F5B7DC412608814B00B1E497 /* clang-format-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "clang-format-master.zip"; sourceTree = "<group>"; };
+		F5B7DC422608814B00B1E497 /* XcodeClangFormat.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = XcodeClangFormat.zip; sourceTree = "<group>"; };
 		F5BFBBF925E4A0B80068358F /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
 		F5BFBBFA25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
 		F5BFBC0B25E523BC0068358F /* 弹幕.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "弹幕.md"; sourceTree = "<group>"; };
@@ -871,6 +877,8 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5B7DC402608814B00B1E497 /* 代码格式化工具XcodeClangFormat */,
+				F5B7DC3A2608813C00B1E497 /* 代码格式化工具.md */,
 				F5F5B43425FA1DFE0069491B /* Actor */,
 				F509136C25EF917B00A2E217 /* UILabel文字.md */,
 				F518ED3625E8DDAC00260125 /* 图片压缩.md */,
@@ -1531,6 +1539,15 @@
 			path = "输入页面InputController";
 			sourceTree = "<group>";
 		};
+		F5B7DC402608814B00B1E497 /* 代码格式化工具XcodeClangFormat */ = {
+			isa = PBXGroup;
+			children = (
+				F5B7DC412608814B00B1E497 /* clang-format-master.zip */,
+				F5B7DC422608814B00B1E497 /* XcodeClangFormat.zip */,
+			);
+			path = "代码格式化工具XcodeClangFormat";
+			sourceTree = "<group>";
+		};
 		F5B95DF925A5EA2100911FF8 /* 瀑布流布局 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2050,6 +2067,7 @@
 				F5D05B7425BAB18000A4C6EC /* 阴影.md in Resources */,
 				F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */,
 				F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */,
+				F5B7DC3B2608813D00B1E497 /* 代码格式化工具.md in Resources */,
 				F505AC2325C936F600F43298 /* 约束动画.md in Resources */,
 				F5D05B5D25BAAF9B00A4C6EC /* RGB十六进制颜色.md in Resources */,
 				F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */,
@@ -2060,6 +2078,7 @@
 				F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */,
 				F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */,
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
+				F5B7DC442608814B00B1E497 /* XcodeClangFormat.zip in Resources */,
 				F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */,
 				F5872CFD257DFF5900341B57 /* 追剧引导-暗黑-循环.gif in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
@@ -2072,6 +2091,7 @@
 				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
 				F548D0E6256E2EEA00357E64 /* amwayPlayerZan.json in Resources */,
+				F5B7DC432608814B00B1E497 /* clang-format-master.zip in Resources */,
 				F5F5B44525FA1DFE0069491B /* RRActoFooter.xib in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
 				F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */,
