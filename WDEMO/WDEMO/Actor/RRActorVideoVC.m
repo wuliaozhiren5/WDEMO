@@ -15,7 +15,7 @@
 #import <Masonry/Masonry.h>
 #import "ACMacros.h"
 #import "UIColor+color.h"
-
+#import "RRActorVideoHeader.h"
 @interface RRActorVideoVC ()<UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -46,7 +46,7 @@
 //    self.noDataView.center = self.loadingView.center;
 //    [self refreshData];
     
-    [self createTipsLab];
+//    [self createTipsLab];
 }
 
 - (void)createTipsLab {
@@ -82,36 +82,15 @@
     self.collectionView.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
 
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
-    
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"RRSearchResultMultipleRelevantCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([RRSearchResultMultipleRelevantCollectionViewCell class])];
-//    [self.collectionView registerClass:[RRSearchResultSeasonCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([RRSearchResultSeasonCollectionViewCell class])];
-//    [self.collectionView registerClass:[RRSearchResultMultipleSheetCell class] forCellWithReuseIdentifier:NSStringFromClass([RRSearchResultMultipleSheetCell class])];
-//    [self.collectionView registerClass:[RRSearchResultMultipleUperCell class] forCellWithReuseIdentifier:NSStringFromClass([RRSearchResultMultipleUperCell class])];
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"RRSearchResultVideoCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([RRSearchResultVideoCollectionViewCell class])];
-//    [self.collectionView registerClass:[RRSearchResultMultipleStarCell class] forCellWithReuseIdentifier:NSStringFromClass([RRSearchResultMultipleStarCell class])];
-//    //header
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"RRSearchResultMultipleCollectionViewHeader" bundle:nil] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRSearchResultMultipleCollectionViewHeader class])];
-//
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"RRSearchResultMultipleCollectionViewFooter" bundle:nil] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([RRSearchResultMultipleCollectionViewFooter class])];
-      
-    
-    //code cell
-    [self.collectionView registerClass:[RRActorIntroCell class] forCellWithReuseIdentifier:NSStringFromClass([RRActorIntroCell class])];
-//    [self.collectionView registerClass:[RRActorInfoCell class] forCellWithReuseIdentifier:NSStringFromClass([RRActorInfoCell class])];
-    //xib cell
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorIntroCell" bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([RRActorIntroCell class])];
-//    [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorInfoCell" bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([RRActorInfoCell class])];
-
-    
+  
     //xib header footer
     [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorHeader" bundle:nil] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRActorHeader class])];
     [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorFooter" bundle:nil] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([RRActorFooter class])];
     //code header footer
-//    [self.collectionView registerClass:[RRActorHeader class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRActorHeader class])];
+    [self.collectionView registerClass:[RRActorVideoHeader class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRActorVideoHeader class])];
 //    [self.collectionView registerClass:[RRActorFooter class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([RRActorFooter class])];
  
     [self.view addSubview:self.collectionView];
-    
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
@@ -126,8 +105,7 @@
 //    footer.stateLabel.font = [UIFont systemFontOfSize:12];
 //    footer.stateLabel.textColor = kCOLOR_85888F;
 //    self.collectionView.mj_footer = footer;
-    self.scrollView = self.collectionView;
-
+    
 }
 
 #pragma mark --UICollectionViewDataSource
@@ -167,10 +145,10 @@
 //定义并返回每个headerView或footerView
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:CHTCollectionElementKindSectionHeader]){
-        RRActorHeader *header = (RRActorHeader *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([RRActorHeader class]) forIndexPath:indexPath];
-        NSString *text = @"";
-        header.backgroundColor = [UIColor grayColor];
-        header.titleLab.text = text;
+        RRActorVideoHeader *header = (RRActorVideoHeader *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([RRActorVideoHeader class]) forIndexPath:indexPath];
+        header.clickStatusIndex = ^(UIResponder *sender, NSUInteger index) {
+            
+        };
         return header;
      } else if ([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
         RRActorFooter *footer = (RRActorFooter *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([RRActorFooter class]) forIndexPath:indexPath];
@@ -182,7 +160,7 @@
  
 #pragma mark -- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    //todo
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
@@ -191,7 +169,6 @@
 //    RRSearchVideoNewDataModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.item];
 //    CGFloat height = [RRSearchResultVideoCollectionViewCell heightForCellWithModel:model];
 //    CGFloat width = (KWidth - 16 - 16 - 8) / 2;
-      
     return CGSizeMake(KWidth, KWidth);
  
 }
@@ -203,7 +180,7 @@
 
 //每一行之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 8;
+    return 8.0;
 }
 
 //每一列之间的间距

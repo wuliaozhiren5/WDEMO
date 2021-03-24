@@ -90,6 +90,7 @@
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
 		F543282925A6D62C0082236C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F543282825A6D62C0082236C /* ScoreViewController.m */; };
 		F545BC172604808200D63C6E /* ceil_floor_round.md in Resources */ = {isa = PBXBuildFile; fileRef = F545BC162604808200D63C6E /* ceil_floor_round.md */; };
+		F546A7CE2609DCB90001F697 /* RRActorVideoHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F546A7CC2609DCB90001F697 /* RRActorVideoHeader.m */; };
 		F548D0D7256E2EEA00357E64 /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = F548D0C2256E2EE900357E64 /* img_0.png */; };
 		F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */ = {isa = PBXBuildFile; fileRef = F548D0C3256E2EE900357E64 /* amwayPlayerGuide_3.png */; };
 		F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */ = {isa = PBXBuildFile; fileRef = F548D0C4256E2EE900357E64 /* amwayPlayerGuide_2.png */; };
@@ -448,6 +449,8 @@
 		F543282725A6D62C0082236C /* ScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
 		F543282825A6D62C0082236C /* ScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
 		F545BC162604808200D63C6E /* ceil_floor_round.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ceil_floor_round.md; sourceTree = "<group>"; };
+		F546A7CC2609DCB90001F697 /* RRActorVideoHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorVideoHeader.m; sourceTree = "<group>"; };
+		F546A7CD2609DCB90001F697 /* RRActorVideoHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorVideoHeader.h; sourceTree = "<group>"; };
 		F548D0C2256E2EE900357E64 /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
 		F548D0C3256E2EE900357E64 /* amwayPlayerGuide_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amwayPlayerGuide_3.png; sourceTree = "<group>"; };
 		F548D0C4256E2EE900357E64 /* amwayPlayerGuide_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amwayPlayerGuide_2.png; sourceTree = "<group>"; };
@@ -1894,6 +1897,8 @@
 				F5358C1726032C1200C69FC4 /* RRActorSubVC.m */,
 				F5F5B43825FA1DFE0069491B /* RRActorVideoVC.h */,
 				F5F5B44325FA1DFE0069491B /* RRActorVideoVC.m */,
+				F546A7CD2609DCB90001F697 /* RRActorVideoHeader.h */,
+				F546A7CC2609DCB90001F697 /* RRActorVideoHeader.m */,
 			);
 			path = Actor;
 			sourceTree = "<group>";
@@ -2260,6 +2265,7 @@
 				F5F5B44B25FA1DFE0069491B /* RRActorVC.m in Sources */,
 				F5A8899524F612A000DB73ED /* OrderCell.m in Sources */,
 				F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */,
+				F546A7CE2609DCB90001F697 /* RRActorVideoHeader.m in Sources */,
 				F5CED5E525749E84002CF42C /* XXClass.m in Sources */,
 				F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */,
 				F5D138CC25679690008CC29A /* FollowTips.m in Sources */,
