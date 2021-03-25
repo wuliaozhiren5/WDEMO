@@ -457,6 +457,11 @@
         [self willMoveToParentViewController:nil];
         [self removeFromParentViewController];
         [self.view removeFromSuperview];
+        
+        //三方库的顺序
+//        [vc willMoveToParentViewController:nil];
+//        [vc.view removeFromSuperview];
+//        [vc removeFromParentViewController];
     }];
 }
 @end
