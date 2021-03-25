@@ -142,6 +142,7 @@
 		F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */ = {isa = PBXBuildFile; fileRef = F5668FB924C6DB69007D452E /* CpuMemoryUsage.m */; };
 		F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D225008B6A004991D3 /* PasswordVC.m */; };
 		F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D525008D76004991D3 /* ChangePasswordVC.m */; };
+		F567346C260C41D80081BC8A /* 数字变化的动画效果.md in Resources */ = {isa = PBXBuildFile; fileRef = F567346B260C41D80081BC8A /* 数字变化的动画效果.md */; };
 		F5710B4225232263009DEE02 /* 富文本.md in Resources */ = {isa = PBXBuildFile; fileRef = F5710B4125232263009DEE02 /* 富文本.md */; };
 		F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */; };
 		F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */; };
@@ -541,6 +542,7 @@
 		F566A1D225008B6A004991D3 /* PasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordVC.m; sourceTree = "<group>"; };
 		F566A1D425008D76004991D3 /* ChangePasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
 		F566A1D525008D76004991D3 /* ChangePasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
+		F567346B260C41D80081BC8A /* 数字变化的动画效果.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "数字变化的动画效果.md"; sourceTree = "<group>"; };
 		F5710B4125232263009DEE02 /* 富文本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "富文本.md"; sourceTree = "<group>"; };
 		F57A6A7524CFCA8400D51E01 /* FaceMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageCell.h; sourceTree = "<group>"; };
 		F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageCell.m; sourceTree = "<group>"; };
@@ -885,6 +887,7 @@
 				F5F5B43425FA1DFE0069491B /* Actor */,
 				F509136C25EF917B00A2E217 /* UILabel文字.md */,
 				F518ED3625E8DDAC00260125 /* 图片压缩.md */,
+				F567346B260C41D80081BC8A /* 数字变化的动画效果.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
 				F545BC162604808200D63C6E /* ceil_floor_round.md */,
 				F5BFBC0B25E523BC0068358F /* 弹幕.md */,
@@ -2096,6 +2099,7 @@
 				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
 				F548D0E6256E2EEA00357E64 /* amwayPlayerZan.json in Resources */,
+				F567346C260C41D80081BC8A /* 数字变化的动画效果.md in Resources */,
 				F5B7DC432608814B00B1E497 /* clang-format-master.zip in Resources */,
 				F5F5B44525FA1DFE0069491B /* RRActoFooter.xib in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,

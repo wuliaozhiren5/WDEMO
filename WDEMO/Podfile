@@ -46,4 +46,6 @@ pod 'AspectsV1.4.2', '~> 1.4.2’
 #KVO
 #pod 'KVOController'
 
+#iOS使用UICountingLabel实现数字变化的动画效果
+#pod 'UICountingLabel'
 end
