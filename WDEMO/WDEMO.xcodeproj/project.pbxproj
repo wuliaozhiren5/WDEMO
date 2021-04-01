@@ -63,7 +63,7 @@
 		F507113024E2A6A700AD5306 /* MYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F507112F24E2A6A700AD5306 /* MYPerson.m */; };
 		F507113324E2A6BE00AD5306 /* MYCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113224E2A6BE00AD5306 /* MYCar.m */; };
 		F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113624E2AB9400AD5306 /* IsEqualViewController.m */; };
-		F509136D25EF917B00A2E217 /* UILabel文字.md in Resources */ = {isa = PBXBuildFile; fileRef = F509136C25EF917B00A2E217 /* UILabel文字.md */; };
+		F509136D25EF917B00A2E217 /* 文字显示全文显示更多.md in Resources */ = {isa = PBXBuildFile; fileRef = F509136C25EF917B00A2E217 /* 文字显示全文显示更多.md */; };
 		F50D6D6525A94EBE00B8C415 /* ListEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D6425A94EBE00B8C415 /* ListEditViewController.m */; };
 		F50D6D7525A9580D00B8C415 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D7425A9580D00B8C415 /* SearchViewController.m */; };
 		F50D6D8025A9581B00B8C415 /* SearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F50D6D7F25A9581B00B8C415 /* SearchResultViewController.m */; };
@@ -89,6 +89,7 @@
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
 		F543282925A6D62C0082236C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F543282825A6D62C0082236C /* ScoreViewController.m */; };
+		F5448BD12615F0A300169B71 /* 镂空.md in Resources */ = {isa = PBXBuildFile; fileRef = F5448BD02615F0A200169B71 /* 镂空.md */; };
 		F545BC172604808200D63C6E /* ceil_floor_round.md in Resources */ = {isa = PBXBuildFile; fileRef = F545BC162604808200D63C6E /* ceil_floor_round.md */; };
 		F546A7CE2609DCB90001F697 /* RRActorVideoHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F546A7CC2609DCB90001F697 /* RRActorVideoHeader.m */; };
 		F548D0D7256E2EEA00357E64 /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = F548D0C2256E2EE900357E64 /* img_0.png */; };
@@ -408,7 +409,7 @@
 		F507113224E2A6BE00AD5306 /* MYCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYCar.m; sourceTree = "<group>"; };
 		F507113524E2AB9400AD5306 /* IsEqualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsEqualViewController.h; sourceTree = "<group>"; };
 		F507113624E2AB9400AD5306 /* IsEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsEqualViewController.m; sourceTree = "<group>"; };
-		F509136C25EF917B00A2E217 /* UILabel文字.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UILabel文字.md"; sourceTree = "<group>"; };
+		F509136C25EF917B00A2E217 /* 文字显示全文显示更多.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "文字显示全文显示更多.md"; sourceTree = "<group>"; };
 		F50D6D6325A94EBE00B8C415 /* ListEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListEditViewController.h; sourceTree = "<group>"; };
 		F50D6D6425A94EBE00B8C415 /* ListEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListEditViewController.m; sourceTree = "<group>"; };
 		F50D6D7325A9580D00B8C415 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
@@ -450,6 +451,7 @@
 		F53F669A24FE484700770055 /* NSString+Password.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Password.m"; sourceTree = "<group>"; };
 		F543282725A6D62C0082236C /* ScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
 		F543282825A6D62C0082236C /* ScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
+		F5448BD02615F0A200169B71 /* 镂空.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "镂空.md"; sourceTree = "<group>"; };
 		F545BC162604808200D63C6E /* ceil_floor_round.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ceil_floor_round.md; sourceTree = "<group>"; };
 		F546A7CC2609DCB90001F697 /* RRActorVideoHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorVideoHeader.m; sourceTree = "<group>"; };
 		F546A7CD2609DCB90001F697 /* RRActorVideoHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorVideoHeader.h; sourceTree = "<group>"; };
@@ -885,12 +887,13 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5448BD02615F0A200169B71 /* 镂空.md */,
 				F5C1168A260CA20F001F4A74 /* UILabel+Util.h */,
 				F5C1168B260CA20F001F4A74 /* UILabel+Util.m */,
 				F5B7DC402608814B00B1E497 /* 代码格式化工具XcodeClangFormat */,
 				F5B7DC3A2608813C00B1E497 /* 代码格式化工具.md */,
 				F5F5B43425FA1DFE0069491B /* Actor */,
-				F509136C25EF917B00A2E217 /* UILabel文字.md */,
+				F509136C25EF917B00A2E217 /* 文字显示全文显示更多.md */,
 				F518ED3625E8DDAC00260125 /* 图片压缩.md */,
 				F567346B260C41D80081BC8A /* 数字变化的动画效果.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
@@ -2095,6 +2098,7 @@
 				F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */,
 				F5872CFD257DFF5900341B57 /* 追剧引导-暗黑-循环.gif in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
+				F5448BD12615F0A300169B71 /* 镂空.md in Resources */,
 				F5F5B47025FA3AE50069491B /* bg.jpg in Resources */,
 				F548D0E7256E2EEA00357E64 /* data.json in Resources */,
 				F505AC3525C940D100F43298 /* addChildViewController.md in Resources */,
@@ -2122,7 +2126,7 @@
 				F548D0E5256E2EEA00357E64 /* amwayPlayerGuide.json in Resources */,
 				F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */,
 				F50D6D9125A9618300B8C415 /* 首页PageController.md in Resources */,
-				F509136D25EF917B00A2E217 /* UILabel文字.md in Resources */,
+				F509136D25EF917B00A2E217 /* 文字显示全文显示更多.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
