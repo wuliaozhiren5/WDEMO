@@ -195,6 +195,7 @@
 		F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C0A2092578950D004EBD94 /* WTableViewCell.xib */; };
 		F5C0A21F2578BBC2004EBD94 /* xibView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C0A21E2578BBC2004EBD94 /* xibView.m */; };
 		F5C0A2292578BBD4004EBD94 /* xibView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C0A2282578BBD4004EBD94 /* xibView.xib */; };
+		F5C1168C260CA20F001F4A74 /* UILabel+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C1168B260CA20F001F4A74 /* UILabel+Util.m */; };
 		F5C7261824E1258000B16639 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261724E1257F00B16639 /* ListModel.m */; };
 		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
 		F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */; };
@@ -633,6 +634,8 @@
 		F5C0A21D2578BBC2004EBD94 /* xibView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = xibView.h; sourceTree = "<group>"; };
 		F5C0A21E2578BBC2004EBD94 /* xibView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xibView.m; sourceTree = "<group>"; };
 		F5C0A2282578BBD4004EBD94 /* xibView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = xibView.xib; sourceTree = "<group>"; };
+		F5C1168A260CA20F001F4A74 /* UILabel+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+Util.h"; sourceTree = "<group>"; };
+		F5C1168B260CA20F001F4A74 /* UILabel+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Util.m"; sourceTree = "<group>"; };
 		F5C7261624E1257F00B16639 /* ListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModel.h; sourceTree = "<group>"; };
 		F5C7261724E1257F00B16639 /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		F5C7261924E1317B00B16639 /* ListModelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelCell.h; sourceTree = "<group>"; };
@@ -882,6 +885,8 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5C1168A260CA20F001F4A74 /* UILabel+Util.h */,
+				F5C1168B260CA20F001F4A74 /* UILabel+Util.m */,
 				F5B7DC402608814B00B1E497 /* 代码格式化工具XcodeClangFormat */,
 				F5B7DC3A2608813C00B1E497 /* 代码格式化工具.md */,
 				F5F5B43425FA1DFE0069491B /* Actor */,
@@ -2297,6 +2302,7 @@
 				F563DADD25AC26790079474B /* WMScrollView.m in Sources */,
 				6783C8921FB944B80040C02B /* LZTagListView.m in Sources */,
 				F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */,
+				F5C1168C260CA20F001F4A74 /* UILabel+Util.m in Sources */,
 				6730334C210AED3D001471D8 /* PersonalCenterBarBtn.m in Sources */,
 				F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */,
 				F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */,
