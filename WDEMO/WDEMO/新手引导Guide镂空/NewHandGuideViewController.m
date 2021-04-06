@@ -64,7 +64,6 @@
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-
 }
 
 /*
@@ -106,7 +105,7 @@
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:imageView];
     
-    imageView.image = [UIImage imageNamed:@"未标题-1-2_06 2"];
+    imageView.image = [UIImage imageNamed:@"comment_guide-1-2_06 2"];
 //    imageView.center = self.view.center;
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickOpenImageView:)];
@@ -159,7 +158,7 @@
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:imageView];
     
-    imageView.image = [UIImage imageNamed:@"未标题-1-2_06 2"];
+    imageView.image = [UIImage imageNamed:@"comment_guide-1-2_06 2"];
     imageView.center = self.view.center;
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickOpenImageView:)];
@@ -189,7 +188,7 @@
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:imageView];
     
-    imageView.image = [UIImage imageNamed:@"未标题-1-2_03"];
+    imageView.image = [UIImage imageNamed:@"comment_guide-1-2_03"];
     imageView.center = self.view.center;
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickEnterImageView:)];
