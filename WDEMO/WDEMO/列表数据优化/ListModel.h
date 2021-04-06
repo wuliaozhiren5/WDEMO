@@ -40,6 +40,7 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypePersonalHomePage,//个人主页
     ListModelTypeActorHomePage,//个人主页
 
+    ListModelTypeNewHandGuide,//新手引导（某个页面的新手引导）
 //    ListModelTypeLoadingView,
 //    ListModelTypeBanner,
  

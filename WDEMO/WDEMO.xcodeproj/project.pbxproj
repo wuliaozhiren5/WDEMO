@@ -85,6 +85,7 @@
 		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
 		F534736E25E357F400F01CC6 /* iOS仿抖音短视频.md in Resources */ = {isa = PBXBuildFile; fileRef = F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */; };
 		F5358C1926032C1200C69FC4 /* RRActorSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5358C1726032C1200C69FC4 /* RRActorSubVC.m */; };
+		F53C391F2616B9320015A9AE /* NewHandGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53C391E2616B9320015A9AE /* NewHandGuideViewController.m */; };
 		F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */; };
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
@@ -443,6 +444,8 @@
 		F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS仿抖音短视频.md"; sourceTree = "<group>"; };
 		F5358C1726032C1200C69FC4 /* RRActorSubVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorSubVC.m; sourceTree = "<group>"; };
 		F5358C1826032C1200C69FC4 /* RRActorSubVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorSubVC.h; sourceTree = "<group>"; };
+		F53C391D2616B9320015A9AE /* NewHandGuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewHandGuideViewController.h; sourceTree = "<group>"; };
+		F53C391E2616B9320015A9AE /* NewHandGuideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewHandGuideViewController.m; sourceTree = "<group>"; };
 		F53F668A24FE2E2200770055 /* UIImage+GradientColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GradientColor.h"; sourceTree = "<group>"; };
 		F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GradientColor.m"; sourceTree = "<group>"; };
 		F53F669024FE454000770055 /* PasswordTextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextField.h; sourceTree = "<group>"; };
@@ -887,7 +890,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
-				F5448BD02615F0A200169B71 /* 镂空.md */,
+				F53C39052616B85E0015A9AE /* 新手引导Guide镂空 */,
 				F5C1168A260CA20F001F4A74 /* UILabel+Util.h */,
 				F5C1168B260CA20F001F4A74 /* UILabel+Util.m */,
 				F5B7DC402608814B00B1E497 /* 代码格式化工具XcodeClangFormat */,
@@ -1213,6 +1216,16 @@
 				F5F5B43D25FA1DFE0069491B /* RRActorInfoVC.m */,
 			);
 			path = ActorIntroVC;
+			sourceTree = "<group>";
+		};
+		F53C39052616B85E0015A9AE /* 新手引导Guide镂空 */ = {
+			isa = PBXGroup;
+			children = (
+				F5448BD02615F0A200169B71 /* 镂空.md */,
+				F53C391D2616B9320015A9AE /* NewHandGuideViewController.h */,
+				F53C391E2616B9320015A9AE /* NewHandGuideViewController.m */,
+			);
+			path = "新手引导Guide镂空";
 			sourceTree = "<group>";
 		};
 		F53FFE5F259DA1D600ABE946 /* 加载LoadingView */ = {
@@ -2227,6 +2240,7 @@
 				F5A9F13C24E3EC2400F611E6 /* SeeLivingModel.m in Sources */,
 				A459C29424C174A300A3B5FF /* Plist.m in Sources */,
 				675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */,
+				F53C391F2616B9320015A9AE /* NewHandGuideViewController.m in Sources */,
 				F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */,
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
 				F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */,

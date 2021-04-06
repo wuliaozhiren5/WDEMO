@@ -98,6 +98,8 @@
 //个人主页
 #import "RRActorVC.h"
 #import "RRActorIntroVC.h"
+//新手引导
+#import "NewHandGuideViewController.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -152,8 +154,8 @@
     
     
     NSArray * array = @[
-        
-        
+        [ListModel initWithTitle:@"新手引导（某个页面的新手引导）" detail:@"新手引导（某个页面的新手引导）" type:ListModelTypeNewHandGuide],
+
         [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
         [ListModel initWithTitle:@"Personal个人主页" detail:@"PersonalHomePage" type:ListModelTypePersonalHomePage],
         [ListModel initWithTitle:@"Actor个人主页" detail:@"ActorHomePage" type:ListModelTypeActorHomePage],
@@ -307,15 +309,17 @@
     
     
 //    [self calculate];
-//    
-//    [self redView];
+    //圆角
+//      [self circularCorner];//圆角
     
 }
-- (void)redView {
+
+////圆角
+- (void)circularCorner {
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
     imageView.image = [UIImage imageNamed:@"1"];
     
-    imageView.backgroundColor = [UIColor redColor];
+    imageView.backgroundColor = [UIColor grayColor];
 
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:imageView.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(25, 5)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc]init];
@@ -833,12 +837,26 @@
     RRActorVC *vc= [[RRActorVC alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-    
+  
+}
 
+- (void)clickNewHandGuide {
+    //新手引导
+//    NewHandGuideViewController *vc= [[NewHandGuideViewController alloc]init];
+    
+    CGRect rect = CGRectMake(100, 200, 54, 40);
+    CGFloat width = 54;//rect.size.width + 20;
+    CGFloat height = 40;//42
+    CGFloat x = rect.origin.x - (54 - rect.size.width) / 2;
+    CGFloat y = rect.origin.y - (height - rect.size.height) / 2;
+    CGRect showRect = CGRectMake(x, y, width, height);
+    NewHandGuideViewController *vc = [[NewHandGuideViewController alloc] initWithBtnGuideRect:showRect];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)clickArchiver {
-    //横向滚动的collectionView
+    //归档解档
     KeyedArchiverViewController *vc= [[KeyedArchiverViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES; 
     [self.navigationController pushViewController:vc animated:YES];
@@ -1107,6 +1125,12 @@
             [self clickTest];
         }
             break;
+        case ListModelTypeNewHandGuide:
+        {
+            [self clickNewHandGuide];
+        }
+            break;
+            
         default:
         {
             NSAssert(NO, @"PLUPersonalItemType 类型错误");
