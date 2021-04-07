@@ -30,4 +30,7 @@ typedef NS_OPTIONS(NSUInteger, TTGDirection) {
     TTGDirectionBottom = 1 << 3
 };
 
+//手打
+//enumdef
+//nsenum
 #endif /* WEnums_h */

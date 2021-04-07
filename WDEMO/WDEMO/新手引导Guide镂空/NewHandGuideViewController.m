@@ -100,8 +100,8 @@
     imageView.frame = CGRectMake(_btnGuideRect.origin.x - 15, _btnGuideRect.origin.y - 30, 267, 307);
     //    imageView.backgroundColor = [UIColor grayColor];
     //    imageView.hidden = YES;
-    imageView.layer.cornerRadius = 30;
-    imageView.layer.masksToBounds = YES;
+//    imageView.layer.cornerRadius = 30;
+//    imageView.layer.masksToBounds = YES;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:imageView];
     
