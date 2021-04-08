@@ -27,8 +27,10 @@ model 转 json
 
 
 demo
+//array
 NSArray *array = [NSArray modelArrayWithClass:[AllSeasonCategorySectionModel class] json:result.data];
 
+//result.data 是 Dictionary
 xxxModel *response = [xxxModel modelWithDictionary:result.data];
 
 
