@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#define KCommentUserNewHandGuide @"CommentUserNewHandGuide"
 
 NS_ASSUME_NONNULL_BEGIN
 

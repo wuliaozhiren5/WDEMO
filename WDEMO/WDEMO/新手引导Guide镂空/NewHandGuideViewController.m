@@ -27,6 +27,11 @@
 - (instancetype)initWithBtnGuideRect:(CGRect)btnGuideRect {
     self = [super init];
     if (self) {
+        //1.我觉得可以这样写
+//        BOOL flag = [[NSUserDefaults standardUserDefaults] boolForKey:KCommentUserNewHandGuide];
+//        if (flag) {
+//            return nil;
+//        }
         _btnGuideRect = btnGuideRect;
     }
     return self;
@@ -38,8 +43,17 @@
     
     //    self.view.backgroundColor = [UIColor clearColor];
     //    [self creatSeasonDetailMaskView];
-//    [self.navigationController setNavigationBarHidden:YES animated:NO];
-//    self.navigationController.navigationBar.hidden = YES;
+    //    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //    self.navigationController.navigationBar.hidden = YES;
+    
+    //2.使用
+    BOOL flag = [[NSUserDefaults standardUserDefaults] boolForKey:KCommentUserNewHandGuide];
+    if (flag) {
+        //            NewHandGuideViewController *vc = [[NewHandGuideViewController alloc] initWithBtnGuideRect:showRect];
+        //            [self addChildViewController:vc];
+        //            [vc didMoveToParentViewController:self];
+        //            [self.view addSubview:vc.view];
+    }
     
     //如果有
     if (_btnGuideRect.origin.x > 0 && _btnGuideRect.origin.y > 0 && _btnGuideRect.size.width > 0 && _btnGuideRect.size.height > 0) {
@@ -52,6 +66,9 @@
         [self createOpenGuideViewTwoBtn];
         //                [self createEnterView];
     }
+    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:KCommentUserNewHandGuide];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 
@@ -100,13 +117,13 @@
     imageView.frame = CGRectMake(_btnGuideRect.origin.x - 15, _btnGuideRect.origin.y - 30, 267, 307);
     //    imageView.backgroundColor = [UIColor grayColor];
     //    imageView.hidden = YES;
-//    imageView.layer.cornerRadius = 30;
-//    imageView.layer.masksToBounds = YES;
+    //    imageView.layer.cornerRadius = 30;
+    //    imageView.layer.masksToBounds = YES;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:imageView];
     
     imageView.image = [UIImage imageNamed:@"comment_guide-1-2_06 2"];
-//    imageView.center = self.view.center;
+    //    imageView.center = self.view.center;
     
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickOpenImageView:)];
     tapGesture.numberOfTapsRequired = 1;
@@ -153,8 +170,8 @@
     imageView.frame = CGRectMake(0, 0, 267, 307);
     //    imageView.backgroundColor = [UIColor grayColor];
     //    imageView.hidden = YES;
-//    imageView.layer.cornerRadius = 30;
-//    imageView.layer.masksToBounds = YES;
+    //    imageView.layer.cornerRadius = 30;
+    //    imageView.layer.masksToBounds = YES;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:imageView];
     
@@ -183,8 +200,8 @@
     imageView.frame = CGRectMake(0, 0, 283, 409);
     //    imageView.backgroundColor = [UIColor grayColor];
     //    imageView.hidden = YES;
-//    imageView.layer.cornerRadius = 30;
-//    imageView.layer.masksToBounds = YES;
+    //    imageView.layer.cornerRadius = 30;
+    //    imageView.layer.masksToBounds = YES;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     [self.view addSubview:imageView];
     
@@ -208,6 +225,14 @@
 - (void)clickEnterImageView:(UITapGestureRecognizer *)sender {
     [_enterMaskView  removeFromSuperview];
     [_enterImageView  removeFromSuperview];
+    //如果不add进来的，需要remove
+    //    [self remove];
+}
+
+- (void)remove {
+    [self willMoveToParentViewController:nil];
+    [self removeFromParentViewController];
+    [self.view removeFromSuperview];
 }
 
 - (void)createOpenButton {
