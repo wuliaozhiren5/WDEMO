@@ -44,7 +44,7 @@
     UIFont *textFont = [UIFont systemFontOfSize:fontSize];
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"点击"];
     //设置行间距
-    text.lineSpacing = 50;
+    text.lineSpacing = 50;//text.lineSpacing = 9 - (textFont.lineHeight - textFont.pointSize
     //设置文本字号
     text.font = textFont;
     //设置字体颜色
@@ -180,7 +180,7 @@
     UIFont *textFont = [UIFont systemFontOfSize:fontSize];
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"点击"];
     //设置行间距
-    text.lineSpacing = 2.5;
+    text.lineSpacing = 2.5;//text.lineSpacing = 9 - (textFont.lineHeight - textFont.pointSize);
     //设置文本字号
     text.font = textFont;
     //设置字体颜色

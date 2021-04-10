@@ -192,8 +192,7 @@
 //返回每行cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //点击效果
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+ 
     
     //UITableViewCell
     //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([UITableViewCell class]) forIndexPath:indexPath];
