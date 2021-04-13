@@ -100,6 +100,8 @@
 #import "RRActorIntroVC.h"
 //新手引导
 #import "NewHandGuideViewController.h"
+//评论
+#import "RRSeasonSeniorCommentsSubVC.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -154,6 +156,8 @@
     
     
     NSArray * array = @[
+         
+        [ListModel initWithTitle:@"评论" detail:@"bilibili，爱奇艺，优酷评论UI）" type:ListModelTypeComment],
         [ListModel initWithTitle:@"新手引导（某个页面的新手引导）" detail:@"新手引导（某个页面的新手引导）" type:ListModelTypeNewHandGuide],
 
         [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
@@ -855,6 +859,12 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)clickComment {
+    RRSeasonSeniorCommentsSubVC *vc = [[RRSeasonSeniorCommentsSubVC alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)clickArchiver {
     //归档解档
     KeyedArchiverViewController *vc= [[KeyedArchiverViewController alloc]init];
@@ -1130,7 +1140,11 @@
             [self clickNewHandGuide];
         }
             break;
-            
+        case ListModelTypeComment:
+        {
+            [self clickComment];
+        }
+            break;
         default:
         {
             NSAssert(NO, @"PLUPersonalItemType 类型错误");

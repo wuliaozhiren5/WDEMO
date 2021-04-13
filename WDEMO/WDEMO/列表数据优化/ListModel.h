@@ -43,7 +43,8 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeNewHandGuide,//新手引导（某个页面的新手引导）
 //    ListModelTypeLoadingView,
 //    ListModelTypeBanner,
- 
+    ListModelTypeComment,//评论
+
     ListModelTypeTest,//测试页面
 };
 

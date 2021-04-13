@@ -199,16 +199,16 @@
     
     
     
-//    RRSeasonSeniorCommentsSecondarySubVC *vc = [[RRSeasonSeniorCommentsSecondarySubVC alloc] initWithIsHalf:YES];
-////    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];
-////    vc.name = model.chineseName;
-////    vc.communityEnable = model.communityEnable;
-////    UIViewController *topVC = [UIViewController topViewController];
-//    UIViewController *topVC = self.fatherVC;
-//    [topVC addChildViewController:vc];
-//    [vc didMoveToParentViewController:topVC];
-//    [topVC.view addSubview:vc.view];
-//    [vc show];
+    RRSeasonSeniorCommentsSecondarySubVC *vc = [[RRSeasonSeniorCommentsSecondarySubVC alloc] initWithIsHalf:YES];
+//    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];
+//    vc.name = model.chineseName;
+//    vc.communityEnable = model.communityEnable;
+//    UIViewController *topVC = [UIViewController topViewController];
+    UIViewController *topVC = self;
+    [topVC addChildViewController:vc];
+    [vc didMoveToParentViewController:topVC];
+    [topVC.view addSubview:vc.view];
+    [vc show];
     
     
 
