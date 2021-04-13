@@ -57,6 +57,18 @@
 		A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09B24B97FD4005922B1 /* ViewController2.m */; };
 		A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09C24B97FD4005922B1 /* ViewController3.m */; };
 		A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9DC1A24D66049009FB2EA /* UIImage+size.m */; };
+		F504404F26259C6300834547 /* PCH文件.md in Resources */ = {isa = PBXBuildFile; fileRef = F504404E26259C6200834547 /* PCH文件.md */; };
+		F50440CE2625A06B00834547 /* RRSeasonSeniorCommentsHearder.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */; };
+		F50440CF2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BA2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m */; };
+		F50440D02625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BE2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m */; };
+		F50440D12625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.m */; };
+		F50440D22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */; };
+		F50440D32625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */; };
+		F50440D42625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C62625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m */; };
+		F50440D52625A06B00834547 /* RRSeasonSeniorCommentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C72625A06B00834547 /* RRSeasonSeniorCommentsCell.m */; };
+		F50440D62625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C92625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.m */; };
+		F50440D72625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440CB2625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m */; };
+		F50440D82625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */; };
 		F505AC2325C936F600F43298 /* 约束动画.md in Resources */ = {isa = PBXBuildFile; fileRef = F505AC2225C936F600F43298 /* 约束动画.md */; };
 		F505AC3425C940D100F43298 /* 抗拉伸抗压缩.md in Resources */ = {isa = PBXBuildFile; fileRef = F505AC3225C940D000F43298 /* 抗拉伸抗压缩.md */; };
 		F505AC3525C940D100F43298 /* addChildViewController.md in Resources */ = {isa = PBXBuildFile; fileRef = F505AC3325C940D100F43298 /* addChildViewController.md */; };
@@ -403,6 +415,30 @@
 		A4F2C09F24B97FD5005922B1 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		A4F9DC1924D66049009FB2EA /* UIImage+size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+size.h"; sourceTree = "<group>"; };
 		A4F9DC1A24D66049009FB2EA /* UIImage+size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+size.m"; sourceTree = "<group>"; };
+		F504404E26259C6200834547 /* PCH文件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "PCH文件.md"; sourceTree = "<group>"; };
+		F50440AE26259EEF00834547 /* WDEMO.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDEMO.pch; sourceTree = "<group>"; };
+		F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsHearder.m; sourceTree = "<group>"; };
+		F50440B92625A06B00834547 /* RRSeasonSeniorCommentsInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsInputBar.h; sourceTree = "<group>"; };
+		F50440BA2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsTabCountView.m; sourceTree = "<group>"; };
+		F50440BB2625A06B00834547 /* RRSeasonSeniorCommentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsCell.h; sourceTree = "<group>"; };
+		F50440BC2625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSecondarySubVC.h; sourceTree = "<group>"; };
+		F50440BD2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSecondaryCell.h; sourceTree = "<group>"; };
+		F50440BE2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSecondaryInputBar.m; sourceTree = "<group>"; };
+		F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsReplyCell.m; sourceTree = "<group>"; };
+		F50440C02625A06B00834547 /* RRSeasonSeniorCommentsSubVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSubVC.h; sourceTree = "<group>"; };
+		F50440C12625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsReplyTableView.h; sourceTree = "<group>"; };
+		F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSecondaryReplyCell.m; sourceTree = "<group>"; };
+		F50440C32625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsTabCountView.h; sourceTree = "<group>"; };
+		F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsInputBar.m; sourceTree = "<group>"; };
+		F50440C52625A06B00834547 /* RRSeasonSeniorCommentsHearder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsHearder.h; sourceTree = "<group>"; };
+		F50440C62625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSecondarySubVC.m; sourceTree = "<group>"; };
+		F50440C72625A06B00834547 /* RRSeasonSeniorCommentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsCell.m; sourceTree = "<group>"; };
+		F50440C82625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSecondaryInputBar.h; sourceTree = "<group>"; };
+		F50440C92625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSecondaryCell.m; sourceTree = "<group>"; };
+		F50440CA2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSecondaryReplyCell.h; sourceTree = "<group>"; };
+		F50440CB2625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsReplyTableView.m; sourceTree = "<group>"; };
+		F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSubVC.m; sourceTree = "<group>"; };
+		F50440CD2625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsReplyCell.h; sourceTree = "<group>"; };
 		F505AC2225C936F600F43298 /* 约束动画.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "约束动画.md"; sourceTree = "<group>"; };
 		F505AC3225C940D000F43298 /* 抗拉伸抗压缩.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "抗拉伸抗压缩.md"; sourceTree = "<group>"; };
 		F505AC3325C940D100F43298 /* addChildViewController.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = addChildViewController.md; sourceTree = "<group>"; };
@@ -894,6 +930,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F50440B72625A06B00834547 /* 评论SeniorComments */,
 				F53C39052616B85E0015A9AE /* 新手引导Guide镂空 */,
 				F5C1168A260CA20F001F4A74 /* UILabel+Util.h */,
 				F5C1168B260CA20F001F4A74 /* UILabel+Util.m */,
@@ -905,6 +942,7 @@
 				F567346B260C41D80081BC8A /* 数字变化的动画效果.md */,
 				F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
+				F504404E26259C6200834547 /* PCH文件.md */,
 				F51C8694261F103F0066850E /* UIView中坐标转换.md */,
 				F545BC162604808200D63C6E /* ceil_floor_round.md */,
 				F5BFBC0B25E523BC0068358F /* 弹幕.md */,
@@ -988,6 +1026,7 @@
 				F5C0A21C2578BB49004EBD94 /* xibViewDemo */,
 				F5A763BC253D94D900A76C6E /* YYmodel测试 */,
 				F5F4F10024D3BF23007DB7F3 /* YYText富文本YY富文本 */,
+				F50440AE26259EEF00834547 /* WDEMO.pch */,
 			);
 			path = WDEMO;
 			sourceTree = "<group>";
@@ -1099,6 +1138,35 @@
 				A4F2C09C24B97FD4005922B1 /* ViewController3.m */,
 			);
 			path = TagLIst;
+			sourceTree = "<group>";
+		};
+		F50440B72625A06B00834547 /* 评论SeniorComments */ = {
+			isa = PBXGroup;
+			children = (
+				F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */,
+				F50440B92625A06B00834547 /* RRSeasonSeniorCommentsInputBar.h */,
+				F50440BA2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m */,
+				F50440BB2625A06B00834547 /* RRSeasonSeniorCommentsCell.h */,
+				F50440BC2625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.h */,
+				F50440BD2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.h */,
+				F50440BE2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m */,
+				F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.m */,
+				F50440C02625A06B00834547 /* RRSeasonSeniorCommentsSubVC.h */,
+				F50440C12625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.h */,
+				F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */,
+				F50440C32625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.h */,
+				F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */,
+				F50440C52625A06B00834547 /* RRSeasonSeniorCommentsHearder.h */,
+				F50440C62625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m */,
+				F50440C72625A06B00834547 /* RRSeasonSeniorCommentsCell.m */,
+				F50440C82625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.h */,
+				F50440C92625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.m */,
+				F50440CA2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.h */,
+				F50440CB2625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m */,
+				F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */,
+				F50440CD2625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.h */,
+			);
+			path = "评论SeniorComments";
 			sourceTree = "<group>";
 		};
 		F505AC2C25C9392A00F43298 /* 约束动画 */ = {
@@ -2114,6 +2182,7 @@
 				F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */,
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
 				F5B7DC442608814B00B1E497 /* XcodeClangFormat.zip in Resources */,
+				F504404F26259C6300834547 /* PCH文件.md in Resources */,
 				F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */,
 				F5872CFD257DFF5900341B57 /* 追剧引导-暗黑-循环.gif in Resources */,
 				F51C8695261F10400066850E /* UIView中坐标转换.md in Resources */,
@@ -2226,6 +2295,7 @@
 				F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */,
 				F5200DCB2531536E004637DD /* BaseViewController.m in Sources */,
 				677BADD71FC412A700E7A3FF /* WConstants.m in Sources */,
+				F50440CF2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m in Sources */,
 				F5F5B44C25FA1DFE0069491B /* RRActorIntroCell.m in Sources */,
 				F50D6D8025A9581B00B8C415 /* SearchResultViewController.m in Sources */,
 				F553E14424CA82E700DA5625 /* ChatKitConfig.m in Sources */,
@@ -2252,6 +2322,7 @@
 				F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */,
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
 				F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */,
+				F50440D52625A06B00834547 /* RRSeasonSeniorCommentsCell.m in Sources */,
 				F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */,
 				F563DAE625AC27020079474B /* HomePageViewController.m in Sources */,
 				F5D4EB6325DF6A8700F807EF /* ParentClassScrollViewController.m in Sources */,
@@ -2279,6 +2350,7 @@
 				F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */,
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
 				F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */,
+				F50440D42625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */,
@@ -2289,6 +2361,7 @@
 				F5609CA62502222100A13C15 /* BaseNavigationController.m in Sources */,
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
 				F5609CA92502235400A13C15 /* BaseTabBarController.m in Sources */,
+				F50440D32625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m in Sources */,
 				F563DADF25AC26790079474B /* WMProgressView.m in Sources */,
 				F5F5B44825FA1DFE0069491B /* RRActorInfoCell.m in Sources */,
 				F5872CDF257DFAF300341B57 /* xibVC.m in Sources */,
@@ -2338,6 +2411,7 @@
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
 				F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
+				F50440D22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m in Sources */,
 				F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */,
 				F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */,
 				F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */,
@@ -2361,6 +2435,8 @@
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
+				F50440D62625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.m in Sources */,
+				F50440D72625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */,
 				F5F5B44D25FA1DFE0069491B /* RRActorVideoVC.m in Sources */,
 				F51535EF259B2960007E3416 /* UserEditBar.m in Sources */,
 				F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */,
@@ -2377,12 +2453,15 @@
 				F53F669B24FE484700770055 /* NSString+Password.m in Sources */,
 				F5D4EB5825DF6A6E00F807EF /* MainTouchTableTableView.m in Sources */,
 				F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */,
+				F50440D12625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.m in Sources */,
+				F50440D82625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m in Sources */,
 				F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */,
 				F5872CBF257DDEC000341B57 /* SettingModuleHandler.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
 				A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */,
 				F5D2129125FF567100C7DCC1 /* RRActorIntroAndWorksVC.m in Sources */,
+				F50440CE2625A06B00834547 /* RRSeasonSeniorCommentsHearder.m in Sources */,
 				F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlertView.m in Sources */,
 				F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */,
 				F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */,
@@ -2395,6 +2474,7 @@
 				F5F5B44A25FA1DFE0069491B /* RRActorInfoVC.m in Sources */,
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
+				F50440D02625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				F5CEF81C25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */,
@@ -2554,6 +2634,8 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -2608,6 +2690,8 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -2628,6 +2712,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FTKLY6XUHH;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WDEMO/WDEMO.pch";
 				INFOPLIST_FILE = WDEMO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2644,6 +2730,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FTKLY6XUHH;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WDEMO/WDEMO.pch";
 				INFOPLIST_FILE = WDEMO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

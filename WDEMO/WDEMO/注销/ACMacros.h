@@ -206,6 +206,8 @@
 //全部分类新加的字体颜色
 #define kCOLOR_898A91       RGB(0x89, 0x8A, 0x91)
 
+#define kCOLOR_0091FF      RGB(0x00, 0x91, 0xff)
+
 //辅助字体色 或者按钮线
 #define kCOLOR_dynamicProvider_CACBCC_616466       [UIColor colorWithDynamicProviderColor:@[RGB(0xCA, 0xCB, 0xCC),RGB(0x61, 0x64, 0x66)]]
 //不可点击态
@@ -414,6 +416,10 @@
 #define kCOLOR_272727       RGB(0x27, 0x27, 0x27)
 #define kCOLOR_F9001E       RGB(0xf9, 0x00, 0x1e)
 #define kCOLOR_030303       RGB(0x03, 0x03, 0x03)
+#define kCOLOR_88898F       RGB(0x88, 0x89, 0x8F)
+#define kCOLOR_DCB350       RGB(0xDC, 0xB3, 0x50)
+#define kCOLOR_F0F1F2       RGB(0xf0, 0xf1, 0xf2)
+
 
 
 #define kCOLOR_666666       RGB(0x66, 0x66, 0x66)
@@ -477,6 +483,7 @@
 #define kCOLOR_FF667F       RGB(0xFF, 0x66, 0x7F)
 
 
+#define kCOLOR_F8F8F8       RGB(0xf8, 0xf8, 0xf8)
 
 
 #define kCOLOR_252427       RGB(0x25, 0x24, 0x27)
@@ -500,9 +507,10 @@
 #define kCOLOR_292B31       RGB(0x29, 0x2b, 0x31)
 #define kCOLOR_6D7380       RGB(0x6d, 0x73, 0x80)
 #define kCOLOR_1F2126       RGB(0x1f, 0x21, 0x26)
-#define kCOLOR_0091FF       RGB(0x00, 0x91, 0xFF)
 #define kCOLOR_E5E7E8       RGB(0xE5, 0xE7, 0xE8)
+#define kCOLOR_6D4A1A       RGB(0x6D, 0x4A, 0x1A)
 #define kCOLOR_B17BFF       RGB(0xB1, 0x7B, 0xFF)
+#define kCOLOR_FF4865       RGB(0xFF, 0x48, 0x65)
 
 
 
@@ -542,8 +550,8 @@ static inline CGFloat windowFloorf(CGFloat value) {
 //分割线颜色
 #define LineColor      kCOLOR_dynamicProvider_EEEEEE
 
-//#define kDevice_Is_iPhoneX  ([RRAppConfig config].isiPhoneX)
-//#define iPhone5_5s_5c ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define kDevice_Is_iPhoneX  ([RRAppConfig config].isiPhoneX)
+#define iPhone5_5s_5c ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 //static inline CGFloat statusMarginToTop() {
 //    if (kDevice_Is_iPhoneX) {
 //        return 44;
@@ -551,92 +559,92 @@ static inline CGFloat windowFloorf(CGFloat value) {
 //        return 20;
 //    }
 //}
-//
-////iphone的安全边距，其中右和下是负值，是为了方便填写约束
-//static inline UIEdgeInsets appMargin() {
-//    CGFloat top = 0;
-//    CGFloat bottom = 0;
-//    CGFloat left = 0;
-//    CGFloat right = 0;
-//    if (@available(iOS 11.0, *)) {
-//        UIEdgeInsets insets = [UIApplication sharedApplication].keyWindow.safeAreaInsets;
-//        //iphonex系列为44，使用安全区域，其他的忽略statusbar的非q安全区域，直接取0
-//        top = insets.top > 40 ? insets.top : 0;
-//        bottom = -insets.bottom;
-//        left = insets.left;
-//        right = -insets.right;
-//    }
-//    return UIEdgeInsetsMake(top, left, bottom, right);
-//}
-//
-////播放器高度
-//static inline CGFloat playerViewHeight() {
-//    return appMargin().top + KHomeWidth / 750 * 421;
-//}
-//
-////快看短视频播放器高度
-//static inline CGFloat amwayPlayerHeight() {
-//    return (KHeight + appMargin().bottom - kBottomBarHeight);
-//}
-//
-//static inline CGFloat navMarginToTop() {
-//    return 60;
-//}
-//
-//static inline CGFloat bottomMarginToBottom() {
-//    if (@available(iOS 11.0, *)) {
-//        return [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom;
-//    }
-//    return 0;
-//}
-//
-//static inline CGFloat dealValue(CGFloat value) {
-//    return ceilf(value * [[UIScreen mainScreen] scale]) / [[UIScreen mainScreen] scale];
-//}
-//
-//static inline CGFloat floorValue(CGFloat value) {
-//    return floorf(value * [[UIScreen mainScreen] scale]) / [[UIScreen mainScreen] scale];
-//}
-//
-//// View 圆角
-//static inline void ViewRadius(UIView *view, CGFloat radius) {
-//    view.layer.masksToBounds = YES;
-//    view.layer.cornerRadius = radius;
-//}
-//
-//// View 圆角并描边
-//static inline void ViewBorderRadius(UIView *view, CGFloat radius, CGFloat borderWidth, UIColor *borderColor) {
-//    ViewRadius(view, radius);
-//    view.layer.borderWidth = borderWidth;
-//    view.layer.borderColor = borderColor.CGColor;
-//}
-//
-//static inline id nib2Obj(NSString *name, id owner){
-//    NSArray *result = [[NSBundle mainBundle] loadNibNamed:name owner:owner options:nil];
-//    return result.count > 0 ? result[0] : nil;
-//}
-//
-////剧集卡片一行个数
-//static inline NSInteger rr_recommendSeasonLineItemCount() {
-//    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-//        return 3;
-//    }
-//    if (KHomeWidth >= 1024) {
-//        return 6;
-//    }
-//    return 5;
-//}
-//
-//static inline NSInteger rr_recommendSeasonPageSize() {
-//    switch (rr_recommendSeasonLineItemCount()) {
-//        case 5:
-//            return 25;
-//        case 6:
-//            return 24;
-//        default:
-//            return 15;
-//    }
-//}
+
+//iphone的安全边距，其中右和下是负值，是为了方便填写约束
+static inline UIEdgeInsets appMargin() {
+    CGFloat top = 0;
+    CGFloat bottom = 0;
+    CGFloat left = 0;
+    CGFloat right = 0;
+    if (@available(iOS 11.0, *)) {
+        UIEdgeInsets insets = [UIApplication sharedApplication].keyWindow.safeAreaInsets;
+        //iphonex系列为44，使用安全区域，其他的忽略statusbar的非q安全区域，直接取0
+        top = insets.top > 40 ? insets.top : 0;
+        bottom = -insets.bottom;
+        left = insets.left;
+        right = -insets.right;
+    }
+    return UIEdgeInsetsMake(top, left, bottom, right);
+}
+
+//播放器高度
+static inline CGFloat playerViewHeight() {
+    return appMargin().top + KHomeWidth / 750 * 421;
+}
+
+//快看短视频播放器高度
+static inline CGFloat amwayPlayerHeight() {
+    return (KHeight + appMargin().bottom - kBottomBarHeight);
+}
+
+static inline CGFloat navMarginToTop() {
+    return 60;
+}
+
+static inline CGFloat bottomMarginToBottom() {
+    if (@available(iOS 11.0, *)) {
+        return [UIApplication sharedApplication].keyWindow.safeAreaInsets.bottom;
+    }
+    return 0;
+}
+
+static inline CGFloat dealValue(CGFloat value) {
+    return ceilf(value * [[UIScreen mainScreen] scale]) / [[UIScreen mainScreen] scale];
+}
+
+static inline CGFloat floorValue(CGFloat value) {
+    return floorf(value * [[UIScreen mainScreen] scale]) / [[UIScreen mainScreen] scale];
+}
+
+// View 圆角
+static inline void ViewRadius(UIView *view, CGFloat radius) {
+    view.layer.masksToBounds = YES;
+    view.layer.cornerRadius = radius;
+}
+
+// View 圆角并描边
+static inline void ViewBorderRadius(UIView *view, CGFloat radius, CGFloat borderWidth, UIColor *borderColor) {
+    ViewRadius(view, radius);
+    view.layer.borderWidth = borderWidth;
+    view.layer.borderColor = borderColor.CGColor;
+}
+
+static inline id nib2Obj(NSString *name, id owner){
+    NSArray *result = [[NSBundle mainBundle] loadNibNamed:name owner:owner options:nil];
+    return result.count > 0 ? result[0] : nil;
+}
+
+//剧集卡片一行个数
+static inline NSInteger rr_recommendSeasonLineItemCount() {
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        return 3;
+    }
+    if (KHomeWidth >= 1024) {
+        return 6;
+    }
+    return 5;
+}
+
+static inline NSInteger rr_recommendSeasonPageSize() {
+    switch (rr_recommendSeasonLineItemCount()) {
+        case 5:
+            return 25;
+        case 6:
+            return 24;
+        default:
+            return 15;
+    }
+}
 
 #define seasonVideoCategoryForm(seasonModel) (seasonModel.classify.length ? seasonModel.classify : (seasonModel.isMovie ? kRRUmengEventVideoCategory1Movie : kRRUmengEventVideoCategory1Series))
 

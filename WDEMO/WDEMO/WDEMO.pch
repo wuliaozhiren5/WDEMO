@@ -1,0 +1,26 @@
+//
+//  WDEMO.pch
+//  WDEMO
+//
+//  Created by rrtv on 2021/4/13.
+//  Copyright © 2021 wwc. All rights reserved.
+//
+
+#ifndef WDEMO_pch
+#define WDEMO_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <UIKit/UIKit.h>
+//响应点击
+typedef void (^ClickBlock)(UIResponder *sender);
+//模型响应点击
+typedef void (^ClickModelBlock)(UIResponder *sender, NSObject *model);
+//序列响应点击
+typedef void (^ClickIndexBlock)(UIResponder *sender, NSUInteger index);
+
+#import <Masonry/Masonry.h>
+#import "ACMacros.h"
+#import "UIColor+color.h"
+
+#endif /* WDEMO_pch */

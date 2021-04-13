@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-//响应点击
-typedef void (^ClickBlock)(UIResponder *sender);
-//模型响应点击
-typedef void (^ClickModelBlock)(UIResponder *sender, NSObject *model);
-//序列响应点击
-typedef void (^ClickIndexBlock)(UIResponder *sender, NSUInteger index);
+////响应点击
+//typedef void (^ClickBlock)(UIResponder *sender);
+////模型响应点击
+//typedef void (^ClickModelBlock)(UIResponder *sender, NSObject *model);
+////序列响应点击
+//typedef void (^ClickIndexBlock)(UIResponder *sender, NSUInteger index);
 
 NS_ASSUME_NONNULL_BEGIN
 
