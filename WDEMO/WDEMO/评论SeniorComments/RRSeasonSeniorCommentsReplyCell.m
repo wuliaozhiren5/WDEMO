@@ -24,7 +24,7 @@
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         //隐藏分割线
         //        self.selectionStyle = UITableViewCellSelectionStyleNone;
-        
+        self.isShowMore = NO;
         [self setupViews];
     } else {
     }
@@ -41,17 +41,19 @@
     [super setupViews];
     //replyTable
     [self.contentView addSubview:self.tableView];
-    
      
-//    //有回复
-//    BOOL isHasReply = YES;
-//    self.tableView.frame = CGRectMake(61, 34 + rect.size.height + 1,  (KWidth - 61 - 16), 300);
-////    self.tableView.scrollEnabled = NO;
+    CGFloat currentHeight = self.singleImageView.frame.origin.y + self.singleImageView.frame.size.height;
+ 
+    //有回复
+    BOOL isHasReply = YES;
+    self.tableView.frame = CGRectMake(61, 8 + currentHeight,  (KWidth - 61 - 16), 300);
+    self.tableView.scrollEnabled = NO;
 }
 
 - (RRSeasonSeniorCommentsReplyTableView *)tableView {
     if (!_tableView) {
         _tableView = [[RRSeasonSeniorCommentsReplyTableView alloc] initWithFrame:CGRectMake(61, 200, (KWidth - 61 - 16), 100)];
+        _tableView.scrollEnabled = NO;
     }
     return _tableView;
 }

@@ -11,21 +11,15 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RRSeasonSeniorCommentsReplyTableView : UITableView
-
+@property (nonatomic, copy) NSArray *data;
+@property (nonatomic, assign) NSInteger count;
 @end
 
 
 //一级评论cell的回复列表cell
 @interface RRSeasonSeniorCommentsReplyTableViewCell : UITableViewCell
-
-//@property (nonatomic, strong) UILabel *firstLabel;
- 
-////填充数据
-//- (void)fillWithData:(id)data;
-//
-////计算高度
-////+ (CGFloat)heightForCellWithModel:(id)model;
-//+ (CGFloat)cellHeightWithModel:(id)model;
+@property (nonatomic, strong)id model;
++ (CGFloat)cellHeightWithModel:(id)model;
 @end
 
 //@interface RRSeasonSeniorCommentsReplyMoreTableViewCell : UITableViewCell

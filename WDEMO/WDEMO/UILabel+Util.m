@@ -11,7 +11,7 @@
 
 @implementation UILabel (Util)
 
-- (NSArray *)getSeparatedLinesFromLabel:(UILabel *)label {
++ (NSArray *)getSeparatedLinesFromLabel:(UILabel *)label {
     NSString *text = [label text];
     UIFont *font = [label font];
     CGRect rect = [label frame];
@@ -38,5 +38,13 @@
         [linesArray addObject:lineString];
     }
     return linesArray;
+}
+
++ (NSArray *)getSeparatedLinesFromYYLabel:(YYLabel *)yyLabel {
+    UILabel *label= [[UILabel alloc] init];
+    label.text = [yyLabel text];
+    label.font = [yyLabel font];
+    label.frame = [yyLabel frame];
+    return [self getSeparatedLinesFromLabel:label];
 }
 @end

@@ -10,6 +10,8 @@
 #import "YYKit.h"
 
 @interface RRSeasonSeniorCommentsReplyTableView ()<UITableViewDelegate,UITableViewDataSource>
+@property (nonatomic, strong) UIControl *footer;
+@property (nonatomic, strong) UILabel *footerLab;
 @end
 
 @implementation RRSeasonSeniorCommentsReplyTableView
@@ -58,49 +60,59 @@
     }
     
     //header
-    self.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 12)];
+//    self.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 12)];
     //footer
 //    self.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 6)];
      
 //    self.tableFooterView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 27)];
     
-//    NSInteger count = 0;
-    NSInteger count = 10;
-    NSString *text = [NSString stringWithFormat:@"查看%zi条回复",count];
+    [self addHeader];
+    [self addFooter];
 
-    UIControl *footer = [[UIControl alloc] initWithFrame:CGRectMake(0, 0, KWidth, 27)];
-//    footer.backgroundColor = [UIColor redColor]; 
-    [footer addTarget:self action:@selector(clickFooter) forControlEvents:UIControlEventTouchUpInside];
-    UILabel *footerLab = [[UILabel alloc] init];
-    footerLab.frame = CGRectMake(0, 0, 100, 40);
-    footerLab.font = RR_COMMONFONT(14);
-    footerLab.textColor = kCOLOR_0091FF;
-    [footer addSubview:footerLab];
-    [footerLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@0);
-//        make.bottom.equalTo(@0);
-        make.leading.equalTo(@15);
-        make.trailing.equalTo(@-15);
-    }];
-    footerLab.text = text;
-   
-    if (count > 0) {
-        //文字
-        footer.frame = CGRectMake(0, 0, KWidth, 27);
-        footerLab.hidden  = NO;
-        
-    } else {
-        footer.frame = CGRectMake(0, 0, KWidth, 6);
-        footerLab.hidden  = YES; 
-    }
-    self.tableFooterView = footer;
+}
 
+- (void)addHeader {
+    self.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 12)];
+}
+
+- (void)addFooter {
+//        NSInteger count = 0;
+        NSInteger count = 10;
+        NSString *text = [NSString stringWithFormat:@"查看%zi条回复",count];
+
+        UIControl *footer = [[UIControl alloc] initWithFrame:CGRectMake(0, 0, KWidth, 27)];
+    //    footer.backgroundColor = [UIColor redColor];
+        [footer addTarget:self action:@selector(clickFooter) forControlEvents:UIControlEventTouchUpInside];
+        UILabel *footerLab = [[UILabel alloc] init];
+        footerLab.frame = CGRectMake(0, 0, 100, 40);
+        footerLab.font = RR_COMMONFONT(14);
+        footerLab.textColor = kCOLOR_0091FF;
+        [footer addSubview:footerLab];
+        [footerLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(@0);
+    //        make.bottom.equalTo(@0);
+            make.leading.equalTo(@15);
+            make.trailing.equalTo(@-15);
+        }];
+        footerLab.text = text;
+        if (count > 0) {
+            //文字
+            footer.frame = CGRectMake(0, 0, KWidth, 27);
+            footerLab.hidden  = NO;
+
+        } else {
+            footer.frame = CGRectMake(0, 0, KWidth, 6);
+            footerLab.hidden  = YES;
+        }
+//
+        self.tableFooterView = footer;
+        _footer = footer;
+        _footerLab = footerLab;
 }
 
 - (void)clickFooter {
     
 }
-
 #pragma mark -- UITableViewDataSource
 //返回分组数
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -226,6 +238,10 @@
 
 - (void)setupViews {
     [self.contentView addSubview:self.yyContentLab];
+    
+//    return;
+    
+    
 //    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"小姐姐：单打独斗是短发"];
 //    self.yyContentLab.attributedText = text;
      
@@ -233,24 +249,26 @@
 //    北极星 回复 小姐姐：短发乾隆贼可爱笑点担当。但是人物和环境欠缺时尚…
 //    查看图片
 //    查看12333条回复
-    
-    
-    
+     
     NSString *nicknameStr = @"小姐姐";
-    NSString *replyNicknameStr = @"北极星";
+    NSString *replyNicknameStr = @"";//@"北极星";
 
     //冒号
     NSString *colonStr = @"：";
     NSString *replyStr = @" 回复 ";
     NSString *moreTextStr = @"...";
     NSString *lookImageStr = @"查看图片";
-    NSString *textStr = @"中国古典长篇小说四大名著简称四大名著是指水浒传三国演义西游记红楼梦按照成书先后顺序这四部巨著四大古典名著是中国文学史中的经典作品是世界宝贵的文化遗产此四部巨著在中国文学史上的地位是难分高低的都有着极高的文学水平和艺术成就细致的刻画和所蕴含的深刻思想都为历代读者所称道其中的故事场景人物已经深深地影响了中国人的思想观念价值取向可谓中国文学史上的四座伟大丰碑。\n中国古典长篇小说四大名著简称四大名著是指水浒传三国演义西游记红楼梦按照成书先后顺序这四部巨著四大古典名著是中国文学史中的经典作品是世界宝贵的文化遗产此四部巨著在中国文学史上的地位是难分高低的都有着极高的文学水平和艺术成就细致的刻画和所蕴含的深刻思想都为历代读者所称道其中的故事场景人物已经深深地影响了中国人的思想观念价值取向可谓中国文学史上的四座伟大丰碑。\n";
+    NSString *str = @"中国古典长篇小说四大名著简称四大名著是指水浒传三国演义西游记红楼梦按照成书先后顺序这四部巨著四大古典名著是中国文学史中的经典作品是世界宝贵的文化遗产此四部巨著在中国文学史上的地位是难分高低的都有着极高的文学水平和艺术成就细致的刻画和所蕴含的深刻思想都为历代读者所称道其中的故事场景人物已经深深地影响了中国人的思想观念价值取向可谓中国文学史上的四座伟大丰碑。\n中国古典长篇小说四大名著简称四大名著是指水浒传三国演义西游记红楼梦按照成书先后顺序这四部巨著四大古典名著是中国文学史中的经典作品是世界宝贵的文化遗产此四部巨著在中国文学史上的地位是难分高低的都有着极高的文学水平和艺术成就细致的刻画和所蕴含的深刻思想都为历代读者所称道其中的故事场景人物已经深深地影响了中国人的思想观念价值取向可谓中国文学史上的四座伟大丰碑。\n";
+    
+    NSString *content = [str copy] ?: @"";
+    NSString *textStr = [str copy] ?: @"";
     
     BOOL isHasImage = YES;
     if (!isHasImage) {
          lookImageStr = @"";
     }
-    BOOL isReply = YES;
+//    BOOL isReply = YES;
+    BOOL isReply = (replyNicknameStr.length > 0);
     if (!isReply) {
        replyStr = @"";
        replyNicknameStr = @"";
@@ -263,11 +281,11 @@
     //    ...查看全文
     //    ...查看图片
     //恢复View
-    NSArray *array = [self getSeparatedLinesFromYYLabel:self.yyContentLab]; 
+    NSArray *array = [self getSeparatedLinesFromYYLabel:self.yyContentLab];
     CGFloat fontSize = 14;
     UIFont *textFont = RR_COMMONFONT(fontSize);
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@""];
-    text.lineSpacing = 6 - (textFont.lineHeight - textFont.pointSize); 
+    text.lineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
     text.font = textFont;
     text.color = kCOLOR_85888F;
 
@@ -460,22 +478,10 @@
         }
         
         {
-            NSString *lineString = array[0];
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:[lineString substringFromIndex:nicknameStr.length + replyStr.length + replyNicknameStr.length + colonStr.length]];
+            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:content];
             //              one.lineSpacing = 2.5;
             one.font = textFont;
             one.color = kCOLOR_85888F;
- 
-            [text appendAttributedString:one];
-        }
-        
-        {
-            NSString *lineString = array[1];
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:[lineString substringToIndex:lineString.length - lookImageStr.length]];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_85888F;
- 
             [text appendAttributedString:one];
         }
       
@@ -536,30 +542,16 @@
     //        CGSize size = layout.textBoundingSize;
     self.yyContentLab.attributedText = text;
     self.yyContentLab.frame = CGRectMake(15, 6, (KWidth - 61 - 16 - 15 * 2), rect.size.height + 1);
-    
-    
-    
- 
-    
+
     NSLog(@"%zi", [layout lineIndexForRow:1]);
     NSLog(@"%zi", [layout lineCountForRow:1]);
-
     NSLog(@"%zi", layout.rowCount);
-    
-    
-//
-//    //有回复
-//    BOOL isHasReply = YES;
-//    self.tableView.frame = CGRectMake(61, 34 + rect.size.height + 1,  (KWidth - 61 - 16), 120+50);
-////    self.tableView.scrollEnabled = NO;
-//
-    
 }
 
 - (YYLabel *)yyContentLab {
     if (!_yyContentLab) {
         _yyContentLab = [YYLabel new];
-        _yyContentLab.frame = CGRectMake(15, 6, KWidth - 61 - 16 - 15 * 2, 60);
+        _yyContentLab.frame = CGRectMake(15, 0, KWidth - 61 - 16 - 15 * 2, 60);
         _yyContentLab.font = RR_COMMONFONT(14);
         _yyContentLab.lineBreakMode = NSLineBreakByCharWrapping;
         _yyContentLab.numberOfLines = 0;

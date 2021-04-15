@@ -12,38 +12,38 @@
 //#import "RRSeasonSeniorCommentsReplyTableView.h"
 
 @interface RRSeasonSeniorCommentsCell ()
-//头像
-@property (nonatomic, strong) UIImageView *avatarImageView;
-@property (nonatomic, strong) UIImageView *avatarVipIconImageView;
-//昵称
-@property (nonatomic, strong) UILabel *nicknamelab;//昵称
-@property (nonatomic, strong) UIView *nicknameLevelView;//昵称等级
-@property (nonatomic, strong) UILabel *nicknameLevelLab;//昵称等级
-@property (nonatomic, strong) UIImageView *nicknameVipIconImageView;//昵称vip
-
+////头像
+//@property (nonatomic, strong) UIImageView *avatarImageView;
+//@property (nonatomic, strong) UIImageView *avatarVipIconImageView;
+////昵称
+//@property (nonatomic, strong) UILabel *nicknamelab;//昵称
+//@property (nonatomic, strong) UIView *nicknameLevelView;//昵称等级
+//@property (nonatomic, strong) UILabel *nicknameLevelLab;//昵称等级
+//@property (nonatomic, strong) UIImageView *nicknameVipIconImageView;//昵称vip
+//
 ////剧透
 //@property (nonatomic, strong) UIView *firstView;//剧透
 //@property (nonatomic, strong) UILabel *firstLab;//剧透
-
+//
 ////内容
 ////@property (nonatomic, strong) UILabel *contentLab; //内容
 //@property (nonatomic, strong) YYLabel *yyContentLab;//内容
-
-//单图
-@property (nonatomic, strong) UIImageView *singleImageView;//单图
-
-//底部的View
-@property (nonatomic, strong) UIView *bottomView;
-@property (nonatomic, strong) UILabel *dateLab; //日期
-@property (nonatomic, strong) UIButton *praiseBtn;
-@property (nonatomic, strong) UILabel *praiseBtnLab;
-//@property (nonatomic, strong) UIImageView *praiseImageView; //imgV
-
-//@property (nonatomic, strong) RRSeasonSeniorCommentsReplyTableView *tableView;
-
-//@property (nonatomic, assign) BOOL isShowMore;//是否显示更多数据 默认NO
-//@property (nonatomic, assign) BOOL isFirst;//是否是剧透
- 
+//
+////单图
+//@property (nonatomic, strong) UIImageView *singleImageView;//单图
+//
+////底部的View
+//@property (nonatomic, strong) UIView *bottomView;
+//@property (nonatomic, strong) UILabel *dateLab; //日期
+//@property (nonatomic, strong) UIButton *praiseBtn;
+//@property (nonatomic, strong) UILabel *praiseBtnLab;
+////@property (nonatomic, strong) UIImageView *praiseImageView; //imgV
+//
+////@property (nonatomic, strong) RRSeasonSeniorCommentsReplyTableView *tableView;
+//
+////@property (nonatomic, assign) BOOL isShowMore;//是否显示更多数据 默认NO
+////@property (nonatomic, assign) BOOL isFirst;//是否是剧透
+// 
 @end
 
 @implementation RRSeasonSeniorCommentsCell
@@ -201,30 +201,39 @@
         make.center.equalTo(self.firstView);
     }];
     
-    [self.singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        //        make.top.equalTo(self.contentLab.mas_bottom).offset(4);
-        //        make.top.equalTo(self.yyContentLab.mas_top).offset(0);
-        make.bottom.equalTo(self.bottomView.mas_top).offset(0);
-        make.leading.equalTo(@61);
-        make.width.equalTo(@197);
-        //        make.height.equalTo(@197);
-        make.height.equalTo(self.singleImageView.mas_width).multipliedBy(2.0);
-    }];
+//    [self.singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        //        make.top.equalTo(self.contentLab.mas_bottom).offset(4);
+//        //        make.top.equalTo(self.yyContentLab.mas_top).offset(0);
+//        make.bottom.equalTo(self.bottomView.mas_top).offset(0);
+//        make.leading.equalTo(@61);
+//        make.width.equalTo(@197);
+//        //        make.height.equalTo(@197);
+//        make.height.equalTo(self.singleImageView.mas_width).multipliedBy(2.0);
+//    }];
      
-    
     //填充数据
-    self.singleImageView.backgroundColor = [UIColor grayColor];
-    self.avatarImageView.backgroundColor = [UIColor grayColor];
-    //    self.nicknamelab.text = @"鲁智深鲁达鲁提辖";
-    self.nicknamelab.text = @"水浒传三国演义西游记红楼梦水浒传三国演义西游记红楼梦";
-    self.praiseBtn.backgroundColor = [UIColor redColor];
-    self.bottomView.backgroundColor = [UIColor greenColor];
+    [self fillBottomView];
+
+    [self fillAvaterNickname];
+
+    [self fillText];
+}
+
+- (void)fillBottomView {
     self.dateLab.text = @"04-12";
     self.praiseBtnLab.text = @"2144";
+}
+
+- (void)fillAvaterNickname {
+    
+    self.avatarImageView.backgroundColor = [UIColor grayColor];
+    //昵称
+    //    self.nicknamelab.text = @"鲁智深鲁达鲁提辖";
+    self.nicknamelab.text = @"水浒传三国演义西游记红楼梦水浒传三国演义西游记红楼梦";
     self.nicknameLevelLab.text = @"lv.99";
     
 //    //vip
-    BOOL isVip = NO;
+    BOOL isVip = YES;
     if (isVip) {
         self.avatarVipIconImageView.hidden = NO;
         self.nicknameVipIconImageView.hidden = NO;
@@ -291,18 +300,19 @@
             make.top.equalTo(@10);
         }];
     }
-    
-    [self fill];
 }
 
-- (void)fill {
+- (void)fillText {
     //@"剧透 "
     //@"       " 7个空格
     NSString *firstTextStr = @"      ";//@"剧透 ";//@"       "; @"剧透 ";
     NSString *moreTextStr = @"...";
     NSString *showAllTextStr = @"查看全文";
-    NSString *textStr = @"中国古典长篇小说四大名著，简称四大名著，是指《水浒传》《三国演义》《西游记》《红楼梦》（按照成书先后顺序）这四部巨著。\n四大古典名著是中国文学史中的经典作品，是世界宝贵的文化遗产。此四部巨著在中国文学史上的地位是难分高低的，都有着极高的文学水平和艺术成就，细致的刻画和所蕴含的深刻思想都为历代读者所称道，其中的故事、场景、人物已经深深地影响了中国人的思想观念、价值取向。可谓中国文学史上的四座伟大丰碑。\n中国古典长篇小说四大名著，简称四大名著，是指《水浒传》《三国演义》《西游记》《红楼梦》（按照成书先后顺序）这四部巨著。\n四大古典名著是中国文学史中的经典作品，是世界宝贵的文化遗产。此四部巨著在中国文学史上的地位是难分高低的，都有着极高的文学水平和艺术成就，细致的刻画和所蕴含的深刻思想都为历代读者所称道，其中的故事、场景、人物已经深深地影响了中国人的思想观念、价值取向。可谓中国文学史上的四座伟大丰碑。\n中国古典长篇小说四大名著，简称四大名著，是指《水浒传》《三国演义》《西游记》《红楼梦》（按照成书先后顺序）这四部巨著。\n四大古典名著是中国文学史中的经典作品，是世界宝贵的文化遗产。此四部巨著在中国文学史上的地位是难分高低的，都有着极高的文学水平和艺术成就，细致的刻画和所蕴含的深刻思想都为历代读者所称道，其中的故事、场景、人物已经深深地影响了中国人的思想观念、价值取向。可谓中国文学史上的四座伟大丰碑。\n中国古典长篇小说四大名著，简称四大名著，是指《水浒传》《三国演义》《西游记》《红楼梦》（按照成书先后顺序）这四部巨著。\n";
     
+    NSString *str = @"中国古典长篇小说四大名著简称四大名著是指水浒传三国演义西游记红楼梦按照成书先后顺序这四部巨著四大古典名著是中国文学史中的经典作品是世界宝贵的文化遗产此四部巨著在中国文学史上的地位是难分高低的都有着极高的文学水平和艺术成就细致的刻画和所蕴含的深刻思想都为历代读者所称道其中的故事场景人物已经深深地影响了中国人的思想观念价值取向可谓中国文学史上的四座伟大丰碑。\n中国古典长篇小说四大名著简称四大名著是指水浒传三国演义西游记红楼梦按照成书先后顺序这四部巨著四大古典名著是中国文学史中的经典作品是世界宝贵的文化遗产此四部巨著在中国文学史上的地位是难分高低的都有着极高的文学水平和艺术成就细致的刻画和所蕴含的深刻思想都为历代读者所称道其中的故事场景人物已经深深地影响了中国人的思想观念价值取向可谓中国文学史上的四座伟大丰碑。\n";
+    
+    NSString *content = [str copy] ?: @"";
+    NSString *textStr = [str copy] ?: @"";
     //剧透
     BOOL isFirst = YES;
     if (isFirst) {
@@ -350,7 +360,7 @@
                 
                 //复制文字
                 UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-                [pasteboard setString:textStr];
+                [pasteboard setString:content];
             }];
             [text appendAttributedString:one];
         }
@@ -393,6 +403,11 @@
     //        CGSize size = layout.textBoundingSize;
     self.yyContentLab.attributedText = text;
     self.yyContentLab.frame = CGRectMake(61, 34, (KWidth - 61 - 16), rect.size.height + 1);
+    
+    CGFloat currentHeight = 34 + (rect.size.height + 1);
+    self.singleImageView.frame = CGRectMake(61, 4 + currentHeight, 200, 200);
+    self.singleImageView.image = IMAGENAME(@"ic_comment_v");
+    
     
 //    //有回复
 //    BOOL isHasReply = YES;
