@@ -64,7 +64,7 @@
   
     [textBoxBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@33);
-        make.leading.equalTo(@51);
+        make.leading.equalTo(@15);
         make.trailing.equalTo(self).offset(-15);
         make.centerY.equalTo(iconImageView);
     }];
@@ -77,6 +77,8 @@
     _iconImageView = iconImageView;
     _textBoxBtn = textBoxBtn;
     _textBoxLab = textBoxLab;
+    _iconImageView.hidden = YES;
+
 }
 
 //- (void)createBottomBar {

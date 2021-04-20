@@ -45,7 +45,7 @@
         make.top.equalTo(@13);
     }];
  
-    [self.praiseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.praiseBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@33);
         make.trailing.equalTo(@-15);
         //        make.height.equalTo(@45);
@@ -54,7 +54,7 @@
         make.centerY.equalTo(self.iconImageView);
     }];
     
-    [self.praiseBtnLab mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.praiseBtnLab mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
         make.bottom.equalTo(@0);
         make.trailing.equalTo(@-20);
@@ -62,18 +62,22 @@
 
     [self.textBoxBtn mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@33);
-        make.leading.equalTo(@51);
-        make.trailing.equalTo(self.mas_trailing).offset(-80);
+        make.leading.equalTo(@15);
+        make.trailing.equalTo(self.praiseBtn.mas_leading).offset(0);
         make.centerY.equalTo(self.iconImageView);
     }];
 
     [self.textBoxLab mas_remakeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.equalTo(@0);
-        make.leading.trailing.equalTo(@12);
+        make.leading.equalTo(@12);
     }];
-//    
+  
+    //抗拉伸
+    [self.praiseBtnLab setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
+    [self.textBoxBtn setContentHuggingPriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
 
-    self.praiseBtnLab.text = @"2144";
+    self.iconImageView.hidden = YES;
+    self.praiseBtnLab.text = @"";
 }
 
 - (UIButton *)praiseBtn {
