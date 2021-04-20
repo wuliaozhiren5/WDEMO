@@ -841,7 +841,6 @@
     RRActorVC *vc= [[RRActorVC alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-  
 }
 
 - (void)clickNewHandGuide {
@@ -860,9 +859,11 @@
 }
 
 - (void)clickComment {
+     
     RRSeasonSeniorCommentsSubVC *vc = [[RRSeasonSeniorCommentsSubVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+     
 }
 
 - (void)clickArchiver {
@@ -919,7 +920,7 @@
 }
 
 - (void)setupViews {
-    [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
     
     self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
