@@ -10,7 +10,7 @@
 #import "RRSeasonSeniorCommentsInputBar.h"
 //#import "RRCommentService.h"
 #import "RRSeasonSeniorCommentsHearder.h"
-#import "RRSeasonSeniorCommentsReplyCell.h"
+#import "RRSeasonSeniorCommentsHasReplyListCell.h"
 #import "RRSeasonSeniorCommentsSecondarySubVC.h"
 //#import "RRAlertBase.h"
 
@@ -186,7 +186,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
      
-    RRSeasonSeniorCommentsReplyCell *cell = (RRSeasonSeniorCommentsReplyCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyCell class]) forIndexPath:indexPath];
+    RRSeasonSeniorCommentsHasReplyListCell *cell = (RRSeasonSeniorCommentsHasReplyListCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsHasReplyListCell class]) forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
     return cell;
@@ -237,7 +237,7 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        [_tableView registerClass:[RRSeasonSeniorCommentsReplyCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyCell class])];
+        [_tableView registerClass:[RRSeasonSeniorCommentsHasReplyListCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsHasReplyListCell class])];
         
  
 //        WS(weakSelf)

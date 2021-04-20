@@ -61,7 +61,7 @@
 		F50440CE2625A06B00834547 /* RRSeasonSeniorCommentsHearder.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */; };
 		F50440CF2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BA2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m */; };
 		F50440D02625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BE2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m */; };
-		F50440D12625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.m */; };
+		F50440D12625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m */; };
 		F50440D22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */; };
 		F50440D32625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */; };
 		F50440D42625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C62625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m */; };
@@ -424,7 +424,7 @@
 		F50440BC2625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSecondarySubVC.h; sourceTree = "<group>"; };
 		F50440BD2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSecondaryCell.h; sourceTree = "<group>"; };
 		F50440BE2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSecondaryInputBar.m; sourceTree = "<group>"; };
-		F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsReplyCell.m; sourceTree = "<group>"; };
+		F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsHasReplyListCell.m; sourceTree = "<group>"; };
 		F50440C02625A06B00834547 /* RRSeasonSeniorCommentsSubVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSubVC.h; sourceTree = "<group>"; };
 		F50440C12625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsReplyTableView.h; sourceTree = "<group>"; };
 		F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSecondaryReplyCell.m; sourceTree = "<group>"; };
@@ -438,7 +438,7 @@
 		F50440CA2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSecondaryReplyCell.h; sourceTree = "<group>"; };
 		F50440CB2625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsReplyTableView.m; sourceTree = "<group>"; };
 		F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSubVC.m; sourceTree = "<group>"; };
-		F50440CD2625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsReplyCell.h; sourceTree = "<group>"; };
+		F50440CD2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsHasReplyListCell.h; sourceTree = "<group>"; };
 		F505AC2225C936F600F43298 /* 约束动画.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "约束动画.md"; sourceTree = "<group>"; };
 		F505AC3225C940D000F43298 /* 抗拉伸抗压缩.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "抗拉伸抗压缩.md"; sourceTree = "<group>"; };
 		F505AC3325C940D100F43298 /* addChildViewController.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = addChildViewController.md; sourceTree = "<group>"; };
@@ -1143,22 +1143,12 @@
 		F50440B72625A06B00834547 /* 评论SeniorComments */ = {
 			isa = PBXGroup;
 			children = (
-				F50440BB2625A06B00834547 /* RRSeasonSeniorCommentsCell.h */,
-				F50440C72625A06B00834547 /* RRSeasonSeniorCommentsCell.m */,
-				F50440C52625A06B00834547 /* RRSeasonSeniorCommentsHearder.h */,
-				F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */,
+				F55AB4A526295BB6008C5A25 /* 评论列表cell */,
+				F55AB4A626295C01008C5A25 /* 回复列表cell */,
 				F50440B92625A06B00834547 /* RRSeasonSeniorCommentsInputBar.h */,
 				F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */,
-				F50440CD2625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.h */,
-				F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.m */,
-				F50440C12625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.h */,
-				F50440CB2625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m */,
-				F50440BD2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.h */,
-				F50440C92625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.m */,
 				F50440C82625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.h */,
 				F50440BE2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m */,
-				F50440CA2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.h */,
-				F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */,
 				F50440BC2625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.h */,
 				F50440C62625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m */,
 				F50440C02625A06B00834547 /* RRSeasonSeniorCommentsSubVC.h */,
@@ -1360,6 +1350,32 @@
 				F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		F55AB4A526295BB6008C5A25 /* 评论列表cell */ = {
+			isa = PBXGroup;
+			children = (
+				F50440BD2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.h */,
+				F50440C92625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.m */,
+				F50440CA2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.h */,
+				F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */,
+			);
+			path = "评论列表cell";
+			sourceTree = "<group>";
+		};
+		F55AB4A626295C01008C5A25 /* 回复列表cell */ = {
+			isa = PBXGroup;
+			children = (
+				F50440C52625A06B00834547 /* RRSeasonSeniorCommentsHearder.h */,
+				F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */,
+				F50440BB2625A06B00834547 /* RRSeasonSeniorCommentsCell.h */,
+				F50440C72625A06B00834547 /* RRSeasonSeniorCommentsCell.m */,
+				F50440CD2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.h */,
+				F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m */,
+				F50440C12625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.h */,
+				F50440CB2625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m */,
+			);
+			path = "回复列表cell";
 			sourceTree = "<group>";
 		};
 		F55E5B58258C589400C1DECD /* 评分只是展示ScoreView */ = {
@@ -2453,7 +2469,7 @@
 				F53F669B24FE484700770055 /* NSString+Password.m in Sources */,
 				F5D4EB5825DF6A6E00F807EF /* MainTouchTableTableView.m in Sources */,
 				F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */,
-				F50440D12625A06B00834547 /* RRSeasonSeniorCommentsReplyCell.m in Sources */,
+				F50440D12625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m in Sources */,
 				F50440D82625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m in Sources */,
 				F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */,
 				F5872CBF257DDEC000341B57 /* SettingModuleHandler.m in Sources */,

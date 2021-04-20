@@ -249,10 +249,35 @@
 //    北极星 回复 小姐姐：短发乾隆贼可爱笑点担当。但是人物和环境欠缺时尚…
 //    查看图片
 //    查看12333条回复
+    NSString *realNicknameStr = @"小姐姐小姐姐小姐姐小姐姐小姐姐小姐姐小姐姐小姐姐小姐姐小姐姐";
+    NSString *realReplyNicknameStr = @"北极星北极星北极星北极星北极星北极星北极星北极星";
+    //text
+    NSString *nicknameStr = [realNicknameStr copy];
+    NSString *replyNicknameStr = [realReplyNicknameStr copy];
+    
+    UILabel *nicknameLab = [[UILabel alloc] init];
+    nicknameLab.frame = CGRectMake(0, 0, 150, 100);
+    nicknameLab.font = RR_COMMONFONT(14);
+    nicknameLab.text = realNicknameStr;
+    
+    UILabel *replyNicknameLab = [[UILabel alloc] init];
+    replyNicknameLab.frame = CGRectMake(0, 0, 150, 100);
+    replyNicknameLab.font = RR_COMMONFONT(14);
+    //text
+    replyNicknameLab.text = realReplyNicknameStr;
+ 
+    //昵称避免太长
+    NSArray *realNicknameArray = [self getSeparatedLinesFromLabel:nicknameLab];
+    if (realNicknameArray.count > 2) {
+        nicknameStr = [NSString stringWithFormat:@"%@...",realNicknameArray[0]];
+    }
+    
+    //昵称避免太长
+    NSArray *realReplyNicknameArray = [self getSeparatedLinesFromLabel:replyNicknameLab];
+    if (realNicknameArray.count > 2) {
+        replyNicknameStr = [NSString stringWithFormat:@"%@...",realReplyNicknameArray[0]];
+    }
      
-    NSString *nicknameStr = @"小姐姐";
-    NSString *replyNicknameStr = @"";//@"北极星";
-
     //冒号
     NSString *colonStr = @"：";
     NSString *replyStr = @" 回复 ";
@@ -290,9 +315,12 @@
     text.color = kCOLOR_85888F;
 
     if (array.count > 2 ) {
-//        NSString *line5String = array[1];
-        //        NSString *showText = [NSString stringWithFormat:@"%@%@%@%@%@...查看全文", array[0], array[1], array[2], array[3], [line5String substringToIndex:line5String.length - 7]];
   
+        NSString *line2String = array[1];
+        NSString *showText = [NSString stringWithFormat:@"%@%@", array[0], [line2String substringToIndex:line2String.length - 7]];
+        //真正可以显示的文本
+        NSString *showContentText = [showText substringFromIndex:(nicknameStr.length + replyStr.length + replyNicknameStr.length + colonStr.length)];
+         
         {
             //nicknameStr
             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:nicknameStr];
@@ -345,23 +373,31 @@
             [text appendAttributedString:one];
         }
         
-        {
-            NSString *lineString = array[0];
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:[lineString substringFromIndex:nicknameStr.length + replyStr.length + replyNicknameStr.length + colonStr.length]];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_85888F;
- 
-            [text appendAttributedString:one];
-        }
+//        {
+//            NSString *lineString = array[0];
+//            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:[lineString substringFromIndex:nicknameStr.length + replyStr.length + replyNicknameStr.length + colonStr.length]];
+//            //              one.lineSpacing = 2.5;
+//            one.font = textFont;
+//            one.color = kCOLOR_85888F;
+//
+//            [text appendAttributedString:one];
+//        }
+//
+//        {
+//            NSString *lineString = array[1];
+//            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:[lineString substringToIndex:lineString.length - moreTextStr.length - lookImageStr.length]];
+//            //              one.lineSpacing = 2.5;
+//            one.font = textFont;
+//            one.color = kCOLOR_85888F;
+//
+//            [text appendAttributedString:one];
+//        }
         
         {
-            NSString *lineString = array[1];
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:[lineString substringToIndex:lineString.length - moreTextStr.length - lookImageStr.length]];
+             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:showContentText];
             //              one.lineSpacing = 2.5;
             one.font = textFont;
             one.color = kCOLOR_85888F;
- 
             [text appendAttributedString:one];
         }
         
@@ -424,7 +460,7 @@
 //        }
 
     } else {
-
+        
         {
             //nicknameStr
             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:nicknameStr];

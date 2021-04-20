@@ -1,19 +1,19 @@
 //
-//  RRSeasonSeniorCommentsReplyCell.m
+//  RRSeasonSeniorCommentsHasReplyListCell.m
 //  PUClient
 //
 //  Created by rrtv on 2021/4/12.
 //  Copyright © 2021 RRMJ. All rights reserved.
 //
 
-#import "RRSeasonSeniorCommentsReplyCell.h"
+#import "RRSeasonSeniorCommentsHasReplyListCell.h"
 #import "RRSeasonSeniorCommentsReplyTableView.h"
 
-@interface RRSeasonSeniorCommentsReplyCell ()
+@interface RRSeasonSeniorCommentsHasReplyListCell ()
 @property (nonatomic, strong) RRSeasonSeniorCommentsReplyTableView *tableView;
 @end
 
-@implementation RRSeasonSeniorCommentsReplyCell
+@implementation RRSeasonSeniorCommentsHasReplyListCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -22,7 +22,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        //隐藏分割线
+        //cell选中颜色
         //        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.isShowMore = NO;
         [self setupViews];

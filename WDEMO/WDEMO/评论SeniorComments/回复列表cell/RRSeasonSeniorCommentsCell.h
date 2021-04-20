@@ -45,8 +45,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isShowMore;//是否显示更多数据 默认NO
 //@property (nonatomic, assign) BOOL isFirst;//是否是剧透
  
- 
+@property (nonatomic, strong) id model;
+
 - (void)setupViews;
++ (CGFloat)cellHeightWithModel:(id )model;
 
 @end
 

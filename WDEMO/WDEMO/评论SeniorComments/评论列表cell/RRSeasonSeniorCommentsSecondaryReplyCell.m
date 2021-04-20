@@ -18,10 +18,12 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        //隐藏分割线
+        //cell选中颜色
         //        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.isShowMore = YES;
         [self setupViews];
+        self.firstView.hidden = YES;
+
     } else {
     }
     return self;
@@ -37,7 +39,7 @@
     [super setupViews];
 }
 
-- (void)fill {
+- (void)fillText {
     self.firstView.hidden = YES;
     //回复小姐姐：漫威10年，最喜欢的超级英雄排名最喜欢的超级英雄排名名
     NSString *replyNicknameStr = @"小姐姐";

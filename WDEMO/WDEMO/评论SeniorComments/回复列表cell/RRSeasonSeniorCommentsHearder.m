@@ -126,8 +126,7 @@
     btn.selected = !btn.isSelected;
     NSInteger index = @(btn.isSelected).integerValue;
     if (self.clickSwichIndex) {
-        
-        self.clickStatusIndex(btn, index);
+        self.clickSwichIndex(btn, index);
     }
 }
 @end

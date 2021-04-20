@@ -55,8 +55,8 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        //隐藏分割线
-        //        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        //cell选中颜色
+        //        self.selectionStyle = ;UITableViewCellSelectionStyleNone
         self.isShowMore = NO;
         [self setupViews];
     } else {
@@ -666,5 +666,20 @@
         [linesArray addObject:lineString];
     }
     return linesArray;
+}
+
+- (void)setModel:(id)model {
+    _model = model;
+}
+
++ (CGFloat)cellHeightWithModel:(id)model {
+    //顶部到文字 34
+    //文字到图   4
+    //图到回复   8
+    //底部    45
+    if (!model) {
+        return 0;
+    }
+    return 500; 
 }
 @end

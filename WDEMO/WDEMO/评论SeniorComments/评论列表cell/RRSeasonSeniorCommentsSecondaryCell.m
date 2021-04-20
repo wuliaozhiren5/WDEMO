@@ -17,7 +17,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        //隐藏分割线
+        //cell选中颜色
         //        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.isShowMore = YES;
         [self setupViews];
