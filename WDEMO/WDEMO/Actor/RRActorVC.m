@@ -62,13 +62,6 @@ const CGFloat headViewHeight = 256;
     //支持下刷新。关闭弹簧效果
     //    self.mainTableView.bounces =  NO;
     
-    if (@available(iOS 11.0, *)) {
-        self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    
-    
     self.navigationController.navigationBar.translucent = YES;//这个必须设置
     
     ////////////////////
@@ -329,13 +322,12 @@ const CGFloat headViewHeight = 256;
     /**
      * 处理头部视图
      */
-    CGFloat yOffset  = scrollView.contentOffset.y;
+    CGFloat yOffset = scrollView.contentOffset.y;
     if(yOffset < -headViewHeight) {
         
         CGRect f = self.headImageView.frame;
-        f.origin.y= yOffset ;
-        f.size.height=  -yOffset;
-        f.origin.y= yOffset;
+        f.origin.y = yOffset;
+        f.size.height = -yOffset;
         //NSLog(@"%f, %f, %f, %f",f.origin.x, f.origin.y, f.size.width, f.size.height);
 
         //改变头部视图的fram
@@ -535,6 +527,11 @@ const CGFloat headViewHeight = 256;
 - (MainTouchTableTableView *)mainTableView {
     if (_mainTableView == nil) {
         _mainTableView= [[MainTouchTableTableView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+        if (@available(iOS 11.0, *)) {
+            _mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+//            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.showsVerticalScrollIndicator = NO;
