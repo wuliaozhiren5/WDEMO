@@ -76,4 +76,40 @@
     
     return confirmPasswordText;
 }
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
++ (NSString *)transformCountWithString:(NSInteger)count {
+//    评论数规则
+//    1、评论数 = 发评论总数 + 发回复总数
+//    2、评论数 = 0 不显示
+//    3、9999<评论数>1，显示实际评论数
+//    4、评论数 = 10000，显示1w
+//    5、评论数 > 10000 且 评论数 =< 99999 ，按千位递进展示，如1.1w，9.9w
+//    6、评论数 = 100,000，显示10w
+//    7、评论数 > 100,000，显示10w+
+    NSString *countStr = @"";
+    if (count <= 0) {
+        countStr = @"";
+    } else if (count > 0 && count < 10000) {
+        countStr = @(count).stringValue;
+    } else if (count == 10000) {
+        countStr = @"1w";
+    } else if (count > 10000 && count < 100000) {
+        //万位
+        NSInteger a = count / 10000;
+        //千位
+        NSInteger b = (count / 1000) % 10;
+        if (b > 0) {
+            countStr = [NSString stringWithFormat:@"%zi.%ziw", a, b];
+        } else {
+            countStr = [NSString stringWithFormat:@"%ziw", a];
+        }
+    } else if (count == 100000) {
+        countStr = @"10w";
+    } else if (count > 100000) {
+        countStr = @"10w+";
+    }
+    return countStr;
+}
 @end

@@ -316,7 +316,32 @@
     //圆角
 //      [self circularCorner];//圆角
     
-}
+    NSInteger count = 11001;
+    NSString *countStr = @"";
+    if (count <= 0) {
+        countStr = @"";
+    } else if (count > 0 && count < 10000) {
+        countStr = @(count).stringValue;
+    } else if (count == 10000) {
+        countStr = @"1w";
+    } else if (count > 10000 && count < 100000) {
+        //万位
+        NSInteger a = count / 10000;
+        //千位
+        NSInteger b = (count / 1000) % 10;
+        if (b > 0) {
+            countStr = [NSString stringWithFormat:@"%zi.%ziw", a, b];
+        } else {
+            countStr = [NSString stringWithFormat:@"%ziw", a];
+        }
+    } else if (count == 100000) {
+        countStr = @"10w";
+    } else if (count > 100000) {
+        countStr = @"10w+";
+    }
+    NSLog(@"countStr: %@", countStr);
+
+ }
 
 ////圆角
 - (void)circularCorner {
