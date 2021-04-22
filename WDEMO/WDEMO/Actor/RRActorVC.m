@@ -507,7 +507,7 @@ const CGFloat headViewHeight = 256;
         
         
         UIView *cornerView = [[UIView alloc] init];;
-        cornerView.backgroundColor = kCOLOR_000000; ////kCOLOR_dynamicProvider_FFFFFF_1F2126;
+        cornerView.backgroundColor = kCOLOR_FFFFFF; ////kCOLOR_dynamicProvider_FFFFFF_1F2126;
         cornerView.frame = CGRectMake(0, 0, KWidth, 10);
 //        [cornerView setCornerOnTop:8];
         //圆角 贝塞尔曲线
