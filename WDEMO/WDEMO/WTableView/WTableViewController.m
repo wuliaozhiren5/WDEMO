@@ -81,6 +81,8 @@
     /*
      // UITableView的两种样式
      UITableViewStylePlain / UITableViewStyleGrouped
+     1.UITableViewStylePlain：设置分组，组头会悬浮 
+     2.UITableViewStyleGrouped：设置分组，组头不会悬浮
      
      self.tableView.backgroundColor = [UIColor purpleColor];
      
