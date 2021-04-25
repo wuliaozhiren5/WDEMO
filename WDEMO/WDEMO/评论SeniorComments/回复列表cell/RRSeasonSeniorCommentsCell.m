@@ -405,8 +405,49 @@
     self.yyContentLab.frame = CGRectMake(61, 34, (KWidth - 61 - 16), rect.size.height + 1);
     
     CGFloat currentHeight = 34 + (rect.size.height + 1);
-    self.singleImageView.frame = CGRectMake(61, 4 + currentHeight, 200, 200);
-    self.singleImageView.image = IMAGENAME(@"ic_comment_v");
+    
+//    self.singleImageView.frame = CGRectMake(61, 4 + currentHeight, 200, 200);
+//    self.singleImageView.image = IMAGENAME(@"ic_comment_v");
+     
+    CGFloat imageViewHeight = 0;
+    BOOL isHasImage = YES;
+//    BOOL isHasImage = NO;
+
+    if (isHasImage) {
+         self.singleImageView.hidden = NO;
+         self.singleImageView.image = IMAGENAME(@"ic_comment_v");
+  
+        CGFloat width = 300;
+        CGFloat height = 400;
+        CGFloat x = 61;
+        CGFloat y = 8 + currentHeight;
+        CGFloat max = 197;
+        CGFloat showWidth = 0;
+        CGFloat showHeight = 0;
+        
+        if (width > height) {
+            showWidth = max * 4 / 3;
+            showHeight = max;
+
+        } else if (width < height) {
+            showWidth = max;
+            showHeight = max * 4 / 3;
+
+        } else {
+            showWidth = max;
+            showHeight = max;
+            
+        }
+        self.singleImageView.frame = CGRectMake(x, y, showWidth, showHeight);
+        imageViewHeight = showHeight;
+    } else {
+        self.singleImageView.hidden = YES;
+        self.singleImageView.frame = CGRectZero;
+        imageViewHeight = 0;
+
+    }
+    currentHeight = currentHeight + 8 + imageViewHeight;
+    
     
     
 //    //有回复
