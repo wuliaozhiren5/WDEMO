@@ -83,8 +83,9 @@
 - (UIButton *)praiseBtn {
     if (!_praiseBtn) {
         _praiseBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 45)];
-        [_praiseBtn setImage:[UIImage imageNamed:@"ic_comment_like_n"] forState:UIControlStateNormal];
-        [_praiseBtn setImage:[UIImage imageNamed:@"ic_comment_like_h"] forState:UIControlStateSelected];
+        [_praiseBtn setImage:IMAGENAME(@"ic_comment_like_n") forState:UIControlStateNormal];
+        [_praiseBtn setImage:IMAGENAME(@"ic_comment_like_h") forState: UIControlStateHighlighted | UIControlStateSelected];
+        [_praiseBtn setImage:IMAGENAME(@"ic_comment_like_h") forState:UIControlStateSelected];
         _praiseBtn.selected = YES;
         _praiseBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     }

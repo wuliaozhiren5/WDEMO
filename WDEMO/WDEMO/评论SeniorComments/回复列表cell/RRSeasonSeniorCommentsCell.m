@@ -339,8 +339,9 @@
     text.font = textFont;
     text.color = kCOLOR_85888F;
     
-//    _isShowMore = YES;
-    if (array.count > 5 && !_isShowMore) {
+    
+    BOOL isShowMore = self.isShowMore;
+    if (array.count > 5 && !isShowMore) {
         NSString *line5String = array[4];
         //        NSString *showText = [NSString stringWithFormat:@"%@%@%@%@%@...查看全文", array[0], array[1], array[2], array[3], [line5String substringToIndex:line5String.length - 7]];
 //        //1-4行
@@ -560,8 +561,9 @@
 - (UIButton *)praiseBtn {
     if (!_praiseBtn) {
         _praiseBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 45)];
-        [_praiseBtn setImage:[UIImage imageNamed:@"ic_comment_like_n"] forState:UIControlStateNormal];
-        [_praiseBtn setImage:[UIImage imageNamed:@"ic_comment_like_h"] forState:UIControlStateSelected];
+        [_praiseBtn setImage:IMAGENAME(@"ic_comment_like_n") forState:UIControlStateNormal];
+        [_praiseBtn setImage:IMAGENAME(@"ic_comment_like_h") forState: UIControlStateHighlighted | UIControlStateSelected];
+        [_praiseBtn setImage:IMAGENAME(@"ic_comment_like_h") forState:UIControlStateSelected];
         _praiseBtn.selected = YES;
         _praiseBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
         
