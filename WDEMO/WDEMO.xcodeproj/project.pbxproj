@@ -268,6 +268,7 @@
 		F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5F5B47525FA3AE90069491B /* avatar.jpg */; };
 		F5F701F225CD2C1F0000D5A9 /* 空白.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F701F125CD2C1F0000D5A9 /* 空白.md */; };
 		F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */; };
+		F5FB5D7B263AB2C400155BFE /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FB5D7A263AB2C400155BFE /* NSString+Util.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -782,6 +783,8 @@
 		F5F701F125CD2C1F0000D5A9 /* 空白.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白.md"; sourceTree = "<group>"; };
 		F5F701F725CD2E290000D5A9 /* KeyedArchiverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyedArchiverViewController.h; sourceTree = "<group>"; };
 		F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyedArchiverViewController.m; sourceTree = "<group>"; };
+		F5FB5D79263AB2C400155BFE /* NSString+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
+		F5FB5D7A263AB2C400155BFE /* NSString+Util.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Util.m"; sourceTree = "<group>"; };
 		FBDBA0D4EFFC9C6F87B1E8B6 /* Pods-WDEMO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDEMO.debug.xcconfig"; path = "Target Support Files/Pods-WDEMO/Pods-WDEMO.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1560,6 +1563,8 @@
 				F53F669124FE454000770055 /* PasswordTextField.m */,
 				F53F669924FE484700770055 /* NSString+Password.h */,
 				F53F669A24FE484700770055 /* NSString+Password.m */,
+				F5FB5D79263AB2C400155BFE /* NSString+Util.h */,
+				F5FB5D7A263AB2C400155BFE /* NSString+Util.m */,
 				F566A1D125008B6A004991D3 /* PasswordVC.h */,
 				F566A1D225008B6A004991D3 /* PasswordVC.m */,
 				F566A1D425008D76004991D3 /* ChangePasswordVC.h */,
@@ -2451,6 +2456,7 @@
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
+				F5FB5D7B263AB2C400155BFE /* NSString+Util.m in Sources */,
 				F50440D62625A06B00834547 /* RRSeasonSeniorCommentsSecondaryCell.m in Sources */,
 				F50440D72625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */,
 				F5F5B44D25FA1DFE0069491B /* RRActorVideoVC.m in Sources */,

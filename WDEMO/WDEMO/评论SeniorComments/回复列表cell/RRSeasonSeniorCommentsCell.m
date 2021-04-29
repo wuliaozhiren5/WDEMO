@@ -55,9 +55,9 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        //cell选中颜色
-        //        self.selectionStyle = ;UITableViewCellSelectionStyleNone
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.isShowMore = NO;
+        self.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
         [self setupViews];
     } else {
     }
@@ -94,13 +94,14 @@
     //image
     [self.contentView addSubview:self.singleImageView];
     //replyTable
-//    [self.contentView addSubview:self.tableView];
-
+    //    [self.contentView addSubview:self.tableView];
     
+    //抗压缩
     [self.nicknamelab setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
     [self.nicknameLevelLab setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
     
     //top 20
+    //头像
     [self.avatarImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.equalTo(@36);
         make.top.equalTo(@12);
@@ -112,7 +113,7 @@
         make.width.equalTo(@11);
         make.height.equalTo(@11);
     }];
-
+    
     //昵称vip
     [self.nicknameVipIconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@14);
@@ -131,7 +132,7 @@
     
     //昵称等级lab
     [self.nicknameLevelLab mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.equalTo(@4);
+        //        make.leading.equalTo(@4);
         make.trailing.equalTo(@-4);
         make.centerY.equalTo(self.nicknameLevelView);
         //        make.trailing.equalTo(@-16);
@@ -142,11 +143,11 @@
     [self.nicknamelab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(@61);
         make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
-//        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
+        //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
         make.top.equalTo(@10);
     }];
     
- 
+    
     //    [self.contentLab mas_makeConstraints:^(MASConstraintMaker *make) {
     //        make.top.equalTo(self.nicknamelab.mas_bottom).offset(7);
     //        make.leading.equalTo(@61);
@@ -174,9 +175,11 @@
     }];
     
     [self.praiseBtnLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@0);
-        make.bottom.equalTo(@0);
+        //        make.top.equalTo(@0);
+        make.bottom.equalTo(@-13);
         make.trailing.equalTo(@-20);
+        make.height.equalTo(@15);
+        //        make.centerY.equalTo(self.praiseBtn);
     }];
     
     [self.praiseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -201,23 +204,123 @@
         make.center.equalTo(self.firstView);
     }];
     
-//    [self.singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        //        make.top.equalTo(self.contentLab.mas_bottom).offset(4);
-//        //        make.top.equalTo(self.yyContentLab.mas_top).offset(0);
-//        make.bottom.equalTo(self.bottomView.mas_top).offset(0);
-//        make.leading.equalTo(@61);
-//        make.width.equalTo(@197);
-//        //        make.height.equalTo(@197);
-//        make.height.equalTo(self.singleImageView.mas_width).multipliedBy(2.0);
-//    }];
-     
-    //填充数据
-    [self fillBottomView];
-
-    [self fillAvaterNickname];
-
-    [self fillText];
+    //    [self.singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        //        make.top.equalTo(self.contentLab.mas_bottom).offset(4);
+    //        //        make.top.equalTo(self.yyContentLab.mas_top).offset(0);
+    //        make.bottom.equalTo(self.bottomView.mas_top).offset(0);
+    //        make.leading.equalTo(@61);
+    //        make.width.equalTo(@197);
+    //        //        make.height.equalTo(@197);
+    //        make.height.equalTo(self.singleImageView.mas_width).multipliedBy(2.0);
+    //    }];
+    
+    
+//    //填充数据
+//    [self fillBottomView];
+//
+//    [self fillAvaterNickname];
+//
+//    [self fillText];
 }
+
+- (void)setModel:(id)model {
+    _model = model;
+    
+    //填充数据
+    self.praiseBtn.selected = YES;
+    self.praiseBtnLab.text = [NSString transformCountWithString:12133];
+    self.dateLab.text = [NSString getFormatterDateStringWithTimeInterval:122212312312 / 1000.0];;
+    //头像
+//    [self.avatarImageView rr_setImageWithURLString:model.author.headImgUrl placeholderImage:KPersonHolderImg];
+
+    //nickname
+    self.nicknamelab.text = @"测试";
+//    NSString *levelStr = [NSString stringWithFormat:@"Lv.%zi", 5];
+    NSString *levelStr = @"Lv.10";
+    self.nicknameLevelLab.text = levelStr;
+    
+    //vip
+    BOOL isVip = NO;
+ 
+    if (isVip) {
+        self.avatarVipIconImageView.hidden = NO;
+        self.nicknameVipIconImageView.hidden = NO;
+        
+        //昵称vip
+        [self.nicknameVipIconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.width.equalTo(@14);
+            make.height.equalTo(@14);
+            make.centerY.equalTo(self.nicknamelab);
+            make.trailing.lessThanOrEqualTo(self.contentView.mas_trailing).offset(-16);
+        }];
+        
+        //昵称等级view
+        [self.nicknameLevelView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.equalTo(self.nicknameVipIconImageView.mas_leading).offset(-4);
+            make.centerY.equalTo(self.nicknamelab);
+            make.leading.equalTo(self.nicknameLevelLab.mas_leading).offset(-4);
+            make.height.equalTo(@14);
+        }];
+        
+        //昵称等级lab
+        [self.nicknameLevelLab mas_remakeConstraints:^(MASConstraintMaker *make) {
+            //        make.leading.equalTo(@4);
+            make.trailing.equalTo(@-4);
+            make.centerY.equalTo(self.nicknameLevelView);
+            //        make.trailing.equalTo(@-16);
+            //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
+        }];
+        
+        //昵称
+        [self.nicknamelab mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(@61);
+            make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
+            //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
+            make.top.equalTo(@10);
+        }];
+        
+    } else {
+        self.avatarVipIconImageView.hidden = YES;
+        self.nicknameVipIconImageView.hidden = YES;
+        
+        //昵称等级view
+        [self.nicknameLevelView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.lessThanOrEqualTo(self.contentView.mas_trailing).offset(-16);
+            make.centerY.equalTo(self.nicknamelab);
+            make.leading.equalTo(self.nicknameLevelLab.mas_leading).offset(-4);
+            make.height.equalTo(@14);
+        }];
+        
+        //昵称等级lab
+        [self.nicknameLevelLab mas_remakeConstraints:^(MASConstraintMaker *make) {
+            //        make.leading.equalTo(@4);
+            make.trailing.equalTo(@-4);
+            make.centerY.equalTo(self.nicknameLevelView);
+            //        make.trailing.equalTo(@-16);
+            //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
+        }];
+        
+        //昵称
+        [self.nicknamelab mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(@61);
+            make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
+            //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
+            make.top.equalTo(@10);
+        }];
+    }
+}
+
++ (CGFloat)cellHeightWithModel:(id)model {
+    //顶部到文字 34
+    //文字到图   4
+    //图到回复   8
+    //底部    45
+    if (!model) {
+        return 0;
+    }
+    return 500;
+}
+
 
 - (void)fillBottomView {
     self.dateLab.text = @"04-12";
@@ -232,7 +335,7 @@
     self.nicknamelab.text = @"水浒传三国演义西游记红楼梦水浒传三国演义西游记红楼梦";
     self.nicknameLevelLab.text = @"lv.99";
     
-//    //vip
+    //    //vip
     BOOL isVip = YES;
     if (isVip) {
         self.avatarVipIconImageView.hidden = NO;
@@ -256,7 +359,7 @@
         
         //昵称等级lab
         [self.nicknameLevelLab mas_remakeConstraints:^(MASConstraintMaker *make) {
-    //        make.leading.equalTo(@4);
+            //        make.leading.equalTo(@4);
             make.trailing.equalTo(@-4);
             make.centerY.equalTo(self.nicknameLevelView);
             //        make.trailing.equalTo(@-16);
@@ -267,7 +370,7 @@
         [self.nicknamelab mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.leading.equalTo(@61);
             make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
-    //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
+            //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
             make.top.equalTo(@10);
         }];
         
@@ -285,7 +388,7 @@
         
         //昵称等级lab
         [self.nicknameLevelLab mas_remakeConstraints:^(MASConstraintMaker *make) {
-    //        make.leading.equalTo(@4);
+            //        make.leading.equalTo(@4);
             make.trailing.equalTo(@-4);
             make.centerY.equalTo(self.nicknameLevelView);
             //        make.trailing.equalTo(@-16);
@@ -296,7 +399,7 @@
         [self.nicknamelab mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.leading.equalTo(@61);
             make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
-    //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
+            //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
             make.top.equalTo(@10);
         }];
     }
@@ -344,7 +447,7 @@
     if (array.count > 5 && !isShowMore) {
         NSString *line5String = array[4];
         //        NSString *showText = [NSString stringWithFormat:@"%@%@%@%@%@...查看全文", array[0], array[1], array[2], array[3], [line5String substringToIndex:line5String.length - 7]];
-//        //1-4行
+        //        //1-4行
         NSString *showText = [NSString stringWithFormat:@"%@%@%@%@%@%@", array[0], array[1], array[2], array[3], [line5String substringToIndex:line5String.length - moreTextStr.length - showAllTextStr.length], moreTextStr];
         {
             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:showText];
@@ -380,7 +483,7 @@
             }];
             [text appendAttributedString:one];
         }
-          
+        
     } else {
         
         NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:textStr];
@@ -407,17 +510,17 @@
     
     CGFloat currentHeight = 34 + (rect.size.height + 1);
     
-//    self.singleImageView.frame = CGRectMake(61, 4 + currentHeight, 200, 200);
-//    self.singleImageView.image = IMAGENAME(@"ic_comment_v");
-     
+    //    self.singleImageView.frame = CGRectMake(61, 4 + currentHeight, 200, 200);
+    //    self.singleImageView.image = IMAGENAME(@"ic_comment_v");
+    
     CGFloat imageViewHeight = 0;
     BOOL isHasImage = YES;
-//    BOOL isHasImage = NO;
-
+    //    BOOL isHasImage = NO;
+    
     if (isHasImage) {
-         self.singleImageView.hidden = NO;
-         self.singleImageView.image = IMAGENAME(@"ic_comment_v");
-  
+        self.singleImageView.hidden = NO;
+        self.singleImageView.image = IMAGENAME(@"ic_comment_v");
+        
         CGFloat width = 300;
         CGFloat height = 400;
         CGFloat x = 61;
@@ -429,11 +532,11 @@
         if (width > height) {
             showWidth = max * 4 / 3;
             showHeight = max;
-
+            
         } else if (width < height) {
             showWidth = max;
             showHeight = max * 4 / 3;
-
+            
         } else {
             showWidth = max;
             showHeight = max;
@@ -445,24 +548,24 @@
         self.singleImageView.hidden = YES;
         self.singleImageView.frame = CGRectZero;
         imageViewHeight = 0;
-
+        
     }
     currentHeight = currentHeight + 8 + imageViewHeight;
     
     
     
-//    //有回复
-//    BOOL isHasReply = YES;
-//    self.tableView.frame = CGRectMake(61, 34 + rect.size.height + 1,  (KWidth - 61 - 16), 300);
-////    self.tableView.scrollEnabled = NO;
+    //    //有回复
+    //    BOOL isHasReply = YES;
+    //    self.tableView.frame = CGRectMake(61, 34 + rect.size.height + 1,  (KWidth - 61 - 16), 300);
+    ////    self.tableView.scrollEnabled = NO;
     
     
     
-//    //回复小姐姐：漫威10年，最喜欢的超级英雄排名最喜欢的超级英雄排名名
-//    NSString *replyNicknameStr = @"小姐姐";
-//    NSString *replyStr = @"回复";
-//    //冒号
-//    NSString *colonStr = @"：";
+    //    //回复小姐姐：漫威10年，最喜欢的超级英雄排名最喜欢的超级英雄排名名
+    //    NSString *replyNicknameStr = @"小姐姐";
+    //    NSString *replyStr = @"回复";
+    //    //冒号
+    //    NSString *colonStr = @"：";
 }
 
 - (UIImageView *)singleImageView {
@@ -531,11 +634,11 @@
 
 #pragma mark长按手势
 - (void)longPressToDo:(UILongPressGestureRecognizer *)gesture {
-     //长按开始
-     if (gesture.state == UIGestureRecognizerStateBegan) {
+    //长按开始
+    if (gesture.state == UIGestureRecognizerStateBegan) {
         NSLog(@"--> 长按手势 state :begin ");
     } else {
-         //长按结束
+        //长按结束
         NSLog(@"--> 长按手势 state :end ");
     }
 }
@@ -711,18 +814,5 @@
     return linesArray;
 }
 
-- (void)setModel:(id)model {
-    _model = model;
-}
 
-+ (CGFloat)cellHeightWithModel:(id)model {
-    //顶部到文字 34
-    //文字到图   4
-    //图到回复   8
-    //底部    45
-    if (!model) {
-        return 0;
-    }
-    return 500; 
-}
 @end

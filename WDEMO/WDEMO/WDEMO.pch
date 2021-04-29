@@ -22,5 +22,6 @@ typedef void (^ClickIndexBlock)(UIResponder *sender, NSUInteger index);
 #import <Masonry/Masonry.h>
 #import "ACMacros.h"
 #import "UIColor+color.h"
-
+#import "NSString+Util.h" 
+#import "NSString+Password.h"
 #endif /* WDEMO_pch */

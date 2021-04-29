@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "YYKit.h"
+
 //一级评论cell
 NS_ASSUME_NONNULL_BEGIN
+typedef void(^ClickSeasonSeniorCommentsCell)(id model);//不可以为空
+//typedef void(^ClickSeasonSeniorCommentsCell)(RRSeniorCommentsModel * _Nonnull model);//不可以为空
 
 @interface RRSeasonSeniorCommentsCell : UITableViewCell
 
@@ -44,12 +47,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL isShowMore;//是否显示更多数据 默认NO
 //@property (nonatomic, assign) BOOL isFirst;//是否是剧透
+
+//@property (nonatomic, copy) ClickSeasonSeniorCommentsCell clickText;
  
+//@property (nonatomic, copy) ClickSeasonSeniorCommentsCell clickCopy;
+
+@property (nonatomic, copy) ClickSeasonSeniorCommentsCell clickDelete;
+
+//@property (nonatomic, copy) ClickSeasonSeniorCommentsCell clickReport;
+
+//@property (nonatomic, copy) ClickSeasonSeniorCommentsCell clickImage;
+
 @property (nonatomic, strong) id model;
-
-- (void)setupViews;
 + (CGFloat)cellHeightWithModel:(id )model;
-
+- (void)setupViews;
 @end
 
 NS_ASSUME_NONNULL_END
