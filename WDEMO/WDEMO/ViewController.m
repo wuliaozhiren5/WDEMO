@@ -309,7 +309,7 @@
     
     
     
-    [self trycatch];
+    [self tryCatch];
     
     
 //    [self calculate];
@@ -360,7 +360,7 @@
     
 }
 
-- (void)trycatch {
+- (void)tryCatch {
     //    iOS - try~catch捕获异常防止崩溃简单实用
     //    https://www.cnblogs.com/adampei-bobo/p/7444040.html
     

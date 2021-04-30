@@ -11,7 +11,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (Util)
+//过滤回车@"\r"
++ (NSString *)filterReturn:(NSString *)str;
 
+//过滤换行@"\n"
++ (NSString *)filterNewLine:(NSString *)str;
 @end
 
 NS_ASSUME_NONNULL_END
