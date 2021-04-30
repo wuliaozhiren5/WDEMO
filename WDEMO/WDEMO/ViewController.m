@@ -156,15 +156,15 @@
     
     
     NSArray * array = @[
-         
+        
         [ListModel initWithTitle:@"评论" detail:@"bilibili，爱奇艺，优酷评论UI）" type:ListModelTypeComment],
         [ListModel initWithTitle:@"新手引导（某个页面的新手引导）" detail:@"新手引导（某个页面的新手引导）" type:ListModelTypeNewHandGuide],
-
+        
         [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
         [ListModel initWithTitle:@"Personal个人主页" detail:@"PersonalHomePage" type:ListModelTypePersonalHomePage],
         [ListModel initWithTitle:@"Actor个人主页" detail:@"ActorHomePage" type:ListModelTypeActorHomePage],
-
-
+        
+        
         [ListModel initWithTitle:@"TagList1" detail:@"瀑布流" type:ListModelTypeTagList1],
         [ListModel initWithTitle:@"TagList2" detail:@"瀑布流优化" type:ListModelTypeTagList2],
         [ListModel initWithTitle:@"3DTouch" detail:@"3DTouch" type:ListModelType3DTouch],
@@ -190,9 +190,9 @@
         [ListModel initWithTitle:@"WKWebView" detail:@"网页" type:ListModelTypeWebView],
         [ListModel initWithTitle:@"ScoreView" detail:@"评分只是展示ScoreView" type:ListModelTypeScore],
         [ListModel initWithTitle:@"Archiver" detail:@"归档解档" type:ListModelTypeArchiver],
-//        [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
-//        [ListModel initWithTitle:@"个人主页" detail:@"PersonalHomepage" type:ListModelTypePersonalHomepage],
-
+        //        [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
+        //        [ListModel initWithTitle:@"个人主页" detail:@"PersonalHomepage" type:ListModelTypePersonalHomepage],
+        
         
         
         [ListModel initWithTitle:@"Test" detail:@"测试" type:ListModelTypeTest],
@@ -231,9 +231,9 @@
     //        [UIView createRedViewWithRect:CGRectMake(20, 20, 10, 10) bySuperView:imageV];
     
     
-//    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
-//    view.backgroundColor = [UIColor grayColor];
-//    [self.view addSubview:view];
+    //    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 100, 100)];
+    //    view.backgroundColor = [UIColor grayColor];
+    //    [self.view addSubview:view];
     
     //小红点
     //    [UIView createRedViewWithPoint:CGPointMake(10, 10) bySuperView:view];
@@ -312,9 +312,9 @@
     [self tryCatch];
     
     
-//    [self calculate];
+    //    [self calculate];
     //圆角
-//      [self circularCorner];//圆角
+    //      [self circularCorner];//圆角
     
     NSInteger count = 11001;
     NSString *countStr = @"";
@@ -340,23 +340,63 @@
         countStr = @"10w+";
     }
     NSLog(@"countStr: %@", countStr);
+    
+    
+    
+    [self testSring];
+}
 
- }
 
+- (void)testSring {
+    //    substringFromIndex 和 substringToIndex用法，有需要的朋友可以参考下。
+    //
+    //    substringFromIndex：从Index开始截取到最后
+    //    substringToIndex：从最前头一直截取到Index
+    
+//    substringFromIndex 范围：0 - lenght     0：的时候是全部  lenght：的时候是@""
+//    substringToIndex   范围：0 - lenght     0：@“”         lenght：的时候是全部
+    
+    NSString *testsubstringToorFromIndex = @"test1234";
+    
+//    NSString *fromIndexstring = [testsubstringToorFromIndex substringFromIndex:8];
+//
+//    NSString *toIndexstring = [testsubstringToorFromIndex substringToIndex:8];
+    
+//    NSString *fromIndexstring = [testsubstringToorFromIndex substringFromIndex:8];
+//
+//    NSString *toIndexstring = [testsubstringToorFromIndex substringToIndex:8];
+    
+ 
+    NSString *fromIndexstring = [testsubstringToorFromIndex substringFromIndex:2];
+
+    NSString *toIndexstring = [testsubstringToorFromIndex substringToIndex:2];
+    
+    NSLog(@"subtringfromindex is %@",fromIndexstring);
+    
+    NSLog(@"subtringToindex is %@",toIndexstring);
+    
+    //    输出结果
+    //
+    //    2014-11-29 06:23:59.634 sdktest[587:11024] subtringfromindex is st1234
+    //
+    //    2014-11-29 06:23:59.634 sdktest[587:11024] subtringToindex is te
+    //
+    
+}
 ////圆角
 - (void)circularCorner {
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
     imageView.image = [UIImage imageNamed:@"1"];
     
     imageView.backgroundColor = [UIColor grayColor];
-
+    
     UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:imageView.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(25, 5)];
     CAShapeLayer *maskLayer = [[CAShapeLayer alloc]init];
     maskLayer.frame = imageView.bounds;
     maskLayer.path = maskPath.CGPath;
     imageView.layer.mask = maskLayer;
     [self.view addSubview:imageView];
-  
+    
     
 }
 
@@ -800,23 +840,23 @@
 }
 
 - (void)clickPageController {
-     
-//    OneViewTableTableViewController * oneVc  = [OneViewTableTableViewController new];
-//    oneVc.delegate = self;
-//    SecondViewTableViewController * twoVc  = [SecondViewTableViewController new];
-//    twoVc.delegate = self;
-//    ThirdViewCollectionViewController * thirdVc  = [ThirdViewCollectionViewController new];
-//    thirdVc.delegate = self;
-     
-     
-//    WMPageController *pageVC = [[WMPageController alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
-//    [pageVC setViewFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
-//    pageVC.delegate = self;
-//    pageVC.menuItemWidth = 85;
-//    pageVC.menuHeight = 44;
-//    pageVC.postNotification = YES;
-//    pageVC.bounces = YES;
-//    return pageVC;
+    
+    //    OneViewTableTableViewController * oneVc  = [OneViewTableTableViewController new];
+    //    oneVc.delegate = self;
+    //    SecondViewTableViewController * twoVc  = [SecondViewTableViewController new];
+    //    twoVc.delegate = self;
+    //    ThirdViewCollectionViewController * thirdVc  = [ThirdViewCollectionViewController new];
+    //    thirdVc.delegate = self;
+    
+    
+    //    WMPageController *pageVC = [[WMPageController alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
+    //    [pageVC setViewFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+    //    pageVC.delegate = self;
+    //    pageVC.menuItemWidth = 85;
+    //    pageVC.menuHeight = 44;
+    //    pageVC.postNotification = YES;
+    //    pageVC.bounces = YES;
+    //    return pageVC;
     
     UIViewController *vc0 = [UIViewController new];
     vc0.view.backgroundColor = [UIColor grayColor];
@@ -824,7 +864,7 @@
     vc1.view.backgroundColor = [UIColor darkGrayColor];
     UIViewController *vc2 = [UIViewController new];
     vc2.view.backgroundColor = [UIColor systemGrayColor];
-
+    
     NSArray *viewControllers = @[vc0, vc1, vc2];
     NSArray *titles = @[@"first",@"second",@"third"];
     HomePageViewController *vc= [[HomePageViewController alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
@@ -845,9 +885,9 @@
     //底部小横线样式，小红线长度
     vc.progressViewIsNaughty = YES;
     vc.progressWidth = 10;
-//        vc.selectIndex = 1;
-//        vc.automaticallyCalculatesItemWidths = YES;
-//        vc.titleSizeSelected = 16;
+    //        vc.selectIndex = 1;
+    //        vc.automaticallyCalculatesItemWidths = YES;
+    //        vc.titleSizeSelected = 16;
     
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
@@ -870,7 +910,7 @@
 
 - (void)clickNewHandGuide {
     //新手引导
-//    NewHandGuideViewController *vc= [[NewHandGuideViewController alloc]init];
+    //    NewHandGuideViewController *vc= [[NewHandGuideViewController alloc]init];
     
     CGRect rect = CGRectMake(100, 200, 54, 40);
     CGFloat width = 54;//rect.size.width + 20;
@@ -884,17 +924,17 @@
 }
 
 - (void)clickComment {
-     
+    
     RRSeasonSeniorCommentsSubVC *vc = [[RRSeasonSeniorCommentsSubVC alloc] init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
-     
+    
 }
 
 - (void)clickArchiver {
     //归档解档
     KeyedArchiverViewController *vc= [[KeyedArchiverViewController alloc]init];
-    vc.hidesBottomBarWhenPushed = YES; 
+    vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
