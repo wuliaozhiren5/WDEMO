@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "YYKit.h"
+#import "RRSeniorCommentsModel.h"
 
 //一级评论cell
 NS_ASSUME_NONNULL_BEGIN
-typedef void(^ClickSeasonSeniorCommentsCell)(id model);//不可以为空
-//typedef void(^ClickSeasonSeniorCommentsCell)(RRSeniorCommentsModel * _Nonnull model);//不可以为空
+typedef void(^ClickSeasonSeniorCommentsCell)(RRSeniorCommentsModel * _Nonnull model);//不可以为空
+
 
 @interface RRSeasonSeniorCommentsCell : UITableViewCell
 
@@ -58,8 +59,12 @@ typedef void(^ClickSeasonSeniorCommentsCell)(id model);//不可以为空
 
 //@property (nonatomic, copy) ClickSeasonSeniorCommentsCell clickImage;
 
-@property (nonatomic, strong) id model;
-+ (CGFloat)cellHeightWithModel:(id )model;
+@property (nonatomic, strong) RRSeniorCommentsModel *model;
+
+@property (nonatomic, assign) BOOL isHalf;
+
++ (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model;
+
 - (void)setupViews;
 @end
 

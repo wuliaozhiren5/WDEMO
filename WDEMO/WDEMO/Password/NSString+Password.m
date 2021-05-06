@@ -80,21 +80,21 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 + (NSString *)getFormatterDateStringWithTimeInterval:(NSTimeInterval)timeInterval {
-    return @"";
-//    if (timeInterval == 0) {
-//        return @"";
-//    }
-//    NSTimeInterval delta = [[NSDate date] timeIntervalSince1970] - timeInterval;
-//    if (delta < 60) { // <1分钟-刚刚
-//        return @"刚刚";
-//    } else if (delta < 60 * 60) { // <1小时以内-X分钟前
-//        return [NSString stringWithFormat:@"%d分钟前", (int)(delta / 60)];
-//    } else if (delta < 60 * 60 * 24) { // <24小时以内-X小时前
-//        return [NSString stringWithFormat:@"%d小时前", (int)(delta / (60 * 60))];
-//    } else if (delta < 60 * 60 * 24 * 10) { // <10天-X天前（自然天）
-//        return [NSString stringWithFormat:@"%d天前", (int)(delta / (60 * 60 * 24))];
-//    } else { // >10天
-//        NSDate *create = [NSDate dateWithTimeIntervalSince1970:timeInterval];
+//    return @"";
+    if (timeInterval == 0) {
+        return @"";
+    }
+    NSTimeInterval delta = [[NSDate date] timeIntervalSince1970] - timeInterval;
+    if (delta < 60) { // <1分钟-刚刚
+        return @"刚刚";
+    } else if (delta < 60 * 60) { // <1小时以内-X分钟前
+        return [NSString stringWithFormat:@"%d分钟前", (int)(delta / 60)];
+    } else if (delta < 60 * 60 * 24) { // <24小时以内-X小时前
+        return [NSString stringWithFormat:@"%d小时前", (int)(delta / (60 * 60))];
+    } else if (delta < 60 * 60 * 24 * 10) { // <10天-X天前（自然天）
+        return [NSString stringWithFormat:@"%d天前", (int)(delta / (60 * 60 * 24))];
+    } else { // >10天
+        NSDate *create = [NSDate dateWithTimeIntervalSince1970:timeInterval];
 //        if (create.isThisYear) { // >=10天-且年份相同 X-Y 如12-12链接文字
 //            static NSDateFormatter *thisYearFmt;
 //            if (!thisYearFmt) {
@@ -103,14 +103,14 @@
 //            }
 //            return [thisYearFmt stringFromDate:create];
 //        } else { // >=10天且年份不同，显示年月日
-//            static NSDateFormatter *otherYearFmt;
-//            if (!otherYearFmt) {
-//                otherYearFmt = [[NSDateFormatter alloc] init];
-//                otherYearFmt.dateFormat = @"yyyy-MM-dd";
-//            }
-//            return [otherYearFmt stringFromDate:create];
+            static NSDateFormatter *otherYearFmt;
+            if (!otherYearFmt) {
+                otherYearFmt = [[NSDateFormatter alloc] init];
+                otherYearFmt.dateFormat = @"yyyy-MM-dd";
+            }
+            return [otherYearFmt stringFromDate:create];
 //        }
-//    }
+    }
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

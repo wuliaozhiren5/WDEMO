@@ -11,8 +11,8 @@
 #import "RRSeasonSeniorCommentsSecondaryInputBar.h"
 //#import "RRCommentService.h"
 #import "RRSeasonSeniorCommentsHearder.h"
-#import "RRSeasonSeniorCommentsSecondaryCell.h"
 #import "RRSeasonSeniorCommentsSecondaryReplyCell.h"
+#import "RRSeasonSeniorCommentsNoReplyListCell.h"
 
 @interface RRSeasonSeniorCommentsSecondarySubVC () <UITableViewDataSource, UITableViewDelegate>
 //@property (nonatomic, strong) RRCommentService *service;
@@ -26,6 +26,9 @@
 @property (nonatomic, strong) UIView *topBar;
 @property (nonatomic, strong) UILabel *titleLab;
 @property (nonatomic, strong) UIButton *closeBtn; //半屏
+
+@property (nonatomic, copy) NSMutableArray *data;//数据
+
 @end
 
 @implementation RRSeasonSeniorCommentsSecondarySubVC
@@ -51,6 +54,7 @@
     // Do any additional setup after loading the view.
 //    self.customTabbar.hidden = YES;
     [self setupViews];
+    [self refreshData];
 
     //    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
     ////    view.backgroundColor = [UIColor whiteColor];
@@ -86,6 +90,23 @@
     //        make.bottom.equalTo(countLab);
     //        make.trailing.equalTo(countLab);
     //    }];
+}
+
+- (void)refreshData {
+    //iOS 读取本地Json文件
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"回复" ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *error;
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (!jsonData || error) {
+        //DLog(@"JSON解码失败");
+    } else {
+        //DLog(@"JSON解码成功");
+    }
+    NSDictionary *dic = (NSDictionary *)jsonObj;
+    RRSeniorCommentsReplyListModel *model = [RRSeniorCommentsReplyListModel modelWithJSON:dic[@"data"]];
+    self.data = [NSMutableArray arrayWithArray:model.content];
+    [self.tableView reloadData];
 }
 
 - (void)tableViewSectionHeader {
@@ -181,33 +202,46 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    //    return 1;
     switch (section) {
         case 0:
             return 1;
             break;
         default:
-            return 1;
+            return 2;
             break;
     }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     //     return [ArticleDetailCell cellHeightfor:model];
-    return 1000;
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case 0:
+        {
+            
+            return 1000;
+//            return [RRSeasonSeniorCommentsNoReplyListCell cellHeightWithModel:self.commentModel isShowAll:YES];
+        }
+            break;
+        default:
+        {
+            return 1000;
+
+//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
+//            return [RRSeasonSeniorCommentsSecondaryReplyCell cellHeightWithModel:model];
+        }
+            break;
+    }
 }
 
 //header高度
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     switch (section) {
-        case 0:
-            return 0.0;
-            break;
         case 1:
             return 21.0;
             break;
         default:
-            return 0.0;
+            return 0.1;
             break;
     }
 }
@@ -219,14 +253,36 @@
             return 10.0;
             break;
         default:
-            return 0.0;
+            return 0.1;
             break;
     }
 }
 
 //自定义头
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return _header;
+    
+    switch (section) {
+        case 0:
+        {
+            return [[UIView alloc] init];
+        }
+            break;
+        default:
+        {
+            return [[UIView alloc] init];
+
+//            NSInteger count = self.commentModel.replyCount;
+//            NSString *countStr = [NSString transformCountWithString:count];
+//            NSString *text = @"";
+//            if (countStr.length > 0) {
+//                text = [NSString stringWithFormat:@"%@条回复", countStr];
+//            }
+//            _headerLab.text = text;
+//            return _header;
+        }
+            break;
+    }
+
 }
 
 //自定义脚
@@ -235,13 +291,24 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
     NSInteger section = indexPath.section;
     switch (section) {
         case 0:
         {
-            RRSeasonSeniorCommentsSecondaryCell *cell = (RRSeasonSeniorCommentsSecondaryCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSecondaryCell class]) forIndexPath:indexPath];
+            RRSeasonSeniorCommentsNoReplyListCell *cell = (RRSeasonSeniorCommentsNoReplyListCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsNoReplyListCell class]) forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+            cell.isHalf = YES;
+            cell.isShowMore = YES;
+            cell.model = self.commentModel;
+            cell.praiseBtn.hidden = YES;
+            WS(weakSelf)
+//            cell.clickText = ^(RRSeniorCommentsModel * _Nonnull model) {
+//                [weakSelf clickCommentWithModel:model];
+//            };
+            cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
+//                [weakSelf clickDeleteCommentWithModel:model];
+            };
             return cell;
         }
             break;
@@ -249,52 +316,49 @@
         default:{
             RRSeasonSeniorCommentsSecondaryReplyCell *cell = (RRSeasonSeniorCommentsSecondaryReplyCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSecondaryReplyCell class]) forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+            cell.isHalf = YES;
+//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
+//            cell.model = model;
+            WS(weakSelf)
+//            cell.clickText = ^(RRSeniorCommentsModel * _Nonnull model) {
+//                [weakSelf clickReplyWithModel:model];
+//
+//            };
+            cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
+//                [weakSelf clickDeleteReplyWithModel:model];
+            };
             return cell;
         }
             break;
     }
-
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    RRSeasonSeniorCommentsSecondarySubVC *next = [[RRSeasonSeniorCommentsSecondarySubVC alloc] init];
-//    [[RRAppLinkManager sharedManager] pushViewController:next animated:YES];
-}
-
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if ([self.fatherVC respondsToSelector:@selector(scrollViewDidScroll:)]) {
-//        [self.fatherVC scrollViewDidScroll:scrollView];
-//    }
-//}
-
-//悬停 tableview header 不悬停
-//去掉UItableview headerview黏性(sticky)
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if (scrollView == self.tableView) {
-        CGFloat sectionHeaderHeight = 21; //sectionHeaderHeight
-        if (scrollView.contentOffset.y <= sectionHeaderHeight && scrollView.contentOffset.y >= 0) {
-            scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-        } else if (scrollView.contentOffset.y >= sectionHeaderHeight) {
-            scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case 0:
+        {
+//            //点击cell回复评论
+//            RRSeniorCommentsModel *model = self.commentModel;
+//            [self clickCommentWithModel:model];
         }
-    }
-}
-
-- (void)scrollViewDidScroll1:(UIScrollView *)scrollView {
-    CGFloat sectionHeaderHeight=40;
-    if(scrollView.contentOffset.y<=sectionHeaderHeight&&scrollView.contentOffset.y >= 0) {
-        scrollView.contentInset=UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-    }else if(scrollView.contentOffset.y>=sectionHeaderHeight) {
-        scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+            break;
+        default:
+        {
+//            //点击cell回复回复
+//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
+//            [self clickReplyWithModel:model];
+        }
+            break;
     }
 }
 
 //lazy
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.backgroundColor = [UIColor clearColor];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
         //iOS11
         _tableView.estimatedRowHeight = 0;
         _tableView.estimatedSectionHeaderHeight = 0;
@@ -307,10 +371,10 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        [_tableView registerClass:[RRSeasonSeniorCommentsSecondaryCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSecondaryCell class])];
+        [_tableView registerClass:[RRSeasonSeniorCommentsNoReplyListCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsNoReplyListCell class])];
         [_tableView registerClass:[RRSeasonSeniorCommentsSecondaryReplyCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSecondaryReplyCell class])];
         
-         
+        
         //        WS(weakSelf)
         //        MJDIYFooter *footer = [MJDIYFooter footerWithRefreshingBlock:^{
         ////            [weakSelf loadMoreData];
@@ -321,7 +385,7 @@
         //        _tableView.mj_header = [MJDIYHeader headerWithRefreshingBlock:^{
         ////            [weakSelf refreshData];
         //        }];
-
+        
         //        RRSeasonSeniorCommentHearder *header = [[RRSeasonSeniorCommentHearder alloc] initWithFrame:CGRectMake(0, 0, KWidth, 42)];
         //        header.clickStatusIndex = ^(UIResponder *sender, NSUInteger index) {
         //

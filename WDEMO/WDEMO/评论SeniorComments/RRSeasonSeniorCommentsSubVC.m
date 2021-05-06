@@ -13,11 +13,15 @@
 #import "RRSeasonSeniorCommentsHasReplyListCell.h"
 #import "RRSeasonSeniorCommentsSecondarySubVC.h"
 //#import "RRAlertBase.h"
+#import "RRSeniorCommentsModel.h"
+
 
 @interface RRSeasonSeniorCommentsSubVC ()<UITableViewDataSource,UITableViewDelegate>
 //@property (nonatomic, strong) RRCommentService *service;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) RRSeasonSeniorCommentsInputBar *bottomView;
+
+@property (nonatomic, copy) NSMutableArray *data;//数据
 @end
 
 @implementation RRSeasonSeniorCommentsSubVC
@@ -34,7 +38,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 //    self.customTabbar.hidden = YES;
+    self.data = [NSMutableArray array];
+    
     [self setupViews];
+    [self refreshData];
+
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    view.backgroundColor = [UIColor whiteColor];
@@ -81,6 +89,22 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (void)refreshData {
+    //iOS 读取本地Json文件
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"评论" ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *error;
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (!jsonData || error) {
+        //DLog(@"JSON解码失败");
+    } else {
+        //DLog(@"JSON解码成功");
+    }
+    NSDictionary *dic = (NSDictionary *)jsonObj;
+    RRSeniorCommentsListModel *model = [RRSeniorCommentsListModel modelWithJSON:dic[@"data"]];
+    self.data = [NSMutableArray arrayWithArray:model.content];
+    [self.tableView reloadData];
+}
 
 - (void)setupViews {
  
@@ -155,13 +179,12 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.data.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//     return [ArticleDetailCell cellHeightfor:model];
-    return 2000;
-
+    RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+    return [RRSeasonSeniorCommentsHasReplyListCell cellHeightWithModel:model isShowAll:NO];
 }
 
 //header高度
@@ -188,16 +211,37 @@
      
     RRSeasonSeniorCommentsHasReplyListCell *cell = (RRSeasonSeniorCommentsHasReplyListCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsHasReplyListCell class]) forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-
+    cell.isHalf = YES;
+    RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+    cell.model = model;
+    WS(weakSelf)
+//    cell.clickText = ^(RRSeniorCommentsModel *_Nonnull model) {
+//        [weakSelf clickCommentWithModel:model];
+//    };
+    cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
+//        [weakSelf clickDeleteWithModel:model];
+    };
     return cell;
+
 }
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return;
+    
 //    RRSeasonSeniorCommentsSecondarySubVC *next = [[RRSeasonSeniorCommentsSecondarySubVC alloc] init];
 //    [[RRAppLinkManager sharedManager] pushViewController:next animated:YES];
     
+//    UIViewController *vc = [[UIViewController alloc] init];
+//    vc.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+//    [self presentViewController:vc animated:YES completion:nil];
+
     
+//    UIViewController *vc = [[UIViewController alloc] init]; 
+//    vc.modalPresentationStyle = UIModalPresentationOverFullScreen;
+//    vc.modalPresentationCapturesStatusBarAppearance = YES;
+//    [self presentViewController:vc animated:YES completion:nil];
     
     RRSeasonSeniorCommentsSecondarySubVC *vc = [[RRSeasonSeniorCommentsSecondarySubVC alloc] initWithIsHalf:YES];
 //    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];

@@ -148,7 +148,7 @@
 
 
 //是否是暗黑模式
-#define KDarkMode  [RRMJTool isDarkMode]
+#define KDarkMode  [UILabel isDarkMode]
 
 //轮播图的比例
 #define KCycleScrollViewRatio  (230.0/375.0)
@@ -213,10 +213,11 @@
 //不可点击态
 #define kCOLOR_dynamicProvider_DADBDC_515152 [UIColor colorWithDynamicProviderColor:@[RGB(0xDA, 0xDB, 0xDC),RGB(0x51, 0x51, 0x52)]]
 
- #pragma mark ---线的颜色---
+#pragma mark ---线的颜色---
 //分割线颜色或者占位图颜色
 #define kCOLOR_dynamicProvider_E6E7E8_333333       [UIColor colorWithDynamicProviderColor:@[RGB(0xE6, 0xE7, 0xE8),RGB(0x33, 0x33, 0x33)]]
-
+//评论用户等级背景色
+#define kCOLOR_dynamicProvider_F0F1F2_333333       [UIColor colorWithDynamicProviderColor:@[RGB(0xF0, 0xF1, 0xF2),RGB(0x33, 0x33, 0x33)]]
 
 //空态页面按钮颜色
 #define kCOLOR_1890FFAlpha011  [RGB(0x18, 0x90, 0xFF) colorWithAlphaComponent:0.11]
