@@ -110,6 +110,8 @@
     //显示
     self.tableView.hidden = NO;
     self.bottomView.hidden = NO;
+    //定位
+    [self tableViewLocation];
 }
 
 - (void)addHeader {
@@ -185,16 +187,34 @@
     [self.tableView scrollToRowAtIndexPath:scrollIndexPath
             atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
-//    cell.contentView.backgroundColor = [UIColor redColor];
-    UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
-    colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
-    [cell.contentView addSubview:colorView];
-    [cell.contentView sendSubviewToBack:colorView];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [colorView removeFromSuperview];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            NSIndexPath *indexpath =  [NSIndexPath indexPathForRow:index inSection:1];
+            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexpath];
+        //    cell.contentView.backgroundColor = [UIColor redColor];
+            UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
+            colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
+            [cell.contentView addSubview:colorView];
+            [cell.contentView sendSubviewToBack:colorView];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [colorView removeFromSuperview];
+        });
     });
     self.replyModel = nil;
+
+    
+    //old 不显示 所以加了一个延时
+//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
+////    cell.contentView.backgroundColor = [UIColor redColor];
+//    UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
+//    colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
+//    [cell.contentView addSubview:colorView];
+//    [cell.contentView sendSubviewToBack:colorView];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [colorView removeFromSuperview];
+//    });
+//    self.replyModel = nil;
 }
 
 /*
