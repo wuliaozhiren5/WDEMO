@@ -61,7 +61,7 @@ typedef void(^ClickSeasonSeniorCommentsCell)(RRSeniorCommentsModel * _Nonnull mo
 
 @property (nonatomic, strong) RRSeniorCommentsModel *model;
 
-@property (nonatomic, assign) BOOL isHalf;
+@property (nonatomic, assign) BOOL isHalf;          //半屏
 
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model;
 

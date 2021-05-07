@@ -1161,15 +1161,15 @@
 		F50440B72625A06B00834547 /* 评论SeniorComments */ = {
 			isa = PBXGroup;
 			children = (
+				F51C24B6263BEF4D0010A298 /* 评论.json */,
+				F58B4B452643FCD800D7C82D /* 回复.json */,
 				F50440C02625A06B00834547 /* RRSeasonSeniorCommentsSubVC.h */,
 				F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */,
 				F50440BC2625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.h */,
 				F50440C62625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m */,
 				F51C24C3263BF12B0010A298 /* Model */,
-				F51C24B6263BEF4D0010A298 /* 评论.json */,
-				F58B4B452643FCD800D7C82D /* 回复.json */,
-				F55AB4A526295BB6008C5A25 /* 评论列表cell */,
-				F55AB4A626295C01008C5A25 /* 回复列表cell */,
+				F55AB4A526295BB6008C5A25 /* CommentsList */,
+				F55AB4A626295C01008C5A25 /* ReplyList */,
 				F50440B92625A06B00834547 /* RRSeasonSeniorCommentsInputBar.h */,
 				F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */,
 				F50440C82625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.h */,
@@ -1384,7 +1384,7 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		F55AB4A526295BB6008C5A25 /* 评论列表cell */ = {
+		F55AB4A526295BB6008C5A25 /* CommentsList */ = {
 			isa = PBXGroup;
 			children = (
 				F50440BB2625A06B00834547 /* RRSeasonSeniorCommentsCell.h */,
@@ -1398,16 +1398,16 @@
 				F50440C52625A06B00834547 /* RRSeasonSeniorCommentsHearder.h */,
 				F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */,
 			);
-			path = "评论列表cell";
+			path = CommentsList;
 			sourceTree = "<group>";
 		};
-		F55AB4A626295C01008C5A25 /* 回复列表cell */ = {
+		F55AB4A626295C01008C5A25 /* ReplyList */ = {
 			isa = PBXGroup;
 			children = (
 				F50440CA2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.h */,
 				F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */,
 			);
-			path = "回复列表cell";
+			path = ReplyList;
 			sourceTree = "<group>";
 		};
 		F55E5B58258C589400C1DECD /* 评分只是展示ScoreView */ = {

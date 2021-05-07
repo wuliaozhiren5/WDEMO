@@ -22,7 +22,7 @@
 @property (nonatomic, strong) UIView *header;
 @property (nonatomic, strong) UILabel *headerLab;
 
-@property (nonatomic, assign) BOOL isHalf; //半屏
+@property (nonatomic, assign) BOOL isHalf;          //半屏
 @property (nonatomic, strong) UIView *topBar;
 @property (nonatomic, strong) UILabel *titleLab;
 @property (nonatomic, strong) UIButton *closeBtn; //半屏
@@ -107,12 +107,49 @@
     RRSeniorCommentsReplyListModel *model = [RRSeniorCommentsReplyListModel modelWithJSON:dic[@"data"]];
     self.data = [NSMutableArray arrayWithArray:model.content];
     [self.tableView reloadData];
+    //显示
+    self.tableView.hidden = NO;
+    self.bottomView.hidden = NO;
+}
+
+- (void)addHeader {
+////    if (self.dataSource.dataArray.count > 0) {
+//        if (self.tableView.mj_header) {
+//            return;
+//        }
+//        WS(weakSelf);
+//        self.tableView.mj_header = [MJDIYHeader headerWithRefreshingBlock:^{
+//            [weakSelf refreshData];
+//        }];
+////    } else {
+////        self.tableView.mj_header = nil;
+////    }
+}
+
+- (void)addFooter {
+//    if (self.dataSource.dataArray.count > 0) {
+//        if (self.tableView.mj_footer) {
+//            return;
+//        }
+//        WS(weakSelf)
+//        MJDIYFooter *footer = [MJDIYFooter footerWithRefreshingBlock:^{
+//            [weakSelf loadMoreData];
+//        }];
+//        [footer setTitle:@"" forState:MJRefreshStateIdle];
+//        [footer setTitle:@"" forState:MJRefreshStateRefreshing];
+//        [footer setTitle:@"已经到底啦～" forState:MJRefreshStateNoMoreData];
+//        footer.stateLabel.font = [UIFont systemFontOfSize:12];
+//        footer.stateLabel.textColor = kCOLOR_85888F;
+//        self.tableView.mj_footer = footer;
+//    } else {
+//        self.tableView.mj_footer = nil;
+//    }
 }
 
 - (void)tableViewSectionHeader {
-    NSInteger count = 10;
-    NSString *text = [NSString stringWithFormat:@"%zi条回复", count];
-
+//    NSInteger count = 10;
+//    NSString *text = [NSString stringWithFormat:@"%zi条回复", count];
+    NSString *text = @"";
     UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 21)];
     UILabel *headerLab = [[UILabel alloc] init];
     headerLab.frame = CGRectMake(16, 0, KWidth - 16 * 2, 21);
@@ -122,6 +159,42 @@
     [header addSubview:headerLab];
     _header = header;
     _headerLab = headerLab;
+}
+
+//定位
+- (void)tableViewLocation {
+    if (!self.replyModel) {
+        return;
+    }
+
+    NSInteger index = -1;
+    for (NSInteger i = 0; i < self.data.count; i++) {
+        RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:i];
+        if ([model.ID isEqualToString:self.replyModel.ID]) {
+            index = i;
+            break;
+        }
+    }
+
+    if (index < 0) {
+        return;
+    }
+    //获取到需要跳转位置的行数
+    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:index inSection:1];
+    //滚动到其相应的位置
+    [self.tableView scrollToRowAtIndexPath:scrollIndexPath
+            atScrollPosition:UITableViewScrollPositionTop animated:NO];
+
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
+//    cell.contentView.backgroundColor = [UIColor redColor];
+    UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
+    colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
+    [cell.contentView addSubview:colorView];
+    [cell.contentView sendSubviewToBack:colorView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [colorView removeFromSuperview];
+    });
+    self.replyModel = nil;
 }
 
 /*
@@ -135,48 +208,61 @@
 */
 
 - (void)setupViews {
-    [self tableViewSectionHeader];
-    [self.view addSubview:self.tableView];
-    [self.view addSubview:self.bottomView];
-    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-      make.height.equalTo(@(53 - appMargin().bottom));
-      make.leading.equalTo(@(0));
-      make.trailing.equalTo(@(0));
-      make.bottom.equalTo(@(0));
-    }];
+//    if (!_isFisrtRefreshSuccess) {
+//        _isFisrtRefreshSuccess = YES;
+        
+        [self tableViewSectionHeader];
+        [self.view addSubview:self.tableView];
+        [self.view addSubview:self.bottomView];
+        [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@(53 - appMargin().bottom));
+            make.leading.equalTo(@(0));
+            make.trailing.equalTo(@(0));
+            make.bottom.equalTo(@(0));
+        }];
+        
+        if (!self.isHalf) {
+            [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(@(0));
+                make.leading.equalTo(@(0));
+                make.trailing.equalTo(@(0));
+                make.bottom.equalTo(self.bottomView.mas_top).offset(0);
+            }];
+        } else {
+            UIView *topBarBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+            topBarBackView.backgroundColor = kCOLOR_000000;
+            [self.view addSubview:topBarBackView];
 
-    if (!self.isHalf) {
-        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-          make.top.equalTo(@(0));
-          make.leading.equalTo(@(0));
-          make.trailing.equalTo(@(0));
-          make.bottom.equalTo(self.bottomView.mas_top).offset(0);
-        }];
-    } else {
-        [self.view addSubview:self.topBar];
-        [self.topBar addSubview:self.titleLab];
-        [self.topBar addSubview:self.closeBtn];
-        [self.topBar mas_makeConstraints:^(MASConstraintMaker *make) {
-          make.top.leading.trailing.equalTo(@0);
-          make.height.equalTo(@49);
-        }];
-        [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-          make.leading.equalTo(@16);
-          make.trailing.equalTo(@-49);
-          make.top.bottom.equalTo(@0);
-        }];
-        [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-          make.trailing.bottom.equalTo(@0);
-          make.width.height.equalTo(@49);
-        }];
-        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-          make.top.equalTo(self.topBar.mas_bottom);
-          make.leading.trailing.equalTo(@0);
-          make.bottom.equalTo(self.bottomView.mas_top).offset(0);
-
-        }];
+            [self.view addSubview:self.topBar];
+            [self.topBar addSubview:self.titleLab];
+            [self.topBar addSubview:self.closeBtn];
+            [self.topBar mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.leading.trailing.equalTo(@0);
+                make.height.equalTo(@49);
+            }];
+            [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.equalTo(@16);
+                make.trailing.equalTo(@-49);
+                make.top.bottom.equalTo(@0);
+            }];
+            [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.trailing.bottom.equalTo(@0);
+                make.width.height.equalTo(@49);
+            }];
+            [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.topBar.mas_bottom).offset(-10);
+                make.leading.trailing.equalTo(@0);
+                make.bottom.equalTo(self.bottomView.mas_top).offset(0);
+            }];
+//        }
     }
+    self.tableView.hidden = YES;
+    self.bottomView.hidden = YES;
+//    self.bottomView.commentModel = self.commentModel;
+    [self.view bringSubviewToFront:self.tableView];
+
 }
+
 
 - (void)clickTextBtn:(UIButton *)btn {
     //    WS(weakSelf);
@@ -207,7 +293,7 @@
             return 1;
             break;
         default:
-            return 2;
+            return self.data.count;
             break;
     }
 }
@@ -218,17 +304,13 @@
     switch (section) {
         case 0:
         {
-            
-            return 1000;
-//            return [RRSeasonSeniorCommentsNoReplyListCell cellHeightWithModel:self.commentModel isShowAll:YES];
+            return [RRSeasonSeniorCommentsNoReplyListCell cellHeightWithModel:self.commentModel isShowAll:YES];
         }
             break;
         default:
         {
-            return 1000;
-
-//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
-//            return [RRSeasonSeniorCommentsSecondaryReplyCell cellHeightWithModel:model];
+            RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+            return [RRSeasonSeniorCommentsSecondaryReplyCell cellHeightWithModel:model];
         }
             break;
     }
@@ -317,8 +399,8 @@
             RRSeasonSeniorCommentsSecondaryReplyCell *cell = (RRSeasonSeniorCommentsSecondaryReplyCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSecondaryReplyCell class]) forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.isHalf = YES;
-//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
-//            cell.model = model;
+            RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+            cell.model = model;
             WS(weakSelf)
 //            cell.clickText = ^(RRSeniorCommentsModel * _Nonnull model) {
 //                [weakSelf clickReplyWithModel:model];
@@ -421,6 +503,7 @@
 - (UIView *)topBar {
     if (!_topBar) {
         _topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+        _topBar.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
     }
     return _topBar;
 }

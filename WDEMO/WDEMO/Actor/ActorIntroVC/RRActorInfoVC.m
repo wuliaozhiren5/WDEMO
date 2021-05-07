@@ -27,7 +27,7 @@
 //@property (nonatomic, assign) BOOL isNoOtherData; //是否没有其他数据 默认NO
 
 @property (nonatomic, assign) BOOL isHalf;          //半屏
- 
+
 @property (nonatomic, strong) UIView *topBar;
 @property (nonatomic, strong) UILabel *titleLab;
 @property (nonatomic, strong) UIButton *closeBtn;          //半屏

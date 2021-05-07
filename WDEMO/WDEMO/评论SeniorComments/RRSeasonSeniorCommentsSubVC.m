@@ -80,6 +80,16 @@
     }];
 }
 
+//隐藏导航栏
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
 /*
 #pragma mark - Navigation
 
@@ -104,6 +114,7 @@
     RRSeniorCommentsListModel *model = [RRSeniorCommentsListModel modelWithJSON:dic[@"data"]];
     self.data = [NSMutableArray arrayWithArray:model.content];
     [self.tableView reloadData];
+
 }
 
 - (void)setupViews {
