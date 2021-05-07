@@ -187,7 +187,6 @@
     [self.tableView scrollToRowAtIndexPath:scrollIndexPath
             atScrollPosition:UITableViewScrollPositionTop animated:NO];
 
-    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             NSIndexPath *indexpath =  [NSIndexPath indexPathForRow:index inSection:1];
             UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexpath];
@@ -203,7 +202,6 @@
     });
     self.replyModel = nil;
 
-    
     //old 不显示 所以加了一个延时
 //    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
 ////    cell.contentView.backgroundColor = [UIColor redColor];
