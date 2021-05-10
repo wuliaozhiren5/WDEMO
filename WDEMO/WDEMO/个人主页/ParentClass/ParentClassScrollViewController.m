@@ -23,6 +23,7 @@
     [super viewDidLoad];
 }
 
+#pragma mark -- UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
      
 //    CGPoint translatedPoint = [scrollView.panGestureRecognizer translationInView:scrollView];
