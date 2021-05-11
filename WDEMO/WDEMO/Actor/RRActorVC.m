@@ -172,6 +172,13 @@ const CGFloat headViewHeight = 256;
             //内部不要下拉刷新
             //设置contentOffset
             self.parentScrollView.contentOffset = CGPointMake(0, 0);
+            
+//            //支持下刷新。关闭弹簧效果
+//            //    self.mainTableView.bounces =  NO;
+//            if (self.mainTableView.contentOffset.y <= -headViewHeight) {
+//            } else {
+//                self.parentScrollView.contentOffset = CGPointMake(0, 0);
+//            }
         }
     } else {
         if (self.isTopIsCanNotMoveMainTableView) {
@@ -255,10 +262,10 @@ const CGFloat headViewHeight = 256;
     CGFloat tabOffsetY = - self.navigationbarHeight - self.statusbarHeight;
     CGFloat offsetY = scrollView.contentOffset.y;
     
-    if (offsetY >= headViewHeight) {
-        scrollView.contentOffset = CGPointMake(0, tabOffsetY);
-        offsetY = tabOffsetY;
-    }
+//    if (offsetY >= headViewHeight) {
+//        scrollView.contentOffset = CGPointMake(0, tabOffsetY);
+//        offsetY = tabOffsetY;
+//    }
     
     //    self.isTopIsCanNotMoveParentScrollView = self.isTopIsCanNotMoveMainTableView;
     
