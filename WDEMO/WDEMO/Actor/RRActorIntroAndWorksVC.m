@@ -48,6 +48,32 @@
     //    [self refreshData];
     
     
+//    手势冲突 
+    //手势冲突  self.view  add
+    UIView *view1 = [[UIView alloc]init];
+    view1.frame =  CGRectMake(0, 0, 320, 320);
+    view1.backgroundColor = [UIColor redColor];
+    [self.view addSubview:view1];
+//    view1.userInteractionEnabled = NO;
+    
+//    UIButton *btn = [[UIButton alloc] init];
+//    btn.frame = CGRectMake(100, 100, 200, 200);
+//    btn.backgroundColor = [UIColor grayColor];
+////    btn.userInteractionEnabled = YES;
+//
+//    [view addSubview:btn];
+//    [btn addTarget:self action:@selector(clickBtn) forControlEvents:UIControlEventTouchUpInside];
+ 
+    
+//    //手势不冲突  self.view  add
+//    UIView *view2 = [[UIView alloc]init];
+//    view2.frame =  CGRectMake(0, 0, 320, 320);
+//    view2.backgroundColor = [UIColor redColor];
+//    [self.collectionView addSubview:view2];
+}
+
+- (void)clickBtn {
+    NSLog(@"clickBtn");
 }
 
 - (void)setupViews {
