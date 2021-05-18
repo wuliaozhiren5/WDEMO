@@ -27,6 +27,23 @@
     return _content;
 }
 
+- (NSString *)authorName {
+    if (!_authorName) {
+        return @"";
+    }
+    _authorName = [NSString filterReturn:_authorName];
+    _authorName = [NSString filterNewLine:_authorName];
+    return _authorName;
+}
+
+- (NSString *)reply2UserName {
+    if (!_reply2UserName) {
+        return @"";
+    }
+    _reply2UserName = [NSString filterReturn:_reply2UserName];
+    _reply2UserName = [NSString filterReturn:_reply2UserName];
+    return _reply2UserName;
+}
 @end
 
 @implementation RRSeniorCommentsListModel
@@ -52,5 +69,7 @@
 @end
 
 @implementation RRSeniorCommentsImageModel
+- (NSString *)url {
+    return _url ?: @"";
+}
 @end
-

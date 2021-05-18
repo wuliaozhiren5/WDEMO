@@ -294,7 +294,7 @@
     
     //昵称避免太长
     NSArray *realReplyNicknameArray = [UILabel getSeparatedLinesFromLabel:replyNicknameLab];
-    if (realNicknameArray.count > 2) {
+    if (realReplyNicknameArray.count > 2) {
         replyNicknameStr = [NSString stringWithFormat:@"%@...",realReplyNicknameArray[0]];
     }
       
@@ -581,7 +581,7 @@
     
     //昵称避免太长
     NSArray *realReplyNicknameArray = [UILabel getSeparatedLinesFromLabel:replyNicknameLab];
-    if (realNicknameArray.count > 2) {
+    if (realReplyNicknameArray.count > 2) {
         replyNicknameStr = [NSString stringWithFormat:@"%@...",realReplyNicknameArray[0]];
     }
      

@@ -145,6 +145,7 @@
         make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
         //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
         make.top.equalTo(@10);
+        make.height.equalTo(@17);
     }];
     
     
@@ -287,6 +288,7 @@
             make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
             //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
             make.top.equalTo(@10);
+            make.height.equalTo(@17);
         }];
         
     } else {
@@ -316,6 +318,7 @@
             make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
             //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
             make.top.equalTo(@10);
+            make.height.equalTo(@17);
         }];
     }
 }
@@ -849,6 +852,7 @@
             make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
             //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
             make.top.equalTo(@10);
+            make.height.equalTo(@17);
         }];
         
     } else {
@@ -878,6 +882,7 @@
             make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
             //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
             make.top.equalTo(@10);
+            make.height.equalTo(@17);
         }];
     }
 }
