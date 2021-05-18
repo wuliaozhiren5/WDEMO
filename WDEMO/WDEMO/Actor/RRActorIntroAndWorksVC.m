@@ -50,11 +50,13 @@
     
 //    手势冲突 
     //手势冲突  self.view  add
-    UIView *view1 = [[UIView alloc]init];
-    view1.frame =  CGRectMake(0, 0, 320, 320);
-    view1.backgroundColor = [UIColor redColor];
-    [self.view addSubview:view1];
+//    UIView *view1 = [[UIView alloc]init];
+//    view1.frame =  CGRectMake(0, 0, 320, 320);
+//    view1.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:view1];
 //    view1.userInteractionEnabled = NO;
+    
+     
     
 //    UIButton *btn = [[UIButton alloc] init];
 //    btn.frame = CGRectMake(100, 100, 200, 200);
