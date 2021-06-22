@@ -341,11 +341,36 @@
     }
     NSLog(@"countStr: %@", countStr);
     
-    
-    
+    [self test123456];
     [self testSring];
 }
 
+- (void)test123456 {
+  
+    NSString *str1 = @"<em>你</em><em>我</em><em>他</em>";
+//    NSString *str = _highlights[@"alias1"];
+//    @"<em>"
+//    @"</em>"
+    
+//    if ([str rangeOfString:@"<em>"].location != NSNotFound || [str rangeOfString:@"</em>"].location != NSNotFound) {
+//        //原文中出现标签，不做高亮处理
+////        return [[NSAttributedString alloc] initWithString:originText];
+//        return;
+//    }
+    NSMutableArray<NSString *> *subStrings = [[str1 componentsSeparatedByString:@"<em>"] mutableCopy];
+    
+    NSMutableAttributedString *attributedText = [[NSMutableAttributedString alloc] initWithString:@""];
+    for (NSInteger i = 0; i < subStrings.count; i++) {
+        
+        NSMutableString *mString = [subStrings[i] mutableCopy];
+//        NSString *string = subStrings[i];
+        NSRange range = [mString rangeOfString:@"</em>"];
+        if (range.location != NSNotFound) {
+            NSLog(@"所查的字符坐标为：%ld",range.location);
+            NSLog(@"所查的字符长度为：%ld",range.length);
+        }
+    }
+}
 
 - (void)testSring {
     //    substringFromIndex 和 substringToIndex用法，有需要的朋友可以参考下。
