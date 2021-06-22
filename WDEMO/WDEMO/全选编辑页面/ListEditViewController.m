@@ -311,24 +311,95 @@
     }
 }
 
+////iOS8之后
+ -  (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return !self.isUserEditState;
+
+}
+////滑动删除功能
+- (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewRowAction *AddAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"添加" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        // 实现相关的逻辑代码
+        // ...
+        // 在最后希望cell可以自动回到默认状态，所以需要退出编辑模式
+        tableView.editing = NO;
+    }];
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+//        // 首先改变model
+//        [arrDate removeObjectAtIndex:indexPath.row];
+//        // 接着刷新view
+//        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+//        // 不需要主动退出编辑模式，上面更新view的操作完成后就会自动退出编辑模式
+    }];
+    
+    return @[deleteAction, AddAction,];
+}
+//————————————————
+//版权声明：本文为CSDN博主「Arnly」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+//原文链接：https://blog.csdn.net/arnly/article/details/51459198
+
+//iOS11新增了方法
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath API_AVAILABLE(ios(11.0)){
+    if (@available(iOS 11.0, *)) {
+        
+        NSString *title = @"置顶";
+        if (indexPath.section == 0) {
+            title = @"取消置顶";
+        } else {
+            title = @"置顶";
+        }
+        UIContextualAction *topAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleNormal title:title handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            
+//            ...
+            
+            // 这句很重要，退出编辑模式，隐藏左滑菜单
+            [tableView setEditing:NO animated:YES];
+            completionHandler(true);
+        }];
+        
+        UIContextualAction *deleteAction = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            
+            // 这句很重要，退出编辑模式，隐藏左滑菜单
+            [tableView setEditing:NO animated:YES];
+            completionHandler(true);
+        }];
+        
+        UISwipeActionsConfiguration *actions = [UISwipeActionsConfiguration configurationWithActions:@[deleteAction,topAction]];
+        // 禁止侧滑无线拉伸
+        actions.performsFirstActionWithFullSwipe = NO;
+        return actions;
+    }else{
+        return nil;
+    }
+}
+//iOS11解决UITableView侧滑删除无限拉伸的方法
+//原文链接：https://www.jb51.net/article/145243.htm
+
+////---------------------------------------------------------
+////iOS8之前
+////滑动删除功能
 ////指定哪些行的 cell 可以进行编辑(UITableViewDataSource 协议方法)
 //-  (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 //{
-//    if (0 == indexPath.row)  {
-//        return NO;  /*第一行不能进行编辑*/
-//    } else {
-//        return YES;
-//    }
+////    if (0 == indexPath.row)  {
+////        return NO;  /*第一行不能进行编辑*/
+////    } else {
+////        return YES;
+////    }
+//
+//    return !self.isUserEditState;
+//
 //}
+//
 ////指定cell的编辑状态(删除还是插入)(UITableViewDelegate 协议方法)
 //- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
-//    /** 不同的行, 可以设置不同的编辑样式, 编辑样式是一个枚举类型 */
-//    if (indexPath.row == 0) {
-//        return UITableViewCellEditingStyleInsert;
-//    } else {
+////    /** 不同的行, 可以设置不同的编辑样式, 编辑样式是一个枚举类型 */
+////    if (indexPath.row == 0) {
+////        return UITableViewCellEditingStyleInsert;
+////    } else {
 //        return UITableViewCellEditingStyleDelete;
-//    }
+////    }
 //}
 ////选中删除(插入)状态之后操作 (数据源进行更新,cell删除或插入)(UITableViewDataSource的协议方法)
 //- (void)tableView :(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -336,28 +407,44 @@
 //    /**   点击 删除 按钮的操作 */
 //    if (editingStyle == UITableViewCellEditingStyleDelete) { /**< 判断编辑状态是删除时. */
 //
-//        /** 1. 更新数据源(数组): 根据indexPaht.row作为数组下标, 从数组中删除数据. */
-//        [self.arr removeObjectAtIndex:indexPath.row];
+////        /** 1. 更新数据源(数组): 根据indexPaht.row作为数组下标, 从数组中删除数据. */
+////        [self.data removeObjectAtIndex:indexPath.row];
+////
+////        /** 2. TableView中 删除一个cell. */
+////        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
 //
-//        /** 2. TableView中 删除一个cell. */
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationRight];
+//
+//        ListModel *listModel = [self.data objectOrNilAtIndex:indexPath.row];
+//
+//        NSMutableArray *temp = [NSMutableArray array];
+//        NSLog(@"%@",temp);
+//        for(int i = 0; i < self.data.count; i++) {
+//            ListModel *obj = self.data[i];
+//            NSString *modelId = obj.ids;
+//            if (![listModel.ids isEqualToString:modelId]) {
+//                [temp addObject:obj];
+//            }
+//        }
+//        self.data = [NSArray arrayWithArray:temp];
+//        [self.tableView reloadData];
+//
 //    }
 //
-//    /** 点击 +号 图标的操作. */
-//    if (editingStyle == UITableViewCellEditingStyleInsert) { /**< 判断编辑状态是插入时. */
-//        /** 1. 更新数据源:向数组中添加数据. */
-//        [self.arr insertObject:@"abcd" atIndex:indexPath.row];
-//
-//        /** 2. TableView中插入一个cell. */
-//        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//
-//    }
+////    /** 点击 +号 图标的操作. */
+////    if (editingStyle == UITableViewCellEditingStyleInsert) { /**< 判断编辑状态是插入时. */
+////        /** 1. 更新数据源:向数组中添加数据. */
+////        [self.arr insertObject:@"abcd" atIndex:indexPath.row];
+////
+////        /** 2. TableView中插入一个cell. */
+////        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+////
+////    }
 //}
-//
 //// 修改编辑按钮文字
 //- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    return @"删除";
 //}
+////---------------------------------------------------------
 
 //轮训
 - (void)everyCell {
