@@ -86,6 +86,7 @@
 		F50E841D25BEDDE6009767FE /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E841C25BEDDE6009767FE /* SearchBar.m */; };
 		F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F511C70B25B6918800581063 /* UIView+Shadow.m */; };
 		F51535EF259B2960007E3416 /* UserEditBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51535EE259B2960007E3416 /* UserEditBar.m */; };
+		F516E5342683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md in Resources */ = {isa = PBXBuildFile; fileRef = F516E5332683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md */; };
 		F518ED3725E8DDAC00260125 /* 图片压缩.md in Resources */ = {isa = PBXBuildFile; fileRef = F518ED3625E8DDAC00260125 /* 图片压缩.md */; };
 		F51C24B7263BEF4D0010A298 /* 评论.json in Resources */ = {isa = PBXBuildFile; fileRef = F51C24B6263BEF4D0010A298 /* 评论.json */; };
 		F51C24CD263BF1460010A298 /* RRSeniorCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51C24CC263BF1460010A298 /* RRSeniorCommentsModel.m */; };
@@ -470,6 +471,7 @@
 		F511C70B25B6918800581063 /* UIView+Shadow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
 		F51535ED259B2960007E3416 /* UserEditBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserEditBar.h; sourceTree = "<group>"; };
 		F51535EE259B2960007E3416 /* UserEditBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserEditBar.m; sourceTree = "<group>"; };
+		F516E5332683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "按钮选中这时时候图片闪烁问题Selected.md"; sourceTree = "<group>"; };
 		F518ED3625E8DDAC00260125 /* 图片压缩.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "图片压缩.md"; sourceTree = "<group>"; };
 		F51C24B6263BEF4D0010A298 /* 评论.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "评论.json"; sourceTree = "<group>"; };
 		F51C24BD263BF11C0010A298 /* RRSeniorCommentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeniorCommentsModel.h; sourceTree = "<group>"; };
@@ -959,6 +961,7 @@
 				F518ED3625E8DDAC00260125 /* 图片压缩.md */,
 				F567346B260C41D80081BC8A /* 数字变化的动画效果.md */,
 				F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */,
+				F516E5332683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
 				F504404E26259C6200834547 /* PCH文件.md */,
 				F51C8694261F103F0066850E /* UIView中坐标转换.md */,
@@ -2221,6 +2224,7 @@
 				F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */,
 				F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */,
 				F5B7DC3B2608813D00B1E497 /* 代码格式化工具.md in Resources */,
+				F516E5342683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md in Resources */,
 				F505AC2325C936F600F43298 /* 约束动画.md in Resources */,
 				F5D05B5D25BAAF9B00A4C6EC /* RGB十六进制颜色.md in Resources */,
 				F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */,
