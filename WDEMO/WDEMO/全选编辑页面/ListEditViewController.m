@@ -135,6 +135,15 @@
     btn.layer.cornerRadius = 25;
     btn.layer.masksToBounds = YES;
     [foot addSubview:btn];
+     
+    CGFloat bottom = 0;
+    if (@available(iOS 11.0, *)) {
+        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom;
+        NSLog(@"%f",a);
+        bottom = a;
+    } else {
+        bottom = 0;
+    }
     
     //deleteArray
     self.deleteArray = [NSMutableSet set];
@@ -142,7 +151,8 @@
     [self.view addSubview:self.userEditBar];
     [self.userEditBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.bottom.equalTo(self.view);
-        make.height.equalTo(@40);
+//        make.height.equalTo(@(40 + bottom));
+        make.height.equalTo(@(40));
     }];
 }
 
@@ -158,6 +168,17 @@
         [ListModel initWithTitle:@"777777" detail:@"编辑简单的网格7" type:ListModelTypeNone ids:@"7"],
         [ListModel initWithTitle:@"888888" detail:@"编辑简单的网格8" type:ListModelTypeNone ids:@"8"],
         [ListModel initWithTitle:@"999999" detail:@"编辑简单的网格9" type:ListModelTypeNone ids:@"9"],
+        [ListModel initWithTitle:@"10" detail:@"编辑简单的网格10" type:ListModelTypeNone ids:@"10"],
+        [ListModel initWithTitle:@"11" detail:@"编辑简单的网格11" type:ListModelTypeNone ids:@"11"],
+        [ListModel initWithTitle:@"12" detail:@"编辑简单的网格12" type:ListModelTypeNone ids:@"12"],
+        [ListModel initWithTitle:@"13" detail:@"编辑简单的网格13" type:ListModelTypeNone ids:@"13"],
+        [ListModel initWithTitle:@"14" detail:@"编辑简单的网格14" type:ListModelTypeNone ids:@"14"],
+        [ListModel initWithTitle:@"15" detail:@"编辑简单的网格15" type:ListModelTypeNone ids:@"15"],
+        [ListModel initWithTitle:@"16" detail:@"编辑简单的网格16" type:ListModelTypeNone ids:@"16"],
+        [ListModel initWithTitle:@"17" detail:@"编辑简单的网格17" type:ListModelTypeNone ids:@"17"],
+        [ListModel initWithTitle:@"18" detail:@"编辑简单的网格18" type:ListModelTypeNone ids:@"18"],
+        [ListModel initWithTitle:@"19" detail:@"编辑简单的网格19" type:ListModelTypeNone ids:@"19"],
+
     ];
     self.data = array;
 //    NSSet

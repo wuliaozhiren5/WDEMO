@@ -12,6 +12,8 @@
 @property (nonatomic, strong) UIView *line;
 @property (nonatomic, strong) UIButton *selectBtn;//全选/取消全选
 @property (nonatomic, strong) UIButton *deleteBtn;//删除
+@property (nonatomic, assign) CGFloat btnHeight;//按钮高度
+
 @end
 @implementation UserEditBar
 
@@ -25,6 +27,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        _btnHeight = 40;
         [self setupViews];
     }
     return self;
@@ -81,14 +84,14 @@
     if (!_line) {
         _line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0.5, 20)];
         _line.backgroundColor = [UIColor blackColor];
-        _line.center = self.center;
+        _line.center = CGPointMake(self.center.x, _btnHeight/2);
     }
     return _line;
 }
 
 - (UIButton *)selectBtn {
     if (!_selectBtn) {
-        _selectBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, self.frame.size.height)];
+        _selectBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, _btnHeight)];
         [_selectBtn addTarget:self action:@selector(clickSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
 ////        _editBtn.titleLabel.font = [UIFont systemFontOfSize:13];
         [_selectBtn setTitle:@"全选" forState:UIControlStateNormal];
@@ -101,7 +104,7 @@
 
 - (UIButton *)deleteBtn {
     if (!_deleteBtn) {
-        _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2, self.frame.size.height)];
+        _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2, _btnHeight)];
         [_deleteBtn addTarget:self action:@selector(clickDeleteBtn:) forControlEvents:UIControlEventTouchUpInside];
 //        _editBtn.titleLabel.font = [UIFont systemFontOfSize:13];
         [_deleteBtn setTitle:@"删除" forState:UIControlStateNormal];

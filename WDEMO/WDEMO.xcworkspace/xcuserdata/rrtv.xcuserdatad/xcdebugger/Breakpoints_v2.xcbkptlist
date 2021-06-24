@@ -46,8 +46,8 @@
             filePath = "WDEMO/&#x5168;&#x9009;&#x7f16;&#x8f91;&#x9875;&#x9762;/ListEditViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "328"
-            endingLineNumber = "328"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "-tableView:editActionsForRowAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
