@@ -9,7 +9,8 @@
 #import "UserEditBar.h"
 #import "WMacros.h"
 @interface UserEditBar ()
-@property (nonatomic, strong) UIView *line;
+@property (nonatomic, strong) UIView *topLine;//顶线
+@property (nonatomic, strong) UIView *centerLine;//中线
 @property (nonatomic, strong) UIButton *selectBtn;//全选/取消全选
 @property (nonatomic, strong) UIButton *deleteBtn;//删除
 @property (nonatomic, assign) CGFloat btnHeight;//按钮高度
@@ -27,7 +28,8 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        _btnHeight = 40;
+        _btnHeight = 53;
+        self.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
         [self setupViews];
     }
     return self;
@@ -36,7 +38,9 @@
 - (void)setupViews {
     [self addSubview:self.selectBtn];
     [self addSubview:self.deleteBtn];
-    [self addSubview:self.line];
+    [self addSubview:self.centerLine];
+    [self addSubview:self.topLine];
+
 }
 
 - (void)reset {
@@ -80,38 +84,48 @@
     }
 }
 
-- (UIView *)line {
-    if (!_line) {
-        _line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0.5, 20)];
-        _line.backgroundColor = [UIColor blackColor];
-        _line.center = CGPointMake(self.center.x, _btnHeight/2);
+- (UIView *)topLine {
+    if (!_topLine) {
+        _topLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 0.5)];
+//        _topLine.backgroundColor = [UIColor blackColor];
+        _topLine.backgroundColor = kCOLOR_dynamicProvider_CACBCC_414141;
     }
-    return _line;
+    return _topLine;
+}
+
+- (UIView *)centerLine {
+    if (!_centerLine) {
+        _centerLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0.5, 20)];
+//        _centerLine.backgroundColor = [UIColor blackColor];
+        _centerLine.backgroundColor = kCOLOR_dynamicProvider_CACBCC_414141;
+        _centerLine.center = CGPointMake(self.center.x, _btnHeight/2);
+    }
+    return _centerLine;
 }
 
 - (UIButton *)selectBtn {
     if (!_selectBtn) {
-        _selectBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/2, _btnHeight)];
+        _selectBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, KWidth/2, _btnHeight)];
         [_selectBtn addTarget:self action:@selector(clickSelectBtn:) forControlEvents:UIControlEventTouchUpInside];
-////        _editBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+        _selectBtn.titleLabel.font = [UIFont systemFontOfSize:17];
         [_selectBtn setTitle:@"全选" forState:UIControlStateNormal];
         [_selectBtn setTitle:@"取消全选" forState:UIControlStateSelected];
-        [_selectBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [_selectBtn setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+        [_selectBtn setTitleColor:kCOLOR_dynamicProvider_222222_E5E7EB forState:UIControlStateNormal];
+        [_selectBtn setTitleColor:kCOLOR_dynamicProvider_222222_E5E7EB forState:UIControlStateSelected];
     }
     return _selectBtn;
 }
 
 - (UIButton *)deleteBtn {
     if (!_deleteBtn) {
-        _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2, _btnHeight)];
+        _deleteBtn = [[UIButton alloc] initWithFrame:CGRectMake(KWidth/2, 0, KWidth/2, _btnHeight)];
         [_deleteBtn addTarget:self action:@selector(clickDeleteBtn:) forControlEvents:UIControlEventTouchUpInside];
-//        _editBtn.titleLabel.font = [UIFont systemFontOfSize:13];
+        _deleteBtn.titleLabel.font = [UIFont systemFontOfSize:17];
         [_deleteBtn setTitle:@"删除" forState:UIControlStateNormal];
         [_deleteBtn setTitle:@"删除" forState:UIControlStateDisabled];
 //        [_deleteBtn setTitle:@"删除()" forState:UIControlStateSelected];
-        [_deleteBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [_deleteBtn setTitleColor:[UIColor grayColor] forState:UIControlStateDisabled];
+        [_deleteBtn setTitleColor:kCOLOR_FF617B forState:UIControlStateNormal];
+        [_deleteBtn setTitleColor:kCOLOR_CBCDD4 forState:UIControlStateDisabled];
 //        [_deleteBtn setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
         //不可编辑
         _deleteBtn.enabled = NO;

@@ -145,14 +145,14 @@
         bottom = 0;
     }
     
-    //deleteArray
-    self.deleteArray = [NSMutableSet set];
+//    //deleteArray
+//    self.deleteArray = [NSMutableSet set];
     //bar
     [self.view addSubview:self.userEditBar];
     [self.userEditBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.trailing.bottom.equalTo(self.view);
 //        make.height.equalTo(@(40 + bottom));
-        make.height.equalTo(@(40));
+        make.height.equalTo(@(53));
     }];
 }
 
@@ -608,7 +608,7 @@
 
 - (UserEditBar *)userEditBar {
     if (!_userEditBar) {
-        _userEditBar = [[UserEditBar alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 40)];
+        _userEditBar = [[UserEditBar alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 53)];
         _userEditBar.backgroundColor = [UIColor lightGrayColor];
         _userEditBar.hidden = YES;
 //        [self.view addSubview:_userEditBar];
@@ -660,6 +660,11 @@
     }
 }
 
- 
+- (NSMutableSet *)deleteArray {
+    if (!_deleteArray) {
+        _deleteArray = [NSMutableSet set];
+    }
+    return _deleteArray;
+}
 
 @end
