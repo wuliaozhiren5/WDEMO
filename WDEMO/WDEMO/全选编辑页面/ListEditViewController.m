@@ -609,7 +609,7 @@
 - (UserEditBar *)userEditBar {
     if (!_userEditBar) {
         _userEditBar = [[UserEditBar alloc] initWithFrame:CGRectMake(0, 0, Screen_Width, 53)];
-        _userEditBar.backgroundColor = [UIColor lightGrayColor];
+//        _userEditBar.backgroundColor = [UIColor lightGrayColor];
         _userEditBar.hidden = YES;
 //        [self.view addSubview:_userEditBar];
         WS(weakSelf)
