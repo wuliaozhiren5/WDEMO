@@ -88,7 +88,7 @@
             break;
         case MJLoadingViewStateSuccess:
             //加载成功
-            self.hidden = NO;
+            self.hidden = YES;
             [self stopAnimating];
 //            self.loadingView.image = [UIImage imageNamed:@"ChatBackgroundImage"];
             self.tipsLab.text = @"加载成功";

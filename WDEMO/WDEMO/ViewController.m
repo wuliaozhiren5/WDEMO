@@ -117,7 +117,7 @@
 
 
 @property (nonatomic, strong) UIImageView *removeImageView;
-
+@property (nonatomic, strong) XXLoadingView *loadingView;
 @end
 
 @implementation ViewController
@@ -136,7 +136,7 @@
     
     //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
     self.navigationController.navigationBar.translucent = NO;
-    //    self.edgesForExtendedLayout = UIRectEdgeNone;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     //深色模式 切换时会自动变化
     self.view.backgroundColor = [UIColor d_colorWithColorLight:[UIColor whiteColor] dark:[UIColor grayColor]];
@@ -355,14 +355,19 @@
         make.edges.equalTo(self.view);
     }];
  
-    
 //    loadingView.state = MJLoadingViewStateNone;
     loadingView.state = MJLoadingViewStateLoading;
 //    loadingView.state = MJLoadingViewStateSuccess;
 //    loadingView.state = MJLoadingViewStateFailure;
 //    loadingView.state = MJLoadingViewStateNoData;
 //    loadingView.state = MJLoadingViewStateNoNetwork;
- }
+    [self performSelector:@selector(releaseMem) withObject:nil afterDelay:1.0];
+    self.loadingView = loadingView;
+}
+ 
+- (void)releaseMem {
+    self.loadingView.state = MJLoadingViewStateSuccess;
+}
 
 - (void)test123456 {
   
@@ -1042,9 +1047,9 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     [self.tableView registerClass:[ListModelCell class] forCellReuseIdentifier:NSStringFromClass([ListModelCell class])];
     [self.view addSubview:self.tableView];
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.edges.equalTo(self.view);
-//    }];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
 }
 
 #pragma mark -- UITableViewDataSource
