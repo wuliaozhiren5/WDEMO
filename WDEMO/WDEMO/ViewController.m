@@ -102,6 +102,8 @@
 #import "NewHandGuideViewController.h"
 //评论
 #import "RRSeasonSeniorCommentsSubVC.h"
+//
+#import "XXLoadingView.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -343,7 +345,24 @@
     
     [self test123456];
     [self testSring];
-}
+    
+//    XXLoadingView *loadingView = [[XXLoadingView alloc] init];
+    XXLoadingView *loadingView = [[XXLoadingView alloc] initWithFrame:self.view.bounds];
+    loadingView.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:loadingView];
+    [self.view bringSubviewToFront:loadingView]; 
+    [loadingView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+ 
+    
+//    loadingView.state = MJLoadingViewStateNone;
+    loadingView.state = MJLoadingViewStateLoading;
+//    loadingView.state = MJLoadingViewStateSuccess;
+//    loadingView.state = MJLoadingViewStateFailure;
+//    loadingView.state = MJLoadingViewStateNoData;
+//    loadingView.state = MJLoadingViewStateNoNetwork;
+ }
 
 - (void)test123456 {
   
@@ -1023,10 +1042,9 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass([UITableViewCell class])];
     [self.tableView registerClass:[ListModelCell class] forCellReuseIdentifier:NSStringFromClass([ListModelCell class])];
     [self.view addSubview:self.tableView];
-    //    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.edges.equalTo(self.view);
-    //    }];
-    
+//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(self.view);
+//    }];
 }
 
 #pragma mark -- UITableViewDataSource
