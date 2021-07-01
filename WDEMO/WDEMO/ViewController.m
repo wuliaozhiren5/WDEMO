@@ -346,15 +346,18 @@
     [self test123456];
     [self testSring];
     
+    [self showLoadingView];
+}
+
+- (void)showLoadingView {
 //    XXLoadingView *loadingView = [[XXLoadingView alloc] init];
     XXLoadingView *loadingView = [[XXLoadingView alloc] initWithFrame:self.view.bounds];
     loadingView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:loadingView];
-    [self.view bringSubviewToFront:loadingView]; 
+    [self.view bringSubviewToFront:loadingView];
     [loadingView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
- 
 //    loadingView.state = MJLoadingViewStateNone;
     loadingView.state = MJLoadingViewStateLoading;
 //    loadingView.state = MJLoadingViewStateSuccess;
@@ -974,10 +977,21 @@
 
 - (void)clickComment {
     
-    RRSeasonSeniorCommentsSubVC *vc = [[RRSeasonSeniorCommentsSubVC alloc] init];
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+//    RRSeasonSeniorCommentsSubVC *vc = [[RRSeasonSeniorCommentsSubVC alloc] init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
     
+    
+    RRSeasonSeniorCommentsSubVC *vc = [[RRSeasonSeniorCommentsSubVC alloc] initWithIsHalf:YES];
+//    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];
+//    vc.name = model.chineseName;
+//    vc.communityEnable = model.communityEnable;
+//    UIViewController *topVC = [UIViewController topViewController];
+    UIViewController *topVC = self;
+    [topVC addChildViewController:vc];
+    [vc didMoveToParentViewController:topVC];
+    [topVC.view addSubview:vc.view];
+    [vc show];
 }
 
 - (void)clickArchiver {
