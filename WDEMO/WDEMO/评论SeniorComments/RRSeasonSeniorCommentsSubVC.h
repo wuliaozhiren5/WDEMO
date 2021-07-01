@@ -13,8 +13,11 @@ NS_ASSUME_NONNULL_BEGIN
 //高级评论 一级页面
 @interface RRSeasonSeniorCommentsSubVC : BaseViewController
 @property (nonatomic, copy) NSString *seasonId;
-@property (nonatomic, assign) BOOL isHalf;          //半屏
+//@property (nonatomic, assign) BOOL isHalf;          //半屏
 //@property (nonatomic, weak) UIViewController<RRNavScrollViewControllerDelegate> *fatherVC;
+- (instancetype)initWithIsHalf:(BOOL)isHalf;
+- (void)show;
+- (void)dismiss;
 @end
 
 NS_ASSUME_NONNULL_END

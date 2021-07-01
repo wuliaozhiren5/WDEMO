@@ -20,11 +20,28 @@
 //@property (nonatomic, strong) RRCommentService *service;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) RRSeasonSeniorCommentsInputBar *bottomView;
+ 
+//@property (nonatomic, strong) UIView *header;
+//@property (nonatomic, strong) UILabel *headerLab;
+
+@property (nonatomic, assign) BOOL isHalf;          //半屏
+@property (nonatomic, strong) UIView *topBar;
+@property (nonatomic, strong) UILabel *titleLab;
+@property (nonatomic, strong) UIButton *closeBtn; //半屏
 
 @property (nonatomic, copy) NSMutableArray *data;//数据
+
 @end
 
 @implementation RRSeasonSeniorCommentsSubVC
+
+- (instancetype)initWithIsHalf:(BOOL)isHalf {
+    self = [super init];
+    if (self) {
+        self.isHalf = isHalf;
+    }
+    return self;
+}
 
 - (instancetype)init {
     self = [super init];
@@ -42,7 +59,6 @@
     
     [self setupViews];
     [self refreshData];
-
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
 //    view.backgroundColor = [UIColor whiteColor];
@@ -118,21 +134,55 @@
 }
 
 - (void)setupViews {
- 
-    [self.view addSubview:self.tableView];
-    [self.view addSubview:self.bottomView];
-    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.height.equalTo(@(53 - appMargin().bottom));
-        make.leading.equalTo(@(0));
-        make.trailing.equalTo(@(0));
-        make.bottom.equalTo(@(0));
-    }];
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@(0));
-        make.leading.equalTo(@(0));
-        make.trailing.equalTo(@(0));
-        make.bottom.equalTo(self.bottomView.mas_top).offset(0);
-    }];
+        [self.view addSubview:self.tableView];
+        [self.view addSubview:self.bottomView];
+        [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.height.equalTo(@(53 - appMargin().bottom));
+            make.leading.equalTo(@(0));
+            make.trailing.equalTo(@(0));
+            make.bottom.equalTo(@(0));
+        }];
+        
+        if (!self.isHalf) {
+            [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(@(0));
+                make.leading.equalTo(@(0));
+                make.trailing.equalTo(@(0));
+                make.bottom.equalTo(self.bottomView.mas_top).offset(0);
+            }];
+        } else {
+            UIView *topBarBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+            topBarBackView.backgroundColor = kCOLOR_000000;
+            [self.view addSubview:topBarBackView];
+
+            [self.view addSubview:self.topBar];
+            [self.topBar addSubview:self.titleLab];
+            [self.topBar addSubview:self.closeBtn];
+            [self.topBar mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.leading.trailing.equalTo(@0);
+                make.height.equalTo(@49);
+            }];
+            [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.leading.equalTo(@16);
+                make.trailing.equalTo(@-49);
+                make.top.bottom.equalTo(@0);
+            }];
+            [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.trailing.bottom.equalTo(@0);
+                make.width.height.equalTo(@49);
+            }];
+            [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.topBar.mas_bottom).offset(-10);
+                make.leading.trailing.equalTo(@0);
+                make.bottom.equalTo(self.bottomView.mas_top).offset(0);
+            }];
+//        }
+    }
+//    self.tableView.hidden = YES;
+//    self.bottomView.hidden = YES;
+//    self.bottomView.commentModel = self.commentModel;
+    [self.view bringSubviewToFront:self.tableView];
+
 }
 
 - (void)clickTextBtn:(UIButton *)btn {
@@ -337,6 +387,64 @@
     return _bottomView;
 }
 
+//topBar
+- (UIView *)topBar {
+    if (!_topBar) {
+        _topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+        _topBar.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
+    }
+    return _topBar;
+}
+
+- (UILabel *)titleLab {
+    if (!_titleLab) {
+        _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+        _titleLab.text = @"评论";
+        _titleLab.font = SYSTEMFONT(17);
+    }
+    return _titleLab;
+}
+
+- (UIButton *)closeBtn {
+    if (!_closeBtn) {
+        _closeBtn = [[UIButton alloc] init];
+        _closeBtn.frame = CGRectMake(0, 0, 40, 40);
+        [_closeBtn setImage:IMAGENAME(@"ic_search_results_bar_close_28") forState:UIControlStateNormal];
+        [_closeBtn addTarget:self action:@selector(clickCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _closeBtn;
+}
+
+- (void)clickCloseBtn:(UIButton *)btn {
+    [self dismiss];
+}
+
+- (void)show {
+    if (!self.isHalf) {
+        return;
+    }
+    self.view.frame = CGRectMake(0, KHeight, KWidth, KHeight - playerViewHeight());
+    [UIView animateWithDuration:0.25
+                     animations:^{
+                       self.view.frame = CGRectMake(0, playerViewHeight(), KWidth, KHeight - playerViewHeight());
+                     }];
+}
+
+- (void)dismiss {
+    if (!self.isHalf) {
+        return;
+    }
+    [UIView animateWithDuration:0.25
+        animations:^{
+          self.view.frame = CGRectMake(0, KHeight, KWidth, KHeight - playerViewHeight());
+        }
+        completion:^(BOOL finished) {
+          [self willMoveToParentViewController:nil];
+          [self removeFromParentViewController];
+          [self.view removeFromSuperview];
+        }];
+}
+
 //- (NSString *)rr_UMemgPageName {
 //    return @"剧集详情页";
 //}
@@ -344,6 +452,5 @@
 //- (NSString *)rr_UMemgChannelName {
 //    return @"详情";
 //}
-
 @end
  
