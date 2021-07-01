@@ -1077,6 +1077,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5446CA4268D709C0076961A /* 广场 */,
 				F50440B72625A06B00834547 /* 评论SeniorComments */,
 				F53C39052616B85E0015A9AE /* 新手引导Guide镂空 */,
 				F5C1168A260CA20F001F4A74 /* UILabel+Util.h */,
@@ -1543,6 +1544,13 @@
 				F5091DE0268C4184000884D1 /* XXLoadingView.m */,
 			);
 			path = "加载LoadingView";
+			sourceTree = "<group>";
+		};
+		F5446CA4268D709C0076961A /* 广场 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "广场";
 			sourceTree = "<group>";
 		};
 		F548D0C0256E2EE900357E64 /* 追剧-动效-11-25 */ = {
