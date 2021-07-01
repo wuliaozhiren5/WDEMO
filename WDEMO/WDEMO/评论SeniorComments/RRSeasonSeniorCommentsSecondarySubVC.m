@@ -27,6 +27,16 @@
 @property (nonatomic, strong) UILabel *titleLab;
 @property (nonatomic, strong) UIButton *closeBtn; //半屏
 
+//@property (nonatomic, strong) RRDataSource *dataSource;
+//@property (nonatomic, assign) NSInteger page;
+//@property (nonatomic, assign) NSInteger rows;
+
+//@property (nonatomic, assign) BOOL isReplying;
+
+//@property (nonatomic, assign) NSInteger index;
+//展示全部文字
+@property (nonatomic, assign) BOOL isShowMore;
+
 @property (nonatomic, copy) NSMutableArray *data;//数据
 
 @end
@@ -369,16 +379,14 @@
             break;
         default:
         {
-            return [[UIView alloc] init];
-
-//            NSInteger count = self.commentModel.replyCount;
-//            NSString *countStr = [NSString transformCountWithString:count];
-//            NSString *text = @"";
-//            if (countStr.length > 0) {
-//                text = [NSString stringWithFormat:@"%@条回复", countStr];
-//            }
-//            _headerLab.text = text;
-//            return _header;
+            NSInteger count = self.commentModel.replyCount;
+            NSString *countStr = [NSString transformCountWithString:count];
+            NSString *text = @"";
+            if (countStr.length > 0) {
+                text = [NSString stringWithFormat:@"%@条回复", countStr];
+            }
+            _headerLab.text = text;
+            return _header;
         }
             break;
     }
@@ -399,7 +407,7 @@
             RRSeasonSeniorCommentsNoReplyListCell *cell = (RRSeasonSeniorCommentsNoReplyListCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsNoReplyListCell class]) forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.isHalf = YES;
-            cell.isShowMore = YES;
+            cell.isShowMore = self.isShowMore;
             cell.model = self.commentModel;
             cell.praiseBtn.hidden = YES;
             WS(weakSelf)
@@ -408,6 +416,14 @@
 //            };
             cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
 //                [weakSelf clickDeleteCommentWithModel:model];
+            };
+            cell.clickFullText = ^(RRSeniorCommentsModel * _Nonnull model) {
+                weakSelf.isShowMore = YES;
+                [weakSelf.tableView reloadData];
+            };
+            cell.clickCutText = ^(RRSeniorCommentsModel * _Nonnull model) {
+                weakSelf.isShowMore = NO;
+                [weakSelf.tableView reloadData];
             };
             return cell;
         }

@@ -9,7 +9,7 @@
 #import "RRSeasonSeniorCommentsReplyTableView.h"
 #import "YYKit.h"
 
-@interface RRSeasonSeniorCommentsReplyTableView ()<UITableViewDelegate,UITableViewDataSource>
+@interface RRSeasonSeniorCommentsReplyTableView ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UIControl *footer;
 @property (nonatomic, strong) UILabel *footerLab;
 @end
@@ -23,6 +23,7 @@
  // Drawing code
  }
  */
+
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -154,6 +155,7 @@
     RRSeasonSeniorCommentsReplyTableViewCell *cell = (RRSeasonSeniorCommentsReplyTableViewCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyTableViewCell class]) forIndexPath:indexPath];
     RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
     cell.model= model;
+    cell.isHalf = self.isHalf;
 //    //WTableViewCell
 //    WTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WTableViewCell class]) forIndexPath:indexPath];
 //    cell.firstLabel.text = [NSString stringWithFormat:@"cell_section = %zi", indexPath.section];
@@ -230,7 +232,6 @@
 }
 
 @end
-
 
 //------------------------------------------------
 @interface RRSeasonSeniorCommentsReplyTableViewCell ()
@@ -649,14 +650,6 @@
             //              one.lineSpacing = 2.5;
             one.font = textFont;
             one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"nicknameStr");
-            }];
             [text appendAttributedString:one];
         }
         
@@ -675,14 +668,6 @@
             //              one.lineSpacing = 2.5;
             one.font = textFont;
             one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"replyNicknameStr");
-            }];
             [text appendAttributedString:one];
         }
         
@@ -737,14 +722,6 @@
             //              one.lineSpacing = 2.5;
             one.font = textFont;
             one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"查看图片");
-            }];
             [text appendAttributedString:one];
         }
     } else {
@@ -755,14 +732,6 @@
             //              one.lineSpacing = 2.5;
             one.font = textFont;
             one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"nicknameStr");
-            }];
             [text appendAttributedString:one];
         }
         
@@ -781,14 +750,6 @@
             //              one.lineSpacing = 2.5;
             one.font = textFont;
             one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"replyNicknameStr");
-            }];
             [text appendAttributedString:one];
         }
         
@@ -814,14 +775,6 @@
             //              one.lineSpacing = 2.5;
             one.font = textFont;
             one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"查看图片");
-            }];
             [text appendAttributedString:one];
         }
     }
@@ -911,355 +864,20 @@
 //
 //    [photoManager addCustomAssetModel:assetArray];
 //    UIViewController *topVC = [UIViewController topViewController];
-//    [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
-//                                         previewStyle:HXPhotoViewPreViewShowStyleDark
-//                                         currentIndex:0
-//                                            photoView:nil];
+//
+//    if (!self.isHalf) {
+//        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
+//                                              previewStyle:HXPhotoViewPreViewShowStyleDark
+//                                              currentIndex:0
+//                                                 photoView:nil];
+//    } else {
+//        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
+//                                              previewStyle:HXPhotoViewPreViewShowStyleDark
+//                                     showBottomPageControl:YES
+//                                              currentIndex:0
+//                                                 photoView:nil
+//                                                    height:playerViewHeight()];
+//    }
 }
-
--(void)fill {
-//    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@"小姐姐：单打独斗是短发"];
-//    self.yyContentLab.attributedText = text;
-     
-//    小姐姐：单打独斗是短发
-//    北极星 回复 小姐姐：短发乾隆贼可爱笑点担当。但是人物和环境欠缺时尚…
-//    查看图片
-//    查看12333条回复
-    NSString *realNicknameStr = @"小姐姐小姐姐小姐姐小姐姐小姐姐小姐姐小姐姐小姐姐小姐姐小姐姐";
-    NSString *realReplyNicknameStr = @"北极星北极星北极星北极星北极星北极星北极星北极星";
-    //text
-    NSString *nicknameStr = [realNicknameStr copy];
-    NSString *replyNicknameStr = [realReplyNicknameStr copy];
-    
-    UILabel *nicknameLab = [[UILabel alloc] init];
-    nicknameLab.frame = CGRectMake(0, 0, 150, 100);
-    nicknameLab.font = RR_COMMONFONT(14);
-    nicknameLab.text = realNicknameStr;
-    
-    UILabel *replyNicknameLab = [[UILabel alloc] init];
-    replyNicknameLab.frame = CGRectMake(0, 0, 150, 100);
-    replyNicknameLab.font = RR_COMMONFONT(14);
-    //text
-    replyNicknameLab.text = realReplyNicknameStr;
- 
-    //昵称避免太长
-    NSArray *realNicknameArray = [UILabel getSeparatedLinesFromLabel:nicknameLab];
-    if (realNicknameArray.count > 2) {
-        nicknameStr = [NSString stringWithFormat:@"%@...",realNicknameArray[0]];
-    }
-    
-    //昵称避免太长
-    NSArray *realReplyNicknameArray = [UILabel getSeparatedLinesFromLabel:replyNicknameLab];
-    if (realNicknameArray.count > 2) {
-        replyNicknameStr = [NSString stringWithFormat:@"%@...",realReplyNicknameArray[0]];
-    }
-     
-    //冒号
-    NSString *colonStr = @"：";
-    NSString *replyStr = @" 回复 ";
-    NSString *moreTextStr = @"...";
-    NSString *lookImageStr = @"查看图片";
-    NSString *str = @"中国古典长篇小说四大名著简称四大名著是指水浒传三国演义西游记红楼梦按照成书先后顺序这四部巨著四大古典名著是中国文学史中的经典作品是世界宝贵的文化遗产此四部巨著在中国文学史上的地位是难分高低的都有着极高的文学水平和艺术成就细致的刻画和所蕴含的深刻思想都为历代读者所称道其中的故事场景人物已经深深地影响了中国人的思想观念价值取向可谓中国文学史上的四座伟大丰碑。\n中国古典长篇小说四大名著简称四大名著是指水浒传三国演义西游记红楼梦按照成书先后顺序这四部巨著四大古典名著是中国文学史中的经典作品是世界宝贵的文化遗产此四部巨著在中国文学史上的地位是难分高低的都有着极高的文学水平和艺术成就细致的刻画和所蕴含的深刻思想都为历代读者所称道其中的故事场景人物已经深深地影响了中国人的思想观念价值取向可谓中国文学史上的四座伟大丰碑。\n";
-    
-    NSString *content = [str copy] ?: @"";
-    NSString *textStr = [str copy] ?: @"";
-    
-    BOOL isHasImage = YES;
-    if (!isHasImage) {
-         lookImageStr = @"";
-    }
-//    BOOL isReply = YES;
-    BOOL isReply = (replyNicknameStr.length > 0);
-    if (!isReply) {
-       replyStr = @"";
-       replyNicknameStr = @"";
-    }
-    
-    textStr = [NSString stringWithFormat:@"%@%@%@%@%@%@", nicknameStr, replyStr, replyNicknameStr, colonStr, textStr, lookImageStr];
-    //    self.contentLab.text = textStr;
-    self.yyContentLab.text = textStr;
-    
-    //    ...查看全文
-    //    ...查看图片
-    //恢复View
-    NSArray *array = [UILabel getSeparatedLinesFromYYLabel:self.yyContentLab];
-    CGFloat fontSize = 14;
-    UIFont *textFont = RR_COMMONFONT(fontSize);
-    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@""];
-    text.lineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
-    text.font = textFont;
-    text.color = kCOLOR_85888F;
-
-    if (array.count > 2 ) {
-  
-        NSString *line2String = array[1];
-        NSString *showText = [NSString stringWithFormat:@"%@%@", array[0], [line2String substringToIndex:line2String.length - 7]];
-        //真正可以显示的文本
-        NSString *showContentText = [showText substringFromIndex:(nicknameStr.length + replyStr.length + replyNicknameStr.length + colonStr.length)];
-         
-        {
-            //nicknameStr
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:nicknameStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"nicknameStr");
-            }];
-            [text appendAttributedString:one];
-        }
-        
-        {
-            // 回复
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:replyStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_85888F;
-            [text appendAttributedString:one];
-        }
-        
-        {
-            //replyNicknameStr
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:replyNicknameStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"replyNicknameStr");
-            }];
-            [text appendAttributedString:one];
-        }
-        
-        {
-            //冒号
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:colonStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_85888F;
-            [text appendAttributedString:one];
-        }
-        
-//        {
-//            NSString *lineString = array[0];
-//            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:[lineString substringFromIndex:nicknameStr.length + replyStr.length + replyNicknameStr.length + colonStr.length]];
-//            //              one.lineSpacing = 2.5;
-//            one.font = textFont;
-//            one.color = kCOLOR_85888F;
-//
-//            [text appendAttributedString:one];
-//        }
-//
-//        {
-//            NSString *lineString = array[1];
-//            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:[lineString substringToIndex:lineString.length - moreTextStr.length - lookImageStr.length]];
-//            //              one.lineSpacing = 2.5;
-//            one.font = textFont;
-//            one.color = kCOLOR_85888F;
-//
-//            [text appendAttributedString:one];
-//        }
-        
-        {
-             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:showContentText];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_85888F;
-            [text appendAttributedString:one];
-        }
-        
-        {
-            //...
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:moreTextStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_85888F;
-            [text appendAttributedString:one];
-        }
-        
-        {
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:lookImageStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"查看图片");
-            }];
-            [text appendAttributedString:one];
-        }
-         
-//        //1-4行
-//        NSString *showText = [NSString stringWithFormat:@"%@%@%@%@%@%@%@", nicknameStr, replyStr, replyNicknameStr, colonStr, array[0], [line5String substringToIndex:line5String.length - moreTextStr.length - lookImageStr.length], moreTextStr];
-//        {
-//            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:showText];
-//            //              one.lineSpacing = 2.5;
-//            one.font = textFont;
-//            one.color = kCOLOR_85888F;
-////            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-////            [one setTextHighlightRange:one.rangeOfAll
-////                                 color:kCOLOR_85888F
-////                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-////                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-////                //自定义代码，此处根据需要调整
-////                NSLog(@"点击了文字 + ...");
-////            }];
-//            [text appendAttributedString:one];
-//        }
-//        {
-//            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:lookImageStr];
-//            //              one.lineSpacing = 2.5;
-//            one.font = textFont;
-//            one.color = kCOLOR_0091FF;
-//            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-//            [one setTextHighlightRange:one.rangeOfAll
-//                                 color:kCOLOR_0091FF
-//                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-//                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-//                //自定义代码，此处根据需要调整
-//                NSLog(@"查看图片");
-//            }];
-//            [text appendAttributedString:one];
-//        }
-
-    } else {
-        
-        {
-            //nicknameStr
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:nicknameStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"nicknameStr");
-            }];
-            [text appendAttributedString:one];
-        }
-        
-        {
-            // 回复
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:replyStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_85888F;
-            [text appendAttributedString:one];
-        }
-        
-        {
-            //replyNicknameStr
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:replyNicknameStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"replyNicknameStr");
-            }];
-            [text appendAttributedString:one];
-        }
-        
-        {
-            //冒号
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:colonStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_85888F;
-            [text appendAttributedString:one];
-        }
-        
-        {
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:content];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_85888F;
-            [text appendAttributedString:one];
-        }
-      
-        {
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:lookImageStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"查看图片");
-            }];
-            [text appendAttributedString:one];
-        }
-         
-//        //1-4行
-//        NSString *showText = [NSString stringWithFormat:@"%@%@%@%@%@%@%@", nicknameStr, replyStr, replyNicknameStr, colonStr, array[0], [line5String substringToIndex:line5String.length - moreTextStr.length - lookImageStr.length], moreTextStr];
-//        {
-//            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:showText];
-//            //              one.lineSpacing = 2.5;
-//            one.font = textFont;
-//            one.color = kCOLOR_85888F;
-////            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-////            [one setTextHighlightRange:one.rangeOfAll
-////                                 color:kCOLOR_85888F
-////                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-////                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-////                //自定义代码，此处根据需要调整
-////                NSLog(@"点击了文字 + ...");
-////            }];
-//            [text appendAttributedString:one];
-//        }
-//        {
-//            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:lookImageStr];
-//            //              one.lineSpacing = 2.5;
-//            one.font = textFont;
-//            one.color = kCOLOR_0091FF;
-//            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-//            [one setTextHighlightRange:one.rangeOfAll
-//                                 color:kCOLOR_0091FF
-//                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-//                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-//                //自定义代码，此处根据需要调整
-//                NSLog(@"查看图片");
-//            }];
-//            [text appendAttributedString:one];
-//        }
-    }
-//
- 
-    CGSize yySize = CGSizeMake((KWidth - 61 - 16 - 15 * 2), CGFLOAT_MAX);
-    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
-    CGRect rect = layout.textBoundingRect;
-    //        CGSize size = layout.textBoundingSize;
-    self.yyContentLab.attributedText = text;
-    self.yyContentLab.frame = CGRectMake(15, 6, (KWidth - 61 - 16 - 15 * 2), rect.size.height + 1);
-
-    NSLog(@"%zi", [layout lineIndexForRow:1]);
-    NSLog(@"%zi", [layout lineCountForRow:1]);
-    NSLog(@"%zi", layout.rowCount);
-}
-
- 
 @end
  

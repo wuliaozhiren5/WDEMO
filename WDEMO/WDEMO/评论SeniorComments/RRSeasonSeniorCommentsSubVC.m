@@ -151,7 +151,7 @@
                 make.bottom.equalTo(self.bottomView.mas_top).offset(0);
             }];
         } else {
-            UIView *topBarBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+             UIView *topBarBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
             topBarBackView.backgroundColor = kCOLOR_000000;
             [self.view addSubview:topBarBackView];
 
@@ -313,9 +313,7 @@
     [topVC addChildViewController:vc];
     [vc didMoveToParentViewController:topVC];
     [topVC.view addSubview:vc.view];
-    [vc show];
-    
-    
+    [vc show]; 
 
 }
 

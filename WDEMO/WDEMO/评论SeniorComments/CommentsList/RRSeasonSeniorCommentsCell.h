@@ -14,7 +14,6 @@
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^ClickSeasonSeniorCommentsCell)(RRSeniorCommentsModel * _Nonnull model);//不可以为空
 
-
 @interface RRSeasonSeniorCommentsCell : UITableViewCell
 
 //头像
@@ -59,6 +58,12 @@ typedef void(^ClickSeasonSeniorCommentsCell)(RRSeniorCommentsModel * _Nonnull mo
 
 //@property (nonatomic, copy) ClickSeasonSeniorCommentsCell clickImage;
 
+//点击查看全文
+@property (nonatomic, copy) ClickSeasonSeniorCommentsCell clickFullText;
+
+//点击收起
+@property (nonatomic, copy) ClickSeasonSeniorCommentsCell clickCutText;
+
 @property (nonatomic, strong) RRSeniorCommentsModel *model;
 
 @property (nonatomic, assign) BOOL isHalf;          //半屏
@@ -66,6 +71,7 @@ typedef void(^ClickSeasonSeniorCommentsCell)(RRSeniorCommentsModel * _Nonnull mo
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model;
 
 - (void)setupViews;
+//- (void)clickTextBtn;
 @end
 
 NS_ASSUME_NONNULL_END

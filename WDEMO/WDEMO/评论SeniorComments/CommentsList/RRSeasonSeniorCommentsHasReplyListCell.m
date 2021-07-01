@@ -10,7 +10,7 @@
 #import "RRSeasonSeniorCommentsReplyTableView.h"
 #import "RRSeasonSeniorCommentsSecondarySubVC.h"
 
-@interface RRSeasonSeniorCommentsHasReplyListCell ()<RRSeasonSeniorCommentsSecondarySubVCDelegate, RRSeasonSeniorCommentsReplyTableViewDelegate>
+@interface RRSeasonSeniorCommentsHasReplyListCell () <RRSeasonSeniorCommentsSecondarySubVCDelegate, RRSeasonSeniorCommentsReplyTableViewDelegate>
 @property (nonatomic, strong) RRSeasonSeniorCommentsReplyTableView *tableView;
 @end
 
@@ -23,8 +23,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(nullable NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        //cell选中颜色
-        //        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.isShowMore = NO;
         [self setupViews];
     } else {
@@ -42,13 +41,6 @@
     [super setupViews];
     //replyTable
     [self.contentView addSubview:self.tableView];
-     
-//    CGFloat currentHeight = self.singleImageView.frame.origin.y + self.singleImageView.frame.size.height;
-//
-//    //有回复
-//    BOOL isHasReply = YES;
-//    self.tableView.frame = CGRectMake(61, 8 + currentHeight,  (KWidth - 61 - 16), 300);
-//    self.tableView.scrollEnabled = NO;
 }
 
 - (void)setModel:(RRSeniorCommentsModel *)model {
@@ -81,7 +73,7 @@
 //    //    ...查看全文
 //    //    ...查看图片
 //    //恢复View
-//    NSArray *array = [UILabel getSeparatedLinesFromYYLabel:self.yyContentLab];
+//    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
 //
 //    CGFloat fontSize = 14;
 //    UIFont *textFont = RR_COMMONFONT(fontSize);
@@ -103,7 +95,7 @@
 //        line5String = [NSString stringWithFormat:@"%@%@%@", line5String, moreTextStr, showAllTextStr];//...查看全文
 //        //第5行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
 //        self.yyContentLab.text = line5String;
-//        NSArray *lineArray = [UILabel getSeparatedLinesFromYYLabel:self.yyContentLab];
+//        NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
 //        NSString *lineString = lineArray[0];
 //        lineString = [NSString stringWithFormat:@"%@%@", [lineString substringToIndex:lineString.length - moreTextStr.length - showAllTextStr.length], moreTextStr];
 //        //最后，完成1-5行
@@ -201,6 +193,7 @@
     
     if (isHasReply) {
         self.tableView.hidden = NO;
+        self.tableView.isHalf = self.isHalf;
         self.tableView.count = model.replyCount;
         self.tableView.data = model.replies;
         self.tableView.model = model;
@@ -214,6 +207,8 @@
     if (self.tableView.frame.size.height > 0) {
         currentHeight = currentHeight + 8 + self.tableView.frame.size.height;
     }
+    self.bottomView.frame = CGRectMake(0, currentHeight, KWidth, 45);
+
 }
 
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll {
@@ -284,7 +279,7 @@
 //    //    ...查看全文
 //    //    ...查看图片
 //    //恢复View
-//    NSArray *array = [UILabel getSeparatedLinesFromYYLabel:yyContentLab];
+//    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
 //
 //    CGFloat fontSize = 14;
 //    UIFont *textFont = RR_COMMONFONT(fontSize);
@@ -306,7 +301,7 @@
 //        line5String = [NSString stringWithFormat:@"%@%@%@", line5String, moreTextStr, showAllTextStr];//...查看全文
 //        //第5行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
 //        yyContentLab.text = line5String;
-//        NSArray *lineArray = [UILabel getSeparatedLinesFromYYLabel:yyContentLab];
+//        NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
 //        NSString *lineString = lineArray[0];
 //        lineString = [NSString stringWithFormat:@"%@%@", [lineString substringToIndex:lineString.length - moreTextStr.length - showAllTextStr.length], moreTextStr];
 //        //最后，完成1-5行
@@ -407,10 +402,15 @@
 //    return 34 + 45 + currentHeight;
 //}
  
-////查看全文
-//- (void)clickFullText {
-//    [self gotoReplyVCWithCommentModel:self.model replyModel:nil];
-//}
+//查看全文
+- (void)clickFullTextBtn {
+    [self gotoReplyVCWithCommentModel:self.model replyModel:nil];
+}
+
+//收起
+- (void)clickCutTextBtn {
+
+}
 
 #pragma mark -  RRSeasonSeniorCommentsReplyTableViewDelegate
 - (void)seasonSeniorCommentsReplyTableView:(UITableView *)tableView
@@ -423,7 +423,9 @@
 - (void)gotoReplyVCWithCommentModel:(RRSeniorCommentsModel *)commentModel replyModel:(RRSeniorCommentsModel *)replyModel {
     RRSeasonSeniorCommentsSecondarySubVC *vc = [[RRSeasonSeniorCommentsSecondarySubVC alloc] initWithIsHalf:YES];
     vc.commentModel = commentModel;
-    vc.replyModel = replyModel;
+//    vc.replyModel = replyModel;
+    NSString *replyId = replyModel ? replyModel.ID : nil;
+    vc.replyId = replyId;
     vc.delegate = self;
     //    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];
     //    vc.name = model.chineseName;
@@ -455,4 +457,5 @@
     }
     return _tableView;
 }
+
 @end

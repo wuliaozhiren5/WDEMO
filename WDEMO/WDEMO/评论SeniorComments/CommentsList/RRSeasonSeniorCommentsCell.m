@@ -38,12 +38,12 @@
 //@property (nonatomic, strong) UIButton *praiseBtn;
 //@property (nonatomic, strong) UILabel *praiseBtnLab;
 ////@property (nonatomic, strong) UIImageView *praiseImageView; //imgV
-//
+
 ////@property (nonatomic, strong) RRSeasonSeniorCommentsReplyTableView *tableView;
-//
-////@property (nonatomic, assign) BOOL isShowMore;//是否显示更多数据 默认NO
+
+//@property (nonatomic, assign) BOOL isShowMore;//是否显示更多数据 默认NO
 ////@property (nonatomic, assign) BOOL isFirst;//是否是剧透
-// 
+ 
 @end
 
 @implementation RRSeasonSeniorCommentsCell
@@ -94,8 +94,8 @@
     //image
     [self.contentView addSubview:self.singleImageView];
     //replyTable
-    //    [self.contentView addSubview:self.tableView];
-    
+//    [self.contentView addSubview:self.tableView];
+
     //抗压缩
     [self.nicknamelab setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
     [self.nicknameLevelLab setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
@@ -113,7 +113,7 @@
         make.width.equalTo(@11);
         make.height.equalTo(@11);
     }];
-    
+
     //昵称vip
     [self.nicknameVipIconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.equalTo(@14);
@@ -132,7 +132,7 @@
     
     //昵称等级lab
     [self.nicknameLevelLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        //        make.leading.equalTo(@4);
+//        make.leading.equalTo(@4);
         make.trailing.equalTo(@-4);
         make.centerY.equalTo(self.nicknameLevelView);
         //        make.trailing.equalTo(@-16);
@@ -143,12 +143,12 @@
     [self.nicknamelab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(@61);
         make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
-        //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
+//        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
         make.top.equalTo(@10);
         make.height.equalTo(@17);
     }];
     
-    
+ 
     //    [self.contentLab mas_makeConstraints:^(MASConstraintMaker *make) {
     //        make.top.equalTo(self.nicknamelab.mas_bottom).offset(7);
     //        make.leading.equalTo(@61);
@@ -161,12 +161,13 @@
     //        make.trailing.equalTo(@-16);
     //    }];
     
-    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(@0);
-        make.leading.equalTo(@0);
-        make.trailing.equalTo(@0);
-        make.height.equalTo(@45);
-    }];
+//消息中查看详情
+//    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.bottom.equalTo(@0);
+//        make.leading.equalTo(@0);
+//        make.trailing.equalTo(@0);
+//        make.height.equalTo(@45);
+//    }];
     
     [self.dateLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
@@ -176,20 +177,20 @@
     }];
     
     [self.praiseBtnLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        //        make.top.equalTo(@0);
+    //        make.top.equalTo(@0);
         make.bottom.equalTo(@-13);
-        make.trailing.equalTo(@-20);
+        make.trailing.equalTo(@-40);
         make.height.equalTo(@15);
-        //        make.centerY.equalTo(self.praiseBtn);
+    //        make.centerY.equalTo(self.praiseBtn);
     }];
-    
+
     [self.praiseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
         make.bottom.equalTo(@0);
-        make.trailing.equalTo(@-16);
+        make.trailing.equalTo(@0);
         //        make.height.equalTo(@45);
         //        make.width.equalTo(@100);
-        make.leading.equalTo(self.praiseBtnLab);
+        make.leading.equalTo(self.praiseBtnLab.mas_leading).offset(-16);
     }];
     
     //firstView
@@ -205,23 +206,15 @@
         make.center.equalTo(self.firstView);
     }];
     
-    //    [self.singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        //        make.top.equalTo(self.contentLab.mas_bottom).offset(4);
-    //        //        make.top.equalTo(self.yyContentLab.mas_top).offset(0);
-    //        make.bottom.equalTo(self.bottomView.mas_top).offset(0);
-    //        make.leading.equalTo(@61);
-    //        make.width.equalTo(@197);
-    //        //        make.height.equalTo(@197);
-    //        make.height.equalTo(self.singleImageView.mas_width).multipliedBy(2.0);
-    //    }];
-    
-    
-//    //填充数据
-//    [self fillBottomView];
-//
-//    [self fillAvaterNickname];
-//
-//    [self fillText];
+//    [self.singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        //        make.top.equalTo(self.contentLab.mas_bottom).offset(4);
+//        //        make.top.equalTo(self.yyContentLab.mas_top).offset(0);
+//        make.bottom.equalTo(self.bottomView.mas_top).offset(0);
+//        make.leading.equalTo(@61);
+//        make.width.equalTo(@197);
+//        //        make.height.equalTo(@197);
+//        make.height.equalTo(self.singleImageView.mas_width).multipliedBy(2.0);
+//    }];
 }
 
 - (void)setModel:(RRSeniorCommentsModel *)model {
@@ -229,24 +222,19 @@
     //填充数据
     self.praiseBtn.selected = model.liked;
     self.praiseBtnLab.text = [NSString transformCountWithString:model.likeCount];
-//    self.dateLab.text = [UILabel getFormatterDateStringWithTimeInterval:model.createTime / 1000.0];
-    self.dateLab.text = [NSString getFormatterDateStringWithTimeInterval:model.createTime / 1000.0];;
+//    self.dateLab.text = [NSString getFormatterDateStringWithTimeInterval:model.createTime / 1000.0];
+    self.dateLab.text = [NSString getFormatterDateStringWithTimeInterval:model.createTime / 1000.0];
 
     //头像
 //    [self.avatarImageView rr_setImageWithURLString:model.author.headImgUrl placeholderImage:KPersonHolderImg];
-//    [self.avatarImageView sd_setImageWithURL:nil placeholderImage:KPersonHolderImg];
-    
-    self.avatarImageView.backgroundColor = [UIColor grayColor];
-    self.singleImageView.backgroundColor = [UIColor grayColor];
-
-    
+    self.avatarImageView.image = [UIImage imageNamed:KPersonHolderImg];
     //nickname
     self.nicknamelab.text = model.author.nickName;
     NSString *levelStr = [NSString stringWithFormat:@"Lv.%zi", model.author.level];
     self.nicknameLevelLab.text = levelStr;
     
     //vip
-    BOOL isVip = NO;
+    BOOL isVip = YES;
 //    for (RRMedalModel *medal in model.author.medalList) {
 //        if (medal.medalId == 1) {
 //            isVip = YES;
@@ -254,7 +242,7 @@
 //        }
 //    }
     if (isVip) {
-        self.avatarVipIconImageView.hidden = NO;
+//        self.avatarVipIconImageView.hidden = NO;
         self.nicknameVipIconImageView.hidden = NO;
         
         //昵称vip
@@ -292,7 +280,7 @@
         }];
         
     } else {
-        self.avatarVipIconImageView.hidden = YES;
+//        self.avatarVipIconImageView.hidden = YES;
         self.nicknameVipIconImageView.hidden = YES;
         
         //昵称等级view
@@ -321,6 +309,14 @@
             make.height.equalTo(@17);
         }];
     }
+    
+//    //V是认证标识
+//    self.avatarVipIconImageView.image = [UserHeaderView imageForUserType:[UserHeaderView certLabel:model.author.certLabel]];
+//    if (self.avatarVipIconImageView.image) {
+//        self.avatarVipIconImageView.hidden = NO;
+//    } else {
+//        self.avatarVipIconImageView.hidden = YES;
+//    }
 }
 
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model {
@@ -332,7 +328,7 @@
     if (!_singleImageView) {
         _singleImageView = [[UIImageView alloc] init];
         _singleImageView.frame = CGRectMake(0, 0, 197, 197);
-        //        _singleImageView.backgroundColor = [UIColor grayColor];
+        _singleImageView.backgroundColor = [UIColor grayColor];
         //        _singleImageView.hidden = YES;
         _singleImageView.layer.cornerRadius = 8;
         _singleImageView.layer.masksToBounds = YES;
@@ -349,7 +345,7 @@
     if (!_avatarImageView) {
         _avatarImageView = [[UIImageView alloc]init];
         _avatarImageView.frame = CGRectMake(0, 0, 36, 36);
-        //        _avatarImageView.backgroundColor = [UIColor grayColor];
+        _avatarImageView.backgroundColor = [UIColor grayColor];
         //        _coverImageView.hidden = YES;
         _avatarImageView.layer.cornerRadius = 18;
         _avatarImageView.layer.masksToBounds = YES;
@@ -428,7 +424,7 @@
         _praiseBtn.selected = YES;
         _praiseBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
         [_praiseBtn addTarget:self action:@selector(clickPraiseBtn:) forControlEvents:UIControlEventTouchUpInside];
-        
+        _praiseBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 20);
     }
     return _praiseBtn;
 }
@@ -546,8 +542,8 @@
 #pragma mark - 点赞
 - (void)clickPraiseBtn:(UIButton *)btn {
  
-    NSString  *typeId = self.model.ID;
-    BOOL liked = self.model.liked;
+//    NSString  *typeId = self.model.ID;
+//    BOOL liked = self.model.liked;
 //    WS(weakSelf);
 //    PriseDynamicApi *api = [[PriseDynamicApi alloc] initWithDynamic:typeId andDel:liked ? @"YES" : @""];
 //    [api startWithCompletionBlock:^(RRJsonModel *result, NSError *error) {
@@ -597,7 +593,7 @@
 }
  
 - (void)showAlertView {
-    WS(weakSelf);
+//    WS(weakSelf);
 //    RRAlertItem *item1 = [[RRAlertItem alloc] initWithTitle:@"复制" itemImg:IMAGENAME(@"ic_popbar_copy") itemStyle:RRAlertItemStyleListIconText];
 //    item1.actionBlock = ^(RRAlertItem *item) {
 //        NSLog(@"点击了%@", item.title);
@@ -621,11 +617,29 @@
 //        TOAST(@"操作成功，将减少此类内容推送");
 //    };
 //
+//    BOOL isCommentUser = [UserInfoConfig sharedUserInfoConfig].userInfo.commentUser;
+//    //老评论
+//    if (!isCommentUser) {
+//        NSArray *itemArray = @[item1, item3];
+//        NSString *title = [NSString stringWithFormat:@"%@：%@", self.model.author.nickName, self.model.content];
+//        RRAlertBase *alert = [[RRAlertBase alloc] initWithTitle:title itemArray:itemArray];
+//        [alert titleStyleWithText:title lines:2 textColor:kCOLOR_898A91 font:SYSTEMFONT(14) lineHeihgt:6];
+//        [alert showWithAnimation:YES];
+//        return;
+//    }
+//
 //    BOOL isMy = [[UserInfoConfig sharedUserInfoConfig].userInfo.Id isEqualToString:self.model.author.ID];
 //    //复制,删除
 //    NSArray *itemArray = @[item1, item2];
 //    if (!isMy) {
 //        itemArray = @[item1, item3];
+//    }
+//
+//    if (![UserInfoConfig sharedUserInfoConfig].isMoviesOpen) {
+//        itemArray = @[item1, item2, item4];
+//        if (!isMy) {
+//            itemArray = @[item1, item3, item4];
+//        }
 //    }
 ////    NSString *title = @"举报毒舌电影：好搞笑哦好好看撒大噶点范德萨发的撒范德萨到发疯剧啊撒地方大法大范德萨发到点点滴滴带的…";
 //    NSString *title = [NSString stringWithFormat:@"%@：%@", self.model.author.nickName, self.model.content];
@@ -634,17 +648,16 @@
 //    [alert showWithAnimation:YES];
 }
  
-
 #pragma mark - 复制
 - (void)clickCopyBtn {
     //复制文字
     UIPasteboard *pab = [UIPasteboard generalPasteboard];
     pab.string = self.model.content;
-    if (pab == nil) {
+//    if (pab == nil) {
 //        TOAST(@"复制失败");
-    } else {
+//    } else {
 //        TOAST(@"已复制");
-    }
+//    }
 }
 
 #pragma mark - 举报
@@ -705,7 +718,7 @@
 
 #pragma mark - 确认删除btn
 - (void)clickSureDeleteBtn {
-    NSString  *typeId = self.model.ID;
+//    NSString  *typeId = self.model.ID;
 //    WS(weakSelf)
 //    [RRSeniorCommentsDeletetApi requestSeniorCommentsDeleteWithTypeId:typeId block:^(BOOL success, NSError * _Nonnull error) {
 //        if (success) {
@@ -717,13 +730,12 @@
 }
 #pragma mark - 点击图片
 - (void)tapImageAction:(UITapGestureRecognizer *)tap {
-    NSLog(@"点击图片");
     [self previewClick];
 }
 #pragma mark - 点击头像 点击昵称
 - (void)tapAction:(UITapGestureRecognizer *)tap {
-    NSLog(@"点击头像 点击昵称");
 //    [[RRAppLinkManager sharedManager] goUpuserDetail:self.model.author.ID toRoot:NO];
+     
 }
 
 - (void)previewClick {
@@ -795,258 +807,5 @@
 //                                                    height:playerViewHeight()];
 //    }
 }
-
-
-
-
-
-
-
-- (void)fillBottomView {
-    self.dateLab.text = @"04-12";
-    self.praiseBtnLab.text = @"2144";
-}
-
-- (void)fillAvaterNickname {
-    
-    self.avatarImageView.backgroundColor = [UIColor grayColor];
-    //昵称
-    //    self.nicknamelab.text = @"鲁智深鲁达鲁提辖";
-    self.nicknamelab.text = @"水浒传三国演义西游记红楼梦水浒传三国演义西游记红楼梦";
-    self.nicknameLevelLab.text = @"lv.99";
-    
-    //    //vip
-    BOOL isVip = YES;
-    if (isVip) {
-        self.avatarVipIconImageView.hidden = NO;
-        self.nicknameVipIconImageView.hidden = NO;
-        
-        //昵称vip
-        [self.nicknameVipIconImageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.width.equalTo(@14);
-            make.height.equalTo(@14);
-            make.centerY.equalTo(self.nicknamelab);
-            make.trailing.lessThanOrEqualTo(self.contentView.mas_trailing).offset(-16);
-        }];
-        
-        //昵称等级view
-        [self.nicknameLevelView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.trailing.equalTo(self.nicknameVipIconImageView.mas_leading).offset(-4);
-            make.centerY.equalTo(self.nicknamelab);
-            make.leading.equalTo(self.nicknameLevelLab.mas_leading).offset(-4);
-            make.height.equalTo(@14);
-        }];
-        
-        //昵称等级lab
-        [self.nicknameLevelLab mas_remakeConstraints:^(MASConstraintMaker *make) {
-            //        make.leading.equalTo(@4);
-            make.trailing.equalTo(@-4);
-            make.centerY.equalTo(self.nicknameLevelView);
-            //        make.trailing.equalTo(@-16);
-            //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
-        }];
-        
-        //昵称
-        [self.nicknamelab mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(@61);
-            make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
-            //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
-            make.top.equalTo(@10);
-            make.height.equalTo(@17);
-        }];
-        
-    } else {
-        self.avatarVipIconImageView.hidden = YES;
-        self.nicknameVipIconImageView.hidden = YES;
-        
-        //昵称等级view
-        [self.nicknameLevelView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.trailing.lessThanOrEqualTo(self.contentView.mas_trailing).offset(-16);
-            make.centerY.equalTo(self.nicknamelab);
-            make.leading.equalTo(self.nicknameLevelLab.mas_leading).offset(-4);
-            make.height.equalTo(@14);
-        }];
-        
-        //昵称等级lab
-        [self.nicknameLevelLab mas_remakeConstraints:^(MASConstraintMaker *make) {
-            //        make.leading.equalTo(@4);
-            make.trailing.equalTo(@-4);
-            make.centerY.equalTo(self.nicknameLevelView);
-            //        make.trailing.equalTo(@-16);
-            //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
-        }];
-        
-        //昵称
-        [self.nicknamelab mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.leading.equalTo(@61);
-            make.trailing.equalTo(self.nicknameLevelView.mas_leading).offset(-4);
-            //        make.top.equalTo(self.avatarImageView.mas_top).offset(-2);
-            make.top.equalTo(@10);
-            make.height.equalTo(@17);
-        }];
-    }
-}
-
-- (void)fillText {
-    //@"剧透 "
-    //@"       " 7个空格
-    NSString *firstTextStr = @"      ";//@"剧透 ";//@"       "; @"剧透 ";
-    NSString *moreTextStr = @"...";
-    NSString *showAllTextStr = @"查看全文";
-    
-    NSString *str = @"中国古典长篇小说四大名著简称四大名著是指水浒传三国演义西游记红楼梦按照成书先后顺序这四部巨著四大古典名著是中国文学史中的经典作品是世界宝贵的文化遗产此四部巨著在中国文学史上的地位是难分高低的都有着极高的文学水平和艺术成就细致的刻画和所蕴含的深刻思想都为历代读者所称道其中的故事场景人物已经深深地影响了中国人的思想观念价值取向可谓中国文学史上的四座伟大丰碑。\n中国古典长篇小说四大名著简称四大名著是指水浒传三国演义西游记红楼梦按照成书先后顺序这四部巨著四大古典名著是中国文学史中的经典作品是世界宝贵的文化遗产此四部巨著在中国文学史上的地位是难分高低的都有着极高的文学水平和艺术成就细致的刻画和所蕴含的深刻思想都为历代读者所称道其中的故事场景人物已经深深地影响了中国人的思想观念价值取向可谓中国文学史上的四座伟大丰碑。\n";
-    
-    NSString *content = [str copy] ?: @"";
-    NSString *textStr = [str copy] ?: @"";
-    //剧透
-    BOOL isFirst = YES;
-    if (isFirst) {
-        //现实剧透标签
-        self.firstView.hidden = NO;
-        textStr = [firstTextStr stringByAppendingString:textStr];
-    } else {
-        //隐藏剧透标签
-        self.firstView.hidden = YES;
-    }
-    
-    //    self.contentLab.text = textStr;
-    self.yyContentLab.text = textStr;
-    
-    //    ...查看全文
-    //    ...查看图片
-    //恢复View
-    NSArray *array = [UILabel getSeparatedLinesFromYYLabel:self.yyContentLab];
-    
-    CGFloat fontSize = 14;
-    UIFont *textFont = RR_COMMONFONT(fontSize);
-    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@""];
-    text.lineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
-    text.font = textFont;
-    text.color = kCOLOR_85888F;
-    
-    
-    BOOL isShowMore = self.isShowMore;
-    if (array.count > 5 && !isShowMore) {
-        NSString *line5String = array[4];
-        //        NSString *showText = [NSString stringWithFormat:@"%@%@%@%@%@...查看全文", array[0], array[1], array[2], array[3], [line5String substringToIndex:line5String.length - 7]];
-        //        //1-4行
-        NSString *showText = [NSString stringWithFormat:@"%@%@%@%@%@%@", array[0], array[1], array[2], array[3], [line5String substringToIndex:line5String.length - moreTextStr.length - showAllTextStr.length], moreTextStr];
-        {
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:showText];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_85888F;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_85888F
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"点击了文字 + ...");
-                
-                //复制文字
-                UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-                [pasteboard setString:content];
-            }];
-            [text appendAttributedString:one];
-        }
-        {
-            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:showAllTextStr];
-            //              one.lineSpacing = 2.5;
-            one.font = textFont;
-            one.color = kCOLOR_0091FF;
-            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-            [one setTextHighlightRange:one.rangeOfAll
-                                 color:kCOLOR_0091FF
-                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                //自定义代码，此处根据需要调整
-                NSLog(@"查看全文");
-            }];
-            [text appendAttributedString:one];
-        }
-        
-    } else {
-        
-        NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:textStr];
-        //              one.lineSpacing = 2.5;
-        one.font = textFont;
-        one.color = kCOLOR_85888F;
-        //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-        [one setTextHighlightRange:one.rangeOfAll
-                             color:kCOLOR_85888F
-                   backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                         tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-            //自定义代码，此处根据需要调整
-            NSLog(@"点击全部文字");
-        }];
-        [text appendAttributedString:one];
-    }
-    
-    CGSize yySize = CGSizeMake((KWidth - 61 - 16), CGFLOAT_MAX);
-    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
-    CGRect rect = layout.textBoundingRect;
-    //        CGSize size = layout.textBoundingSize;
-    self.yyContentLab.attributedText = text;
-    self.yyContentLab.frame = CGRectMake(61, 34, (KWidth - 61 - 16), rect.size.height + 1);
-    
-    CGFloat currentHeight = 34 + (rect.size.height + 1);
-    
-    //    self.singleImageView.frame = CGRectMake(61, 4 + currentHeight, 200, 200);
-    //    self.singleImageView.image = IMAGENAME(@"ic_comment_v");
-    
-    CGFloat imageViewHeight = 0;
-    BOOL isHasImage = YES;
-    //    BOOL isHasImage = NO;
-    
-    if (isHasImage) {
-        self.singleImageView.hidden = NO;
-        self.singleImageView.image = IMAGENAME(@"ic_comment_v");
-        
-        CGFloat width = 300;
-        CGFloat height = 400;
-        CGFloat x = 61;
-        CGFloat y = 8 + currentHeight;
-        CGFloat max = 197;
-        CGFloat showWidth = 0;
-        CGFloat showHeight = 0;
-        
-        if (width > height) {
-            showWidth = max * 4 / 3;
-            showHeight = max;
-            
-        } else if (width < height) {
-            showWidth = max;
-            showHeight = max * 4 / 3;
-            
-        } else {
-            showWidth = max;
-            showHeight = max;
-            
-        }
-        self.singleImageView.frame = CGRectMake(x, y, showWidth, showHeight);
-        imageViewHeight = showHeight;
-    } else {
-        self.singleImageView.hidden = YES;
-        self.singleImageView.frame = CGRectZero;
-        imageViewHeight = 0;
-        
-    }
-    currentHeight = currentHeight + 8 + imageViewHeight;
-    
-    
-    
-    //    //有回复
-    //    BOOL isHasReply = YES;
-    //    self.tableView.frame = CGRectMake(61, 34 + rect.size.height + 1,  (KWidth - 61 - 16), 300);
-    ////    self.tableView.scrollEnabled = NO;
-    
-    
-    
-    //    //回复小姐姐：漫威10年，最喜欢的超级英雄排名最喜欢的超级英雄排名名
-    //    NSString *replyNicknameStr = @"小姐姐";
-    //    NSString *replyStr = @"回复";
-    //    //冒号
-    //    NSString *colonStr = @"：";
-}
 @end
+

@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 //高级评论 二级页面
 @interface RRSeasonSeniorCommentsSecondarySubVC : BaseViewController
 @property (nonatomic, copy) NSString *commentId;
+@property (nonatomic, copy) NSString * __nullable replyId;  //子id 
 @property (nonatomic, strong) RRSeniorCommentsModel *commentModel;
 @property (nonatomic, strong) RRSeniorCommentsModel *__nullable replyModel;
 @property (nonatomic, weak) id <RRSeasonSeniorCommentsSecondarySubVCDelegate> delegate;
