@@ -233,7 +233,8 @@
 		F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D525008D76004991D3 /* ChangePasswordVC.m */; };
 		F567346C260C41D80081BC8A /* 数字变化的动画效果.md in Resources */ = {isa = PBXBuildFile; fileRef = F567346B260C41D80081BC8A /* 数字变化的动画效果.md */; };
 		F5710B4225232263009DEE02 /* 富文本.md in Resources */ = {isa = PBXBuildFile; fileRef = F5710B4125232263009DEE02 /* 富文本.md */; };
-		F5760DFF268EEA7E008250D7 /* addHeaderFooter in Resources */ = {isa = PBXBuildFile; fileRef = F5760DFE268EEA7E008250D7 /* addHeaderFooter */; };
+		F5760E0D268EEBFC008250D7 /* addHeaderFooter.md in Resources */ = {isa = PBXBuildFile; fileRef = F5760E0C268EEBFC008250D7 /* addHeaderFooter.md */; };
+		F5760E13268EECF4008250D7 /* 空白的副本.md in Resources */ = {isa = PBXBuildFile; fileRef = F5760E12268EECF4008250D7 /* 空白的副本.md */; };
 		F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */; };
 		F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57A6A7924CFCA9700D51E01 /* EnterMessageCell.m */; };
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
@@ -748,7 +749,8 @@
 		F566A1D525008D76004991D3 /* ChangePasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
 		F567346B260C41D80081BC8A /* 数字变化的动画效果.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "数字变化的动画效果.md"; sourceTree = "<group>"; };
 		F5710B4125232263009DEE02 /* 富文本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "富文本.md"; sourceTree = "<group>"; };
-		F5760DFE268EEA7E008250D7 /* addHeaderFooter */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = addHeaderFooter; sourceTree = "<group>"; };
+		F5760E0C268EEBFC008250D7 /* addHeaderFooter.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = addHeaderFooter.md; sourceTree = "<group>"; };
+		F5760E12268EECF4008250D7 /* 空白的副本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白的副本.md"; sourceTree = "<group>"; };
 		F57A6A7524CFCA8400D51E01 /* FaceMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageCell.h; sourceTree = "<group>"; };
 		F57A6A7624CFCA8400D51E01 /* FaceMessageCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageCell.m; sourceTree = "<group>"; };
 		F57A6A7824CFCA9700D51E01 /* EnterMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EnterMessageCell.h; sourceTree = "<group>"; };
@@ -1110,7 +1112,8 @@
 				F567346B260C41D80081BC8A /* 数字变化的动画效果.md */,
 				F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */,
 				F516E5332683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md */,
-				F5760DFE268EEA7E008250D7 /* addHeaderFooter */,
+				F5760E0C268EEBFC008250D7 /* addHeaderFooter.md */,
+				F5760E12268EECF4008250D7 /* 空白的副本.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
 				F504404E26259C6200834547 /* PCH文件.md */,
 				F51C8694261F103F0066850E /* UIView中坐标转换.md */,
@@ -2465,6 +2468,7 @@
 				F5091E4D268C679F000884D1 /* dropdown_anim__0004@2x.png in Resources */,
 				F5091E65268C679F000884D1 /* dropdown_anim__00031@2x.png in Resources */,
 				F5F5B44625FA1DFE0069491B /* RRActorHeader.xib in Resources */,
+				F5760E0D268EEBFC008250D7 /* addHeaderFooter.md in Resources */,
 				F5710B4225232263009DEE02 /* 富文本.md in Resources */,
 				F5091E49268C679F000884D1 /* dropdown_anim__00056@2x.png in Resources */,
 				F5446CAC268D73300076961A /* 评论的副本2.json in Resources */,
@@ -2519,7 +2523,6 @@
 				F5091E66268C679F000884D1 /* dropdown_anim__00052@2x.png in Resources */,
 				F5091E34268C679F000884D1 /* dropdown_anim__00024@2x.png in Resources */,
 				F5091E53268C679F000884D1 /* dropdown_anim__00046@2x.png in Resources */,
-				F5760DFF268EEA7E008250D7 /* addHeaderFooter in Resources */,
 				F5091E2C268C679F000884D1 /* dropdown_anim__00057@2x.png in Resources */,
 				F548D101256E384300357E64 /* img_1.png in Resources */,
 				F5091E3A268C679F000884D1 /* dropdown_anim__00032@2x.png in Resources */,
@@ -2546,6 +2549,7 @@
 				F505AC3525C940D100F43298 /* addChildViewController.md in Resources */,
 				F5091E30268C679F000884D1 /* dropdown_anim__00045@2x.png in Resources */,
 				F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */,
+				F5760E13268EECF4008250D7 /* 空白的副本.md in Resources */,
 				F5091E45268C679F000884D1 /* dropdown_anim__0001@2x.png in Resources */,
 				F5091E62268C679F000884D1 /* dropdown_anim__00015@2x.png in Resources */,
 				F534736E25E357F400F01CC6 /* iOS仿抖音短视频.md in Resources */,
