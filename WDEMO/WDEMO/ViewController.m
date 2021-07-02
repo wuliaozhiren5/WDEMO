@@ -162,6 +162,7 @@
     NSArray * array = @[
         
         [ListModel initWithTitle:@"评论" detail:@"bilibili，爱奇艺，优酷评论UI）" type:ListModelTypeComment],
+        [ListModel initWithTitle:@"我的消息评论详情" detail:@"bilibili，爱奇艺，优酷评论UI）" type:ListModelTypeMessageComment],
         [ListModel initWithTitle:@"新手引导（某个页面的新手引导）" detail:@"新手引导（某个页面的新手引导）" type:ListModelTypeNewHandGuide],
         
         [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
@@ -983,6 +984,20 @@
 //    vc.hidesBottomBarWhenPushed = YES;
 //    [self.navigationController pushViewController:vc animated:YES];
     
+    //半屏
+    RRSeasonSeniorCommentsSubVC *vc = [[RRSeasonSeniorCommentsSubVC alloc] initWithIsHalf:YES];
+//    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];
+//    vc.name = model.chineseName;
+//    vc.communityEnable = model.communityEnable;
+//    UIViewController *topVC = [UIViewController topViewController];
+    UIViewController *topVC = self;
+    [topVC addChildViewController:vc];
+    [vc didMoveToParentViewController:topVC];
+    [topVC.view addSubview:vc.view];
+    [vc show];
+}
+
+- (void)clickMessageComment {
     RRMessageSeasonCommentPositionListVC *vc = [[RRMessageSeasonCommentPositionListVC alloc] init];
 //    vc.commentId = commentId;
 //    vc.replyId = replyId;
@@ -990,19 +1005,6 @@
 //    vc.targetTypeId = targetTypeId;
 //    vc.isNew = NO;
     [self.navigationController pushViewController:vc animated:YES];
-
-    
-    
-//    RRSeasonSeniorCommentsSubVC *vc = [[RRSeasonSeniorCommentsSubVC alloc] initWithIsHalf:YES];
-////    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];
-////    vc.name = model.chineseName;
-////    vc.communityEnable = model.communityEnable;
-////    UIViewController *topVC = [UIViewController topViewController];
-//    UIViewController *topVC = self;
-//    [topVC addChildViewController:vc];
-//    [vc didMoveToParentViewController:topVC];
-//    [topVC.view addSubview:vc.view];
-//    [vc show];
 }
 
 - (void)clickArchiver {
@@ -1282,6 +1284,11 @@
         case ListModelTypeComment:
         {
             [self clickComment];
+        }
+            break;
+        case ListModelTypeMessageComment:
+        {
+            [self clickMessageComment];
         }
             break;
         default:
