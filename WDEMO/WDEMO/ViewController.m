@@ -102,6 +102,8 @@
 #import "NewHandGuideViewController.h"
 //评论
 #import "RRSeasonSeniorCommentsSubVC.h"
+//消息
+#import "RRMessageSeasonCommentPositionListVC.h"
 //
 #import "XXLoadingView.h"
 
@@ -981,17 +983,26 @@
 //    vc.hidesBottomBarWhenPushed = YES;
 //    [self.navigationController pushViewController:vc animated:YES];
     
+    RRMessageSeasonCommentPositionListVC *vc = [[RRMessageSeasonCommentPositionListVC alloc] init];
+//    vc.commentId = commentId;
+//    vc.replyId = replyId;
+//    vc.targetType = targetType;
+//    vc.targetTypeId = targetTypeId;
+//    vc.isNew = NO;
+    [self.navigationController pushViewController:vc animated:YES];
+
     
-    RRSeasonSeniorCommentsSubVC *vc = [[RRSeasonSeniorCommentsSubVC alloc] initWithIsHalf:YES];
-//    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];
-//    vc.name = model.chineseName;
-//    vc.communityEnable = model.communityEnable;
-//    UIViewController *topVC = [UIViewController topViewController];
-    UIViewController *topVC = self;
-    [topVC addChildViewController:vc];
-    [vc didMoveToParentViewController:topVC];
-    [topVC.view addSubview:vc.view];
-    [vc show];
+    
+//    RRSeasonSeniorCommentsSubVC *vc = [[RRSeasonSeniorCommentsSubVC alloc] initWithIsHalf:YES];
+////    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];
+////    vc.name = model.chineseName;
+////    vc.communityEnable = model.communityEnable;
+////    UIViewController *topVC = [UIViewController topViewController];
+//    UIViewController *topVC = self;
+//    [topVC addChildViewController:vc];
+//    [vc didMoveToParentViewController:topVC];
+//    [topVC.view addSubview:vc.view];
+//    [vc show];
 }
 
 - (void)clickArchiver {

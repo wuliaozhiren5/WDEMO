@@ -12,7 +12,9 @@
 @implementation RRSeniorCommentsModel
 
 + (NSDictionary *)modelCustomPropertyMapper {
-    return @{@"ID" : @"id"};
+    return @{@"ID" : @"id",
+             @"reply2UseId": @[@"reply2UseId", @"reply2UserId"],
+    };
 }
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
@@ -73,3 +75,4 @@
     return _url ?: @"";
 }
 @end
+

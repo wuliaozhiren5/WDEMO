@@ -173,22 +173,24 @@
     _headerLab = headerLab;
 }
 
+ 
 //定位
 - (void)tableViewLocation {
-    if (!self.replyModel) {
+    if (!self.replyId) {
         return;
     }
 
     NSInteger index = -1;
     for (NSInteger i = 0; i < self.data.count; i++) {
         RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:i];
-        if ([model.ID isEqualToString:self.replyModel.ID]) {
+        if ([model.ID isEqualToString:self.replyId]) {
             index = i;
             break;
         }
     }
-
+    
     if (index < 0) {
+        self.replyId = nil;
         return;
     }
     //获取到需要跳转位置的行数
@@ -196,35 +198,18 @@
     //滚动到其相应的位置
     [self.tableView scrollToRowAtIndexPath:scrollIndexPath
             atScrollPosition:UITableViewScrollPositionTop animated:NO];
-
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            NSIndexPath *indexpath =  [NSIndexPath indexPathForRow:index inSection:1];
-            UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexpath];
-        //    cell.contentView.backgroundColor = [UIColor redColor];
-            UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
-            colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
-            [cell.contentView addSubview:colorView];
-            [cell.contentView sendSubviewToBack:colorView];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [colorView removeFromSuperview];
-        });
+  
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
+//    cell.contentView.backgroundColor = [UIColor redColor];
+    UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
+    colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
+    [cell.contentView addSubview:colorView];
+    [cell.contentView sendSubviewToBack:colorView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [colorView removeFromSuperview];
     });
-    self.replyModel = nil;
-
-    //old 不显示 所以加了一个延时
-//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
-////    cell.contentView.backgroundColor = [UIColor redColor];
-//    UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
-//    colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
-//    [cell.contentView addSubview:colorView];
-//    [cell.contentView sendSubviewToBack:colorView];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [colorView removeFromSuperview];
-//    });
-//    self.replyModel = nil;
+    self.replyId = nil;
 }
-
 /*
 #pragma mark - Navigation
 
