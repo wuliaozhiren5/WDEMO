@@ -981,6 +981,10 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F591AC3B26A15B9D0042802F /* GarbageCode */,
+				F591AC3926A159DD0042802F /* Vendors */,
+				F591AC3826A159DB0042802F /* Expand */,
+				F591AC3726A159D90042802F /* Category */,
 				F5446CA4268D709C0076961A /* 广场 */,
 				F50440B72625A06B00834547 /* 评论SeniorComments */,
 				F53C39052616B85E0015A9AE /* 新手引导Guide镂空 */,
@@ -1646,6 +1650,34 @@
 				F5872CD0257DF62400341B57 /* SettingModuleHandler+setting.m */,
 			);
 			path = OCModuleCallBack;
+			sourceTree = "<group>";
+		};
+		F591AC3726A159D90042802F /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		F591AC3826A159DB0042802F /* Expand */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Expand;
+			sourceTree = "<group>";
+		};
+		F591AC3926A159DD0042802F /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		F591AC3B26A15B9D0042802F /* GarbageCode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GarbageCode;
 			sourceTree = "<group>";
 		};
 		F597A9BA25B445B9006D9172 /* 小红点 */ = {
