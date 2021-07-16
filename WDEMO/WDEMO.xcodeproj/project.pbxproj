@@ -196,6 +196,7 @@
 		F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */; };
 		F58B4B402643FAF700D7C82D /* UIViewController+TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */; };
 		F58B4B462643FCD800D7C82D /* 回复.json in Resources */ = {isa = PBXBuildFile; fileRef = F58B4B452643FCD800D7C82D /* 回复.json */; };
+		F591AC2D26A13B970042802F /* 马甲包.md in Resources */ = {isa = PBXBuildFile; fileRef = F591AC2C26A13B970042802F /* 马甲包.md */; };
 		F593574825F7466A008CF0D8 /* OneViewTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */; };
 		F593574925F7466A008CF0D8 /* ThirdViewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574625F7466A008CF0D8 /* ThirdViewCollectionViewController.m */; };
 		F593574A25F7466A008CF0D8 /* SecondViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574725F7466A008CF0D8 /* SecondViewTableViewController.m */; };
@@ -666,6 +667,7 @@
 		F58B4B3E2643FAF700D7C82D /* UIViewController+TopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TopViewController.h"; sourceTree = "<group>"; };
 		F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TopViewController.m"; sourceTree = "<group>"; };
 		F58B4B452643FCD800D7C82D /* 回复.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "回复.json"; sourceTree = "<group>"; };
+		F591AC2C26A13B970042802F /* 马甲包.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包.md"; sourceTree = "<group>"; };
 		F593574225F74669008CF0D8 /* OneViewTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewTableTableViewController.h; sourceTree = "<group>"; };
 		F593574325F7466A008CF0D8 /* SecondViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewTableViewController.h; sourceTree = "<group>"; };
 		F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewTableTableViewController.m; sourceTree = "<group>"; };
@@ -997,6 +999,7 @@
 				F5760E0C268EEBFC008250D7 /* addHeaderFooter.md */,
 				F5760E12268EECF4008250D7 /* 隐藏导航栏.md */,
 				F5125755269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md */,
+				F591AC2C26A13B970042802F /* 马甲包.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
 				F504404E26259C6200834547 /* PCH文件.md */,
 				F51C8694261F103F0066850E /* UIView中坐标转换.md */,
@@ -2322,6 +2325,7 @@
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
 				F5091E52268C679F000884D1 /* dropdown_loading_01@2x.png in Resources */,
 				F5B7DC442608814B00B1E497 /* XcodeClangFormat.zip in Resources */,
+				F591AC2D26A13B970042802F /* 马甲包.md in Resources */,
 				F5091E51268C679F000884D1 /* dropdown_loading_03@2x.png in Resources */,
 				F504404F26259C6300834547 /* PCH文件.md in Resources */,
 				F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */,
