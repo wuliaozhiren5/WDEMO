@@ -198,6 +198,8 @@
 		F591AC2D26A13B970042802F /* 马甲包.md in Resources */ = {isa = PBXBuildFile; fileRef = F591AC2C26A13B970042802F /* 马甲包.md */; };
 		F591AC8B26A163D70042802F /* WConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F591AC8926A163D70042802F /* WConstants.m */; };
 		F591AC9726A1641B0042802F /* Vendors.m in Sources */ = {isa = PBXBuildFile; fileRef = F591AC9626A1641B0042802F /* Vendors.m */; };
+		F591ACBA26A16DED0042802F /* Logs.m in Sources */ = {isa = PBXBuildFile; fileRef = F591ACB926A16DED0042802F /* Logs.m */; };
+		F591ACC126A16E110042802F /* llslog.m in Sources */ = {isa = PBXBuildFile; fileRef = F591ACC026A16E110042802F /* llslog.m */; };
 		F593574825F7466A008CF0D8 /* OneViewTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */; };
 		F593574925F7466A008CF0D8 /* ThirdViewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574625F7466A008CF0D8 /* ThirdViewCollectionViewController.m */; };
 		F593574A25F7466A008CF0D8 /* SecondViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574725F7466A008CF0D8 /* SecondViewTableViewController.m */; };
@@ -673,6 +675,10 @@
 		F591AC9326A163EC0042802F /* WEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEnums.h; sourceTree = "<group>"; };
 		F591AC9526A1641B0042802F /* Vendors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vendors.h; sourceTree = "<group>"; };
 		F591AC9626A1641B0042802F /* Vendors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vendors.m; sourceTree = "<group>"; };
+		F591ACB826A16DED0042802F /* Logs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logs.h; sourceTree = "<group>"; };
+		F591ACB926A16DED0042802F /* Logs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Logs.m; sourceTree = "<group>"; };
+		F591ACBF26A16E110042802F /* llslog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = llslog.h; sourceTree = "<group>"; };
+		F591ACC026A16E110042802F /* llslog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = llslog.m; sourceTree = "<group>"; };
 		F593574225F74669008CF0D8 /* OneViewTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewTableTableViewController.h; sourceTree = "<group>"; };
 		F593574325F7466A008CF0D8 /* SecondViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewTableViewController.h; sourceTree = "<group>"; };
 		F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewTableTableViewController.m; sourceTree = "<group>"; };
@@ -986,7 +992,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
-				F591ACA026A164CC0042802F /* Logs */,
+				F591ACB726A16DDB0042802F /* Logs */,
 				F591AC9426A164020042802F /* Vendors */,
 				F591AC9226A163EC0042802F /* 枚举 */,
 				F591AC9026A163DD0042802F /* 宏 */,
@@ -1683,9 +1689,13 @@
 			path = Vendors;
 			sourceTree = "<group>";
 		};
-		F591ACA026A164CC0042802F /* Logs */ = {
+		F591ACB726A16DDB0042802F /* Logs */ = {
 			isa = PBXGroup;
 			children = (
+				F591ACB826A16DED0042802F /* Logs.h */,
+				F591ACB926A16DED0042802F /* Logs.m */,
+				F591ACBF26A16E110042802F /* llslog.h */,
+				F591ACC026A16E110042802F /* llslog.m */,
 			);
 			path = Logs;
 			sourceTree = "<group>";
@@ -2528,6 +2538,7 @@
 				A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */,
 				F5872CB4257DDE1A00341B57 /* SettingModule.m in Sources */,
 				F507113024E2A6A700AD5306 /* MYPerson.m in Sources */,
+				F591ACC126A16E110042802F /* llslog.m in Sources */,
 				F5F30DB3256652CC00DD2597 /* WPerson.m in Sources */,
 				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
 				F5F5B44925FA1DFE0069491B /* RRActorHeader.m in Sources */,
@@ -2670,6 +2681,7 @@
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				F5CEF81C25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */,
+				F591ACBA26A16DED0042802F /* Logs.m in Sources */,
 				F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */,
 				F5BFBBFC25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
