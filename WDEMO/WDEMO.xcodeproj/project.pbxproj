@@ -22,7 +22,6 @@
 		67535E892390F0CF0009F882 /* FontViewControlle.m in Sources */ = {isa = PBXBuildFile; fileRef = 67535E882390F0CF0009F882 /* FontViewControlle.m */; };
 		675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 675852A7231D21A700C5CF7E /* WTableViewController.m */; };
 		675852AB231D23F700C5CF7E /* WTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 675852AA231D23F700C5CF7E /* WTableViewCell.m */; };
-		677BADD71FC412A700E7A3FF /* WConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 677BADD61FC412A700E7A3FF /* WConstants.m */; };
 		6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C8521FB941EE0040C02B /* AppDelegate.m */; };
 		6783C8561FB941EE0040C02B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6783C8551FB941EE0040C02B /* ViewController.m */; };
 		6783C8591FB941EE0040C02B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6783C8571FB941EE0040C02B /* Main.storyboard */; };
@@ -197,6 +196,8 @@
 		F58B4B402643FAF700D7C82D /* UIViewController+TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */; };
 		F58B4B462643FCD800D7C82D /* 回复.json in Resources */ = {isa = PBXBuildFile; fileRef = F58B4B452643FCD800D7C82D /* 回复.json */; };
 		F591AC2D26A13B970042802F /* 马甲包.md in Resources */ = {isa = PBXBuildFile; fileRef = F591AC2C26A13B970042802F /* 马甲包.md */; };
+		F591AC8B26A163D70042802F /* WConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F591AC8926A163D70042802F /* WConstants.m */; };
+		F591AC9726A1641B0042802F /* Vendors.m in Sources */ = {isa = PBXBuildFile; fileRef = F591AC9626A1641B0042802F /* Vendors.m */; };
 		F593574825F7466A008CF0D8 /* OneViewTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */; };
 		F593574925F7466A008CF0D8 /* ThirdViewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574625F7466A008CF0D8 /* ThirdViewCollectionViewController.m */; };
 		F593574A25F7466A008CF0D8 /* SecondViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574725F7466A008CF0D8 /* SecondViewTableViewController.m */; };
@@ -365,8 +366,6 @@
 		675852AA231D23F700C5CF7E /* WTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTableViewCell.m; sourceTree = "<group>"; };
 		677BADCD1FC40D4E00E7A3FF /* WMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WMacros.h; path = ../WMacros.h; sourceTree = "<group>"; };
 		677BADD41FC4128900E7A3FF /* WEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEnums.h; path = ../WEnums.h; sourceTree = "<group>"; };
-		677BADD51FC412A700E7A3FF /* WConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WConstants.h; path = ../WConstants.h; sourceTree = "<group>"; };
-		677BADD61FC412A700E7A3FF /* WConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = WConstants.m; path = ../WConstants.m; sourceTree = "<group>"; };
 		6783C84E1FB941EE0040C02B /* WDEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6783C8511FB941EE0040C02B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6783C8521FB941EE0040C02B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -668,6 +667,12 @@
 		F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TopViewController.m"; sourceTree = "<group>"; };
 		F58B4B452643FCD800D7C82D /* 回复.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "回复.json"; sourceTree = "<group>"; };
 		F591AC2C26A13B970042802F /* 马甲包.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包.md"; sourceTree = "<group>"; };
+		F591AC8926A163D70042802F /* WConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WConstants.m; sourceTree = "<group>"; };
+		F591AC8A26A163D70042802F /* WConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WConstants.h; sourceTree = "<group>"; };
+		F591AC9126A163DD0042802F /* WMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMacros.h; sourceTree = "<group>"; };
+		F591AC9326A163EC0042802F /* WEnums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WEnums.h; sourceTree = "<group>"; };
+		F591AC9526A1641B0042802F /* Vendors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vendors.h; sourceTree = "<group>"; };
+		F591AC9626A1641B0042802F /* Vendors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vendors.m; sourceTree = "<group>"; };
 		F593574225F74669008CF0D8 /* OneViewTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewTableTableViewController.h; sourceTree = "<group>"; };
 		F593574325F7466A008CF0D8 /* SecondViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewTableViewController.h; sourceTree = "<group>"; };
 		F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewTableTableViewController.m; sourceTree = "<group>"; };
@@ -981,11 +986,11 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
-				F591AC3B26A15B9D0042802F /* GarbageCode */,
-				F591AC3926A159DD0042802F /* Vendors */,
-				F591AC3826A159DB0042802F /* Expand */,
-				F591AC3726A159D90042802F /* Category */,
-				F5446CA4268D709C0076961A /* 广场 */,
+				F591ACA026A164CC0042802F /* Logs */,
+				F591AC9426A164020042802F /* Vendors */,
+				F591AC9226A163EC0042802F /* 枚举 */,
+				F591AC9026A163DD0042802F /* 宏 */,
+				F591AC8826A163D70042802F /* 常量 */,
 				F50440B72625A06B00834547 /* 评论SeniorComments */,
 				F53C39052616B85E0015A9AE /* 新手引导Guide镂空 */,
 				F5C1168A260CA20F001F4A74 /* UILabel+Util.h */,
@@ -1020,7 +1025,6 @@
 				F597A9BA25B445B9006D9172 /* 小红点 */,
 				673AE91F1FC7F1A50002D304 /* 3DTouch */,
 				F5D0FC0324E0F7DB00CAADF8 /* 暗黑模式 深色模式 */,
-				F5F346F124ED596C006AAEA3 /* 常量 */,
 				F5CED5D325749B33002CF42C /* 单例 */,
 				F5B95DFB25A5EA5B00911FF8 /* 个人主页 */,
 				F5B95DFA25A5EA3C00911FF8 /* 广告banner无限滚动 */,
@@ -1403,13 +1407,6 @@
 			path = "加载LoadingView";
 			sourceTree = "<group>";
 		};
-		F5446CA4268D709C0076961A /* 广场 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "广场";
-			sourceTree = "<group>";
-		};
 		F5446CB8268DADA80076961A /* NewSeniorCommentsMessage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1652,32 +1649,45 @@
 			path = OCModuleCallBack;
 			sourceTree = "<group>";
 		};
-		F591AC3726A159D90042802F /* Category */ = {
+		F591AC8826A163D70042802F /* 常量 */ = {
 			isa = PBXGroup;
 			children = (
+				F591AC8926A163D70042802F /* WConstants.m */,
+				F591AC8A26A163D70042802F /* WConstants.h */,
 			);
-			path = Category;
+			path = "常量";
 			sourceTree = "<group>";
 		};
-		F591AC3826A159DB0042802F /* Expand */ = {
+		F591AC9026A163DD0042802F /* 宏 */ = {
 			isa = PBXGroup;
 			children = (
+				F591AC9126A163DD0042802F /* WMacros.h */,
 			);
-			path = Expand;
+			path = "宏";
 			sourceTree = "<group>";
 		};
-		F591AC3926A159DD0042802F /* Vendors */ = {
+		F591AC9226A163EC0042802F /* 枚举 */ = {
 			isa = PBXGroup;
 			children = (
+				F591AC9326A163EC0042802F /* WEnums.h */,
+			);
+			path = "枚举";
+			sourceTree = "<group>";
+		};
+		F591AC9426A164020042802F /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				F591AC9526A1641B0042802F /* Vendors.h */,
+				F591AC9626A1641B0042802F /* Vendors.m */,
 			);
 			path = Vendors;
 			sourceTree = "<group>";
 		};
-		F591AC3B26A15B9D0042802F /* GarbageCode */ = {
+		F591ACA026A164CC0042802F /* Logs */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = GarbageCode;
+			path = Logs;
 			sourceTree = "<group>";
 		};
 		F597A9BA25B445B9006D9172 /* 小红点 */ = {
@@ -2078,15 +2088,6 @@
 			path = "枚举";
 			sourceTree = "<group>";
 		};
-		F5F346F124ED596C006AAEA3 /* 常量 */ = {
-			isa = PBXGroup;
-			children = (
-				677BADD51FC412A700E7A3FF /* WConstants.h */,
-				677BADD61FC412A700E7A3FF /* WConstants.m */,
-			);
-			path = "常量";
-			sourceTree = "<group>";
-		};
 		F5F346F224ED5970006AAEA3 /* 宏 */ = {
 			isa = PBXGroup;
 			children = (
@@ -2475,7 +2476,6 @@
 			files = (
 				F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */,
 				F5200DCB2531536E004637DD /* BaseViewController.m in Sources */,
-				677BADD71FC412A700E7A3FF /* WConstants.m in Sources */,
 				F50440CF2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m in Sources */,
 				F5F5B44C25FA1DFE0069491B /* RRActorIntroCell.m in Sources */,
 				F50D6D8025A9581B00B8C415 /* SearchResultViewController.m in Sources */,
@@ -2511,6 +2511,7 @@
 				F50D6D6525A94EBE00B8C415 /* ListEditViewController.m in Sources */,
 				F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */,
 				F5CED5DA25749C7D002CF42C /* CollectionRedPointManager.m in Sources */,
+				F591AC9726A1641B0042802F /* Vendors.m in Sources */,
 				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
 				F5C0A21F2578BBC2004EBD94 /* xibView.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
@@ -2535,6 +2536,7 @@
 				F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */,
 				F50440D42625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
+				F591AC8B26A163D70042802F /* WConstants.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */,
 				F5872CD1257DF62400341B57 /* SettingModuleHandler+setting.m in Sources */,
