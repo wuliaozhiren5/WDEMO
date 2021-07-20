@@ -205,6 +205,8 @@
 		F593574A25F7466A008CF0D8 /* SecondViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574725F7466A008CF0D8 /* SecondViewTableViewController.m */; };
 		F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */ = {isa = PBXBuildFile; fileRef = F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */; };
 		F597A9BD25B44600006D9172 /* UIView+RedPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F597A9BC25B44600006D9172 /* UIView+RedPoint.m */; };
+		F5A2475D26A6D9BD008B7BF4 /* 自动化打包.md in Resources */ = {isa = PBXBuildFile; fileRef = F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */; };
+		F5A2476326A6D9E7008B7BF4 /* WiFi名.md in Resources */ = {isa = PBXBuildFile; fileRef = F5A2476226A6D9E6008B7BF4 /* WiFi名.md */; };
 		F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */; };
 		F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */; };
 		F5A763BF253D952D00A76C6E /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A763BE253D952D00A76C6E /* Book.m */; };
@@ -689,6 +691,8 @@
 		F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+buttonType.h"; sourceTree = "<group>"; };
 		F597A9BB25B44600006D9172 /* UIView+RedPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+RedPoint.h"; sourceTree = "<group>"; };
 		F597A9BC25B44600006D9172 /* UIView+RedPoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+RedPoint.m"; sourceTree = "<group>"; };
+		F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自动化打包.md"; sourceTree = "<group>"; };
+		F5A2476226A6D9E6008B7BF4 /* WiFi名.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "WiFi名.md"; sourceTree = "<group>"; };
 		F5A4890A25AC4CCB0046B52C /* VerticalCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalCollectionViewController.h; sourceTree = "<group>"; };
 		F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionViewController.m; sourceTree = "<group>"; };
 		F5A51F3524FC98430054A4DD /* PasswordTextFieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextFieldView.h; sourceTree = "<group>"; };
@@ -1015,6 +1019,8 @@
 				F5760E12268EECF4008250D7 /* 隐藏导航栏.md */,
 				F5125755269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md */,
 				F591AC2C26A13B970042802F /* 马甲包.md */,
+				F5A2476226A6D9E6008B7BF4 /* WiFi名.md */,
+				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
 				F504404E26259C6200834547 /* PCH文件.md */,
 				F51C8694261F103F0066850E /* UIView中坐标转换.md */,
@@ -2362,6 +2368,7 @@
 				F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */,
 				F548D101256E384300357E64 /* img_1.png in Resources */,
 				F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */,
+				F5A2476326A6D9E7008B7BF4 /* WiFi名.md in Resources */,
 				F5872CFC257DFF5900341B57 /* 追剧引导-白色-循环.gif in Resources */,
 				F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */,
 				F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */,
@@ -2401,6 +2408,7 @@
 				F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */,
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
 				F548D0E2256E2EEA00357E64 /* amwayPlayerGuide_1.png in Resources */,
+				F5A2475D26A6D9BD008B7BF4 /* 自动化打包.md in Resources */,
 				6783C8591FB941EE0040C02B /* Main.storyboard in Resources */,
 				F58B4B462643FCD800D7C82D /* 回复.json in Resources */,
 				F548D0E5256E2EEA00357E64 /* amwayPlayerGuide.json in Resources */,
