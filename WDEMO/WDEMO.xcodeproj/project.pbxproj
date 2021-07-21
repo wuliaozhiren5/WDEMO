@@ -998,6 +998,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F52F15AF26A7FAD200D4E305 /* Resource */,
 				F591ACB726A16DDB0042802F /* Logs */,
 				F591AC9426A164020042802F /* Vendors */,
 				F591AC9226A163EC0042802F /* 枚举 */,
@@ -1108,7 +1109,6 @@
 				F5C0A21C2578BB49004EBD94 /* xibViewDemo */,
 				F5A763BC253D94D900A76C6E /* YYmodel测试 */,
 				F5F4F10024D3BF23007DB7F3 /* YYText富文本YY富文本 */,
-				F50440AE26259EEF00834547 /* WDEMO.pch */,
 			);
 			path = WDEMO;
 			sourceTree = "<group>";
@@ -1371,6 +1371,14 @@
 			children = (
 			);
 			path = "贴吧";
+			sourceTree = "<group>";
+		};
+		F52F15AF26A7FAD200D4E305 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F50440AE26259EEF00834547 /* WDEMO.pch */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		F532073D25C14F92000CD755 /* 新手引导页GuideView */ = {
@@ -2929,7 +2937,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FTKLY6XUHH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/WDEMO/WDEMO.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WDEMO/Resource/WDEMO.pch";
 				INFOPLIST_FILE = WDEMO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -2947,7 +2955,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FTKLY6XUHH;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/WDEMO/WDEMO.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/WDEMO/Resource/WDEMO.pch";
 				INFOPLIST_FILE = WDEMO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
