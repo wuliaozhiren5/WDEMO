@@ -29,6 +29,6 @@ typedef void (^ClickIndexBlock)(UIResponder *sender, NSUInteger index);
 #import <SDWebImage/UIImageView+WebCache.h>
 #import "UIViewController+TopViewController.h"
 
-//#import "CodeObfuscation.h"
+//#import "codeObfuscation.h"
 
 #endif /* WDEMO_pch */

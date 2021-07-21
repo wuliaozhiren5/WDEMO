@@ -101,6 +101,8 @@
 		F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A098725B6EBE2008BDDEE /* SearchBarController.m */; };
 		F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */ = {isa = PBXBuildFile; fileRef = F52A383725C3B14700C6909E /* 新手引导页GuideView.md */; };
 		F52F15A526A7C60500D4E305 /* 定时器NSTimer.md in Resources */ = {isa = PBXBuildFile; fileRef = F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */; };
+		F52F168D26A82C1C00D4E305 /* func.list in Resources */ = {isa = PBXBuildFile; fileRef = F52F168B26A82C1C00D4E305 /* func.list */; };
+		F52F168E26A82C1C00D4E305 /* confuse.sh in Resources */ = {isa = PBXBuildFile; fileRef = F52F168C26A82C1C00D4E305 /* confuse.sh */; };
 		F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293F22509CE0D00E06D42 /* FullScreenChatController.m */; };
 		F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */; };
 		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
@@ -510,6 +512,9 @@
 		F52A098725B6EBE2008BDDEE /* SearchBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBarController.m; sourceTree = "<group>"; };
 		F52A383725C3B14700C6909E /* 新手引导页GuideView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "新手引导页GuideView.md"; sourceTree = "<group>"; };
 		F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "定时器NSTimer.md"; sourceTree = "<group>"; };
+		F52F168A26A82C1C00D4E305 /* codeObfuscation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codeObfuscation.h; sourceTree = "<group>"; };
+		F52F168B26A82C1C00D4E305 /* func.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
+		F52F168C26A82C1C00D4E305 /* confuse.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
 		F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfScreenInputController.m; sourceTree = "<group>"; };
 		F53293EC2509C6FE00E06D42 /* HalfScreenInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenInputController.h; sourceTree = "<group>"; };
 		F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenInputController.m; sourceTree = "<group>"; };
@@ -1377,6 +1382,9 @@
 			isa = PBXGroup;
 			children = (
 				F50440AE26259EEF00834547 /* WDEMO.pch */,
+				F52F168A26A82C1C00D4E305 /* codeObfuscation.h */,
+				F52F168C26A82C1C00D4E305 /* confuse.sh */,
+				F52F168B26A82C1C00D4E305 /* func.list */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -2375,6 +2383,7 @@
 				F516E5342683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md in Resources */,
 				F505AC2325C936F600F43298 /* 约束动画.md in Resources */,
 				F5D05B5D25BAAF9B00A4C6EC /* RGB十六进制颜色.md in Resources */,
+				F52F168E26A82C1C00D4E305 /* confuse.sh in Resources */,
 				F5125756269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md in Resources */,
 				F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */,
 				F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */,
@@ -2427,6 +2436,7 @@
 				F548D0E5256E2EEA00357E64 /* amwayPlayerGuide.json in Resources */,
 				F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */,
 				F5446CA6268D73240076961A /* 回复详情.json in Resources */,
+				F52F168D26A82C1C00D4E305 /* func.list in Resources */,
 				F51C24B7263BEF4D0010A298 /* 评论.json in Resources */,
 				F50D6D9125A9618300B8C415 /* 首页PageController.md in Resources */,
 				F509136D25EF917B00A2E217 /* 文字显示全文显示更多.md in Resources */,
