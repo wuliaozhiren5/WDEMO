@@ -115,8 +115,7 @@
 @property(nonatomic, copy) NSArray *data;
 @property (nonatomic, strong) NSTimer *timer;
 //追剧提示定时器
-@property (nonatomic, strong) NSTimer *followTipsTimer;
-
+@property (nonatomic, strong) NSTimer *followTipTimer;
 
 @property (nonatomic, strong) UIImageView *removeImageView;
 @property (nonatomic, strong) XXLoadingView *loadingView;
@@ -282,7 +281,7 @@
     //    tips = nil;
     
     
-    //    [self createFollowTipsTimerWithDuration:25.0];
+    //    [self startFollowTipTimerWithDuration:25.0];
     
     
     //    //线程
@@ -601,32 +600,60 @@
     //        }
     //    //    imageV = nil;
 }
-
-
-- (void)createFollowTipsTimerWithDuration:(CGFloat)duration {
+ 
+#pragma mark - FollowTipTimer 定时器
+- (void)startFollowTipTimerWithDuration:(CGFloat)duration {
+//    if (![UserInfoConfig isLogined]) {
+//        return;
+//    }
     if (duration <= 0) {
         return;
     }
-    CGFloat seconds = duration * 0.2;//20%
+    //时长的20%进行提示
+    CGFloat seconds = duration * 0.2;
+    //测试代码，方便测试测试
+    //seconds = 5;
     //停止定时器
-    [self stopFollowTipsTimer];
-    
-    NSTimer *timer = [NSTimer timerWithTimeInterval:seconds target:self selector:@selector(showFollowTips) userInfo:nil repeats:NO];
+    [self stopFollowTipTimer];
+    NSTimer *timer = [NSTimer timerWithTimeInterval:seconds target:self selector:@selector(showFollowTip) userInfo:nil repeats:NO];
     [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
-    self.followTipsTimer = timer;
+    self.followTipTimer = timer;
 }
 
-- (void)stopFollowTipsTimer  {
-    if (self.followTipsTimer) {
-        [self.followTipsTimer invalidate];
-        self.followTipsTimer = nil;
+- (void)stopFollowTipTimer  {
+  if (self.followTipTimer) {
+      [self.followTipTimer invalidate];
+      self.followTipTimer = nil;
+  }
+}
+
+- (void)showFollowTip {
+
+}
+
+//右滑返回时会调用
+- (void)didMoveToParentViewController:(UIViewController *)parent{
+    [super didMoveToParentViewController:parent];
+    NSLog(@"%s,%@",__FUNCTION__,parent);
+    if(!parent){
+        NSLog(@"页面pop成功了");
+        //停止定时器
+        [self stopFollowTipTimer];
     }
 }
 
-- (void)showFollowTips {
-    
+- (void)popViewController {
+//    [super popViewController];
+    //停止定时器
+    [self stopFollowTipTimer];
 }
 
+- (void)dealloc {
+    [self.timer invalidate];
+    self.timer = nil;
+    //停止定时器
+    [self stopFollowTipTimer];
+}
 
 /**
  * 抖动效果
@@ -1053,11 +1080,6 @@
     hud.label.text = @"Some message...";
     hud.label.textColor = [UIColor whiteColor];
     [hud hideAnimated:YES afterDelay:2];
-}
-
-- (void)dealloc {
-    [self.timer invalidate];
-    self.timer = nil;
 }
 
 - (void)setupViews {

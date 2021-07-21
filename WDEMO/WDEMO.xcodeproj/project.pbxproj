@@ -100,6 +100,7 @@
 		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
 		F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A098725B6EBE2008BDDEE /* SearchBarController.m */; };
 		F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */ = {isa = PBXBuildFile; fileRef = F52A383725C3B14700C6909E /* 新手引导页GuideView.md */; };
+		F52F15A526A7C60500D4E305 /* 定时器.md in Resources */ = {isa = PBXBuildFile; fileRef = F52F15A426A7C60500D4E305 /* 定时器.md */; };
 		F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293F22509CE0D00E06D42 /* FullScreenChatController.m */; };
 		F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */; };
 		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
@@ -508,6 +509,7 @@
 		F52A098625B6EBE2008BDDEE /* SearchBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBarController.h; sourceTree = "<group>"; };
 		F52A098725B6EBE2008BDDEE /* SearchBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBarController.m; sourceTree = "<group>"; };
 		F52A383725C3B14700C6909E /* 新手引导页GuideView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "新手引导页GuideView.md"; sourceTree = "<group>"; };
+		F52F15A426A7C60500D4E305 /* 定时器.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "定时器.md"; sourceTree = "<group>"; };
 		F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfScreenInputController.m; sourceTree = "<group>"; };
 		F53293EC2509C6FE00E06D42 /* HalfScreenInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenInputController.h; sourceTree = "<group>"; };
 		F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenInputController.m; sourceTree = "<group>"; };
@@ -1021,6 +1023,7 @@
 				F591AC2C26A13B970042802F /* 马甲包.md */,
 				F5A2476226A6D9E6008B7BF4 /* WiFi名.md */,
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
+				F52F15A426A7C60500D4E305 /* 定时器.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
 				F504404E26259C6200834547 /* PCH文件.md */,
 				F51C8694261F103F0066850E /* UIView中坐标转换.md */,
@@ -2400,6 +2403,7 @@
 				F5B1FE6B2621AC6C004B950C /* TableviewSectionHeader不悬停.md in Resources */,
 				F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
+				F52F15A526A7C60500D4E305 /* 定时器.md in Resources */,
 				F5872CD8257DFAC600341B57 /* xib使用.md in Resources */,
 				F548D0D7256E2EEA00357E64 /* img_0.png in Resources */,
 				F50D6D8625A95AD300B8C415 /* 瀑布流.md in Resources */,
