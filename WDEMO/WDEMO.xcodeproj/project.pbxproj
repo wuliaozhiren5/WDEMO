@@ -184,6 +184,10 @@
 		F57B52A324C7DF2700940696 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* ChatController.m */; };
 		F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F581D21724EAB684008AC679 /* WScrollViewController.m */; };
 		F58293B2255CDBD40066111C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F58293B1255CDBD40066111C /* Person.m */; };
+		F586139626A9620900D81DDA /* 马甲包的副本3.md in Resources */ = {isa = PBXBuildFile; fileRef = F586139226A9620800D81DDA /* 马甲包的副本3.md */; };
+		F586139726A9620900D81DDA /* 马甲包的副本2.md in Resources */ = {isa = PBXBuildFile; fileRef = F586139326A9620800D81DDA /* 马甲包的副本2.md */; };
+		F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */ = {isa = PBXBuildFile; fileRef = F586139426A9620900D81DDA /* 马甲包的副本4.md */; };
+		F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */ = {isa = PBXBuildFile; fileRef = F586139526A9620900D81DDA /* 马甲包的副本.md */; };
 		F5872CB4257DDE1A00341B57 /* SettingModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F5872CB3257DDE1A00341B57 /* SettingModule.m */; };
 		F5872CBF257DDEC000341B57 /* SettingModuleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F5872CBE257DDEC000341B57 /* SettingModuleHandler.m */; };
 		F5872CD1257DF62400341B57 /* SettingModuleHandler+setting.m in Sources */ = {isa = PBXBuildFile; fileRef = F5872CD0257DF62400341B57 /* SettingModuleHandler+setting.m */; };
@@ -656,6 +660,10 @@
 		F581D21724EAB684008AC679 /* WScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WScrollViewController.m; sourceTree = "<group>"; };
 		F58293B0255CDBD40066111C /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		F58293B1255CDBD40066111C /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		F586139226A9620800D81DDA /* 马甲包的副本3.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包的副本3.md"; sourceTree = "<group>"; };
+		F586139326A9620800D81DDA /* 马甲包的副本2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包的副本2.md"; sourceTree = "<group>"; };
+		F586139426A9620900D81DDA /* 马甲包的副本4.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包的副本4.md"; sourceTree = "<group>"; };
+		F586139526A9620900D81DDA /* 马甲包的副本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包的副本.md"; sourceTree = "<group>"; };
 		F5872CB2257DDE1A00341B57 /* SettingModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingModule.h; sourceTree = "<group>"; };
 		F5872CB3257DDE1A00341B57 /* SettingModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingModule.m; sourceTree = "<group>"; };
 		F5872CBD257DDEC000341B57 /* SettingModuleHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingModuleHandler.h; sourceTree = "<group>"; };
@@ -1027,6 +1035,10 @@
 				F5760E12268EECF4008250D7 /* 隐藏导航栏.md */,
 				F5125755269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md */,
 				F591AC2C26A13B970042802F /* 马甲包.md */,
+				F586139526A9620900D81DDA /* 马甲包的副本.md */,
+				F586139326A9620800D81DDA /* 马甲包的副本2.md */,
+				F586139226A9620800D81DDA /* 马甲包的副本3.md */,
+				F586139426A9620900D81DDA /* 马甲包的副本4.md */,
 				F5A2476226A6D9E6008B7BF4 /* WiFi名.md */,
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
@@ -2373,10 +2385,13 @@
 				F505AC3425C940D100F43298 /* 抗拉伸抗压缩.md in Resources */,
 				F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */,
 				F5EB7C0E255B96740006FC64 /* YYmodel使用.md in Resources */,
+				F586139726A9620900D81DDA /* 马甲包的副本2.md in Resources */,
 				F548D0EA256E2EEA00357E64 /* amwayGuide.json in Resources */,
 				F548D0DA256E2EEA00357E64 /* amwayPlayerGuide_0.png in Resources */,
 				F5091E28268C679F000884D1 /* dropdown_loading_02@2x.png in Resources */,
 				F5D05B7425BAB18000A4C6EC /* 阴影.md in Resources */,
+				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
+				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
 				F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */,
 				F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */,
 				F5B7DC3B2608813D00B1E497 /* 代码格式化工具.md in Resources */,
@@ -2431,6 +2446,7 @@
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
 				F548D0E2256E2EEA00357E64 /* amwayPlayerGuide_1.png in Resources */,
 				F5A2475D26A6D9BD008B7BF4 /* 自动化打包.md in Resources */,
+				F586139626A9620900D81DDA /* 马甲包的副本3.md in Resources */,
 				6783C8591FB941EE0040C02B /* Main.storyboard in Resources */,
 				F58B4B462643FCD800D7C82D /* 回复.json in Resources */,
 				F548D0E5256E2EEA00357E64 /* amwayPlayerGuide.json in Resources */,
