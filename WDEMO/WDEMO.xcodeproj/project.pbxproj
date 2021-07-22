@@ -188,6 +188,17 @@
 		F586139726A9620900D81DDA /* 马甲包的副本2.md in Resources */ = {isa = PBXBuildFile; fileRef = F586139326A9620800D81DDA /* 马甲包的副本2.md */; };
 		F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */ = {isa = PBXBuildFile; fileRef = F586139426A9620900D81DDA /* 马甲包的副本4.md */; };
 		F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */ = {isa = PBXBuildFile; fileRef = F586139526A9620900D81DDA /* 马甲包的副本.md */; };
+		F58613CB26A96EB100D81DDA /* system_identifiers.txt in Resources */ = {isa = PBXBuildFile; fileRef = F58613C426A96EB100D81DDA /* system_identifiers.txt */; };
+		F58613CC26A96EB100D81DDA /* confuse_log.log in Resources */ = {isa = PBXBuildFile; fileRef = F58613C526A96EB100D81DDA /* confuse_log.log */; };
+		F58613CD26A96EB100D81DDA /* user_identifiers.txt in Resources */ = {isa = PBXBuildFile; fileRef = F58613C626A96EB100D81DDA /* user_identifiers.txt */; };
+		F58613CE26A96EB100D81DDA /* Confuse.py in Resources */ = {isa = PBXBuildFile; fileRef = F58613C726A96EB100D81DDA /* Confuse.py */; };
+		F58613CF26A96EB100D81DDA /* ignoreKey.txt in Resources */ = {isa = PBXBuildFile; fileRef = F58613C826A96EB100D81DDA /* ignoreKey.txt */; };
+		F58613D026A96EB100D81DDA /* start.sh in Resources */ = {isa = PBXBuildFile; fileRef = F58613C926A96EB100D81DDA /* start.sh */; };
+		F58613D126A96EB100D81DDA /* clean_identifiers.txt in Resources */ = {isa = PBXBuildFile; fileRef = F58613CA26A96EB100D81DDA /* clean_identifiers.txt */; };
+		F58613DB26A9715300D81DDA /* Python批量修改iOS方法名.md in Resources */ = {isa = PBXBuildFile; fileRef = F58613DA26A9715300D81DDA /* Python批量修改iOS方法名.md */; };
+		F58613E126A9719500D81DDA /* Shell脚本批量修改iOS方法名.md in Resources */ = {isa = PBXBuildFile; fileRef = F58613E026A9719500D81DDA /* Shell脚本批量修改iOS方法名.md */; };
+		F58613F726A9738A00D81DDA /* changeName.py in Resources */ = {isa = PBXBuildFile; fileRef = F58613F626A9738A00D81DDA /* changeName.py */; };
+		F586140126A9739A00D81DDA /* Python批量修改iOS类名.md in Resources */ = {isa = PBXBuildFile; fileRef = F586140026A9739A00D81DDA /* Python批量修改iOS类名.md */; };
 		F5872CB4257DDE1A00341B57 /* SettingModule.m in Sources */ = {isa = PBXBuildFile; fileRef = F5872CB3257DDE1A00341B57 /* SettingModule.m */; };
 		F5872CBF257DDEC000341B57 /* SettingModuleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F5872CBE257DDEC000341B57 /* SettingModuleHandler.m */; };
 		F5872CD1257DF62400341B57 /* SettingModuleHandler+setting.m in Sources */ = {isa = PBXBuildFile; fileRef = F5872CD0257DF62400341B57 /* SettingModuleHandler+setting.m */; };
@@ -664,6 +675,18 @@
 		F586139326A9620800D81DDA /* 马甲包的副本2.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包的副本2.md"; sourceTree = "<group>"; };
 		F586139426A9620900D81DDA /* 马甲包的副本4.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包的副本4.md"; sourceTree = "<group>"; };
 		F586139526A9620900D81DDA /* 马甲包的副本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包的副本.md"; sourceTree = "<group>"; };
+		F58613C326A96EB100D81DDA /* Confuse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Confuse.h; sourceTree = "<group>"; };
+		F58613C426A96EB100D81DDA /* system_identifiers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = system_identifiers.txt; sourceTree = "<group>"; };
+		F58613C526A96EB100D81DDA /* confuse_log.log */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = confuse_log.log; sourceTree = "<group>"; };
+		F58613C626A96EB100D81DDA /* user_identifiers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = user_identifiers.txt; sourceTree = "<group>"; };
+		F58613C726A96EB100D81DDA /* Confuse.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = Confuse.py; sourceTree = "<group>"; };
+		F58613C826A96EB100D81DDA /* ignoreKey.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ignoreKey.txt; sourceTree = "<group>"; };
+		F58613C926A96EB100D81DDA /* start.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = start.sh; sourceTree = "<group>"; };
+		F58613CA26A96EB100D81DDA /* clean_identifiers.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = clean_identifiers.txt; sourceTree = "<group>"; };
+		F58613DA26A9715300D81DDA /* Python批量修改iOS方法名.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Python批量修改iOS方法名.md"; sourceTree = "<group>"; };
+		F58613E026A9719500D81DDA /* Shell脚本批量修改iOS方法名.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Shell脚本批量修改iOS方法名.md"; sourceTree = "<group>"; };
+		F58613F626A9738A00D81DDA /* changeName.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = changeName.py; sourceTree = "<group>"; };
+		F586140026A9739A00D81DDA /* Python批量修改iOS类名.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Python批量修改iOS类名.md"; sourceTree = "<group>"; };
 		F5872CB2257DDE1A00341B57 /* SettingModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingModule.h; sourceTree = "<group>"; };
 		F5872CB3257DDE1A00341B57 /* SettingModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingModule.m; sourceTree = "<group>"; };
 		F5872CBD257DDEC000341B57 /* SettingModuleHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingModuleHandler.h; sourceTree = "<group>"; };
@@ -987,6 +1010,7 @@
 		6783C8451FB941EE0040C02B = {
 			isa = PBXGroup;
 			children = (
+				F58613C226A96EB100D81DDA /* CodeConfuse */,
 				6783C8501FB941EE0040C02B /* WDEMO */,
 				6783C8691FB941EE0040C02B /* WDEMOTests */,
 				6783C8741FB941EE0040C02B /* WDEMOUITests */,
@@ -1011,6 +1035,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F58613F126A971F200D81DDA /* Python批量修改iOS类名 */,
 				F52F15AF26A7FAD200D4E305 /* Resource */,
 				F591ACB726A16DDB0042802F /* Logs */,
 				F591AC9426A164020042802F /* Vendors */,
@@ -1397,6 +1422,7 @@
 				F52F168A26A82C1C00D4E305 /* codeObfuscation.h */,
 				F52F168C26A82C1C00D4E305 /* confuse.sh */,
 				F52F168B26A82C1C00D4E305 /* func.list */,
+				F58613E026A9719500D81DDA /* Shell脚本批量修改iOS方法名.md */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -1659,6 +1685,31 @@
 				F581D21724EAB684008AC679 /* WScrollViewController.m */,
 			);
 			path = ScrollView;
+			sourceTree = "<group>";
+		};
+		F58613C226A96EB100D81DDA /* CodeConfuse */ = {
+			isa = PBXGroup;
+			children = (
+				F58613DA26A9715300D81DDA /* Python批量修改iOS方法名.md */,
+				F58613C326A96EB100D81DDA /* Confuse.h */,
+				F58613C426A96EB100D81DDA /* system_identifiers.txt */,
+				F58613C526A96EB100D81DDA /* confuse_log.log */,
+				F58613C626A96EB100D81DDA /* user_identifiers.txt */,
+				F58613C726A96EB100D81DDA /* Confuse.py */,
+				F58613C826A96EB100D81DDA /* ignoreKey.txt */,
+				F58613C926A96EB100D81DDA /* start.sh */,
+				F58613CA26A96EB100D81DDA /* clean_identifiers.txt */,
+			);
+			path = CodeConfuse;
+			sourceTree = "<group>";
+		};
+		F58613F126A971F200D81DDA /* Python批量修改iOS类名 */ = {
+			isa = PBXGroup;
+			children = (
+				F586140026A9739A00D81DDA /* Python批量修改iOS类名.md */,
+				F58613F626A9738A00D81DDA /* changeName.py */,
+			);
+			path = "Python批量修改iOS类名";
 			sourceTree = "<group>";
 		};
 		F5872CAF257DDD0300341B57 /* 组件化解藕 */ = {
@@ -2396,11 +2447,13 @@
 				F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */,
 				F5B7DC3B2608813D00B1E497 /* 代码格式化工具.md in Resources */,
 				F516E5342683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md in Resources */,
+				F58613CE26A96EB100D81DDA /* Confuse.py in Resources */,
 				F505AC2325C936F600F43298 /* 约束动画.md in Resources */,
 				F5D05B5D25BAAF9B00A4C6EC /* RGB十六进制颜色.md in Resources */,
 				F52F168E26A82C1C00D4E305 /* confuse.sh in Resources */,
 				F5125756269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md in Resources */,
 				F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */,
+				F58613CD26A96EB100D81DDA /* user_identifiers.txt in Resources */,
 				F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */,
 				F548D101256E384300357E64 /* img_1.png in Resources */,
 				F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */,
@@ -2410,8 +2463,10 @@
 				F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */,
 				67535E6F2390BC9B0009F882 /* 方正粗谭黑简体.ttf in Resources */,
 				F5091E52268C679F000884D1 /* dropdown_loading_01@2x.png in Resources */,
+				F58613F726A9738A00D81DDA /* changeName.py in Resources */,
 				F5B7DC442608814B00B1E497 /* XcodeClangFormat.zip in Resources */,
 				F591AC2D26A13B970042802F /* 马甲包.md in Resources */,
+				F58613D126A96EB100D81DDA /* clean_identifiers.txt in Resources */,
 				F5091E51268C679F000884D1 /* dropdown_loading_03@2x.png in Resources */,
 				F504404F26259C6300834547 /* PCH文件.md in Resources */,
 				F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */,
@@ -2420,23 +2475,28 @@
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
 				F5448BD12615F0A300169B71 /* 镂空.md in Resources */,
 				F5F5B47025FA3AE50069491B /* bg.jpg in Resources */,
+				F586140126A9739A00D81DDA /* Python批量修改iOS类名.md in Resources */,
 				F548D0E7256E2EEA00357E64 /* data.json in Resources */,
 				F505AC3525C940D100F43298 /* addChildViewController.md in Resources */,
 				F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */,
 				F5760E13268EECF4008250D7 /* 隐藏导航栏.md in Resources */,
+				F58613CC26A96EB100D81DDA /* confuse_log.log in Resources */,
 				F534736E25E357F400F01CC6 /* iOS仿抖音短视频.md in Resources */,
 				F5D05B6E25BAB16600A4C6EC /* 归档解档.md in Resources */,
 				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
 				F548D0E6256E2EEA00357E64 /* amwayPlayerZan.json in Resources */,
 				F567346C260C41D80081BC8A /* 数字变化的动画效果.md in Resources */,
+				F58613CF26A96EB100D81DDA /* ignoreKey.txt in Resources */,
 				F5B7DC432608814B00B1E497 /* clang-format-master.zip in Resources */,
 				F5F5B44525FA1DFE0069491B /* RRActoFooter.xib in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
 				F5B1FE6B2621AC6C004B950C /* TableviewSectionHeader不悬停.md in Resources */,
+				F58613D026A96EB100D81DDA /* start.sh in Resources */,
 				F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
 				F52F15A526A7C60500D4E305 /* 定时器NSTimer.md in Resources */,
+				F58613DB26A9715300D81DDA /* Python批量修改iOS方法名.md in Resources */,
 				F5872CD8257DFAC600341B57 /* xib使用.md in Resources */,
 				F548D0D7256E2EEA00357E64 /* img_0.png in Resources */,
 				F50D6D8625A95AD300B8C415 /* 瀑布流.md in Resources */,
@@ -2447,10 +2507,12 @@
 				F548D0E2256E2EEA00357E64 /* amwayPlayerGuide_1.png in Resources */,
 				F5A2475D26A6D9BD008B7BF4 /* 自动化打包.md in Resources */,
 				F586139626A9620900D81DDA /* 马甲包的副本3.md in Resources */,
+				F58613CB26A96EB100D81DDA /* system_identifiers.txt in Resources */,
 				6783C8591FB941EE0040C02B /* Main.storyboard in Resources */,
 				F58B4B462643FCD800D7C82D /* 回复.json in Resources */,
 				F548D0E5256E2EEA00357E64 /* amwayPlayerGuide.json in Resources */,
 				F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */,
+				F58613E126A9719500D81DDA /* Shell脚本批量修改iOS方法名.md in Resources */,
 				F5446CA6268D73240076961A /* 回复详情.json in Resources */,
 				F52F168D26A82C1C00D4E305 /* func.list in Resources */,
 				F51C24B7263BEF4D0010A298 /* 评论.json in Resources */,
