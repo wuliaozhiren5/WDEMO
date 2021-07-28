@@ -108,6 +108,8 @@
 #import "XXLoadingView.h"
 //TopViewController
 #import "UIViewController+TopViewController.h"
+//评分打分
+#import "ZZStarViewVC.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -161,7 +163,6 @@
     
     
     NSArray * array = @[
-        
         [ListModel initWithTitle:@"评论" detail:@"bilibili，爱奇艺，优酷评论UI）" type:ListModelTypeComment],
         [ListModel initWithTitle:@"我的消息评论详情" detail:@"bilibili，爱奇艺，优酷评论UI）" type:ListModelTypeMessageComment],
         [ListModel initWithTitle:@"新手引导（某个页面的新手引导）" detail:@"新手引导（某个页面的新手引导）" type:ListModelTypeNewHandGuide],
@@ -195,6 +196,7 @@
         [ListModel initWithTitle:@"Search" detail:@"搜索" type:ListModelTypeSearch],
         [ListModel initWithTitle:@"WKWebView" detail:@"网页" type:ListModelTypeWebView],
         [ListModel initWithTitle:@"ScoreView" detail:@"评分只是展示ScoreView" type:ListModelTypeScore],
+        [ListModel initWithTitle:@"评分打分" detail:@"可以评分打分，滑动点击" type:ListModelTypeZZStar],
         [ListModel initWithTitle:@"Archiver" detail:@"归档解档" type:ListModelTypeArchiver],
         //        [ListModel initWithTitle:@"首页page样式" detail:@"PageController" type:ListModelTypePageController],
         //        [ListModel initWithTitle:@"个人主页" detail:@"PersonalHomepage" type:ListModelTypePersonalHomepage],
@@ -909,6 +911,12 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)clickZZStar {
+    //评分打分
+    ZZStarViewVC *vc= [[ZZStarViewVC alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)clickListEdit {
     //列表编辑
     ListEditViewController *vc= [[ListEditViewController alloc]init];
@@ -1263,6 +1271,11 @@
         case ListModelTypeScore:
         {
             [self clickScore];
+        }
+            break;
+        case ListModelTypeZZStar:
+        {
+            [self clickZZStar];
         }
             break;
         case ListModelTypeListEdit:

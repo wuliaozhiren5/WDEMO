@@ -167,6 +167,7 @@ clickTwoCollectionList
 clickVerticalCollectionView
 clickWebView
 clickYYText
+clickZZStar
 clickgoBtn
 closeBtn
 collectionView
@@ -224,6 +225,7 @@ createStatusView3
 createStatusViewLeft
 createStatusViewRight
 createTipsLab
+createTitleLabels
 ct_imageFromImage
 d_colorWithColorLight
 d_fixResizableImage
@@ -345,6 +347,8 @@ initWithBtnGuideRect
 initWithCoder
 initWithDirection
 initWithFrame
+initWithGrade
+initWithImage
 initWithIsHalf
 initWithMessages
 initWithName
@@ -393,6 +397,7 @@ lightTrait
 line
 lineColor
 lineView
+load
 loadDataWithPage
 loadMoreData
 loadingView
@@ -552,6 +557,7 @@ sendMessages
 setAttributedPlaceholder
 setButtonDisableType
 setCachePolicy
+setCallBack
 setColumnCount
 setContentMargin
 setCornerRadius
@@ -563,6 +569,7 @@ setEnabledGradientColor
 setFooterHeight
 setFooterInset
 setFrame
+setGrade
 setHeaderHeight
 setHeaderInset
 setHiddenHeader
@@ -628,6 +635,7 @@ setShowOnNavigationBar
 setSpeedFactor
 setStarImageName
 setState
+setSublevel
 setTagArr
 setTagStr
 setText
@@ -640,7 +648,10 @@ setTitle919699
 setTitleWhite
 setTitleWhiteGradient
 setUp
+setupFirstStarView
 setupGestureRecognizer
+setupSecondStarView
+setupThirdStarView
 setupViews
 shakeAnimationForView
 sharedInstance
