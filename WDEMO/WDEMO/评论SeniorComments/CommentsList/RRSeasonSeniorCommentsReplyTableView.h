@@ -15,8 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @optional
 //点击cell
 - (void)seasonSeniorCommentsReplyTableView:(nullable UITableView *)tableView
-                   didSelectRowAtIndexPath:(nullable NSIndexPath *)indexPath
-                            didSelectModel:(nullable RRSeniorCommentsModel *)model;
+                   didSelectRowAtIndexPath:(nullable NSIndexPath *)indexPath;
+//                            didSelectModel:(nullable RRSeniorCommentsModel *)model;
 @end
 
 @interface RRSeasonSeniorCommentsReplyTableView : UITableView
@@ -34,6 +34,4 @@ NS_ASSUME_NONNULL_BEGIN
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model;
 @end
 
-//@interface RRSeasonSeniorCommentsReplyMoreTableViewCell : UITableViewCell
-//@end
 NS_ASSUME_NONNULL_END

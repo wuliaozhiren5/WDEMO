@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "YYKit.h"
 #import "RRSeniorCommentsModel.h"
+#import "RRSeasonSeniorCommentsPhotoCollectionView.h"
 
-//一级评论cell
+//一级评论cell，文字，不带图
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^ClickSeasonSeniorCommentsCell)(RRSeniorCommentsModel * _Nonnull model);//不可以为空
 
@@ -33,17 +34,11 @@ typedef void(^ClickSeasonSeniorCommentsCell)(RRSeniorCommentsModel * _Nonnull mo
 //@property (nonatomic, strong) UILabel *contentLab; //内容
 @property (nonatomic, strong) YYLabel *yyContentLab;//内容
 
-//单图
-@property (nonatomic, strong) UIImageView *singleImageView;//单图
-
 //底部的View
 @property (nonatomic, strong) UIView *bottomView;
 @property (nonatomic, strong) UILabel *dateLab; //日期
 @property (nonatomic, strong) UIButton *praiseBtn;
 @property (nonatomic, strong) UILabel *praiseBtnLab;
-//@property (nonatomic, strong) UIImageView *praiseImageView; //imgV
-
-//@property (nonatomic, strong) RRSeasonSeniorCommentsReplyTableView *tableView;
 
 @property (nonatomic, assign) BOOL isShowMore;//是否显示更多数据 默认NO
 //@property (nonatomic, assign) BOOL isFirst;//是否是剧透

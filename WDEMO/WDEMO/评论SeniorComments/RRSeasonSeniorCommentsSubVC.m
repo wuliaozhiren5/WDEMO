@@ -310,7 +310,7 @@
 //    vc.name = model.chineseName;
 //    vc.communityEnable = model.communityEnable;
 //    UIViewController *topVC = [UIViewController topViewController];
-    UIViewController *topVC = self;
+    UIViewController *topVC = [UIViewController topViewController];
     [topVC addChildViewController:vc];
     [vc didMoveToParentViewController:topVC];
     [topVC.view addSubview:vc.view];

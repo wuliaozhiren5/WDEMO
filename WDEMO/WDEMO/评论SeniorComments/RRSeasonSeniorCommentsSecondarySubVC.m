@@ -103,6 +103,7 @@
 }
 
 - (void)refreshData {
+    [self tableView];
     //iOS 读取本地Json文件
     NSString *path = [[NSBundle mainBundle] pathForResource:@"回复" ofType:@"json"];
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
@@ -173,13 +174,12 @@
     _headerLab = headerLab;
 }
 
- 
 //定位
 - (void)tableViewLocation {
     if (!self.replyId) {
         return;
     }
-
+ 
     NSInteger index = -1;
     for (NSInteger i = 0; i < self.data.count; i++) {
         RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:i];
@@ -197,18 +197,33 @@
     NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:index inSection:1];
     //滚动到其相应的位置
     [self.tableView scrollToRowAtIndexPath:scrollIndexPath
-            atScrollPosition:UITableViewScrollPositionTop animated:NO];
-  
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
-//    cell.contentView.backgroundColor = [UIColor redColor];
-    UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
-    colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
-    [cell.contentView addSubview:colorView];
-    [cell.contentView sendSubviewToBack:colorView];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [colorView removeFromSuperview];
+            atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    
+    //问题
+    //有时候变色不成功，有时候成功，加个延时就成功了
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.02 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+           UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
+        //    cell.contentView.backgroundColor = [UIColor redColor];
+            UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
+            colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
+            [cell.contentView addSubview:colorView];
+            [cell.contentView sendSubviewToBack:colorView];
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [colorView removeFromSuperview];
+            });
+            self.replyId = nil;
     });
-    self.replyId = nil;
+    
+//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
+////    cell.contentView.backgroundColor = [UIColor redColor];
+//    UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
+//    colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
+//    [cell.contentView addSubview:colorView];
+//    [cell.contentView sendSubviewToBack:colorView];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [colorView removeFromSuperview];
+//    });
+//    self.replyId = nil;
 }
 /*
 #pragma mark - Navigation

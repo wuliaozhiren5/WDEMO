@@ -8,6 +8,9 @@
 
 #import "RRSeasonSeniorCommentsReplyTableView.h"
 #import "YYKit.h"
+#import "RRMJTool.h"
+//#import "RRSeasonSeniorCommentsSecondarySubVC.h"
+//#import "HXPhotoPicker.h"
 
 @interface RRSeasonSeniorCommentsReplyTableView ()<UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UIControl *footer;
@@ -103,8 +106,8 @@
 }
 
 - (void)clickFooter {
-    if (self.tableViewDelegate && [self.tableViewDelegate respondsToSelector:@selector(seasonSeniorCommentsReplyTableView:didSelectRowAtIndexPath:didSelectModel:)]) {
-        [self.tableViewDelegate seasonSeniorCommentsReplyTableView:self didSelectRowAtIndexPath:nil didSelectModel:nil];
+    if (self.tableViewDelegate && [self.tableViewDelegate respondsToSelector:@selector(seasonSeniorCommentsReplyTableView:didSelectRowAtIndexPath:)]) {
+        [self.tableViewDelegate seasonSeniorCommentsReplyTableView:self didSelectRowAtIndexPath:nil];
     }
 }
 
@@ -225,9 +228,9 @@
     //NewsTableViewCell * cell = (NewsTableViewCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
 //    NSLog(@"%@",cell);
     
-    RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
-    if (self.tableViewDelegate && [self.tableViewDelegate respondsToSelector:@selector(seasonSeniorCommentsReplyTableView:didSelectRowAtIndexPath:didSelectModel:)]) {
-        [self.tableViewDelegate seasonSeniorCommentsReplyTableView:self didSelectRowAtIndexPath:indexPath didSelectModel:model];
+//    RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+    if (self.tableViewDelegate && [self.tableViewDelegate respondsToSelector:@selector(seasonSeniorCommentsReplyTableView:didSelectRowAtIndexPath:)]) {
+        [self.tableViewDelegate seasonSeniorCommentsReplyTableView:self didSelectRowAtIndexPath:indexPath];
     }
 }
 
@@ -288,13 +291,13 @@
     replyNicknameLab.text = realReplyNicknameStr;
  
     //昵称避免太长
-    NSArray *realNicknameArray = [UILabel getSeparatedLinesFromLabel:nicknameLab];
+    NSArray *realNicknameArray = [RRMJTool getSeparatedLinesFromLabel:nicknameLab];
     if (realNicknameArray.count > 2) {
         nicknameStr = [NSString stringWithFormat:@"%@...",realNicknameArray[0]];
     }
     
     //昵称避免太长
-    NSArray *realReplyNicknameArray = [UILabel getSeparatedLinesFromLabel:replyNicknameLab];
+    NSArray *realReplyNicknameArray = [RRMJTool getSeparatedLinesFromLabel:replyNicknameLab];
     if (realReplyNicknameArray.count > 2) {
         replyNicknameStr = [NSString stringWithFormat:@"%@...",realReplyNicknameArray[0]];
     }
@@ -324,7 +327,7 @@
     //    ...查看全文
     //    ...查看图片
     //恢复View
-    NSArray *array = [UILabel getSeparatedLinesFromYYLabel:self.yyContentLab];
+    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
     CGFloat fontSize = 14;
     UIFont *textFont = RR_COMMONFONT(fontSize);
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@""];
@@ -344,7 +347,7 @@
         line2String = [NSString stringWithFormat:@"%@%@%@", line2String, moreTextStr, lookImageStr];//...查看全文
         //第2行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
         self.yyContentLab.text = line2String;
-        NSArray *lineArray = [UILabel getSeparatedLinesFromYYLabel:self.yyContentLab];
+        NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
         NSString *lineString = lineArray[0];
         if (lineString.length >= moreTextStr.length + lookImageStr.length) {
             lineString = [NSString stringWithFormat:@"%@", [lineString substringToIndex:lineString.length - moreTextStr.length - lookImageStr.length]];
@@ -575,13 +578,13 @@
     replyNicknameLab.text = realReplyNicknameStr;
  
     //昵称避免太长
-    NSArray *realNicknameArray = [UILabel getSeparatedLinesFromLabel:nicknameLab];
+    NSArray *realNicknameArray = [RRMJTool getSeparatedLinesFromLabel:nicknameLab];
     if (realNicknameArray.count > 2) {
         nicknameStr = [NSString stringWithFormat:@"%@...",realNicknameArray[0]];
     }
     
     //昵称避免太长
-    NSArray *realReplyNicknameArray = [UILabel getSeparatedLinesFromLabel:replyNicknameLab];
+    NSArray *realReplyNicknameArray = [RRMJTool getSeparatedLinesFromLabel:replyNicknameLab];
     if (realReplyNicknameArray.count > 2) {
         replyNicknameStr = [NSString stringWithFormat:@"%@...",realReplyNicknameArray[0]];
     }
@@ -611,7 +614,7 @@
     //    ...查看全文
     //    ...查看图片
     //恢复View
-    NSArray *array = [UILabel getSeparatedLinesFromYYLabel:yyContentLab];
+    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
     CGFloat fontSize = 14;
     UIFont *textFont = RR_COMMONFONT(fontSize);
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@""];
@@ -631,7 +634,7 @@
         line2String = [NSString stringWithFormat:@"%@%@%@", line2String, moreTextStr, lookImageStr];//...查看全文
         //第2行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
         yyContentLab.text = line2String;
-        NSArray *lineArray = [UILabel getSeparatedLinesFromYYLabel:yyContentLab];
+        NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
         NSString *lineString = lineArray[0];
         if (lineString.length >= moreTextStr.length + lookImageStr.length) {
             lineString = [NSString stringWithFormat:@"%@", [lineString substringToIndex:lineString.length - moreTextStr.length - lookImageStr.length]];
@@ -810,7 +813,6 @@
     return _yyContentLab;
 }
 
-
 - (void)previewClick {
 //    NSMutableArray *assetArray = [NSMutableArray array];
 //    for (RRSeniorCommentsImageModel *object in self.model.images) {
@@ -818,7 +820,7 @@
 //        [assetArray addObject:assetModel];
 //
 //    }
-//
+//    
 //    HXPhotoManager *photoManager = [HXPhotoManager managerWithType:HXPhotoManagerSelectedTypePhotoAndVideo];
 //    photoManager.configuration.saveSystemAblum = YES;
 //    photoManager.configuration.photoMaxNum = 0;
@@ -843,7 +845,7 @@
 //        } cancelClick:nil];
 ////        hx_showAlert(previewViewController, @"提示", @"长按事件", @"确定", nil, nil, nil);
 //    };
-//
+//    
 //    // 跳转预览界面时动画起始的view
 //    photoManager.configuration.customPreviewFromView = ^UIView *(NSInteger currentIndex) {
 ////        HXPhotoSubViewCell *viewCell = [weakSelf.photoView collectionViewCellWithIndex:currentIndex];
@@ -861,10 +863,10 @@
 ////        HXPhotoSubViewCell *viewCell = [weakSelf.photoView collectionViewCellWithIndex:currentIndex];
 ////        return viewCell;
 ////    };
-//
+//    
 //    [photoManager addCustomAssetModel:assetArray];
 //    UIViewController *topVC = [UIViewController topViewController];
-//
+// 
 //    if (!self.isHalf) {
 //        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
 //                                              previewStyle:HXPhotoViewPreViewShowStyleDark
@@ -881,3 +883,4 @@
 }
 @end
  
+

@@ -8,8 +8,10 @@
 
 #import "RRSeasonSeniorCommentsNoReplyListCell.h"
 #import "RRSeasonSeniorCommentsSecondarySubVC.h"
+#import "RRMJTool.h"
+//#import "HXPhotoPicker.h"
 
-@interface RRSeasonSeniorCommentsNoReplyListCell () <RRSeasonSeniorCommentsSecondarySubVCDelegate>
+@interface RRSeasonSeniorCommentsNoReplyListCell () <RRSeasonSeniorCommentsSecondarySubVCDelegate, RRSeasonSeniorCommentsMultiImageCollectionViewDelegate>
 @end
 
 @implementation RRSeasonSeniorCommentsNoReplyListCell
@@ -35,6 +37,9 @@
 
 - (void)setupViews {
     [super setupViews];
+    //image
+//    [self.contentView addSubview:self.singleImageView];
+    [self.contentView addSubview:self.photoCollectionView];
 }
 
 - (void)setModel:(RRSeniorCommentsModel *)model {
@@ -69,7 +74,7 @@
     //    ...查看全文
     //    ...查看图片
     //恢复View
-    NSArray *array = [UILabel getSeparatedLinesFromYYLabel:self.yyContentLab];
+    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
     
     CGFloat fontSize = 14;
     UIFont *textFont = RR_COMMONFONT(fontSize);
@@ -126,7 +131,7 @@
             line5String = [NSString stringWithFormat:@"%@%@%@", line5String, moreTextStr, showAllTextStr];//...查看全文
             //第5行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
             self.yyContentLab.text = line5String;
-            NSArray *lineArray = [UILabel getSeparatedLinesFromYYLabel:self.yyContentLab];
+            NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
             NSString *lineString = lineArray[0];
             if (lineString.length >= moreTextStr.length + showAllTextStr.length) {
                 lineString = [NSString stringWithFormat:@"%@%@", [lineString substringToIndex:lineString.length - moreTextStr.length - showAllTextStr.length], moreTextStr];
@@ -180,10 +185,10 @@
     
     CGFloat currentHeight = 34 + rect.size.height + 1;
     CGFloat imageViewHeight = 0;
-    BOOL isHasImage = model.images.count > 0 ? YES : NO;
-    if (isHasImage) {
+    NSInteger imageCount = model.images.count;
+    if (imageCount == 1) {
+        //等于1张图
         RRSeniorCommentsImageModel *singleImage = [model.images firstObject];
-
         CGFloat width = singleImage.width;
         CGFloat height = singleImage.height;
         CGFloat x = 61;
@@ -205,24 +210,99 @@
             showHeight = max;
             
         }
-        self.singleImageView.hidden = NO;
-        self.singleImageView.frame = CGRectMake(x, y, showWidth, showHeight);
-//        [self.singleImageView rr_setImageWithURLString:singleImage.url  placeholderImage:KplaceholderImg];
+//        self.singleImageView.hidden = NO;
+//        self.singleImageView.frame = CGRectMake(x, y, showWidth, showHeight);
+////        [self.singleImageView rr_setImageWithURLString:singleImage.url  placeholderImage:KplaceholderImg];
 //        [self.singleImageView rr_downloadImageWithURLString:singleImage.url placeholderImage:KplaceholderImg];
-        self.singleImageView.image = [UIImage imageNamed:@"KplaceholderImg"];
+//
+//        self.photoCollectionView.hidden = YES;
+//        self.photoCollectionView.frame = CGRectZero;
+//        imageViewHeight = showHeight;
         
+        
+//        self.singleImageView.hidden = YES;
+//        self.singleImageView.frame = CGRectZero;
+        
+        self.photoCollectionView.hidden = NO;
+        self.photoCollectionView.frame = CGRectMake(x, y, showWidth, showHeight);
+        self.photoCollectionView.data = model.images;
         imageViewHeight = showHeight;
+        
+    } else if (imageCount > 1) {
+        //大于1张图
+        //最大长度
+        CGFloat maxWidth = (KWidth - 61 - 16);
+        //最大高度
+        CGFloat maxHeight = maxWidth;
+        //间距
+        CGFloat spacing = 5;
+        //单个长度
+        CGFloat oneImageWidth = (KWidth - 61 - 16 - spacing * 2) / 3;
+        //最大高度
+        CGFloat oneImageHeight = oneImageWidth;
+        //实际长度
+        CGFloat multiImageViewWidth = 0;
+        //实际高度
+        CGFloat multiImageViewHeight = 0;
+  
+        CGFloat x = 61;
+        CGFloat y = 8 + currentHeight;
+        
+        switch (imageCount) {
+            case 0:
+            case 1:
+                multiImageViewWidth = 0;
+                multiImageViewHeight = 0;
+                break;
+            case 2:
+                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewHeight = oneImageHeight;
+                break;
+            case 3:
+                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewHeight = oneImageHeight;
+                break;
+            case 4:
+                multiImageViewWidth = oneImageWidth * 2 + spacing;
+                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                break;
+            case 5:
+            case 6:
+                multiImageViewWidth = oneImageWidth * 3 + spacing * 2;
+                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                break;
+            case 7:
+            case 8:
+            case 9:
+                multiImageViewWidth = maxWidth;
+                multiImageViewHeight = maxHeight;
+                break;
+            default:
+                multiImageViewWidth = maxWidth;
+                multiImageViewHeight = maxHeight;
+                break;
+        }
+//        self.singleImageView.hidden = YES;
+//        self.singleImageView.frame = CGRectZero;
+        
+        self.photoCollectionView.hidden = NO;
+        self.photoCollectionView.frame = CGRectMake(x, y, multiImageViewWidth, multiImageViewHeight);
+        self.photoCollectionView.data = model.images;
+        imageViewHeight = multiImageViewHeight;
     } else {
-        self.singleImageView.hidden = YES;
-        self.singleImageView.frame = CGRectZero;
+        //小于1张图
+//        self.singleImageView.hidden = YES;
+//        self.singleImageView.frame = CGRectZero;
+        
+        self.photoCollectionView.hidden = YES;
+        self.photoCollectionView.frame = CGRectZero;
         imageViewHeight = 0;
-
     }
+
     if (imageViewHeight > 0) {
         currentHeight = currentHeight + 8 + imageViewHeight;
     }
     self.bottomView.frame = CGRectMake(0, currentHeight, KWidth, 45);
-    
 }
 
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll {
@@ -266,7 +346,7 @@
     //    ...查看全文
     //    ...查看图片
     //恢复View
-    NSArray *array = [UILabel getSeparatedLinesFromYYLabel:yyContentLab];
+    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
     
     CGFloat fontSize = 14;
     UIFont *textFont = RR_COMMONFONT(fontSize);
@@ -313,7 +393,7 @@
             line5String = [NSString stringWithFormat:@"%@%@%@", line5String, moreTextStr, showAllTextStr];//...查看全文
             //第5行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
             yyContentLab.text = line5String;
-            NSArray *lineArray = [UILabel getSeparatedLinesFromYYLabel:yyContentLab];
+            NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
             NSString *lineString = lineArray[0];
             if (lineString.length >= moreTextStr.length + showAllTextStr.length) {
                 lineString = [NSString stringWithFormat:@"%@%@", [lineString substringToIndex:lineString.length - moreTextStr.length - showAllTextStr.length], moreTextStr];
@@ -354,13 +434,12 @@
     CGRect rect = layout.textBoundingRect;
     //        CGSize size = layout.textBoundingSize;
 
-    CGFloat currentHeight = rect.size.height + 1;
-    
+    CGFloat currentHeight = 34 + rect.size.height + 1;
     CGFloat imageViewHeight = 0;
-    BOOL isHasImage = model.images.count > 0 ? YES : NO;
-    if (isHasImage) {
+    NSInteger imageCount = model.images.count;
+    if (imageCount == 1) {
+        //等于1张图
         RRSeniorCommentsImageModel *singleImage = [model.images firstObject];
-
         CGFloat width = singleImage.width;
         CGFloat height = singleImage.height;
         CGFloat x = 61;
@@ -383,14 +462,71 @@
             
         }
         imageViewHeight = showHeight;
+    } else if (imageCount > 1) {
+        //大于1张图
+        //最大长度
+        CGFloat maxWidth = (KWidth - 61 - 16);
+        //最大高度
+        CGFloat maxHeight = maxWidth;
+        //间距
+        CGFloat spacing = 5;
+        //单个长度
+        CGFloat oneImageWidth = (KWidth - 61 - 16 - spacing * 2) / 3;
+        //最大高度
+        CGFloat oneImageHeight = oneImageWidth;
+        //实际长度
+        CGFloat multiImageViewWidth = 0;
+        //实际高度
+        CGFloat multiImageViewHeight = 0;
+  
+        CGFloat x = 61;
+        CGFloat y = 8 + currentHeight;
+        
+        switch (imageCount) {
+            case 0:
+            case 1:
+                multiImageViewWidth = 0;
+                multiImageViewHeight = 0;
+                break;
+            case 2:
+                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewHeight = oneImageHeight;
+                break;
+            case 3:
+                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewHeight = oneImageHeight;
+                break;
+            case 4:
+                multiImageViewWidth = oneImageWidth * 2 + spacing;
+                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                break;
+            case 5:
+            case 6:
+                multiImageViewWidth = oneImageWidth * 3 + spacing * 2;
+                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                break;
+            case 7:
+            case 8:
+            case 9:
+                multiImageViewWidth = maxWidth;
+                multiImageViewHeight = maxHeight;
+                break;
+            default:
+                multiImageViewWidth = maxWidth;
+                multiImageViewHeight = maxHeight;
+                break;
+        }
+        imageViewHeight = multiImageViewHeight;
     } else {
+        //小于1张图
         imageViewHeight = 0;
     }
+
     if (imageViewHeight > 0) {
         currentHeight = currentHeight + 8 + imageViewHeight;
     }
 
-    return 34 + 45 + currentHeight;
+    return 45 + currentHeight;
 }
 
 //+ (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model {
@@ -551,30 +687,6 @@
     }
 }
 
-//#pragma mark -  RRSeasonSeniorCommentsReplyTableViewDelegate
-//- (void)seasonSeniorCommentsReplyTableView:(UITableView *)tableView
-//                   didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//                            didSelectModel:(RRSeniorCommentsModel *)model {
-//    [self gotoReplyVCWithCommentModel:self.model replyModel:model];
-//}
-
-////跳转到回复列表
-//- (void)gotoReplyVCWithCommentModel:(RRSeniorCommentsModel *)commentModel replyModel:(RRSeniorCommentsModel *)replyModel {
-//    RRSeasonSeniorCommentsSecondarySubVC *vc = [[RRSeasonSeniorCommentsSecondarySubVC alloc] initWithIsHalf:YES];
-//    vc.commentModel = commentModel;
-//    vc.replyModel = replyModel;
-//    vc.delegate = self;
-//    //    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];
-//    //    vc.name = model.chineseName;
-//    //    vc.communityEnable = model.communityEnable;
-//    UIViewController *topVC = [UIViewController topViewController];
-////    UIViewController *topVC = self.fatherVC;
-//    [topVC addChildViewController:vc];
-//    [vc didMoveToParentViewController:topVC];
-//    [topVC.view addSubview:vc.view];
-//    [vc show];
-//}
-
 //vc跳转删除
 #pragma mark -  RRSeasonSeniorCommentsSecondarySubVCDelegate
 - (void)seasonSeniorCommentsSecondarySubVC:(RRSeasonSeniorCommentsSecondarySubVC *)vc deleteModel:(RRSeniorCommentsModel *)deleteModel {
@@ -583,4 +695,123 @@
     }
 }
 
+#pragma mark - 点击图片
+- (void)tapImageAction:(UITapGestureRecognizer *)tap {
+    [self previewClick];
+}
+
+- (void)previewClick {
+//    NSMutableArray *assetArray = [NSMutableArray array];
+//    for (RRSeniorCommentsImageModel *object in self.model.images) {
+//        HXCustomAssetModel *assetModel = [HXCustomAssetModel assetWithNetworkImageURL:[NSURL URLWithString:object.url] selected:YES];
+//        [assetArray addObject:assetModel];
+//
+//    }
+//
+//    if (self.currentIndex < 0 || self.currentIndex > assetArray.count - 1 || !assetArray.count) {
+//        return;
+//    }
+//
+//    HXPhotoManager *photoManager = [HXPhotoManager managerWithType:HXPhotoManagerSelectedTypePhotoAndVideo];
+//    photoManager.configuration.saveSystemAblum = YES;
+//    photoManager.configuration.photoMaxNum = 0;
+//    photoManager.configuration.videoMaxNum = 0;
+//    photoManager.configuration.maxNum = 10;
+//    photoManager.configuration.selectTogether = YES;
+//    photoManager.configuration.photoCanEdit = NO;
+//    photoManager.configuration.videoCanEdit = NO;
+//
+//    HXWeakSelf
+//    // 长按事件
+//    photoManager.configuration.previewRespondsToLongPress = ^(UILongPressGestureRecognizer *longPress, HXPhotoModel *photoModel, HXPhotoManager *manager, HXPhotoPreviewViewController *previewViewController) {
+//        HXPhotoBottomViewModel *model = [[HXPhotoBottomViewModel alloc] init];
+//        model.title = @"保存";
+////        model.subTitle = @"这是一个长按事件";
+//        [HXPhotoBottomSelectView showSelectViewWithModels:@[model] headerView:nil cancelTitle:nil selectCompletion:^(NSInteger index, HXPhotoBottomViewModel * _Nonnull model) {
+//            if (index == 0) {
+//                // 保存，处理...
+//                UIImageWriteToSavedPhotosAlbum(photoModel.previewPhoto, nil, nil, nil);
+//                TOAST(@"保存成功");
+//            }
+//        } cancelClick:nil];
+////        hx_showAlert(previewViewController, @"提示", @"长按事件", @"确定", nil, nil, nil);
+//    };
+//
+//    // 跳转预览界面时动画起始的view
+//    photoManager.configuration.customPreviewFromView = ^UIView *(NSInteger currentIndex) {
+////        HXPhotoSubViewCell *viewCell = [weakSelf.photoView collectionViewCellWithIndex:currentIndex];
+////        return viewCell;
+//        return nil;
+//
+//    };
+//    // 跳转预览界面时展现动画的image
+//    photoManager.configuration.customPreviewFromImage = ^UIImage *(NSInteger currentIndex) {
+////        HXPhotoSubViewCell *viewCell = [weakSelf.photoView collectionViewCellWithIndex:currentIndex];
+////        return viewCell.imageView.image;
+//        return nil;
+//    };
+//    // 退出预览界面时终点view
+//    photoManager.configuration.customPreviewToView = ^UIView *(NSInteger currentIndex) {
+////        HXPhotoSubViewCell *viewCell = [weakSelf.photoView collectionViewCellWithIndex:currentIndex];
+////        return viewCell;
+//        return nil;
+//    };
+//
+//    [photoManager addCustomAssetModel:assetArray];
+//    UIViewController *topVC = [UIViewController topViewController];
+//
+//    NSInteger currentIndex = self.currentIndex;
+//    if (!self.isHalf) {
+//        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
+//                                              previewStyle:HXPhotoViewPreViewShowStyleDark
+//                                              currentIndex:currentIndex
+//                                                 photoView:nil];
+//    } else {
+//        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
+//                                              previewStyle:HXPhotoViewPreViewShowStyleDark
+//                                     showBottomPageControl:YES
+//                                              currentIndex:currentIndex
+//                                                 photoView:nil
+//                                                    height:playerViewHeight()];
+//    }
+}
+
+#pragma mark - RRSeasonSeniorCommentsMultiImageCollectionViewDelegate
+- (void)seasonSeniorCommentsMultiImageCollectionView:(UICollectionView *)collectionView
+                            didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    self.currentIndex = indexPath.item;
+    [self previewClick];
+}
+ 
+#pragma mark - lazy
+//- (UIImageView *)singleImageView {
+//    if (!_singleImageView) {
+//        _singleImageView = [[UIImageView alloc] init];
+//        _singleImageView.frame = CGRectMake(0, 0, 197, 197);
+//        //        _singleImageView.backgroundColor = [UIColor grayColor];
+//        //        _singleImageView.hidden = YES;
+//        _singleImageView.layer.cornerRadius = 8;
+//        _singleImageView.layer.masksToBounds = YES;
+//        _singleImageView.contentMode = UIViewContentModeScaleAspectFill;
+//        _singleImageView.userInteractionEnabled = YES;
+//        UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageAction:)];
+//        [_singleImageView addGestureRecognizer:tapGesturRecognizer];
+//    }
+//    return _singleImageView;
+//}
+
+- (RRSeasonSeniorCommentsPhotoCollectionView *)photoCollectionView {
+    if (!_photoCollectionView) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+        //垂直
+        flowLayout.scrollDirection= UICollectionViewScrollDirectionVertical;
+        _photoCollectionView = [[RRSeasonSeniorCommentsPhotoCollectionView alloc] initWithFrame:CGRectMake(61, 200, (KWidth - 61 - 16), (KWidth - 61 - 16)) collectionViewLayout:flowLayout];
+        _photoCollectionView.collectionViewDelegate = self;
+        _photoCollectionView.scrollEnabled = NO;
+        _photoCollectionView.layer.cornerRadius = 8;
+        _photoCollectionView.layer.masksToBounds = YES;
+        _photoCollectionView.hidden = NO;
+    }
+    return _photoCollectionView;
+}
 @end

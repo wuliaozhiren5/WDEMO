@@ -112,6 +112,9 @@
 		F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */; };
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
+		F5409A9126B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5409A8E26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.m */; };
+		F5409A9226B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5409A9026B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m */; };
+		F5409A9926B1051B0042F29D /* RRMJTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F5409A9826B1051B0042F29D /* RRMJTool.m */; };
 		F54304C82643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F54304C72643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.m */; };
 		F543282925A6D62C0082236C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F543282825A6D62C0082236C /* ScoreViewController.m */; };
 		F5446CA6268D73240076961A /* 回复详情.json in Resources */ = {isa = PBXBuildFile; fileRef = F5446CA5268D73240076961A /* 回复详情.json */; };
@@ -547,6 +550,12 @@
 		F53F669124FE454000770055 /* PasswordTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordTextField.m; sourceTree = "<group>"; };
 		F53F669924FE484700770055 /* NSString+Password.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Password.h"; sourceTree = "<group>"; };
 		F53F669A24FE484700770055 /* NSString+Password.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Password.m"; sourceTree = "<group>"; };
+		F5409A8D26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		F5409A8E26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsPhotoCollectionView.m; sourceTree = "<group>"; };
+		F5409A8F26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsPhotoCollectionView.h; sourceTree = "<group>"; };
+		F5409A9026B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		F5409A9726B1051B0042F29D /* RRMJTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRMJTool.h; sourceTree = "<group>"; };
+		F5409A9826B1051B0042F29D /* RRMJTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRMJTool.m; sourceTree = "<group>"; };
 		F54304C62643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsNoReplyListCell.h; sourceTree = "<group>"; };
 		F54304C72643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsNoReplyListCell.m; sourceTree = "<group>"; };
 		F543282725A6D62C0082236C /* ScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
@@ -1267,6 +1276,8 @@
 		F50440B72625A06B00834547 /* 评论SeniorComments */ = {
 			isa = PBXGroup;
 			children = (
+				F5409A9726B1051B0042F29D /* RRMJTool.h */,
+				F5409A9826B1051B0042F29D /* RRMJTool.m */,
 				F5446CB8268DADA80076961A /* NewSeniorCommentsMessage */,
 				F51C24C3263BF12B0010A298 /* Model */,
 				F5091DDA268C22A1000884D1 /* json数据 */,
@@ -1483,8 +1494,6 @@
 				F5446D02268DC1490076961A /* RRCommentPositionListModel.m */,
 				F5446CF7268DB80D0076961A /* RRMessageSeasonCommentPositionListVC.h */,
 				F5446CF6268DB80D0076961A /* RRMessageSeasonCommentPositionListVC.m */,
-				F5446CB1268DA8F80076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.h */,
-				F5446CB2268DA8F90076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.m */,
 			);
 			path = NewSeniorCommentsMessage;
 			sourceTree = "<group>";
@@ -1550,8 +1559,14 @@
 				F54304C72643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.m */,
 				F50440CD2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.h */,
 				F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m */,
+				F5446CB1268DA8F80076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.h */,
+				F5446CB2268DA8F90076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.m */,
 				F50440C12625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.h */,
 				F50440CB2625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m */,
+				F5409A8F26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.h */,
+				F5409A8E26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.m */,
+				F5409A8D26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.h */,
+				F5409A9026B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m */,
 				F50440C52625A06B00834547 /* RRSeasonSeniorCommentsHearder.h */,
 				F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */,
 			);
@@ -2620,6 +2635,8 @@
 				F5609CA22502194C00A13C15 /* AllScreenViewController.m in Sources */,
 				F50E841D25BEDDE6009767FE /* SearchBar.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
+				F5409A9226B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m in Sources */,
+				F5409A9926B1051B0042F29D /* RRMJTool.m in Sources */,
 				F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */,
 				F5A8898E24F6078E00DB73ED /* OrderViewModel.m in Sources */,
 				F593574925F7466A008CF0D8 /* ThirdViewCollectionViewController.m in Sources */,
@@ -2724,6 +2741,7 @@
 				F553E12924CA800200DA5625 /* FaceView.m in Sources */,
 				673AE9251FC7F5BD0002D304 /* ForceTouchListVC.m in Sources */,
 				F563DADD25AC26790079474B /* WMScrollView.m in Sources */,
+				F5409A9126B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.m in Sources */,
 				6783C8921FB944B80040C02B /* LZTagListView.m in Sources */,
 				F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */,
 				F5C1168C260CA20F001F4A74 /* UILabel+Util.m in Sources */,

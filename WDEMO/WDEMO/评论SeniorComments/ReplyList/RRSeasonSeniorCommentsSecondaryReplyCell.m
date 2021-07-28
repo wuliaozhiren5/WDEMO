@@ -42,7 +42,6 @@
 - (void)setModel:(RRSeniorCommentsModel *)model {
     [super setModel:model];
     
-    
     //回复小姐姐：漫威10年，最喜欢的超级英雄排名最喜欢的超级英雄排名名
     NSString *replyNicknameStr = model.reply2UserName ?: @"";
     NSString *replyStr = @"回复";
@@ -111,8 +110,7 @@
         one.color = kCOLOR_dynamicProvider_222222_DADBDC;
         [text appendAttributedString:one];
     }
-    
-    
+
     CGSize yySize = CGSizeMake((KWidth - 61 - 16), CGFLOAT_MAX);
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
     CGRect rect = layout.textBoundingRect;
@@ -122,13 +120,10 @@
     
     CGFloat currentHeight = 34 + rect.size.height + 1;
     CGFloat imageViewHeight = 0;
-    BOOL isHasImage = model.images.count > 0 ? YES : NO;
-    if (isHasImage) {
+    NSInteger imageCount = model.images.count;
+    if (imageCount == 1) {
+        //等于1张图
         RRSeniorCommentsImageModel *singleImage = [model.images firstObject];
-        self.singleImageView.hidden = NO;
-//        [self.singleImageView rr_setImageWithURLString:singleImage.url  placeholderImage:KplaceholderImg];
-        self.singleImageView.image = [UIImage imageNamed:@"KplaceholderImg"];
-
         CGFloat width = singleImage.width;
         CGFloat height = singleImage.height;
         CGFloat x = 61;
@@ -150,14 +145,93 @@
             showHeight = max;
             
         }
-        self.singleImageView.frame = CGRectMake(x, y, showWidth, showHeight);
+//        self.singleImageView.hidden = NO;
+//        self.singleImageView.frame = CGRectMake(x, y, showWidth, showHeight);
+////        [self.singleImageView rr_setImageWithURLString:singleImage.url  placeholderImage:KplaceholderImg];
+//        [self.singleImageView rr_downloadImageWithURLString:singleImage.url placeholderImage:KplaceholderImg];
+//
+//        self.photoCollectionView.hidden = YES;
+//        self.photoCollectionView.frame = CGRectZero;
+//        imageViewHeight = showHeight;
+         
+//        self.singleImageView.hidden = YES;
+//        self.singleImageView.frame = CGRectZero;
+        
+        self.photoCollectionView.hidden = NO;
+        self.photoCollectionView.frame = CGRectMake(x, y, showWidth, showHeight);
+        self.photoCollectionView.data = model.images;
         imageViewHeight = showHeight;
+    } else if (imageCount > 1) {
+        //大于1张图
+        //最大长度
+        CGFloat maxWidth = (KWidth - 61 - 16);
+        //最大高度
+        CGFloat maxHeight = maxWidth;
+        //间距
+        CGFloat spacing = 5;
+        //单个长度
+        CGFloat oneImageWidth = (KWidth - 61 - 16 - spacing * 2) / 3;
+        //最大高度
+        CGFloat oneImageHeight = oneImageWidth;
+        //实际长度
+        CGFloat multiImageViewWidth = 0;
+        //实际高度
+        CGFloat multiImageViewHeight = 0;
+  
+        CGFloat x = 61;
+        CGFloat y = 8 + currentHeight;
+        
+        switch (imageCount) {
+            case 0:
+            case 1:
+                multiImageViewWidth = 0;
+                multiImageViewHeight = 0;
+                break;
+            case 2:
+                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewHeight = oneImageHeight;
+                break;
+            case 3:
+                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewHeight = oneImageHeight;
+                break;
+            case 4:
+                multiImageViewWidth = oneImageWidth * 2 + spacing;
+                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                break;
+            case 5:
+            case 6:
+                multiImageViewWidth = oneImageWidth * 3 + spacing * 2;
+                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                break;
+            case 7:
+            case 8:
+            case 9:
+                multiImageViewWidth = maxWidth;
+                multiImageViewHeight = maxHeight;
+                break;
+            default:
+                multiImageViewWidth = maxWidth;
+                multiImageViewHeight = maxHeight;
+                break;
+        }
+//        self.singleImageView.hidden = YES;
+//        self.singleImageView.frame = CGRectZero;
+        
+        self.photoCollectionView.hidden = NO;
+        self.photoCollectionView.frame = CGRectMake(x, y, multiImageViewWidth, multiImageViewHeight);
+        self.photoCollectionView.data = model.images;
+        imageViewHeight = multiImageViewHeight;
     } else {
-        self.singleImageView.hidden = YES;
-        self.singleImageView.frame = CGRectZero;
+        //小于1张图
+//        self.singleImageView.hidden = YES;
+//        self.singleImageView.frame = CGRectZero;
+        
+        self.photoCollectionView.hidden = YES;
+        self.photoCollectionView.frame = CGRectZero;
         imageViewHeight = 0;
-
     }
+
     if (imageViewHeight > 0) {
         currentHeight = currentHeight + 8 + imageViewHeight;
     }
@@ -235,12 +309,12 @@
     CGRect rect = layout.textBoundingRect;
     //        CGSize size = layout.textBoundingSize;
 
-    CGFloat currentHeight = rect.size.height + 1;
+    CGFloat currentHeight = 34 + rect.size.height + 1;
     CGFloat imageViewHeight = 0;
-    BOOL isHasImage = model.images.count > 0 ? YES : NO;
-    if (isHasImage) {
+    NSInteger imageCount = model.images.count;
+    if (imageCount == 1) {
+        //等于1张图
         RRSeniorCommentsImageModel *singleImage = [model.images firstObject];
-        
         CGFloat width = singleImage.width;
         CGFloat height = singleImage.height;
         CGFloat x = 61;
@@ -263,14 +337,72 @@
             
         }
         imageViewHeight = showHeight;
+    } else if (imageCount > 1) {
+        //大于1张图
+        //最大长度
+        CGFloat maxWidth = (KWidth - 61 - 16);
+        //最大高度
+        CGFloat maxHeight = maxWidth;
+        //间距
+        CGFloat spacing = 5;
+        //单个长度
+        CGFloat oneImageWidth = (KWidth - 61 - 16 - spacing * 2) / 3;
+        //最大高度
+        CGFloat oneImageHeight = oneImageWidth;
+        //实际长度
+        CGFloat multiImageViewWidth = 0;
+        //实际高度
+        CGFloat multiImageViewHeight = 0;
+  
+        CGFloat x = 61;
+        CGFloat y = 8 + currentHeight;
+        
+        switch (imageCount) {
+            case 0:
+            case 1:
+                multiImageViewWidth = 0;
+                multiImageViewHeight = 0;
+                break;
+            case 2:
+                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewHeight = oneImageHeight;
+                break;
+            case 3:
+                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewHeight = oneImageHeight;
+                break;
+            case 4:
+                multiImageViewWidth = oneImageWidth * 2 + spacing;
+                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                break;
+            case 5:
+            case 6:
+                multiImageViewWidth = oneImageWidth * 3 + spacing * 2;
+                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                break;
+            case 7:
+            case 8:
+            case 9:
+                multiImageViewWidth = maxWidth;
+                multiImageViewHeight = maxHeight;
+                break;
+            default:
+                multiImageViewWidth = maxWidth;
+                multiImageViewHeight = maxHeight;
+                break;
+        }
+        imageViewHeight = multiImageViewHeight;
     } else {
+        //小于1张图
         imageViewHeight = 0;
     }
+
     if (imageViewHeight > 0) {
         currentHeight = currentHeight + 8 + imageViewHeight;
     }
  
-    return 34 + 45 + currentHeight;
+    return 45 + currentHeight;
 }
 
 @end
+ 

@@ -8,6 +8,7 @@
 
 #import "RRSeasonSeniorCommentsCell.h"
 #import <CoreText/CoreText.h>
+#import "RRMJTool.h"
 
 //#import "RRSeasonSeniorCommentsReplyTableView.h"
 
@@ -91,8 +92,7 @@
     //剧透
     [self.contentView addSubview:self.firstView];
     [self.firstView addSubview:self.firstLab];
-    //image
-    [self.contentView addSubview:self.singleImageView];
+
     //replyTable
 //    [self.contentView addSubview:self.tableView];
 
@@ -178,10 +178,12 @@
     
     [self.praiseBtnLab mas_makeConstraints:^(MASConstraintMaker *make) {
     //        make.top.equalTo(@0);
-        make.bottom.equalTo(@-13);
+//        make.bottom.equalTo(@-13);
+//        make.trailing.equalTo(@-40);
+//        make.height.equalTo(@15);
+        make.centerY.equalTo(self.praiseBtn);
         make.trailing.equalTo(@-40);
         make.height.equalTo(@15);
-    //        make.centerY.equalTo(self.praiseBtn);
     }];
 
     [self.praiseBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -205,16 +207,6 @@
         //        make.edges.equalTo(self.firstView);
         make.center.equalTo(self.firstView);
     }];
-    
-//    [self.singleImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        //        make.top.equalTo(self.contentLab.mas_bottom).offset(4);
-//        //        make.top.equalTo(self.yyContentLab.mas_top).offset(0);
-//        make.bottom.equalTo(self.bottomView.mas_top).offset(0);
-//        make.leading.equalTo(@61);
-//        make.width.equalTo(@197);
-//        //        make.height.equalTo(@197);
-//        make.height.equalTo(self.singleImageView.mas_width).multipliedBy(2.0);
-//    }];
 }
 
 - (void)setModel:(RRSeniorCommentsModel *)model {
@@ -222,8 +214,7 @@
     //填充数据
     self.praiseBtn.selected = model.liked;
     self.praiseBtnLab.text = [NSString transformCountWithString:model.likeCount];
-//    self.dateLab.text = [NSString getFormatterDateStringWithTimeInterval:model.createTime / 1000.0];
-    self.dateLab.text = [NSString getFormatterDateStringWithTimeInterval:model.createTime / 1000.0];
+    self.dateLab.text = [RRMJTool getFormatterDateStringWithTimeInterval:model.createTime / 1000.0];
 
     //头像
 //    [self.avatarImageView rr_setImageWithURLString:model.author.headImgUrl placeholderImage:KPersonHolderImg];
@@ -324,23 +315,6 @@
 }
 
 #pragma mark - lazy
-- (UIImageView *)singleImageView {
-    if (!_singleImageView) {
-        _singleImageView = [[UIImageView alloc] init];
-        _singleImageView.frame = CGRectMake(0, 0, 197, 197);
-        _singleImageView.backgroundColor = [UIColor grayColor];
-        //        _singleImageView.hidden = YES;
-        _singleImageView.layer.cornerRadius = 8;
-        _singleImageView.layer.masksToBounds = YES;
-        _singleImageView.contentMode = UIViewContentModeScaleAspectFill;
-        _singleImageView.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapImageAction:)];
-        [_singleImageView addGestureRecognizer:tapGesturRecognizer];
-    }
-    return _singleImageView;
-}
-
-
 - (UIImageView *)avatarImageView {
     if (!_avatarImageView) {
         _avatarImageView = [[UIImageView alloc]init];
@@ -428,19 +402,6 @@
     }
     return _praiseBtn;
 }
-
-//- (UIImageView *)praiseImageView {
-//    if (!_praiseImageView) {
-//        _praiseImageView = [[UIImageView alloc]init];
-//        _praiseImageView.frame = CGRectMake(0, 0, 36, 36);
-//        //        _avatarImageView.backgroundColor = [UIColor grayColor];
-//        //        _coverImageView.hidden = YES;
-//        //        _praiseImageView.layer.cornerRadius = 18;
-//        //        _praiseImageView.layer.masksToBounds = YES;
-//        //        _praiseImageView.contentMode = UIViewContentModeScaleAspectFill;
-//    }
-//    return _praiseImageView;
-//}
 
 - (UILabel *)praiseBtnLab {
     if (!_praiseBtnLab) {
@@ -728,84 +689,11 @@
 //        }
 //    }];
 }
-#pragma mark - 点击图片
-- (void)tapImageAction:(UITapGestureRecognizer *)tap {
-    [self previewClick];
-}
+
 #pragma mark - 点击头像 点击昵称
 - (void)tapAction:(UITapGestureRecognizer *)tap {
 //    [[RRAppLinkManager sharedManager] goUpuserDetail:self.model.author.ID toRoot:NO];
      
-}
-
-- (void)previewClick {
-
-//    NSMutableArray *assetArray = [NSMutableArray array];
-//    for (RRSeniorCommentsImageModel *object in self.model.images) {
-//        HXCustomAssetModel *assetModel = [HXCustomAssetModel assetWithNetworkImageURL:[NSURL URLWithString:object.url] selected:YES];
-//        [assetArray addObject:assetModel];
-//
-//    }
-//
-//    HXPhotoManager *photoManager = [HXPhotoManager managerWithType:HXPhotoManagerSelectedTypePhotoAndVideo];
-//    photoManager.configuration.saveSystemAblum = YES;
-//    photoManager.configuration.photoMaxNum = 0;
-//    photoManager.configuration.videoMaxNum = 0;
-//    photoManager.configuration.maxNum = 10;
-//    photoManager.configuration.selectTogether = YES;
-//    photoManager.configuration.photoCanEdit = NO;
-//    photoManager.configuration.videoCanEdit = NO;
-//
-//    HXWeakSelf
-//    // 长按事件
-//    photoManager.configuration.previewRespondsToLongPress = ^(UILongPressGestureRecognizer *longPress, HXPhotoModel *photoModel, HXPhotoManager *manager, HXPhotoPreviewViewController *previewViewController) {
-//        HXPhotoBottomViewModel *model = [[HXPhotoBottomViewModel alloc] init];
-//        model.title = @"保存";
-////        model.subTitle = @"这是一个长按事件";
-//        [HXPhotoBottomSelectView showSelectViewWithModels:@[model] headerView:nil cancelTitle:nil selectCompletion:^(NSInteger index, HXPhotoBottomViewModel * _Nonnull model) {
-//            if (index == 0) {
-//                // 保存，处理...
-//                UIImageWriteToSavedPhotosAlbum(photoModel.previewPhoto, nil, nil, nil);
-//                TOAST(@"保存成功");
-//            }
-//        } cancelClick:nil];
-////        hx_showAlert(previewViewController, @"提示", @"长按事件", @"确定", nil, nil, nil);
-//    };
-//
-//    // 跳转预览界面时动画起始的view
-//    photoManager.configuration.customPreviewFromView = ^UIView *(NSInteger currentIndex) {
-////        HXPhotoSubViewCell *viewCell = [weakSelf.photoView collectionViewCellWithIndex:currentIndex];
-////        return viewCell;
-//        return self.singleImageView;
-//    };
-//    // 跳转预览界面时展现动画的image
-//    photoManager.configuration.customPreviewFromImage = ^UIImage *(NSInteger currentIndex) {
-////        HXPhotoSubViewCell *viewCell = [weakSelf.photoView collectionViewCellWithIndex:currentIndex];
-////        return viewCell.imageView.image;
-//        return nil;
-//    };
-////    // 退出预览界面时终点view
-////    photoManager.configuration.customPreviewToView = ^UIView *(NSInteger currentIndex) {
-////        HXPhotoSubViewCell *viewCell = [weakSelf.photoView collectionViewCellWithIndex:currentIndex];
-////        return viewCell;
-////    };
-//
-//    [photoManager addCustomAssetModel:assetArray];
-//    UIViewController *topVC = [UIViewController topViewController];
-//
-//    if (!self.isHalf) {
-//        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
-//                                              previewStyle:HXPhotoViewPreViewShowStyleDark
-//                                              currentIndex:0
-//                                                 photoView:nil];
-//    } else {
-//        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
-//                                              previewStyle:HXPhotoViewPreViewShowStyleDark
-//                                     showBottomPageControl:YES
-//                                              currentIndex:0
-//                                                 photoView:nil
-//                                                    height:playerViewHeight()];
-//    }
 }
 @end
 

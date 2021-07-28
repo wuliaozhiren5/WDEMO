@@ -104,8 +104,10 @@
 #import "RRSeasonSeniorCommentsSubVC.h"
 //消息
 #import "RRMessageSeasonCommentPositionListVC.h"
-//
+//加载页
 #import "XXLoadingView.h"
+//TopViewController
+#import "UIViewController+TopViewController.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -1016,8 +1018,8 @@
 //    vc.actorId = [NSString stringWithFormat:@"%lld", model.ID];
 //    vc.name = model.chineseName;
 //    vc.communityEnable = model.communityEnable;
-//    UIViewController *topVC = [UIViewController topViewController];
-    UIViewController *topVC = self;
+    UIViewController *topVC = [UIViewController topViewController];
+//    UIViewController *topVC = self;
     [topVC addChildViewController:vc];
     [vc didMoveToParentViewController:topVC];
     [topVC.view addSubview:vc.view];

@@ -8,6 +8,12 @@
 
 #import "RRSeasonSeniorCommentsHasReplyListCell.h"
 #import "RRSeasonSeniorCommentsReplyTableView.h"
+#import "RRMJTool.h"
+//#import "PriseDynamicApi.h"
+//#import "ReportApi.h"
+//#import "RRSeniorCommentsDeletetApi.h"
+//#import "RRAlertBase.h"
+//#import "HXPhotoPicker.h"
 #import "RRSeasonSeniorCommentsSecondarySubVC.h"
 
 @interface RRSeasonSeniorCommentsHasReplyListCell () <RRSeasonSeniorCommentsSecondarySubVCDelegate, RRSeasonSeniorCommentsReplyTableViewDelegate>
@@ -46,144 +52,10 @@
 - (void)setModel:(RRSeniorCommentsModel *)model {
     [super setModel:model];
     //填充数据
-
-//    //文字部分
-//    //@"剧透 "
-//    //@"       " 7个空格
-//    NSString *firstTextStr = @"      ";//@"剧透 ";//@"       "; @"剧透 ";
-//    NSString *moreTextStr = @"...";
-//    NSString *showAllTextStr = @"查看全文";
-//    NSString *content = [model.content copy] ?: @"";
-//    NSString *textStr = [model.content copy] ?: @"";
-//
-//    //剧透
-//    BOOL isFirst = model.spoiler;
-//    if (isFirst) {
-//        //现实剧透标签
-//        self.firstView.hidden = NO;
-//        textStr = [firstTextStr stringByAppendingString:textStr];
-//    } else {
-//        //隐藏剧透标签
-//        self.firstView.hidden = YES;
-//    }
-//
-//    //    self.contentLab.text = textStr;
-//    self.yyContentLab.text = textStr;
-//
-//    //    ...查看全文
-//    //    ...查看图片
-//    //恢复View
-//    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
-//
-//    CGFloat fontSize = 14;
-//    UIFont *textFont = RR_COMMONFONT(fontSize);
-//    NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@""];
-//    text.lineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
-//    text.font = textFont;
-//    text.color = kCOLOR_dynamicProvider_222222_E5E7EB;
-//
-//    BOOL isShowMore = self.isShowMore;
-//    if (array.count > 5 && !isShowMore) {
-//        //1-4行
-//        NSString *showText = [NSString stringWithFormat:@"%@%@%@%@", array[0], array[1], array[2], array[3]];
-//        //第5行：
-//        NSString *line5String = array[4];
-//        //第5行：过滤回车和空行
-//        line5String = [NSString filterReturn:line5String];
-//        line5String = [NSString filterNewLine:line5String];
-//        //第5行：拼接...查看全文
-//        line5String = [NSString stringWithFormat:@"%@%@%@", line5String, moreTextStr, showAllTextStr];//...查看全文
-//        //第5行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
-//        self.yyContentLab.text = line5String;
-//        NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
-//        NSString *lineString = lineArray[0];
-//        lineString = [NSString stringWithFormat:@"%@%@", [lineString substringToIndex:lineString.length - moreTextStr.length - showAllTextStr.length], moreTextStr];
-//        //最后，完成1-5行
-//        showText = [NSString stringWithFormat:@"%@%@", showText, lineString];
-//        {
-////            WS(weakSelf)
-//            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:showText];
-//            //              one.lineSpacing = 2.5;
-//            one.font = textFont;
-//            one.color = kCOLOR_dynamicProvider_222222_E5E7EB;
-//            [text appendAttributedString:one];
-//        }
-//        {
-//            WS(weakSelf)
-//            NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:showAllTextStr];
-//            //              one.lineSpacing = 2.5;
-//            one.font = textFont;
-//            one.color = kCOLOR_0091FF;
-//            //设置点击范围以及点击事件（必须先设置好然后再将富文本设置给YYLabel才可以生效）
-//            [one setTextHighlightRange:one.rangeOfAll
-//                                 color:kCOLOR_0091FF
-//                       backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-//                             tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-//                //自定义代码，此处根据需要调整
-//                NSLog(@"查看全文");
-//                [weakSelf clickFullText];
-//             }];
-//            [text appendAttributedString:one];
-//        }
-//
-//    } else {
-//        NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:textStr];
-//        //              one.lineSpacing = 2.5;
-//        one.font = textFont;
-//        one.color = kCOLOR_dynamicProvider_222222_E5E7EB;
-//        [text appendAttributedString:one];
-//    }
-//
-//    CGSize yySize = CGSizeMake((KWidth - 61 - 16), CGFLOAT_MAX);
-//    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
-//    CGRect rect = layout.textBoundingRect;
-//    //        CGSize size = layout.textBoundingSize;
-//    self.yyContentLab.attributedText = text;
-//    self.yyContentLab.frame = CGRectMake(61, 34, (KWidth - 61 - 16), rect.size.height + 1);
-//
-//    CGFloat currentHeight = 34 + rect.size.height + 1;
-//    CGFloat imageViewHeight = 0;
-//    BOOL isHasImage = model.images.count > 0 ? YES : NO;
-//    if (isHasImage) {
-//        RRSeniorCommentsImageModel *singleImage = [model.images firstObject];
-//        self.singleImageView.hidden = NO;
-//        [self.singleImageView rr_setImageWithURLString:singleImage.url  placeholderImage:KplaceholderImg];
-//
-//        CGFloat width = singleImage.width;
-//        CGFloat height = singleImage.height;
-//        CGFloat x = 61;
-//        CGFloat y = 8 + currentHeight;
-//        CGFloat max = 197;
-//        CGFloat showWidth = 0;
-//        CGFloat showHeight = 0;
-//
-//        if (width > height) {
-//            showWidth = max * 4 / 3;
-//            showHeight = max;
-//
-//        } else if (width < height) {
-//            showWidth = max;
-//            showHeight = max * 4 / 3;
-//
-//        } else {
-//            showWidth = max;
-//            showHeight = max;
-//
-//        }
-//        self.singleImageView.frame = CGRectMake(x, y, showWidth, showHeight);
-//        imageViewHeight = showHeight;
-//    } else {
-//        self.singleImageView.hidden = YES;
-//        self.singleImageView.frame = CGRectZero;
-//        imageViewHeight = 0;
-//
-//    }
-//    if (imageViewHeight > 0) {
-//        currentHeight = currentHeight + 8 + imageViewHeight;
-//    }
  
     CGFloat currentHeight = 34 + self.yyContentLab.frame.size.height;
-    CGFloat imageViewHeight = self.singleImageView.frame.size.height;
+    CGFloat imageViewHeight = 0;
+    imageViewHeight = self.photoCollectionView.frame.size.height;
     if (imageViewHeight > 0) {
         currentHeight = currentHeight + 8 + imageViewHeight;
     }
@@ -414,8 +286,13 @@
 
 #pragma mark -  RRSeasonSeniorCommentsReplyTableViewDelegate
 - (void)seasonSeniorCommentsReplyTableView:(UITableView *)tableView
-                   didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-                            didSelectModel:(RRSeniorCommentsModel *)model {
+                   didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    RRSeniorCommentsModel *model;
+    //indexPath存在说明点了cell
+    //indexPath不存在说明点了头或脚
+    if (indexPath) {
+        model = [self.model.replies objectOrNilAtIndex:indexPath.row];
+    }
     [self gotoReplyVCWithCommentModel:self.model replyModel:model];
 }
 

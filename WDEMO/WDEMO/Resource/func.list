@@ -324,6 +324,7 @@ id>
 image
 imageCompressForSize
 imageCompressWithSimple
+imageView
 imageViewArray
 imageWithBgColor
 imgV
@@ -468,6 +469,7 @@ pageController
 parameterWithURL
 passValue
 personalCenterBar
+photoCollectionView
 placeholderLabel
 popViewController
 posRecords
@@ -536,6 +538,7 @@ searchBarDidCancel
 searchBarDidChange
 searchBarDidEndEditing
 searchBarShouldReturn
+seasonSeniorCommentsMultiImageCollectionView
 seasonSeniorCommentsReplyTableView
 seasonSeniorCommentsSecondarySubVC
 secondLabel
@@ -661,7 +664,6 @@ showLoadingView
 showRedPoint
 showSheet
 showTextBtn
-singleImageView
 singlePictureView
 sizeForState
 skipAction
