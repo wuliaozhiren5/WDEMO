@@ -8,10 +8,8 @@
 
 #import "AppDelegate.h"
 #import "CJAppUncaughtExceptionHandler.h"
-#import "BaseNavigationController.h"
-#import "BaseTabBarController.h"
 #import "MyTabBarController.h"
-#import "ViewController.h"
+#import "LBTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -48,51 +46,14 @@
     
     // 设置窗口的跟控制器
     MyTabBarController *tabbarVC = [[MyTabBarController alloc]init];
-    
-    // 添加子控制器
-//    UIViewController * VC01 = [[UIViewController alloc]init];
-    ViewController * VC01 = [[ViewController alloc]init];
-    // 添加子导航控制器
-    BaseNavigationController * NavVC01 = [[BaseNavigationController alloc]initWithRootViewController:VC01];
-    // 设置标题
-    NavVC01.tabBarItem.title = @"精华";
-    // 设置默认图片
-    NavVC01.tabBarItem.image = [UIImage imageNamed:@"ic_bottombar_home_n"];
-    // 设置选中图片
-    NavVC01.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_bottombar_home_h"];
-    NavVC01.view.backgroundColor = [UIColor yellowColor];
-    [tabbarVC addChildViewController:NavVC01];
-    
-    UIViewController * VC02 = [[UIViewController alloc]init];
-    BaseNavigationController * NavVC02 = [[BaseNavigationController alloc]initWithRootViewController:VC02];
-    NavVC02.tabBarItem.title = @"新帖";
-    NavVC02.tabBarItem.image = [UIImage imageNamed:@"ic_bottombar_kuaikan_n"];
-    NavVC02.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_bottombar_kuaikan_h"];
-    
-    NavVC02.view.backgroundColor = [UIColor redColor];
-    [tabbarVC addChildViewController:NavVC02];
-    
-    UIViewController * VC03 = [[UIViewController alloc]init];
-    BaseNavigationController * NavVC03 = [[BaseNavigationController alloc]initWithRootViewController:VC03];
-    NavVC03.tabBarItem.title = @"关注";
-    NavVC03.tabBarItem.image = [UIImage imageNamed:@"ic_bottombar_kuaikan_n"];
-    NavVC03.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_bottombar_kuaikan_h"];
-    
-    NavVC03.view.backgroundColor = [UIColor blueColor];
-    [tabbarVC addChildViewController:NavVC03];
-    
-    UIViewController * VC04 = [[UIViewController alloc]init];
-    BaseNavigationController * NavVC04 = [[BaseNavigationController alloc]initWithRootViewController:VC04];
-    NavVC04.tabBarItem.title = @"我";
-    NavVC04.tabBarItem.image = [UIImage imageNamed:@"ic_bottombar_vip_n"];
-    NavVC04.tabBarItem.selectedImage = [UIImage imageNamed:@"ic_bottombar_vip_h"];
-    
-    NavVC04.view.backgroundColor = [UIColor greenColor];
-    [tabbarVC addChildViewController:NavVC04];
-    
+
     self.window.rootViewController = tabbarVC;
     
-//    self.window.rootViewController = NavVC01;
+    
+    LBTabBarController *tabBarVc = [[LBTabBarController alloc] init];
+
+    self.window.rootViewController = tabBarVc;
+    
     // 显示窗口
     [self.window makeKeyAndVisible];
     

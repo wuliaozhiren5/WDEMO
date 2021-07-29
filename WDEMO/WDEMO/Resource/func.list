@@ -13,8 +13,6 @@ _Nonnull
 _topViewController
 addBadgeViewAtIndex
 addBadgeViews
-addBtnDidClick
-addButtonClick
 addEmoji
 addFaceToCache
 addFooter
@@ -28,6 +26,8 @@ addScrollView
 addTableViewHeaderAndFooter
 addView
 agreement
+alignHorizontal
+alignVertical
 allItemAttributes
 animationDidStart
 animationDidStop
@@ -55,6 +55,8 @@ backtrace
 badgeViewAtIndex
 becomeFirstResponder
 bindViewModel
+borderColor
+borderWidth
 bottomView
 bubbleView
 cache
@@ -68,6 +70,8 @@ cellHeight
 cellHeightWithModel
 cellIndentifier
 centerLine
+centerX
+centerY
 changeButtonType
 changeImage
 changeNowLanguage
@@ -191,6 +195,7 @@ contentLabel
 contentSize
 convertProgressWidthsToFrames
 convertViewToImage
+cornerRadius
 coverImageView
 cpuUsage
 cpu_usage
@@ -312,6 +317,7 @@ hanggao
 hash
 headImageView
 headersAttribute
+height
 heightForCellWithModel
 heightOfWidth
 hidden
@@ -331,6 +337,7 @@ imageCompressWithSimple
 imageView
 imageViewArray
 imageWithBgColor
+imageWithColor
 imgV
 incommingBubble
 incommingBubbleTop
@@ -359,6 +366,7 @@ initWithStyle
 initWithTitle
 initWithViewControllerClasses
 initWithXib
+initialize
 inputBar
 inputBarDidTouchFace
 inputBarDidTouchKeyboard
@@ -376,6 +384,7 @@ isInputEditing
 isSelected
 isSelectedAll
 isShowNextBtn
+isShowOnWindow
 itemAtIndex
 itemMarginAtIndex
 itemWidthInSectionAtIndex
@@ -474,10 +483,13 @@ outgoingVoiceMessageLayout
 p_defaultController
 pageController
 parameterWithURL
+parentController
 passValue
 personalCenterBar
 photoCollectionView
 placeholderLabel
+plusBtnDidClick
+pop
 popViewController
 posRecords
 praiseBtn
@@ -493,7 +505,9 @@ productViewControllerDidFinish
 progressChanged
 progressHeight
 progressViewCornerRadius
+pushViewController
 queue
+randomColor
 rateChange
 readMessage
 redView
@@ -557,9 +571,13 @@ selectItemAtIndex
 sendMessage
 sendMessages
 setAttributedPlaceholder
+setBorderColor
+setBorderWidth
 setButtonDisableType
 setCachePolicy
 setCallBack
+setCenterX
+setCenterY
 setColumnCount
 setContentMargin
 setCornerRadius
@@ -574,6 +592,7 @@ setFrame
 setGrade
 setHeaderHeight
 setHeaderInset
+setHeight
 setHiddenHeader
 setHiddenLine
 setHiddenTipIndex
@@ -634,6 +653,7 @@ setSelected
 setSelectedColor
 setShadowWithOffsetX
 setShowOnNavigationBar
+setSize
 setSpeedFactor
 setStarImageName
 setState
@@ -650,6 +670,12 @@ setTitle919699
 setTitleWhite
 setTitleWhiteGradient
 setUp
+setUpAllChildVc
+setUpNav
+setUpOneChildVcWithVc
+setWidth
+setX
+setY
 setupFirstStarView
 setupGestureRecognizer
 setupSecondStarView
@@ -678,6 +704,7 @@ showRedPoint
 showSheet
 showTextBtn
 singlePictureView
+size
 sizeForState
 skipAction
 slideMenuAtProgress
@@ -697,6 +724,7 @@ subtitleLab2
 subtitleLab3
 supportedInterfaceOrientations
 systemMessageLayout
+tabBarPlusBtnClick
 tableView
 tableViewLocation
 tableViewSectionHeader
@@ -773,6 +801,7 @@ viewWillTransitionToSize
 vm
 void
 webView
+width
 willCachedController
 willEnterController
 willEnterForeground
@@ -804,7 +833,9 @@ wm_removeViewController
 wm_resetMenuView
 wm_resetScrollView
 wm_setup
+x
 xxTest
+y
 yyAttributedString
 yyContent
 yyContentLab
