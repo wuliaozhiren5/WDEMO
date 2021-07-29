@@ -270,7 +270,6 @@
 		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
 		F5CA135426B25DA200D8A7AE /* 网络图片403.md in Resources */ = {isa = PBXBuildFile; fileRef = F5CA135326B25DA200D8A7AE /* 网络图片403.md */; };
 		F5CA135E26B2820000D8A7AE /* 自定义TabBar.md in Resources */ = {isa = PBXBuildFile; fileRef = F5CA135D26B2820000D8A7AE /* 自定义TabBar.md */; };
-		F5CA137C26B2871900D8A7AE /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CA137B26B2871900D8A7AE /* MyTabBarController.m */; };
 		F5CA138B26B28E3E00D8A7AE /* MyTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CA138A26B28E3E00D8A7AE /* MyTabBar.m */; };
 		F5CA13A126B2928700D8A7AE /* ic_bottombar_me_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CA139126B2928700D8A7AE /* ic_bottombar_me_h@2x.png */; };
 		F5CA13A226B2928700D8A7AE /* ic_bottombar_kuaikan_n@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CA139226B2928700D8A7AE /* ic_bottombar_kuaikan_n@3x.png */; };
@@ -288,6 +287,7 @@
 		F5CA13AE26B2928700D8A7AE /* ic_bottombar_vip_n@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CA139E26B2928700D8A7AE /* ic_bottombar_vip_n@2x.png */; };
 		F5CA13AF26B2928700D8A7AE /* ic_bottombar_vip_n@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CA139F26B2928700D8A7AE /* ic_bottombar_vip_n@3x.png */; };
 		F5CA13B026B2928700D8A7AE /* ic_bottombar_home_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CA13A026B2928700D8A7AE /* ic_bottombar_home_h@2x.png */; };
+		F5CA13BB26B2979800D8A7AE /* MyTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CA13BA26B2979800D8A7AE /* MyTabBarController.m */; };
 		F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */; };
 		F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1B24E6901700B20C80 /* RRDestroyAccountReasonViewController.m */; };
 		F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlertView.m */; };
@@ -836,8 +836,6 @@
 		F5C7261A24E1317B00B16639 /* ListModelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModelCell.m; sourceTree = "<group>"; };
 		F5CA135326B25DA200D8A7AE /* 网络图片403.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "网络图片403.md"; sourceTree = "<group>"; };
 		F5CA135D26B2820000D8A7AE /* 自定义TabBar.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自定义TabBar.md"; sourceTree = "<group>"; };
-		F5CA137A26B2871900D8A7AE /* MyTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
-		F5CA137B26B2871900D8A7AE /* MyTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
 		F5CA138926B28E3E00D8A7AE /* MyTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTabBar.h; sourceTree = "<group>"; };
 		F5CA138A26B28E3E00D8A7AE /* MyTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTabBar.m; sourceTree = "<group>"; };
 		F5CA139126B2928700D8A7AE /* ic_bottombar_me_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bottombar_me_h@2x.png"; sourceTree = "<group>"; };
@@ -856,6 +854,8 @@
 		F5CA139E26B2928700D8A7AE /* ic_bottombar_vip_n@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bottombar_vip_n@2x.png"; sourceTree = "<group>"; };
 		F5CA139F26B2928700D8A7AE /* ic_bottombar_vip_n@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bottombar_vip_n@3x.png"; sourceTree = "<group>"; };
 		F5CA13A026B2928700D8A7AE /* ic_bottombar_home_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bottombar_home_h@2x.png"; sourceTree = "<group>"; };
+		F5CA13B926B2979800D8A7AE /* MyTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyTabBarController.h; sourceTree = "<group>"; };
+		F5CA13BA26B2979800D8A7AE /* MyTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyTabBarController.m; sourceTree = "<group>"; };
 		F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountContentCell.m; sourceTree = "<group>"; };
 		F5CE3D1624E6901700B20C80 /* RRDestroyAccountAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountAlertView.h; sourceTree = "<group>"; };
 		F5CE3D1724E6901700B20C80 /* RRDestroyAccountReasonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountReasonViewController.h; sourceTree = "<group>"; };
@@ -2130,10 +2130,10 @@
 			isa = PBXGroup;
 			children = (
 				F5CA139026B2928700D8A7AE /* bottombarImage */,
-				F5CA137A26B2871900D8A7AE /* MyTabBarController.h */,
-				F5CA137B26B2871900D8A7AE /* MyTabBarController.m */,
 				F5CA138926B28E3E00D8A7AE /* MyTabBar.h */,
 				F5CA138A26B28E3E00D8A7AE /* MyTabBar.m */,
+				F5CA13B926B2979800D8A7AE /* MyTabBarController.h */,
+				F5CA13BA26B2979800D8A7AE /* MyTabBarController.m */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -2832,7 +2832,6 @@
 				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
 				F5409AAD26B164A30042F29D /* ZZStarViewVC.m in Sources */,
 				F5C0A21F2578BBC2004EBD94 /* xibView.m in Sources */,
-				F5CA137C26B2871900D8A7AE /* MyTabBarController.m in Sources */,
 				6783C8901FB944B80040C02B /* LZTagListCell.m in Sources */,
 				F5E4785E25301177001AE2AE /* WebVC.m in Sources */,
 				A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */,
@@ -2865,6 +2864,7 @@
 				F563DADB25AC26790079474B /* UIViewController+WMPageController.m in Sources */,
 				F54304C82643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.m in Sources */,
 				F5609CA62502222100A13C15 /* BaseNavigationController.m in Sources */,
+				F5CA13BB26B2979800D8A7AE /* MyTabBarController.m in Sources */,
 				F5091DE1268C4184000884D1 /* XXLoadingView.m in Sources */,
 				F507113324E2A6BE00AD5306 /* MYCar.m in Sources */,
 				F5609CA92502235400A13C15 /* BaseTabBarController.m in Sources */,
