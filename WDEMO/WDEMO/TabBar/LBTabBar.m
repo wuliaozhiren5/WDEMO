@@ -87,6 +87,8 @@
             btn.width = self.width / 5;
             
             btn.x = btn.width * btnIndex;
+            //特别注意：上面的报错可以使用下面代码
+//            btn.origin = CGPointMake(btn.width * btnIndex, btn.frame.origin.y);
             
             btnIndex++;
             //如果是索引是2(从0开始的)，直接让索引++，目的就是让消息按钮的位置向右移动，空出来发布按钮的位置

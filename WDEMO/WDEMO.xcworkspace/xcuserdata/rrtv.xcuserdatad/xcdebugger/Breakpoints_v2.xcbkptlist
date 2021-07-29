@@ -78,8 +78,8 @@
             filePath = "WDEMO/TabBar/LBTabBar.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
             landmarkName = "-layoutSubviews"
             landmarkType = "7">
          </BreakpointContent>
