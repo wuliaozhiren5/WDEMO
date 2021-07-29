@@ -43,13 +43,14 @@
     self.window = [[UIWindow alloc]init];
     self.window.frame = [UIScreen mainScreen].bounds;
     
-    
     // 设置窗口的跟控制器
-    MyTabBarController *tabbarVC = [[MyTabBarController alloc]init];
-
-    self.window.rootViewController = tabbarVC;
     
+//    //简单tabBar
+//    MyTabBarController *tabbarVC = [[MyTabBarController alloc]init];
+//
+//    self.window.rootViewController = tabbarVC;
     
+    //自定义tabBar
     LBTabBarController *tabBarVc = [[LBTabBarController alloc] init];
 
     self.window.rootViewController = tabBarVc;
