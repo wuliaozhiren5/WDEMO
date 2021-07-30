@@ -138,7 +138,26 @@
 
 }
 
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
-
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+    
+    NSInteger index = [self.tabBar.items indexOfObject:item];
+    //执行动画
+    NSMutableArray *arry = [NSMutableArray array];
+    for (UIView *btn in self.tabBar.subviews) {
+        if ([btn isKindOfClass:NSClassFromString(@"UITabBarButton")]) {
+            [arry addObject:btn];
+        }
+    }
+    //添加动画　　　　 //---将下面的代码块直接拷贝到此即可---
+    
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+    //速度控制函数，控制动画运行的节奏
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    animation.duration = 0.2;       //执行时间
+    animation.repeatCount = 1;      //执行次数
+    animation.autoreverses = YES;    //完成动画后会回到执行动画之前的状态
+    animation.fromValue = [NSNumber numberWithFloat:0.7];   //初始伸缩倍数
+    animation.toValue = [NSNumber numberWithFloat:1.3];     //结束伸缩倍数
+    [[arry[index] layer] addAnimation:animation forKey:nil];
 }
 @end
