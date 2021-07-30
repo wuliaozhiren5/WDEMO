@@ -238,6 +238,7 @@
 		F5A2476326A6D9E7008B7BF4 /* WiFi名.md in Resources */ = {isa = PBXBuildFile; fileRef = F5A2476226A6D9E6008B7BF4 /* WiFi名.md */; };
 		F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */; };
 		F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */; };
+		F5A5E71A26B3ADEF00C28596 /* 自定义TabBar点击动画效.md in Resources */ = {isa = PBXBuildFile; fileRef = F5A5E71926B3ADEF00C28596 /* 自定义TabBar点击动画效.md */; };
 		F5A763BF253D952D00A76C6E /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A763BE253D952D00A76C6E /* Book.m */; };
 		F5A763C6253D956800A76C6E /* Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A763C5253D956800A76C6E /* Attributes.m */; };
 		F5A8898524F605C600DB73ED /* OrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A8898424F605C600DB73ED /* OrderViewController.m */; };
@@ -793,6 +794,7 @@
 		F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerticalCollectionViewController.m; sourceTree = "<group>"; };
 		F5A51F3524FC98430054A4DD /* PasswordTextFieldView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PasswordTextFieldView.h; sourceTree = "<group>"; };
 		F5A51F3624FC98430054A4DD /* PasswordTextFieldView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordTextFieldView.m; sourceTree = "<group>"; };
+		F5A5E71926B3ADEF00C28596 /* 自定义TabBar点击动画效.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自定义TabBar点击动画效.md"; sourceTree = "<group>"; };
 		F5A763BD253D952D00A76C6E /* Book.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		F5A763BE253D952D00A76C6E /* Book.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		F5A763C4253D956800A76C6E /* Attributes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Attributes.h; sourceTree = "<group>"; };
@@ -1167,6 +1169,7 @@
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
 				F5CA135D26B2820000D8A7AE /* 自定义TabBar.md */,
+				F5A5E71926B3ADEF00C28596 /* 自定义TabBar点击动画效.md */,
 				F5CA135326B25DA200D8A7AE /* 网络图片403.md */,
 				F504404E26259C6200834547 /* PCH文件.md */,
 				F51C8694261F103F0066850E /* UIView中坐标转换.md */,
@@ -2672,6 +2675,7 @@
 				F58613CD26A96EB100D81DDA /* user_identifiers.txt in Resources */,
 				F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */,
 				F5CA140326B2A2DC00D8A7AE /* account_highlight@2x.png in Resources */,
+				F5A5E71A26B3ADEF00C28596 /* 自定义TabBar点击动画效.md in Resources */,
 				F548D101256E384300357E64 /* img_1.png in Resources */,
 				F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */,
 				F5A2476326A6D9E7008B7BF4 /* WiFi名.md in Resources */,
