@@ -37,7 +37,8 @@
 
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 
     [self setUpAllChildVc];
@@ -111,8 +112,6 @@
     
 }
 
-
-
 #pragma mark - ------------------------------------------------------------------
 #pragma mark - LBTabBarDelegate
 //点击中间按钮的代理方法
@@ -128,7 +127,6 @@
 
 }
 
-
 - (UIColor *)randomColor
 {
     CGFloat r = arc4random_uniform(256);
@@ -138,7 +136,8 @@
 
 }
 
-- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
     
     NSInteger index = [self.tabBar.items indexOfObject:item];
     //执行动画
