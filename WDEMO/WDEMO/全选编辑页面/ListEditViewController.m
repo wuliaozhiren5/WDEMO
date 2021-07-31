@@ -506,10 +506,16 @@
     UIButton *rightBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     //    rightBtn.backgroundColor = [UIColor cyanColor];
     //    [rightBtn setImage:[UIImage imageNamed:@"back.png"] forState:UIControlStateNormal];
-    [rightBtn setTitle:@"编辑" forState:UIControlStateNormal];
-    [rightBtn setTitle:@"取消" forState:UIControlStateSelected];
+    
+    NSString *editStr = @"编辑";
+    NSString *finishStr = @"取消";
+    [rightBtn setTitle:editStr forState:UIControlStateNormal];
+    [rightBtn setTitle:finishStr forState:UIControlStateSelected];
 
-    [rightBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [rightBtn setTitleColor:kCOLOR_dynamicProvider_222222_DADBDC forState:UIControlStateNormal];
+    [rightBtn setTitleColor:kCOLOR_dynamicProvider_222222_DADBDC forState:UIControlStateSelected];
+    [rightBtn setTitleColor:[kCOLOR_dynamicProvider_222222_DADBDC colorWithAlphaComponent:0.5] forState:UIControlStateDisabled];
+    
     [rightBtn addTarget:self action:@selector(clickRightBtn:)forControlEvents:UIControlEventTouchUpInside];
     
     //    rightBtn.contentEdgeInsets = UIEdgeInsetsMake(0, -20,0, 0);

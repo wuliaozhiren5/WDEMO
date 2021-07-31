@@ -30,11 +30,6 @@
     if (self.isUserEditing) {
         return;
     }
-    if (self.dataSource.dataArray.count <= 0) {
-//        self.tableView.mj_header = nil;
-        [self removeHeader];
-        return;
-    }
     if (self.tableView.mj_header) {
         return;
     }
@@ -84,3 +79,36 @@
 ```
 
 
+
+也可以
+```
+- (void)addHeader {
+    //编辑模式刷新，不需要头
+    if (self.isUserEditing) {
+        return;
+    }
+    if (self.dataSource.dataArray.count <= 0) {
+//        self.tableView.mj_header = nil;
+        [self removeHeader];
+        return;
+    }
+    if (self.tableView.mj_header) {
+        return;
+    }
+    @weakify(self)
+    MJDIYHeader *header = [MJDIYHeader headerWithRefreshingBlock:^{
+        @strongify(self)
+        [self refreshData];
+    }];
+    self.tableView.mj_header = header;
+}
+
+- (void)removeHeader {
+    if (self.tableView.mj_header.isRefreshing) {
+        [self.tableView.mj_header endRefreshing];
+    }
+    if (self.tableView.mj_header) {
+        self.tableView.mj_header = nil;
+    }
+}
+```
