@@ -332,6 +332,7 @@
 		F5E4786825303C93001AE2AE /* WKWebView.md in Resources */ = {isa = PBXBuildFile; fileRef = F5E4786725303C93001AE2AE /* WKWebView.md */; };
 		F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */ = {isa = PBXBuildFile; fileRef = F5E4786D25303C9E001AE2AE /* 屏幕旋转.md */; };
 		F5EB7C0E255B96740006FC64 /* YYmodel使用.md in Resources */ = {isa = PBXBuildFile; fileRef = F5EB7C0D255B96740006FC64 /* YYmodel使用.md */; };
+		F5F2274826BA939B002EB4FC /* self.view = nil.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F2274726BA939A002EB4FC /* self.view = nil.md */; };
 		F5F30DB3256652CC00DD2597 /* WPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F30DB2256652CC00DD2597 /* WPerson.m */; };
 		F5F3664924C8287C008BA221 /* ChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3664824C8287C008BA221 /* ChatKit.m */; };
 		F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */; };
@@ -945,6 +946,7 @@
 		F5E4786725303C93001AE2AE /* WKWebView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = WKWebView.md; sourceTree = "<group>"; };
 		F5E4786D25303C9E001AE2AE /* 屏幕旋转.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "屏幕旋转.md"; sourceTree = "<group>"; };
 		F5EB7C0D255B96740006FC64 /* YYmodel使用.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "YYmodel使用.md"; sourceTree = "<group>"; };
+		F5F2274726BA939A002EB4FC /* self.view = nil.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "self.view = nil.md"; sourceTree = "<group>"; };
 		F5F30DB1256652CC00DD2597 /* WPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPerson.h; sourceTree = "<group>"; };
 		F5F30DB2256652CC00DD2597 /* WPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPerson.m; sourceTree = "<group>"; };
 		F5F3664724C8287B008BA221 /* ChatKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatKit.h; sourceTree = "<group>"; };
@@ -1168,6 +1170,7 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
+				F5F2274726BA939A002EB4FC /* self.view = nil.md */,
 				F5CA135D26B2820000D8A7AE /* 自定义TabBar.md */,
 				F5A5E71926B3ADEF00C28596 /* 自定义TabBar点击动画效.md */,
 				F5CA135326B25DA200D8A7AE /* 网络图片403.md */,
@@ -2660,6 +2663,7 @@
 				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
 				F5CA140726B2A2DC00D8A7AE /* post_normal@2x.png in Resources */,
+				F5F2274826BA939B002EB4FC /* self.view = nil.md in Resources */,
 				F5CA13AA26B2928700D8A7AE /* ic_bottombar_vip_h@2x.png in Resources */,
 				F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */,
 				F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */,

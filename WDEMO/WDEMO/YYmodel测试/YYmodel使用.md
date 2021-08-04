@@ -97,3 +97,221 @@ self = [super init];\
 return [self modelInitWithCoder:aDecoder];\
 }
 ```
+
+
+《一篇文章全吃透》—YYModel的使用技巧
+https://blog.csdn.net/u012946824/article/details/51788527
+《一篇文章全吃透》—YYModel的使用技巧
+https://blog.csdn.net/sheng_bin/article/details/53208964
+
+
+一、YYModel的使用场景
+1.简单的 Model 与 JSON 相互转换
+```
+// JSON:
+{
+    "uid":123456,
+    "name":"Harry",
+    "created":"1965-07-31T00:00:00+0000"
+}
+
+// Model:
+@interface User : NSObject
+@property UInt64 uid;
+@property NSString *name;
+@property NSDate *created;
+@end
+
+@implementation User
+@end
+```
+```
+// 将 JSON (NSData,NSString,NSDictionary) 转换为 Model:
+User *user = [User yy_modelWithJSON:json];
+
+// 将 Model 转换为 JSON 对象:
+NSDictionary *json = [user yy_modelToJSONObject];
+```
+
+2.Model 属性名和 JSON 中的 Key 不相同
+```
+// JSON:
+{
+    "n":"Harry Pottery",
+    "p": 256,
+    "ext" : {
+        "desc" : "A book written by J.K.Rowing."
+    },
+    "ID" : 100010
+}
+
+// Model:
+@interface Book : NSObject
+@property NSString *name;
+@property NSInteger page;
+@property NSString *desc;
+@property NSString *bookID;
+@end
+@implementation Book
+//返回一个 Dict，将 Model 属性名对映射到 JSON 的 Key。
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"name" : @"n",
+             @"page" : @"p",
+             @"desc" : @"ext.desc",
+             @"bookID" : @[@"id",@"ID",@"book_id"]};
+}
+@end
+```
+
+3.Model 包含其他 Model
+```
+// JSON
+{
+    "author":{
+        "name":"J.K.Rowling",
+        "birthday":"1965-07-31T00:00:00+0000"
+    },
+    "name":"Harry Potter",
+    "pages":256
+}
+
+// Model: 什么都不用做，转换会自动完成
+@interface Author : NSObject
+@property NSString *name;
+@property NSDate *birthday;
+@end
+@implementation Author
+@end
+
+@interface Book : NSObject
+@property NSString *name;
+@property NSUInteger pages;
+@property Author *author; //Book 包含 Author 属性
+@end
+@implementation Book
+@end
+```
+
+4.容器类属性
+```
+@class Shadow, Border, Attachment;
+
+@interface Attributes
+@property NSString *name;
+@property NSArray *shadows; //Array<Shadow>
+@property NSSet *borders; //Set<Border>
+@property NSMutableDictionary *attachments; //Dict<NSString,Attachment>
+@end
+
+@implementation Attributes
+// 返回容器类中的所需要存放的数据类型 (以 Class 或 Class Name 的形式)。
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"shadows" : [Shadow class],
+             @"borders" : Border.class,
+             @"attachments" : @"Attachment" };
+}
+@end
+```
+具体的代码实现如下：
+```
+NSDictionary *json =[self getJsonWithJsonName:@"ContainerModel"];
+ContainerModel *containModel = [ContainerModel yy_modelWithDictionary:json];
+NSDictionary *dataDict = [containModel valueForKey:@"data"];
+//定义数组，接受key为list的数组
+self.listArray = [dataDict valueForKey:@"list"]; 
+ //遍历数组
+[self.listArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSDictionary *listDict = obj;
+        //获取数组中得字典
+        List *listModel = [List yy_modelWithDictionary:listDict];
+        //获取count 和 id
+        NSString *count = [listModel valueForKey:@"count"];
+        NSString *id = [listModel valueForKey:@"id"];
+
+```
+
+5.黑名单与白名单
+```
+@interface User
+@property NSString *name;
+@property NSUInteger age;
+@end
+
+@implementation Attributes
+// 如果实现了该方法，则处理过程中会忽略该列表内的所有属性
++ (NSArray *)modelPropertyBlacklist {
+    return @[@"test1", @"test2"];
+}
+// 如果实现了该方法，则处理过程中不会处理该列表外的属性。
++ (NSArray *)modelPropertyWhitelist {
+    return @[@"name"];
+}
+@end
+```
+
+6.数据校验与自定义转换
+```
+// JSON:
+{
+    "name":"Harry",
+    "timestamp" : 1445534567     //时间戳
+}
+
+// Model:
+@interface User
+@property NSString *name;
+@property NSDate *createdAt;
+@end
+
+@implementation User
+// 当 JSON 转为 Model 完成后，该方法会被调用。
+// 你可以在这里对数据进行校验，如果校验不通过，可以返回 NO，则该 Model 会被忽略。
+// 你也可以在这里做一些自动转换不能完成的工作。
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+    NSNumber *timestamp = dic[@"timestamp"];
+    if (![timestamp isKindOfClass:[NSNumber class]]) return NO;
+    _createdAt = [NSDate dateWithTimeIntervalSince1970:timestamp.floatValue];
+    return YES;
+}
+
+// 当 Model 转为 JSON 完成后，该方法会被调用。
+// 你可以在这里对数据进行校验，如果校验不通过，可以返回 NO，则该 Model 会被忽略。
+// 你也可以在这里做一些自动转换不能完成的工作。
+- (BOOL)modelCustomTransformToDictionary:(NSMutableDictionary *)dic {
+    if (!_createdAt) return NO;
+    dic[@"timestamp"] = @(n.timeIntervalSince1970);
+    return YES;
+}
+@end
+```
+
+7.Coding/Copying/hash/equal/description
+```
+@interface YYShadow :NSObject <NSCoding, NSCopying>
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, assign) CGSize size;
+@end
+
+@implementation YYShadow
+// 直接添加以下代码即可自动完成
+- (void)encodeWithCoder:(NSCoder *)aCoder { 
+    [self yy_modelEncodeWithCoder:aCoder]; 
+}
+- (id)initWithCoder:(NSCoder *)aDecoder {
+     self = [super init];
+     return [self yy_modelInitWithCoder:aDecoder]; 
+}
+- (id)copyWithZone:(NSZone *)zone { 
+    return [self yy_modelCopy]; 
+}
+- (NSUInteger)hash { 
+    return [self yy_modelHash]; 
+}
+- (BOOL)isEqual:(id)object { 
+    return [self yy_modelIsEqual:object]; 
+}
+- (NSString *)description { 
+    return [self yy_modelDescription]; 
+}
+@end
+```

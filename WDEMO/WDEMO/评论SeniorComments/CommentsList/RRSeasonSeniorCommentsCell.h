@@ -11,7 +11,7 @@
 #import "RRSeniorCommentsModel.h"
 #import "RRSeasonSeniorCommentsPhotoCollectionView.h"
 
-//一级评论cell，文字，不带图
+//一级评论cell，带剧透图标，带文字，不带图
 NS_ASSUME_NONNULL_BEGIN
 typedef void(^ClickSeasonSeniorCommentsCell)(RRSeniorCommentsModel * _Nonnull model);//不可以为空
 
