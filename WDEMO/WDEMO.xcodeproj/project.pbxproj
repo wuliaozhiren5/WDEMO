@@ -229,6 +229,7 @@
 		F591AC9726A1641B0042802F /* Vendors.m in Sources */ = {isa = PBXBuildFile; fileRef = F591AC9626A1641B0042802F /* Vendors.m */; };
 		F591ACBA26A16DED0042802F /* Logs.m in Sources */ = {isa = PBXBuildFile; fileRef = F591ACB926A16DED0042802F /* Logs.m */; };
 		F591ACC126A16E110042802F /* llslog.m in Sources */ = {isa = PBXBuildFile; fileRef = F591ACC026A16E110042802F /* llslog.m */; };
+		F592283A26C500F80030DB49 /* UIScrollView滑动停止监听.md in Resources */ = {isa = PBXBuildFile; fileRef = F592283926C500F70030DB49 /* UIScrollView滑动停止监听.md */; };
 		F593574825F7466A008CF0D8 /* OneViewTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */; };
 		F593574925F7466A008CF0D8 /* ThirdViewCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574625F7466A008CF0D8 /* ThirdViewCollectionViewController.m */; };
 		F593574A25F7466A008CF0D8 /* SecondViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574725F7466A008CF0D8 /* SecondViewTableViewController.m */; };
@@ -320,6 +321,7 @@
 		F5D0FC0D24E0F99800CAADF8 /* UIImage+TUIKIT.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D0FC0C24E0F99700CAADF8 /* UIImage+TUIKIT.m */; };
 		F5D138CC25679690008CC29A /* FollowTips.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D138CB25679690008CC29A /* FollowTips.m */; };
 		F5D2129125FF567100C7DCC1 /* RRActorIntroAndWorksVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D2129025FF567100C7DCC1 /* RRActorIntroAndWorksVC.m */; };
+		F5D4476C26CB6553002E90EB /* RRHomeChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4476B26CB6552002E90EB /* RRHomeChannelModel.m */; };
 		F5D4EB5825DF6A6E00F807EF /* MainTouchTableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB5725DF6A6E00F807EF /* MainTouchTableTableView.m */; };
 		F5D4EB6325DF6A8700F807EF /* ParentClassScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB6225DF6A8700F807EF /* ParentClassScrollViewController.m */; };
 		F5D4EB8425DF6B5500F807EF /* PersonalHomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB8325DF6B5500F807EF /* PersonalHomePageVC.m */; };
@@ -779,6 +781,7 @@
 		F591ACB926A16DED0042802F /* Logs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Logs.m; sourceTree = "<group>"; };
 		F591ACBF26A16E110042802F /* llslog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = llslog.h; sourceTree = "<group>"; };
 		F591ACC026A16E110042802F /* llslog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = llslog.m; sourceTree = "<group>"; };
+		F592283926C500F70030DB49 /* UIScrollView滑动停止监听.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UIScrollView滑动停止监听.md"; sourceTree = "<group>"; };
 		F593574225F74669008CF0D8 /* OneViewTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OneViewTableTableViewController.h; sourceTree = "<group>"; };
 		F593574325F7466A008CF0D8 /* SecondViewTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewTableViewController.h; sourceTree = "<group>"; };
 		F593574425F7466A008CF0D8 /* OneViewTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OneViewTableTableViewController.m; sourceTree = "<group>"; };
@@ -925,6 +928,8 @@
 		F5D138CB25679690008CC29A /* FollowTips.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FollowTips.m; sourceTree = "<group>"; };
 		F5D2128F25FF567100C7DCC1 /* RRActorIntroAndWorksVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorIntroAndWorksVC.h; sourceTree = "<group>"; };
 		F5D2129025FF567100C7DCC1 /* RRActorIntroAndWorksVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorIntroAndWorksVC.m; sourceTree = "<group>"; };
+		F5D4476A26CB6552002E90EB /* RRHomeChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRHomeChannelModel.h; sourceTree = "<group>"; };
+		F5D4476B26CB6552002E90EB /* RRHomeChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRHomeChannelModel.m; sourceTree = "<group>"; };
 		F5D4EB5625DF6A6E00F807EF /* MainTouchTableTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTouchTableTableView.h; sourceTree = "<group>"; };
 		F5D4EB5725DF6A6E00F807EF /* MainTouchTableTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTouchTableTableView.m; sourceTree = "<group>"; };
 		F5D4EB6125DF6A8700F807EF /* ParentClassScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ParentClassScrollViewController.h; sourceTree = "<group>"; };
@@ -1135,6 +1140,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5D4476926CB653D002E90EB /* DramaComment */,
 				F5CA136326B2823000D8A7AE /* TabBar */,
 				F5409AA626B164490042F29D /* 评分打分 */,
 				F58613F126A971F200D81DDA /* Python批量修改iOS类名 */,
@@ -1170,6 +1176,7 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
+				F592283926C500F70030DB49 /* UIScrollView滑动停止监听.md */,
 				F5F2274726BA939A002EB4FC /* self.view = nil.md */,
 				F5CA135D26B2820000D8A7AE /* 自定义TabBar.md */,
 				F5A5E71926B3ADEF00C28596 /* 自定义TabBar点击动画效.md */,
@@ -2321,6 +2328,15 @@
 			path = "提示的条";
 			sourceTree = "<group>";
 		};
+		F5D4476926CB653D002E90EB /* DramaComment */ = {
+			isa = PBXGroup;
+			children = (
+				F5D4476A26CB6552002E90EB /* RRHomeChannelModel.h */,
+				F5D4476B26CB6552002E90EB /* RRHomeChannelModel.m */,
+			);
+			path = DramaComment;
+			sourceTree = "<group>";
+		};
 		F5D4EB1325DF683700F807EF /* ParentClass */ = {
 			isa = PBXGroup;
 			children = (
@@ -2730,6 +2746,7 @@
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
 				F5B1FE6B2621AC6C004B950C /* TableviewSectionHeader不悬停.md in Resources */,
 				F5CA13B026B2928700D8A7AE /* ic_bottombar_home_h@2x.png in Resources */,
+				F592283A26C500F80030DB49 /* UIScrollView滑动停止监听.md in Resources */,
 				F58613D026A96EB100D81DDA /* start.sh in Resources */,
 				F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
@@ -2957,6 +2974,7 @@
 				F53F669224FE454000770055 /* PasswordTextField.m in Sources */,
 				A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */,
 				F553E12A24CA800200DA5625 /* InputController.m in Sources */,
+				F5D4476C26CB6553002E90EB /* RRHomeChannelModel.m in Sources */,
 				F5D0FC0A24E0F91800CAADF8 /* UIImage+TUIDarkMode.m in Sources */,
 				F5D4EB8425DF6B5500F807EF /* PersonalHomePageVC.m in Sources */,
 				F5872CF3257DFCBD00341B57 /* SharedInstanceVC.m in Sources */,

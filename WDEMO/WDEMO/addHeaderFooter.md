@@ -4,6 +4,7 @@
 
 ```
 - (void)loadDataWithPage:(NSInteger)page {
+
     [self addHeader];
     [self addFooter];
     [self stopLoading]; 
