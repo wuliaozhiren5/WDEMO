@@ -92,6 +92,7 @@
 		F51535EF259B2960007E3416 /* UserEditBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51535EE259B2960007E3416 /* UserEditBar.m */; };
 		F516E5342683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md in Resources */ = {isa = PBXBuildFile; fileRef = F516E5332683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md */; };
 		F518ED3725E8DDAC00260125 /* 图片压缩.md in Resources */ = {isa = PBXBuildFile; fileRef = F518ED3625E8DDAC00260125 /* 图片压缩.md */; };
+		F51A9E0426D6734400A15993 /* 判断中英混合的的字符串长度.md in Resources */ = {isa = PBXBuildFile; fileRef = F51A9E0326D6734400A15993 /* 判断中英混合的的字符串长度.md */; };
 		F51C24B7263BEF4D0010A298 /* 评论.json in Resources */ = {isa = PBXBuildFile; fileRef = F51C24B6263BEF4D0010A298 /* 评论.json */; };
 		F51C24CD263BF1460010A298 /* RRSeniorCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51C24CC263BF1460010A298 /* RRSeniorCommentsModel.m */; };
 		F51C24D4263BF1690010A298 /* AuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51C24D2263BF1690010A298 /* AuthorModel.m */; };
@@ -560,6 +561,7 @@
 		F51535EE259B2960007E3416 /* UserEditBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserEditBar.m; sourceTree = "<group>"; };
 		F516E5332683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "按钮选中这时时候图片闪烁问题Selected.md"; sourceTree = "<group>"; };
 		F518ED3625E8DDAC00260125 /* 图片压缩.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "图片压缩.md"; sourceTree = "<group>"; };
+		F51A9E0326D6734400A15993 /* 判断中英混合的的字符串长度.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "判断中英混合的的字符串长度.md"; sourceTree = "<group>"; };
 		F51C24B6263BEF4D0010A298 /* 评论.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "评论.json"; sourceTree = "<group>"; };
 		F51C24BD263BF11C0010A298 /* RRSeniorCommentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeniorCommentsModel.h; sourceTree = "<group>"; };
 		F51C24CC263BF1460010A298 /* RRSeniorCommentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeniorCommentsModel.m; sourceTree = "<group>"; };
@@ -1176,6 +1178,7 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
+				F51A9E0326D6734400A15993 /* 判断中英混合的的字符串长度.md */,
 				F592283926C500F70030DB49 /* UIScrollView滑动停止监听.md */,
 				F5F2274726BA939A002EB4FC /* self.view = nil.md */,
 				F5CA135D26B2820000D8A7AE /* 自定义TabBar.md */,
@@ -2731,6 +2734,7 @@
 				F5CA140826B2A2DC00D8A7AE /* home_normal@2x.png in Resources */,
 				F5D05B6E25BAB16600A4C6EC /* 归档解档.md in Resources */,
 				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
+				F51A9E0426D6734400A15993 /* 判断中英混合的的字符串长度.md in Resources */,
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
 				F5CA13A826B2928700D8A7AE /* ic_bottombar_kuaikan_h@2x.png in Resources */,
 				F5CA13A126B2928700D8A7AE /* ic_bottombar_me_h@2x.png in Resources */,

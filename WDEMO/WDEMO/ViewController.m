@@ -353,6 +353,10 @@
     [self testSring];
     
     [self showLoadingView];
+    
+    NSString *nameStr1 = @"赵伟争zhaoweizheng...";
+    int length = [self convertToInt:nameStr1];
+    NSLog(@"长度：%zi, 字符：%d",nameStr1.length, length);
 }
 
 - (void)showLoadingView {
@@ -1381,6 +1385,22 @@
     //    [lottieView playWithCompletion:^(BOOL animationFinished) {
     //
     //    }];
+}
+
+
+- (int)convertToInt:(NSString*)strtemp {
+    int strlength = 0;
+    char* p = (char*)[strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0 ; i<[strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding] ;i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        }
+        else {
+            p++;
+        }
+    }
+    return strlength;
 }
 @end
 
