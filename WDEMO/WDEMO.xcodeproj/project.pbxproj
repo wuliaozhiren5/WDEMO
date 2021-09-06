@@ -302,6 +302,7 @@
 		F5CA141026B2A61A00D8A7AE /* LBpostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CA140F26B2A61A00D8A7AE /* LBpostViewController.m */; };
 		F5CA141626B2A69B00D8A7AE /* header_back_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CA141526B2A69B00D8A7AE /* header_back_icon@2x.png */; };
 		F5CA141C26B2A6A000D8A7AE /* header_back_icon_highlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CA141B26B2A6A000D8A7AE /* header_back_icon_highlight@2x.png */; };
+		F5CA668D26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md in Resources */ = {isa = PBXBuildFile; fileRef = F5CA668C26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md */; };
 		F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */; };
 		F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1B24E6901700B20C80 /* RRDestroyAccountReasonViewController.m */; };
 		F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CE3D1C24E6901700B20C80 /* RRDestroyAccountAlertView.m */; };
@@ -891,6 +892,7 @@
 		F5CA140F26B2A61A00D8A7AE /* LBpostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBpostViewController.m; sourceTree = "<group>"; };
 		F5CA141526B2A69B00D8A7AE /* header_back_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_back_icon@2x.png"; sourceTree = "<group>"; };
 		F5CA141B26B2A6A000D8A7AE /* header_back_icon_highlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "header_back_icon_highlight@2x.png"; sourceTree = "<group>"; };
+		F5CA668C26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "苹果开发者的Mac大瘦身.md"; sourceTree = "<group>"; };
 		F5CE3D1524E6901700B20C80 /* RRDestroyAccountContentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDestroyAccountContentCell.m; sourceTree = "<group>"; };
 		F5CE3D1624E6901700B20C80 /* RRDestroyAccountAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountAlertView.h; sourceTree = "<group>"; };
 		F5CE3D1724E6901700B20C80 /* RRDestroyAccountReasonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDestroyAccountReasonViewController.h; sourceTree = "<group>"; };
@@ -1178,6 +1180,7 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
+				F5CA668C26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md */,
 				F51A9E0326D6734400A15993 /* 判断中英混合的的字符串长度.md */,
 				F592283926C500F70030DB49 /* UIScrollView滑动停止监听.md */,
 				F5F2274726BA939A002EB4FC /* self.view = nil.md */,
@@ -2678,6 +2681,7 @@
 				F5409ABB26B166020042F29D /* star@2x.png in Resources */,
 				F548D0DA256E2EEA00357E64 /* amwayPlayerGuide_0.png in Resources */,
 				F5091E28268C679F000884D1 /* dropdown_loading_02@2x.png in Resources */,
+				F5CA668D26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md in Resources */,
 				F5D05B7425BAB18000A4C6EC /* 阴影.md in Resources */,
 				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
