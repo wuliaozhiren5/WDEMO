@@ -50,5 +50,5 @@ git
 6：没问题再 git push origin master 
 
 
- 
+git remote set-url origin https://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@github.com/wuliaozhiren5/WDEMO.git/
 
