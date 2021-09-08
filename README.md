@@ -52,7 +52,12 @@ git
 ``` 
 token
 
-git remote set-url origin https://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@github.com/wuliaozhiren5/WDEMO.git/
+git remote set-url origin https://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@github.com/wuliaozhiren5/WDEMO.git/
+
+
+90
+
+git remote set-url origin https://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@github.com/wuliaozhiren5/WDEMO.git/
 ```
 
 ```
