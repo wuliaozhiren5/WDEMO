@@ -47,10 +47,12 @@ git
 3： git add --all
 4： git commit -m "a"
 5：再重新 git pull origin master 
-6：没问题再 没问题再 git push origin master 
+6：没问题再 git push origin master 
 
-```
-git remote set-url origin https://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@github.com/wuliaozhiren5/WDEMO.git/
+``` 
+token
+
+git remote set-url origin https://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@github.com/wuliaozhiren5/WDEMO.git/
 ```
 
 ```
