@@ -342,6 +342,7 @@
 		F5F3665224C82ABF008BA221 /* ChatKitFace.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665024C82AB9008BA221 /* ChatKitFace.bundle */; };
 		F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */; };
 		F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3665524C82E5C008BA221 /* ChatImageCache.m */; };
+		F5F3665A26F0D82A00E5D767 /* 预加载isPrefetchingEnabled.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665926F0D82A00E5D767 /* 预加载isPrefetchingEnabled.md */; };
 		F5F37087250A594400118FC4 /* ChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F37086250A594400118FC4 /* ChatManager.m */; };
 		F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10224D3C158007DB7F3 /* YYViewController.m */; };
 		F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10724D40311007DB7F3 /* TipMessageCell.m */; };
@@ -964,6 +965,7 @@
 		F5F3665124C82ABE008BA221 /* ChatKitResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ChatKitResource.bundle; sourceTree = "<group>"; };
 		F5F3665424C82E5B008BA221 /* ChatImageCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatImageCache.h; sourceTree = "<group>"; };
 		F5F3665524C82E5C008BA221 /* ChatImageCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatImageCache.m; sourceTree = "<group>"; };
+		F5F3665926F0D82A00E5D767 /* 预加载isPrefetchingEnabled.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "预加载isPrefetchingEnabled.md"; sourceTree = "<group>"; };
 		F5F37085250A594400118FC4 /* ChatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatManager.h; sourceTree = "<group>"; };
 		F5F37086250A594400118FC4 /* ChatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatManager.m; sourceTree = "<group>"; };
 		F5F4F10124D3C158007DB7F3 /* YYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYViewController.h; sourceTree = "<group>"; };
@@ -1180,6 +1182,7 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
+				F5F3665926F0D82A00E5D767 /* 预加载isPrefetchingEnabled.md */,
 				F5CA668C26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md */,
 				F51A9E0326D6734400A15993 /* 判断中英混合的的字符串长度.md */,
 				F592283926C500F70030DB49 /* UIScrollView滑动停止监听.md */,
@@ -2757,6 +2760,7 @@
 				F592283A26C500F80030DB49 /* UIScrollView滑动停止监听.md in Resources */,
 				F58613D026A96EB100D81DDA /* start.sh in Resources */,
 				F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */,
+				F5F3665A26F0D82A00E5D767 /* 预加载isPrefetchingEnabled.md in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
 				F52F15A526A7C60500D4E305 /* 定时器NSTimer.md in Resources */,
 				F58613DB26A9715300D81DDA /* Python批量修改iOS方法名.md in Resources */,
