@@ -71,16 +71,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "20702A93-5A50-4F4F-A657-CB8C9A02BDDB"
+            uuid = "A57AD7E0-41EE-4363-B6AD-6084E543AE05"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WDEMO/&#x8bc4;&#x8bba;SeniorComments/RRSeasonSeniorCommentsSubVC.m"
+            filePath = "WDEMO/&#x8bc4;&#x8bba;SeniorComments/RRSeasonSeniorCommentsSecondarySubVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
-            landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-refreshData"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

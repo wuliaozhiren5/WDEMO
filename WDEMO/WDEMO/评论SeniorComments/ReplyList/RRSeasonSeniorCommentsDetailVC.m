@@ -7,12 +7,11 @@
 //
 
 #import "RRSeasonSeniorCommentsDetailVC.h"
-////#import "RRSeasonSeniorCommentsInputBar.h"
-//#import "RRSeasonSeniorCommentsPraiseBtnInputBar.h"
+#import "RRSeasonSeniorCommentsPraiseBtnInputBar.h"
 //#import "RRCommentService.h"
 //#import "RRSeasonSeniorCommentsHearder.h"
-//#import "RRSeasonSeniorCommentsTextImageCell.h"
-//#import "RRSeasonSeniorCommentsReplyTextImageCell.h"
+#import "RRSeasonSeniorCommentsTextImageCell.h"
+#import "RRSeasonSeniorCommentsReplyTextImageCell.h"
 //#import "RRSeniorCommentsReplyListApi.h"
 //#import "RRImageGetTokenApi.h"
 //#import "RRImageUploadManager.h"
@@ -22,30 +21,32 @@
 
 @interface RRSeasonSeniorCommentsDetailVC () <UITableViewDataSource, UITableViewDelegate>
 //@property (nonatomic, strong) RRCommentService *service;
-//@property (nonatomic, strong) UITableView *tableView;
-//@property (nonatomic, strong) RRSeasonSeniorCommentsPraiseBtnInputBar *bottomView;
-//
-//@property (nonatomic, strong) UIView *header;
-//@property (nonatomic, strong) UILabel *headerLab;
-//
-//@property (nonatomic, assign) BOOL isHalf;          //半屏
-//@property (nonatomic, strong) UIView *topBar;       //半屏
-//@property (nonatomic, strong) UILabel *titleLab;    //半屏详情
-//@property (nonatomic, strong) UIButton *closeBtn;   //半屏
-//
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) RRSeasonSeniorCommentsPraiseBtnInputBar *bottomView;
+
+@property (nonatomic, strong) UIView *header;
+@property (nonatomic, strong) UILabel *headerLab;
+
+@property (nonatomic, assign) BOOL isHalf;          //半屏
+@property (nonatomic, strong) UIView *topBar;       //半屏
+@property (nonatomic, strong) UILabel *titleLab;    //半屏详情
+@property (nonatomic, strong) UIButton *closeBtn;   //半屏
+
 //@property (nonatomic, strong) RRDataSource *dataSource;
 //@property (nonatomic, assign) NSInteger page;
 //@property (nonatomic, assign) NSInteger rows;
-//
-//@property (nonatomic, assign) NSInteger total;
-//
+
+@property (nonatomic, assign) NSInteger total;
+
 //@property (nonatomic, assign) BOOL isReplying;
-//
-////@property (nonatomic, assign) NSInteger index;
-//////展示全部文字
-////@property (nonatomic, assign) BOOL isShowMore;
-////类型
-//@property (nonatomic, copy) NSString *type;//DRAMA 剧；VIDEO 视频；DRAMA_COMMENT 影评
+
+//@property (nonatomic, assign) NSInteger index;
+////展示全部文字
+//@property (nonatomic, assign) BOOL isShowMore;
+//类型
+@property (nonatomic, copy) NSString *type;//DRAMA 剧；VIDEO 视频；DRAMA_COMMENT 影评
+
+@property (nonatomic, copy) NSMutableArray *data;//数据
 
 @end
 
@@ -54,8 +55,8 @@
 - (instancetype)initWithIsHalf:(BOOL)isHalf {
     self = [super init];
     if (self) {
-//        self.isHalf = isHalf;
-//        self.type = @"DRAMA";
+        self.isHalf = isHalf;
+        self.type = @"DRAMA";
 //        _service = [[RRCommentService alloc] init];
     }
     return self;
@@ -65,8 +66,8 @@
                           type:(NSString *)type {
     self = [super init];
     if (self) {
-//        self.isHalf = isHalf;
-//        self.type = type;
+        self.isHalf = isHalf;
+        self.type = type;
     }
     return self;
 }
@@ -79,24 +80,48 @@
     return self;
 }
 
-//- (void)viewDidLoad {
-//    [super viewDidLoad];
-//    // Do any additional setup after loading the view.
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
 //    self.customTabbar.navTitle.text = @"评论详情";
 //    self.customTabbar.hidden = self.isHalf;
 //    self.dataSource = [[RRDataSource alloc] init];
 //    self.page = 1;
 //    self.rows = 20;
-//    self.total = 0;
-////    self.isShowMore = NO;
-//
+    self.total = 0;
+//    self.isShowMore = NO;
+
 //    self.loadingView.hidden = NO;
 //    self.loadingView.center = CGPointMake(self.view.centerX, self.view.centerY - 99 - appMargin().top);
 //    self.noDataView.center = self.loadingView.center;
-//    [self setupViews];
-//
-//    [self refreshData];
-//}
+    [self setupViews];
+
+    [self refreshData];
+}
+
+- (void)refreshData {
+    [self tableView];
+    //iOS 读取本地Json文件
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"回复" ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *error;
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (!jsonData || error) {
+        //DLog(@"JSON解码失败");
+    } else {
+        //DLog(@"JSON解码成功");
+    }
+    NSDictionary *dic = (NSDictionary *)jsonObj;
+    RRSeniorCommentsReplyListModel *model = [RRSeniorCommentsReplyListModel modelWithJSON:dic[@"data"]];
+    self.data = [NSMutableArray arrayWithArray:model.content];
+    [self.tableView reloadData];
+    //显示
+    self.tableView.hidden = NO;
+    self.bottomView.hidden = NO;
+    //定位
+    [self tableViewLocation];
+}
+
 //
 //- (void)requestData {
 //    [self refreshData];
@@ -257,46 +282,46 @@
 //        self.tableView.mj_footer = nil;
 //    }
 //}
-//
-////定位
-//- (void)tableViewLocation {
-//    if (!self.replyId) {
-//        return;
-//    }
-//    if (self.dataSource.dataArray.count <= 0) {
-//        return;
-//    }
-// 
-//    NSInteger index = -1;
-//    for (NSInteger i = 0; i < self.dataSource.dataArray.count; i++) {
-//        RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:i];
-//        if ([model.ID isEqualToString:self.replyId]) {
-//            index = i;
-//            break;
-//        }
-//    }
-//    
-//    if (index < 0) {
-//        self.replyId = nil;
-//        return;
-//    }
-//    //获取到需要跳转位置的行数
-//    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:index inSection:1];
-//    //滚动到其相应的位置
-//    [self.tableView scrollToRowAtIndexPath:scrollIndexPath
-//            atScrollPosition:UITableViewScrollPositionTop animated:NO];
-//  
-//    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
-////    cell.contentView.backgroundColor = [UIColor redColor];
-//    UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
-//    colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
-//    [cell.contentView addSubview:colorView];
-//    [cell.contentView sendSubviewToBack:colorView];
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [colorView removeFromSuperview];
-//    });
-//    self.replyId = nil;
-//}
+
+//定位
+- (void)tableViewLocation {
+    if (!self.replyId) {
+        return;
+    }
+    if (self.data.count <= 0) {
+        return;
+    }
+ 
+    NSInteger index = -1;
+    for (NSInteger i = 0; i < self.data.count; i++) {
+        RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:i];
+        if ([model.ID isEqualToString:self.replyId]) {
+            index = i;
+            break;
+        }
+    }
+    
+    if (index < 0) {
+        self.replyId = nil;
+        return;
+    }
+    //获取到需要跳转位置的行数
+    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:index inSection:1];
+    //滚动到其相应的位置
+    [self.tableView scrollToRowAtIndexPath:scrollIndexPath
+            atScrollPosition:UITableViewScrollPositionTop animated:NO];
+  
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
+//    cell.contentView.backgroundColor = [UIColor redColor];
+    UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
+    colorView.backgroundColor = [kCOLOR_0091FF colorWithAlphaComponent:0.08];
+    [cell.contentView addSubview:colorView];
+    [cell.contentView sendSubviewToBack:colorView];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [colorView removeFromSuperview];
+    });
+    self.replyId = nil;
+}
 //
 ///*
 // #pragma mark - Navigation
@@ -307,139 +332,84 @@
 // // Pass the selected object to the new view controller.
 // }
 // */
-//- (void)setupViews {
-//    [self createTableViewSectionHeader];
-//    [self createTableView];
-//    [self createbottomView];
+- (void)setupViews {
+    [self createTableViewSectionHeader];
+    [self createTableView];
+    [self createbottomView];
 //    [self.view bringSubviewToFront:self.loadingView];
 //    [self.view bringSubviewToFront:self.noDataView];
-//}
-//
-//- (void)createTableView {
-//    [self.view addSubview:self.tableView];
-//    if (!self.isHalf) {
-//        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+}
+
+- (void)createTableView {
+    [self.view addSubview:self.tableView];
+    if (!self.isHalf) {
+        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.top.equalTo(self.customTabbar.mas_bottom);
-//            make.leading.equalTo(@(0));
-//            make.trailing.equalTo(@(0));
-//            make.bottom.equalTo(@(-53 + appMargin().bottom));
-//        }];
-//    } else {
-//        UIView *topBarBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
-//        topBarBackView.backgroundColor = kCOLOR_000000;
-//        [self.view addSubview:topBarBackView];
-//
-//        [self.view addSubview:self.topBar];
-//        [self.topBar addSubview:self.titleLab];
-//        [self.topBar addSubview:self.closeBtn];
-//        [self.topBar mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.leading.trailing.equalTo(@0);
-//            make.height.equalTo(@49);
-//        }];
-//        [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.leading.equalTo(@16);
-//            make.trailing.equalTo(@-49);
-//            make.top.bottom.equalTo(@0);
-//        }];
-//        [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.trailing.bottom.equalTo(@0);
-//            make.width.height.equalTo(@49);
-//        }];
-//        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//            make.top.equalTo(self.topBar.mas_bottom).offset(-10);
-//            make.leading.trailing.equalTo(@0);
-//            make.bottom.equalTo(self.bottomView.mas_top).offset(0);
-//        }];
-//    }
-////    self.tableView.hidden = YES;
-////    [self.view bringSubviewToFront:self.tableView];
-////    [self.view bringSubviewToFront:self.noDataView];
-//
-//}
-//
-//- (void)createbottomView {
-//    [self.view addSubview:self.bottomView];
-//    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.height.equalTo(@(53 - appMargin().bottom));
-//        make.leading.equalTo(@(0));
-//        make.trailing.equalTo(@(0));
-//        make.bottom.equalTo(@(0));
-//    }];
-//    self.bottomView.hidden = YES;
-//}
-//
-//- (void)createTableViewSectionHeader {
-////    NSInteger count = 10;
-////    NSString *text = [NSString stringWithFormat:@"%zi条回复", count];
-//    NSString *text = @"";
-//    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 21)];
-//    UILabel *headerLab = [[UILabel alloc] init];
-//    headerLab.frame = CGRectMake(16, 0, KWidth - 16 * 2, 21);
-//    headerLab.font = RR_MEDIUMFONT(17);
-//    headerLab.textColor = kCOLOR_dynamicProvider_222222_E5E7EB;
-//    headerLab.text = text;
-//    [header addSubview:headerLab];
-//    _header = header;
-//    _headerLab = headerLab;
-//}
-//
-////- (void)setupViews {
-////        self.customTabbar.hidden = self.isHalf;
-////        [self createTableViewSectionHeader];
-////        [self.view addSubview:self.tableView];
-////        [self.view addSubview:self.bottomView];
-////        [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-////            make.height.equalTo(@(53 - appMargin().bottom));
-////            make.leading.equalTo(@(0));
-////            make.trailing.equalTo(@(0));
-////            make.bottom.equalTo(@(0));
-////        }];
-////
-////        self.customTabbar.hidden = self.isHalf;
-////        if (!self.isHalf) {
-////            [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-////                make.top.equalTo(self.customTabbar.mas_bottom);
-////                make.leading.equalTo(@(0));
-////                make.trailing.equalTo(@(0));
-////                make.bottom.equalTo(@(-53 + appMargin().bottom));
-////            }];
-////        } else {
-////            UIView *topBarBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
-////            topBarBackView.backgroundColor = kCOLOR_000000;
-////            [self.view addSubview:topBarBackView];
-////
-////            [self.view addSubview:self.topBar];
-////            [self.topBar addSubview:self.titleLab];
-////            [self.topBar addSubview:self.closeBtn];
-////            [self.topBar mas_makeConstraints:^(MASConstraintMaker *make) {
-////                make.top.leading.trailing.equalTo(@0);
-////                make.height.equalTo(@49);
-////            }];
-////            [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-////                make.leading.equalTo(@16);
-////                make.trailing.equalTo(@-49);
-////                make.top.bottom.equalTo(@0);
-////            }];
-////            [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-////                make.trailing.bottom.equalTo(@0);
-////                make.width.height.equalTo(@49);
-////            }];
-////            [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-////                make.top.equalTo(self.topBar.mas_bottom).offset(-10);
-////                make.leading.trailing.equalTo(@0);
-////                make.bottom.equalTo(self.bottomView.mas_top).offset(0);
-////            }];
-//////        }
-////    }
-////    self.tableView.hidden = YES;
-////    self.bottomView.hidden = YES;
-////    self.bottomView.commentModel = self.commentModel;
-////    [self.view bringSubviewToFront:self.tableView];
-////
-////}
-//
-//#pragma mark - 回复
-//- (void)clickTextBtn:(UIButton *)btn {
+            make.top.equalTo(@0);
+            make.leading.equalTo(@(0));
+            make.trailing.equalTo(@(0));
+            make.bottom.equalTo(@(-53 + appMargin().bottom));
+        }];
+    } else {
+        UIView *topBarBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+        topBarBackView.backgroundColor = kCOLOR_000000;
+        [self.view addSubview:topBarBackView];
+
+        [self.view addSubview:self.topBar];
+        [self.topBar addSubview:self.titleLab];
+        [self.topBar addSubview:self.closeBtn];
+        [self.topBar mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.leading.trailing.equalTo(@0);
+            make.height.equalTo(@49);
+        }];
+        [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.leading.equalTo(@16);
+            make.trailing.equalTo(@-49);
+            make.top.bottom.equalTo(@0);
+        }];
+        [self.closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.trailing.bottom.equalTo(@0);
+            make.width.height.equalTo(@49);
+        }];
+        [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.topBar.mas_bottom).offset(-10);
+            make.leading.trailing.equalTo(@0);
+            make.bottom.equalTo(self.bottomView.mas_top).offset(0);
+        }];
+    }
+//    self.tableView.hidden = YES;
+//    [self.view bringSubviewToFront:self.tableView];
+//    [self.view bringSubviewToFront:self.noDataView];
+}
+
+- (void)createbottomView {
+    [self.view addSubview:self.bottomView];
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(53 - appMargin().bottom));
+        make.leading.equalTo(@(0));
+        make.trailing.equalTo(@(0));
+        make.bottom.equalTo(@(0));
+    }];
+    self.bottomView.hidden = YES;
+}
+
+- (void)createTableViewSectionHeader {
+//    NSInteger count = 10;
+//    NSString *text = [NSString stringWithFormat:@"%zi条回复", count];
+    NSString *text = @"";
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 21)];
+    UILabel *headerLab = [[UILabel alloc] init];
+    headerLab.frame = CGRectMake(16, 0, KWidth - 16 * 2, 21);
+    headerLab.font = RR_MEDIUMFONT(17);
+    headerLab.textColor = kCOLOR_dynamicProvider_222222_E5E7EB;
+    headerLab.text = text;
+    [header addSubview:headerLab];
+    _header = header;
+    _headerLab = headerLab;
+}
+ 
+#pragma mark - 回复
+- (void)clickTextBtn:(UIButton *)btn {
 //    @weakify(self);
 //    [[RRAppLinkManager sharedManager] goLoginBlockToRoot:NO loginFinish:^(BOOL sucess) {
 //        @strongify(self);
@@ -451,10 +421,10 @@
 //            }];
 //        }
 //    }];
-//}
-//
-//#pragma mark - 点赞
-//- (void)clickPraiseBtn:(UIButton *)btn {
+}
+
+#pragma mark - 点赞
+- (void)clickPraiseBtn:(UIButton *)btn {
 //    @weakify(self);
 //    [[RRAppLinkManager sharedManager] goLoginBlockToRoot:NO loginFinish:^(BOOL sucess) {
 //        @strongify(self);
@@ -494,8 +464,8 @@
 //            }];
 //        }
 //    }];
-//}
-//
+}
+
 //- (void)articleReplay:(NSString *)content imageDatas:(NSArray *)imageDatas toComment:(RRSeniorCommentsModel *)model isSpoiler:(BOOL)isSpoiler msgLevel:(RRSeniorCommentCreateApiMsgLevel)msgLevel {
 //    if (self.isReplying) {
 //        return;
@@ -544,7 +514,7 @@
 //    if (model) {
 //        reply2UseId = model.author.ID;
 //    }
-// 
+//
 //    //发送评论的类型
 //    RRSeniorCommentCreateApiType commentCreateApiType;
 //    if ([self.type isEqualToString:@"DRAMA"]) {
@@ -554,7 +524,7 @@
 //    } else {
 //        commentCreateApiType = RRSeniorCommentCreateApiTypeVIDEO;
 //    }
-//    
+//
 //    [[[RRSeniorCommentCreateApi alloc] initCommentWithCommentType:commentCreateApiType typeId:@"" content:content images:images reply2Id:reply2Id spoiler:isSpoiler msgLevel:msgLevel reply2UseId:reply2UseId] startWithCompletionBlock:^(RRJsonModel *result, NSError *error) {
 //        weakSelf.isReplying = NO;
 //        if (error) {
@@ -570,17 +540,17 @@
 //                    //二级回复
 //                    [weakSelf replayBackResultModel:resultModel];
 //                }
-//                
+//
 //                [weakSelf.service closeReplyView];
 //            } else if (result.code == 3001){
 //                [IanAlert alertError:@"频率太快啦，喝口水歇一下" length:TIMELENGTH];
-//                
+//
 //            } else if (result.code == 3002){
 //                [IanAlert alertError:@"已经提交过了,请别重复提交" length:TIMELENGTH];
-//                
+//
 //            } else {
 //                [IanAlert alertError:result.msg length:TIMELENGTH];
-//                
+//
 //            }
 //        }
 //    }];
@@ -602,300 +572,303 @@
 //    }
 //    return YES;
 //}
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //    if (!self.loadingView.isHidden || !self.commentModel) {
 //        return 0;
 //    }
-//    return 2;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    switch (section) {
-//        case 0:
-//            return 1;
-//            break;
-//        default:
-//            return self.dataSource.dataArray.count;
-//            break;
-//    }
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    //     return [ArticleDetailCell cellHeightfor:model];
-//    NSInteger section = indexPath.section;
-//    switch (section) {
-//        case 0:
-//        {
-//            return [RRSeasonSeniorCommentsTextImageCell cellHeightWithModel:self.commentModel isShowAll:    self.isShowMore];
-//        }
-//            break;
-//        default:
-//        {
-//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
-//            return [RRSeasonSeniorCommentsReplyTextImageCell cellHeightWithModel:model];
-//        }
-//            break;
-//    }
-//}
-//
-////header高度
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    switch (section) {
-//        case 1:
-//            return 21.0;
-//            break;
-//        default:
-//            return 0.1;
-//            break;
-//    }
-//}
-//
-////footer高度
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    switch (section) {
-//        case 0:
-//            return 10.0;
-//            break;
-//        default:
-//            return 0.1;
-//            break;
-//    }
-//}
-//
-////自定义头
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    
-//    switch (section) {
-//        case 0:
-//        {
-//            return [[UIView alloc] init]; 
-//        }
-//            break;
-//        default:
-//        {
-////            NSInteger count = self.commentModel.replyCount;
-//            NSInteger count = self.total;
-//            NSString *countStr = [NSString transformCountWithString:count];
-//            NSString *text = @"";
-//            if (countStr.length > 0) {
-//                text = [NSString stringWithFormat:@"%@条回复", countStr];
-//            }
-//            _headerLab.text = text;
-//            return _header;
-//        }
-//            break;
-//    }
-//
-//}
-//
-////自定义脚
-//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-//    return [[UIView alloc] init];
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    
-//    NSInteger section = indexPath.section;
-//    switch (section) {
-//        case 0:
-//        {
-//            RRSeasonSeniorCommentsTextImageCell *cell = (RRSeasonSeniorCommentsTextImageCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageCell class]) forIndexPath:indexPath];
-//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//            cell.isHalf = self.isHalf;
-//            cell.isShowMore = self.isShowMore;
-//            cell.model = self.commentModel;
-//            cell.praiseBtn.hidden = YES;
-//            WS(weakSelf)
-////            cell.clickText = ^(RRSeniorCommentsModel * _Nonnull model) {
-////                [weakSelf clickCommentWithModel:model];
-////            };
-//            cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
-//                [weakSelf clickDeleteCommentWithModel:model];
+    if (!self.commentModel) {
+        return 0;
+    }
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return 1;
+            break;
+        default:
+            return self.data.count;
+            break;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //     return [ArticleDetailCell cellHeightfor:model];
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case 0:
+        {
+            return [RRSeasonSeniorCommentsTextImageCell cellHeightWithModel:self.commentModel isShowAll:    self.isShowMore];
+        }
+            break;
+        default:
+        {
+            RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+            return [RRSeasonSeniorCommentsReplyTextImageCell cellHeightWithModel:model];
+        }
+            break;
+    }
+}
+
+//header高度
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 1:
+            return 21.0;
+            break;
+        default:
+            return 0.1;
+            break;
+    }
+}
+
+//footer高度
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return 10.0;
+            break;
+        default:
+            return 0.1;
+            break;
+    }
+}
+
+//自定义头
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    switch (section) {
+        case 0:
+        {
+            return [[UIView alloc] init];
+        }
+            break;
+        default:
+        {
+//            NSInteger count = self.commentModel.replyCount;
+            NSInteger count = self.total;
+            NSString *countStr = [NSString transformCountWithString:count];
+            NSString *text = @"";
+            if (countStr.length > 0) {
+                text = [NSString stringWithFormat:@"%@条回复", countStr];
+            }
+            _headerLab.text = text;
+            return _header;
+        }
+            break;
+    }
+
+}
+
+//自定义脚
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [[UIView alloc] init];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case 0:
+        {
+            RRSeasonSeniorCommentsTextImageCell *cell = (RRSeasonSeniorCommentsTextImageCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageCell class]) forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.isHalf = self.isHalf;
+            cell.isShowMore = self.isShowMore;
+            cell.model = self.commentModel;
+            cell.praiseBtn.hidden = YES;
+            WS(weakSelf)
+//            cell.clickText = ^(RRSeniorCommentsModel * _Nonnull model) {
+//                [weakSelf clickCommentWithModel:model];
 //            };
-//            cell.clickFullText = ^(RRSeniorCommentsModel * _Nonnull model) {
-//                weakSelf.isShowMore = YES;
-//                [weakSelf.tableView reloadData];
-//            };
-//            cell.clickCutText = ^(RRSeniorCommentsModel * _Nonnull model) {
-//                weakSelf.isShowMore = NO; 
-//                [weakSelf.tableView reloadData];
-//            };
-//            return cell;
-//        }
-//            break;
-//            
-//        default:{
-//            RRSeasonSeniorCommentsReplyTextImageCell *cell = (RRSeasonSeniorCommentsReplyTextImageCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyTextImageCell class]) forIndexPath:indexPath];
-//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//            cell.isHalf = self.isHalf;
-//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
-//            cell.model = model;
-//            WS(weakSelf)
-////            cell.clickText = ^(RRSeniorCommentsModel * _Nonnull model) {
-////                [weakSelf clickReplyWithModel:model];
-////                
-////            };
-//            cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
-//                [weakSelf clickDeleteReplyWithModel:model];
-//            };
-//            return cell;
-//        }
-//            break;
-//    }
-//}
+            cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
+                [weakSelf clickDeleteCommentWithModel:model];
+            };
+            cell.clickFullText = ^(RRSeniorCommentsModel * _Nonnull model) {
+                weakSelf.isShowMore = YES;
+                [weakSelf.tableView reloadData];
+            };
+            cell.clickCutText = ^(RRSeniorCommentsModel * _Nonnull model) {
+                weakSelf.isShowMore = NO;
+                [weakSelf.tableView reloadData];
+            };
+            return cell;
+        }
+            break;
+            
+        default:{
+            RRSeasonSeniorCommentsReplyTextImageCell *cell = (RRSeasonSeniorCommentsReplyTextImageCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyTextImageCell class]) forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.isHalf = self.isHalf;
+            RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+            cell.model = model;
+            WS(weakSelf)
+//            cell.clickText = ^(RRSeniorCommentsModel * _Nonnull model) {
+//                [weakSelf clickReplyWithModel:model];
 //
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSInteger section = indexPath.section;
-//    switch (section) {
-//        case 0:
-//        {
-//            //点击cell回复评论
-//            RRSeniorCommentsModel *model = self.commentModel;
-//            [self clickCommentWithModel:model];
-//        }
-//            break;
-//        default:
-//        {
-//            //点击cell回复回复
-//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
-//            [self clickReplyWithModel:model];
-//        }
-//            break;
-//    }
-//}
-//
-////lazy
-//- (UITableView *)tableView {
-//    if (!_tableView) {
-//        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-//        _tableView.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
-//        //iOS11
-//        _tableView.estimatedRowHeight = 0;
-//        _tableView.estimatedSectionHeaderHeight = 0;
-//        _tableView.estimatedSectionFooterHeight = 0;
-//        if (@available(iOS 11.0, *)) {
-//            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//        } else {
-//            //        self.automaticallyAdjustsScrollViewInsets = NO;
-//        }
-//        _tableView.dataSource = self;
-//        _tableView.delegate = self;
-//        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//        [_tableView registerClass:[RRSeasonSeniorCommentsTextImageCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageCell class])];
-//        [_tableView registerClass:[RRSeasonSeniorCommentsReplyTextImageCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyTextImageCell class])];
-//        
-//        
-//        //        WS(weakSelf)
-//        //        MJDIYFooter *footer = [MJDIYFooter footerWithRefreshingBlock:^{
-//        ////            [weakSelf loadMoreData];
-//        ////            [[RRLogSDK sharedRRLogSDK] logAliWithId:RRStatisticsSeasonCommentLoadMore itemId:weakSelf.seasonId externDict:nil];
-//        //        }];
-//        //        [footer setTitle:@"已经到底啦～" forState:MJRefreshStateNoMoreData];
-//        //        _tableView.mj_footer = footer;
-//        //        _tableView.mj_header = [MJDIYHeader headerWithRefreshingBlock:^{
-//        ////            [weakSelf refreshData];
-//        //        }];
-//        
-//        //        RRSeasonSeniorCommentHearder *header = [[RRSeasonSeniorCommentHearder alloc] initWithFrame:CGRectMake(0, 0, KWidth, 42)];
-//        //        header.clickStatusIndex = ^(UIResponder *sender, NSUInteger index) {
-//        //
-//        //        };
-//        //        header.clickSwichIndex = ^(UIResponder *sender, NSUInteger index) {
-//        //
-//        //        };
-//        //        _tableView.tableHeaderView = header;
-//    }
-//    return _tableView;
-//}
-//
-//- (UIView *)bottomView {
-//    if (!_bottomView) {
-//        _bottomView = [[RRSeasonSeniorCommentsPraiseBtnInputBar alloc] initWithFrame:CGRectMake(0, 0, 320, 53)];
-//        [_bottomView.textBoxBtn addTarget:self action:@selector(clickTextBtn:) forControlEvents:UIControlEventTouchUpInside];
-//        [_bottomView.praiseBtn addTarget:self action:@selector(clickPraiseBtn:) forControlEvents:UIControlEventTouchUpInside];
-//        [self.view addSubview:_bottomView];
-//        //        [_bottomView sketchShadowWithOffsetX:0 offsetY:0 Blur:15 Spread:0 color:kCOLOR_dynamicProvider_Shadow_bar_000000Alpha008_000000Alpha14 alpha:1];
+//            };
+            cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
+                [weakSelf clickDeleteReplyWithModel:model];
+            };
+            return cell;
+        }
+            break;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case 0:
+        {
+            //点击cell回复评论
+            RRSeniorCommentsModel *model = self.commentModel;
+            [self clickCommentWithModel:model];
+        }
+            break;
+        default:
+        {
+            //点击cell回复回复
+            RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+            [self clickReplyWithModel:model];
+        }
+            break;
+    }
+}
+
+//lazy
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
+        //iOS11
+        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        if (@available(iOS 11.0, *)) {
+            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            //        self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [_tableView registerClass:[RRSeasonSeniorCommentsTextImageCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageCell class])];
+        [_tableView registerClass:[RRSeasonSeniorCommentsReplyTextImageCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyTextImageCell class])];
+        
+        
+        //        WS(weakSelf)
+        //        MJDIYFooter *footer = [MJDIYFooter footerWithRefreshingBlock:^{
+        ////            [weakSelf loadMoreData];
+        ////            [[RRLogSDK sharedRRLogSDK] logAliWithId:RRStatisticsSeasonCommentLoadMore itemId:weakSelf.seasonId externDict:nil];
+        //        }];
+        //        [footer setTitle:@"已经到底啦～" forState:MJRefreshStateNoMoreData];
+        //        _tableView.mj_footer = footer;
+        //        _tableView.mj_header = [MJDIYHeader headerWithRefreshingBlock:^{
+        ////            [weakSelf refreshData];
+        //        }];
+        
+        //        RRSeasonSeniorCommentHearder *header = [[RRSeasonSeniorCommentHearder alloc] initWithFrame:CGRectMake(0, 0, KWidth, 42)];
+        //        header.clickStatusIndex = ^(UIResponder *sender, NSUInteger index) {
+        //
+        //        };
+        //        header.clickSwichIndex = ^(UIResponder *sender, NSUInteger index) {
+        //
+        //        };
+        //        _tableView.tableHeaderView = header;
+    }
+    return _tableView;
+}
+
+- (UIView *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [[RRSeasonSeniorCommentsPraiseBtnInputBar alloc] initWithFrame:CGRectMake(0, 0, 320, 53)];
+        [_bottomView.textBoxBtn addTarget:self action:@selector(clickTextBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_bottomView.praiseBtn addTarget:self action:@selector(clickPraiseBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_bottomView];
+        //        [_bottomView sketchShadowWithOffsetX:0 offsetY:0 Blur:15 Spread:0 color:kCOLOR_dynamicProvider_Shadow_bar_000000Alpha008_000000Alpha14 alpha:1];
 //        [_bottomView sketchShadowWithBottomBar];
-//    }
-//    return _bottomView;
-//}
-//
+    }
+    return _bottomView;
+}
+
 //- (RRCommentService *)service {
 //    if (!_service) {
 //        _service = [[RRCommentService alloc] init];
 //    }
 //    return _service;
 //}
-//
-////topBar
-//- (UIView *)topBar {
-//    if (!_topBar) {
-//        _topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
-//        _topBar.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
-//
-//        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_topBar.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(12, 12)];
-//        CAShapeLayer *maskLayer = [[CAShapeLayer alloc]init];
-//        maskLayer.frame = _topBar.bounds;
-//        maskLayer.path = maskPath.CGPath;
-//        _topBar.layer.mask = maskLayer;
-//    }
-//    return _topBar;
-//}
-//
-//- (UILabel *)titleLab {
-//    if (!_titleLab) {
-//        _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
-//        _titleLab.text = @"详情";
-//        _titleLab.font = BOLDSYSTEMFONT(17);
-//    }
-//    return _titleLab;
-//}
-//
-//- (UIButton *)closeBtn {
-//    if (!_closeBtn) {
-//        _closeBtn = [[UIButton alloc] init];
-//        _closeBtn.frame = CGRectMake(0, 0, 40, 40);
-//        [_closeBtn setImage:IMAGENAME(@"ic_search_results_bar_close_28") forState:UIControlStateNormal];
-//        [_closeBtn addTarget:self action:@selector(clickCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
-//    }
-//    return _closeBtn;
-//}
-//
-//- (void)clickCloseBtn:(UIButton *)btn {
-//    [self dismiss];
-//    if (self.delegate && [self.delegate respondsToSelector:@selector(closeSeasonSeniorCommentsSecondarySubVC:)]) {
-//        [self.delegate closeSeasonSeniorCommentsSecondarySubVC:self];
-//    }
-//}
-//
-//- (void)show {
-//    if (!self.isHalf) {
-//        return;
-//    }
-//    self.view.frame = CGRectMake(0, KHeight, KWidth, KHeight - playerViewHeight());
-//    [UIView animateWithDuration:0.25
-//                     animations:^{
-//        self.view.frame = CGRectMake(0, playerViewHeight(), KWidth, KHeight - playerViewHeight());
-//    }];
-//}
-//
-//- (void)dismiss {
-//    if (!self.isHalf) {
-//        [self.navigationController popViewControllerAnimated:YES];
-//    } else {
-//        [UIView animateWithDuration:0.25
-//                         animations:^{
-//            self.view.frame = CGRectMake(0, KHeight, KWidth, KHeight - playerViewHeight());
-//        }
-//                         completion:^(BOOL finished) {
-//            [self willMoveToParentViewController:nil];
-//            [self removeFromParentViewController];
-//            [self.view removeFromSuperview];
-//        }];
-//    }
-//
-//}
+
+//topBar
+- (UIView *)topBar {
+    if (!_topBar) {
+        _topBar = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+        _topBar.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
+
+        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:_topBar.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(12, 12)];
+        CAShapeLayer *maskLayer = [[CAShapeLayer alloc]init];
+        maskLayer.frame = _topBar.bounds;
+        maskLayer.path = maskPath.CGPath;
+        _topBar.layer.mask = maskLayer;
+    }
+    return _topBar;
+}
+
+- (UILabel *)titleLab {
+    if (!_titleLab) {
+        _titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, KWidth, 49)];
+        _titleLab.text = @"详情";
+        _titleLab.font = BOLDSYSTEMFONT(17);
+    }
+    return _titleLab;
+}
+
+- (UIButton *)closeBtn {
+    if (!_closeBtn) {
+        _closeBtn = [[UIButton alloc] init];
+        _closeBtn.frame = CGRectMake(0, 0, 40, 40);
+        [_closeBtn setImage:IMAGENAME(@"ic_search_results_bar_close_28") forState:UIControlStateNormal];
+        [_closeBtn addTarget:self action:@selector(clickCloseBtn:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _closeBtn;
+}
+
+- (void)clickCloseBtn:(UIButton *)btn {
+    [self dismiss];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(closeSeasonSeniorCommentsSecondarySubVC:)]) {
+        [self.delegate closeSeasonSeniorCommentsSecondarySubVC:self];
+    }
+}
+
+- (void)show {
+    if (!self.isHalf) {
+        return;
+    }
+    self.view.frame = CGRectMake(0, KHeight, KWidth, KHeight - playerViewHeight());
+    [UIView animateWithDuration:0.25
+                     animations:^{
+        self.view.frame = CGRectMake(0, playerViewHeight(), KWidth, KHeight - playerViewHeight());
+    }];
+}
+
+- (void)dismiss {
+    if (!self.isHalf) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [UIView animateWithDuration:0.25
+                         animations:^{
+            self.view.frame = CGRectMake(0, KHeight, KWidth, KHeight - playerViewHeight());
+        }
+                         completion:^(BOOL finished) {
+            [self willMoveToParentViewController:nil];
+            [self removeFromParentViewController];
+            [self.view removeFromSuperview];
+        }];
+    }
+
+}
 //
 //- (void)popViewController {
 //    [super popViewController];
@@ -912,7 +885,7 @@
 ////    return @"详情";
 ////}
 //
-//- (void)clickCommentWithModel:(RRSeniorCommentsModel *)model {
+- (void)clickCommentWithModel:(RRSeniorCommentsModel *)model {
 //    @weakify(self);
 //    [[RRAppLinkManager sharedManager] goLoginBlockToRoot:NO loginFinish:^(BOOL sucess) {
 //        @strongify(self);
@@ -924,9 +897,9 @@
 //            }];
 //        }
 //    }];
-//}
-//
-//- (void)clickReplyWithModel:(RRSeniorCommentsModel *)model {
+}
+
+- (void)clickReplyWithModel:(RRSeniorCommentsModel *)model {
 //    @weakify(self);
 //    [[RRAppLinkManager sharedManager] goLoginBlockToRoot:NO loginFinish:^(BOOL sucess) {
 //        @strongify(self);
@@ -938,7 +911,7 @@
 //            }];
 //        }
 //    }];
-//}
+}
 //
 ////二级回复
 //- (void)replayBackResultModel:(RRSeniorCommentsModel *)model {
@@ -965,16 +938,16 @@
 //            atScrollPosition:UITableViewScrollPositionTop animated:NO];
 //}
 //
-////删除评论
-//- (void)clickDeleteCommentWithModel:(RRSeniorCommentsModel *)model {
+//删除评论
+- (void)clickDeleteCommentWithModel:(RRSeniorCommentsModel *)model {
 //    if (self.delegate && [self.delegate respondsToSelector:@selector(seasonSeniorCommentsSecondarySubVC:deleteModel:)]) {
 //        [self.delegate seasonSeniorCommentsSecondarySubVC:self deleteModel:model];
 //    }
 //    [self dismiss];
-//}
-//
-////删除回复
-//- (void)clickDeleteReplyWithModel:(RRSeniorCommentsModel *)model {
+}
+
+//删除回复
+- (void)clickDeleteReplyWithModel:(RRSeniorCommentsModel *)model {
 //    NSMutableArray *tempArr = [[NSMutableArray alloc] init];
 //    for (RRSeniorCommentsModel *nowModel in self.dataSource.dataArray) {
 //        if (![nowModel.ID isEqualToString:model.ID]) {
@@ -985,14 +958,14 @@
 //    [self.dataSource appendDatas:tempArr];
 //    self.total = self.total - 1;
 //    [self.tableView reloadData];
-//}
-//
-//// 当iOS界面环境发生变化时，系统调用该方法。
-//- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-//    [super traitCollectionDidChange:previousTraitCollection];
-//    [self.tableView reloadData];
-//}
-//
-//- (void)dealloc {
-//}
+}
+
+// 当iOS界面环境发生变化时，系统调用该方法。
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    [self.tableView reloadData];
+}
+
+- (void)dealloc {
+}
 @end
