@@ -57,15 +57,8 @@
 		A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09C24B97FD4005922B1 /* ViewController3.m */; };
 		A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9DC1A24D66049009FB2EA /* UIImage+size.m */; };
 		F504404F26259C6300834547 /* PCH文件.md in Resources */ = {isa = PBXBuildFile; fileRef = F504404E26259C6200834547 /* PCH文件.md */; };
-		F50440CE2625A06B00834547 /* RRSeasonSeniorCommentsHearder.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */; };
 		F50440CF2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BA2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m */; };
-		F50440D02625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BE2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m */; };
-		F50440D12625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m */; };
-		F50440D22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */; };
 		F50440D32625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */; };
-		F50440D42625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C62625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m */; };
-		F50440D52625A06B00834547 /* RRSeasonSeniorCommentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C72625A06B00834547 /* RRSeasonSeniorCommentsCell.m */; };
-		F50440D72625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440CB2625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m */; };
 		F50440D82625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */; };
 		F505AC2325C936F600F43298 /* 约束动画.md in Resources */ = {isa = PBXBuildFile; fileRef = F505AC2225C936F600F43298 /* 约束动画.md */; };
 		F505AC3425C940D100F43298 /* 抗拉伸抗压缩.md in Resources */ = {isa = PBXBuildFile; fileRef = F505AC3225C940D000F43298 /* 抗拉伸抗压缩.md */; };
@@ -113,8 +106,6 @@
 		F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */; };
 		F53F669224FE454000770055 /* PasswordTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669124FE454000770055 /* PasswordTextField.m */; };
 		F53F669B24FE484700770055 /* NSString+Password.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F669A24FE484700770055 /* NSString+Password.m */; };
-		F5409A9126B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5409A8E26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.m */; };
-		F5409A9226B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5409A9026B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m */; };
 		F5409A9926B1051B0042F29D /* RRMJTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F5409A9826B1051B0042F29D /* RRMJTool.m */; };
 		F5409AAD26B164A30042F29D /* ZZStarViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5409AA926B164A30042F29D /* ZZStarViewVC.m */; };
 		F5409AAE26B164A30042F29D /* ZZStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5409AAB26B164A30042F29D /* ZZStarView.m */; };
@@ -124,13 +115,10 @@
 		F5409ABD26B166020042F29D /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = F5409AB726B166020042F29D /* star.png */; };
 		F5409ABE26B166020042F29D /* didStar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5409AB826B166020042F29D /* didStar@3x.png */; };
 		F5409ABF26B166020042F29D /* didStar.png in Resources */ = {isa = PBXBuildFile; fileRef = F5409AB926B166020042F29D /* didStar.png */; };
-		F54304C82643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F54304C72643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.m */; };
 		F543282925A6D62C0082236C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F543282825A6D62C0082236C /* ScoreViewController.m */; };
 		F5446CA6268D73240076961A /* 回复详情.json in Resources */ = {isa = PBXBuildFile; fileRef = F5446CA5268D73240076961A /* 回复详情.json */; };
 		F5446CAC268D73300076961A /* 评论的副本2.json in Resources */ = {isa = PBXBuildFile; fileRef = F5446CAB268D73300076961A /* 评论的副本2.json */; };
-		F5446CB3268DA8F90076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5446CB2268DA8F90076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.m */; };
 		F5446CE9268DB20C0076961A /* MyReply.m in Sources */ = {isa = PBXBuildFile; fileRef = F5446CE8268DB20C0076961A /* MyReply.m */; };
-		F5446CF8268DB80D0076961A /* RRMessageSeasonCommentPositionListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5446CF6268DB80D0076961A /* RRMessageSeasonCommentPositionListVC.m */; };
 		F5446D03268DC1490076961A /* RRCommentPositionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5446D02268DC1490076961A /* RRCommentPositionListModel.m */; };
 		F5448BD12615F0A300169B71 /* 镂空.md in Resources */ = {isa = PBXBuildFile; fileRef = F5448BD02615F0A200169B71 /* 镂空.md */; };
 		F545BC172604808200D63C6E /* ceil_floor_round.md in Resources */ = {isa = PBXBuildFile; fileRef = F545BC162604808200D63C6E /* ceil_floor_round.md */; };
@@ -254,6 +242,18 @@
 		F5A9F13C24E3EC2400F611E6 /* SeeLivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */; };
 		F5AC7C2A271020FD00533793 /* 锁@synchronized.md in Resources */ = {isa = PBXBuildFile; fileRef = F5AC7C29271020FD00533793 /* 锁@synchronized.md */; };
 		F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */ = {isa = PBXBuildFile; fileRef = F5AC7C2B2710276800533793 /* github开发人员在七夕搞事情.md */; };
+		F5AC7C2F27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C2E27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.m */; };
+		F5AC7C4427102CBE00533793 /* RRSeasonSeniorCommentsTextImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C3027102CBD00533793 /* RRSeasonSeniorCommentsTextImageCell.m */; };
+		F5AC7C4527102CBE00533793 /* RRSeasonSeniorCommentsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C3327102CBD00533793 /* RRSeasonSeniorCommentsCell.m */; };
+		F5AC7C4627102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C3527102CBD00533793 /* RRSeasonSeniorCommentsPhotoCollectionView.m */; };
+		F5AC7C4727102CBE00533793 /* RRSeasonSeniorCommentsTextCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C3827102CBD00533793 /* RRSeasonSeniorCommentsTextCell.m */; };
+		F5AC7C4827102CBE00533793 /* RRSeasonSeniorCommentsHearder.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C3927102CBD00533793 /* RRSeasonSeniorCommentsHearder.m */; };
+		F5AC7C4927102CBE00533793 /* RRSeasonSeniorCommentsTextImageDetailBtnCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C3A27102CBD00533793 /* RRSeasonSeniorCommentsTextImageDetailBtnCell.m */; };
+		F5AC7C4A27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C3C27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m */; };
+		F5AC7C4B27102CBE00533793 /* RRSeasonSeniorCommentsTextImageReplyListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C3D27102CBE00533793 /* RRSeasonSeniorCommentsTextImageReplyListCell.m */; };
+		F5AC7C4D27102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C4227102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m */; };
+		F5AC7C5027102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C4F27102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m */; };
+		F5AC7C542710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C522710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m */; };
 		F5B1FE6B2621AC6C004B950C /* TableviewSectionHeader不悬停.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */; };
 		F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B30F6524F8D3F8003DFB2E /* RAC.md */; };
 		F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A92F2508F502002505AE /* FullScreenMessageController.m */; };
@@ -510,26 +510,12 @@
 		A4F9DC1A24D66049009FB2EA /* UIImage+size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+size.m"; sourceTree = "<group>"; };
 		F504404E26259C6200834547 /* PCH文件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "PCH文件.md"; sourceTree = "<group>"; };
 		F50440AE26259EEF00834547 /* WDEMO.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDEMO.pch; sourceTree = "<group>"; };
-		F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsHearder.m; sourceTree = "<group>"; };
 		F50440B92625A06B00834547 /* RRSeasonSeniorCommentsInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsInputBar.h; sourceTree = "<group>"; };
 		F50440BA2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsTabCountView.m; sourceTree = "<group>"; };
-		F50440BB2625A06B00834547 /* RRSeasonSeniorCommentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsCell.h; sourceTree = "<group>"; };
-		F50440BC2625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSecondarySubVC.h; sourceTree = "<group>"; };
-		F50440BE2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSecondaryInputBar.m; sourceTree = "<group>"; };
-		F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsHasReplyListCell.m; sourceTree = "<group>"; };
 		F50440C02625A06B00834547 /* RRSeasonSeniorCommentsSubVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSubVC.h; sourceTree = "<group>"; };
-		F50440C12625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsReplyTableView.h; sourceTree = "<group>"; };
-		F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSecondaryReplyCell.m; sourceTree = "<group>"; };
 		F50440C32625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsTabCountView.h; sourceTree = "<group>"; };
 		F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsInputBar.m; sourceTree = "<group>"; };
-		F50440C52625A06B00834547 /* RRSeasonSeniorCommentsHearder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsHearder.h; sourceTree = "<group>"; };
-		F50440C62625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSecondarySubVC.m; sourceTree = "<group>"; };
-		F50440C72625A06B00834547 /* RRSeasonSeniorCommentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsCell.m; sourceTree = "<group>"; };
-		F50440C82625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSecondaryInputBar.h; sourceTree = "<group>"; };
-		F50440CA2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSecondaryReplyCell.h; sourceTree = "<group>"; };
-		F50440CB2625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsReplyTableView.m; sourceTree = "<group>"; };
 		F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSubVC.m; sourceTree = "<group>"; };
-		F50440CD2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsHasReplyListCell.h; sourceTree = "<group>"; };
 		F505AC2225C936F600F43298 /* 约束动画.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "约束动画.md"; sourceTree = "<group>"; };
 		F505AC3225C940D000F43298 /* 抗拉伸抗压缩.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "抗拉伸抗压缩.md"; sourceTree = "<group>"; };
 		F505AC3325C940D100F43298 /* addChildViewController.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = addChildViewController.md; sourceTree = "<group>"; };
@@ -599,10 +585,6 @@
 		F53F669124FE454000770055 /* PasswordTextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PasswordTextField.m; sourceTree = "<group>"; };
 		F53F669924FE484700770055 /* NSString+Password.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Password.h"; sourceTree = "<group>"; };
 		F53F669A24FE484700770055 /* NSString+Password.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Password.m"; sourceTree = "<group>"; };
-		F5409A8D26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsPhotoCollectionViewCell.h; sourceTree = "<group>"; };
-		F5409A8E26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsPhotoCollectionView.m; sourceTree = "<group>"; };
-		F5409A8F26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsPhotoCollectionView.h; sourceTree = "<group>"; };
-		F5409A9026B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		F5409A9726B1051B0042F29D /* RRMJTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRMJTool.h; sourceTree = "<group>"; };
 		F5409A9826B1051B0042F29D /* RRMJTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRMJTool.m; sourceTree = "<group>"; };
 		F5409AA826B164A30042F29D /* ZZStarViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZZStarViewVC.h; sourceTree = "<group>"; };
@@ -615,18 +597,12 @@
 		F5409AB726B166020042F29D /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		F5409AB826B166020042F29D /* didStar@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "didStar@3x.png"; sourceTree = "<group>"; };
 		F5409AB926B166020042F29D /* didStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = didStar.png; sourceTree = "<group>"; };
-		F54304C62643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsNoReplyListCell.h; sourceTree = "<group>"; };
-		F54304C72643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsNoReplyListCell.m; sourceTree = "<group>"; };
 		F543282725A6D62C0082236C /* ScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
 		F543282825A6D62C0082236C /* ScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
 		F5446CA5268D73240076961A /* 回复详情.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "回复详情.json"; sourceTree = "<group>"; };
 		F5446CAB268D73300076961A /* 评论的副本2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "评论的副本2.json"; sourceTree = "<group>"; };
-		F5446CB1268DA8F80076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.h; sourceTree = "<group>"; };
-		F5446CB2268DA8F90076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.m; sourceTree = "<group>"; };
 		F5446CE7268DB20C0076961A /* MyReply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyReply.h; sourceTree = "<group>"; };
 		F5446CE8268DB20C0076961A /* MyReply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyReply.m; sourceTree = "<group>"; };
-		F5446CF6268DB80D0076961A /* RRMessageSeasonCommentPositionListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageSeasonCommentPositionListVC.m; sourceTree = "<group>"; };
-		F5446CF7268DB80D0076961A /* RRMessageSeasonCommentPositionListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMessageSeasonCommentPositionListVC.h; sourceTree = "<group>"; };
 		F5446D01268DC1490076961A /* RRCommentPositionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRCommentPositionListModel.h; sourceTree = "<group>"; };
 		F5446D02268DC1490076961A /* RRCommentPositionListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRCommentPositionListModel.m; sourceTree = "<group>"; };
 		F5448BD02615F0A200169B71 /* 镂空.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "镂空.md"; sourceTree = "<group>"; };
@@ -829,6 +805,30 @@
 		F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeeLivingModel.m; sourceTree = "<group>"; };
 		F5AC7C29271020FD00533793 /* 锁@synchronized.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "锁@synchronized.md"; sourceTree = "<group>"; };
 		F5AC7C2B2710276800533793 /* github开发人员在七夕搞事情.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "github开发人员在七夕搞事情.md"; sourceTree = "<group>"; };
+		F5AC7C2D27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsReplyTextImageCell.h; sourceTree = "<group>"; };
+		F5AC7C2E27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsReplyTextImageCell.m; sourceTree = "<group>"; };
+		F5AC7C3027102CBD00533793 /* RRSeasonSeniorCommentsTextImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsTextImageCell.m; sourceTree = "<group>"; };
+		F5AC7C3227102CBD00533793 /* RRSeasonSeniorCommentsTextImageDetailBtnCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsTextImageDetailBtnCell.h; sourceTree = "<group>"; };
+		F5AC7C3327102CBD00533793 /* RRSeasonSeniorCommentsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsCell.m; sourceTree = "<group>"; };
+		F5AC7C3427102CBD00533793 /* RRSeasonSeniorCommentsTextImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsTextImageCell.h; sourceTree = "<group>"; };
+		F5AC7C3527102CBD00533793 /* RRSeasonSeniorCommentsPhotoCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsPhotoCollectionView.m; sourceTree = "<group>"; };
+		F5AC7C3627102CBD00533793 /* RRSeasonSeniorCommentsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsCell.h; sourceTree = "<group>"; };
+		F5AC7C3727102CBD00533793 /* RRSeasonSeniorCommentsHearder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsHearder.h; sourceTree = "<group>"; };
+		F5AC7C3827102CBD00533793 /* RRSeasonSeniorCommentsTextCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsTextCell.m; sourceTree = "<group>"; };
+		F5AC7C3927102CBD00533793 /* RRSeasonSeniorCommentsHearder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsHearder.m; sourceTree = "<group>"; };
+		F5AC7C3A27102CBD00533793 /* RRSeasonSeniorCommentsTextImageDetailBtnCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsTextImageDetailBtnCell.m; sourceTree = "<group>"; };
+		F5AC7C3B27102CBD00533793 /* RRSeasonSeniorCommentsTextImageReplyListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsTextImageReplyListCell.h; sourceTree = "<group>"; };
+		F5AC7C3C27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		F5AC7C3D27102CBE00533793 /* RRSeasonSeniorCommentsTextImageReplyListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsTextImageReplyListCell.m; sourceTree = "<group>"; };
+		F5AC7C3E27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsPhotoCollectionView.h; sourceTree = "<group>"; };
+		F5AC7C3F27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		F5AC7C4027102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsReplyTableView.h; sourceTree = "<group>"; };
+		F5AC7C4227102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsReplyTableView.m; sourceTree = "<group>"; };
+		F5AC7C4327102CBE00533793 /* RRSeasonSeniorCommentsTextCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsTextCell.h; sourceTree = "<group>"; };
+		F5AC7C4E27102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsDetailVC.h; sourceTree = "<group>"; };
+		F5AC7C4F27102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsDetailVC.m; sourceTree = "<group>"; };
+		F5AC7C522710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsPraiseBtnInputBar.m; sourceTree = "<group>"; };
+		F5AC7C532710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsPraiseBtnInputBar.h; sourceTree = "<group>"; };
 		F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "TableviewSectionHeader不悬停.md"; sourceTree = "<group>"; };
 		F5B30F6524F8D3F8003DFB2E /* RAC.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RAC.md; sourceTree = "<group>"; };
 		F5B5A92E2508F501002505AE /* HalfScreenMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenMessageController.h; sourceTree = "<group>"; };
@@ -1402,14 +1402,12 @@
 				F5446CB8268DADA80076961A /* NewSeniorCommentsMessage */,
 				F50440C02625A06B00834547 /* RRSeasonSeniorCommentsSubVC.h */,
 				F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */,
-				F50440BC2625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.h */,
-				F50440C62625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m */,
 				F55AB4A526295BB6008C5A25 /* CommentsList */,
 				F55AB4A626295C01008C5A25 /* ReplyList */,
 				F50440B92625A06B00834547 /* RRSeasonSeniorCommentsInputBar.h */,
 				F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */,
-				F50440C82625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.h */,
-				F50440BE2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m */,
+				F5AC7C532710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.h */,
+				F5AC7C522710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m */,
 				F50440C32625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.h */,
 				F50440BA2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m */,
 			);
@@ -1652,8 +1650,6 @@
 			children = (
 				F5446D01268DC1490076961A /* RRCommentPositionListModel.h */,
 				F5446D02268DC1490076961A /* RRCommentPositionListModel.m */,
-				F5446CF7268DB80D0076961A /* RRMessageSeasonCommentPositionListVC.h */,
-				F5446CF6268DB80D0076961A /* RRMessageSeasonCommentPositionListVC.m */,
 			);
 			path = NewSeniorCommentsMessage;
 			sourceTree = "<group>";
@@ -1713,22 +1709,24 @@
 		F55AB4A526295BB6008C5A25 /* CommentsList */ = {
 			isa = PBXGroup;
 			children = (
-				F50440BB2625A06B00834547 /* RRSeasonSeniorCommentsCell.h */,
-				F50440C72625A06B00834547 /* RRSeasonSeniorCommentsCell.m */,
-				F54304C62643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.h */,
-				F54304C72643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.m */,
-				F50440CD2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.h */,
-				F50440BF2625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m */,
-				F5446CB1268DA8F80076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.h */,
-				F5446CB2268DA8F90076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.m */,
-				F50440C12625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.h */,
-				F50440CB2625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m */,
-				F5409A8F26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.h */,
-				F5409A8E26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.m */,
-				F5409A8D26B0FDB40042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.h */,
-				F5409A9026B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m */,
-				F50440C52625A06B00834547 /* RRSeasonSeniorCommentsHearder.h */,
-				F50440B82625A06B00834547 /* RRSeasonSeniorCommentsHearder.m */,
+				F5AC7C3627102CBD00533793 /* RRSeasonSeniorCommentsCell.h */,
+				F5AC7C3327102CBD00533793 /* RRSeasonSeniorCommentsCell.m */,
+				F5AC7C3727102CBD00533793 /* RRSeasonSeniorCommentsHearder.h */,
+				F5AC7C3927102CBD00533793 /* RRSeasonSeniorCommentsHearder.m */,
+				F5AC7C3E27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionView.h */,
+				F5AC7C3527102CBD00533793 /* RRSeasonSeniorCommentsPhotoCollectionView.m */,
+				F5AC7C3F27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.h */,
+				F5AC7C3C27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m */,
+				F5AC7C4027102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.h */,
+				F5AC7C4227102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m */,
+				F5AC7C4327102CBE00533793 /* RRSeasonSeniorCommentsTextCell.h */,
+				F5AC7C3827102CBD00533793 /* RRSeasonSeniorCommentsTextCell.m */,
+				F5AC7C3427102CBD00533793 /* RRSeasonSeniorCommentsTextImageCell.h */,
+				F5AC7C3027102CBD00533793 /* RRSeasonSeniorCommentsTextImageCell.m */,
+				F5AC7C3227102CBD00533793 /* RRSeasonSeniorCommentsTextImageDetailBtnCell.h */,
+				F5AC7C3A27102CBD00533793 /* RRSeasonSeniorCommentsTextImageDetailBtnCell.m */,
+				F5AC7C3B27102CBD00533793 /* RRSeasonSeniorCommentsTextImageReplyListCell.h */,
+				F5AC7C3D27102CBE00533793 /* RRSeasonSeniorCommentsTextImageReplyListCell.m */,
 			);
 			path = CommentsList;
 			sourceTree = "<group>";
@@ -1736,8 +1734,10 @@
 		F55AB4A626295C01008C5A25 /* ReplyList */ = {
 			isa = PBXGroup;
 			children = (
-				F50440CA2625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.h */,
-				F50440C22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m */,
+				F5AC7C4E27102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.h */,
+				F5AC7C4F27102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m */,
+				F5AC7C2D27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.h */,
+				F5AC7C2E27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.m */,
 			);
 			path = ReplyList;
 			sourceTree = "<group>";
@@ -2891,6 +2891,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5AC7C5027102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m in Sources */,
 				F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */,
 				F5200DCB2531536E004637DD /* BaseViewController.m in Sources */,
 				F50440CF2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m in Sources */,
@@ -2901,11 +2902,14 @@
 				F5609CA22502194C00A13C15 /* AllScreenViewController.m in Sources */,
 				F50E841D25BEDDE6009767FE /* SearchBar.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
-				F5409A9226B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m in Sources */,
 				F5409A9926B1051B0042F29D /* RRMJTool.m in Sources */,
+				F5AC7C4D27102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */,
+				F5AC7C4427102CBE00533793 /* RRSeasonSeniorCommentsTextImageCell.m in Sources */,
 				F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */,
 				F5A8898E24F6078E00DB73ED /* OrderViewModel.m in Sources */,
+				F5AC7C2F27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.m in Sources */,
 				F593574925F7466A008CF0D8 /* ThirdViewCollectionViewController.m in Sources */,
+				F5AC7C4627102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionView.m in Sources */,
 				F5D0FC0D24E0F99800CAADF8 /* UIImage+TUIKIT.m in Sources */,
 				F5A9F13924E3D44B00F611E6 /* SeeLivingBaseCell.m in Sources */,
 				F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */,
@@ -2922,13 +2926,13 @@
 				F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */,
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
 				F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */,
-				F50440D52625A06B00834547 /* RRSeasonSeniorCommentsCell.m in Sources */,
 				F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */,
 				F5446D03268DC1490076961A /* RRCommentPositionListModel.m in Sources */,
 				F563DAE625AC27020079474B /* HomePageViewController.m in Sources */,
 				F5D4EB6325DF6A8700F807EF /* ParentClassScrollViewController.m in Sources */,
 				F50D6D6525A94EBE00B8C415 /* ListEditViewController.m in Sources */,
 				F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */,
+				F5AC7C4B27102CBE00533793 /* RRSeasonSeniorCommentsTextImageReplyListCell.m in Sources */,
 				F5CED5DA25749C7D002CF42C /* CollectionRedPointManager.m in Sources */,
 				F591AC9726A1641B0042802F /* Vendors.m in Sources */,
 				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
@@ -2942,7 +2946,6 @@
 				F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */,
 				F593574825F7466A008CF0D8 /* OneViewTableTableViewController.m in Sources */,
 				A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */,
-				F5446CF8268DB80D0076961A /* RRMessageSeasonCommentPositionListVC.m in Sources */,
 				F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */,
 				F5F3664924C8287C008BA221 /* ChatKit.m in Sources */,
 				A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */,
@@ -2957,16 +2960,15 @@
 				F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */,
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
 				F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */,
-				F50440D42625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				F591AC8B26A163D70042802F /* WConstants.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */,
 				F5872CD1257DF62400341B57 /* SettingModuleHandler+setting.m in Sources */,
+				F5AC7C542710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m in Sources */,
 				F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
 				F563DADB25AC26790079474B /* UIViewController+WMPageController.m in Sources */,
-				F54304C82643E2EF00B68FC8 /* RRSeasonSeniorCommentsNoReplyListCell.m in Sources */,
 				F5609CA62502222100A13C15 /* BaseNavigationController.m in Sources */,
 				F5CA13BB26B2979800D8A7AE /* MyTabBarController.m in Sources */,
 				F5091DE1268C4184000884D1 /* XXLoadingView.m in Sources */,
@@ -2986,7 +2988,6 @@
 				F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */,
 				F546A7CE2609DCB90001F697 /* RRActorVideoHeader.m in Sources */,
 				F5CED5E525749E84002CF42C /* XXClass.m in Sources */,
-				F5446CB3268DA8F90076961A /* RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.m in Sources */,
 				F5409AAE26B164A30042F29D /* ZZStarView.m in Sources */,
 				F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */,
 				F5CA13E226B2A15200D8A7AE /* LBTabBar.m in Sources */,
@@ -3014,7 +3015,6 @@
 				F553E12924CA800200DA5625 /* FaceView.m in Sources */,
 				673AE9251FC7F5BD0002D304 /* ForceTouchListVC.m in Sources */,
 				F563DADD25AC26790079474B /* WMScrollView.m in Sources */,
-				F5409A9126B0FDB50042F29D /* RRSeasonSeniorCommentsPhotoCollectionView.m in Sources */,
 				6783C8921FB944B80040C02B /* LZTagListView.m in Sources */,
 				F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */,
 				F5C1168C260CA20F001F4A74 /* UILabel+Util.m in Sources */,
@@ -3025,11 +3025,11 @@
 				6783C8911FB944B80040C02B /* LZTagListVC.m in Sources */,
 				F5DEB33024CEF5E3009A6767 /* NoInputBar.m in Sources */,
 				F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */,
+				F5AC7C4A27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m in Sources */,
 				F58B4B402643FAF700D7C82D /* UIViewController+TopViewController.m in Sources */,
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
 				F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
-				F50440D22625A06B00834547 /* RRSeasonSeniorCommentsSecondaryReplyCell.m in Sources */,
 				F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */,
 				F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */,
 				F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */,
@@ -3056,8 +3056,9 @@
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
 				F5FB5D7B263AB2C400155BFE /* NSString+Util.m in Sources */,
-				F50440D72625A06B00834547 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */,
+				F5AC7C4727102CBE00533793 /* RRSeasonSeniorCommentsTextCell.m in Sources */,
 				F5F5B44D25FA1DFE0069491B /* RRActorVideoVC.m in Sources */,
+				F5AC7C4527102CBE00533793 /* RRSeasonSeniorCommentsCell.m in Sources */,
 				F51535EF259B2960007E3416 /* UserEditBar.m in Sources */,
 				F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */,
 				F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */,
@@ -3074,21 +3075,21 @@
 				F53F669B24FE484700770055 /* NSString+Password.m in Sources */,
 				F5D4EB5825DF6A6E00F807EF /* MainTouchTableTableView.m in Sources */,
 				F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */,
-				F50440D12625A06B00834547 /* RRSeasonSeniorCommentsHasReplyListCell.m in Sources */,
 				F5CA13DA26B2A14A00D8A7AE /* LBNavigationController.m in Sources */,
 				F50440D82625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m in Sources */,
 				F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */,
+				F5AC7C4827102CBE00533793 /* RRSeasonSeniorCommentsHearder.m in Sources */,
 				F5872CBF257DDEC000341B57 /* SettingModuleHandler.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
 				A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */,
 				F5D2129125FF567100C7DCC1 /* RRActorIntroAndWorksVC.m in Sources */,
-				F50440CE2625A06B00834547 /* RRSeasonSeniorCommentsHearder.m in Sources */,
 				F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlertView.m in Sources */,
 				F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */,
 				F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */,
 				F58293B2255CDBD40066111C /* Person.m in Sources */,
 				F553E17B24CA86FC00DA5625 /* UIImage+ChatKit..m in Sources */,
+				F5AC7C4927102CBE00533793 /* RRSeasonSeniorCommentsTextImageDetailBtnCell.m in Sources */,
 				F5CE3D2324E6901800B20C80 /* RRDestroyAccountAgreenmentViewController.m in Sources */,
 				F5A8898B24F6074A00DB73ED /* OrderModel.m in Sources */,
 				F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */,
@@ -3097,7 +3098,6 @@
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
 				F5446CE9268DB20C0076961A /* MyReply.m in Sources */,
-				F50440D02625A06B00834547 /* RRSeasonSeniorCommentsSecondaryInputBar.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				F5CEF81C25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */,

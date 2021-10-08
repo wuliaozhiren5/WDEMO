@@ -10,7 +10,7 @@
 #import "RRSeasonSeniorCommentsInputBar.h"
 //#import "RRCommentService.h"
 #import "RRSeasonSeniorCommentsHearder.h"
-#import "RRSeasonSeniorCommentsHasReplyListCell.h"
+#import "RRSeasonSeniorCommentsTextImageReplyListCell.h"
 #import "RRSeasonSeniorCommentsSecondarySubVC.h"
 //#import "RRAlertBase.h"
 #import "RRSeniorCommentsModel.h"
@@ -24,7 +24,7 @@
 //@property (nonatomic, strong) UIView *header;
 //@property (nonatomic, strong) UILabel *headerLab;
 
-@property (nonatomic, assign) BOOL isHalf;          //半屏
+//@property (nonatomic, assign) BOOL isHalf;          //半屏
 @property (nonatomic, strong) UIView *topBar;
 @property (nonatomic, strong) UILabel *titleLab;
 @property (nonatomic, strong) UIButton *closeBtn; //半屏
@@ -246,7 +246,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
-    return [RRSeasonSeniorCommentsHasReplyListCell cellHeightWithModel:model isShowAll:NO];
+    return [RRSeasonSeniorCommentsTextImageReplyListCell cellHeightWithModel:model isShowAll:NO];
 }
 
 //header高度
@@ -271,7 +271,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
      
-    RRSeasonSeniorCommentsHasReplyListCell *cell = (RRSeasonSeniorCommentsHasReplyListCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsHasReplyListCell class]) forIndexPath:indexPath];
+    RRSeasonSeniorCommentsTextImageReplyListCell *cell = (RRSeasonSeniorCommentsTextImageReplyListCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageReplyListCell class]) forIndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.isHalf = YES;
     RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
@@ -341,7 +341,7 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        [_tableView registerClass:[RRSeasonSeniorCommentsHasReplyListCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsHasReplyListCell class])];
+        [_tableView registerClass:[RRSeasonSeniorCommentsTextImageReplyListCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageReplyListCell class])];
         
  
 //        WS(weakSelf)
@@ -451,5 +451,7 @@
 //- (NSString *)rr_UMemgChannelName {
 //    return @"详情";
 //}
+
+ 
 @end
  

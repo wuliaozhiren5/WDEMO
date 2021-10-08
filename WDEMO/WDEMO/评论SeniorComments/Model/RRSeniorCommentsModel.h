@@ -8,17 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import "AuthorModel.h"
-//@class RRSeniorCommentsReplyModel;
+#import "RRHomeChannelModel.h"
+
 @class RRSeniorCommentsImageModel;
 
 NS_ASSUME_NONNULL_BEGIN
-#pragma mark - RRSeniorCommentsModel 评论
-//评论
+
+#pragma mark - RRSeniorCommentsModel 评论Model
 @interface RRSeniorCommentsModel : NSObject
 
 @property (nonatomic, copy) NSString *ID;
 
-@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) NSString *type;//DRAMA 剧；VIDEO 视频；DRAMA_COMMENT 影评
 
 @property (nonatomic, copy) NSString *typeId;
 
@@ -40,6 +41,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL spoiler; //是否剧透
 
+@property (nonatomic, assign) BOOL sticky; //是否置顶
+
 @property (nonatomic, strong) AuthorModel *author; //
 
 //@property (nonatomic, strong) AuthorModel *reply2User; //不用
@@ -57,9 +60,16 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSArray <RRSeniorCommentsImageModel *>*images; //图片数组
 
 @property (nonatomic, copy)  NSArray <RRSeniorCommentsModel *> *replies;
+
+//影评
+@property (nonatomic, assign) CGFloat score; //评分
+
+//影评
+@property (nonatomic, strong) RRSeriesItemModel *drama; //剧集信息
+
 @end
 
-
+#pragma mark - RRSeniorCommentsListModel 评论List
 @interface RRSeniorCommentsListModel : NSObject
 
 @property (nonatomic, assign) BOOL isEnd;
@@ -73,21 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSArray <RRSeniorCommentsModel *> *content;
 @end
 
-
-#pragma mark - RRSeniorCommentsReplyModel 回复
-////回复
-//@interface RRSeniorCommentsReplyModel : RRSeniorCommentsModel
-//
-////@property (nonatomic, copy) NSString *authorId;
-//
-//@property (nonatomic, copy) NSString *authorName;
-//
-//@property (nonatomic, copy) NSString *reply2UseId;
-//
-//@property (nonatomic, copy) NSString *reply2UserName;
-//@end
- 
-
+#pragma mark - RRSeniorCommentsReplyListModel 回复List
 @interface RRSeniorCommentsReplyListModel : NSObject
 
 @property (nonatomic, assign) BOOL isEnd;
@@ -101,8 +97,27 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSArray <RRSeniorCommentsModel *> *content;
 @end
 
+//#pragma mark - RRDramaCommentsListModel 影评Model
+//@interface RRDramaCommentsModel : NSObject
+//
+//@property (nonatomic, copy) NSString *score;//评分
+//@end
 
-//图片
+//#pragma mark - RRDramaCommentsListModel 影评List
+//@interface RRDramaCommentsListModel : NSObject
+//
+//@property (nonatomic, assign) BOOL isEnd;
+//
+//@property (nonatomic, assign) BOOL end;
+//
+//@property (nonatomic, assign) NSInteger total;
+//
+//@property (nonatomic, assign) NSInteger currentPage;
+//
+//@property (nonatomic, copy) NSArray <RRSeniorCommentsModel *> *content;
+//@end
+
+#pragma mark - RRSeniorCommentsImageModel 图片
 @interface RRSeniorCommentsImageModel : NSObject
 
 @property (nonatomic, copy) NSString *url;
@@ -113,3 +128,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+
+
+

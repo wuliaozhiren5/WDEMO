@@ -11,8 +11,8 @@
 #import "RRSeasonSeniorCommentsSecondaryInputBar.h"
 //#import "RRCommentService.h"
 #import "RRSeasonSeniorCommentsHearder.h"
-#import "RRSeasonSeniorCommentsSecondaryReplyCell.h"
-#import "RRSeasonSeniorCommentsNoReplyListCell.h"
+#import "RRSeasonSeniorCommentsReplyTextImageCell.h"
+#import "RRSeasonSeniorCommentsTextImageCell.h"
 
 @interface RRSeasonSeniorCommentsSecondarySubVC () <UITableViewDataSource, UITableViewDelegate>
 //@property (nonatomic, strong) RRCommentService *service;
@@ -332,13 +332,13 @@
     switch (section) {
         case 0:
         {
-            return [RRSeasonSeniorCommentsNoReplyListCell cellHeightWithModel:self.commentModel isShowAll:YES];
+            return [RRSeasonSeniorCommentsTextImageCell cellHeightWithModel:self.commentModel isShowAll:YES];
         }
             break;
         default:
         {
             RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
-            return [RRSeasonSeniorCommentsSecondaryReplyCell cellHeightWithModel:model];
+            return [RRSeasonSeniorCommentsReplyTextImageCell cellHeightWithModel:model];
         }
             break;
     }
@@ -404,7 +404,7 @@
     switch (section) {
         case 0:
         {
-            RRSeasonSeniorCommentsNoReplyListCell *cell = (RRSeasonSeniorCommentsNoReplyListCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsNoReplyListCell class]) forIndexPath:indexPath];
+            RRSeasonSeniorCommentsTextImageCell *cell = (RRSeasonSeniorCommentsTextImageCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageCell class]) forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.isHalf = YES;
             cell.isShowMore = self.isShowMore;
@@ -430,7 +430,7 @@
             break;
             
         default:{
-            RRSeasonSeniorCommentsSecondaryReplyCell *cell = (RRSeasonSeniorCommentsSecondaryReplyCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSecondaryReplyCell class]) forIndexPath:indexPath];
+            RRSeasonSeniorCommentsReplyTextImageCell *cell = (RRSeasonSeniorCommentsReplyTextImageCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyTextImageCell class]) forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.isHalf = YES;
             RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
@@ -487,8 +487,8 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        [_tableView registerClass:[RRSeasonSeniorCommentsNoReplyListCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsNoReplyListCell class])];
-        [_tableView registerClass:[RRSeasonSeniorCommentsSecondaryReplyCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSecondaryReplyCell class])];
+        [_tableView registerClass:[RRSeasonSeniorCommentsReplyTextImageCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyTextImageCell class])];
+        [_tableView registerClass:[RRSeasonSeniorCommentsReplyTextImageCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyTextImageCell class])];
         
         
         //        WS(weakSelf)

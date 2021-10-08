@@ -1,5 +1,5 @@
 //
-//  RRSeasonSeniorCommentsSecondaryInputBar.h
+//  RRSeasonSeniorCommentsPraiseBtnInputBar.h
 //  PUClient
 //
 //  Created by rrtv on 2021/4/12.
@@ -7,13 +7,15 @@
 //
 
 #import "RRSeasonSeniorCommentsInputBar.h"
+#import "RRSeniorCommentsModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RRSeasonSeniorCommentsSecondaryInputBar : RRSeasonSeniorCommentsInputBar
+@interface RRSeasonSeniorCommentsPraiseBtnInputBar : RRSeasonSeniorCommentsInputBar
 
 @property (nonatomic, strong) UIButton *praiseBtn;
 @property (nonatomic, strong) UILabel  *praiseBtnLab;
+@property (nonatomic, strong) RRSeniorCommentsModel *commentModel;
 
 @end
 

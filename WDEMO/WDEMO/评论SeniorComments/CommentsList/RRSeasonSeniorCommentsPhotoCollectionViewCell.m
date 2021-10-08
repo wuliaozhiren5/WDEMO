@@ -34,15 +34,16 @@
 - (void)setModel:(RRSeniorCommentsImageModel *)model {
     _model = model;
 //    [self.imageView rr_downloadImageWithURLString:model.url placeholderImage:KplaceholderImg];
-    //图片
-    self.imageView.backgroundColor = [UIColor grayColor];
 }
 
 - (UIImageView *)imageView {
     if (!_imageView) {
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        _imageView.backgroundColor = [UIColor grayColor];
         _imageView.contentMode = UIViewContentModeScaleAspectFill;
         _imageView.clipsToBounds = YES;
+        _imageView.layer.cornerRadius = 4;
+        _imageView.layer.masksToBounds = YES;
     }
     return _imageView;
 }

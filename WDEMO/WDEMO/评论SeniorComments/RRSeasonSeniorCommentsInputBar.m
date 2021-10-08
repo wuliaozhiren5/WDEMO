@@ -43,29 +43,29 @@
     UIButton *textBoxBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 33)];
     textBoxBtn.layer.cornerRadius = 33.0 / 2.0;
     textBoxBtn.layer.masksToBounds = YES;
-    textBoxBtn.backgroundColor = kCOLOR_dynamicProvider_F2F4F5_2D2E33;
+    textBoxBtn.backgroundColor = kCOLOR_dynamicProvider_F2F4F5_2F3137;
     //    [textBoxBtn addTarget:self action:@selector(clickTextBtn:) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:textBoxBtn];
     
     UILabel *textBoxLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 33)];
-    textBoxLab.textColor = kCOLOR_919699;
+    textBoxLab.textColor = kCOLOR_dynamicProvider_CACBCC_616466;
     textBoxLab.font = SYSTEMFONT(14);
     textBoxLab.text = @"写条评论一起互动吧";
     [textBoxBtn addSubview:textBoxLab];
     
-    self.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
+    self.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_292B31;
     iconImageView.backgroundColor = [UIColor grayColor];
 
     [iconImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.height.equalTo(@30);
-        make.leading.equalTo(self).offset(15);
+        make.leading.equalTo(self.mas_leading).offset(15);
         make.top.equalTo(@13);
     }];
   
     [textBoxBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(@33);
         make.leading.equalTo(@15);
-        make.trailing.equalTo(self).offset(-15);
+        make.trailing.equalTo(self.mas_trailing).offset(-15);
         make.centerY.equalTo(iconImageView);
     }];
     

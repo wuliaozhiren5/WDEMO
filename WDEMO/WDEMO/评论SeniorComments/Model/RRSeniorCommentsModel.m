@@ -7,8 +7,8 @@
 //
 
 #import "RRSeniorCommentsModel.h"
-#pragma mark - RRSeniorCommentsModel 评论
-//评论
+
+#pragma mark - RRSeniorCommentsModel 评论Model
 @implementation RRSeniorCommentsModel
 
 + (NSDictionary *)modelCustomPropertyMapper {
@@ -43,11 +43,12 @@
         return @"";
     }
     _reply2UserName = [NSString filterReturn:_reply2UserName];
-    _reply2UserName = [NSString filterReturn:_reply2UserName];
+    _reply2UserName = [NSString filterNewLine:_reply2UserName];
     return _reply2UserName;
 }
 @end
 
+#pragma mark - RRSeniorCommentsListModel 评论List
 @implementation RRSeniorCommentsListModel
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
@@ -57,12 +58,7 @@
 }
 @end
 
-#pragma mark - RRSeniorCommentsReplyModel 回复
-////回复
-//@implementation RRSeniorCommentsReplyModel
-//
-//@end
-
+#pragma mark - RRSeniorCommentsReplyModel 回复List
 @implementation RRSeniorCommentsReplyListModel
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
@@ -70,9 +66,34 @@
 }
 @end
 
+//#pragma mark - RRDramaCommentsListModel 影评Model
+//@implementation RRDramaCommentsModel
+//
+//@end
+//
+//#pragma mark - RRDramaCommentsListModel 影评List
+//@implementation RRDramaCommentsListModel
+//
+//+ (NSDictionary *)modelContainerPropertyGenericClass {
+//    return @{@"content" : [RRSeniorCommentsModel class]};
+//}
+//@end
+
+#pragma mark - RRSeniorCommentsImageModel 图片
 @implementation RRSeniorCommentsImageModel
 - (NSString *)url {
     return _url ?: @"";
 }
+
+//请勿删除，删除会崩溃
+- (NSInteger)width {
+    return _width > 0 ? _width : 200;
+}
+
+//请勿删除，删除会崩溃
+- (NSInteger)height {
+    return _height > 0 ? _height : 200;
+}
 @end
+
 

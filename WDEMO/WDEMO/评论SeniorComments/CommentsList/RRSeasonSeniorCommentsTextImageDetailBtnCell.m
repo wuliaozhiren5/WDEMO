@@ -1,14 +1,14 @@
 //
-//  RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.m
-//  PUClient
+//  RRSeasonSeniorCommentsTextImageDetailBtnCell.m
+//  NJVideo
 //
-//  Created by rrtv on 2021/5/28.
+//  Created by rrtv on 2021/8/11.
 //  Copyright © 2021 RRMJ. All rights reserved.
 //
 
-#import "RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.h"
+#import "RRSeasonSeniorCommentsTextImageDetailBtnCell.h"
 
-@implementation RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell
+@implementation RRSeasonSeniorCommentsTextImageDetailBtnCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

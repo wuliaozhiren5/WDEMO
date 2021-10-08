@@ -11,6 +11,9 @@
 
 @interface RRSeasonSeniorCommentsPhotoCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
+@property (nonatomic, assign) CGFloat maxWidth;
+@property (nonatomic, assign) CGFloat maxHeight;
+
 @end
 
 @implementation RRSeasonSeniorCommentsPhotoCollectionView
@@ -18,6 +21,8 @@
 - (instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout{
     self = [super initWithFrame:frame collectionViewLayout:layout];
     if (self) {
+        _maxWidth = frame.size.width;
+        _maxHeight = frame.size.height;
         [self setupViews];
     }
     return self;
@@ -61,8 +66,8 @@
     NSLog(@"%@",cell);
     NSLog(@"%@",indexPath);
 
-    if (self.collectionViewDelegate && [self.collectionViewDelegate respondsToSelector:@selector(seasonSeniorCommentsMultiImageCollectionView:didSelectItemAtIndexPath:)]) {
-        [self.collectionViewDelegate seasonSeniorCommentsMultiImageCollectionView:self didSelectItemAtIndexPath:indexPath];
+    if (self.collectionViewDelegate && [self.collectionViewDelegate respondsToSelector:@selector(seasonSeniorCommentsPhotoCollectionView:didSelectItemAtIndexPath:)]) {
+        [self.collectionViewDelegate seasonSeniorCommentsPhotoCollectionView:self didSelectItemAtIndexPath:indexPath];
     }
 }
 
@@ -82,25 +87,31 @@
         CGFloat showWidth = 0;
         CGFloat showHeight = 0;
         
-        if (width > height) {
-            showWidth = max * 4 / 3;
-            showHeight = max;
-            
-        } else if (width < height) {
-            showWidth = max;
-            showHeight = max * 4 / 3;
-            
-        } else {
-            showWidth = max;
-            showHeight = max;
-        }
+//        if (width > height) {
+//            showWidth = max * 4 / 3;
+//            showHeight = max;
+//            
+//        } else if (width < height) {
+//            showWidth = max;
+//            showHeight = max * 4 / 3;
+//            
+//        } else {
+//            showWidth = max;
+//            showHeight = max;
+//        }
+        
+        //5.9UI展示逻辑修改
+        showWidth = _maxWidth - 100;
+        showHeight = showWidth;
+        
         return CGSizeMake(showWidth, showHeight);
     } else {
         //大于1张图
         //间距
-        CGFloat spacing = 5;
+        CGFloat imageSpacing = 2;
         //单个长度
-        CGFloat width = (KWidth - 61 - 16 - spacing * 2) / 3;
+//        CGFloat width = (KWidth - 61 - 16 - imageSpacing * 2) / 3;
+        CGFloat width = (self.maxWidth - imageSpacing * 2) / 3;
         return CGSizeMake(width, width);
     }
 }
@@ -114,7 +125,7 @@
 //CGFloat minimumLineSpacing：最小行间隔，同样你也可以通过-* collectionView:minimumLineSpacingForSectionAtIndex:方法来个没一行设置不同的行间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section  {
     //     设置最小行间距
-    return 5.0;
+    return 2.0;
 }
 
 //CGFloat minimumInteritemSpacing：最小cell之间的距离，同上都是可以通过-collectionView:minimumInteritemSpacingForSectionAtIndex:特定的方法，顶底到具体的行和item之间的间距的，非常的灵活。
@@ -122,14 +133,6 @@
     //    设置同一列中间隔的cell最小间距
     return 0.0;
 }
-
-//- (RRSeasonSeniorCommentsPhotoCollectionViewCell *)collectionViewCellWithIndex:(NSInteger)index {
-//    if (index < 0 || index > self.data.count - 1 || !self.data.count) {
-//        return nil;
-//    }
-//    RRSeasonSeniorCommentsPhotoCollectionViewCell *cell = (RRSeasonSeniorCommentsPhotoCollectionViewCell *)[self cellForItemAtIndexPath:[NSIndexPath indexPathForItem:index inSection:0]];
-//    return cell;
-//}
 
 - (void)setData:(NSArray *)data {
     _data = data;

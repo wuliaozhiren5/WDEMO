@@ -1,15 +1,14 @@
 //
-//  RRSeasonSeniorCommentsSecondaryReplyCell.m
-//  PUClient
+//  RRSeasonSeniorCommentsReplyTextImageCell.m
+//  NJVideo
 //
-//  Created by rrtv on 2021/4/12.
+//  Created by rrtv on 2021/8/12.
 //  Copyright © 2021 RRMJ. All rights reserved.
 //
 
-#import "RRSeasonSeniorCommentsSecondaryReplyCell.h"
-#import "YYKit.h"
+#import "RRSeasonSeniorCommentsReplyTextImageCell.h"
 
-@implementation RRSeasonSeniorCommentsSecondaryReplyCell
+@implementation RRSeasonSeniorCommentsReplyTextImageCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -36,11 +35,14 @@
 
 - (void)setupViews {
     [super setupViews];
-    
 }
 
 - (void)setModel:(RRSeniorCommentsModel *)model {
     [super setModel:model];
+    //填充数据
+    CGFloat contentLabTop = [[self class] getContentLabTop];
+    CGFloat spacing = [[self class] getSpacing];
+    CGFloat bottomViewHeight = [[self class] getBottomViewHeight];
     
     //回复小姐姐：漫威10年，最喜欢的超级英雄排名最喜欢的超级英雄排名名
     NSString *replyNicknameStr = model.reply2UserName ?: @"";
@@ -113,12 +115,20 @@
 
     CGSize yySize = CGSizeMake((KWidth - 61 - 16), CGFLOAT_MAX);
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
-    CGRect rect = layout.textBoundingRect;
-    //        CGSize size = layout.textBoundingSize;
+//    CGRect rect = layout.textBoundingRect;
+    CGSize size = layout.textBoundingSize;
     self.yyContentLab.attributedText = text;
-    self.yyContentLab.frame = CGRectMake(61, 34, (KWidth - 61 - 16), rect.size.height + 1);
+    self.yyContentLab.frame = CGRectMake(61, contentLabTop, (KWidth - 61 - 16), size.height);
     
-    CGFloat currentHeight = 34 + rect.size.height + 1;
+    //当前高度
+    CGFloat currentHeight = contentLabTop - spacing;
+    //文字高度
+    CGFloat textViewHeight = self.yyContentLab.frame.size.height;
+    if (textViewHeight > 0) {
+        currentHeight = currentHeight + spacing + textViewHeight;
+    }
+    //    CGFloat currentHeight = contentLabTop + rect.size.height;
+    //图片高度
     CGFloat imageViewHeight = 0;
     NSInteger imageCount = model.images.count;
     if (imageCount == 1) {
@@ -127,35 +137,28 @@
         CGFloat width = singleImage.width;
         CGFloat height = singleImage.height;
         CGFloat x = 61;
-        CGFloat y = 8 + currentHeight;
+        CGFloat y = spacing + currentHeight;
         CGFloat max = 197;
         CGFloat showWidth = 0;
         CGFloat showHeight = 0;
         
-        if (width > height) {
-            showWidth = max * 4 / 3;
-            showHeight = max;
-
-        } else if (width < height) {
-            showWidth = max;
-            showHeight = max * 4 / 3;
-
-        } else {
-            showWidth = max;
-            showHeight = max;
-            
-        }
-//        self.singleImageView.hidden = NO;
-//        self.singleImageView.frame = CGRectMake(x, y, showWidth, showHeight);
-////        [self.singleImageView rr_setImageWithURLString:singleImage.url  placeholderImage:KplaceholderImg];
-//        [self.singleImageView rr_downloadImageWithURLString:singleImage.url placeholderImage:KplaceholderImg];
+//        if (width > height) {
+//            showWidth = max * 4 / 3;
+//            showHeight = max;
 //
-//        self.photoCollectionView.hidden = YES;
-//        self.photoCollectionView.frame = CGRectZero;
-//        imageViewHeight = showHeight;
-         
-//        self.singleImageView.hidden = YES;
-//        self.singleImageView.frame = CGRectZero;
+//        } else if (width < height) {
+//            showWidth = max;
+//            showHeight = max * 4 / 3;
+//
+//        } else {
+//            showWidth = max;
+//            showHeight = max;
+//
+//        }
+        
+        //5.9UI展示逻辑修改
+        showWidth = (KWidth - 61 - 16) - 100;
+        showHeight = showWidth;
         
         self.photoCollectionView.hidden = NO;
         self.photoCollectionView.frame = CGRectMake(x, y, showWidth, showHeight);
@@ -168,9 +171,9 @@
         //最大高度
         CGFloat maxHeight = maxWidth;
         //间距
-        CGFloat spacing = 5;
+        CGFloat imageSpacing = 2;
         //单个长度
-        CGFloat oneImageWidth = (KWidth - 61 - 16 - spacing * 2) / 3;
+        CGFloat oneImageWidth = (KWidth - 61 - 16 - imageSpacing * 2) / 3;
         //最大高度
         CGFloat oneImageHeight = oneImageWidth;
         //实际长度
@@ -179,7 +182,7 @@
         CGFloat multiImageViewHeight = 0;
   
         CGFloat x = 61;
-        CGFloat y = 8 + currentHeight;
+        CGFloat y = spacing + currentHeight;
         
         switch (imageCount) {
             case 0:
@@ -188,21 +191,21 @@
                 multiImageViewHeight = 0;
                 break;
             case 2:
-                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewWidth = oneImageWidth * imageCount + imageSpacing * (imageCount - 1);
                 multiImageViewHeight = oneImageHeight;
                 break;
             case 3:
-                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewWidth = oneImageWidth * imageCount + imageSpacing * (imageCount - 1);
                 multiImageViewHeight = oneImageHeight;
                 break;
             case 4:
-                multiImageViewWidth = oneImageWidth * 2 + spacing;
-                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                multiImageViewWidth = oneImageWidth * 2 + imageSpacing;
+                multiImageViewHeight = oneImageHeight * 2 + imageSpacing;
                 break;
             case 5:
             case 6:
-                multiImageViewWidth = oneImageWidth * 3 + spacing * 2;
-                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                multiImageViewWidth = oneImageWidth * 3 + imageSpacing * 2;
+                multiImageViewHeight = oneImageHeight * 2 + imageSpacing;
                 break;
             case 7:
             case 8:
@@ -233,20 +236,24 @@
     }
 
     if (imageViewHeight > 0) {
-        currentHeight = currentHeight + 8 + imageViewHeight;
+        currentHeight = currentHeight + spacing + imageViewHeight;
     }
-    self.bottomView.frame = CGRectMake(0, currentHeight, KWidth, 45);
+    self.bottomView.frame = CGRectMake(0, currentHeight, KWidth, bottomViewHeight);
 }
 
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model {
     if (!model) {
         return 0;
     }
+    //填充数据
+    CGFloat contentLabTop = [self getContentLabTop];
+    CGFloat spacing = [self getSpacing];
+    CGFloat bottomViewHeight = [self getBottomViewHeight];
     
     YYLabel *yyContentLab = [YYLabel new];
     yyContentLab.frame = CGRectMake(0, 0, KWidth - 61 - 16, 300);
     yyContentLab.font = RR_COMMONFONT(14);
-    yyContentLab.lineBreakMode = NSLineBreakByCharWrapping;
+//    yyContentLab.lineBreakMode = NSLineBreakByCharWrapping;
     yyContentLab.numberOfLines = 0;
     
     //回复小姐姐：漫威10年，最喜欢的超级英雄排名最喜欢的超级英雄排名名
@@ -306,10 +313,20 @@
     
     CGSize yySize = CGSizeMake((KWidth - 61 - 16), CGFLOAT_MAX);
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
-    CGRect rect = layout.textBoundingRect;
-    //        CGSize size = layout.textBoundingSize;
-
-    CGFloat currentHeight = 34 + rect.size.height + 1;
+//    CGRect rect = layout.textBoundingRect;
+    CGSize size = layout.textBoundingSize;
+    yyContentLab.attributedText = text;
+    yyContentLab.frame = CGRectMake(61, contentLabTop, (KWidth - 61 - 16), size.height);;
+   
+    //当前高度
+    CGFloat currentHeight = contentLabTop - spacing;
+    //文字高度
+    CGFloat textViewHeight = yyContentLab.frame.size.height;
+    if (textViewHeight > 0) {
+        currentHeight = currentHeight + spacing + textViewHeight;
+    }
+    //    CGFloat currentHeight = contentLabTop + rect.size.height;
+    //图片高度
     CGFloat imageViewHeight = 0;
     NSInteger imageCount = model.images.count;
     if (imageCount == 1) {
@@ -318,24 +335,29 @@
         CGFloat width = singleImage.width;
         CGFloat height = singleImage.height;
         CGFloat x = 61;
-        CGFloat y = 8 + currentHeight;
+        CGFloat y = spacing + currentHeight;
         CGFloat max = 197;
         CGFloat showWidth = 0;
         CGFloat showHeight = 0;
         
-        if (width > height) {
-            showWidth = max * 4 / 3;
-            showHeight = max;
-
-        } else if (width < height) {
-            showWidth = max;
-            showHeight = max * 4 / 3;
-
-        } else {
-            showWidth = max;
-            showHeight = max;
-            
-        }
+//        if (width > height) {
+//            showWidth = max * 4 / 3;
+//            showHeight = max;
+//
+//        } else if (width < height) {
+//            showWidth = max;
+//            showHeight = max * 4 / 3;
+//
+//        } else {
+//            showWidth = max;
+//            showHeight = max;
+//
+//        }
+        
+        //5.9UI展示逻辑修改
+        showWidth = (KWidth - 61 - 16) - 100;
+        showHeight = showWidth;
+        
         imageViewHeight = showHeight;
     } else if (imageCount > 1) {
         //大于1张图
@@ -344,9 +366,9 @@
         //最大高度
         CGFloat maxHeight = maxWidth;
         //间距
-        CGFloat spacing = 5;
+        CGFloat imageSpacing = 2;
         //单个长度
-        CGFloat oneImageWidth = (KWidth - 61 - 16 - spacing * 2) / 3;
+        CGFloat oneImageWidth = (KWidth - 61 - 16 - imageSpacing * 2) / 3;
         //最大高度
         CGFloat oneImageHeight = oneImageWidth;
         //实际长度
@@ -355,7 +377,7 @@
         CGFloat multiImageViewHeight = 0;
   
         CGFloat x = 61;
-        CGFloat y = 8 + currentHeight;
+        CGFloat y = spacing + currentHeight;
         
         switch (imageCount) {
             case 0:
@@ -364,21 +386,21 @@
                 multiImageViewHeight = 0;
                 break;
             case 2:
-                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewWidth = oneImageWidth * imageCount + imageSpacing * (imageCount - 1);
                 multiImageViewHeight = oneImageHeight;
                 break;
             case 3:
-                multiImageViewWidth = oneImageWidth * imageCount + spacing * (imageCount - 1);
+                multiImageViewWidth = oneImageWidth * imageCount + imageSpacing * (imageCount - 1);
                 multiImageViewHeight = oneImageHeight;
                 break;
             case 4:
-                multiImageViewWidth = oneImageWidth * 2 + spacing;
-                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                multiImageViewWidth = oneImageWidth * 2 + imageSpacing;
+                multiImageViewHeight = oneImageHeight * 2 + imageSpacing;
                 break;
             case 5:
             case 6:
-                multiImageViewWidth = oneImageWidth * 3 + spacing * 2;
-                multiImageViewHeight = oneImageHeight * 2 + spacing;
+                multiImageViewWidth = oneImageWidth * 3 + imageSpacing * 2;
+                multiImageViewHeight = oneImageHeight * 2 + imageSpacing;
                 break;
             case 7:
             case 8:
@@ -398,11 +420,10 @@
     }
 
     if (imageViewHeight > 0) {
-        currentHeight = currentHeight + 8 + imageViewHeight;
+        currentHeight = currentHeight + spacing + imageViewHeight;
     }
  
-    return 45 + currentHeight;
+    return bottomViewHeight + currentHeight;
 }
 
 @end
- 

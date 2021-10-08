@@ -230,6 +230,9 @@
 //模块背景色  二级回复,帖子里的转发内容
 #define kCOLOR_dynamicProvider_F6F7F8_2A2A2A [UIColor colorWithDynamicProviderColor:@[RGB(0xF6, 0xF7, 0xF8),RGB(0x2a, 0x2a, 0x2a)]]
 #define kCOLOR_dynamicProvider_F7F8FA_2A2A2A [UIColor colorWithDynamicProviderColor:@[RGB(0xF7, 0xF8, 0xFA),RGB(0x2a, 0x2a, 0x2a)]]
+//评论回复view背景色
+#define kCOLOR_dynamicProvider_F7F8FA_292B31 [UIColor colorWithDynamicProviderColor:@[RGB(0xF7, 0xF8, 0xFA),RGB(0x29, 0x2B, 0x31)]]
+
 //输入框背景色 搜索讨论弹幕
 #define kCOLOR_dynamicProvider_F2F4F5_2E2E2E       [UIColor colorWithDynamicProviderColor:@[RGB(0xF2, 0xF4, 0xF5),RGB(0x2E, 0x2E, 0x2E)]]
 
@@ -238,6 +241,7 @@
 
 //输入框背景色 搜索结果页面
 #define kCOLOR_dynamicProvider_F2F4F5_2D2E33       [UIColor colorWithDynamicProviderColor:@[RGB(0xF2, 0xF4, 0xF5),RGB(0x2D, 0x2E, 0x33)]]
+#define kCOLOR_dynamicProvider_F2F4F5_2F3137       [UIColor colorWithDynamicProviderColor:@[RGB(0xF2, 0xF4, 0xF5),RGB(0x2F, 0x31, 0x37)]]
 
  #pragma mark ---卡片背景色---
 #define kCOLOR_dynamicProvider_FFFFFF_2C2C2C       [UIColor colorWithDynamicProviderColor:@[RGB(0xff, 0xff, 0xff),RGB(0x2c, 0x2c, 0x2c)]]

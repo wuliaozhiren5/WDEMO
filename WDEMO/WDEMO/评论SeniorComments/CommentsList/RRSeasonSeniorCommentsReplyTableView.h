@@ -20,7 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface RRSeasonSeniorCommentsReplyTableView : UITableView
-@property (nonatomic, strong) RRSeniorCommentsModel *model;
+@property (nonatomic, strong) RRSeniorCommentsModel *model; 
 @property (nonatomic, copy) NSArray *data;
 @property (nonatomic, assign) NSInteger count;
 @property (nonatomic, assign) BOOL isHalf;          //半屏
@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RRSeasonSeniorCommentsReplyTableViewCell : UITableViewCell
 @property (nonatomic, strong)RRSeniorCommentsModel *model;
 @property (nonatomic, assign) BOOL isHalf;          //半屏
-+ (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model;
++ (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model; 
 @end
 
 NS_ASSUME_NONNULL_END

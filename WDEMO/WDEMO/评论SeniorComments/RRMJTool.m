@@ -81,4 +81,20 @@
     return linesArray;
 }
 
+//判断中英混合的的字符串长度
++ (int)convertToInt:(NSString*)strtemp {
+    int strlength = 0;
+    char *p = (char *)[strtemp cStringUsingEncoding:NSUnicodeStringEncoding];
+    for (int i=0; i < [strtemp lengthOfBytesUsingEncoding:NSUnicodeStringEncoding]; i++) {
+        if (*p) {
+            p++;
+            strlength++;
+        }
+        else {
+            p++;
+        }
+    }
+    return strlength;
+}
+
 @end

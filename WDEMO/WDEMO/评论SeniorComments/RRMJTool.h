@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSArray *)getSeparatedLinesFromYYLabel:(YYLabel *)yyLabel;
 //获取行数
 + (NSArray *)getSeparatedLinesFromLabel:(UILabel *)label;
+//判断中英混合的的字符串长度
++ (int)convertToInt:(NSString*)strtemp;
 @end
 
 NS_ASSUME_NONNULL_END
