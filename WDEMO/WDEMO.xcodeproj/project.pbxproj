@@ -253,6 +253,7 @@
 		F5A9F13924E3D44B00F611E6 /* SeeLivingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13824E3D44A00F611E6 /* SeeLivingBaseCell.m */; };
 		F5A9F13C24E3EC2400F611E6 /* SeeLivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */; };
 		F5AC7C2A271020FD00533793 /* 锁@synchronized.md in Resources */ = {isa = PBXBuildFile; fileRef = F5AC7C29271020FD00533793 /* 锁@synchronized.md */; };
+		F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */ = {isa = PBXBuildFile; fileRef = F5AC7C2B2710276800533793 /* github开发人员在七夕搞事情.md */; };
 		F5B1FE6B2621AC6C004B950C /* TableviewSectionHeader不悬停.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */; };
 		F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B30F6524F8D3F8003DFB2E /* RAC.md */; };
 		F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A92F2508F502002505AE /* FullScreenMessageController.m */; };
@@ -827,6 +828,7 @@
 		F5A9F13A24E3EC2400F611E6 /* SeeLivingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeeLivingModel.h; sourceTree = "<group>"; };
 		F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeeLivingModel.m; sourceTree = "<group>"; };
 		F5AC7C29271020FD00533793 /* 锁@synchronized.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "锁@synchronized.md"; sourceTree = "<group>"; };
+		F5AC7C2B2710276800533793 /* github开发人员在七夕搞事情.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "github开发人员在七夕搞事情.md"; sourceTree = "<group>"; };
 		F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "TableviewSectionHeader不悬停.md"; sourceTree = "<group>"; };
 		F5B30F6524F8D3F8003DFB2E /* RAC.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RAC.md; sourceTree = "<group>"; };
 		F5B5A92E2508F501002505AE /* HalfScreenMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenMessageController.h; sourceTree = "<group>"; };
@@ -1185,6 +1187,7 @@
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
 				F5AC7C29271020FD00533793 /* 锁@synchronized.md */,
+				F5AC7C2B2710276800533793 /* github开发人员在七夕搞事情.md */,
 				F5F3665926F0D82A00E5D767 /* 预加载isPrefetchingEnabled.md */,
 				F5CA668C26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md */,
 				F51A9E0326D6734400A15993 /* 判断中英混合的的字符串长度.md */,
@@ -2691,6 +2694,7 @@
 				F5D05B7425BAB18000A4C6EC /* 阴影.md in Resources */,
 				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
+				F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */,
 				F5CA140726B2A2DC00D8A7AE /* post_normal@2x.png in Resources */,
 				F5F2274826BA939B002EB4FC /* self.view = nil.md in Resources */,
 				F5CA13AA26B2928700D8A7AE /* ic_bottombar_vip_h@2x.png in Resources */,
