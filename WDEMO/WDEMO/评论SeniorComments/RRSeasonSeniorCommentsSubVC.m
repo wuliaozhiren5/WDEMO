@@ -656,7 +656,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     //点击cell回复
-    RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
+    RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
     [self clickCommentWithModel:model];
     return;
 //    RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
