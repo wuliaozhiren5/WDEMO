@@ -1395,11 +1395,11 @@
 		F50440B72625A06B00834547 /* 评论SeniorComments */ = {
 			isa = PBXGroup;
 			children = (
+				F51C24C3263BF12B0010A298 /* Model */,
+				F5091DDA268C22A1000884D1 /* json数据 */,
 				F5409A9726B1051B0042F29D /* RRMJTool.h */,
 				F5409A9826B1051B0042F29D /* RRMJTool.m */,
 				F5446CB8268DADA80076961A /* NewSeniorCommentsMessage */,
-				F51C24C3263BF12B0010A298 /* Model */,
-				F5091DDA268C22A1000884D1 /* json数据 */,
 				F50440C02625A06B00834547 /* RRSeasonSeniorCommentsSubVC.h */,
 				F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */,
 				F50440BC2625A06B00834547 /* RRSeasonSeniorCommentsSecondarySubVC.h */,
