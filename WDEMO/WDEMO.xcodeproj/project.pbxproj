@@ -213,6 +213,8 @@
 		F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */; };
 		F58B4B402643FAF700D7C82D /* UIViewController+TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */; };
 		F58B4B462643FCD800D7C82D /* 回复.json in Resources */ = {isa = PBXBuildFile; fileRef = F58B4B452643FCD800D7C82D /* 回复.json */; };
+		F58E20DC2711672A00C4BB4F /* RRMessageSeasonCommentPositionListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F58E20D82711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.m */; };
+		F58E20E0271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58E20DE271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m */; };
 		F591AC2D26A13B970042802F /* 马甲包.md in Resources */ = {isa = PBXBuildFile; fileRef = F591AC2C26A13B970042802F /* 马甲包.md */; };
 		F591AC8B26A163D70042802F /* WConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F591AC8926A163D70042802F /* WConstants.m */; };
 		F591AC9726A1641B0042802F /* Vendors.m in Sources */ = {isa = PBXBuildFile; fileRef = F591AC9626A1641B0042802F /* Vendors.m */; };
@@ -752,6 +754,10 @@
 		F58B4B3E2643FAF700D7C82D /* UIViewController+TopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TopViewController.h"; sourceTree = "<group>"; };
 		F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TopViewController.m"; sourceTree = "<group>"; };
 		F58B4B452643FCD800D7C82D /* 回复.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "回复.json"; sourceTree = "<group>"; };
+		F58E20D82711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageSeasonCommentPositionListVC.m; sourceTree = "<group>"; };
+		F58E20D92711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMessageSeasonCommentPositionListVC.h; sourceTree = "<group>"; };
+		F58E20DE271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageSeniorCommentsPositionListVCViewController.m; sourceTree = "<group>"; };
+		F58E20DF271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMessageSeniorCommentsPositionListVCViewController.h; sourceTree = "<group>"; };
 		F591AC2C26A13B970042802F /* 马甲包.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包.md"; sourceTree = "<group>"; };
 		F591AC8926A163D70042802F /* WConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WConstants.m; sourceTree = "<group>"; };
 		F591AC8A26A163D70042802F /* WConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WConstants.h; sourceTree = "<group>"; };
@@ -1400,8 +1406,6 @@
 				F5409A9726B1051B0042F29D /* RRMJTool.h */,
 				F5409A9826B1051B0042F29D /* RRMJTool.m */,
 				F5446CB8268DADA80076961A /* NewSeniorCommentsMessage */,
-				F50440C02625A06B00834547 /* RRSeasonSeniorCommentsSubVC.h */,
-				F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */,
 				F55AB4A526295BB6008C5A25 /* CommentsList */,
 				F55AB4A626295C01008C5A25 /* ReplyList */,
 				F50440B92625A06B00834547 /* RRSeasonSeniorCommentsInputBar.h */,
@@ -1650,6 +1654,10 @@
 			children = (
 				F5446D01268DC1490076961A /* RRCommentPositionListModel.h */,
 				F5446D02268DC1490076961A /* RRCommentPositionListModel.m */,
+				F58E20D92711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.h */,
+				F58E20D82711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.m */,
+				F58E20DF271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.h */,
+				F58E20DE271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m */,
 			);
 			path = NewSeniorCommentsMessage;
 			sourceTree = "<group>";
@@ -1709,6 +1717,8 @@
 		F55AB4A526295BB6008C5A25 /* CommentsList */ = {
 			isa = PBXGroup;
 			children = (
+				F50440C02625A06B00834547 /* RRSeasonSeniorCommentsSubVC.h */,
+				F50440CC2625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m */,
 				F5AC7C3627102CBD00533793 /* RRSeasonSeniorCommentsCell.h */,
 				F5AC7C3327102CBD00533793 /* RRSeasonSeniorCommentsCell.m */,
 				F5AC7C3727102CBD00533793 /* RRSeasonSeniorCommentsHearder.h */,
@@ -3048,6 +3058,7 @@
 				F5A889BC24F65D9000DB73ED /* LoginViewModel.m in Sources */,
 				F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */,
 				F50D6D7525A9580D00B8C415 /* SearchViewController.m in Sources */,
+				F58E20E0271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m in Sources */,
 				F5609C9F250216BE00A13C15 /* RegisterSetPasswordVC.m in Sources */,
 				F5A763C6253D956800A76C6E /* Attributes.m in Sources */,
 				F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */,
@@ -3099,6 +3110,7 @@
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
 				F5446CE9268DB20C0076961A /* MyReply.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
+				F58E20DC2711672A00C4BB4F /* RRMessageSeasonCommentPositionListVC.m in Sources */,
 				F5CEF81C25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */,
 				F591ACBA26A16DED0042802F /* Logs.m in Sources */,

@@ -7,12 +7,10 @@
 //
 
 #import "BaseViewController.h"
-//#import "RRSeasonSeniorCommentsInputBar.h"
-#import "RRSeasonSeniorCommentsSecondaryInputBar.h"
+#import "RRSeasonSeniorCommentsPraiseBtnInputBar.h"
 //#import "RRCommentService.h"
 #import "RRSeasonSeniorCommentsHearder.h"
-//#import "RRSeasonSeniorCommentsNoReplyListCell.h"
-#import "RRSeasonSeniorCommentsSecondaryReplyCell.h"
+#import "RRSeasonSeniorCommentsTextImageCell.h"
 //#import "RRSeniorCommentsReplyListApi.h"
 //#import "RRImageGetTokenApi.h"
 //#import "RRImageUploadManager.h"
@@ -21,7 +19,7 @@
 //#import "NSString+ZY.h"
 //#import "RRCommentPositionListApi.h"
 #import "RRSeniorCommentsModel.h"
-
+#import "RRCommentPositionListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RRMessageSeasonCommentPositionListVC : BaseViewController
@@ -29,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) RRSeniorCommentsModel *commentModel;
 //@property (nonatomic, strong) RRCommentService *service;
 @property (nonatomic, strong) UITableView *tableView;
-@property (nonatomic, strong) RRSeasonSeniorCommentsSecondaryInputBar *bottomView;
+@property (nonatomic, strong) RRSeasonSeniorCommentsPraiseBtnInputBar *bottomView;
 
 @property (nonatomic, strong) UIView *header;
 @property (nonatomic, strong) UILabel *headerLab;
@@ -47,8 +45,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *__nullable replyId;  //子id
 
 /**
-剧集  season,
+类型
+剧集老 season
+剧集新 drama
 视频 video
+片单 album
+影评 drama_comment
 */
 @property (nonatomic,copy)NSString *targetType; //类型
 @property (nonatomic,copy)NSString *targetTypeId;//跳转id
@@ -56,7 +58,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL isNew;
 
 @property (nonatomic, copy) NSMutableArray *data;//数据
-
 @end
 
 

@@ -7,9 +7,10 @@
 //
 
 #import "RRMessageSeasonCommentPositionListVC.h"
-#import "RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell.h"
-#import "RRCommentPositionListModel.h"
+#import "RRSeasonSeniorCommentsTextImageDetailBtnCell.h"
+#import "RRSeasonSeniorCommentsReplyTextImageCell.h"
 //#import "RRQuicklookPushViewController.h"
+//#import "PriseDynamicApi.h"
 
 @interface RRMessageSeasonCommentPositionListVC () <UITableViewDataSource, UITableViewDelegate>
 
@@ -40,28 +41,27 @@
 //    self.customTabbar.hidden = NO;
 //    self.customTabbar.navTitle.text = @"回复详情";
 //    self.dataSource = [[RRDataSource alloc] init];
-    self.page = 0;
-    self.rows = 20;
-    self.isShowMore = NO;
-    //发送消息的type
-    if ([self.targetType isEqualToString:@"season"]) {
-        self.sendType = @"SEASON";
-    } else if ([self.targetType isEqualToString:@"video"]) {
-        self.sendType = @"VIDEO";
-    } else {
-        self.sendType = @"";
-    }
-    
+//    self.page = 0;
+//    self.rows = 20;
+//    self.isShowMore = NO;
+//    //发送消息的type
+//    if ([self.targetType isEqualToString:@"season"]) {
+//        self.sendType = @"SEASON";
+//    } else if ([self.targetType isEqualToString:@"video"]) {
+//        self.sendType = @"VIDEO";
+//    } else {
+//        self.sendType = @"";
+//    }
+//
 //    self.loadingView.hidden = NO;
-//    self.loadingView.center = CGPointMake(self.view.centerX, self.view.centerY - 99 - appMargin().top);
-//    self.noDataView.center = self.loadingView.center;
-    [self setupViews];
+////    self.loadingView.center = CGPointMake(self.view.centerX, self.view.centerY - 99 - appMargin().top);
+////    self.noDataView.center = self.loadingView.center;
+//    [self setupViews];
 //    [self.view bringSubviewToFront:self.loadingView];
 //    [self.view bringSubviewToFront:self.noDataView];
-    [self refreshData]; 
-}
-
-- (void)requestData {
+//    [self refreshData];
+    
+    [self setupViews];
     [self refreshData];
 }
 
@@ -83,6 +83,13 @@
     self.data = [NSMutableArray arrayWithArray:model.pageView.content];
     [self.tableView reloadData];
     
+}
+
+//- (void)requestData {
+//    [self refreshData];
+//}
+//
+//- (void)refreshData {
 //    if (self.dataSource.isLoading) {
 //        if (!self.dataSource.isRefreshing && self.tableView.mj_header.isRefreshing) {
 //            [self.tableView.mj_header endRefreshing];
@@ -92,9 +99,9 @@
 //    self.dataSource.isLoading = YES;    //loading中
 //    self.dataSource.isRefreshing = YES; //下拉加载
 //    [self loadDataWithPage:0];
-}
-
-- (void)loadMoreData {
+//}
+//
+//- (void)loadMoreData {
 //    if (self.dataSource.isLoading) {
 //        if (self.dataSource.isRefreshing && self.tableView.mj_footer.isRefreshing) {
 //            [self.tableView.mj_footer endRefreshing];
@@ -105,10 +112,10 @@
 //    self.dataSource.isRefreshing = NO;
 //
 //    [self loadDataWithPage:self.page + 1];
-}
-
-- (void)loadDataWithPage:(NSInteger)page {
-     
+//}
+//
+//- (void)loadDataWithPage:(NSInteger)page {
+//
 //    NSString *commentId = self.commentId;
 //    NSString *replyId = self.replyId;
 //    NSInteger currentPage = page;
@@ -143,9 +150,9 @@
 //        if (!self.commentModel) {
 //            if (model.parentCommentView) {
 //                self.commentModel = model.parentCommentView;
-//                self.bottomView.commentModel = self.commentModel;
 //                //显示
 //                self.bottomView.hidden = NO;
+//                self.bottomView.commentModel = self.commentModel;
 //            } else {
 //                //没有model.parentCommentView，说明主评论被删除了，所以手动把回复列表删除
 //                model.pageView.content = @[];
@@ -161,9 +168,9 @@
 //        [self addFooter];
 //        [self stopLoading];
 //    }];
-}
-
-- (void)stopLoading {
+//}
+//
+//- (void)stopLoading {
 //    [self.tableView.mj_footer endRefreshing];
 //    [self.tableView.mj_header endRefreshing];
 //
@@ -185,9 +192,9 @@
 //    self.noDataView.imageName = @"ic_reply_delete";
 //    [self.tableView reloadData];
 //    [self tableViewLocation];
-}
-
-- (void)addHeader {
+//}
+//
+//- (void)addHeader {
 ////    if (self.dataSource.dataArray.count <= 0) {
 ////        self.tableView.mj_header = nil;
 ////        return;
@@ -206,9 +213,9 @@
 //        [self refreshData];
 //    }];
 //    self.tableView.mj_header = header;
-}
-
-- (void)addFooter {
+//}
+//
+//- (void)addFooter {
 ////    if (self.dataSource.dataArray.count <= 0) {
 ////        self.tableView.mj_footer = nil;
 ////        return;
@@ -232,9 +239,9 @@
 //    footer.stateLabel.font = [UIFont systemFontOfSize:12];
 //    footer.stateLabel.textColor = kCOLOR_85888F;
 //    self.tableView.mj_footer = footer;
-}
+//}
 
-- (void)tableViewSectionHeader {
+- (void)createTableViewSectionHeader {
     //    NSInteger count = 10;
     //    NSString *text = [NSString stringWithFormat:@"%zi条回复", count];
     NSString *text = @"";
@@ -254,7 +261,10 @@
     if (!self.replyId) {
         return;
     }
- 
+    if (self.data.count <= 0) {
+        return;
+    }
+
     NSInteger index = -1;
     for (NSInteger i = 0; i < self.data.count; i++) {
         RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:i];
@@ -263,7 +273,7 @@
             break;
         }
     }
-    
+
     if (index < 0) {
         self.replyId = nil;
         return;
@@ -273,7 +283,7 @@
     //滚动到其相应的位置
     [self.tableView scrollToRowAtIndexPath:scrollIndexPath
             atScrollPosition:UITableViewScrollPositionTop animated:NO];
-  
+
     UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:1]];
 //    cell.contentView.backgroundColor = [UIColor redColor];
     UIView *colorView = [[UIView alloc] initWithFrame:cell.bounds];
@@ -298,7 +308,7 @@
 
 - (void)setupViews {
     
-    [self tableViewSectionHeader];
+    [self createTableViewSectionHeader];
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.bottomView];
     self.bottomView.hidden = YES;
@@ -311,6 +321,7 @@
     
     //        if (!self.isHalf) {
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.customTabbar.mas_bottom);
         make.top.equalTo(@(0));
         make.leading.equalTo(@(0));
         make.trailing.equalTo(@(0));
@@ -318,14 +329,58 @@
     }];
 }
 
+#pragma mark - 回复
 - (void)clickTextBtn:(UIButton *)btn {
-    //老评论
+//    //老评论
 //    NSString *str = [NSString stringWithFormat:@"回复%@", self.commentModel.author.nickName ?: @""];
 //    WS(weakSelf);
 //    [self.service showSingleTextType:RRCommentViewTypeReplyComment placeholder:str superView:nil submitBlock:^(NSString * _Nonnull content) {
 //        DLog(@"%@",content);
 //        [weakSelf articleReplay:content toComment:self.commentModel toReplyModel:nil imageArray:nil];
 //
+//    }];
+}
+
+#pragma mark - 点赞
+- (void)clickPraiseBtn:(UIButton *)btn {
+//    @weakify(self);
+//    [[RRAppLinkManager sharedManager] goLoginBlockToRoot:NO loginFinish:^(BOOL sucess) {
+//        @strongify(self);
+//        if (sucess) {
+//            NSString *typeId = self.commentModel.ID;
+//            BOOL liked = self.commentModel.liked;
+//            @weakify(self);
+//            PriseDynamicApi *api = [[PriseDynamicApi alloc] initWithDynamic:typeId andDel:liked ? @"YES" : @""];
+//            [api startWithCompletionBlock:^(RRJsonModel *result, NSError *error) {
+//                @strongify(self);
+//                if (!result) {
+//                    TOAST(error.localizedDescription);
+//                    return;
+//                } else {
+//                    if (!liked) {
+//                        if (result.code == 0 || result.code == 3001) {//"code": "3001", "msg": "已经添加过收藏",
+//                            TOAST(@"点赞成功");
+//                            self.commentModel.liked = YES;
+//                            self.commentModel.likeCount = self.commentModel.likeCount + 1;
+//                            self.bottomView.commentModel = self.commentModel;
+//
+//                        } else {
+//                            TOAST(result.msg);
+//                        }
+//                    } else {
+//                        if (result.code == 0 || result.code == 3002) {//"code": "3001", "msg": "已经添加过收藏",
+//                            TOAST(@"取消点赞");
+//                            self.commentModel.liked = NO;
+//                            self.commentModel.likeCount = self.commentModel.likeCount - 1;
+//                            self.bottomView.commentModel = self.commentModel;
+//
+//                        } else {
+//                            TOAST(result.msg);
+//                        }
+//                    }
+//                }
+//            }];
+//        }
 //    }];
 }
 
@@ -400,13 +455,13 @@
     switch (section) {
         case 0:
         {
-            return [RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell cellHeightWithModel:self.commentModel isShowAll:self.isShowMore];
+            return [RRSeasonSeniorCommentsTextImageDetailBtnCell cellHeightWithModel:self.commentModel isShowAll:    self.isShowMore];
         }
             break;
         default:
         {
             RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
-            return [RRSeasonSeniorCommentsSecondaryReplyCell cellHeightWithModel:model];
+            return [RRSeasonSeniorCommentsReplyTextImageCell cellHeightWithModel:model];
         }
             break;
     }
@@ -471,7 +526,7 @@
     switch (section) {
         case 0:
         {
-            RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell *cell = (RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell class]) forIndexPath:indexPath];
+            RRSeasonSeniorCommentsTextImageDetailBtnCell *cell = (RRSeasonSeniorCommentsTextImageDetailBtnCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageDetailBtnCell class]) forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.isHalf = NO;
             cell.isShowMore = self.isShowMore;
@@ -500,7 +555,7 @@
             break;
             
         default:{
-            RRSeasonSeniorCommentsSecondaryReplyCell *cell = (RRSeasonSeniorCommentsSecondaryReplyCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSecondaryReplyCell class]) forIndexPath:indexPath];
+            RRSeasonSeniorCommentsReplyTextImageCell *cell = (RRSeasonSeniorCommentsReplyTextImageCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyTextImageCell class]) forIndexPath:indexPath];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
             cell.isHalf = NO;
             RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
@@ -557,8 +612,8 @@
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        [_tableView registerClass:[RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsNoReplyListHasDetailBtnCell class])];
-        [_tableView registerClass:[RRSeasonSeniorCommentsSecondaryReplyCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSecondaryReplyCell class])];
+        [_tableView registerClass:[RRSeasonSeniorCommentsTextImageDetailBtnCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageDetailBtnCell class])];
+        [_tableView registerClass:[RRSeasonSeniorCommentsReplyTextImageCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsReplyTextImageCell class])];
         
         
         //        WS(weakSelf)
@@ -586,22 +641,22 @@
 
 - (UIView *)bottomView {
     if (!_bottomView) {
-        _bottomView = [[RRSeasonSeniorCommentsSecondaryInputBar alloc] initWithFrame:CGRectMake(0, 0, 320, 53)];
+        _bottomView = [[RRSeasonSeniorCommentsPraiseBtnInputBar alloc] initWithFrame:CGRectMake(0, 0, 320, 53)];
         [_bottomView.textBoxBtn addTarget:self action:@selector(clickTextBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_bottomView.praiseBtn addTarget:self action:@selector(clickPraiseBtn:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:_bottomView];
-        
-        [_bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.height.equalTo(@(53 - appMargin().bottom));
-            make.leading.equalTo(@(0));
-            make.trailing.equalTo(@(0));
-            make.bottom.equalTo(@(0));
-        }];
         //        [_bottomView sketchShadowWithOffsetX:0 offsetY:0 Blur:15 Spread:0 color:kCOLOR_dynamicProvider_Shadow_bar_000000Alpha008_000000Alpha14 alpha:1];
 //        [_bottomView sketchShadowWithBottomBar];
     }
     return _bottomView;
 }
 
+//- (RRCommentService *)service {
+//    if (!_service) {
+//        _service = [[RRCommentService alloc] init];
+//    }
+//    return _service;
+//}
 //- (NSString *)rr_UMemgPageName {
 //    return @"剧集详情页";
 //}
@@ -610,12 +665,12 @@
 //    return @"详情";
 //}
 
- 
-- (void)clickCellDetail{
-//    if ([self.targetType isEqualToString:@"season"]) {
+//查看详情
+- (void)clickCellDetail {
+    if ([self.targetType isEqualToString:@"season"]) {
 //        [[RRAppLinkManager sharedManager] goSeasonDetail:self.targetTypeId title:nil isMovie:NO toRoot:NO];
-//    } else if ([self.targetType isEqualToString:@"video"]) {
-//
+    } else if ([self.targetType isEqualToString:@"video"]) {
+        
 //        NSString *currentId = self.targetTypeId;
 //        NSMutableArray *idsArray = [NSMutableArray arrayWithArray:@[currentId]];
 //        RRQuicklookPushViewController *quicklookPushViewController = [RRQuicklookPushViewController new];
@@ -625,13 +680,14 @@
 ////        quicklookPushViewController.delegate = self;
 ////        quicklookPushViewController.page = self.dataSource.page;
 //        [[RRAppLinkManager sharedManager] pushViewController:quicklookPushViewController animated:YES];
-//
-//
-//    } else {
-//        return;;
-//    }
+        
+        
+    } else {
+        return;;
+    }
 }
 
+//回复
 - (void)clickCommentWithModel:(RRSeniorCommentsModel *)model {
 //    //老评论
 //    NSString *str = [NSString stringWithFormat:@"回复%@", model.author.nickName ?: @""];
@@ -642,6 +698,7 @@
 //    }];
 }
 
+//回复
 - (void)clickReplyWithModel:(RRSeniorCommentsModel *)model {
 //    //老评论
 //    NSString *str = [NSString stringWithFormat:@"回复%@", model.author.nickName ?: @""];
@@ -652,28 +709,30 @@
 //    }];
 }
 
-//二级回复
-- (void)replayBackResultModel:(RRSeniorCommentsModel *)model {
-    [self.data insertObject:model atIndex:0];
-    [self.tableView reloadData];
-    //获取到需要跳转位置的行数
-    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-    //滚动到其相应的位置
-    [self.tableView scrollToRowAtIndexPath:scrollIndexPath
-                          atScrollPosition:UITableViewScrollPositionTop animated:NO];
-}
+////二级回复
+//- (void)replayBackResultModel:(RRSeniorCommentsModel *)model {
+//    [self.dataSource.dataArray insertObject:model atIndex:0];
+//    self.commentModel.replyCount = self.commentModel.replyCount + 1;
+//    [self.tableView reloadData];
+//    //获取到需要跳转位置的行数
+//    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+//    //滚动到其相应的位置
+//    [self.tableView scrollToRowAtIndexPath:scrollIndexPath
+//                          atScrollPosition:UITableViewScrollPositionTop animated:NO];
+//}
 
-//三级回复
-- (void)replayBackResultLevelThreeModel:(RRSeniorCommentsModel *)model {
-    //    [self.dataSource.dataArray addObject:model];
-    [self.data insertObject:model atIndex:0];
-    [self.tableView reloadData];
-    //获取到需要跳转位置的行数
-    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
-    //滚动到其相应的位置
-    [self.tableView scrollToRowAtIndexPath:scrollIndexPath
-                          atScrollPosition:UITableViewScrollPositionTop animated:NO];
-}
+////三级回复
+//- (void)replayBackResultLevelThreeModel:(RRSeniorCommentsModel *)model {
+//    //    [self.dataSource.dataArray addObject:model];
+//    [self.dataSource.dataArray insertObject:model atIndex:0];
+//    self.commentModel.replyCount = self.commentModel.replyCount + 1;
+//    [self.tableView reloadData];
+//    //获取到需要跳转位置的行数
+//    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
+//    //滚动到其相应的位置
+//    [self.tableView scrollToRowAtIndexPath:scrollIndexPath
+//                          atScrollPosition:UITableViewScrollPositionTop animated:NO];
+//}
 
 //删除评论
 - (void)clickDeleteCommentWithModel:(RRSeniorCommentsModel *)model {
@@ -682,8 +741,9 @@
     //    }
     //    [self dismiss];
     
-    [self.navigationController popViewControllerAnimated:YES];
-//        [[RRAppLinkManager sharedManager] popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    
+//    [[RRAppLinkManager sharedManager] popViewControllerAnimated:YES];
 }
 
 //删除回复

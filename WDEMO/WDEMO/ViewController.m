@@ -103,7 +103,7 @@
 //评论
 #import "RRSeasonSeniorCommentsSubVC.h"
 //消息
-//#import "RRMessageSeasonCommentPositionListVC.h"
+#import "RRMessageSeasonCommentPositionListVC.h"
 //加载页
 #import "XXLoadingView.h"
 //TopViewController
@@ -1039,13 +1039,13 @@
 }
 
 - (void)clickMessageComment {
-//    RRMessageSeasonCommentPositionListVC *vc = [[RRMessageSeasonCommentPositionListVC alloc] init];
-////    vc.commentId = commentId;
-////    vc.replyId = replyId;
-////    vc.targetType = targetType;
-////    vc.targetTypeId = targetTypeId;
-////    vc.isNew = NO;
-//    [self.navigationController pushViewController:vc animated:YES];
+    RRMessageSeasonCommentPositionListVC *vc = [[RRMessageSeasonCommentPositionListVC alloc] init];
+//    vc.commentId = commentId;
+//    vc.replyId = replyId;
+//    vc.targetType = targetType;
+//    vc.targetTypeId = targetTypeId;
+//    vc.isNew = NO;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)clickArchiver {
