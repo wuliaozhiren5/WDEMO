@@ -114,6 +114,9 @@
     NSDictionary *dic = (NSDictionary *)jsonObj;
     RRSeniorCommentsReplyListModel *model = [RRSeniorCommentsReplyListModel modelWithJSON:dic[@"data"]];
     self.data = [NSMutableArray arrayWithArray:model.content];
+    
+    self.total = model.total;
+    
     [self.tableView reloadData];
     //显示
     self.tableView.hidden = NO;
