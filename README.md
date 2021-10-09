@@ -50,9 +50,9 @@ git
 6：没问题再 git push origin master 
 
 ``` 
-token
+token 90天
 
-git remote set-url origin https://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@github.com/wuliaozhiren5/WDEMO.git/
+git remote set-url origin https://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@github.com/wuliaozhiren5/WDEMO.git/
 
 
  
