@@ -52,7 +52,7 @@ git
 ``` 
 token 90天
 
-git remote set-url origin https://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@github.com/wuliaozhiren5/WDEMO.git/
+git remote set-url origin https://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@github.com/wuliaozhiren5/WDEMO.git/
 
 
  
