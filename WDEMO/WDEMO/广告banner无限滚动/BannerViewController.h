@@ -1,5 +1,5 @@
 //
-//  ScorllBannerViewController.h
+//  BannerViewController.h
 //  WDEMO
 //
 //  Created by rrtv on 2021/1/11.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ScorllBannerViewController : BaseViewController
+@interface BannerViewController : BaseViewController
 
 @end
 

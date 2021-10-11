@@ -45,8 +45,12 @@ typedef NS_ENUM(NSInteger, ListModelType) {
 //    ListModelTypeBanner,
     ListModelTypeComment,//评论
     ListModelTypeMessageComment,//我的消息评论详情
+    ListModelTypeDramaComment,//影视评论，影评
+
     ListModelTypeZZStar,//评分打分
     
+    
+    ListModelTypeBanner,//广告banner无限滚动
     ListModelTypeTest,//测试页面
 };
 

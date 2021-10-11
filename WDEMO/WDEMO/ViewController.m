@@ -110,6 +110,9 @@
 #import "UIViewController+TopViewController.h"
 //评分打分
 #import "ZZStarViewVC.h"
+//Banner
+#import "BannerViewController.h"
+#import "CarouseViewController.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -163,6 +166,8 @@
     
     
     NSArray * array = @[
+        [ListModel initWithTitle:@"banner" detail:@"广告banner无限滚动" type:ListModelTypeBanner],
+        [ListModel initWithTitle:@"影评" detail:@"影视评论，影评" type:ListModelTypeDramaComment],
         [ListModel initWithTitle:@"评论" detail:@"bilibili，爱奇艺，优酷评论UI）" type:ListModelTypeComment],
         [ListModel initWithTitle:@"我的消息评论详情" detail:@"bilibili，爱奇艺，优酷评论UI）" type:ListModelTypeMessageComment],
         [ListModel initWithTitle:@"新手引导（某个页面的新手引导）" detail:@"新手引导（某个页面的新手引导）" type:ListModelTypeNewHandGuide],
@@ -1048,11 +1053,27 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)clickDramaComment {
+ 
+}
+
 - (void)clickArchiver {
     //归档解档
     KeyedArchiverViewController *vc= [[KeyedArchiverViewController alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickBanner {
+    //Banner
+    BannerViewController *vc= [[BannerViewController alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    CarouseViewController *vc1= [[CarouseViewController alloc]init];
+    vc1.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc1 animated:YES];
+    
 }
 
 - (void)clickTest {
@@ -1330,6 +1351,16 @@
         case ListModelTypeMessageComment:
         {
             [self clickMessageComment];
+        }
+            break;
+        case ListModelTypeDramaComment:
+        {
+            [self clickDramaComment];
+        }
+            break;
+        case ListModelTypeBanner:
+        {
+            [self clickBanner];
         }
             break;
         default:

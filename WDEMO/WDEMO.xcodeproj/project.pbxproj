@@ -158,7 +158,7 @@
 		F5609CA92502235400A13C15 /* BaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CA82502235300A13C15 /* BaseTabBarController.m */; };
 		F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */ = {isa = PBXBuildFile; fileRef = F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */; };
 		F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609CAE25024E2600A13C15 /* AllScreenViewController.m */; };
-		F563DABE25AC24B80079474B /* ScorllBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DABD25AC24B80079474B /* ScorllBannerViewController.m */; };
+		F563DABE25AC24B80079474B /* BannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DABD25AC24B80079474B /* BannerViewController.m */; };
 		F563DAC525AC24E20079474B /* SearchResultSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DAC425AC24E20079474B /* SearchResultSubViewController.m */; };
 		F563DADA25AC26790079474B /* WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DACD25AC26790079474B /* WMPageController.m */; };
 		F563DADB25AC26790079474B /* UIViewController+WMPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F563DACE25AC26790079474B /* UIViewController+WMPageController.m */; };
@@ -332,6 +332,20 @@
 		F5D4EB6325DF6A8700F807EF /* ParentClassScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB6225DF6A8700F807EF /* ParentClassScrollViewController.m */; };
 		F5D4EB8425DF6B5500F807EF /* PersonalHomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D4EB8325DF6B5500F807EF /* PersonalHomePageVC.m */; };
 		F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */; };
+		F5D5C19C271415A10021C36E /* LXHBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C19A271415A10021C36E /* LXHBanner.m */; };
+		F5D5C1A22714161F0021C36E /* ContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C19F2714161F0021C36E /* ContentView.m */; };
+		F5D5C1A32714161F0021C36E /* LXHSlideView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C1A02714161F0021C36E /* LXHSlideView.m */; };
+		F5D5C1A52714164F0021C36E /* Demo.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1A42714164F0021C36E /* Demo.png */; };
+		F5D5C1A7271419AC0021C36E /* Demo1.png in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1A6271419AB0021C36E /* Demo1.png */; };
+		F5D5C1AA27141CE90021C36E /* WTCycleRollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C1A927141CE90021C36E /* WTCycleRollView.m */; };
+		F5D5C1AF271428D70021C36E /* CarouseViewPlus.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C1AC271428D60021C36E /* CarouseViewPlus.m */; };
+		F5D5C1B0271428D70021C36E /* CarouseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C1AD271428D70021C36E /* CarouseView.m */; };
+		F5D5C1B72714298D0021C36E /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B22714298C0021C36E /* 5.jpg */; };
+		F5D5C1B82714298D0021C36E /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B32714298C0021C36E /* 3.jpg */; };
+		F5D5C1B92714298D0021C36E /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B42714298D0021C36E /* 1.jpg */; };
+		F5D5C1BA2714298D0021C36E /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B52714298D0021C36E /* 4.jpg */; };
+		F5D5C1BB2714298D0021C36E /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B62714298D0021C36E /* 2.jpg */; };
+		F5D5C1BE271429CD0021C36E /* CarouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C1BD271429CD0021C36E /* CarouseViewController.m */; };
 		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
 		F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */; };
 		F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32724CEBB66009A6767 /* MessageController.m */; };
@@ -669,8 +683,8 @@
 		F5609CAC25022F3100A13C15 /* 暗黑模式 深色模式.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "暗黑模式 深色模式.md"; sourceTree = "<group>"; };
 		F5609CAE25024E2600A13C15 /* AllScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllScreenViewController.m; sourceTree = "<group>"; };
 		F5609CAF25024E2600A13C15 /* AllScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllScreenViewController.h; sourceTree = "<group>"; };
-		F563DABC25AC24B80079474B /* ScorllBannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScorllBannerViewController.h; sourceTree = "<group>"; };
-		F563DABD25AC24B80079474B /* ScorllBannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScorllBannerViewController.m; sourceTree = "<group>"; };
+		F563DABC25AC24B80079474B /* BannerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BannerViewController.h; sourceTree = "<group>"; };
+		F563DABD25AC24B80079474B /* BannerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BannerViewController.m; sourceTree = "<group>"; };
 		F563DAC325AC24E20079474B /* SearchResultSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultSubViewController.h; sourceTree = "<group>"; };
 		F563DAC425AC24E20079474B /* SearchResultSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultSubViewController.m; sourceTree = "<group>"; };
 		F563DACD25AC26790079474B /* WMPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMPageController.m; sourceTree = "<group>"; };
@@ -953,6 +967,27 @@
 		F5D4EB8325DF6B5500F807EF /* PersonalHomePageVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalHomePageVC.m; sourceTree = "<group>"; };
 		F5D54BFE2553F35400787EBB /* ChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatBottomInputBarViewController.h; sourceTree = "<group>"; };
 		F5D54BFF2553F35400787EBB /* ChatBottomInputBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatBottomInputBarViewController.m; sourceTree = "<group>"; };
+		F5D5C19A271415A10021C36E /* LXHBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHBanner.m; sourceTree = "<group>"; };
+		F5D5C19B271415A10021C36E /* LXHBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHBanner.h; sourceTree = "<group>"; };
+		F5D5C19E2714161F0021C36E /* LXHSlideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LXHSlideView.h; sourceTree = "<group>"; };
+		F5D5C19F2714161F0021C36E /* ContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentView.m; sourceTree = "<group>"; };
+		F5D5C1A02714161F0021C36E /* LXHSlideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LXHSlideView.m; sourceTree = "<group>"; };
+		F5D5C1A12714161F0021C36E /* ContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentView.h; sourceTree = "<group>"; };
+		F5D5C1A42714164F0021C36E /* Demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Demo.png; sourceTree = "<group>"; };
+		F5D5C1A6271419AB0021C36E /* Demo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Demo1.png; sourceTree = "<group>"; };
+		F5D5C1A827141CE90021C36E /* WTCycleRollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTCycleRollView.h; sourceTree = "<group>"; };
+		F5D5C1A927141CE90021C36E /* WTCycleRollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTCycleRollView.m; sourceTree = "<group>"; };
+		F5D5C1AB271428D60021C36E /* CarouseViewPlus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouseViewPlus.h; sourceTree = "<group>"; };
+		F5D5C1AC271428D60021C36E /* CarouseViewPlus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouseViewPlus.m; sourceTree = "<group>"; };
+		F5D5C1AD271428D70021C36E /* CarouseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouseView.m; sourceTree = "<group>"; };
+		F5D5C1AE271428D70021C36E /* CarouseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouseView.h; sourceTree = "<group>"; };
+		F5D5C1B22714298C0021C36E /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		F5D5C1B32714298C0021C36E /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		F5D5C1B42714298D0021C36E /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		F5D5C1B52714298D0021C36E /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
+		F5D5C1B62714298D0021C36E /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		F5D5C1BC271429CD0021C36E /* CarouseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouseViewController.h; sourceTree = "<group>"; };
+		F5D5C1BD271429CD0021C36E /* CarouseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouseViewController.m; sourceTree = "<group>"; };
 		F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListView.h; sourceTree = "<group>"; };
 		F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMemberListView.m; sourceTree = "<group>"; };
 		F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListCell.h; sourceTree = "<group>"; };
@@ -2132,9 +2167,16 @@
 		F5B95DFA25A5EA3C00911FF8 /* 广告banner无限滚动 */ = {
 			isa = PBXGroup;
 			children = (
+				F5D5C1B1271428E80021C36E /* 比较好的DEMO */,
+				F5D5C1A42714164F0021C36E /* Demo.png */,
+				F5D5C1A6271419AB0021C36E /* Demo1.png */,
+				F5D5C19D2714161F0021C36E /* SlideView */,
+				F5D5C199271415A10021C36E /* BannerView */,
 				F50D6D9C25A9675200B8C415 /* 广告banner无限滚动.md */,
-				F563DABC25AC24B80079474B /* ScorllBannerViewController.h */,
-				F563DABD25AC24B80079474B /* ScorllBannerViewController.m */,
+				F563DABC25AC24B80079474B /* BannerViewController.h */,
+				F563DABD25AC24B80079474B /* BannerViewController.m */,
+				F5D5C1A827141CE90021C36E /* WTCycleRollView.h */,
+				F5D5C1A927141CE90021C36E /* WTCycleRollView.m */,
 			);
 			path = "广告banner无限滚动";
 			sourceTree = "<group>";
@@ -2384,6 +2426,44 @@
 				F593574625F7466A008CF0D8 /* ThirdViewCollectionViewController.m */,
 			);
 			path = subvc;
+			sourceTree = "<group>";
+		};
+		F5D5C199271415A10021C36E /* BannerView */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5C19B271415A10021C36E /* LXHBanner.h */,
+				F5D5C19A271415A10021C36E /* LXHBanner.m */,
+			);
+			path = BannerView;
+			sourceTree = "<group>";
+		};
+		F5D5C19D2714161F0021C36E /* SlideView */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5C19E2714161F0021C36E /* LXHSlideView.h */,
+				F5D5C1A02714161F0021C36E /* LXHSlideView.m */,
+				F5D5C1A12714161F0021C36E /* ContentView.h */,
+				F5D5C19F2714161F0021C36E /* ContentView.m */,
+			);
+			path = SlideView;
+			sourceTree = "<group>";
+		};
+		F5D5C1B1271428E80021C36E /* 比较好的DEMO */ = {
+			isa = PBXGroup;
+			children = (
+				F5D5C1B42714298D0021C36E /* 1.jpg */,
+				F5D5C1B62714298D0021C36E /* 2.jpg */,
+				F5D5C1B32714298C0021C36E /* 3.jpg */,
+				F5D5C1B52714298D0021C36E /* 4.jpg */,
+				F5D5C1B22714298C0021C36E /* 5.jpg */,
+				F5D5C1AE271428D70021C36E /* CarouseView.h */,
+				F5D5C1AD271428D70021C36E /* CarouseView.m */,
+				F5D5C1AB271428D60021C36E /* CarouseViewPlus.h */,
+				F5D5C1AC271428D60021C36E /* CarouseViewPlus.m */,
+				F5D5C1BC271429CD0021C36E /* CarouseViewController.h */,
+				F5D5C1BD271429CD0021C36E /* CarouseViewController.m */,
+			);
+			path = "比较好的DEMO";
 			sourceTree = "<group>";
 		};
 		F5DEB2A224CE7667009A6767 /* Model */ = {
@@ -2683,8 +2763,10 @@
 				F5446CAC268D73300076961A /* 评论的副本2.json in Resources */,
 				F5CA13A326B2928700D8A7AE /* ic_bottombar_kuaikan_n@2x.png in Resources */,
 				F5C0A2292578BBD4004EBD94 /* xibView.xib in Resources */,
+				F5D5C1BA2714298D0021C36E /* 4.jpg in Resources */,
 				F5872CEC257DFC9E00341B57 /* 单例.md in Resources */,
 				F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */,
+				F5D5C1B92714298D0021C36E /* 1.jpg in Resources */,
 				F545BC172604808200D63C6E /* ceil_floor_round.md in Resources */,
 				F548D0E9256E2EEA00357E64 /* 追剧引导-1.gif in Resources */,
 				F5BFBC0C25E523BC0068358F /* 弹幕.md in Resources */,
@@ -2702,6 +2784,7 @@
 				F5091E28268C679F000884D1 /* dropdown_loading_02@2x.png in Resources */,
 				F5CA668D26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md in Resources */,
 				F5D05B7425BAB18000A4C6EC /* 阴影.md in Resources */,
+				F5D5C1A52714164F0021C36E /* Demo.png in Resources */,
 				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
 				F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */,
@@ -2716,6 +2799,8 @@
 				F505AC2325C936F600F43298 /* 约束动画.md in Resources */,
 				F5D05B5D25BAAF9B00A4C6EC /* RGB十六进制颜色.md in Resources */,
 				F5CA135E26B2820000D8A7AE /* 自定义TabBar.md in Resources */,
+				F5D5C1A7271419AC0021C36E /* Demo1.png in Resources */,
+				F5D5C1BB2714298D0021C36E /* 2.jpg in Resources */,
 				F52F168E26A82C1C00D4E305 /* confuse.sh in Resources */,
 				F5125756269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md in Resources */,
 				F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */,
@@ -2724,6 +2809,7 @@
 				F5CA140326B2A2DC00D8A7AE /* account_highlight@2x.png in Resources */,
 				F5A5E71A26B3ADEF00C28596 /* 自定义TabBar点击动画效.md in Resources */,
 				F548D101256E384300357E64 /* img_1.png in Resources */,
+				F5D5C1B82714298D0021C36E /* 3.jpg in Resources */,
 				F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */,
 				F5A2476326A6D9E7008B7BF4 /* WiFi名.md in Resources */,
 				F5872CFC257DFF5900341B57 /* 追剧引导-白色-循环.gif in Resources */,
@@ -2745,6 +2831,7 @@
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
 				F5448BD12615F0A300169B71 /* 镂空.md in Resources */,
 				F5F5B47025FA3AE50069491B /* bg.jpg in Resources */,
+				F5D5C1B72714298D0021C36E /* 5.jpg in Resources */,
 				F586140126A9739A00D81DDA /* Python批量修改iOS类名.md in Resources */,
 				F5CA140126B2A2DC00D8A7AE /* tapbar_top_line@2x.png in Resources */,
 				F548D0E7256E2EEA00357E64 /* data.json in Resources */,
@@ -2962,6 +3049,7 @@
 				A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */,
 				F5872CB4257DDE1A00341B57 /* SettingModule.m in Sources */,
 				F507113024E2A6A700AD5306 /* MYPerson.m in Sources */,
+				F5D5C1AF271428D70021C36E /* CarouseViewPlus.m in Sources */,
 				F591ACC126A16E110042802F /* llslog.m in Sources */,
 				F5F30DB3256652CC00DD2597 /* WPerson.m in Sources */,
 				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
@@ -2992,6 +3080,7 @@
 				F5A763BF253D952D00A76C6E /* Book.m in Sources */,
 				67535E722390C2920009F882 /* FGLanguageTool.m in Sources */,
 				A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */,
+				F5D5C1AA27141CE90021C36E /* WTCycleRollView.m in Sources */,
 				F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */,
 				F5F5B44B25FA1DFE0069491B /* RRActorVC.m in Sources */,
 				F5A8899524F612A000DB73ED /* OrderCell.m in Sources */,
@@ -3009,6 +3098,7 @@
 				F5D0FC0A24E0F91800CAADF8 /* UIImage+TUIDarkMode.m in Sources */,
 				F5D4EB8425DF6B5500F807EF /* PersonalHomePageVC.m in Sources */,
 				F5872CF3257DFCBD00341B57 /* SharedInstanceVC.m in Sources */,
+				F5D5C19C271415A10021C36E /* LXHBanner.m in Sources */,
 				F553E19B24CA8DE200DA5625 /* NSAttributedString+FaceString.m in Sources */,
 				F543282925A6D62C0082236C /* ScoreViewController.m in Sources */,
 				F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */,
@@ -3029,6 +3119,7 @@
 				F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */,
 				F5C1168C260CA20F001F4A74 /* UILabel+Util.m in Sources */,
 				F5CA13EC26B2A1EB00D8A7AE /* UIView+LBExtension.m in Sources */,
+				F5D5C1BE271429CD0021C36E /* CarouseViewController.m in Sources */,
 				6730334C210AED3D001471D8 /* PersonalCenterBarBtn.m in Sources */,
 				F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */,
 				F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */,
@@ -3037,6 +3128,7 @@
 				F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */,
 				F5AC7C4A27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m in Sources */,
 				F58B4B402643FAF700D7C82D /* UIViewController+TopViewController.m in Sources */,
+				F5D5C1B0271428D70021C36E /* CarouseView.m in Sources */,
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
 				F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
@@ -3062,6 +3154,7 @@
 				F5609C9F250216BE00A13C15 /* RegisterSetPasswordVC.m in Sources */,
 				F5A763C6253D956800A76C6E /* Attributes.m in Sources */,
 				F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */,
+				F5D5C1A32714161F0021C36E /* LXHSlideView.m in Sources */,
 				F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
@@ -3080,7 +3173,8 @@
 				F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,
-				F563DABE25AC24B80079474B /* ScorllBannerViewController.m in Sources */,
+				F563DABE25AC24B80079474B /* BannerViewController.m in Sources */,
+				F5D5C1A22714161F0021C36E /* ContentView.m in Sources */,
 				F563DAC525AC24E20079474B /* SearchResultSubViewController.m in Sources */,
 				F5C0A20425788B92004EBD94 /* UIColor+color.m in Sources */,
 				F53F669B24FE484700770055 /* NSString+Password.m in Sources */,
