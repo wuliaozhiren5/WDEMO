@@ -20,3 +20,10 @@ When YES, the collection view requests cells in advance of when they will be dis
 
 
 把对应页面的 collectionView的这个属性修改为NO,应该能解决你遇到的没有展示但是产生曝光埋点的问题
+
+
+```
+if (@available(iOS 10.0, *)) {
+    self.collectionView.prefetchingEnabled = NO;
+}
+```
