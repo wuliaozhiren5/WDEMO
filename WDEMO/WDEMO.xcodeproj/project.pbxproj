@@ -346,6 +346,7 @@
 		F5D5C1BA2714298D0021C36E /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B52714298D0021C36E /* 4.jpg */; };
 		F5D5C1BB2714298D0021C36E /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B62714298D0021C36E /* 2.jpg */; };
 		F5D5C1BE271429CD0021C36E /* CarouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C1BD271429CD0021C36E /* CarouseViewController.m */; };
+		F5DC862B27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md in Resources */ = {isa = PBXBuildFile; fileRef = F5DC862A27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md */; };
 		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
 		F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */; };
 		F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32724CEBB66009A6767 /* MessageController.m */; };
@@ -988,6 +989,7 @@
 		F5D5C1B62714298D0021C36E /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		F5D5C1BC271429CD0021C36E /* CarouseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouseViewController.h; sourceTree = "<group>"; };
 		F5D5C1BD271429CD0021C36E /* CarouseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouseViewController.m; sourceTree = "<group>"; };
+		F5DC862A27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自定义TabBar再次点击实现刷新.md"; sourceTree = "<group>"; };
 		F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListView.h; sourceTree = "<group>"; };
 		F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMemberListView.m; sourceTree = "<group>"; };
 		F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListCell.h; sourceTree = "<group>"; };
@@ -1236,6 +1238,7 @@
 				F5F2274726BA939A002EB4FC /* self.view = nil.md */,
 				F5CA135D26B2820000D8A7AE /* 自定义TabBar.md */,
 				F5A5E71926B3ADEF00C28596 /* 自定义TabBar点击动画效.md */,
+				F5DC862A27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md */,
 				F5CA135326B25DA200D8A7AE /* 网络图片403.md */,
 				F504404E26259C6200834547 /* PCH文件.md */,
 				F51C8694261F103F0066850E /* UIView中坐标转换.md */,
@@ -2856,6 +2859,7 @@
 				F58613CF26A96EB100D81DDA /* ignoreKey.txt in Resources */,
 				F5409ABC26B166020042F29D /* didStar@2x.png in Resources */,
 				F5409ABE26B166020042F29D /* didStar@3x.png in Resources */,
+				F5DC862B27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md in Resources */,
 				F5B7DC432608814B00B1E497 /* clang-format-master.zip in Resources */,
 				F5F5B44525FA1DFE0069491B /* RRActoFooter.xib in Resources */,
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,

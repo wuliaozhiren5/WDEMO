@@ -68,7 +68,8 @@
     self.plusBtn.centerX = self.centerX;
     //调整发布按钮的中线点Y值
     self.plusBtn.centerY = self.height * 0.5 - 2 * LBMagin;
-    
+    self.plusBtn.centerY = 0;
+
     {
         UILabel *label = [[UILabel alloc] init];
         label.text = @"发布";

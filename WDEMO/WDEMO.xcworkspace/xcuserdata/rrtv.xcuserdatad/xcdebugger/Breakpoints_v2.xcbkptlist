@@ -62,8 +62,8 @@
             filePath = "WDEMO/TabBar/LBTabBar.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-layoutSubviews"
             landmarkType = "7">
          </BreakpointContent>
@@ -97,6 +97,22 @@
             startingLineNumber = "1057"
             endingLineNumber = "1057"
             landmarkName = "-clickDramaComment"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C884FA4-B125-4082-A7BC-9D75ABD36A18"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WDEMO/ViewController.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1438"
+            endingLineNumber = "1438"
+            landmarkName = "-tabBarButtonClick"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

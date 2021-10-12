@@ -13,7 +13,7 @@
 #import "UIImage+Image.h"
 #import "LBpostViewController.h"
 
-@interface LBTabBarController ()<LBTabBarDelegate>
+@interface LBTabBarController ()<UITabBarControllerDelegate, LBTabBarDelegate>
 
 @end
 
@@ -49,9 +49,28 @@
     //kvc实质是修改了系统的_tabBar
     [self setValue:tabbar forKeyPath:@"tabBar"];
 
+    self.delegate = self;
 
 }
 
+#pragma mark - UITabBarControllerDelegate
+//这个是UITabBarController的代理方法
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController{
+    
+//    // 判断哪个界面要需要再次点击刷新，这里以第一个VC为例
+//    if ([tabBarController.selectedViewController isEqual:[tabBarController.viewControllers firstObject]]) {
+        // 判断再次选中的是否为当前的控制器
+        if ([viewController isEqual:tabBarController.selectedViewController]) {
+            // 执行操作
+            NSLog(@"刷新界面");
+         
+            return NO;
+        }
+//    }
+    
+    return YES;
+
+}
 
 #pragma mark - ------------------------------------------------------------------
 #pragma mark - 初始化tabBar上除了中间按钮之外所有的按钮
