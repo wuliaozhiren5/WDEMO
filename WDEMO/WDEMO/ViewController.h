@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+- (void)doubleClickTab;
 
 @end
 

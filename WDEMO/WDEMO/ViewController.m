@@ -1433,5 +1433,10 @@
     }
     return strlength;
 }
+
+- (void)doubleClickTab {
+    //刷新界面
+    //界面回滚
+}
 @end
 

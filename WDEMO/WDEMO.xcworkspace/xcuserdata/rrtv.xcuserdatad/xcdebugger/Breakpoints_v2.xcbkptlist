@@ -103,16 +103,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6C884FA4-B125-4082-A7BC-9D75ABD36A18"
+            uuid = "22FE8B72-B01B-4B46-95ED-FF88624B6D30"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "WDEMO/ViewController.m"
+            filePath = "WDEMO/TabBar/LBTabBarController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1438"
-            endingLineNumber = "1438"
-            landmarkName = "-tabBarButtonClick"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-tabBarController:shouldSelectViewController:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

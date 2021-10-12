@@ -64,6 +64,12 @@
             // 执行操作
             NSLog(@"刷新界面");
          
+            //再次点击tab
+            UINavigationController *selectVc = [self.viewControllers objectAtIndex:self.selectedIndex];
+            if ([selectVc.topViewController respondsToSelector:@selector(doubleClickTab)]) {
+                [selectVc.topViewController performSelectorOnMainThread:@selector(doubleClickTab) withObject:nil waitUntilDone:NO];
+            }
+            
             return NO;
         }
 //    }
