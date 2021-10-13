@@ -56,6 +56,8 @@
 		A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09B24B97FD4005922B1 /* ViewController2.m */; };
 		A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09C24B97FD4005922B1 /* ViewController3.m */; };
 		A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9DC1A24D66049009FB2EA /* UIImage+size.m */; };
+		F5023E4A2716B48700BA5829 /* 空白.md in Resources */ = {isa = PBXBuildFile; fileRef = F5023E492716B48700BA5829 /* 空白.md */; };
+		F5023E4C2716B4CD00BA5829 /* View设置顶点设置大小.md in Resources */ = {isa = PBXBuildFile; fileRef = F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */; };
 		F504404F26259C6300834547 /* PCH文件.md in Resources */ = {isa = PBXBuildFile; fileRef = F504404E26259C6200834547 /* PCH文件.md */; };
 		F50440CF2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BA2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m */; };
 		F50440D32625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */; };
@@ -347,6 +349,7 @@
 		F5D5C1BB2714298D0021C36E /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B62714298D0021C36E /* 2.jpg */; };
 		F5D5C1BE271429CD0021C36E /* CarouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C1BD271429CD0021C36E /* CarouseViewController.m */; };
 		F5DC862B27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md in Resources */ = {isa = PBXBuildFile; fileRef = F5DC862A27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md */; };
+		F5DC862F2715631000EED8D5 /* PersonalHomePageSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC862E2715631000EED8D5 /* PersonalHomePageSubVC.m */; };
 		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
 		F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */; };
 		F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB32724CEBB66009A6767 /* MessageController.m */; };
@@ -377,7 +380,6 @@
 		F5F5B44D25FA1DFE0069491B /* RRActorVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B44325FA1DFE0069491B /* RRActorVideoVC.m */; };
 		F5F5B47025FA3AE50069491B /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5F5B46F25FA3AE50069491B /* bg.jpg */; };
 		F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5F5B47525FA3AE90069491B /* avatar.jpg */; };
-		F5F701F225CD2C1F0000D5A9 /* 空白.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F701F125CD2C1F0000D5A9 /* 空白.md */; };
 		F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */; };
 		F5FB5D7B263AB2C400155BFE /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FB5D7A263AB2C400155BFE /* NSString+Util.m */; };
 /* End PBXBuildFile section */
@@ -525,6 +527,8 @@
 		A4F2C09F24B97FD5005922B1 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		A4F9DC1924D66049009FB2EA /* UIImage+size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+size.h"; sourceTree = "<group>"; };
 		A4F9DC1A24D66049009FB2EA /* UIImage+size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+size.m"; sourceTree = "<group>"; };
+		F5023E492716B48700BA5829 /* 空白.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白.md"; sourceTree = "<group>"; };
+		F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "View设置顶点设置大小.md"; sourceTree = "<group>"; };
 		F504404E26259C6200834547 /* PCH文件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "PCH文件.md"; sourceTree = "<group>"; };
 		F50440AE26259EEF00834547 /* WDEMO.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDEMO.pch; sourceTree = "<group>"; };
 		F50440B92625A06B00834547 /* RRSeasonSeniorCommentsInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsInputBar.h; sourceTree = "<group>"; };
@@ -990,6 +994,8 @@
 		F5D5C1BC271429CD0021C36E /* CarouseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouseViewController.h; sourceTree = "<group>"; };
 		F5D5C1BD271429CD0021C36E /* CarouseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouseViewController.m; sourceTree = "<group>"; };
 		F5DC862A27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自定义TabBar再次点击实现刷新.md"; sourceTree = "<group>"; };
+		F5DC862D2715631000EED8D5 /* PersonalHomePageSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalHomePageSubVC.h; sourceTree = "<group>"; };
+		F5DC862E2715631000EED8D5 /* PersonalHomePageSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalHomePageSubVC.m; sourceTree = "<group>"; };
 		F5DEB2A424CE7E4B009A6767 /* ChatMemberListView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListView.h; sourceTree = "<group>"; };
 		F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMemberListView.m; sourceTree = "<group>"; };
 		F5DEB2A724CE7FA0009A6767 /* ChatMemberListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatMemberListCell.h; sourceTree = "<group>"; };
@@ -1039,7 +1045,6 @@
 		F5F5B44425FA1DFE0069491B /* RRActorIntroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorIntroVC.h; sourceTree = "<group>"; };
 		F5F5B46F25FA3AE50069491B /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		F5F5B47525FA3AE90069491B /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
-		F5F701F125CD2C1F0000D5A9 /* 空白.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白.md"; sourceTree = "<group>"; };
 		F5F701F725CD2E290000D5A9 /* KeyedArchiverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyedArchiverViewController.h; sourceTree = "<group>"; };
 		F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyedArchiverViewController.m; sourceTree = "<group>"; };
 		F5FB5D79263AB2C400155BFE /* NSString+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
@@ -1193,6 +1198,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5DC862C27155FE600EED8D5 /* RankingList */,
 				F5D4476926CB653D002E90EB /* DramaComment */,
 				F5CA136326B2823000D8A7AE /* TabBar */,
 				F5409AA626B164490042F29D /* 评分打分 */,
@@ -1228,7 +1234,8 @@
 				F5A2476226A6D9E6008B7BF4 /* WiFi名.md */,
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
-				F5F701F125CD2C1F0000D5A9 /* 空白.md */,
+				F5023E492716B48700BA5829 /* 空白.md */,
+				F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */,
 				F5AC7C29271020FD00533793 /* 锁@synchronized.md */,
 				F5AC7C2B2710276800533793 /* github开发人员在七夕搞事情.md */,
 				F5F3665926F0D82A00E5D767 /* UICollectionView预加载isPrefetchingEnabled.md */,
@@ -2427,6 +2434,8 @@
 				F593574725F7466A008CF0D8 /* SecondViewTableViewController.m */,
 				F593574525F7466A008CF0D8 /* ThirdViewCollectionViewController.h */,
 				F593574625F7466A008CF0D8 /* ThirdViewCollectionViewController.m */,
+				F5DC862D2715631000EED8D5 /* PersonalHomePageSubVC.h */,
+				F5DC862E2715631000EED8D5 /* PersonalHomePageSubVC.m */,
 			);
 			path = subvc;
 			sourceTree = "<group>";
@@ -2467,6 +2476,13 @@
 				F5D5C1BD271429CD0021C36E /* CarouseViewController.m */,
 			);
 			path = "比较好的DEMO";
+			sourceTree = "<group>";
+		};
+		F5DC862C27155FE600EED8D5 /* RankingList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RankingList;
 			sourceTree = "<group>";
 		};
 		F5DEB2A224CE7667009A6767 /* Model */ = {
@@ -2791,6 +2807,7 @@
 				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
 				F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */,
+				F5023E4A2716B48700BA5829 /* 空白.md in Resources */,
 				F5CA140726B2A2DC00D8A7AE /* post_normal@2x.png in Resources */,
 				F5F2274826BA939B002EB4FC /* self.view = nil.md in Resources */,
 				F5CA13AA26B2928700D8A7AE /* ic_bottombar_vip_h@2x.png in Resources */,
@@ -2825,6 +2842,7 @@
 				F5409ABF26B166020042F29D /* didStar.png in Resources */,
 				F5B7DC442608814B00B1E497 /* XcodeClangFormat.zip in Resources */,
 				F591AC2D26A13B970042802F /* 马甲包.md in Resources */,
+				F5023E4C2716B4CD00BA5829 /* View设置顶点设置大小.md in Resources */,
 				F58613D126A96EB100D81DDA /* clean_identifiers.txt in Resources */,
 				F5091E51268C679F000884D1 /* dropdown_loading_03@2x.png in Resources */,
 				F504404F26259C6300834547 /* PCH文件.md in Resources */,
@@ -2881,7 +2899,6 @@
 				F50D6D8625A95AD300B8C415 /* 瀑布流.md in Resources */,
 				F518ED3725E8DDAC00260125 /* 图片压缩.md in Resources */,
 				F5CA13AE26B2928700D8A7AE /* ic_bottombar_vip_n@2x.png in Resources */,
-				F5F701F225CD2C1F0000D5A9 /* 空白.md in Resources */,
 				F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */,
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
 				F548D0E2256E2EEA00357E64 /* amwayPlayerGuide_1.png in Resources */,
@@ -3211,6 +3228,7 @@
 				F58E20DC2711672A00C4BB4F /* RRMessageSeasonCommentPositionListVC.m in Sources */,
 				F5CEF81C25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */,
+				F5DC862F2715631000EED8D5 /* PersonalHomePageSubVC.m in Sources */,
 				F591ACBA26A16DED0042802F /* Logs.m in Sources */,
 				F5CE3D1F24E6901800B20C80 /* RRDestroyAccountContentCell.m in Sources */,
 				F5BFBBFC25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m in Sources */,

@@ -13,35 +13,38 @@
 @end
 
 @implementation HomePageViewController
-//
-//- (UIView *)redView {
-//    if (!_redView) {
-//        _redView = [[UIView alloc] initWithFrame:CGRectZero];
-//        _redView.backgroundColor = [UIColor colorWithRed:168.0/255.0 green:20.0/255.0 blue:4/255.0 alpha:1];
-//    }
-//    return _redView;
-//}
-//
+
+- (UIView *)redView {
+    if (!_redView) {
+        _redView = [[UIView alloc] initWithFrame:CGRectZero];
+        _redView.backgroundColor = [UIColor colorWithRed:168.0/255.0 green:20.0/255.0 blue:4/255.0 alpha:1];
+    }
+    return _redView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //无视导航的位置
 //    self.navigationController.navigationBar.translucent = YES;
 
-    // Do any additional setup after loading the view.
-//    if (self.menuViewStyle == WMMenuViewStyleTriangle) {
-//        [self.view addSubview:self.redView];
-//    }
+    self.navigationController.navigationBar.translucent = NO;
+    
+//     Do any additional setup after loading the view.
+    if (self.menuViewStyle == WMMenuViewStyleTriangle) {
+        [self.view addSubview:self.redView];
+    }
 }
-//
-//- (void)viewDidLayoutSubviews {
-//    [super viewDidLayoutSubviews];
-//    self.redView.frame = CGRectMake(0, CGRectGetMaxY(self.menuView.frame), self.view.frame.size.width, 2.0);
-//}
-//
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
-//
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    self.redView.frame = CGRectMake(0, CGRectGetMaxY(self.menuView.frame), self.view.frame.size.width, 2.0);
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 //- (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
 //    switch (self.menuViewStyle) {
 //        case WMMenuViewStyleFlood: return 3;
@@ -95,6 +98,16 @@
 //}
 //
 
+////隐藏导航栏
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//}
+//
+//- (void)viewWillDisappear:(BOOL)animated {
+//    [super viewWillDisappear:animated];
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
+//}
 
 - (NSInteger)numbersOfChildControllersInPageController:(WMPageController *)pageController {
     return self.titles.count;

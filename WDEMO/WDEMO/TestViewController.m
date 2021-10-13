@@ -78,6 +78,33 @@
         make.top.leading.trailing.equalTo(self.view);
         make.height.equalTo(@173);
     }];
+    
+    
+    //窗口
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 100, KWidth, 500)];
+    view.backgroundColor = [UIColor redColor];
+    view.clipsToBounds = YES;
+    [self.view addSubview:view];
+    
+    //动画 Animation
+    //动画 anime
+    UIView *animeView = [[UIView alloc] initWithFrame:CGRectMake(0, 100, KWidth, 500)];
+    animeView.backgroundColor = [UIColor grayColor];
+    [view addSubview:animeView];
+    
+    // 这的key是设置不同效果的动画，下面有整理
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
+    CGPoint position = animeView.layer.position;
+    CGPoint x = CGPointMake(position.x, position.y);
+    CGPoint y = CGPointMake(position.x, position.y - 500);
+    animation.fromValue = [NSValue valueWithCGPoint:x];
+    animation.toValue = [NSValue valueWithCGPoint:y];
+    animation.duration = 10.0f;
+    // 这的key可以区分不同不同的动画，在动画完成回调时可已经判断等操作
+    [animeView.layer addAnimation:animation forKey:@"positionAnimation"];
+    
+    
+ 
 }
 
 /*

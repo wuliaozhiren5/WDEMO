@@ -14,8 +14,7 @@
 #import "MainTouchTableTableView.h"
 #import "ParentClassScrollViewController.h" 
 #import "WMPageController.h"
-#import "HomePageViewController.h"
-
+#import "PersonalHomePageSubVC.h"
 
 static CGFloat const headViewHeight = 256;
 
@@ -435,7 +434,7 @@ static CGFloat const headViewHeight = 256;
     NSArray *viewControllers = @[oneVc,twoVc,thirdVc];
     NSArray *titles = @[@"first",@"second",@"third"];
     
-    HomePageViewController *pageVC= [[HomePageViewController alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
+    PersonalHomePageSubVC *pageVC= [[PersonalHomePageSubVC alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
     pageVC.viewControllers = viewControllers;
     
     pageVC.selectIndex = 0;
