@@ -20,7 +20,7 @@
 #import "WCollectionViewCell.h"
 #import "SeeLivingBaseCell.h"
 
-@interface TestViewController ()<UICollectionViewDelegate, UICollectionViewDataSource,SeeLivingCellDelegate>
+@interface TestViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, SeeLivingCellDelegate, CAAnimationDelegate>
 
 @property(strong , nonatomic)UICollectionView *collectionView;
 @property(copy , nonatomic)NSArray *data;
@@ -81,30 +81,121 @@
     
     
     //窗口
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 100, KWidth, 500)];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 100, KWidth, 100)];
     view.backgroundColor = [UIColor redColor];
     view.clipsToBounds = YES;
     [self.view addSubview:view];
     
     //动画 Animation
     //动画 anime
-    UIView *animeView = [[UIView alloc] initWithFrame:CGRectMake(0, 100, KWidth, 500)];
+    UIView *animeView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 350)];
     animeView.backgroundColor = [UIColor grayColor];
     [view addSubview:animeView];
+    
+    UIImageView *header = [[UIImageView alloc] init];
+    header.frame = CGRectMake(0, 0, KWidth, 50);
+    header.image = [UIImage imageNamed:@"5.jpg"];
+    [animeView addSubview:header];
+    
+    UIImageView *imgV0 = [[UIImageView alloc] init];
+    imgV0.frame = CGRectMake(0, 50, KWidth, 50);
+    imgV0.image = [UIImage imageNamed:@"1.jpg"];
+    [animeView addSubview:imgV0];
+    UIImageView *imgV1 = [[UIImageView alloc] init];
+    imgV1.frame = CGRectMake(0, 100, KWidth, 50);
+    imgV1.image = [UIImage imageNamed:@"2.jpg"];
+    [animeView addSubview:imgV1];
+    UIImageView *imgV2 = [[UIImageView alloc] init];
+    imgV2.frame = CGRectMake(0, 150, KWidth, 50);
+    imgV2.image = [UIImage imageNamed:@"3.jpg"];
+    [animeView addSubview:imgV2];
+    UIImageView *imgV3 = [[UIImageView alloc] init];
+    imgV3.frame = CGRectMake(0, 200, KWidth, 50);
+    imgV3.image = [UIImage imageNamed:@"4.jpg"];
+    [animeView addSubview:imgV3];
+    UIImageView *imgV4 = [[UIImageView alloc] init];
+    imgV4.frame = CGRectMake(0, 250, KWidth, 50);
+    imgV4.image = [UIImage imageNamed:@"5.jpg"];
+    [animeView addSubview:imgV4];
+    
+    UIImageView *footer = [[UIImageView alloc] init];
+    footer.frame = CGRectMake(0, 300, KWidth, 50);
+    footer.image = [UIImage imageNamed:@"1.jpg"];
+    [animeView addSubview:footer];
+    
+    
+//    imgV.alpha = 0;
+//    [UIView animateWithDuration:1.0
+//                          delay:1.0
+//                        options:UIViewAnimationOptionCurveEaseInOut
+//                     animations:^{
+//        imgV.alpha = 1.0;
+//    }
+//                     completion:^(BOOL finished) {
+//        if (finished) {
+//            imgV.alpha = 1.0;
+//        }
+//    }];
+    
+//    CABasicAnimation *opcAni = [CABasicAnimation animationWithKeyPath:@"opacity"];
+//    opcAni.fromValue = [NSNumber numberWithFloat:0.0];
+//    opcAni.toValue = [NSNumber numberWithFloat:1.0];
+//    opcAni.duration = 2.0f;
+//    opcAni.removedOnCompletion = NO;
+//    opcAni.fillMode = kCAFillModeForwards;
+//    [imgV.layer addAnimation:opcAni forKey:@"opacityAnimation"];
+
     
     // 这的key是设置不同效果的动画，下面有整理
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"position"];
     CGPoint position = animeView.layer.position;
     CGPoint x = CGPointMake(position.x, position.y);
-    CGPoint y = CGPointMake(position.x, position.y - 500);
+    CGPoint y = CGPointMake(position.x, position.y - 250);
     animation.fromValue = [NSValue valueWithCGPoint:x];
     animation.toValue = [NSValue valueWithCGPoint:y];
-    animation.duration = 10.0f;
+    animation.duration = 5.0f;
+
+    animation.repeatCount = HUGE_VALF;
+//    animation.repeatCount = MAXFLOAT;
+
+//    animation.duration = 2.5; // 动画持续时间
+//    animation.repeatCount = 1; // 不重复
+//    animation.beginTime = CACurrentMediaTime() + 2; // 2秒后执行
+//    animation.autoreverses = YES; // 结束后执行逆动画
+//    // 动画先加速后减速
+//    animation.timingFunction =
+//        [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionEaseInEaseOut];
+
+
+//    // 动画终了后不返回初始状态
+//    animation.removedOnCompletion = NO;
+//    animation.fillMode = kCAFillModeForwards;
+
+
+    animation.delegate = self; // 指定委托对象
+
+
     // 这的key可以区分不同不同的动画，在动画完成回调时可已经判断等操作
     [animeView.layer addAnimation:animation forKey:@"positionAnimation"];
     
-    
+
  
+}
+ 
+/**
+ * 动画开始时
+ */
+- (void)animationDidStart:(CAAnimation *)theAnimation
+{
+    NSLog(@"begin");
+}
+ 
+/**
+ * 动画结束时
+ */
+- (void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
+{
+    NSLog(@"end");
 }
 
 /*

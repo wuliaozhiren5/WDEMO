@@ -8,6 +8,7 @@
 
 #import "BannerViewController.h"
 #import "LXHBanner.h"
+#import "NewLXHBanner.h"
 #import "WTCycleRollView.h"
 
 @interface BannerViewController ()
@@ -22,6 +23,8 @@
     
     [self createBannerView];
     
+    [self createNewBannerView];
+
     [self createBannerView1];
     
 }
@@ -43,13 +46,20 @@
     [self.view addSubview:view];
 }
 
+- (void)createNewBannerView {
+    NSArray * array = @[@"5.jpg", @"4.jpg", @"3.jpg", @"2.jpg", @"1.jpg"];
+    NewLXHBanner *view = [[NewLXHBanner alloc] initWithFrame:CGRectMake(16, 250,self.view.frame.size.width - 32, 128)
+                                                 array:array];
+    [self.view addSubview:view];
+}
+
 - (void)createBannerView1 {
 //    NSArray * array = @[@"Demo", @"Demo1"];
 //    LXHBanner *view = [[LXHBanner alloc] initWithFrame:CGRectMake(16, 100,self.view.frame.size.width - 32, 128)
 //                                                 array:array];
 //    [self.view addSubview:view];
     
-    WTCycleRollView *view = [WTCycleRollView cycleRollViewWithFrame:CGRectMake(16, 250,self.view.frame.size.width - 32, 128)];
+    WTCycleRollView *view = [WTCycleRollView cycleRollViewWithFrame:CGRectMake(16, 400,self.view.frame.size.width - 32, 128)];
     NSArray *imageUrlArr = @[@"https://bkimg.cdn.bcebos.com/pic/4610b912c8fcc3ce32f324e19345d688d43f2035?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto",
                             @"https://bkimg.cdn.bcebos.com/pic/4610b912c8fcc3ce32f324e19345d688d43f2035?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2U4MA==,g_7,xp_5,yp_5/format,f_auto",];
     [view setImgUrls:imageUrlArr

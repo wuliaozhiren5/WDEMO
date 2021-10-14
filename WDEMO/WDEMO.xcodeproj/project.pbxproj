@@ -58,6 +58,7 @@
 		A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9DC1A24D66049009FB2EA /* UIImage+size.m */; };
 		F5023E4A2716B48700BA5829 /* 空白.md in Resources */ = {isa = PBXBuildFile; fileRef = F5023E492716B48700BA5829 /* 空白.md */; };
 		F5023E4C2716B4CD00BA5829 /* View设置顶点设置大小.md in Resources */ = {isa = PBXBuildFile; fileRef = F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */; };
+		F5023E4F2717097800BA5829 /* NewLXHBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F5023E4E2717097800BA5829 /* NewLXHBanner.m */; };
 		F504404F26259C6300834547 /* PCH文件.md in Resources */ = {isa = PBXBuildFile; fileRef = F504404E26259C6200834547 /* PCH文件.md */; };
 		F50440CF2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440BA2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m */; };
 		F50440D32625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50440C42625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m */; };
@@ -529,6 +530,8 @@
 		A4F9DC1A24D66049009FB2EA /* UIImage+size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+size.m"; sourceTree = "<group>"; };
 		F5023E492716B48700BA5829 /* 空白.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白.md"; sourceTree = "<group>"; };
 		F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "View设置顶点设置大小.md"; sourceTree = "<group>"; };
+		F5023E4D2717097700BA5829 /* NewLXHBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewLXHBanner.h; sourceTree = "<group>"; };
+		F5023E4E2717097800BA5829 /* NewLXHBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewLXHBanner.m; sourceTree = "<group>"; };
 		F504404E26259C6200834547 /* PCH文件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "PCH文件.md"; sourceTree = "<group>"; };
 		F50440AE26259EEF00834547 /* WDEMO.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WDEMO.pch; sourceTree = "<group>"; };
 		F50440B92625A06B00834547 /* RRSeasonSeniorCommentsInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsInputBar.h; sourceTree = "<group>"; };
@@ -2445,6 +2448,8 @@
 			children = (
 				F5D5C19B271415A10021C36E /* LXHBanner.h */,
 				F5D5C19A271415A10021C36E /* LXHBanner.m */,
+				F5023E4D2717097700BA5829 /* NewLXHBanner.h */,
+				F5023E4E2717097800BA5829 /* NewLXHBanner.m */,
 			);
 			path = BannerView;
 			sourceTree = "<group>";
@@ -3148,6 +3153,7 @@
 				F5DEB33024CEF5E3009A6767 /* NoInputBar.m in Sources */,
 				F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */,
 				F5AC7C4A27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m in Sources */,
+				F5023E4F2717097800BA5829 /* NewLXHBanner.m in Sources */,
 				F58B4B402643FAF700D7C82D /* UIViewController+TopViewController.m in Sources */,
 				F5D5C1B0271428D70021C36E /* CarouseView.m in Sources */,
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
