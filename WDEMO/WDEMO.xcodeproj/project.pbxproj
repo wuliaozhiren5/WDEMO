@@ -216,6 +216,8 @@
 		F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */; };
 		F58B4B402643FAF700D7C82D /* UIViewController+TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */; };
 		F58B4B462643FCD800D7C82D /* 回复.json in Resources */ = {isa = PBXBuildFile; fileRef = F58B4B452643FCD800D7C82D /* 回复.json */; };
+		F58B528A271D960500CD6A3F /* 动画过程中的点击.md in Resources */ = {isa = PBXBuildFile; fileRef = F58B5289271D960500CD6A3F /* 动画过程中的点击.md */; };
+		F58B528C271D961A00CD6A3F /* 点击事件穿透.md in Resources */ = {isa = PBXBuildFile; fileRef = F58B528B271D961A00CD6A3F /* 点击事件穿透.md */; };
 		F58E20DC2711672A00C4BB4F /* RRMessageSeasonCommentPositionListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F58E20D82711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.m */; };
 		F58E20E0271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58E20DE271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m */; };
 		F591AC2D26A13B970042802F /* 马甲包.md in Resources */ = {isa = PBXBuildFile; fileRef = F591AC2C26A13B970042802F /* 马甲包.md */; };
@@ -776,6 +778,8 @@
 		F58B4B3E2643FAF700D7C82D /* UIViewController+TopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TopViewController.h"; sourceTree = "<group>"; };
 		F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TopViewController.m"; sourceTree = "<group>"; };
 		F58B4B452643FCD800D7C82D /* 回复.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "回复.json"; sourceTree = "<group>"; };
+		F58B5289271D960500CD6A3F /* 动画过程中的点击.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "动画过程中的点击.md"; sourceTree = "<group>"; };
+		F58B528B271D961A00CD6A3F /* 点击事件穿透.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "点击事件穿透.md"; sourceTree = "<group>"; };
 		F58E20D82711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageSeasonCommentPositionListVC.m; sourceTree = "<group>"; };
 		F58E20D92711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMessageSeasonCommentPositionListVC.h; sourceTree = "<group>"; };
 		F58E20DE271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageSeniorCommentsPositionListVCViewController.m; sourceTree = "<group>"; };
@@ -1238,6 +1242,8 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				F58B5289271D960500CD6A3F /* 动画过程中的点击.md */,
+				F58B528B271D961A00CD6A3F /* 点击事件穿透.md */,
 				F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */,
 				F5AC7C29271020FD00533793 /* 锁@synchronized.md */,
 				F5AC7C2B2710276800533793 /* github开发人员在七夕搞事情.md */,
@@ -2780,6 +2786,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5F5B44625FA1DFE0069491B /* RRActorHeader.xib in Resources */,
+				F58B528C271D961A00CD6A3F /* 点击事件穿透.md in Resources */,
 				F5CA141C26B2A6A000D8A7AE /* header_back_icon_highlight@2x.png in Resources */,
 				F5CA140426B2A2DC00D8A7AE /* account_normal@2x.png in Resources */,
 				F5760E0D268EEBFC008250D7 /* addHeaderFooter.md in Resources */,
@@ -2808,6 +2815,7 @@
 				F5091E28268C679F000884D1 /* dropdown_loading_02@2x.png in Resources */,
 				F5CA668D26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md in Resources */,
 				F5D05B7425BAB18000A4C6EC /* 阴影.md in Resources */,
+				F58B528A271D960500CD6A3F /* 动画过程中的点击.md in Resources */,
 				F5D5C1A52714164F0021C36E /* Demo.png in Resources */,
 				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
