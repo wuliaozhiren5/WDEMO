@@ -1,5 +1,5 @@
 //
-//  AllRankingListVC.h
+//  RRAllRankingListVC.h
 //  WDEMO
 //
 //  Created by WDEMO on 2021/10/19.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AllRankingListVC : BaseViewController
+@interface RRAllRankingListVC : BaseViewController
 
 @end
 

@@ -1,18 +1,18 @@
 //
-//  AllRankingListVC.m
+//  RRAllRankingListVC.m
 //  WDEMO
 //
 //  Created by WDEMO on 2021/10/19.
 //  Copyright © 2021 wwc. All rights reserved.
 //
 
-#import "AllRankingListVC.h"
+#import "RRAllRankingListVC.h"
 
-@interface AllRankingListVC ()
+@interface RRAllRankingListVC ()
 
 @end
 
-@implementation AllRankingListVC
+@implementation RRAllRankingListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];

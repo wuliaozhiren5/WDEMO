@@ -1,5 +1,5 @@
 //
-//  AllRankingListSubVC.h
+//  RRAllRankingListSubVC.h
 //  WDEMO
 //
 //  Created by WDEMO on 2021/10/19.
@@ -7,10 +7,12 @@
 //
 
 #import "WMPageController.h"
+//#import "WMCustomizedPageController.h"
+#import "THeader.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AllRankingListSubVC : WMPageController
+@interface RRAllRankingListSubVC : WMPageController
 //@property (nonatomic, assign) WMMenuViewPosition menuViewPosition;
 @property (nonatomic, nullable, copy) NSArray<UIViewController *> *viewControllers;
 /**
