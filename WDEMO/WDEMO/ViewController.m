@@ -113,6 +113,8 @@
 //Banner
 #import "BannerViewController.h"
 #import "CarouseViewController.h"
+//排行榜
+#import "RRAllRankingListVC.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -166,6 +168,8 @@
     
     
     NSArray * array = @[
+
+        [ListModel initWithTitle:@"AllRankingList" detail:@"排行榜3层" type:ListModelTypeAllRankingList],
         [ListModel initWithTitle:@"banner" detail:@"广告banner无限滚动" type:ListModelTypeBanner],
         [ListModel initWithTitle:@"影评" detail:@"影视评论，影评" type:ListModelTypeDramaComment],
         [ListModel initWithTitle:@"评论" detail:@"bilibili，爱奇艺，优酷评论UI）" type:ListModelTypeComment],
@@ -1073,7 +1077,14 @@
     CarouseViewController *vc1= [[CarouseViewController alloc]init];
     vc1.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc1 animated:YES];
+}
+
+- (void)clickAllRankingList {
+    //排行榜
     
+    RRAllRankingListVC *vc= [[RRAllRankingListVC alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)clickTest {
@@ -1363,6 +1374,12 @@
             [self clickBanner];
         }
             break;
+        case ListModelTypeAllRankingList:
+        {
+            [self clickAllRankingList];
+        }
+            break;
+            
         default:
         {
             NSAssert(NO, @"PLUPersonalItemType 类型错误");

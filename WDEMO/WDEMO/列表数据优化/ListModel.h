@@ -49,8 +49,9 @@ typedef NS_ENUM(NSInteger, ListModelType) {
 
     ListModelTypeZZStar,//评分打分
     
-    
     ListModelTypeBanner,//广告banner无限滚动
+    
+    ListModelTypeAllRankingList,//排行榜
     ListModelTypeTest,//测试页面
 };
 
