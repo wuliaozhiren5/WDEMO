@@ -2,7 +2,7 @@
 //  RRDestroyAccountReasonCell.h
 //  PUClient
 //
-//  Created by rrtv on 2020/8/13.
+//  Created by WDEMO on 2020/8/13.
 //  Copyright © 2020 RRMJ. All rights reserved.
 //
 

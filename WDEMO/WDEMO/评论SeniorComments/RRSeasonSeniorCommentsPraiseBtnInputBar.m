@@ -2,7 +2,7 @@
 //  RRSeasonSeniorCommentsPraiseBtnInputBar.m
 //  PUClient
 //
-//  Created by rrtv on 2021/4/12.
+//  Created by WDEMO on 2021/4/12.
 //  Copyright © 2021 RRMJ. All rights reserved.
 //
 

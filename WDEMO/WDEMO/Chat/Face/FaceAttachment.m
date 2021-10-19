@@ -2,8 +2,8 @@
 //  FaceAttachment.h
 //  自定义表情包
 //
-//  Created by rrtv on 17/2/22.
-//  Copyright © 2017年 rrtv. All rights reserved.
+//  Created by WDEMO on 17/2/22.
+//  Copyright © 2017年 wwc. All rights reserved.
 //
 
 #import "FaceAttachment.h"

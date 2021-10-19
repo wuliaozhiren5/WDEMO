@@ -2,7 +2,7 @@
 //  TipMessageCell.m
 //  WDEMO
 //
-//  Created by rrtv on 2020/7/28.
+//  Created by WDEMO on 2020/7/28.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 

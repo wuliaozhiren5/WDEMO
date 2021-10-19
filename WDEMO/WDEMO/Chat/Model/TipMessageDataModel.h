@@ -2,7 +2,7 @@
 //  TipMessageDataModel.h
 //  WDEMO
 //
-//  Created by rrtv on 2020/9/9.
+//  Created by WDEMO on 2020/9/9.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 

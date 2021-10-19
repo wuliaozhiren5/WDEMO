@@ -2,7 +2,7 @@
 //  VerticalCollectionViewController.h
 //  WDEMO
 //
-//  Created by rrtv on 2021/1/11.
+//  Created by WDEMO on 2021/1/11.
 //  Copyright © 2021 wwc. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  ScoreView.m
 //  WDEMO
 //
-//  Created by rrtv on 2020/12/18.
+//  Created by WDEMO on 2020/12/18.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 

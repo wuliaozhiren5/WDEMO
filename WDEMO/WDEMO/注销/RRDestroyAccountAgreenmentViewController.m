@@ -2,7 +2,7 @@
 //  RRDestroyAccountAgreenmentViewController.m
 //  PUClient
 //
-//  Created by rrtv on 2020/8/12.
+//  Created by WDEMO on 2020/8/12.
 //  Copyright © 2020 RRMJ. All rights reserved.
 //
 

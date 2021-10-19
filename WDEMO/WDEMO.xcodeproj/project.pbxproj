@@ -151,6 +151,8 @@
 		F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */; };
 		F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F556CBCA25AEA11600B590D2 /* WaterLayout.m */; };
 		F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */; };
+		F5596C75271EA2FE007D9FE9 /* AllRankingListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5596C74271EA2FE007D9FE9 /* AllRankingListVC.m */; };
+		F5596C78271EA30E007D9FE9 /* AllRankingListSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5596C77271EA30E007D9FE9 /* AllRankingListSubVC.m */; };
 		F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F55E5B5A258C58B700C1DECD /* ScoreView.m */; };
 		F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C922502134800A13C15 /* SetPasswordVC.m */; };
 		F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C98250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m */; };
@@ -674,6 +676,10 @@
 		F556CBC925AEA11600B590D2 /* WaterLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterLayout.h; sourceTree = "<group>"; };
 		F556CBCA25AEA11600B590D2 /* WaterLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterLayout.m; sourceTree = "<group>"; };
 		F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WCollectionViewCell.xib; sourceTree = "<group>"; };
+		F5596C73271EA2FE007D9FE9 /* AllRankingListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllRankingListVC.h; sourceTree = "<group>"; };
+		F5596C74271EA2FE007D9FE9 /* AllRankingListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllRankingListVC.m; sourceTree = "<group>"; };
+		F5596C76271EA30E007D9FE9 /* AllRankingListSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AllRankingListSubVC.h; sourceTree = "<group>"; };
+		F5596C77271EA30E007D9FE9 /* AllRankingListSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllRankingListSubVC.m; sourceTree = "<group>"; };
 		F55E5B59258C58B700C1DECD /* ScoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreView.h; sourceTree = "<group>"; };
 		F55E5B5A258C58B700C1DECD /* ScoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreView.m; sourceTree = "<group>"; };
 		F5609C912502134800A13C15 /* SetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordVC.h; sourceTree = "<group>"; };
@@ -2492,6 +2498,10 @@
 		F5DC862C27155FE600EED8D5 /* RankingList */ = {
 			isa = PBXGroup;
 			children = (
+				F5596C73271EA2FE007D9FE9 /* AllRankingListVC.h */,
+				F5596C74271EA2FE007D9FE9 /* AllRankingListVC.m */,
+				F5596C76271EA30E007D9FE9 /* AllRankingListSubVC.h */,
+				F5596C77271EA30E007D9FE9 /* AllRankingListSubVC.m */,
 			);
 			path = RankingList;
 			sourceTree = "<group>";
@@ -3132,11 +3142,13 @@
 				F5D0FC0A24E0F91800CAADF8 /* UIImage+TUIDarkMode.m in Sources */,
 				F5D4EB8425DF6B5500F807EF /* PersonalHomePageVC.m in Sources */,
 				F5872CF3257DFCBD00341B57 /* SharedInstanceVC.m in Sources */,
+				F5596C78271EA30E007D9FE9 /* AllRankingListSubVC.m in Sources */,
 				F5D5C19C271415A10021C36E /* LXHBanner.m in Sources */,
 				F553E19B24CA8DE200DA5625 /* NSAttributedString+FaceString.m in Sources */,
 				F543282925A6D62C0082236C /* ScoreViewController.m in Sources */,
 				F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */,
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
+				F5596C75271EA2FE007D9FE9 /* AllRankingListVC.m in Sources */,
 				F5358C1926032C1200C69FC4 /* RRActorSubVC.m in Sources */,
 				F563DADC25AC26790079474B /* WMMenuItem.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,

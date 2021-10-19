@@ -2,7 +2,7 @@
 //  NewHandGuideViewController.h
 //  WDEMO
 //
-//  Created by rrtv on 2021/4/2.
+//  Created by WDEMO on 2021/4/2.
 //  Copyright © 2021 wwc. All rights reserved.
 //
 

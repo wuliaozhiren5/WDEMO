@@ -2,7 +2,7 @@
 //  ChatMemberListView.h
 //  WDEMO
 //
-//  Created by rrtv on 2020/7/27.
+//  Created by WDEMO on 2020/7/27.
 //  Copyright © 2020 wwc. All rights reserved.
 //
 

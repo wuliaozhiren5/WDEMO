@@ -2,7 +2,7 @@
 //  RRDestroyAccountAlterview.h
 //  PUClient
 //
-//  Created by rrtv on 2020/8/14.
+//  Created by WDEMO on 2020/8/14.
 //  Copyright © 2020 RRMJ. All rights reserved.
 //
 
