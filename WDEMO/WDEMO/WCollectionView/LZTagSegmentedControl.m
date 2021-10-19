@@ -15,6 +15,8 @@
 
 @property(strong , nonatomic)UIView *line;
 
+@property(strong , nonatomic)UIView *moveline;
+
 @end
 
 
@@ -29,7 +31,7 @@
 }
 
 -(void)addView{
-        _tagArr = @[@"全部",
+        _tagArr = @[@"测试全部",
                     @"全部1",
                     @"全部2",
                     @"全部3",
@@ -72,7 +74,7 @@
 //        make.height.equalTo(@40);
 //    }];
     
-    self.line = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height-0.5, self.frame.size.width, 0.5)];
+    self.line = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height - 0.5, self.frame.size.width, 0.5)];
 //    self.line.backgroundColor = [UIColor colorFromHexRGB:@"E8E9ED"];
     self.line.backgroundColor = [UIColor grayColor];
     [self addSubview:self.line];
@@ -80,6 +82,10 @@
 //        make.leading.trailing.bottom.equalTo(self);
 //        make.height.equalTo(@0.5);
 //    }];
+    
+    self.moveline = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height - 10, 10, 5)];
+    self.moveline.backgroundColor = [UIColor purpleColor];
+    [self.collectionView addSubview:self.moveline];
     
     UIFont *font = [UIFont systemFontOfSize:15.0];
     NSString *text = @"全部";
@@ -129,6 +135,20 @@
         cell.isHideLine = YES;
     }
     [cell.tagBtn addTarget:self action:@selector(clickCell:) forControlEvents:UIControlEventTouchUpInside];
+    
+    BOOL isUserSelect = (indexPath.item == _index);
+    //动画
+    if (isUserSelect) {
+        [UIView animateWithDuration:0.3
+                              delay:0.1
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+            CGPoint center = cell.center;
+            center.y = self.moveline.center.y;
+            self.moveline.center = center;
+        } completion:nil];
+    }
+
     return cell;
 }
 

@@ -33,6 +33,8 @@
     } else {
         [_tagBtn setTitleColor:[UIColor whiteColor]  forState:UIControlStateNormal];
     }
+    
+    self.line.hidden = YES;
 }
 
 -(UILabel *)tagLabel {
