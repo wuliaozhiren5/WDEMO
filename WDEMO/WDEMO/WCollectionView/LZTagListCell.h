@@ -14,4 +14,6 @@
 @property(assign ,nonatomic)BOOL isHideLine;
 @property (nonatomic, strong) UIButton *tagBtn;
 
+@property(assign ,nonatomic)BOOL isUserSelected;
+
 @end

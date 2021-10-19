@@ -47,11 +47,11 @@
     flowLayout.scrollDirection= UICollectionViewScrollDirectionHorizontal;
     flowLayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 5);
     //    Math中的round/ceil/floorf方法总结
-    flowLayout.itemSize = CGSizeMake( 100, 40);
+    flowLayout.itemSize = CGSizeMake(100, 40);
     //    设置同一列中间隔的cell最小间距
     flowLayout.minimumInteritemSpacing = 8.0;
     //     设置最小行间距
-    flowLayout.minimumLineSpacing = 5.0;
+    flowLayout.minimumLineSpacing = 8.0;
     
     //初始化collectionView
     self.collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:flowLayout];
@@ -127,18 +127,15 @@
     
     LZTagListCell *cell = (LZTagListCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([LZTagListCell class]) forIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
+    
+    BOOL isUserSelected = (indexPath.item == _index);
+    cell.isUserSelected = isUserSelected;
     cell.tagStr = _tagArr[indexPath.item];
     cell.tagBtn.tag = indexPath.item;
-    if (indexPath.item == _index) {
-        cell.isHideLine = NO;
-    } else {
-        cell.isHideLine = YES;
-    }
     [cell.tagBtn addTarget:self action:@selector(clickCell:) forControlEvents:UIControlEventTouchUpInside];
     
-    BOOL isUserSelect = (indexPath.item == _index);
     //动画
-    if (isUserSelect) {
+    if (isUserSelected) {
         [UIView animateWithDuration:0.3
                               delay:0.1
                             options:UIViewAnimationOptionCurveEaseInOut
@@ -179,9 +176,16 @@
     //    }
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     UIFont *font = [UIFont systemFontOfSize:12.0];
+    
+    BOOL isUserSelected = (indexPath.item == _index);
+    //动画
+    if (isUserSelected) {
+        font = [UIFont systemFontOfSize:20.0];
+    }
+    
     NSString *text = _tagArr[indexPath.item];
     CGSize maxSize = CGSizeMake(0, MAXFLOAT);
     CGSize textSize = CGSizeZero;
@@ -200,17 +204,17 @@
                                      context:nil];
     textSize = rect.size;
     //    return CGSizeMake(60, 40);
-    if (rect.size.width >= 40) {
+//    if (rect.size.width >= 40) {
         return CGSizeMake(rect.size.width + 16, 40);
-    } else  {
-        return CGSizeMake(40 + 16, 40);
-    }
+//    } else  {
+//        return CGSizeMake(40 + 16, 40);
+//    }
 //    return CGSizeMake(rect.size.width + 16, 40);
 }
 
 
--(void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath
-{
+-(void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+
     UICollectionViewCell * cell = (UICollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     if ( self.collectionView.contentSize.width < self.collectionView.frame.size.width) {
 

@@ -20,8 +20,22 @@
 //    self.tagLabel.text = tagStr;
 //    self.tagLabel.frame = self.contentView.bounds;
     [self.tagBtn setTitle:tagStr forState:UIControlStateNormal];
- 
+  
+    if (_isUserSelected) {
+        [_tagBtn setTitleColor:[UIColor whiteColor]  forState:UIControlStateNormal];
+        _tagBtn.titleLabel.font = [UIFont systemFontOfSize:20.0];
 
+    } else {
+        [_tagBtn setTitleColor:[UIColor blackColor]  forState:UIControlStateNormal];
+        _tagBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
+    }
+ 
+    CGSize size = [_tagBtn sizeThatFits:CGSizeMake(MAXFLOAT, self.contentView.bounds.size.height)];
+    _tagBtn.frame = CGRectMake(8, 0, size.width, self.contentView.bounds.size.height);
+}
+
+- (void)setIsUserSelected:(BOOL)isUserSelected {
+    _isUserSelected = isUserSelected;
 }
 
 -(void)setIsHideLine:(BOOL)isHideLine{
