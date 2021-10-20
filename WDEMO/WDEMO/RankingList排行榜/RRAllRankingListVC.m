@@ -113,7 +113,6 @@
 //    self.collectionView.mj_footer = footer;
  
     self.scrollView = self.collectionView;
-
 }
 
 #pragma mark --UICollectionViewDataSource
@@ -144,7 +143,7 @@
 //    cell.rr_statisticsExposureModel = model;
 //    return cell;
     
-//
+ 
 //    UICollectionViewCell *cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class]) forIndexPath:indexPath];
 //    cell.backgroundColor = [UIColor grayColor];
 //    return cell;

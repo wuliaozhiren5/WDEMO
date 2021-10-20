@@ -171,14 +171,19 @@ const CGFloat headViewHeight = 256;
             //外部未到顶了
             //内部不要下拉刷新
             //设置contentOffset
-            self.parentScrollView.contentOffset = CGPointMake(0, 0);
+            //self.parentScrollView.contentOffset = CGPointMake(0, 0);
             
-//            //支持下刷新。关闭弹簧效果
-//            //    self.mainTableView.bounces =  NO;
-//            if (self.mainTableView.contentOffset.y <= -headViewHeight) {
-//            } else {
-//                self.parentScrollView.contentOffset = CGPointMake(0, 0);
-//            }
+            //支持下刷新。关闭弹簧效果
+            BOOL bounces = self.mainTableView.bounces;
+            if (!bounces) {
+                if (self.mainTableView.contentOffset.y <= -headViewHeight) {
+                    
+                } else {
+                    self.parentScrollView.contentOffset = CGPointMake(0, 0);
+                }
+            } else {
+                self.parentScrollView.contentOffset = CGPointMake(0, 0);
+            }
         }
     } else {
         if (self.isTopIsCanNotMoveMainTableView) {
