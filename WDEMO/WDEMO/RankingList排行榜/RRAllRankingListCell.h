@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "UICollectionViewLeftAlignedLayout.h"
+#import "WCollectionViewCell.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RRAllRankingListCell : UICollectionViewCell
@@ -28,7 +29,11 @@ NS_ASSUME_NONNULL_BEGIN
 //热门榜，口碑榜，热搜榜的数量
 @property(nonatomic ,strong)UILabel *countLab;
 //标签
-@property(nonatomic, strong)UICollectionView *tagCollectionView;
+@property(nonatomic, strong) UICollectionView *collectionView;
+ 
+@property (nonatomic, strong) UICollectionViewLeftAlignedLayout *collectionLayout;
+
+@property (nonatomic, copy) NSArray *titleArr;
 //评论
 @property(nonatomic, strong)UILabel *commentLab;
 //线底部的线

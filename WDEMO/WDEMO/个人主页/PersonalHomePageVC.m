@@ -48,19 +48,6 @@ static CGFloat const headViewHeight = 256;
     
     self.title = @"个人主页";
     
-    [self.view addSubview:self.mainTableView];
-    
-    [self.mainTableView addSubview:self.headImageView];
-    //支持下刷新。关闭弹簧效果
-    //    self.mainTableView.bounces =  NO;
-    
-    if (@available(iOS 11.0, *)) {
-        self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    
-    
     self.navigationController.navigationBar.translucent = YES;//这个必须设置
     
     ////////////////////
@@ -80,17 +67,33 @@ static CGFloat const headViewHeight = 256;
     self.statusbarHeight = [self getStatusBarHight];
     self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
     
-    
-//    CGFloat top = 0;
-//    if (@available(iOS 11.0, *)) {
-//        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
-//        NSLog(@"%f",a);
-//        top = a;
-//    } else {
-//        top = 0;
-//    }
+    CGFloat top = 0;
+    if (@available(iOS 11.0, *)) {
+        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
+        NSLog(@"%f",a);
+        top = a;
+    } else {
+        top = 0;
+    }
 //    self.statusbarHeight = top;//[self getStatusBarHight];
-//    self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
+    if (top > 0) {
+        self.statusbarHeight = top;
+    }
+    self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
+    
+     
+    //TableView
+    [self.view addSubview:self.mainTableView];
+    
+    [self.mainTableView addSubview:self.headImageView];
+    //支持下刷新。关闭弹簧效果
+    //    self.mainTableView.bounces =  NO;
+    
+    if (@available(iOS 11.0, *)) {
+        self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
 
 //iOS 10、设置导航栏全透明
@@ -473,6 +476,7 @@ static CGFloat const headViewHeight = 256;
         _headImageView.frame=CGRectMake(0, -headViewHeight ,Screen_Width,headViewHeight);
         _headImageView.userInteractionEnabled = YES;
         _headImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _headImageView.clipsToBounds = YES;
         
         _avatarImage = [[UIImageView alloc] initWithFrame:CGRectMake(Screen_Width/2-40, 56, 80, 80)];
         [_headImageView addSubview:_avatarImage];

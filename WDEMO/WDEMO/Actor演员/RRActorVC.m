@@ -54,26 +54,10 @@ const CGFloat headViewHeight = 256;
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = @"Acotr个人主页";
-    
-    [self.view addSubview:self.mainTableView];
-    
-    [self.mainTableView addSubview:self.headImageView];
-    //支持下刷新。关闭弹簧效果
-    //    self.mainTableView.bounces =  NO;
+    self.title = @"演员个人主页";
     
     self.navigationController.navigationBar.translucent = YES;//这个必须设置
     
-    ////////////////////
-        CGFloat top = 0;
-        if (@available(iOS 11.0, *)) {
-            CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
-            NSLog(@"%f",a);
-            top = a;
-        } else {
-            top = 0;
-        }
- 
     ////////////////////
     
     NSLog(@"statusbar height: %f", [self getStatusBarHight]); // 高度
@@ -87,10 +71,37 @@ const CGFloat headViewHeight = 256;
     //（navigationbar）
     CGRect rectOfNavigationbar = self.navigationController.navigationBar.frame;
     NSLog(@"navigationbar height: %f", rectOfNavigationbar.size.height); // 高度
-     
-    self.statusbarHeight = top; //top > 0 ? top :[self getStatusBarHight]; //[self getStatusBarHight];
+    
+    self.statusbarHeight = [self getStatusBarHight];
     self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
- 
+    
+    CGFloat top = 0;
+    if (@available(iOS 11.0, *)) {
+        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
+        NSLog(@"%f",a);
+        top = a;
+    } else {
+        top = 0;
+    }
+//    self.statusbarHeight = top;//[self getStatusBarHight];
+    if (top > 0) {
+        self.statusbarHeight = top;
+    }
+    self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
+    
+     
+    //TableView
+    [self.view addSubview:self.mainTableView];
+    
+    [self.mainTableView addSubview:self.headImageView];
+    //支持下刷新。关闭弹簧效果
+    //    self.mainTableView.bounces =  NO;
+    
+    if (@available(iOS 11.0, *)) {
+        self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
 }
  
 - (void)viewWillAppear:(BOOL)animated{

@@ -56,7 +56,9 @@ static CGFloat const headViewHeight = 256;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"排行榜";
+    
+    self.title = @"新排行榜";
+    
     self.navigationController.navigationBar.translucent = YES;//这个必须设置
     
     ////////////////////
@@ -72,21 +74,23 @@ static CGFloat const headViewHeight = 256;
     //（navigationbar）
     CGRect rectOfNavigationbar = self.navigationController.navigationBar.frame;
     NSLog(@"navigationbar height: %f", rectOfNavigationbar.size.height); // 高度
-     
+    
     self.statusbarHeight = [self getStatusBarHight];
     self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
     
-    
-    //    CGFloat top = 0;
-    //    if (@available(iOS 11.0, *)) {
-    //        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
-    //        NSLog(@"%f",a);
-    //        top = a;
-    //    } else {
-    //        top = 0;
-    //    }
-    //    self.statusbarHeight = top;//[self getStatusBarHight];
-    //    self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
+    CGFloat top = 0;
+    if (@available(iOS 11.0, *)) {
+        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
+        NSLog(@"%f",a);
+        top = a;
+    } else {
+        top = 0;
+    }
+//    self.statusbarHeight = top;//[self getStatusBarHight];
+    if (top > 0) {
+        self.statusbarHeight = top;
+    }
+    self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
     
     [self createTagData];
     [self createSubVC];

@@ -14,8 +14,7 @@
 @interface SerachHistoryWordCollectionVC () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
-@property (nonatomic, strong) UICollectionViewLeftAlignedLayout *collectionLayout;
-
+@property (nonatomic, strong) UICollectionViewLeftAlignedLayout *collectionLayout; 
 @property (nonatomic, copy) NSArray *titleArr;
 
 @end
