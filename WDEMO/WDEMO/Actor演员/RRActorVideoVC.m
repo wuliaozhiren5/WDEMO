@@ -106,6 +106,7 @@
 //    footer.stateLabel.textColor = kCOLOR_85888F;
 //    self.collectionView.mj_footer = footer;
     
+    self.scrollView = self.collectionView;
 }
 
 #pragma mark --UICollectionViewDataSource

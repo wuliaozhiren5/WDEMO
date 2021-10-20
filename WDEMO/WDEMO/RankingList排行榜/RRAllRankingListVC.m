@@ -111,7 +111,9 @@
 //    footer.stateLabel.font = [UIFont systemFontOfSize:12];
 //    footer.stateLabel.textColor = kCOLOR_85888F;
 //    self.collectionView.mj_footer = footer;
-    
+ 
+    self.scrollView = self.collectionView;
+
 }
 
 #pragma mark --UICollectionViewDataSource
@@ -146,8 +148,7 @@
 //    UICollectionViewCell *cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class]) forIndexPath:indexPath];
 //    cell.backgroundColor = [UIColor grayColor];
 //    return cell;
-    
-    
+     
     RRAllRankingListCell *cell = (RRAllRankingListCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRAllRankingListCell class]) forIndexPath:indexPath];
     cell.backgroundColor = [UIColor grayColor];
     return cell;
