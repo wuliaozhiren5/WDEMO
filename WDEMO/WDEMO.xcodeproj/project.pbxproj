@@ -57,6 +57,8 @@
 		A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09C24B97FD4005922B1 /* ViewController3.m */; };
 		A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9DC1A24D66049009FB2EA /* UIImage+size.m */; };
 		F501FE9E271FC13400FE2F3B /* RRAllRankingListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */; };
+		F501FEA0271FEC2800FE2F3B /* 删除所有子View.md in Resources */ = {isa = PBXBuildFile; fileRef = F501FE9F271FEC2800FE2F3B /* 删除所有子View.md */; };
+		F501FEA2271FEE8000FE2F3B /* 状态栏高度.md in Resources */ = {isa = PBXBuildFile; fileRef = F501FEA1271FEE8000FE2F3B /* 状态栏高度.md */; };
 		F5023E4A2716B48700BA5829 /* 空白.md in Resources */ = {isa = PBXBuildFile; fileRef = F5023E492716B48700BA5829 /* 空白.md */; };
 		F5023E4C2716B4CD00BA5829 /* View设置顶点设置大小.md in Resources */ = {isa = PBXBuildFile; fileRef = F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */; };
 		F5023E4F2717097800BA5829 /* NewLXHBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F5023E4E2717097800BA5829 /* NewLXHBanner.m */; };
@@ -535,6 +537,8 @@
 		A4F9DC1A24D66049009FB2EA /* UIImage+size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+size.m"; sourceTree = "<group>"; };
 		F501FE9C271FC13400FE2F3B /* RRAllRankingListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingListVC.h; sourceTree = "<group>"; };
 		F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListVC.m; sourceTree = "<group>"; };
+		F501FE9F271FEC2800FE2F3B /* 删除所有子View.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "删除所有子View.md"; sourceTree = "<group>"; };
+		F501FEA1271FEE8000FE2F3B /* 状态栏高度.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "状态栏高度.md"; sourceTree = "<group>"; };
 		F5023E492716B48700BA5829 /* 空白.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白.md"; sourceTree = "<group>"; };
 		F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "View设置顶点设置大小.md"; sourceTree = "<group>"; };
 		F5023E4D2717097700BA5829 /* NewLXHBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewLXHBanner.h; sourceTree = "<group>"; };
@@ -1761,6 +1765,8 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				F501FEA1271FEE8000FE2F3B /* 状态栏高度.md */,
+				F501FE9F271FEC2800FE2F3B /* 删除所有子View.md */,
 				F58B5289271D960500CD6A3F /* 动画过程中的点击.md */,
 				F58B528B271D961A00CD6A3F /* 点击事件穿透.md */,
 				F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */,
@@ -2813,6 +2819,7 @@
 				F5CA141C26B2A6A000D8A7AE /* header_back_icon_highlight@2x.png in Resources */,
 				F5CA140426B2A2DC00D8A7AE /* account_normal@2x.png in Resources */,
 				F5760E0D268EEBFC008250D7 /* addHeaderFooter.md in Resources */,
+				F501FEA2271FEE8000FE2F3B /* 状态栏高度.md in Resources */,
 				F5710B4225232263009DEE02 /* 富文本.md in Resources */,
 				F5446CAC268D73300076961A /* 评论的副本2.json in Resources */,
 				F5CA13A326B2928700D8A7AE /* ic_bottombar_kuaikan_n@2x.png in Resources */,
@@ -2921,6 +2928,7 @@
 				F5CA13B026B2928700D8A7AE /* ic_bottombar_home_h@2x.png in Resources */,
 				F592283A26C500F80030DB49 /* UIScrollView滑动停止监听.md in Resources */,
 				F58613D026A96EB100D81DDA /* start.sh in Resources */,
+				F501FEA0271FEC2800FE2F3B /* 删除所有子View.md in Resources */,
 				F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */,
 				F5F3665A26F0D82A00E5D767 /* UICollectionView预加载isPrefetchingEnabled.md in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,

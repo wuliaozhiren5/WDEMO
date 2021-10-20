@@ -77,18 +77,6 @@ static CGFloat const headViewHeight = 256;
     CGRect rectOfNavigationbar = self.navigationController.navigationBar.frame;
     NSLog(@"navigationbar height: %f", rectOfNavigationbar.size.height); // 高度
     
-    //    iOS：状态栏和导航栏的高度获取
-    //    作者：柠檬丶Lemon
-    //    链接：https://www.jianshu.com/p/9064d8103022
-    //    来源：简书
-    //    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-    
-    //    iOS 13后状态栏获取高度的方法
-    //    作者：li125434104
-    //    链接：https://www.jianshu.com/p/d60757f13038
-    //    来源：简书
-    //    著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-    
     self.statusbarHeight = [self getStatusBarHight];
     self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
     
