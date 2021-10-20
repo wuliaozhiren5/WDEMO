@@ -11,6 +11,28 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RRAllRankingListCell : UITableViewCell
+//封面
+@property(nonatomic ,strong)UIImageView *coverImgV;
+//追剧按钮
+@property(nonatomic ,strong)UIButton *followBtn;
+//剧照多图滚动图
+@property(nonatomic ,strong)UIView *pohtoView; //view要改
+//1，2，3，---------50（top50）背景图
+@property(nonatomic ,strong)UIImageView *numberIconImgV;
+//1，2，3，---------50（top50）
+@property(nonatomic ,strong)UILabel *numberLab;
+//标题
+@property(nonatomic ,strong)UILabel *titleLab;
+//热门榜，口碑榜，热搜榜
+@property(nonatomic ,strong)UIImageView *countIconImgV;
+//热门榜，口碑榜，热搜榜的数量
+@property(nonatomic ,strong)UILabel *countLab;
+//标签
+@property(nonatomic, strong)UICollectionView *tagCollectionView;
+//评论
+@property(nonatomic, strong)UILabel *commentLab;
+//线底部的线
+@property(nonatomic, strong)UILabel *line;
 
 @end
 
