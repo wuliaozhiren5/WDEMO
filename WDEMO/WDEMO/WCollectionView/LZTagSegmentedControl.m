@@ -17,31 +17,35 @@
 
 @property(strong , nonatomic)UIView *moveline;
 
-@end
+@property(strong , nonatomic)UIView *moveCircle;
 
+@property(assign , nonatomic)BOOL isfirst;
+
+@end
 
 @implementation LZTagSegmentedControl
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        self.isfirst = YES;
         [self addView];
     }
     return self;
 }
 
--(void)addView{
-        _tagArr = @[@"测试全部",
-                    @"全部1",
-                    @"全部2",
-                    @"全部3",
-                    @"全部4",
-                    @"全部5",
-                    @"全部6",
-                    @"全部7",
-                    @"全部8",
-                    @"全部9",
-                    @"全部10"];
+- (void)addView {
+    _tagArr = @[@"测试全部",
+                @"全部1",
+                @"全部2",
+                @"全部3",
+                @"全部4",
+                @"全部5",
+                @"全部6",
+                @"全部7",
+                @"全部8",
+                @"全部9",
+                @"全部10"];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     //水平
     flowLayout.scrollDirection= UICollectionViewScrollDirectionHorizontal;
@@ -69,23 +73,29 @@
     
     self.collectionView.frame = self.bounds;
     
-//    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.trailing.top.equalTo(self);
-//        make.height.equalTo(@40);
-//    }];
+    //    [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.leading.trailing.top.equalTo(self);
+    //        make.height.equalTo(@40);
+    //    }];
     
     self.line = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height - 0.5, self.frame.size.width, 0.5)];
-//    self.line.backgroundColor = [UIColor colorFromHexRGB:@"E8E9ED"];
+    //    self.line.backgroundColor = [UIColor colorFromHexRGB:@"E8E9ED"];
     self.line.backgroundColor = [UIColor grayColor];
     [self addSubview:self.line];
-//    [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.trailing.bottom.equalTo(self);
-//        make.height.equalTo(@0.5);
-//    }];
+    //    [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.leading.trailing.bottom.equalTo(self);
+    //        make.height.equalTo(@0.5);
+    //    }];
     
     self.moveline = [[UIView alloc]initWithFrame:CGRectMake(0, self.frame.size.height - 10, 10, 5)];
     self.moveline.backgroundColor = [UIColor purpleColor];
     [self.collectionView addSubview:self.moveline];
+    
+    self.moveCircle = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 10, self.frame.size.height - 10)];
+    self.moveCircle.backgroundColor = [[UIColor yellowColor] colorWithAlphaComponent:0.5];
+    self.moveCircle.layer.cornerRadius = (self.frame.size.height - 10) / 2;
+    self.moveCircle.layer.masksToBounds = YES;
+    [self.collectionView addSubview:self.moveCircle];
     
     UIFont *font = [UIFont systemFontOfSize:15.0];
     NSString *text = @"全部";
@@ -135,21 +145,35 @@
     [cell.tagBtn addTarget:self action:@selector(clickCell:) forControlEvents:UIControlEventTouchUpInside];
     
     //动画
+    //被选中
     if (isUserSelected) {
-        [UIView animateWithDuration:0.3
-                              delay:0.1
-                            options:UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
+        //初始化时候（第一次），不需要动画
+        if (self.isfirst) {
+            self.isfirst = NO;
             CGPoint center = cell.center;
             center.y = self.moveline.center.y;
             self.moveline.center = center;
-        } completion:nil];
+            
+            CGRect frame = cell.frame;
+            self.moveCircle.frame = CGRectMake(frame.origin.x, frame.origin.y + 5, cell.frame.size.width, cell.frame.size.height - 10);
+        } else {
+            [UIView animateWithDuration:0.2
+                                  delay:0.01
+                                options:UIViewAnimationOptionCurveEaseInOut
+                             animations:^{
+                CGPoint center = cell.center;
+                center.y = self.moveline.center.y;
+                self.moveline.center = center;
+                
+                CGRect frame = cell.frame;
+                self.moveCircle.frame = CGRectMake(frame.origin.x, frame.origin.y + 5, cell.frame.size.width, cell.frame.size.height - 10);
+            } completion:nil];
+        }
     }
-
     return cell;
 }
 
--(void)clickCell:(UIButton *)btn {
+- (void)clickCell:(UIButton *)btn {
     
     if (_index == btn.tag) {
         return;
@@ -164,7 +188,7 @@
 }
 #pragma mark -- UICollectionViewDelegate
 //UICollectionView被选中时调用的方法
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     //    if (_index == indexPath.item ) {
     //        return;
@@ -204,31 +228,31 @@
                                      context:nil];
     textSize = rect.size;
     //    return CGSizeMake(60, 40);
-//    if (rect.size.width >= 40) {
-        return CGSizeMake(rect.size.width + 16, 40);
-//    } else  {
-//        return CGSizeMake(40 + 16, 40);
-//    }
-//    return CGSizeMake(rect.size.width + 16, 40);
+    //    if (rect.size.width >= 40) {
+    return CGSizeMake(rect.size.width + 16, 40);
+    //    } else  {
+    //        return CGSizeMake(40 + 16, 40);
+    //    }
+    //    return CGSizeMake(rect.size.width + 16, 40);
 }
 
 
--(void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-
+- (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     UICollectionViewCell * cell = (UICollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     if ( self.collectionView.contentSize.width < self.collectionView.frame.size.width) {
-
+        
         [self.collectionView setContentOffset:CGPointMake(0, 0) animated:YES];
     } else {
         if (cell.frame.size.width/2 + cell.frame.origin.x - self.collectionView.frame.size.width/2 <=0) {
             [self.collectionView setContentOffset:CGPointMake(0, 0) animated:YES];
-
+            
         } else if (cell.frame.size.width/2 + cell.frame.origin.x > self.collectionView.contentSize.width - self.collectionView.frame.size.width/2 ){
-
+            
             [self.collectionView setContentOffset:CGPointMake(self.collectionView.contentSize.width - self.collectionView.frame.size.width, 0) animated:YES];
-
+            
         }else {
-
+            
             [self.collectionView setContentOffset:CGPointMake(cell.frame.size.width/2 + cell.frame.origin.x - self.collectionView.frame.size.width/2 , 0) animated:YES];
         }
     }
@@ -236,7 +260,7 @@
     [self.collectionView reloadData];
 }
 
--(void)setIndex:(NSInteger)index {
+- (void)setIndex:(NSInteger)index {
     
     _index = index;
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
@@ -265,7 +289,7 @@
     return view;
 }
 
--(void)setTagArr:(NSArray *)tagArr{
+- (void)setTagArr:(NSArray *)tagArr{
     _tagArr = tagArr;
     [self.collectionView reloadData];
 }
