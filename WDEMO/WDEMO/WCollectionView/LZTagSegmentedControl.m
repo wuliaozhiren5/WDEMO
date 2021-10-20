@@ -290,6 +290,7 @@
 
 - (void)setTagArr:(NSArray *)tagArr{
     _tagArr = tagArr;
+    //删除所有子View
     [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     [self addView];
  }

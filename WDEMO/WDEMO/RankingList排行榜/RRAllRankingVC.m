@@ -8,17 +8,16 @@
 
 #import "RRAllRankingVC.h"
 #import "THeader.h"
-#import "OneViewTableTableViewController.h"
-#import "SecondViewTableViewController.h"
-#import "ThirdViewCollectionViewController.h"
 #import "MainTouchTableTableView.h"
 #import "ParentClassScrollViewController.h"
 #import "WMPageController.h"
 #import "RRAllRankingSubVC.h"
+#import "LZTagSegmentedControl.h"
+#import "RRAllRankingListVC.h"
 
 static CGFloat const headViewHeight = 256;
 
-@interface RRAllRankingVC ()<UITableViewDelegate, UITableViewDataSource, scrollDelegate, WMPageControllerDelegate>
+@interface RRAllRankingVC ()<UITableViewDelegate, UITableViewDataSource, scrollDelegate, WMPageControllerDelegate, LZTagSegmentedControlDelegate>
 //tableview
 @property(nonatomic ,strong)MainTouchTableTableView *mainTableView;
 //scrollView
@@ -41,7 +40,14 @@ static CGFloat const headViewHeight = 256;
 
 //pageVC字典
 @property (nonatomic, strong) NSMutableDictionary *pageVCDict;
+ 
+@property (nonatomic, copy) NSArray *tagArr;
+@property (nonatomic, copy) NSArray *subTagArr;
+@property (nonatomic, assign) NSInteger selectIndex;
+//当前的subVC
+@property (nonatomic,strong) UIViewController *currentSubVC;
 
+@property(strong , nonatomic)LZTagSegmentedControl *segmentedControl;
 @end
 
 
@@ -50,24 +56,9 @@ static CGFloat const headViewHeight = 256;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    
     self.title = @"排行榜";
-    
-    [self.view addSubview:self.mainTableView];
-    
-    [self.mainTableView addSubview:self.headImageView];
-    //支持下刷新。关闭弹簧效果
-    //    self.mainTableView.bounces =  NO;
-    
-    if (@available(iOS 11.0, *)) {
-        self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
-    
-    
     self.navigationController.navigationBar.translucent = YES;//这个必须设置
-    
+ 
     ////////////////////
     
     NSLog(@"statusbar height: %f", [self getStatusBarHight]); // 高度
@@ -108,6 +99,167 @@ static CGFloat const headViewHeight = 256;
 //    }
 //    self.statusbarHeight = top;//[self getStatusBarHight];
 //    self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
+    
+    [self createTagData];
+    [self createSubVC];
+    [self createSegmentedControl];
+    [self createTableView];
+}
+
+- (void)createSubVC {
+    self.currentSubVC = [self getPageVC];
+}
+
+- (void)removeSubVC {
+    if (self.currentSubVC) {
+        [self.currentSubVC.view removeFromSuperview];
+    }
+}
+
+- (void)createTableView {
+    [self.view addSubview:self.mainTableView];
+    [self.mainTableView addSubview:self.headImageView];
+    //支持下刷新。关闭弹簧效果
+    //bounces = YES;外部支持下拉刷新
+    //bounces = NO;内部支持下拉刷新
+    self.mainTableView.bounces = NO;
+    
+    if (@available(iOS 11.0, *)) {
+        self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    }else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
+}
+
+- (void)createTagData {
+    NSArray *tagArr = @[
+        @"总榜",
+        @"评分榜",
+        @"热门榜",
+        @"搜索榜",
+        @"口碑榜",
+    ];
+    _tagArr = tagArr;
+    
+    NSArray *subTagArr0 = @[
+        @"全部",
+        @"美剧总",
+        @"日剧总",
+        @"韩剧总",
+        @"泰剧总",
+        @"英剧总",
+        @"动画总",
+    ];
+    NSArray *subTagArr1 = @[
+        @"全部",
+        @"美剧评分",
+        @"日剧评分",
+        @"韩剧评分",
+        @"泰剧评分",
+        @"英剧评分",
+        @"动画评分",
+    ];
+    NSArray *subTagArr2 = @[
+        @"全部",
+        @"美剧热门",
+        @"日剧热门",
+        @"韩剧热门",
+        @"泰剧热门",
+        @"英剧热门",
+        @"动画热门",
+    ];
+    NSArray *subTagArr3 = @[
+        @"全部",
+        @"美剧搜索",
+        @"日剧搜索",
+        @"韩剧搜索",
+        @"泰剧搜索",
+        @"英剧搜索",
+        @"动画搜索",
+    ];
+    NSArray *subTagArr4 = @[
+        @"全部",
+        @"美剧口碑",
+        @"日剧口碑",
+        @"韩剧口碑",
+        @"泰剧口碑",
+        @"英剧口碑",
+        @"动画口碑",
+    ];
+    _subTagArr = @[
+        subTagArr0,
+        subTagArr1,
+        subTagArr2,
+        subTagArr3,
+        subTagArr4,
+    ];
+}
+
+- (void)createSegmentedControl {
+    LZTagSegmentedControl *segmentedControl = [[LZTagSegmentedControl alloc]initWithFrame:CGRectMake(0, headViewHeight - 40 - 10, SCREEN_WIDTH, 40)];
+    segmentedControl.backgroundColor = [UIColor yellowColor];
+    segmentedControl.delegate = self;
+  
+    NSArray *tagArr = _tagArr;
+    segmentedControl.tagArr = tagArr;
+    segmentedControl.index = self.selectIndex;
+    [self.headImageView addSubview:segmentedControl];
+    _segmentedControl = segmentedControl;
+}
+
+- (UIViewController *)getPageVC {
+    NSString *key = @(self.selectIndex).stringValue;
+    UIViewController *showVC = self.pageVCDict[key];
+    if (!showVC) {
+        showVC = [self createPageVC];
+        NSString *key = @(self.selectIndex).stringValue;
+        self.pageVCDict[key] = showVC;
+    }
+    return showVC;
+}
+
+- (UIViewController *)createPageVC {
+ 
+    NSArray *tagArr = _subTagArr[self.selectIndex];
+ 
+    NSMutableArray *viewControllers = [NSMutableArray array];
+    for (NSString *title in tagArr) {
+        RRAllRankingListVC *oneVc  = [RRAllRankingListVC new];
+        oneVc.delegate = self;
+        oneVc.title = title;
+        [viewControllers addObject:oneVc];
+    }
+    NSArray *titles = tagArr;
+    
+    RRAllRankingSubVC *pageVC= [[RRAllRankingSubVC alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
+    pageVC.viewControllers = viewControllers;
+    
+    pageVC.selectIndex = 0;
+    //    pageVC.title = @"首页样式";
+    //带下划线
+    pageVC.menuViewStyle = WMMenuViewStyleLine;
+    ///** 是否自动通过字符串计算 MenuItem 的宽度，默认为 NO. */
+    pageVC.automaticallyCalculatesItemWidths = YES;
+    //菜单对齐方式
+    pageVC.menuViewLayoutMode = WMMenuViewLayoutModeLeft;
+    //间隙
+    pageVC.itemMargin = 10;
+    /** MenuView 内部视图与左右的间距 */
+    pageVC.menuViewContentMargin = 10;
+    //底部小横线样式，小红线长度
+    pageVC.progressViewIsNaughty = YES;
+    pageVC.progressWidth = 10;
+    //        vc.selectIndex = 1;
+    //        vc.automaticallyCalculatesItemWidths = YES;
+    //        vc.titleSizeSelected = 16;
+    
+    pageVC.titleSizeNormal = 15.0;
+    pageVC.titleSizeSelected = 20.0;
+    
+    [self addChildViewController:pageVC];
+    [pageVC didMoveToParentViewController:self];
+    return pageVC;
+ 
 }
 
 //iOS 10、设置导航栏全透明
@@ -195,7 +347,19 @@ static CGFloat const headViewHeight = 256;
             //外部未到顶了
             //内部不要下拉刷新
             //设置contentOffset
-            self.parentScrollView.contentOffset = CGPointMake(0, 0);
+//            self.parentScrollView.contentOffset = CGPointMake(0, 0);
+            
+            //支持下刷新。关闭弹簧效果
+            BOOL bounces = self.mainTableView.bounces;
+            if (!bounces) {
+                if (self.mainTableView.contentOffset.y <= -headViewHeight) {
+                    
+                } else {
+                    self.parentScrollView.contentOffset = CGPointMake(0, 0);
+                }
+            } else {
+                self.parentScrollView.contentOffset = CGPointMake(0, 0);
+            } 
         }
     } else {
         if (self.isTopIsCanNotMoveMainTableView) {
@@ -401,8 +565,17 @@ static CGFloat const headViewHeight = 256;
      * 这里可以任意替换你喜欢的pageView
      *作者这里使用一款github较多人使用的 WMPageController 地址https://github.com/wangmchn/WMPageController
      */
-    [cell.contentView addSubview:self.setPageViewControllers];
     
+    //删除所有子View
+//    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    //删除老的
+    [self removeSubVC];
+    //创建新的
+    [self createSubVC];
+    
+    UIViewController *showVC = self.currentSubVC;
+    [cell.contentView addSubview:showVC.view];
     return cell;
 }
 
@@ -415,58 +588,17 @@ static CGFloat const headViewHeight = 256;
  // Pass the selected object to the new view controller.
  }
  */
-#pragma mark -- setter/getter
 
--(UIView *)setPageViewControllers
-{
-    WMPageController *pageController = [self p_defaultController];
-    pageController.title = @"Line";
-    pageController.menuViewStyle = WMMenuViewStyleLine;
-    pageController.titleSizeSelected = 15;
-    [self addChildViewController:pageController];
-    [pageController didMoveToParentViewController:self];
-    return pageController.view;
-}
-
-- (WMPageController *)p_defaultController {
-    OneViewTableTableViewController * oneVc  = [OneViewTableTableViewController new];
-    oneVc.delegate = self;
-    SecondViewTableViewController * twoVc  = [SecondViewTableViewController new];
-    twoVc.delegate = self;
-    ThirdViewCollectionViewController * thirdVc  = [ThirdViewCollectionViewController new];
-    thirdVc.delegate = self;
-    
-    NSArray *viewControllers = @[oneVc,twoVc,thirdVc];
-    NSArray *titles = @[@"first",@"second",@"third"];
-    
-    RRAllRankingSubVC *pageVC= [[RRAllRankingSubVC alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
-    pageVC.viewControllers = viewControllers;
-    
-    pageVC.selectIndex = 0;
-    //    pageVC.title = @"首页样式";
-    //带下划线
-    pageVC.menuViewStyle = WMMenuViewStyleLine;
-    ///** 是否自动通过字符串计算 MenuItem 的宽度，默认为 NO. */
-    pageVC.automaticallyCalculatesItemWidths = YES;
-    //菜单对齐方式
-    pageVC.menuViewLayoutMode = WMMenuViewLayoutModeLeft;
-    //间隙
-    pageVC.itemMargin = 10;
-    /** MenuView 内部视图与左右的间距 */
-    pageVC.menuViewContentMargin = 10;
-    //底部小横线样式，小红线长度
-    pageVC.progressViewIsNaughty = YES;
-    pageVC.progressWidth = 10;
-    //        vc.selectIndex = 1;
-    //        vc.automaticallyCalculatesItemWidths = YES;
-    //        vc.titleSizeSelected = 16;
-    
-    return pageVC;
-    
-}
-
+#pragma mark - WMPageControllerDelegate
 - (void)pageController:(WMPageController *)pageController willEnterViewController:(__kindof UIViewController *)viewController withInfo:(NSDictionary *)info {
     NSLog(@"%@",viewController);
+}
+
+#pragma mark - LZTagSegmentedControlDelegate
+- (void)tagSegmentedControl:(LZTagSegmentedControl *)tagSegmentedControl
+      didSelectItemAtIndex:(NSInteger)index {
+    self.selectIndex = index;
+    [self.mainTableView reloadData];
 }
 
 #pragma mark -- lazy 懒加载
@@ -478,6 +610,7 @@ static CGFloat const headViewHeight = 256;
         _headImageView.frame=CGRectMake(0, -headViewHeight ,Screen_Width,headViewHeight);
         _headImageView.userInteractionEnabled = YES;
         _headImageView.contentMode = UIViewContentModeScaleAspectFill;
+        _headImageView.clipsToBounds = YES;
         
         _avatarImage = [[UIImageView alloc] initWithFrame:CGRectMake(Screen_Width/2-40, 56, 80, 80)];
         [_headImageView addSubview:_avatarImage];

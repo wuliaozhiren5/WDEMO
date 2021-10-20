@@ -22,7 +22,7 @@
 
 @protocol LZTagSegmentedControlDelegate <NSObject>
 
--(void)tagSegmentedControl:(LZTagSegmentedControl *)tagSegmentedControl
+- (void)tagSegmentedControl:(LZTagSegmentedControl *)tagSegmentedControl
       didSelectItemAtIndex:(NSInteger)index;
 
 @end

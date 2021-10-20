@@ -31,4 +31,7 @@ typedef void (^ClickIndexBlock)(UIResponder *sender, NSUInteger index);
 
 //#import "codeObfuscation.h"
 
+#import "WMacros.h"
+#import "THeader.h"
+
 #endif /* WDEMO_pch */

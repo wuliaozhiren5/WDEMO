@@ -30,7 +30,7 @@
     self.scrollView = _myTableView;
     
     // 下拉刷新
-    _myTableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+    _myTableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
         // 模拟延迟加载数据，因此2秒后才调用（真实开发中，可以移除这段gcd代码）
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             // 结束刷新

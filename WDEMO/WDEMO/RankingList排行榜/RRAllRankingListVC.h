@@ -6,11 +6,11 @@
 //  Copyright © 2021 wwc. All rights reserved.
 //
 
-#import "BaseViewController.h"
+#import "ParentClassScrollViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RRAllRankingListVC : BaseViewController
+@interface RRAllRankingListVC : ParentClassScrollViewController
 
 @end
 
