@@ -40,7 +40,7 @@ static CGFloat const headViewHeight = 256;
 
 //pageVC字典
 @property (nonatomic, strong) NSMutableDictionary *pageVCDict;
- 
+
 @property (nonatomic, copy) NSArray *tagArr;
 @property (nonatomic, copy) NSArray *subTagArr;
 @property (nonatomic, assign) NSInteger selectIndex;
@@ -58,7 +58,7 @@ static CGFloat const headViewHeight = 256;
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = @"排行榜";
     self.navigationController.navigationBar.translucent = YES;//这个必须设置
- 
+    
     ////////////////////
     
     NSLog(@"statusbar height: %f", [self getStatusBarHight]); // 高度
@@ -89,16 +89,16 @@ static CGFloat const headViewHeight = 256;
     self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
     
     
-//    CGFloat top = 0;
-//    if (@available(iOS 11.0, *)) {
-//        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
-//        NSLog(@"%f",a);
-//        top = a;
-//    } else {
-//        top = 0;
-//    }
-//    self.statusbarHeight = top;//[self getStatusBarHight];
-//    self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
+    //    CGFloat top = 0;
+    //    if (@available(iOS 11.0, *)) {
+    //        CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
+    //        NSLog(@"%f",a);
+    //        top = a;
+    //    } else {
+    //        top = 0;
+    //    }
+    //    self.statusbarHeight = top;//[self getStatusBarHight];
+    //    self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
     
     [self createTagData];
     [self createSubVC];
@@ -126,7 +126,7 @@ static CGFloat const headViewHeight = 256;
     
     if (@available(iOS 11.0, *)) {
         self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }else {
+    } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
 }
@@ -199,7 +199,7 @@ static CGFloat const headViewHeight = 256;
     LZTagSegmentedControl *segmentedControl = [[LZTagSegmentedControl alloc]initWithFrame:CGRectMake(0, headViewHeight - 40 - 10, SCREEN_WIDTH, 40)];
     segmentedControl.backgroundColor = [UIColor yellowColor];
     segmentedControl.delegate = self;
-  
+    
     NSArray *tagArr = _tagArr;
     segmentedControl.tagArr = tagArr;
     segmentedControl.index = self.selectIndex;
@@ -219,9 +219,9 @@ static CGFloat const headViewHeight = 256;
 }
 
 - (UIViewController *)createPageVC {
- 
+    
     NSArray *tagArr = _subTagArr[self.selectIndex];
- 
+    
     NSMutableArray *viewControllers = [NSMutableArray array];
     for (NSString *title in tagArr) {
         RRAllRankingListVC *oneVc  = [RRAllRankingListVC new];
@@ -259,7 +259,7 @@ static CGFloat const headViewHeight = 256;
     [self addChildViewController:pageVC];
     [pageVC didMoveToParentViewController:self];
     return pageVC;
- 
+    
 }
 
 //iOS 10、设置导航栏全透明
@@ -347,7 +347,7 @@ static CGFloat const headViewHeight = 256;
             //外部未到顶了
             //内部不要下拉刷新
             //设置contentOffset
-//            self.parentScrollView.contentOffset = CGPointMake(0, 0);
+            //            self.parentScrollView.contentOffset = CGPointMake(0, 0);
             
             //支持下刷新。关闭弹簧效果
             BOOL bounces = self.mainTableView.bounces;
@@ -501,7 +501,7 @@ static CGFloat const headViewHeight = 256;
     CGFloat maxAlphaOffset = headViewHeight;
     CGFloat offset = scrollView.contentOffset.y;
     CGFloat alpha = 1 + (offset + minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
- 
+    
     //滑动渐变颜色
     [self.navigationController.navigationBar setBackgroundImage:[self imageWithBgColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:alpha]] forBarMetrics:UIBarMetricsDefault];// 颜色自己设置 渐变开始的位置自己算
     
@@ -522,24 +522,24 @@ static CGFloat const headViewHeight = 256;
         _avatarImage.frame = avatarF;
         _countentLabel.frame = CGRectMake((f.size.width-Screen_Width)/2+40, (f.size.height-headViewHeight)+172, Screen_Width-80, 36);
     }
-//    else无用
-//    else {
-//        CGFloat minAlphaOffset = self.navigationbarHeight + self.statusbarHeight;
-//        CGFloat maxAlphaOffset = headViewHeight;
-//        CGFloat offset = scrollView.contentOffset.y;
-//        CGFloat alpha = (-offset) / (maxAlphaOffset - minAlphaOffset);
-//        _headImageView.alpha = alpha;
-
-        
-        
-//        CGFloat height = headViewHeight - self.navigationbarHeight - self.statusbarHeight;
-        //透明度
-//        CGFloat alpha = -yOffset/height;
-//        self.headImageView.alpha = alpha;
-         
-//        _headImageView.frame=CGRectMake(0, -headViewHeight, Screen_Width, headViewHeight);
-
-//    }
+    //    else无用
+    //    else {
+    //        CGFloat minAlphaOffset = self.navigationbarHeight + self.statusbarHeight;
+    //        CGFloat maxAlphaOffset = headViewHeight;
+    //        CGFloat offset = scrollView.contentOffset.y;
+    //        CGFloat alpha = (-offset) / (maxAlphaOffset - minAlphaOffset);
+    //        _headImageView.alpha = alpha;
+    
+    
+    
+    //        CGFloat height = headViewHeight - self.navigationbarHeight - self.statusbarHeight;
+    //透明度
+    //        CGFloat alpha = -yOffset/height;
+    //        self.headImageView.alpha = alpha;
+    
+    //        _headImageView.frame=CGRectMake(0, -headViewHeight, Screen_Width, headViewHeight);
+    
+    //    }
 }
 
 #pragma mark --tableDelegate
@@ -567,7 +567,7 @@ static CGFloat const headViewHeight = 256;
      */
     
     //删除所有子View
-//    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    //    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     //删除老的
     [self removeSubVC];
@@ -596,7 +596,7 @@ static CGFloat const headViewHeight = 256;
 
 #pragma mark - LZTagSegmentedControlDelegate
 - (void)tagSegmentedControl:(LZTagSegmentedControl *)tagSegmentedControl
-      didSelectItemAtIndex:(NSInteger)index {
+       didSelectItemAtIndex:(NSInteger)index {
     self.selectIndex = index;
     [self.mainTableView reloadData];
 }
@@ -651,7 +651,7 @@ static CGFloat const headViewHeight = 256;
         _pageVCDict = [NSMutableDictionary dictionary];
     }
     return _pageVCDict;
-
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
