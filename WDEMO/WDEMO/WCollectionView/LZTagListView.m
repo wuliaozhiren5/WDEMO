@@ -167,8 +167,24 @@
     //        make.leading.trailing.bottom.equalTo(_headerView);
     //        make.height.equalTo(@40);
     //    }];
-    _segmentedControl =segmentedControl;
-    _index = 0;
+     
+    NSArray *tagArr = @[
+        @"测试全部",
+        @"测试1",
+        @"测试2",
+        @"测试3",
+        @"测试4",
+        @"测试5",
+        @"测试6",
+        @"测试7",
+        @"测试8",
+        @"测试9",
+        @"测试10",
+    ];
+    segmentedControl.tagArr = tagArr;
+    segmentedControl.index = 2;
+    _segmentedControl = segmentedControl;
+    _index = 2;
 }
 
 #pragma mark - LZTagSegmentedControlDelegate

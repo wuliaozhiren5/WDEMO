@@ -1,8 +1,8 @@
 //
-//  RRAllRankingListVC.h
+//  RRAllRankingVC.h
 //  WDEMO
 //
-//  Created by rrtv on 2021/10/20.
+//  Created by WDEMO on 2021/10/19.
 //  Copyright © 2021 wwc. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RRAllRankingListVC : BaseViewController
+@interface RRAllRankingVC : BaseViewController
 
 @end
 

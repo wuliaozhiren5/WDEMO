@@ -19,7 +19,7 @@
 
 @property(strong , nonatomic)UIView *moveCircle;
 
-@property(assign , nonatomic)BOOL isfirst;
+@property(assign , nonatomic)BOOL isfirstAnimate;
 
 @end
 
@@ -28,24 +28,23 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.isfirst = YES;
-        [self addView];
+//        [self addView];
     }
     return self;
 }
 
 - (void)addView {
-    _tagArr = @[@"测试全部",
-                @"全部1",
-                @"全部2",
-                @"全部3",
-                @"全部4",
-                @"全部5",
-                @"全部6",
-                @"全部7",
-                @"全部8",
-                @"全部9",
-                @"全部10"];
+//    _tagArr = @[@"测试全部",
+//                @"全部1",
+//                @"全部2",
+//                @"全部3",
+//                @"全部4",
+//                @"全部5",
+//                @"全部6",
+//                @"全部7",
+//                @"全部8",
+//                @"全部9",
+//                @"全部10"];
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     //水平
     flowLayout.scrollDirection= UICollectionViewScrollDirectionHorizontal;
@@ -97,26 +96,26 @@
     self.moveCircle.layer.masksToBounds = YES;
     [self.collectionView addSubview:self.moveCircle];
     
-    UIFont *font = [UIFont systemFontOfSize:15.0];
-    NSString *text = @"全部";
-    CGSize maxSize = CGSizeMake(0, MAXFLOAT);
-    CGSize textSize = CGSizeZero;
-    
-    NSStringDrawingOptions opts = NSStringDrawingUsesLineFragmentOrigin |
-    NSStringDrawingUsesFontLeading;
-    
-    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
-    [style setLineBreakMode:NSLineBreakByCharWrapping];
-    
-    NSDictionary *attributes = @{ NSFontAttributeName : font, NSParagraphStyleAttributeName : style };
-    
-    CGRect rect = [text boundingRectWithSize:maxSize
-                                     options:opts
-                                  attributes:attributes
-                                     context:nil];
-    textSize = rect.size;
-    
-    _index = 0;
+//    UIFont *font = [UIFont systemFontOfSize:15.0];
+//    NSString *text = @"全部";
+//    CGSize maxSize = CGSizeMake(0, MAXFLOAT);
+//    CGSize textSize = CGSizeZero;
+//
+//    NSStringDrawingOptions opts = NSStringDrawingUsesLineFragmentOrigin |
+//    NSStringDrawingUsesFontLeading;
+//
+//    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+//    [style setLineBreakMode:NSLineBreakByCharWrapping];
+//
+//    NSDictionary *attributes = @{ NSFontAttributeName : font, NSParagraphStyleAttributeName : style };
+//
+//    CGRect rect = [text boundingRectWithSize:maxSize
+//                                     options:opts
+//                                  attributes:attributes
+//                                     context:nil];
+//    textSize = rect.size;
+//
+//    _index = 0;
 }
 
 #pragma mark --UICollectionViewDataSource
@@ -148,8 +147,8 @@
     //被选中
     if (isUserSelected) {
         //初始化时候（第一次），不需要动画
-        if (self.isfirst) {
-            self.isfirst = NO;
+        if (!self.isfirstAnimate) {
+            self.isfirstAnimate = YES;
             CGPoint center = cell.center;
             center.y = self.moveline.center.y;
             self.moveline.center = center;
@@ -291,7 +290,8 @@
 
 - (void)setTagArr:(NSArray *)tagArr{
     _tagArr = tagArr;
-    [self.collectionView reloadData];
-}
+    [self.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    [self addView];
+ }
 @end
 

@@ -114,7 +114,7 @@
 #import "BannerViewController.h"
 #import "CarouseViewController.h"
 //排行榜
-#import "RRAllRankingListVC.h"
+#import "RRAllRankingVC.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -1082,7 +1082,7 @@
 - (void)clickAllRankingList {
     //排行榜
     
-    RRAllRankingListVC *vc= [[RRAllRankingListVC alloc]init];
+    RRAllRankingVC *vc= [[RRAllRankingVC alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

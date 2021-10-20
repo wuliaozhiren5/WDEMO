@@ -1,5 +1,5 @@
 //
-//  RRAllRankingListSubVC.h
+//  RRAllRankingSubVC.h
 //  WDEMO
 //
 //  Created by WDEMO on 2021/10/19.
@@ -12,7 +12,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RRAllRankingListSubVC : WMPageController
+@interface RRAllRankingSubVC : WMPageController
 //@property (nonatomic, assign) WMMenuViewPosition menuViewPosition;
 @property (nonatomic, nullable, copy) NSArray<UIViewController *> *viewControllers;
 /**
