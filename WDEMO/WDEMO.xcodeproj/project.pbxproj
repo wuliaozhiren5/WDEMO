@@ -59,8 +59,8 @@
 		F501FE9E271FC13400FE2F3B /* RRAllRankingListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */; };
 		F501FEA0271FEC2800FE2F3B /* 删除所有子View.md in Resources */ = {isa = PBXBuildFile; fileRef = F501FE9F271FEC2800FE2F3B /* 删除所有子View.md */; };
 		F501FEA2271FEE8000FE2F3B /* 状态栏高度.md in Resources */ = {isa = PBXBuildFile; fileRef = F501FEA1271FEE8000FE2F3B /* 状态栏高度.md */; };
-		F501FEA5271FEEFF00FE2F3B /* RRAllRankingListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F501FEA4271FEEFF00FE2F3B /* RRAllRankingListCell.m */; };
 		F501FEA8271FF40500FE2F3B /* SerachHistoryWordCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F501FEA7271FF40500FE2F3B /* SerachHistoryWordCollectionVC.m */; };
+		F501FEAB272016A200FE2F3B /* RRAllRankingListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F501FEAA272016A200FE2F3B /* RRAllRankingListCell.m */; };
 		F5023E4A2716B48700BA5829 /* 空白.md in Resources */ = {isa = PBXBuildFile; fileRef = F5023E492716B48700BA5829 /* 空白.md */; };
 		F5023E4C2716B4CD00BA5829 /* View设置顶点设置大小.md in Resources */ = {isa = PBXBuildFile; fileRef = F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */; };
 		F5023E4F2717097800BA5829 /* NewLXHBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F5023E4E2717097800BA5829 /* NewLXHBanner.m */; };
@@ -541,10 +541,10 @@
 		F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListVC.m; sourceTree = "<group>"; };
 		F501FE9F271FEC2800FE2F3B /* 删除所有子View.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "删除所有子View.md"; sourceTree = "<group>"; };
 		F501FEA1271FEE8000FE2F3B /* 状态栏高度.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "状态栏高度.md"; sourceTree = "<group>"; };
-		F501FEA3271FEEFF00FE2F3B /* RRAllRankingListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingListCell.h; sourceTree = "<group>"; };
-		F501FEA4271FEEFF00FE2F3B /* RRAllRankingListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListCell.m; sourceTree = "<group>"; };
 		F501FEA6271FF40500FE2F3B /* SerachHistoryWordCollectionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SerachHistoryWordCollectionVC.h; sourceTree = "<group>"; };
 		F501FEA7271FF40500FE2F3B /* SerachHistoryWordCollectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerachHistoryWordCollectionVC.m; sourceTree = "<group>"; };
+		F501FEA9272016A200FE2F3B /* RRAllRankingListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingListCell.h; sourceTree = "<group>"; };
+		F501FEAA272016A200FE2F3B /* RRAllRankingListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListCell.m; sourceTree = "<group>"; };
 		F5023E492716B48700BA5829 /* 空白.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白.md"; sourceTree = "<group>"; };
 		F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "View设置顶点设置大小.md"; sourceTree = "<group>"; };
 		F5023E4D2717097700BA5829 /* NewLXHBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewLXHBanner.h; sourceTree = "<group>"; };
@@ -2529,8 +2529,8 @@
 				F5596C77271EA30E007D9FE9 /* RRAllRankingSubVC.m */,
 				F501FE9C271FC13400FE2F3B /* RRAllRankingListVC.h */,
 				F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */,
-				F501FEA3271FEEFF00FE2F3B /* RRAllRankingListCell.h */,
-				F501FEA4271FEEFF00FE2F3B /* RRAllRankingListCell.m */,
+				F501FEA9272016A200FE2F3B /* RRAllRankingListCell.h */,
+				F501FEAA272016A200FE2F3B /* RRAllRankingListCell.m */,
 			);
 			path = "RankingList排行榜";
 			sourceTree = "<group>";
@@ -3083,6 +3083,7 @@
 				F5AC7C2F27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.m in Sources */,
 				F593574925F7466A008CF0D8 /* ThirdViewCollectionViewController.m in Sources */,
 				F5AC7C4627102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionView.m in Sources */,
+				F501FEAB272016A200FE2F3B /* RRAllRankingListCell.m in Sources */,
 				F5D0FC0D24E0F99800CAADF8 /* UIImage+TUIKIT.m in Sources */,
 				F5A9F13924E3D44B00F611E6 /* SeeLivingBaseCell.m in Sources */,
 				F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */,
@@ -3108,7 +3109,6 @@
 				F5AC7C4B27102CBE00533793 /* RRSeasonSeniorCommentsTextImageReplyListCell.m in Sources */,
 				F5CED5DA25749C7D002CF42C /* CollectionRedPointManager.m in Sources */,
 				F591AC9726A1641B0042802F /* Vendors.m in Sources */,
-				F501FEA5271FEEFF00FE2F3B /* RRAllRankingListCell.m in Sources */,
 				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
 				F5409AAD26B164A30042F29D /* ZZStarViewVC.m in Sources */,
 				F5C0A21F2578BBC2004EBD94 /* xibView.m in Sources */,

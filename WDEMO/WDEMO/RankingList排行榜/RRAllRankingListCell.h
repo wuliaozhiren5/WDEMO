@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RRAllRankingListCell : UITableViewCell
+@interface RRAllRankingListCell : UICollectionViewCell
 //封面
 @property(nonatomic ,strong)UIImageView *coverImgV;
 //追剧按钮
@@ -32,7 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 //评论
 @property(nonatomic, strong)UILabel *commentLab;
 //线底部的线
-@property(nonatomic, strong)UILabel *line;
+@property(nonatomic, strong)UIView *line;
 
 @end
 
