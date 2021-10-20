@@ -51,7 +51,9 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     
     ListModelTypeBanner,//广告banner无限滚动
     
-    ListModelTypeAllRankingList,//排行榜
+    ListModelTypeAllRanking,//排行榜
+    
+    ListModelTypeSerachHistoryWord,//搜索历史词
     ListModelTypeTest,//测试页面
 };
 

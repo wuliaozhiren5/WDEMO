@@ -33,5 +33,5 @@ typedef void (^ClickIndexBlock)(UIResponder *sender, NSUInteger index);
 
 #import "WMacros.h"
 #import "THeader.h"
-
+#import <Masonry/Masonry.h>
 #endif /* WDEMO_pch */

@@ -115,6 +115,8 @@
 #import "CarouseViewController.h"
 //排行榜
 #import "RRAllRankingVC.h"
+//搜索历史词
+#import "SerachHistoryWordCollectionVC.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -169,7 +171,7 @@
     
     NSArray * array = @[
 
-        [ListModel initWithTitle:@"AllRankingList" detail:@"排行榜3层" type:ListModelTypeAllRankingList],
+        [ListModel initWithTitle:@"AllRankingList" detail:@"排行榜3层" type:ListModelTypeAllRanking],
         [ListModel initWithTitle:@"banner" detail:@"广告banner无限滚动" type:ListModelTypeBanner],
         [ListModel initWithTitle:@"影评" detail:@"影视评论，影评" type:ListModelTypeDramaComment],
         [ListModel initWithTitle:@"评论" detail:@"bilibili，爱奇艺，优酷评论UI）" type:ListModelTypeComment],
@@ -188,6 +190,7 @@
         [ListModel initWithTitle:@"TableView" detail:@"简单的列表" type:ListModelTypeTableView],
         [ListModel initWithTitle:@"VerticalCollectionView" detail:@"简单的垂直网格" type:ListModelTypeVerticalCollectionView],
         [ListModel initWithTitle:@"HorizontalCollectionVie" detail:@"简单的水平网格" type:ListModelTypeHorizontalCollectionView],
+        [ListModel initWithTitle:@"搜索历史词CollectionVie" detail:@"搜索历史词网格" type:ListModelTypeSerachHistoryWord],
         [ListModel initWithTitle:@"PassValue" detail:@"传值" type:ListModelTypePassValue],
         [ListModel initWithTitle:@"Language" detail:@"语言切换" type:ListModelTypeLanguage],
         [ListModel initWithTitle:@"Font" detail:@"字体" type:ListModelTypeFont],
@@ -1079,10 +1082,17 @@
     [self.navigationController pushViewController:vc1 animated:YES];
 }
 
-- (void)clickAllRankingList {
+- (void)clickAllRanking {
     //排行榜
     
     RRAllRankingVC *vc= [[RRAllRankingVC alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickSerachHistoryWord {
+    //搜索历史词
+    SerachHistoryWordCollectionVC *vc= [[SerachHistoryWordCollectionVC alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -1374,12 +1384,16 @@
             [self clickBanner];
         }
             break;
-        case ListModelTypeAllRankingList:
+        case ListModelTypeAllRanking:
         {
-            [self clickAllRankingList];
+            [self clickAllRanking];
         }
             break;
-            
+        case ListModelTypeSerachHistoryWord:
+        {
+            [self clickSerachHistoryWord];
+        }
+            break;
         default:
         {
             NSAssert(NO, @"PLUPersonalItemType 类型错误");
