@@ -109,6 +109,14 @@
         make.trailing.equalTo(@-8);
     }];
     
+    [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.commentLab.mas_bottom).offset(8);
+        make.leading.equalTo(@8);
+        make.trailing.equalTo(@-8);
+        //线的高度
+        make.height.equalTo(@(1.0f / [UIScreen mainScreen].scale));
+    }];
+    
     self.coverImgV.backgroundColor = [UIColor redColor];
     self.photoView.backgroundColor = [UIColor redColor];
     self.followBtn.backgroundColor = [UIColor greenColor];
@@ -183,13 +191,16 @@
     [self.collectionView reloadData];
     
     NSArray *array = @[@"5.jpg", @"4.jpg", @"3.jpg", @"2.jpg", @"1.jpg"];
-    NewLXHBanner *banner = [[NewLXHBanner alloc] initWithFrame:CGRectMake(0, 0, KWidth - 70 - 8, 60)
+    RRRankingImageBanner *banner = [[RRRankingImageBanner alloc] initWithFrame:CGRectMake(0, 0, KWidth - 70 - 8, 60)
                                                          array:array];
     banner.autoScroll = NO;
     UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
     [banner addGestureRecognizer:tapGesturRecognizer];
     [self.photoView addSubview:banner];
     self.banner = banner;
+    
+    self.line.backgroundColor = [UIColor blackColor];
+
 }
 
 #pragma mark - 点击头像 点击昵称
@@ -389,6 +400,7 @@
     if (!_line) {
         _line = [[UIView alloc] init];
         _line.frame = CGRectMake(0, 0, 200, 1);
+        _line.backgroundColor = [UIColor grayColor];
     }
     return _line;
 }

@@ -101,6 +101,7 @@
 		F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */ = {isa = PBXBuildFile; fileRef = F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */; };
 		F51F95192721565000D4B56B /* RRAllRankingListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95182721565000D4B56B /* RRAllRankingListHeader.m */; };
 		F51F951C2721591500D4B56B /* RRAllRankingTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */; };
+		F51F95372721762200D4B56B /* RRRankingImageBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95362721762200D4B56B /* RRRankingImageBanner.m */; };
 		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
 		F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A098725B6EBE2008BDDEE /* SearchBarController.m */; };
 		F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */ = {isa = PBXBuildFile; fileRef = F52A383725C3B14700C6909E /* 新手引导页GuideView.md */; };
@@ -606,6 +607,8 @@
 		F51F95182721565000D4B56B /* RRAllRankingListHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListHeader.m; sourceTree = "<group>"; };
 		F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingTagCell.h; sourceTree = "<group>"; };
 		F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingTagCell.m; sourceTree = "<group>"; };
+		F51F95352721762200D4B56B /* RRRankingImageBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRRankingImageBanner.h; sourceTree = "<group>"; };
+		F51F95362721762200D4B56B /* RRRankingImageBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRRankingImageBanner.m; sourceTree = "<group>"; };
 		F5200DC92531536E004637DD /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		F5200DCA2531536E004637DD /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		F52A098625B6EBE2008BDDEE /* SearchBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBarController.h; sourceTree = "<group>"; };
@@ -2541,6 +2544,8 @@
 				F51F95182721565000D4B56B /* RRAllRankingListHeader.m */,
 				F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */,
 				F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */,
+				F51F95352721762200D4B56B /* RRRankingImageBanner.h */,
+				F51F95362721762200D4B56B /* RRRankingImageBanner.m */,
 			);
 			path = "RankingList排行榜";
 			sourceTree = "<group>";
@@ -3249,6 +3254,7 @@
 				F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
+				F51F95372721762200D4B56B /* RRRankingImageBanner.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
 				F5FB5D7B263AB2C400155BFE /* NSString+Util.m in Sources */,
 				F5AC7C4727102CBE00533793 /* RRSeasonSeniorCommentsTextCell.m in Sources */,

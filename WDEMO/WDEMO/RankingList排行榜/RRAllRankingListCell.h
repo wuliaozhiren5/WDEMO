@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UICollectionViewLeftAlignedLayout.h"
-#import "NewLXHBanner.h"
+#import "RRRankingImageBanner.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic ,strong)UIButton *followBtn;
 //剧照多图滚动图
 @property(nonatomic ,strong)UIView *photoView; //view要改
-@property(nonatomic ,strong)NewLXHBanner *banner;
+@property(nonatomic ,strong)RRRankingImageBanner *banner;
 
 //1，2，3，---------50（top50）背景图
 @property(nonatomic ,strong)UIImageView *numberIconImgV;

@@ -40,9 +40,10 @@ static CGFloat const headViewHeight = 256;
 
 //pageVC字典
 @property (nonatomic, strong) NSMutableDictionary *pageVCDict;
-
+//测试数据
 @property (nonatomic, copy) NSArray *tagArr;
 @property (nonatomic, copy) NSArray *subTagArr;
+//当前index
 @property (nonatomic, assign) NSInteger selectIndex;
 //当前的subVC
 @property (nonatomic,strong) UIViewController *currentSubVC;
@@ -120,12 +121,6 @@ static CGFloat const headViewHeight = 256;
     //bounces = YES;外部支持下拉刷新
     //bounces = NO;内部支持下拉刷新
     self.mainTableView.bounces = NO;
-    
-    if (@available(iOS 11.0, *)) {
-        self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
 }
 
 - (void)createTagData {
@@ -572,7 +567,11 @@ static CGFloat const headViewHeight = 256;
     [self createSubVC];
     
     UIViewController *showVC = self.currentSubVC;
-    [cell.contentView addSubview:showVC.view];
+    UIView *view = showVC.view;
+    [cell.contentView addSubview:view];
+//    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.equalTo(cell.contentView);
+//    }];
     return cell;
 }
 
@@ -634,6 +633,11 @@ static CGFloat const headViewHeight = 256;
 - (MainTouchTableTableView *)mainTableView {
     if (_mainTableView == nil) {
         _mainTableView= [[MainTouchTableTableView alloc]initWithFrame:CGRectMake(0, 0, Screen_Width, Screen_Height)];
+        if (@available(iOS 11.0, *)) {
+            self.mainTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
         _mainTableView.delegate = self;
         _mainTableView.dataSource = self;
         _mainTableView.showsVerticalScrollIndicator = NO;
@@ -650,6 +654,7 @@ static CGFloat const headViewHeight = 256;
     return _pageVCDict;
     
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

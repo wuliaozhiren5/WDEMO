@@ -30,8 +30,8 @@
             filePath = "WDEMO/RankingList&#x6392;&#x884c;&#x699c;/RRAllRankingVC.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
             landmarkName = "-getPageVC"
             landmarkType = "7">
          </BreakpointContent>
