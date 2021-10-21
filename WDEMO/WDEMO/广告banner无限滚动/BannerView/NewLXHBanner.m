@@ -34,17 +34,36 @@
     self.bannerScroll.showsHorizontalScrollIndicator = NO ;
     self.bannerScroll.delegate = self;
     
-
-    
+    NSMutableArray *tagArr = [NSMutableArray array];
     NSMutableArray *arr = [NSMutableArray array];
-    [arr addObject:self.bannerArray.lastObject];
-    [arr addObjectsFromArray:self.bannerArray];
-    [arr addObject:self.bannerArray.firstObject];
+    if (self.bannerArray.lastObject) {
+        NSInteger tag = self.bannerArray.count - 1;
+        [tagArr addObject:@(tag).stringValue];
+        [arr addObject:self.bannerArray.lastObject];
+    }
     
+    for (int i = 0; i < self.bannerArray.count; i++) {
+        NSInteger tag = i;
+        [tagArr addObject:@(tag).stringValue];
+        [arr addObject:self.bannerArray[i]];
+     }
+    
+    if (self.bannerArray.firstObject) {
+        NSInteger tag = 0;
+        [tagArr addObject:@(tag).stringValue];
+        [arr addObject:self.bannerArray.firstObject];
+     }
+ 
     for (int i = 0; i < arr.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i*SC_WIDTH, 0, SC_WIDTH, SC_HEIGHT)];
         imageView.image = [UIImage imageNamed:arr[i]];
+        NSString *tagStr = tagArr[i];
+        imageView.tag = tagStr.integerValue;
         [self.bannerScroll addSubview:imageView];
+        
+//        imageView.userInteractionEnabled = YES;
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
+//        [imageView addGestureRecognizer:tap];
     }
     self.bannerScroll.contentOffset = CGPointMake(SC_WIDTH, 0);
     
@@ -60,6 +79,11 @@
     [self creatTimer];
 
 }
+
+//#pragma mark - 点击图片
+//- (void)tap:(UITapGestureRecognizer *)tap {
+// 
+//}
 
 - (void)creatTimer {
     if (!self.autoScroll) {
