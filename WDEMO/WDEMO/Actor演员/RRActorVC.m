@@ -62,7 +62,6 @@ const CGFloat headViewHeight = 256;
     
     NSLog(@"statusbar height: %f", [self getStatusBarHight]); // 高度
     
-    
     //    状态栏高度：20px，导航栏高度：40px，代码如下：
     // (statusbar)
     CGRect rectOfStatusbar = [[UIApplication sharedApplication] statusBarFrame];
@@ -75,6 +74,12 @@ const CGFloat headViewHeight = 256;
     self.statusbarHeight = [self getStatusBarHight];
     self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
     
+    /*
+    问题：statusbarHeight = 44
+    实际却是 = 50，所以很奇怪，
+    结果 safeAreaInsets.top = 50
+    所以处理了下，代码如下
+    */
     CGFloat top = 0;
     if (@available(iOS 11.0, *)) {
         CGFloat a =  [[UIApplication sharedApplication] delegate].window.safeAreaInsets.top;
