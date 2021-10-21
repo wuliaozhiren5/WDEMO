@@ -7,6 +7,8 @@
 //
 
 #import "RRAllRankingListCell.h"
+#import "RRAllRankingTagCell.h"
+
 @interface RRAllRankingListCell () <UICollectionViewDelegate, UICollectionViewDataSource>
 
 @end
@@ -184,8 +186,17 @@
     NewLXHBanner *banner = [[NewLXHBanner alloc] initWithFrame:CGRectMake(0, 0, KWidth - 70 - 8, 60)
                                                          array:array];
     banner.autoScroll = NO;
+    UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
+    [banner addGestureRecognizer:tapGesturRecognizer];
     [self.photoView addSubview:banner];
     self.banner = banner;
+}
+
+#pragma mark - 点击头像 点击昵称
+- (void)tap:(UITapGestureRecognizer *)tap {
+    if (self.clickBanner) {
+        self.clickBanner();
+    }
 }
 
 #pragma mark --UICollectionViewDataSource
@@ -210,17 +221,11 @@
     
     
     //代码
-//    WCollectionViewCell *cell = (WCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([WCollectionViewCell class]) forIndexPath:indexPath];
-//    cell.contentView.backgroundColor = [UIColor grayColor];
-//    NSString *str = [NSString stringWithFormat:@"%zi:%zi", indexPath.section, indexPath.item];
-//    cell.titleLabel.text = str;
-    
-    //xib
-    WCollectionViewCell *cell = (WCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"xib" forIndexPath:indexPath];
-//    NSString *str = [NSString stringWithFormat:@"xib=%zi:%zi", indexPath.section, indexPath.item];
-    NSString *str = self.titleArr[indexPath.item];
-    cell.xibLabel.text = str;
+    RRAllRankingTagCell *cell = (RRAllRankingTagCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRAllRankingTagCell class]) forIndexPath:indexPath];
     cell.contentView.backgroundColor = [UIColor grayColor];
+//    NSString *str = [NSString stringWithFormat:@"%zi:%zi", indexPath.section, indexPath.item];
+    NSString *str = [self.titleArr objectOrNilAtIndex:indexPath.item];
+    cell.titleLab.text = str;
     return cell;
 }
 
@@ -235,6 +240,7 @@
     
     NSString *str = self.titleArr[indexPath.item];
     UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 20)];
+    titleLab.font = RR_COMMONFONT(14);
     titleLab.text = str;
     CGSize size = [titleLab sizeThatFits:CGSizeMake(MAXFLOAT, 20)];
     CGFloat width = size.width;
@@ -359,7 +365,7 @@
         _collectionView.backgroundColor = [UIColor whiteColor];
 
         [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
-        [_collectionView registerClass:[WCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([WCollectionViewCell class])];
+        [_collectionView registerClass:[RRAllRankingTagCell class] forCellWithReuseIdentifier:NSStringFromClass([RRAllRankingTagCell class])];
         [_collectionView registerNib:[UINib nibWithNibName:@"WCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"xib"];
      
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"Header"];

@@ -99,6 +99,8 @@
 		F51C24D4263BF1690010A298 /* AuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51C24D2263BF1690010A298 /* AuthorModel.m */; };
 		F51C8695261F10400066850E /* UIView中坐标转换.md in Resources */ = {isa = PBXBuildFile; fileRef = F51C8694261F103F0066850E /* UIView中坐标转换.md */; };
 		F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */ = {isa = PBXBuildFile; fileRef = F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */; };
+		F51F95192721565000D4B56B /* RRAllRankingListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95182721565000D4B56B /* RRAllRankingListHeader.m */; };
+		F51F951C2721591500D4B56B /* RRAllRankingTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */; };
 		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
 		F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A098725B6EBE2008BDDEE /* SearchBarController.m */; };
 		F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */ = {isa = PBXBuildFile; fileRef = F52A383725C3B14700C6909E /* 新手引导页GuideView.md */; };
@@ -600,6 +602,10 @@
 		F51C24D3263BF1690010A298 /* AuthorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthorModel.h; sourceTree = "<group>"; };
 		F51C8694261F103F0066850E /* UIView中坐标转换.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UIView中坐标转换.md"; sourceTree = "<group>"; };
 		F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "URLencode与URLdecode.md"; sourceTree = "<group>"; };
+		F51F95172721565000D4B56B /* RRAllRankingListHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingListHeader.h; sourceTree = "<group>"; };
+		F51F95182721565000D4B56B /* RRAllRankingListHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListHeader.m; sourceTree = "<group>"; };
+		F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingTagCell.h; sourceTree = "<group>"; };
+		F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingTagCell.m; sourceTree = "<group>"; };
 		F5200DC92531536E004637DD /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		F5200DCA2531536E004637DD /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		F52A098625B6EBE2008BDDEE /* SearchBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBarController.h; sourceTree = "<group>"; };
@@ -2531,6 +2537,10 @@
 				F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */,
 				F501FEA9272016A200FE2F3B /* RRAllRankingListCell.h */,
 				F501FEAA272016A200FE2F3B /* RRAllRankingListCell.m */,
+				F51F95172721565000D4B56B /* RRAllRankingListHeader.h */,
+				F51F95182721565000D4B56B /* RRAllRankingListHeader.m */,
+				F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */,
+				F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */,
 			);
 			path = "RankingList排行榜";
 			sourceTree = "<group>";
@@ -3076,6 +3086,7 @@
 				F50E841D25BEDDE6009767FE /* SearchBar.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
 				F5409A9926B1051B0042F29D /* RRMJTool.m in Sources */,
+				F51F951C2721591500D4B56B /* RRAllRankingTagCell.m in Sources */,
 				F5AC7C4D27102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */,
 				F5AC7C4427102CBE00533793 /* RRSeasonSeniorCommentsTextImageCell.m in Sources */,
 				F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */,
@@ -3270,6 +3281,7 @@
 				A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */,
 				F5D2129125FF567100C7DCC1 /* RRActorIntroAndWorksVC.m in Sources */,
 				F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlertView.m in Sources */,
+				F51F95192721565000D4B56B /* RRAllRankingListHeader.m in Sources */,
 				F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */,
 				F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */,
 				F58293B2255CDBD40066111C /* Person.m in Sources */,

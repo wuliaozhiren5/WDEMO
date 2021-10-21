@@ -9,16 +9,13 @@
 #import "RRAllRankingListVC.h"
 #import "MJRefresh.h"
 #import "RRAllRankingListCell.h"
+#import "RRAllRankingListHeader.h"
 #import "CHTCollectionViewWaterfallLayout.h"
-
-#import "RRActorHeader.h"
-#import "RRActorFooter.h"
-//#import "RRActorIntroCell.h"
-//#import "RRActorInfoCell.h"
 #import <Masonry/Masonry.h>
 #import "ACMacros.h"
 #import "UIColor+color.h"
-#import "RRActorVideoHeader.h"
+
+//#import "RRActorVideoHeader.h"
 
 @interface RRAllRankingListVC ()<UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 
@@ -90,10 +87,10 @@
     [self.collectionView registerClass:[RRAllRankingListCell class] forCellWithReuseIdentifier:NSStringFromClass([RRAllRankingListCell class])];
 
     //xib header footer
-    [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorHeader" bundle:nil] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRActorHeader class])];
-    [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorFooter" bundle:nil] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([RRActorFooter class])];
+//    [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorHeader" bundle:nil] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRActorHeader class])];
+//    [self.collectionView registerNib:[UINib nibWithNibName:@"RRActorFooter" bundle:nil] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([RRActorFooter class])];
     //code header footer
-    [self.collectionView registerClass:[RRActorVideoHeader class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRActorVideoHeader class])];
+    [self.collectionView registerClass:[RRAllRankingListHeader class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionHeader withReuseIdentifier:NSStringFromClass([RRAllRankingListHeader class])];
 //    [self.collectionView registerClass:[RRActorFooter class] forSupplementaryViewOfKind:CHTCollectionElementKindSectionFooter withReuseIdentifier:NSStringFromClass([RRActorFooter class])];
  
     [self.view addSubview:self.collectionView];
@@ -156,14 +153,10 @@
 //定义并返回每个headerView或footerView
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:CHTCollectionElementKindSectionHeader]){
-        RRActorVideoHeader *header = (RRActorVideoHeader *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([RRActorVideoHeader class]) forIndexPath:indexPath];
-        header.clickStatusIndex = ^(UIResponder *sender, NSUInteger index) {
-            
-        };
+        RRAllRankingListHeader *header = (RRAllRankingListHeader *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([RRAllRankingListHeader class]) forIndexPath:indexPath];
         return header;
      } else if ([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
-        RRActorFooter *footer = (RRActorFooter *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([RRActorFooter class]) forIndexPath:indexPath];
-        return footer;
+         RRSafeEndOfCollectionReusableView;
     } else {
         RRSafeEndOfCollectionReusableView;
     }
