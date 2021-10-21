@@ -27,8 +27,40 @@
  
     //常用
     //AttributedString 颜色 字号
-    NSMutableAttributedString *string = [[NSMutableAttributedString alloc] initWithString:@"全部"
-                                                                               attributes: @{NSFontAttributeName: [UIFont systemFontOfSize:16], NSForegroundColorAttributeName: [UIColor blackColor]}];
+    //行高
+    //初始化NSMutableAttributedString
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]init];
+     
+    NSString *str0 = @"昵称：";
+    NSDictionary *dictAttr0 = @{NSFontAttributeName:[UIFont systemFontOfSize:14], NSForegroundColorAttributeName:[UIColor purpleColor]};
+    NSAttributedString *attr0 = [[NSAttributedString alloc]initWithString:str0 attributes:dictAttr0];
+    [attributedString appendAttributedString:attr0];
+    
+    NSString *str2 = @"内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容";
+    NSDictionary *dictAttr2 = @{NSFontAttributeName:[UIFont systemFontOfSize:14], NSForegroundColorAttributeName:[UIColor redColor]};
+    NSAttributedString *attr2 = [[NSAttributedString alloc]initWithString:str2 attributes:dictAttr2];
+    [attributedString appendAttributedString:attr2];
+    
+    //段落样式
+    NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc]init];
+    //行间距
+    paragraph.lineSpacing = 6;
+//    //正确的实现行间距
+//    paragraph.lineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
+ 
+    //对齐方式两边对齐
+//    paragraph.alignment = NSTextAlignmentJustified;
+    paragraph.lineBreakMode = NSLineBreakByTruncatingTail;
+    
+    [attributedString addAttributes:@{
+//        NSFontAttributeName:textFont,
+//        NSForegroundColorAttributeName: [UIColor blackColor],
+        NSParagraphStyleAttributeName:paragraph}
+                              range:NSMakeRange(0, attributedString.length)];
+  
+//    self.label.attributedText = attributedString;
+    
+    
 }
 
 /*
