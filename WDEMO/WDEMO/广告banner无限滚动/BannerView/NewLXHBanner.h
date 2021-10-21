@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(assign ,nonatomic) NSUInteger       CurrentPageCount ; //记录当前的页面
 @property(assign ,nonatomic) float            oldScrollOffset;   //记录之前Scroll偏移量
 @property(assign ,nonatomic) float            timerInterval; //设置定时器的间隔时间
+@property(assign ,nonatomic) BOOL             autoScroll; //自动滚动
 
 - (id)initWithFrame:(CGRect)frame array:(NSArray*)array;
 

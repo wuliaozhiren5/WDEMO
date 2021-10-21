@@ -41,6 +41,7 @@
 
 - (void)createBannerView {
     NSArray * array = @[@"Demo", @"Demo1"];
+    array = @[@"Demo"];
     LXHBanner *view = [[LXHBanner alloc] initWithFrame:CGRectMake(16, 100,self.view.frame.size.width - 32, 128)
                                                  array:array];
     [self.view addSubview:view];

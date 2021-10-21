@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "UICollectionViewLeftAlignedLayout.h"
 #import "WCollectionViewCell.h"
+#import "NewLXHBanner.h"
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RRAllRankingListCell : UICollectionViewCell
@@ -17,7 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 //追剧按钮
 @property(nonatomic ,strong)UIButton *followBtn;
 //剧照多图滚动图
-@property(nonatomic ,strong)UIView *pohtoView; //view要改
+@property(nonatomic ,strong)UIView *photoView; //view要改
+@property(nonatomic ,strong)NewLXHBanner *banner;
+
 //1，2，3，---------50（top50）背景图
 @property(nonatomic ,strong)UIImageView *numberIconImgV;
 //1，2，3，---------50（top50）
@@ -30,8 +34,6 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic ,strong)UILabel *countLab;
 //标签
 @property(nonatomic, strong) UICollectionView *collectionView;
- 
-@property (nonatomic, strong) UICollectionViewLeftAlignedLayout *collectionLayout;
 
 @property (nonatomic, copy) NSArray *titleArr;
 //评论

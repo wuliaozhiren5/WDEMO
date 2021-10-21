@@ -7,18 +7,24 @@
 
 @implementation NewLXHBanner
 
-- (id)initWithFrame:(CGRect)frame array:(NSArray*)array{
+- (instancetype)initWithFrame:(CGRect)frame array:(NSArray*)array{
     self = [super initWithFrame:frame];
     if (self) {
         self.timerInterval= 2;
-        self.bannerArray = array ;
+        self.autoScroll = YES;
+        self.bannerArray = array;
         self.pageCount = array.count;
         [self creatScrollView];
     }
     return self;
 }
 
--(void)creatScrollView{
+- (void)creatScrollView {
+     
+    if (!(self.bannerArray.count > 0)) {
+        return;
+    }
+    
     self.bannerScroll = [[UIScrollView alloc]init];
     self.bannerScroll.frame = CGRectMake(0, 0,SC_WIDTH,SC_HEIGHT);
     [self addSubview:self.bannerScroll];
@@ -27,6 +33,8 @@
     self.bannerScroll.pagingEnabled = YES;
     self.bannerScroll.showsHorizontalScrollIndicator = NO ;
     self.bannerScroll.delegate = self;
+    
+
     
     NSMutableArray *arr = [NSMutableArray array];
     [arr addObject:self.bannerArray.lastObject];
@@ -54,6 +62,9 @@
 }
 
 - (void)creatTimer {
+    if (!self.autoScroll) {
+        return;
+    }
     self.bannerTimer = [NSTimer scheduledTimerWithTimeInterval:self.timerInterval
                                               target:self
                                             selector:@selector(changeScrollOffset)
@@ -66,6 +77,11 @@
 }
 
 - (void)changeScrollOffset {
+    if (!self.autoScroll) {
+        [self stopTimer];
+        self.bannerTimer = nil;
+        return;
+    }
     [self.bannerScroll setContentOffset:CGPointMake((self.bannerPageControl.currentPage + 2) * SC_WIDTH, 0) animated:YES];
 }
 
