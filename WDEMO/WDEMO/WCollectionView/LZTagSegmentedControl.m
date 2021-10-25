@@ -190,14 +190,14 @@
 //UICollectionView被选中时调用的方法
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    if (_index == indexPath.item ) {
-    //        return;
-    //    } else {
-    //        [self didSelectItemAtIndexPath:indexPath];
-    //        if ([_delegate respondsToSelector:@selector(tagSegmentedControl:didSelectItemAtIndex:)]) {
-    //            [_delegate tagSegmentedControl:self didSelectItemAtIndex:_index];
-    //        }
-    //    }
+//        if (_index == indexPath.item ) {
+//            return;
+//        } else {
+//            [self didSelectItemAtIndexPath:indexPath];
+//            if ([_delegate respondsToSelector:@selector(tagSegmentedControl:didSelectItemAtIndex:)]) {
+//                [_delegate tagSegmentedControl:self didSelectItemAtIndex:_index];
+//            }
+//        }
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {

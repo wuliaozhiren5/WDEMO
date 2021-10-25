@@ -11,9 +11,8 @@
 @interface LZTagListCell : UICollectionViewCell
 
 @property(copy ,nonatomic)NSString *tagStr;
-@property(assign ,nonatomic)BOOL isHideLine;
-@property (nonatomic, strong) UIButton *tagBtn;
-
+//@property(assign ,nonatomic)BOOL isHideLine;
+@property (nonatomic, strong) UIButton *tagBtn; 
 @property(assign ,nonatomic)BOOL isUserSelected;
 
 @end

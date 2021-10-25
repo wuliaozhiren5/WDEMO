@@ -14,42 +14,95 @@
 @end
 @implementation LZTagListCell
  
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self.contentView addSubview:self.tagBtn];
+        [self.contentView addSubview:self.line];
+//        [self.contentView addSubview:self.tagLabel];
+ 
+    }
+    return self;
+}
+
 -(void)setTagStr:(NSString *)tagStr{
     
     _tagStr = tagStr;
+    
+    //显示label
 //    self.tagLabel.text = tagStr;
 //    self.tagLabel.frame = self.contentView.bounds;
-    [self.tagBtn setTitle:tagStr forState:UIControlStateNormal];
-  
+    
+//    self.tagLabel.text = tagStr;
+//    self.tagLabel.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+//    self.contentView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+//
+//    if (_isUserSelected) {
+//        self.tagLabel.textColor = [UIColor whiteColor];
+//        self.tagLabel.font = [UIFont systemFontOfSize:12.0];
+//        [UIView animateWithDuration:0.5
+//                              delay:0.1
+//                            options:UIViewAnimationOptionCurveEaseInOut
+//                         animations:^{
+//            self.tagLabel.font = [UIFont systemFontOfSize:20.0];
+//
+//
+//            [self setNeedsLayout];
+//            [self layoutIfNeeded];
+//
+//            self.contentView.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+//
+//        } completion:nil];
+//
+//    } else {
+//        self.tagLabel.textColor = [UIColor blackColor];
+//        self.tagLabel.font = [UIFont systemFontOfSize:12.0];
+//    }
+    
+    //显示btn
+    [_tagBtn setTitle:tagStr forState:UIControlStateNormal];
+//    [_tagBtn sizeToFit];
+//    _tagBtn.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    
     if (_isUserSelected) {
-        [_tagBtn setTitleColor:[UIColor whiteColor]  forState:UIControlStateNormal];
-        _tagBtn.titleLabel.font = [UIFont systemFontOfSize:20.0];
-
-    } else {
-        [_tagBtn setTitleColor:[UIColor blackColor]  forState:UIControlStateNormal];
+        [_tagBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _tagBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
-    }
+        [_tagBtn sizeToFit];
+        _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
+        
+         [UIView animateWithDuration:0.3
+                              delay:0.0
+                            options:UIViewAnimationOptionCurveEaseInOut
+                         animations:^{
+             _tagBtn.titleLabel.font = [UIFont systemFontOfSize:17.0];
+             [_tagBtn sizeToFit];
+             _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
+        } completion:nil];
+    } else {
+        [_tagBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        _tagBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
+        [_tagBtn sizeToFit];
+        _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
  
-    CGSize size = [_tagBtn sizeThatFits:CGSizeMake(MAXFLOAT, self.contentView.bounds.size.height)];
-    _tagBtn.frame = CGRectMake(8, 0, size.width, self.contentView.bounds.size.height);
+    }
 }
 
 - (void)setIsUserSelected:(BOOL)isUserSelected {
     _isUserSelected = isUserSelected;
 }
 
--(void)setIsHideLine:(BOOL)isHideLine{
-    _isHideLine = isHideLine;
-    self.line.hidden = _isHideLine;
-    
-    if (_isHideLine) {
-        [_tagBtn setTitleColor:[UIColor blackColor]  forState:UIControlStateNormal];
-    } else {
-        [_tagBtn setTitleColor:[UIColor whiteColor]  forState:UIControlStateNormal];
-    }
-    
-    self.line.hidden = YES;
-}
+//- (void)setIsHideLine:(BOOL)isHideLine{
+//    _isHideLine = isHideLine;
+////    self.line.hidden = _isHideLine;
+////
+////    if (_isHideLine) {
+////        [_tagBtn setTitleColor:[UIColor blackColor]  forState:UIControlStateNormal];
+////    } else {
+////        [_tagBtn setTitleColor:[UIColor whiteColor]  forState:UIControlStateNormal];
+////    }
+////
+////    self.line.hidden = YES;
+//}
 
 -(UILabel *)tagLabel {
 
@@ -58,7 +111,7 @@
         _tagLabel.frame = self.contentView.bounds; 
         _tagLabel.font = [UIFont systemFontOfSize:12.0];
         _tagLabel.textAlignment = NSTextAlignmentCenter;
-        [self.contentView addSubview:_tagLabel];
+//        [self.contentView addSubview:_tagLabel];
 //        [_tagLabel mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.center.equalTo(self.contentView);
 //        }];
@@ -73,9 +126,10 @@
         _line.backgroundColor = [UIColor blueColor];
         _line.layer.cornerRadius = 14;
         _line.layer.masksToBounds = YES;
-        [self.contentView addSubview:_line];
-        
+//        [self.contentView addSubview:_line];
         _line.center = self.contentView.center;
+        _line.hidden = YES;
+
 //        [_line mas_makeConstraints:^(MASConstraintMaker *make) {
 //            make.edges.equalTo(self.contentView);
 //        }];
@@ -90,7 +144,7 @@
     if (!_tagBtn) {
         _tagBtn = [[UIButton alloc]init];
         _tagBtn.titleLabel.font = [UIFont systemFontOfSize:12.0]; 
-        [self.contentView addSubview:_tagBtn];
+//        [self.contentView addSubview:_tagBtn];
         _tagBtn.frame = self.contentView.bounds;
         _tagBtn.center = self.contentView.center;
 
@@ -99,6 +153,7 @@
 //        }];
         [_tagBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 //        [_tagBtn addTarget:self action:@selector(clickCell) forControlEvents:UIControlEventTouchUpInside];
+        
     }
     return _tagBtn;
 }
