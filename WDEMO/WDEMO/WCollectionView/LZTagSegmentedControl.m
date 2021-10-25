@@ -94,6 +94,7 @@
     self.moveCircle.backgroundColor = [[UIColor yellowColor] colorWithAlphaComponent:0.5];
     self.moveCircle.layer.cornerRadius = (self.frame.size.height - 10) / 2;
     self.moveCircle.layer.masksToBounds = YES;
+    self.moveCircle.hidden = YES;
     [self.collectionView addSubview:self.moveCircle];
     
 //    UIFont *font = [UIFont systemFontOfSize:15.0];
