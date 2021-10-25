@@ -157,7 +157,7 @@
             CGRect frame = cell.frame;
             self.moveCircle.frame = CGRectMake(frame.origin.x, frame.origin.y + 5, cell.frame.size.width, cell.frame.size.height - 10);
         } else {
-            [UIView animateWithDuration:0.2
+            [UIView animateWithDuration:0.5
                                   delay:0.01
                                 options:UIViewAnimationOptionCurveEaseInOut
                              animations:^{

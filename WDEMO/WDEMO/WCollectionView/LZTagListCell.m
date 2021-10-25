@@ -70,8 +70,8 @@
         [_tagBtn sizeToFit];
         _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
         
-         [UIView animateWithDuration:0.3
-                              delay:0.0
+         [UIView animateWithDuration:0.5
+                              delay:0.01
                             options:UIViewAnimationOptionCurveEaseInOut
                          animations:^{
              _tagBtn.titleLabel.font = [UIFont systemFontOfSize:17.0];
