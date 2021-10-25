@@ -261,7 +261,12 @@
     }
     return CGSizeMake(width, 20);
 }
-     
+    
+#pragma mark - 点击按钮
+- (void)clickFollowBtn:(UIButton *)btn {
+    
+}
+
 #pragma mark - lazy
 - (UIImageView *)coverImgV {
     if (!_coverImgV) {
@@ -271,6 +276,8 @@
         //        _coverImageView.hidden = YES;
         _coverImgV.layer.cornerRadius = 8;
         _coverImgV.layer.masksToBounds = YES;
+        _coverImgV.userInteractionEnabled = YES;
+
     }
     return _coverImgV;
 }
@@ -282,7 +289,7 @@
         [_followBtn setImage:IMAGENAME(@"ic_common_like_h_28") forState: UIControlStateHighlighted | UIControlStateSelected];
         [_followBtn setImage:IMAGENAME(@"ic_common_like_h_28") forState:UIControlStateSelected];
 //        _followBtn.selected = YES;
-//        [_followBtn addTarget:self action:@selector(clickPraiseBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_followBtn addTarget:self action:@selector(clickFollowBtn:) forControlEvents:UIControlEventTouchUpInside];
 //        _followBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
 //        _followBtn.imageEdgeInsets = UIEdgeInsetsMake(0, 16, 0, 0);
     }
