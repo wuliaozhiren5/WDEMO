@@ -24,6 +24,10 @@
 }
  
 - (void)setupViews {
+    CGFloat top = 20;
+    CGFloat leading = 16;
+    CGFloat trailing = -16;
+
     [self.contentView addSubview:self.coverImgV];
     [self.coverImgV addSubview:self.followBtn];
     [self.contentView addSubview:self.photoView];
@@ -35,74 +39,74 @@
     [self.contentView addSubview:self.collectionView];
     [self.contentView addSubview:self.commentLab];
     [self.contentView addSubview:self.line];
-    
+
     //抗压缩
     [self.titleLab setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
     [self.countLab setContentCompressionResistancePriority:UILayoutPriorityDefaultHigh forAxis:UILayoutConstraintAxisHorizontal];
-  
-    
+
+
     [self.coverImgV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@8);
-        make.leading.equalTo(@8);
-        make.width.equalTo(@50);
-        make.height.equalTo(@60);
+        make.top.equalTo(@(top));
+        make.leading.equalTo(@(leading));
+        make.width.equalTo(@100);
+        make.height.equalTo(@130);
     }];
-    
+
     [self.photoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@8);
-        make.leading.equalTo(@70);
-        make.trailing.equalTo(@-8);
-        make.height.equalTo(@60);
+        make.top.equalTo(@(top));
+        make.leading.equalTo(@124);
+        make.trailing.equalTo(@(trailing));
+        make.height.equalTo(@130);
     }];
 
     [self.followBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
         make.leading.equalTo(@0);
-        make.width.equalTo(@30);
-        make.height.equalTo(@30);
+        make.width.equalTo(@25);
+        make.height.equalTo(@25);
     }];
-    
+
     [self.numberIconImgV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.coverImgV.mas_bottom).offset(8);
-        make.leading.equalTo(@8);
+        make.leading.equalTo(@(leading));
         make.width.equalTo(@20);
         make.height.equalTo(@20);
     }];
-    
+
     [self.numberLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.numberIconImgV);
     }];
 
     [self.countLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.coverImgV.mas_bottom).offset(8);
-        make.trailing.equalTo(@-8);
+        make.centerY.equalTo(self.numberIconImgV);
+        make.trailing.equalTo(@(trailing));
         make.height.equalTo(@20);
     }];
-    
+
     [self.countIconImgV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.coverImgV.mas_bottom).offset(8);
-        make.trailing.equalTo(self.countLab.mas_leading).offset(-8);
-        make.width.equalTo(@20);
-        make.height.equalTo(@20);
+        make.centerY.equalTo(self.numberIconImgV);
+        make.trailing.equalTo(self.countLab.mas_leading).offset(-3);
+        make.width.equalTo(@15);
+        make.height.equalTo(@15);
     }];
-    
+
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.coverImgV.mas_bottom).offset(8);
-        make.leading.equalTo(self.numberIconImgV.mas_trailing).offset(8);
-        make.trailing.lessThanOrEqualTo(self.countIconImgV.mas_leading).offset(-8);
+        make.centerY.equalTo(self.numberIconImgV);
+        make.leading.equalTo(self.numberIconImgV.mas_trailing).offset(11);
+        make.trailing.lessThanOrEqualTo(self.countIconImgV.mas_leading).offset(-11);
         make.height.equalTo(@20);
     }];
-     
+
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
 //        make.edges.equalTo(self.view);
         make.leading.equalTo(self.contentView);
         make.trailing.equalTo(self.contentView);
 //        make.height.equalTo(@300);
-        //二行 10 + 20 + 10 + 20 + 10
-        make.height.equalTo(@70);
-        make.top.equalTo(self.titleLab.mas_bottom).offset(8);
+        //二行 5 + 20 + 5 + 20 + 5
+        make.height.equalTo(@55);
+        make.top.equalTo(self.numberIconImgV.mas_bottom).offset(5);
     }];
-    
+
     [self.commentLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.collectionView.mas_bottom).offset(8);
         make.leading.equalTo(@8);
@@ -113,10 +117,15 @@
         make.top.equalTo(self.commentLab.mas_bottom).offset(8);
         make.leading.equalTo(@8);
         make.trailing.equalTo(@-8);
-        //线的高度
-        make.height.equalTo(@(1.0f / [UIScreen mainScreen].scale));
+        [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(self.commentLab.mas_bottom).offset(8);
+            make.leading.equalTo(@8);
+            make.trailing.equalTo(@-8);
+            //线的高度
+            make.height.equalTo(@(1.0f / [UIScreen mainScreen].scale));
+        }];
     }];
-    
+
     self.coverImgV.backgroundColor = [UIColor redColor];
     self.photoView.backgroundColor = [UIColor redColor];
     self.followBtn.backgroundColor = [UIColor greenColor];
@@ -130,42 +139,42 @@
     self.countIconImgV.backgroundColor = [UIColor yellowColor];
     self.titleLab.text = @"生活大爆炸生活大爆炸生活大爆炸生活大爆炸生活大爆炸生活大爆炸生活大爆炸生活大爆炸生活大爆炸生活大爆炸生活大爆炸生活大爆炸生活大爆炸生活大爆炸";
     self.titleLab.textColor = [UIColor blackColor];
-     
+
     NSString *nameStr = @"评论家共识：";
     NSString *commentStr = @"生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。生活大爆炸第一季很好看。";
 
-  
+
     //初始化NSMutableAttributedString
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]init];
-     
+
     NSString *str0 = nameStr;
-    NSDictionary *dictAttr0 = @{NSFontAttributeName:[UIFont systemFontOfSize:10], NSForegroundColorAttributeName:[UIColor purpleColor]};
+    NSDictionary *dictAttr0 = @{NSFontAttributeName:[UIFont systemFontOfSize:12], NSForegroundColorAttributeName:kCOLOR_BCBCBC};
     NSAttributedString *attr0 = [[NSAttributedString alloc]initWithString:str0 attributes:dictAttr0];
     [attributedString appendAttributedString:attr0];
-    
+
     NSString *str2 = commentStr;
-    NSDictionary *dictAttr2 = @{NSFontAttributeName:[UIFont systemFontOfSize:14], NSForegroundColorAttributeName:[UIColor redColor]};
+    NSDictionary *dictAttr2 = @{NSFontAttributeName:[UIFont systemFontOfSize:14], NSForegroundColorAttributeName:kCOLOR_222222};
     NSAttributedString *attr2 = [[NSAttributedString alloc]initWithString:str2 attributes:dictAttr2];
     [attributedString appendAttributedString:attr2];
-    
-     
+
+
     //段落样式
     NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc]init];
     //行间距
     paragraph.lineSpacing = 6;
 //    //正确的实现行间距
 //    paragraph.lineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
- 
+
     //对齐方式两边对齐
 //    paragraph.alignment = NSTextAlignmentJustified;
     paragraph.lineBreakMode = NSLineBreakByTruncatingTail;
-    
+
     [attributedString addAttributes:@{
 //        NSFontAttributeName:textFont,
 //        NSForegroundColorAttributeName: [UIColor blackColor],
         NSParagraphStyleAttributeName:paragraph}
                               range:NSMakeRange(0, attributedString.length)];
-  
+
     self.commentLab.attributedText = attributedString;
 
     self.titleArr = @[
@@ -189,9 +198,9 @@
         @"短",
     ];
     [self.collectionView reloadData];
-    
-    NSArray *array = @[@"5.jpg", @"4.jpg", @"3.jpg", @"2.jpg", @"1.jpg"];
-    RRRankingImageBanner *banner = [[RRRankingImageBanner alloc] initWithFrame:CGRectMake(0, 0, KWidth - 70 - 8, 60)
+
+    NSArray *array = @[@"4.jpg", @"4.jpg", @"4.jpg", @"4.jpg", @"4.jpg"];
+    RRRankingImageBanner *banner = [[RRRankingImageBanner alloc] initWithFrame:CGRectMake(0, 0, KWidth - 124 - 16, 130)
                                                          array:array];
     banner.autoScroll = NO;
     UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
@@ -214,12 +223,12 @@
 //有多少组
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-        return 1;
+    return 1;
 }
 ///每一组有多少个cell
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-        return self.titleArr.count;
+    return self.titleArr.count;
 }
 
 
@@ -233,7 +242,7 @@
     
     //代码
     RRAllRankingTagCell *cell = (RRAllRankingTagCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRAllRankingTagCell class]) forIndexPath:indexPath];
-    cell.contentView.backgroundColor = [UIColor grayColor];
+//    cell.contentView.backgroundColor = [UIColor grayColor];
 //    NSString *str = [NSString stringWithFormat:@"%zi:%zi", indexPath.section, indexPath.item];
     NSString *str = [self.titleArr objectOrNilAtIndex:indexPath.item];
     cell.titleLab.text = str;
@@ -249,19 +258,24 @@
 //CGSize itemSize：它定义了每一个item的大小，通过itemSize可以快捷给每一个cell设置一样的大小，如果你想到不同的尺寸，-collectionView:layout:sizeForItemAtIndexPath:来给每一个item指定不同的尺寸。
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSString *str = self.titleArr[indexPath.item];
+    //外边距
+    CGFloat margin = 16;
+    //外边距
+    CGFloat padding = 8;
+
+    NSString *str = self.titleArr[indexPath.item] ?: @"";
     UILabel *titleLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 20)];
     titleLab.font = RR_COMMONFONT(14);
     titleLab.text = str;
     CGSize size = [titleLab sizeThatFits:CGSizeMake(MAXFLOAT, 20)];
-    CGFloat width = size.width;
-    CGFloat maxWidth = KWidth - 10 * 2;
+    CGFloat width = size.width + padding * 2;
+    CGFloat maxWidth = KWidth - padding * 2 - margin * 2;
     if (width >= maxWidth) {
         width = maxWidth;
     }
     return CGSizeMake(width, 20);
 }
-    
+     
 #pragma mark - 点击按钮
 - (void)clickFollowBtn:(UIButton *)btn {
     
@@ -277,7 +291,6 @@
         _coverImgV.layer.cornerRadius = 8;
         _coverImgV.layer.masksToBounds = YES;
         _coverImgV.userInteractionEnabled = YES;
-
     }
     return _coverImgV;
 }
@@ -332,7 +345,8 @@
     if (!_titleLab) {
         _titleLab = [[UILabel alloc] init];
         _titleLab.frame = CGRectMake(0, 0, 40, 40);
-        _titleLab.font = RR_COMMONFONT(14);
+//        _titleLab.font = RR_COMMONFONT(14);
+        _titleLab.font = BOLDSYSTEMFONT(14);
         _titleLab.textColor = kCOLOR_88898F;
     }
     return _titleLab;
@@ -366,10 +380,10 @@
         //初始化collectionLayout
         UICollectionViewLeftAlignedLayout *collectionLayout = [[UICollectionViewLeftAlignedLayout alloc] init];
         collectionLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        collectionLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+        collectionLayout.sectionInset = UIEdgeInsetsMake(5, 16, 5, 16);
         collectionLayout.estimatedItemSize = CGSizeZero;
-        collectionLayout.minimumLineSpacing = 10;                        //水平间距
-        collectionLayout.minimumInteritemSpacing = 10;
+        collectionLayout.minimumLineSpacing = 5;                        //水平间距
+        collectionLayout.minimumInteritemSpacing = 5;
  
         //初始化collectionView
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:collectionLayout];
@@ -407,7 +421,7 @@
     if (!_line) {
         _line = [[UIView alloc] init];
         _line.frame = CGRectMake(0, 0, 200, 1);
-        _line.backgroundColor = [UIColor grayColor];
+        _line.backgroundColor = kCOLOR_dynamicProvider_E6E7E8_333333;
     }
     return _line;
 }

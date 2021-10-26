@@ -35,7 +35,7 @@
     if (!_titleLab) {
         _titleLab = [[UILabel alloc] init];
         _titleLab.frame = CGRectMake(0, 0, 40, 40);
-        _titleLab.font = RR_COMMONFONT(14);
+        _titleLab.font = RR_COMMONFONT(12);
         _titleLab.textColor = kCOLOR_88898F;
     }
     return _titleLab;

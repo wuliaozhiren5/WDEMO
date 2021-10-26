@@ -20,6 +20,8 @@
 }
 
 - (void)setupViews {
+    self.contentView.layer.cornerRadius = 3;
+    self.contentView.layer.masksToBounds = YES;
     [self.contentView addSubview:self.titleLab];
     [self.titleLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@0);
@@ -28,6 +30,13 @@
         make.bottom.equalTo(@0);
     }];
     self.titleLab.textColor = [UIColor blueColor];
+    
+    self.contentView.backgroundColor = [kCOLOR_A8A8A8 colorWithAlphaComponent:0.12];
+    self.titleLab.textColor = kCOLOR_A8A8A8;
+
+    self.contentView.backgroundColor = [kCOLOR_108F80 colorWithAlphaComponent:0.12];
+    self.titleLab.textColor = kCOLOR_108F80;
+    
 }
 
 - (UILabel *)titleLab {

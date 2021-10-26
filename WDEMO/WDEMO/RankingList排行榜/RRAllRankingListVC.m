@@ -7,15 +7,9 @@
 //
 
 #import "RRAllRankingListVC.h"
-#import "MJRefresh.h"
 #import "RRAllRankingListCell.h"
 #import "RRAllRankingListHeader.h"
 #import "CHTCollectionViewWaterfallLayout.h"
-#import <Masonry/Masonry.h>
-#import "ACMacros.h"
-#import "UIColor+color.h"
-
-//#import "RRActorVideoHeader.h"
 
 @interface RRAllRankingListVC ()<UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 
@@ -33,10 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+// Do any additional setup after loading the view.
 //    self.isShowMore = NO;
 //    self.isNoOtherData = NO;
-//    self.customTabbar.hidden = YES;
 //    self.customTabbar.hidden = YES;
 //    self.dataSource = [[RRDataSource alloc] init];
 //    self.pageSize = @"10";
@@ -165,6 +158,7 @@
 #pragma mark -- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     //todo
+    NSLog(@"点击排行榜cell");
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
@@ -184,12 +178,12 @@
 
 //每一行之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return 8.0;
+    return 1.0;
 }
 
 //每一列之间的间距
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumColumnSpacingForSectionAtIndex:(NSInteger)section {
-    return 8.0;
+    return 1.0;
 }
 
 // 每个区的边距
@@ -200,6 +194,6 @@
 
 // header的高度
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForHeaderInSection:(NSInteger)section {
-    return 42.0;
+    return 15.0;
 }
 @end

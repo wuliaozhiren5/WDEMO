@@ -63,6 +63,7 @@
  
     for (int i = 0; i < arr.count; i++) {
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(i*SC_WIDTH, 0, SC_WIDTH, SC_HEIGHT)];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.image = [UIImage imageNamed:arr[i]];
         NSString *tagStr = tagArr[i];
         imageView.tag = tagStr.integerValue;

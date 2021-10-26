@@ -207,6 +207,10 @@
 #define kCOLOR_898A91       RGB(0x89, 0x8A, 0x91)
 
 #define kCOLOR_0091FF      RGB(0x00, 0x91, 0xff)
+#define kCOLOR_979797      RGB(0x97, 0x97, 0x97)
+#define kCOLOR_A8A8A8      RGB(0xA8, 0xA8, 0xA8)
+#define kCOLOR_108F80      RGB(0x10, 0x8F, 0x80)
+#define kCOLOR_BCBCBC      RGB(0xBC, 0xBC, 0x80)
 
 //辅助字体色 或者按钮线
 #define kCOLOR_dynamicProvider_CACBCC_616466       [UIColor colorWithDynamicProviderColor:@[RGB(0xCA, 0xCB, 0xCC),RGB(0x61, 0x64, 0x66)]]
