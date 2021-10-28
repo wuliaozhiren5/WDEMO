@@ -201,15 +201,16 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
+    //    UIFont *font = [UIFont systemFontOfSize:17.0];
+
     UIFont *font = [UIFont systemFontOfSize:12.0];
-    
+
     BOOL isUserSelected = (indexPath.item == _index);
     //动画
     if (isUserSelected) {
-        font = [UIFont systemFontOfSize:20.0];
+        font = [UIFont systemFontOfSize:17.0];
     }
-    
+        
     NSString *text = _tagArr[indexPath.item];
     CGSize maxSize = CGSizeMake(0, MAXFLOAT);
     CGSize textSize = CGSizeZero;

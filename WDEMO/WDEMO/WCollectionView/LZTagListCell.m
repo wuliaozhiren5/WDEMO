@@ -20,7 +20,6 @@
         [self.contentView addSubview:self.tagBtn];
         [self.contentView addSubview:self.line];
 //        [self.contentView addSubview:self.tagLabel];
- 
     }
     return self;
 }
@@ -62,27 +61,34 @@
     //显示btn
     [_tagBtn setTitle:tagStr forState:UIControlStateNormal];
 //    [_tagBtn sizeToFit];
-//    _tagBtn.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+    _tagBtn.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
     
+ 
     if (_isUserSelected) {
         [_tagBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        _tagBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
-        [_tagBtn sizeToFit];
-        _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
+        _tagBtn.titleLabel.font = [UIFont systemFontOfSize:17.0];
+//        _tagBtn.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+//        _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
         
-         [UIView animateWithDuration:0.5
-                              delay:0.01
-                            options:UIViewAnimationOptionCurveEaseInOut
-                         animations:^{
-             _tagBtn.titleLabel.font = [UIFont systemFontOfSize:17.0];
-             [_tagBtn sizeToFit];
-             _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
-        } completion:nil];
+//        [_tagBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+//        _tagBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
+//        [_tagBtn sizeToFit];
+//        _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
+//
+//         [UIView animateWithDuration:0.5
+//                              delay:0.01
+//                            options:UIViewAnimationOptionCurveEaseInOut
+//                         animations:^{
+//             _tagBtn.titleLabel.font = [UIFont systemFontOfSize:17.0];
+//             [_tagBtn sizeToFit];
+////             _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
+//             _tagBtn.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
+//        } completion:nil];
     } else {
         [_tagBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _tagBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
-        [_tagBtn sizeToFit];
-        _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
+//        [_tagBtn sizeToFit];
+//        _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
  
     }
 }
