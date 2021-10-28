@@ -38,8 +38,8 @@ static CGFloat const headViewHeight = 256;
 @property (nonatomic, assign) CGFloat statusbarHeight;
 @property (nonatomic, assign) CGFloat navigationbarHeight;
 
-//pageVC字典
-@property (nonatomic, strong) NSMutableDictionary *pageVCDict;
+//subVC字典
+@property (nonatomic, strong) NSMutableDictionary *subVCDict;
 //测试数据
 @property (nonatomic, copy) NSArray *tagArr;
 @property (nonatomic, copy) NSArray *subTagArr;
@@ -49,6 +49,9 @@ static CGFloat const headViewHeight = 256;
 @property (nonatomic,strong) UIViewController *currentSubVC;
 
 @property(strong , nonatomic)LZTagSegmentedControl *segmentedControl;
+
+@property (nonatomic, copy) NSArray *topArr;
+
 @end
 
 
@@ -99,16 +102,26 @@ static CGFloat const headViewHeight = 256;
     self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
     
     [self createTagData];
-    [self createSubVC];
     [self createSegmentedControl];
+    [self createCurrentSubVC];
     [self createTableView];
 }
 
-- (void)createSubVC {
-    self.currentSubVC = [self getPageVC];
+- (void)createCurrentSubVC {
+    //不存在创建
+    //存在直接返回
+    NSString *key = @(self.selectIndex).stringValue;
+    UIViewController *showSubVC = self.subVCDict[key];
+    if (!showSubVC) {
+        showSubVC = [self createSubVC];
+        NSString *key = @(self.selectIndex).stringValue;
+        self.subVCDict[key] = showSubVC;
+    }
+    self.currentSubVC = showSubVC;
+    
 }
 
-- (void)removeSubVC {
+- (void)removeCurrentSubVC {
     if (self.currentSubVC) {
         [self.currentSubVC.view removeFromSuperview];
     }
@@ -199,21 +212,8 @@ static CGFloat const headViewHeight = 256;
     _segmentedControl = segmentedControl;
 }
 
-- (UIViewController *)getPageVC {
-    NSString *key = @(self.selectIndex).stringValue;
-    UIViewController *showVC = self.pageVCDict[key];
-    if (!showVC) {
-        showVC = [self createPageVC];
-        NSString *key = @(self.selectIndex).stringValue;
-        self.pageVCDict[key] = showVC;
-    }
-    return showVC;
-}
-
-- (UIViewController *)createPageVC {
-    
+- (UIViewController *)createSubVC {
     NSArray *tagArr = _subTagArr[self.selectIndex];
-    
     NSMutableArray *viewControllers = [NSMutableArray array];
     for (NSString *title in tagArr) {
         RRAllRankingListVC *oneVc  = [RRAllRankingListVC new];
@@ -562,9 +562,9 @@ static CGFloat const headViewHeight = 256;
     //    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     
     //删除老的
-    [self removeSubVC];
+    [self removeCurrentSubVC];
     //创建新的
-    [self createSubVC];
+    [self createCurrentSubVC];
     
     UIViewController *showVC = self.currentSubVC;
     UIView *view = showVC.view;
@@ -647,11 +647,11 @@ static CGFloat const headViewHeight = 256;
     return _mainTableView;
 }
 
-- (NSMutableDictionary *)pageVCDict {
-    if (!_pageVCDict) {
-        _pageVCDict = [NSMutableDictionary dictionary];
+- (NSMutableDictionary *)subVCDict {
+    if (!_subVCDict) {
+        _subVCDict = [NSMutableDictionary dictionary];
     }
-    return _pageVCDict;
+    return _subVCDict;
     
 }
 
