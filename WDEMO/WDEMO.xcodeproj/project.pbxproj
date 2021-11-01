@@ -196,6 +196,17 @@
 		F57B52A024C7DECF00940696 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B529F24C7DECF00940696 /* ChatViewController.m */; };
 		F57B52A324C7DF2700940696 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F57B52A224C7DF2700940696 /* ChatController.m */; };
 		F57D571F272FE326009F5846 /* RRHomeChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D571E272FE326009F5846 /* RRHomeChannelModel.m */; };
+		F57D5738272FE367009F5846 /* RRTopBarUserView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5720272FE365009F5846 /* RRTopBarUserView.m */; };
+		F57D5739272FE367009F5846 /* RRDramaCommentDetailScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5721272FE365009F5846 /* RRDramaCommentDetailScoreView.m */; };
+		F57D573A272FE367009F5846 /* RRDramaCommentDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5726272FE366009F5846 /* RRDramaCommentDetailCell.m */; };
+		F57D573B272FE367009F5846 /* RRDramaCommentBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5727272FE366009F5846 /* RRDramaCommentBottomView.m */; };
+		F57D573C272FE367009F5846 /* RRDramaCommentDetailImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5728272FE366009F5846 /* RRDramaCommentDetailImageScrollView.m */; };
+		F57D573E272FE367009F5846 /* RRDramaCommentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D572D272FE366009F5846 /* RRDramaCommentDetailVC.m */; };
+		F57D5741272FE367009F5846 /* RRDramaCommentScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5732272FE367009F5846 /* RRDramaCommentScoreView.m */; };
+		F57D5742272FE367009F5846 /* RRDramaCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5733272FE367009F5846 /* RRDramaCommentCell.m */; };
+		F57D5743272FE367009F5846 /* RRDramaCommentSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5735272FE367009F5846 /* RRDramaCommentSubVC.m */; };
+		F57D5746272FE424009F5846 /* RRStarScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5745272FE424009F5846 /* RRStarScoreView.m */; };
+		F57D5749272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5747272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.m */; };
 		F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F581D21724EAB684008AC679 /* WScrollViewController.m */; };
 		F58293B2255CDBD40066111C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F58293B1255CDBD40066111C /* Person.m */; };
 		F586139626A9620900D81DDA /* 马甲包的副本3.md in Resources */ = {isa = PBXBuildFile; fileRef = F586139226A9620800D81DDA /* 马甲包的副本3.md */; };
@@ -767,6 +778,28 @@
 		F57B52A224C7DF2700940696 /* ChatController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatController.m; sourceTree = "<group>"; };
 		F57D571D272FE326009F5846 /* RRHomeChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRHomeChannelModel.h; sourceTree = "<group>"; };
 		F57D571E272FE326009F5846 /* RRHomeChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRHomeChannelModel.m; sourceTree = "<group>"; };
+		F57D5720272FE365009F5846 /* RRTopBarUserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRTopBarUserView.m; sourceTree = "<group>"; };
+		F57D5721272FE365009F5846 /* RRDramaCommentDetailScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDramaCommentDetailScoreView.m; sourceTree = "<group>"; };
+		F57D5723272FE366009F5846 /* RRDramaCommentDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDramaCommentDetailVC.h; sourceTree = "<group>"; };
+		F57D5725272FE366009F5846 /* RRDramaCommentDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDramaCommentDetailCell.h; sourceTree = "<group>"; };
+		F57D5726272FE366009F5846 /* RRDramaCommentDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDramaCommentDetailCell.m; sourceTree = "<group>"; };
+		F57D5727272FE366009F5846 /* RRDramaCommentBottomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDramaCommentBottomView.m; sourceTree = "<group>"; };
+		F57D5728272FE366009F5846 /* RRDramaCommentDetailImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDramaCommentDetailImageScrollView.m; sourceTree = "<group>"; };
+		F57D5729272FE366009F5846 /* RRDramaCommentDetailScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDramaCommentDetailScoreView.h; sourceTree = "<group>"; };
+		F57D572A272FE366009F5846 /* RRDramaCommentScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDramaCommentScoreView.h; sourceTree = "<group>"; };
+		F57D572C272FE366009F5846 /* RRDramaCommentDetailImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDramaCommentDetailImageScrollView.h; sourceTree = "<group>"; };
+		F57D572D272FE366009F5846 /* RRDramaCommentDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDramaCommentDetailVC.m; sourceTree = "<group>"; };
+		F57D572E272FE366009F5846 /* RRDramaCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDramaCommentCell.h; sourceTree = "<group>"; };
+		F57D5732272FE367009F5846 /* RRDramaCommentScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDramaCommentScoreView.m; sourceTree = "<group>"; };
+		F57D5733272FE367009F5846 /* RRDramaCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDramaCommentCell.m; sourceTree = "<group>"; };
+		F57D5734272FE367009F5846 /* RRDramaCommentSubVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDramaCommentSubVC.h; sourceTree = "<group>"; };
+		F57D5735272FE367009F5846 /* RRDramaCommentSubVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDramaCommentSubVC.m; sourceTree = "<group>"; };
+		F57D5736272FE367009F5846 /* RRTopBarUserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRTopBarUserView.h; sourceTree = "<group>"; };
+		F57D5737272FE367009F5846 /* RRDramaCommentBottomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDramaCommentBottomView.h; sourceTree = "<group>"; };
+		F57D5744272FE424009F5846 /* RRStarScoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRStarScoreView.h; sourceTree = "<group>"; };
+		F57D5745272FE424009F5846 /* RRStarScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRStarScoreView.m; sourceTree = "<group>"; };
+		F57D5747272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDramaCommentPraiseBtnInputBar.m; sourceTree = "<group>"; };
+		F57D5748272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDramaCommentPraiseBtnInputBar.h; sourceTree = "<group>"; };
 		F581D21624EAB684008AC679 /* WScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WScrollViewController.h; sourceTree = "<group>"; };
 		F581D21724EAB684008AC679 /* WScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WScrollViewController.m; sourceTree = "<group>"; };
 		F58293B0255CDBD40066111C /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -2466,6 +2499,28 @@
 		F5D4476926CB653D002E90EB /* DramaComment */ = {
 			isa = PBXGroup;
 			children = (
+				F57D5744272FE424009F5846 /* RRStarScoreView.h */,
+				F57D5745272FE424009F5846 /* RRStarScoreView.m */,
+				F57D5748272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.h */,
+				F57D5747272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.m */,
+				F57D5737272FE367009F5846 /* RRDramaCommentBottomView.h */,
+				F57D5727272FE366009F5846 /* RRDramaCommentBottomView.m */,
+				F57D572E272FE366009F5846 /* RRDramaCommentCell.h */,
+				F57D5733272FE367009F5846 /* RRDramaCommentCell.m */,
+				F57D5725272FE366009F5846 /* RRDramaCommentDetailCell.h */,
+				F57D5726272FE366009F5846 /* RRDramaCommentDetailCell.m */,
+				F57D572C272FE366009F5846 /* RRDramaCommentDetailImageScrollView.h */,
+				F57D5728272FE366009F5846 /* RRDramaCommentDetailImageScrollView.m */,
+				F57D5729272FE366009F5846 /* RRDramaCommentDetailScoreView.h */,
+				F57D5721272FE365009F5846 /* RRDramaCommentDetailScoreView.m */,
+				F57D5723272FE366009F5846 /* RRDramaCommentDetailVC.h */,
+				F57D572D272FE366009F5846 /* RRDramaCommentDetailVC.m */,
+				F57D572A272FE366009F5846 /* RRDramaCommentScoreView.h */,
+				F57D5732272FE367009F5846 /* RRDramaCommentScoreView.m */,
+				F57D5734272FE367009F5846 /* RRDramaCommentSubVC.h */,
+				F57D5735272FE367009F5846 /* RRDramaCommentSubVC.m */,
+				F57D5736272FE367009F5846 /* RRTopBarUserView.h */,
+				F57D5720272FE365009F5846 /* RRTopBarUserView.m */,
 				F57D571C272FE326009F5846 /* model */,
 			);
 			path = DramaComment;
@@ -3086,9 +3141,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F57D573A272FE367009F5846 /* RRDramaCommentDetailCell.m in Sources */,
 				F5AC7C5027102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m in Sources */,
 				F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */,
 				F5200DCB2531536E004637DD /* BaseViewController.m in Sources */,
+				F57D5738272FE367009F5846 /* RRTopBarUserView.m in Sources */,
 				F50440CF2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m in Sources */,
 				F5F5B44C25FA1DFE0069491B /* RRActorIntroCell.m in Sources */,
 				F50D6D8025A9581B00B8C415 /* SearchResultViewController.m in Sources */,
@@ -3114,6 +3171,7 @@
 				F5A51F3724FC98430054A4DD /* PasswordTextFieldView.m in Sources */,
 				F5872CE6257DFB9F00341B57 /* SettingModuleVC.m in Sources */,
 				F5D0FBFF24E0E6CB00CAADF8 /* AttributedTextViewController.m in Sources */,
+				F57D573C272FE367009F5846 /* RRDramaCommentDetailImageScrollView.m in Sources */,
 				F563DADA25AC26790079474B /* WMPageController.m in Sources */,
 				F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */,
 				F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */,
@@ -3125,6 +3183,7 @@
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
 				F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */,
 				F57D571F272FE326009F5846 /* RRHomeChannelModel.m in Sources */,
+				F57D5746272FE424009F5846 /* RRStarScoreView.m in Sources */,
 				F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */,
 				F5446D03268DC1490076961A /* RRCommentPositionListModel.m in Sources */,
 				F563DAE625AC27020079474B /* HomePageViewController.m in Sources */,
@@ -3160,12 +3219,14 @@
 				F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */,
 				F5668FB124C6C11C007D452E /* WCollectionViewCell.m in Sources */,
 				F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */,
+				F57D5743272FE367009F5846 /* RRDramaCommentSubVC.m in Sources */,
 				6783C8951FB944B80040C02B /* WaterFlowLayout.m in Sources */,
 				F591AC8B26A163D70042802F /* WConstants.m in Sources */,
 				A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */,
 				F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */,
 				F5872CD1257DF62400341B57 /* SettingModuleHandler+setting.m in Sources */,
 				F5AC7C542710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m in Sources */,
+				F57D573E272FE367009F5846 /* RRDramaCommentDetailVC.m in Sources */,
 				F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
 				F563DADB25AC26790079474B /* UIViewController+WMPageController.m in Sources */,
@@ -3191,10 +3252,12 @@
 				F5CED5E525749E84002CF42C /* XXClass.m in Sources */,
 				F5409AAE26B164A30042F29D /* ZZStarView.m in Sources */,
 				F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */,
+				F57D573B272FE367009F5846 /* RRDramaCommentBottomView.m in Sources */,
 				F5CA13E226B2A15200D8A7AE /* LBTabBar.m in Sources */,
 				F5D138CC25679690008CC29A /* FollowTips.m in Sources */,
 				F53F669224FE454000770055 /* PasswordTextField.m in Sources */,
 				A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */,
+				F57D5742272FE367009F5846 /* RRDramaCommentCell.m in Sources */,
 				F553E12A24CA800200DA5625 /* InputController.m in Sources */,
 				F5D0FC0A24E0F91800CAADF8 /* UIImage+TUIDarkMode.m in Sources */,
 				F5D4EB8425DF6B5500F807EF /* PersonalHomePageVC.m in Sources */,
@@ -3208,6 +3271,7 @@
 				F5596C75271EA2FE007D9FE9 /* RRAllRankingVC.m in Sources */,
 				F5358C1926032C1200C69FC4 /* RRActorSubVC.m in Sources */,
 				F563DADC25AC26790079474B /* WMMenuItem.m in Sources */,
+				F57D5749272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
 				F553E17E24CA888800DA5625 /* ChatHelper.m in Sources */,
 				F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */,
@@ -3234,6 +3298,7 @@
 				F58B4B402643FAF700D7C82D /* UIViewController+TopViewController.m in Sources */,
 				F5D5C1B0271428D70021C36E /* CarouseView.m in Sources */,
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
+				F57D5741272FE367009F5846 /* RRDramaCommentScoreView.m in Sources */,
 				F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
 				F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */,
@@ -3249,6 +3314,7 @@
 				F593574A25F7466A008CF0D8 /* SecondViewTableViewController.m in Sources */,
 				F563DADE25AC26790079474B /* WMMenuView.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
+				F57D5739272FE367009F5846 /* RRDramaCommentDetailScoreView.m in Sources */,
 				F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */,
 				F5CA141026B2A61A00D8A7AE /* LBpostViewController.m in Sources */,
 				F5A889BC24F65D9000DB73ED /* LoginViewModel.m in Sources */,

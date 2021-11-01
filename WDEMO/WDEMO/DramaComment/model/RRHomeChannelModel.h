@@ -339,6 +339,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *title;
 //副标题
 @property (nonatomic, copy) NSString *subTitle;
+//推荐语
+@property (nonatomic, copy) NSString *recommendInfo;
+// no为剧下架
+@property (nonatomic, assign) BOOL enable;
+//下架提示消息
+@property (nonatomic, copy) NSString *offMessage;
+
 //得分
 @property (nonatomic, copy) NSString *score;
 //计费类型：免费free, 限免restriction, 会员vip, 点播dibbling, 无notdefined, 超前点播advanceDibbling
@@ -375,15 +382,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSString *recomTraceId;
 @property (nonatomic, copy) NSString *recomTraceInfo;
 
+@property (nonatomic, assign) BOOL recomTraceInfoOpen;
+
 //样式：SLIDE：横滑，SCROLL：平铺
 @property (nonatomic, copy) NSString *display;
 
 @property (nonatomic, copy) NSString *createTime;
+//剧集上线时间 2016/03/18"
+@property (nonatomic, copy) NSString *upTimeStr;
+// 剧集上线时间搓
+@property (nonatomic, copy) NSString *upTime;
 
-@property (nonatomic, copy) NSString *updateTime;
 //评分字符串
 @property (nonatomic, copy) NSString *scoreStr;
-
+//数量搜索次数，热度
+@property (nonatomic, assign) NSInteger count;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -102,6 +102,7 @@
 #import "NewHandGuideViewController.h"
 //评论
 #import "RRSeasonSeniorCommentsSubVC.h"
+#import "RRDramaCommentSubVC.h"
 //消息
 #import "RRMessageSeasonCommentPositionListVC.h"
 //加载页
@@ -1061,7 +1062,10 @@
 }
 
 - (void)clickDramaComment {
- 
+    //影评
+    RRDramaCommentSubVC *vc= [[RRDramaCommentSubVC alloc]init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)clickArchiver {
