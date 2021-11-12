@@ -188,6 +188,7 @@
 		F566A1D325008B6A004991D3 /* PasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D225008B6A004991D3 /* PasswordVC.m */; };
 		F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F566A1D525008D76004991D3 /* ChangePasswordVC.m */; };
 		F567346C260C41D80081BC8A /* 数字变化的动画效果.md in Resources */ = {isa = PBXBuildFile; fileRef = F567346B260C41D80081BC8A /* 数字变化的动画效果.md */; };
+		F56AB11D273E102A00A59421 /* RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F56AB119273E102800A59421 /* RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.m */; };
 		F5710B4225232263009DEE02 /* 富文本.md in Resources */ = {isa = PBXBuildFile; fileRef = F5710B4125232263009DEE02 /* 富文本.md */; };
 		F5760E0D268EEBFC008250D7 /* addHeaderFooter.md in Resources */ = {isa = PBXBuildFile; fileRef = F5760E0C268EEBFC008250D7 /* addHeaderFooter.md */; };
 		F5760E13268EECF4008250D7 /* 隐藏导航栏.md in Resources */ = {isa = PBXBuildFile; fileRef = F5760E12268EECF4008250D7 /* 隐藏导航栏.md */; };
@@ -765,6 +766,8 @@
 		F566A1D425008D76004991D3 /* ChangePasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChangePasswordVC.h; sourceTree = "<group>"; };
 		F566A1D525008D76004991D3 /* ChangePasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChangePasswordVC.m; sourceTree = "<group>"; };
 		F567346B260C41D80081BC8A /* 数字变化的动画效果.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "数字变化的动画效果.md"; sourceTree = "<group>"; };
+		F56AB119273E102800A59421 /* RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		F56AB11B273E102900A59421 /* RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		F5710B4125232263009DEE02 /* 富文本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "富文本.md"; sourceTree = "<group>"; };
 		F5760E0C268EEBFC008250D7 /* addHeaderFooter.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = addHeaderFooter.md; sourceTree = "<group>"; };
 		F5760E12268EECF4008250D7 /* 隐藏导航栏.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "隐藏导航栏.md"; sourceTree = "<group>"; };
@@ -1853,6 +1856,8 @@
 				F5AC7C3527102CBD00533793 /* RRSeasonSeniorCommentsPhotoCollectionView.m */,
 				F5AC7C3F27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.h */,
 				F5AC7C3C27102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionViewCell.m */,
+				F56AB11B273E102900A59421 /* RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.h */,
+				F56AB119273E102800A59421 /* RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.m */,
 				F5AC7C4027102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.h */,
 				F5AC7C4227102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m */,
 				F5AC7C4327102CBE00533793 /* RRSeasonSeniorCommentsTextCell.h */,
@@ -3274,6 +3279,7 @@
 				F57D5749272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
 				F553E17E24CA888800DA5625 /* ChatHelper.m in Sources */,
+				F56AB11D273E102A00A59421 /* RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.m in Sources */,
 				F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */,
 				F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */,
 				67535E892390F0CF0009F882 /* FontViewControlle.m in Sources */,

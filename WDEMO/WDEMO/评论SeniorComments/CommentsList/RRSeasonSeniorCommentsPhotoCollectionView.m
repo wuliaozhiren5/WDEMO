@@ -2,12 +2,13 @@
 //  RRSeasonSeniorCommentsPhotoCollectionView.m
 //  NJVideo
 //
-//  Created by WDEMO on 2021/7/27.
+//  Created by rrtv on 2021/7/27.
 //  Copyright © 2021 RRMJ. All rights reserved.
 //
 
 #import "RRSeasonSeniorCommentsPhotoCollectionView.h"
 #import "RRSeasonSeniorCommentsPhotoCollectionViewCell.h"
+#import "RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.h"
 
 @interface RRSeasonSeniorCommentsPhotoCollectionView ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -39,6 +40,8 @@
     [self registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
     
     [self registerClass:[RRSeasonSeniorCommentsPhotoCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsPhotoCollectionViewCell class])];
+    [self registerClass:[RRSeasonSeniorCommentsSinglePhotoCollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSinglePhotoCollectionViewCell class])];
+
 }
 
 #pragma mark --UICollectionViewDataSource
@@ -52,10 +55,18 @@
 
 //定义并返回每个cell
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    RRSeasonSeniorCommentsPhotoCollectionViewCell *cell = (RRSeasonSeniorCommentsPhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsPhotoCollectionViewCell class]) forIndexPath:indexPath];
-    RRSeniorCommentsImageModel *model = [self.data objectOrNilAtIndex:indexPath.item];
-    cell.model= model;
-    return cell;
+    NSInteger imageCount = self.data.count;
+    if (imageCount == 1) {
+        RRSeasonSeniorCommentsSinglePhotoCollectionViewCell *cell = (RRSeasonSeniorCommentsSinglePhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsSinglePhotoCollectionViewCell class]) forIndexPath:indexPath];
+        RRSeniorCommentsImageModel *model = [self.data objectOrNilAtIndex:indexPath.item];
+        cell.model= model;
+        return cell;
+    } else {
+        RRSeasonSeniorCommentsPhotoCollectionViewCell *cell = (RRSeasonSeniorCommentsPhotoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsPhotoCollectionViewCell class]) forIndexPath:indexPath];
+        RRSeniorCommentsImageModel *model = [self.data objectOrNilAtIndex:indexPath.item];
+        cell.model= model;
+        return cell;
+    }
 }
 
 #pragma mark -- UICollectionViewDelegate
@@ -83,27 +94,40 @@
         CGFloat height = singleImage.height;
         //        CGFloat x = 61;
         //        CGFloat y = 8 + currentHeight;
-        CGFloat max = 197;
+        CGFloat max = _maxWidth - 100;
         CGFloat showWidth = 0;
         CGFloat showHeight = 0;
         
 //        if (width > height) {
 //            showWidth = max * 4 / 3;
 //            showHeight = max;
-//            
+//
 //        } else if (width < height) {
 //            showWidth = max;
 //            showHeight = max * 4 / 3;
-//            
+//
 //        } else {
 //            showWidth = max;
 //            showHeight = max;
 //        }
         
-        //5.9UI展示逻辑修改
-        showWidth = _maxWidth - 100;
-        showHeight = showWidth;
-        
+//        //5.9UI展示逻辑修改
+//        showWidth = _maxWidth - 100;
+//        showHeight = showWidth;
+
+        //5.12UI展示逻辑修改
+        if (width > height) {
+            showWidth = max;
+            showHeight = max * 9 / 16;
+
+        } else if (width < height) {
+            showWidth = max;
+            showHeight = max * 4 / 3;
+
+        } else {
+            showWidth = max;
+            showHeight = max;
+        }
         return CGSizeMake(showWidth, showHeight);
     } else {
         //大于1张图
@@ -137,6 +161,7 @@
 - (void)setData:(NSArray *)data {
     _data = data;
     [self reloadData];
+    [self layoutIfNeeded];
 }
 @end
 

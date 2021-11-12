@@ -66,24 +66,38 @@
         CGFloat showWidth = 0;
         CGFloat showHeight = 0;
         
-//        if (width > height) {
-//            showWidth = max * 4 / 3;
-//            showHeight = max;
-//
-//        } else if (width < height) {
-//            showWidth = max;
-//            showHeight = max * 4 / 3;
-//
-//        } else {
-//            showWidth = max;
-//            showHeight = max;
-//
-//        }
+        //        if (width > height) {
+        //            showWidth = max * 4 / 3;
+        //            showHeight = max;
+        //
+        //        } else if (width < height) {
+        //            showWidth = max;
+        //            showHeight = max * 4 / 3;
+        //
+        //        } else {
+        //            showWidth = max;
+        //            showHeight = max;
+        //
+        //        }
+        //
+        //        //5.9UI展示逻辑修改
+        //        showWidth = (KWidth - 61 - 16) - 100;
+        //        showHeight = showWidth;
         
-        //5.9UI展示逻辑修改
-        showWidth = (KWidth - 61 - 16) - 100;
-        showHeight = showWidth;
-        
+        //5.12UI展示逻辑修改
+        if (width > height) {
+            showWidth = max;
+            showHeight = max * 9 / 16;
+            
+        } else if (width < height) {
+            showWidth = max;
+            showHeight = max * 4 / 3;
+            
+        } else {
+            showWidth = max;
+            showHeight = max;
+        }
+  
         self.photoCollectionView.hidden = NO;
         self.photoCollectionView.frame = CGRectMake(x, y, showWidth, showHeight);
         self.photoCollectionView.data = model.images;
@@ -182,24 +196,38 @@
         CGFloat max = 197;
         CGFloat showWidth = 0;
         CGFloat showHeight = 0;
-//
-//        if (width > height) {
-//            showWidth = max * 4 / 3;
-//            showHeight = max;
-//
-//        } else if (width < height) {
-//            showWidth = max;
-//            showHeight = max * 4 / 3;
-//
-//        } else {
-//            showWidth = max;
-//            showHeight = max;
-//
-//        }
         
-        //5.9UI展示逻辑修改
-        showWidth = (KWidth - 61 - 16) - 100;
-        showHeight = showWidth;
+        //        if (width > height) {
+        //            showWidth = max * 4 / 3;
+        //            showHeight = max;
+        //
+        //        } else if (width < height) {
+        //            showWidth = max;
+        //            showHeight = max * 4 / 3;
+        //
+        //        } else {
+        //            showWidth = max;
+        //            showHeight = max;
+        //
+        //        }
+        //
+        //        //5.9UI展示逻辑修改
+        //        showWidth = (KWidth - 61 - 16) - 100;
+        //        showHeight = showWidth;
+        
+        //5.12UI展示逻辑修改
+        if (width > height) {
+            showWidth = max;
+            showHeight = max * 9 / 16;
+            
+        } else if (width < height) {
+            showWidth = max;
+            showHeight = max * 4 / 3;
+            
+        } else {
+            showWidth = max;
+            showHeight = max;
+        }
         
         imageViewHeight = showHeight;
     } else if (imageCount > 1) {
