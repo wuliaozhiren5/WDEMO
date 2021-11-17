@@ -979,4 +979,12 @@
 
 @implementation RRSeriesItemModel
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"coverUrl" : @[@"coverUrl", @"cover", @"picUrl"],
+             @"title" : @[@"title", @"name"],
+             @"areaList" : @[@"producerRegionList", @"areaList"],
+             @"dramaId" : @[@"dramaId", @"id"],
+    };
+}
+
 @end

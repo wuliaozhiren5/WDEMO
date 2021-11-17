@@ -22,7 +22,7 @@
 //#import "NSString+ZY.h"
 #import "RRDramaCommentDetailVC.h"
 //#import "RRCreateFilmReviewViewController.h"
-
+#import "RRSeniorCommentsModel.h"
 //@interface RRDramaCommentSubVC () <UITableViewDataSource, UITableViewDelegate, RRDramaCommentDetailVCDelegate, RRCreateFilmReviewViewControllerDelegate>
 
 @interface RRDramaCommentSubVC () <UITableViewDataSource, UITableViewDelegate, RRDramaCommentDetailVCDelegate>
@@ -54,6 +54,8 @@
 //    self.customTabbar.hidden = YES;
 //    self.dataSource = [[RRDataSource alloc] init];
 
+    self.title = @"影评列表";
+    
 //    self.spoiler = YES;
     self.sort = @"likeCount";
 
@@ -70,7 +72,23 @@
 }
 
 - (void)refreshData {
+    //iOS 读取本地Json文件
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"影评列表" ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *error;
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (!jsonData || error) {
+        //DLog(@"JSON解码失败");
+    } else {
+        //DLog(@"JSON解码成功");
+    }
+    NSDictionary *dic = (NSDictionary *)jsonObj;
+    RRSeniorCommentsListModel *model = [RRSeniorCommentsListModel modelWithJSON:dic[@"data"]];
+    self.data = [model.content mutableCopy];
+    [self.tableView reloadData];
     
+    self.tableView.hidden = NO;
+    self.bottomView.hidden = NO;
 }
 //
 ////- (void)requestData {
@@ -407,11 +425,13 @@
 }
 
 - (void)clickAllCellWithModel:(RRSeniorCommentsModel *)model {
-//    RRDramaCommentDetailVC *next = [[RRDramaCommentDetailVC alloc] init];
-//    next.dramaCommentId = model.ID;
-//    next.passDramaCommentModel = model;
-//    next.delegate = self;
+    RRDramaCommentDetailVC *next = [[RRDramaCommentDetailVC alloc] init];
+    next.dramaCommentId = model.ID;
+    next.passDramaCommentModel = model;
+    next.delegate = self;
 //    [[RRAppLinkManager sharedManager] pushViewController:next animated:YES];
+    [self.navigationController pushViewController:next animated:YES];
+
 }
 
 //- (void)scrollViewDidScroll:(UIScrollView *)scrollView {

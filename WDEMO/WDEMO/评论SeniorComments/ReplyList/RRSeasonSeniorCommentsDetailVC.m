@@ -82,6 +82,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"评论详情";
     // Do any additional setup after loading the view.
 //    self.customTabbar.navTitle.text = @"评论详情";
 //    self.customTabbar.hidden = self.isHalf;
@@ -102,7 +103,7 @@
 - (void)refreshData {
     [self tableView];
     //iOS 读取本地Json文件
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"回复" ofType:@"json"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"回复列表" ofType:@"json"];
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
     NSError *error;
     id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];

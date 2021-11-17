@@ -68,7 +68,7 @@
 - (void)refreshData {
     
     //iOS 读取本地Json文件
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"回复详情" ofType:@"json"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"消息回复详情" ofType:@"json"];
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
     NSError *error;
     id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];

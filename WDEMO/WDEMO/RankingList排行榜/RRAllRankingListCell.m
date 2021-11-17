@@ -31,6 +31,7 @@
     [self.contentView addSubview:self.coverImgV];
     [self.coverImgV addSubview:self.followBtn];
     [self.contentView addSubview:self.photoView];
+    [self.photoView addSubview:self.banner];
     [self.contentView addSubview:self.numberIconImgV];
     [self.numberIconImgV addSubview:self.numberLab];
     [self.contentView addSubview:self.titleLab];
@@ -199,14 +200,11 @@
     ];
     [self.collectionView reloadData];
 
-    NSArray *array = @[@"4.jpg", @"4.jpg", @"4.jpg", @"4.jpg", @"4.jpg"];
-    RRRankingImageBanner *banner = [[RRRankingImageBanner alloc] initWithFrame:CGRectMake(0, 0, KWidth - 124 - 16, 130)
-                                                         array:array];
-    banner.autoScroll = NO;
-    UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
-    [banner addGestureRecognizer:tapGesturRecognizer];
-    [self.photoView addSubview:banner];
-    self.banner = banner;
+    NSArray *imagesArr = @[@"5.jpg", @"4.jpg", @"3.jpg", @"2.jpg", @"1.jpg"];
+//    NSArray *imagesArr = [model.imageList valueForKeyPath:@"url"];
+    self.banner.frame = CGRectMake(0, 0, KWidth - 124 - 16, 130);
+    self.banner.hidden = (imagesArr > 0) ? NO : YES;
+    self.banner.imageArr = imagesArr;
     
     self.line.backgroundColor = [UIColor blackColor];
 
@@ -425,5 +423,14 @@
     }
     return _line;
 }
+
+
+- (RRRankingImageBanner *)banner {
+    if (!_banner) {
+        _banner = [[RRRankingImageBanner alloc] initWithFrame:CGRectMake(0, 0, KWidth - 124 - 16, 130)];
+    }
+    return _banner;
+}
  
+
 @end

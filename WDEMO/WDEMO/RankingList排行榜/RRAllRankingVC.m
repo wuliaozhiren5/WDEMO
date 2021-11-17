@@ -14,6 +14,7 @@
 #import "RRAllRankingSubVC.h"
 #import "LZTagSegmentedControl.h"
 #import "RRAllRankingListVC.h"
+#import "RRAllRankingContainerModel.h"
 
 static CGFloat const headViewHeight = 256;
 
@@ -35,16 +36,22 @@ static CGFloat const headViewHeight = 256;
 
 @property (nonatomic, assign) BOOL isTopIsCanNotMoveParentScrollView;//到顶部不能滚动了
 
+@property(nonatomic,strong)UIImageView *backgroundImageView;//背景图
+
 @property (nonatomic, assign) CGFloat statusbarHeight;
+
 @property (nonatomic, assign) CGFloat navigationbarHeight;
 
 //subVC字典
 @property (nonatomic, strong) NSMutableDictionary *subVCDict;
-//测试数据
+
 @property (nonatomic, copy) NSArray *tagArr;
 @property (nonatomic, copy) NSArray *subTagArr;
 //当前index
 @property (nonatomic, assign) NSInteger selectIndex;
+@property (nonatomic, assign) NSInteger containerIndex;
+@property (nonatomic, assign) NSInteger contentIndex;
+
 //当前的subVC
 @property (nonatomic,strong) UIViewController *currentSubVC;
 
@@ -105,6 +112,74 @@ static CGFloat const headViewHeight = 256;
     [self createSegmentedControl];
     [self createCurrentSubVC];
     [self createTableView];
+    
+    [self refreshData];
+}
+
+- (void)refreshData {
+    
+    //iOS 读取本地Json文件
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"排行榜组件" ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *error;
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (!jsonData || error) {
+        //DLog(@"JSON解码失败");
+    } else {
+        //DLog(@"JSON解码成功");
+    }
+    NSDictionary *dic = (NSDictionary *)jsonObj;
+    
+    NSArray *listArray = [NSArray modelArrayWithClass:[RRAllRankingContainerModel class] json:dic[@"data"]];
+//    self.topArr = listArray;
+}
+
+//- (void)requestData {
+//    [self refreshData];
+//}
+//
+//- (void)refreshData {
+//
+//    WS(weakSelf)
+//    [RRAllRankingApi requestAllRankingWithBlock:^(NSArray * _Nonnull listArray, NSError * _Nonnull error) {
+//        if (error) {
+//            if (weakSelf.loadingView) {
+//                weakSelf.loadingView.msgType = RRMJLoadingErrorDefault;
+//                //                weakSelf.dataSource.error = error;
+//                [weakSelf stopLoading];
+//                return;
+//            }
+//        }
+//        weakSelf.loadingView.hidden = YES;
+//        self.topArr = listArray;
+//        [weakSelf stopLoading];
+//    }];
+//}
+//
+//- (void)stopLoading {
+//    if (self.loadingView.isHidden) {
+////        self.topArr = @[];
+//        if (self.topArr.count > 0) {
+//            [self setupViews];
+//        } else {
+//            self.noDataView.hidden = NO;
+//        }
+//    } else {
+//        self.noDataView.hidden = YES;
+//    }
+//}
+
+- (void)setupViews {
+    [self createTagData];
+    [self createBackgroundImageView];
+    [self createSegmentedControl];
+    [self createCurrentSubVC];
+    [self createTableView];
+}
+
+- (void)createBackgroundImageView {
+    [self.view addSubview:self.backgroundImageView];
+    [self.view sendSubviewToBack:self.backgroundImageView];
 }
 
 - (void)createCurrentSubVC {
@@ -645,6 +720,22 @@ static CGFloat const headViewHeight = 256;
         _mainTableView.backgroundColor = [UIColor redColor];
     }
     return _mainTableView;
+}
+
+- (UIImageView *)backgroundImageView {
+    if (!_backgroundImageView) {
+        _backgroundImageView = [[UIImageView alloc] init];
+        UIImage *img = [UIImage imageNamed:@"ranking_BackGround"];
+        _backgroundImageView.image = img;
+        //大小375/171
+        _backgroundImageView.frame = CGRectMake(0, 0, KWidth, KWidth * 171 / 375);
+        //        _backgroundImageView.userInteractionEnabled = YES;
+        _backgroundImageView.contentMode = UIViewContentModeScaleAspectFill;
+        //        _backgroundImageView.clipsToBounds = YES;
+        
+        _backgroundImageView.backgroundColor = [UIColor blackColor];
+    }
+    return _backgroundImageView;
 }
 
 - (NSMutableDictionary *)subVCDict {

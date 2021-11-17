@@ -94,7 +94,7 @@
 		F516E5342683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md in Resources */ = {isa = PBXBuildFile; fileRef = F516E5332683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md */; };
 		F518ED3725E8DDAC00260125 /* 图片压缩.md in Resources */ = {isa = PBXBuildFile; fileRef = F518ED3625E8DDAC00260125 /* 图片压缩.md */; };
 		F51A9E0426D6734400A15993 /* 判断中英混合的的字符串长度.md in Resources */ = {isa = PBXBuildFile; fileRef = F51A9E0326D6734400A15993 /* 判断中英混合的的字符串长度.md */; };
-		F51C24B7263BEF4D0010A298 /* 评论.json in Resources */ = {isa = PBXBuildFile; fileRef = F51C24B6263BEF4D0010A298 /* 评论.json */; };
+		F51C24B7263BEF4D0010A298 /* 评论列表.json in Resources */ = {isa = PBXBuildFile; fileRef = F51C24B6263BEF4D0010A298 /* 评论列表.json */; };
 		F51C24CD263BF1460010A298 /* RRSeniorCommentsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51C24CC263BF1460010A298 /* RRSeniorCommentsModel.m */; };
 		F51C24D4263BF1690010A298 /* AuthorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51C24D2263BF1690010A298 /* AuthorModel.m */; };
 		F51C8695261F10400066850E /* UIView中坐标转换.md in Resources */ = {isa = PBXBuildFile; fileRef = F51C8694261F103F0066850E /* UIView中坐标转换.md */; };
@@ -127,8 +127,7 @@
 		F5409ABE26B166020042F29D /* didStar@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5409AB826B166020042F29D /* didStar@3x.png */; };
 		F5409ABF26B166020042F29D /* didStar.png in Resources */ = {isa = PBXBuildFile; fileRef = F5409AB926B166020042F29D /* didStar.png */; };
 		F543282925A6D62C0082236C /* ScoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F543282825A6D62C0082236C /* ScoreViewController.m */; };
-		F5446CA6268D73240076961A /* 回复详情.json in Resources */ = {isa = PBXBuildFile; fileRef = F5446CA5268D73240076961A /* 回复详情.json */; };
-		F5446CAC268D73300076961A /* 评论的副本2.json in Resources */ = {isa = PBXBuildFile; fileRef = F5446CAB268D73300076961A /* 评论的副本2.json */; };
+		F5446CA6268D73240076961A /* 消息回复详情.json in Resources */ = {isa = PBXBuildFile; fileRef = F5446CA5268D73240076961A /* 消息回复详情.json */; };
 		F5446CE9268DB20C0076961A /* MyReply.m in Sources */ = {isa = PBXBuildFile; fileRef = F5446CE8268DB20C0076961A /* MyReply.m */; };
 		F5446D03268DC1490076961A /* RRCommentPositionListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5446D02268DC1490076961A /* RRCommentPositionListModel.m */; };
 		F5448BD12615F0A300169B71 /* 镂空.md in Resources */ = {isa = PBXBuildFile; fileRef = F5448BD02615F0A200169B71 /* 镂空.md */; };
@@ -238,7 +237,7 @@
 		F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFA257DFF5900341B57 /* 追剧引导-暗黑-一次.gif */; };
 		F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */; };
 		F58B4B402643FAF700D7C82D /* UIViewController+TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */; };
-		F58B4B462643FCD800D7C82D /* 回复.json in Resources */ = {isa = PBXBuildFile; fileRef = F58B4B452643FCD800D7C82D /* 回复.json */; };
+		F58B4B462643FCD800D7C82D /* 回复列表.json in Resources */ = {isa = PBXBuildFile; fileRef = F58B4B452643FCD800D7C82D /* 回复列表.json */; };
 		F58B528A271D960500CD6A3F /* 动画过程中的点击.md in Resources */ = {isa = PBXBuildFile; fileRef = F58B5289271D960500CD6A3F /* 动画过程中的点击.md */; };
 		F58B528C271D961A00CD6A3F /* 点击事件穿透.md in Resources */ = {isa = PBXBuildFile; fileRef = F58B528B271D961A00CD6A3F /* 点击事件穿透.md */; };
 		F58E20DC2711672A00C4BB4F /* RRMessageSeasonCommentPositionListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F58E20D82711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.m */; };
@@ -405,6 +404,13 @@
 		F5F5B44D25FA1DFE0069491B /* RRActorVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5B44325FA1DFE0069491B /* RRActorVideoVC.m */; };
 		F5F5B47025FA3AE50069491B /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5F5B46F25FA3AE50069491B /* bg.jpg */; };
 		F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5F5B47525FA3AE90069491B /* avatar.jpg */; };
+		F5F6AEEC2744A1FD0074B26D /* RRDIYPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F6AEEA2744A1FC0074B26D /* RRDIYPageControl.m */; };
+		F5F6AEF32744A6100074B26D /* RRAllRankingContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F6AEED2744A60F0074B26D /* RRAllRankingContentModel.m */; };
+		F5F6AEF42744A6100074B26D /* RRAllRankingListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F6AEEF2744A6100074B26D /* RRAllRankingListModel.m */; };
+		F5F6AEF52744A6100074B26D /* RRAllRankingContainerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F6AEF12744A6100074B26D /* RRAllRankingContainerModel.m */; };
+		F5F6AEF92744ABCD0074B26D /* 影评列表.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEF62744ABCC0074B26D /* 影评列表.json */; };
+		F5F6AEFA2744ABCD0074B26D /* 影评详情.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEF72744ABCC0074B26D /* 影评详情.json */; };
+		F5F6AEFB2744ABCD0074B26D /* 影评详情下讨论.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEF82744ABCD0074B26D /* 影评详情下讨论.json */; };
 		F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */; };
 		F5FB5D7B263AB2C400155BFE /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FB5D7A263AB2C400155BFE /* NSString+Util.m */; };
 /* End PBXBuildFile section */
@@ -608,7 +614,7 @@
 		F516E5332683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "按钮选中这时时候图片闪烁问题Selected.md"; sourceTree = "<group>"; };
 		F518ED3625E8DDAC00260125 /* 图片压缩.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "图片压缩.md"; sourceTree = "<group>"; };
 		F51A9E0326D6734400A15993 /* 判断中英混合的的字符串长度.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "判断中英混合的的字符串长度.md"; sourceTree = "<group>"; };
-		F51C24B6263BEF4D0010A298 /* 评论.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "评论.json"; sourceTree = "<group>"; };
+		F51C24B6263BEF4D0010A298 /* 评论列表.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "评论列表.json"; sourceTree = "<group>"; };
 		F51C24BD263BF11C0010A298 /* RRSeniorCommentsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeniorCommentsModel.h; sourceTree = "<group>"; };
 		F51C24CC263BF1460010A298 /* RRSeniorCommentsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeniorCommentsModel.m; sourceTree = "<group>"; };
 		F51C24D2263BF1690010A298 /* AuthorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthorModel.m; sourceTree = "<group>"; };
@@ -661,8 +667,7 @@
 		F5409AB926B166020042F29D /* didStar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = didStar.png; sourceTree = "<group>"; };
 		F543282725A6D62C0082236C /* ScoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreViewController.h; sourceTree = "<group>"; };
 		F543282825A6D62C0082236C /* ScoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreViewController.m; sourceTree = "<group>"; };
-		F5446CA5268D73240076961A /* 回复详情.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "回复详情.json"; sourceTree = "<group>"; };
-		F5446CAB268D73300076961A /* 评论的副本2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "评论的副本2.json"; sourceTree = "<group>"; };
+		F5446CA5268D73240076961A /* 消息回复详情.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "消息回复详情.json"; sourceTree = "<group>"; };
 		F5446CE7268DB20C0076961A /* MyReply.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyReply.h; sourceTree = "<group>"; };
 		F5446CE8268DB20C0076961A /* MyReply.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyReply.m; sourceTree = "<group>"; };
 		F5446D01268DC1490076961A /* RRCommentPositionListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRCommentPositionListModel.h; sourceTree = "<group>"; };
@@ -843,7 +848,7 @@
 		F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "追剧引导-白色-一次.gif"; sourceTree = "<group>"; };
 		F58B4B3E2643FAF700D7C82D /* UIViewController+TopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TopViewController.h"; sourceTree = "<group>"; };
 		F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TopViewController.m"; sourceTree = "<group>"; };
-		F58B4B452643FCD800D7C82D /* 回复.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "回复.json"; sourceTree = "<group>"; };
+		F58B4B452643FCD800D7C82D /* 回复列表.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "回复列表.json"; sourceTree = "<group>"; };
 		F58B5289271D960500CD6A3F /* 动画过程中的点击.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "动画过程中的点击.md"; sourceTree = "<group>"; };
 		F58B528B271D961A00CD6A3F /* 点击事件穿透.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "点击事件穿透.md"; sourceTree = "<group>"; };
 		F58E20D82711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageSeasonCommentPositionListVC.m; sourceTree = "<group>"; };
@@ -1116,6 +1121,17 @@
 		F5F5B44425FA1DFE0069491B /* RRActorIntroVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorIntroVC.h; sourceTree = "<group>"; };
 		F5F5B46F25FA3AE50069491B /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		F5F5B47525FA3AE90069491B /* avatar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = avatar.jpg; sourceTree = "<group>"; };
+		F5F6AEEA2744A1FC0074B26D /* RRDIYPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDIYPageControl.m; sourceTree = "<group>"; };
+		F5F6AEEB2744A1FD0074B26D /* RRDIYPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDIYPageControl.h; sourceTree = "<group>"; };
+		F5F6AEED2744A60F0074B26D /* RRAllRankingContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingContentModel.m; sourceTree = "<group>"; };
+		F5F6AEEE2744A6100074B26D /* RRAllRankingListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRAllRankingListModel.h; sourceTree = "<group>"; };
+		F5F6AEEF2744A6100074B26D /* RRAllRankingListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListModel.m; sourceTree = "<group>"; };
+		F5F6AEF02744A6100074B26D /* RRAllRankingContainerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRAllRankingContainerModel.h; sourceTree = "<group>"; };
+		F5F6AEF12744A6100074B26D /* RRAllRankingContainerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingContainerModel.m; sourceTree = "<group>"; };
+		F5F6AEF22744A6100074B26D /* RRAllRankingContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRAllRankingContentModel.h; sourceTree = "<group>"; };
+		F5F6AEF62744ABCC0074B26D /* 影评列表.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "影评列表.json"; sourceTree = "<group>"; };
+		F5F6AEF72744ABCC0074B26D /* 影评详情.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "影评详情.json"; sourceTree = "<group>"; };
+		F5F6AEF82744ABCD0074B26D /* 影评详情下讨论.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "影评详情下讨论.json"; sourceTree = "<group>"; };
 		F5F701F725CD2E290000D5A9 /* KeyedArchiverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyedArchiverViewController.h; sourceTree = "<group>"; };
 		F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyedArchiverViewController.m; sourceTree = "<group>"; };
 		F5FB5D79263AB2C400155BFE /* NSString+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
@@ -1269,6 +1285,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5F6AEE92744A1DA0074B26D /* DIYPageControl */,
 				F5596C79271EA554007D9FE9 /* md文件 */,
 				F5DC862C27155FE600EED8D5 /* RankingList排行榜 */,
 				F5D4476926CB653D002E90EB /* DramaComment */,
@@ -1544,10 +1561,12 @@
 		F5091DDA268C22A1000884D1 /* json数据 */ = {
 			isa = PBXGroup;
 			children = (
-				F51C24B6263BEF4D0010A298 /* 评论.json */,
-				F58B4B452643FCD800D7C82D /* 回复.json */,
-				F5446CA5268D73240076961A /* 回复详情.json */,
-				F5446CAB268D73300076961A /* 评论的副本2.json */,
+				F51C24B6263BEF4D0010A298 /* 评论列表.json */,
+				F58B4B452643FCD800D7C82D /* 回复列表.json */,
+				F5446CA5268D73240076961A /* 消息回复详情.json */,
+				F5F6AEF62744ABCC0074B26D /* 影评列表.json */,
+				F5F6AEF72744ABCC0074B26D /* 影评详情.json */,
+				F5F6AEF82744ABCD0074B26D /* 影评详情下讨论.json */,
 			);
 			path = "json数据";
 			sourceTree = "<group>";
@@ -2614,6 +2633,12 @@
 				F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */,
 				F51F95352721762200D4B56B /* RRRankingImageBanner.h */,
 				F51F95362721762200D4B56B /* RRRankingImageBanner.m */,
+				F5F6AEF02744A6100074B26D /* RRAllRankingContainerModel.h */,
+				F5F6AEF12744A6100074B26D /* RRAllRankingContainerModel.m */,
+				F5F6AEF22744A6100074B26D /* RRAllRankingContentModel.h */,
+				F5F6AEED2744A60F0074B26D /* RRAllRankingContentModel.m */,
+				F5F6AEEE2744A6100074B26D /* RRAllRankingListModel.h */,
+				F5F6AEEF2744A6100074B26D /* RRAllRankingListModel.m */,
 			);
 			path = "RankingList排行榜";
 			sourceTree = "<group>";
@@ -2752,6 +2777,15 @@
 				F546A7CC2609DCB90001F697 /* RRActorVideoHeader.m */,
 			);
 			path = "Actor演员";
+			sourceTree = "<group>";
+		};
+		F5F6AEE92744A1DA0074B26D /* DIYPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				F5F6AEEB2744A1FD0074B26D /* RRDIYPageControl.h */,
+				F5F6AEEA2744A1FC0074B26D /* RRDIYPageControl.m */,
+			);
+			path = DIYPageControl;
 			sourceTree = "<group>";
 		};
 		F5F701F025CD28560000D5A9 /* 归档解档 */ = {
@@ -2914,7 +2948,6 @@
 				F5760E0D268EEBFC008250D7 /* addHeaderFooter.md in Resources */,
 				F501FEA2271FEE8000FE2F3B /* 状态栏高度.md in Resources */,
 				F5710B4225232263009DEE02 /* 富文本.md in Resources */,
-				F5446CAC268D73300076961A /* 评论的副本2.json in Resources */,
 				F5CA13A326B2928700D8A7AE /* ic_bottombar_kuaikan_n@2x.png in Resources */,
 				F5C0A2292578BBD4004EBD94 /* xibView.xib in Resources */,
 				F5D5C1BA2714298D0021C36E /* 4.jpg in Resources */,
@@ -2922,9 +2955,11 @@
 				F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */,
 				F5D5C1B92714298D0021C36E /* 1.jpg in Resources */,
 				F545BC172604808200D63C6E /* ceil_floor_round.md in Resources */,
+				F5F6AEFB2744ABCD0074B26D /* 影评详情下讨论.json in Resources */,
 				F548D0E9256E2EEA00357E64 /* 追剧引导-1.gif in Resources */,
 				F5BFBC0C25E523BC0068358F /* 弹幕.md in Resources */,
 				F5CA140926B2A2DC00D8A7AE /* mycity_highlight@2x.png in Resources */,
+				F5F6AEFA2744ABCD0074B26D /* 影评详情.json in Resources */,
 				F5CA13AC26B2928700D8A7AE /* ic_bottombar_home_n@2x.png in Resources */,
 				F5F3665324C82ABF008BA221 /* ChatKitResource.bundle in Resources */,
 				F505AC3425C940D100F43298 /* 抗拉伸抗压缩.md in Resources */,
@@ -3027,6 +3062,7 @@
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
 				F52F15A526A7C60500D4E305 /* 定时器NSTimer.md in Resources */,
 				F58613DB26A9715300D81DDA /* Python批量修改iOS方法名.md in Resources */,
+				F5F6AEF92744ABCD0074B26D /* 影评列表.json in Resources */,
 				F5872CD8257DFAC600341B57 /* xib使用.md in Resources */,
 				F5CA140226B2A2DC00D8A7AE /* mycity_normal@2x.png in Resources */,
 				F5CA140026B2A2DC00D8A7AE /* fish_normal@2x.png in Resources */,
@@ -3043,15 +3079,15 @@
 				F586139626A9620900D81DDA /* 马甲包的副本3.md in Resources */,
 				F58613CB26A96EB100D81DDA /* system_identifiers.txt in Resources */,
 				6783C8591FB941EE0040C02B /* Main.storyboard in Resources */,
-				F58B4B462643FCD800D7C82D /* 回复.json in Resources */,
+				F58B4B462643FCD800D7C82D /* 回复列表.json in Resources */,
 				F548D0E5256E2EEA00357E64 /* amwayPlayerGuide.json in Resources */,
 				F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */,
 				F58613E126A9719500D81DDA /* Shell脚本批量修改iOS方法名.md in Resources */,
 				F5CA140626B2A2DC00D8A7AE /* message_normal@2x.png in Resources */,
-				F5446CA6268D73240076961A /* 回复详情.json in Resources */,
+				F5446CA6268D73240076961A /* 消息回复详情.json in Resources */,
 				F52F168D26A82C1C00D4E305 /* func.list in Resources */,
 				F5CA13FF26B2A2DC00D8A7AE /* home_highlight@2x.png in Resources */,
-				F51C24B7263BEF4D0010A298 /* 评论.json in Resources */,
+				F51C24B7263BEF4D0010A298 /* 评论列表.json in Resources */,
 				F50D6D9125A9618300B8C415 /* 首页PageController.md in Resources */,
 				F509136D25EF917B00A2E217 /* 文字显示全文显示更多.md in Resources */,
 			);
@@ -3146,6 +3182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5F6AEF42744A6100074B26D /* RRAllRankingListModel.m in Sources */,
 				F57D573A272FE367009F5846 /* RRDramaCommentDetailCell.m in Sources */,
 				F5AC7C5027102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m in Sources */,
 				F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */,
@@ -3347,6 +3384,7 @@
 				F563DAF525AC2C2C0079474B /* WMCustomizedPageController.m in Sources */,
 				F51C24D4263BF1690010A298 /* AuthorModel.m in Sources */,
 				F597A9BD25B44600006D9172 /* UIView+RedPoint.m in Sources */,
+				F5F6AEF52744A6100074B26D /* RRAllRankingContainerModel.m in Sources */,
 				F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,
@@ -3362,11 +3400,13 @@
 				F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */,
 				F5AC7C4827102CBE00533793 /* RRSeasonSeniorCommentsHearder.m in Sources */,
 				F5872CBF257DDEC000341B57 /* SettingModuleHandler.m in Sources */,
+				F5F6AEF32744A6100074B26D /* RRAllRankingContentModel.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
 				A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */,
 				F5D2129125FF567100C7DCC1 /* RRActorIntroAndWorksVC.m in Sources */,
 				F5CE3D2124E6901800B20C80 /* RRDestroyAccountAlertView.m in Sources */,
+				F5F6AEEC2744A1FD0074B26D /* RRDIYPageControl.m in Sources */,
 				F51F95192721565000D4B56B /* RRAllRankingListHeader.m in Sources */,
 				F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */,
 				F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */,

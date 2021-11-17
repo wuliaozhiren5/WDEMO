@@ -71,6 +71,9 @@
 
 //剧集上报
 @property (nonatomic, assign) BOOL isShowSeasonCard;
+
+@property (nonatomic, copy) NSMutableArray *data;//数据
+
 @end
 
 @implementation RRDramaCommentDetailVC
@@ -78,7 +81,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.title = @"影评详情";
+
 //    self.dataSource = [[RRDataSource alloc] init];
 //    self.spoiler = YES;
 //    self.sort = @"createTime";
@@ -91,8 +95,8 @@
 ////    self.loadingView.center = CGPointMake(self.view.centerX, self.view.centerY - 99 - appMargin().top);
 //    self.noDataView.center = self.loadingView.center;
 //
-//    [self setupViews];
-//    [self requestData];
+    [self setupViews];
+    [self refreshData];
 //
 //    //埋点
 ////    self.pageContext = [[RRUmengContentPageContext alloc] initWithContentId:self.dramaCommentId contentType:kRRUmengEventContnetTypeDramaComment];
@@ -108,6 +112,45 @@
 //    self.pageContext.watchProgresStr = @"0%%";
 
 }
+
+- (void)refreshData {
+    {
+    //iOS 读取本地Json文件
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"影评详情" ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *error;
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (!jsonData || error) {
+        //DLog(@"JSON解码失败");
+    } else {
+        //DLog(@"JSON解码成功");
+    }
+    NSDictionary *dic = (NSDictionary *)jsonObj;
+    RRSeniorCommentsModel *model = [RRSeniorCommentsModel modelWithJSON:dic[@"data"]];
+    self.dramaCommentModel = model;
+    }
+    
+    {
+    //iOS 读取本地Json文件
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"影评详情下讨论" ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *error;
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (!jsonData || error) {
+        //DLog(@"JSON解码失败");
+    } else {
+        //DLog(@"JSON解码成功");
+    }
+    NSDictionary *dic = (NSDictionary *)jsonObj;
+    RRSeniorCommentsListModel *model = [RRSeniorCommentsListModel modelWithJSON:dic[@"data"]];
+    self.data = [model.content mutableCopy];
+    }
+    
+    [self.tableView reloadData];
+    self.tableView.hidden = NO;
+    self.bottomView.hidden = NO;
+}
+
 //
 //- (void)viewWillAppear:(BOOL)animated{
 //    [super viewWillAppear:animated];
@@ -331,16 +374,16 @@
 //    }
 //}
 //
-//- (void)setupViews { 
+- (void)setupViews {
 //    self.customTabbar.frame = CGRectMake(0, 0, KWidth, statusMarginToTop() + navMarginToTop() - 4);
-//    [self createTableViewSectionHeader];
-//    [self createTableView];
-//    [self createbottomView];
+    [self createTableViewSectionHeader];
+    [self createTableView];
+    [self createbottomView];
 //    [self.view bringSubviewToFront:self.loadingView];
 //    [self.view bringSubviewToFront:self.noDataView];
-//     
+//
 //    [self.customTabbar addSubview:self.topBarUserView];
-//    
+//
 //    [self.customTabbar.rightButton setImage:IMAGENAME(@"ic_more_gray") forState:UIControlStateNormal];
 //    self.customTabbar.rightButton.hidden = YES;
 //    [self.customTabbar.rightButton addTarget:self action:@selector(clickMoreBtn:) forControlEvents:UIControlEventTouchUpInside];
@@ -349,66 +392,66 @@
 //    //没有分享
 //    CGFloat width = KWidth - 48 - 56;
 //    self.topBarUserView.frame = CGRectMake(48, self.customTabbar.leftButton.frame.origin.y + (self.customTabbar.leftButton.frame.size.height - 30) / 2, width, 30);
-//}
-//
-//- (void)createTableView {
-//    [self.view addSubview:self.tableView];
-//    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.customTabbar.mas_bottom);
-//        make.leading.equalTo(@(0));
-//        make.trailing.equalTo(@(0));
-//        make.bottom.equalTo(@(-53 + appMargin().bottom));
-//    }];
-//    self.tableView.hidden = NO;
-//}
-//
-//- (void)createbottomView {
-//    [self.view addSubview:self.bottomView];
-//    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.height.equalTo(@(53 - appMargin().bottom));
-//        make.leading.equalTo(@(0));
-//        make.trailing.equalTo(@(0));
-//        make.bottom.equalTo(@(0));
-//    }];
-//    self.bottomView.hidden = YES;
-//}
-//
-//- (void)createTableViewSectionHeader {
-////    NSInteger count = 10;
-////    NSString *text = [NSString stringWithFormat:@"%zi条回复", count];
-//    NSString *text = @"";
-//    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 21 + 16)];
-//    UILabel *headerLab = [[UILabel alloc] init];
-//    headerLab.frame = CGRectMake(16, 8, KWidth - 16 * 2, 21);
-//    headerLab.font = RR_MEDIUMFONT(17);
-//    headerLab.textColor = kCOLOR_dynamicProvider_222222_E5E7EB;
-//    headerLab.text = text;
-//    [header addSubview:headerLab];
-//    _header = header;
-//    _headerLab = headerLab;
-//}
-//
-//- (void)updateTopBarUserView {
-//    NSString *headImgUrl = self.dramaCommentModel.author.headImgUrl;
-//    NSString *nickName = self.dramaCommentModel.author.nickName;
-////    BOOL isVip = [RrmjUser isVip:self.dramaCommentModel.author.medalList];
-////    BOOL isExpired = [RrmjUser isVipExpired:self.dramaCommentModel.author.medalList];;
-////    NSInteger vipLevel = (self.dramaCommentModel.author.vipLevel.level).integerValue;
-//  
-//    BOOL isVip = YES;
-//    BOOL isExpired = NO;
-//    NSInteger vipLevel = 4;
-//    
-//    self.topBarUserView.userId = self.dramaCommentModel.author.ID;
-//    [self.topBarUserView headImgUrl:headImgUrl
-//                           nickName:nickName
-//                              isVip:isVip
-//                           vipLeveL:vipLevel
-//                          isExpired:isExpired];
-//}
-//
-//#pragma - mark 发评论
-//- (void)clickTextBtn:(UIButton *)btn {
+}
+
+- (void)createTableView {
+    [self.view addSubview:self.tableView];
+    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@(0));
+        make.leading.equalTo(@(0));
+        make.trailing.equalTo(@(0));
+        make.bottom.equalTo(@(-53 + appMargin().bottom));
+    }];
+    self.tableView.hidden = NO;
+}
+
+- (void)createbottomView {
+    [self.view addSubview:self.bottomView];
+    [self.bottomView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(53 - appMargin().bottom));
+        make.leading.equalTo(@(0));
+        make.trailing.equalTo(@(0));
+        make.bottom.equalTo(@(0));
+    }];
+    self.bottomView.hidden = YES;
+}
+
+- (void)createTableViewSectionHeader {
+//    NSInteger count = 10;
+//    NSString *text = [NSString stringWithFormat:@"%zi条回复", count];
+    NSString *text = @"";
+    UIView *header = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KWidth, 21 + 16)];
+    UILabel *headerLab = [[UILabel alloc] init];
+    headerLab.frame = CGRectMake(16, 8, KWidth - 16 * 2, 21);
+    headerLab.font = RR_MEDIUMFONT(17);
+    headerLab.textColor = kCOLOR_dynamicProvider_222222_E5E7EB;
+    headerLab.text = text;
+    [header addSubview:headerLab];
+    _header = header;
+    _headerLab = headerLab;
+}
+
+- (void)updateTopBarUserView {
+    NSString *headImgUrl = self.dramaCommentModel.author.headImgUrl;
+    NSString *nickName = self.dramaCommentModel.author.nickName;
+//    BOOL isVip = [RrmjUser isVip:self.dramaCommentModel.author.medalList];
+//    BOOL isExpired = [RrmjUser isVipExpired:self.dramaCommentModel.author.medalList];;
+//    NSInteger vipLevel = (self.dramaCommentModel.author.vipLevel.level).integerValue;
+
+    BOOL isVip = YES;
+    BOOL isExpired = NO;
+    NSInteger vipLevel = 4;
+
+    self.topBarUserView.userId = self.dramaCommentModel.author.ID;
+    [self.topBarUserView headImgUrl:headImgUrl
+                           nickName:nickName
+                              isVip:isVip
+                           vipLeveL:vipLevel
+                          isExpired:isExpired];
+}
+
+#pragma - mark 发评论
+- (void)clickTextBtn:(UIButton *)btn {
 //    @weakify(self);
 //    [[RRAppLinkManager sharedManager] goLoginBlockToRoot:NO loginFinish:^(BOOL sucess) {
 //        @strongify(self);
@@ -424,8 +467,8 @@
 //            }];
 //        }
 //    }];
-//}
-//
+}
+
 //- (void)articleReplay:(NSString *)content imageDatas:(NSArray *)imageDatas toComment:(RRSeniorCommentsModel *)model isSpoiler:(BOOL)isSpoiler msgLevel:(RRSeniorCommentCreateApiMsgLevel)msgLevel {
 //    if (self.isReplying) {
 //        return;
@@ -494,10 +537,10 @@
 //                [weakSelf.service closeReplyView];
 //            } else if (result.code == 3001) {
 //                [IanAlert alertError:@"频率太快啦，喝口水歇一下" length:TIMELENGTH];
-//                
+//
 //            } else if (result.code == 3002) {
 //                [IanAlert alertError:@"已经提交过了,请别重复提交" length:TIMELENGTH];
-//                
+//
 //            } else {
 //                [IanAlert alertError:result.msg length:TIMELENGTH];
 //            }
@@ -529,7 +572,7 @@
 //    [self.tableView reloadData];
 //    [self addHeader];
 //    [self addFooter];
-//    
+//
 //    //获取到需要跳转位置的行数
 //    NSIndexPath *scrollIndexPath = [NSIndexPath indexPathForRow:0 inSection:1];
 //    //滚动到其相应的位置
@@ -537,7 +580,7 @@
 //            atScrollPosition:UITableViewScrollPositionTop animated:NO];
 //    self.listCount = self.listCount + 1;
 //    self.noDataView.hidden = YES;
-//    
+//
 //    //评论回复
 //    NSMutableDictionary *parms = [NSMutableDictionary dictionary];
 //    parms[kRRUmengEventKeyCommentID] = self.dramaCommentModel.ID;
@@ -549,13 +592,13 @@
 //
 ////回复评论成功刷新
 //- (void)replayBackResultModel:(RRSeniorCommentsModel *)newModel commentsModel:(RRSeniorCommentsModel *)commentsModel {
-//    
+//
 //    if (commentsModel.replyCount < 2) {
 //        NSMutableArray *tempArr = nil;
 //        if (commentsModel.replies.count > 0) {
 //            tempArr = [NSMutableArray arrayWithArray:commentsModel.replies];
 //            [tempArr addObject:newModel];
-//            
+//
 //        } else {
 //            tempArr = [NSMutableArray array];
 //            [tempArr addObject:newModel];
@@ -566,7 +609,7 @@
 //    [self.tableView reloadData];
 //    [self addHeader];
 //    [self addFooter];
-//    
+//
 //    //评论回复
 //    NSMutableDictionary *parms = [NSMutableDictionary dictionary];
 //    parms[kRRUmengEventKeyCommentID] = commentsModel.ID;
@@ -574,7 +617,7 @@
 //    parms[kRRUmengEventKeyPublisherID] = commentsModel.author.ID;
 //    [RRUMengLogger modularCommentReplyWithParams:parms];
 //}
-// 
+//
 //- (void)clickMoreBtn:(UIButton *)btn {
 //    [self showAlertView];
 //    //功能点击
@@ -587,7 +630,7 @@
 //
 //#pragma mark - 提示框
 //- (void)showAlertView {
-//     
+//
 //    WS(weakSelf);
 //    RRAlertItem *item1 = [[RRAlertItem alloc] initWithTitle:@"编辑" itemImg:nil itemStyle:RRAlertItemStyleSheet];
 //    item1.actionBlock = ^(RRAlertItem *item) {
@@ -618,7 +661,7 @@
 //        NSLog(@"点击了%@", item.title);
 //        [weakSelf clickReportBtn];
 //    };
-//  
+//
 //    RRAlertItem *item4 = [[RRAlertItem alloc] initWithTitle:@"不感兴趣" itemImg:nil itemStyle:RRAlertItemStyleSheet];
 //    item4.actionBlock = ^(RRAlertItem *item) {
 //        TOAST(@"操作成功，将减少此类内容推送");
@@ -639,14 +682,14 @@
 ////        [alert showWithAnimation:YES];
 ////        return;
 ////    }
-//    
+//
 //    BOOL isMy = [UserInfoConfig isLogined] && [[UserInfoConfig sharedUserInfoConfig].userInfo.Id isEqualToString:self.dramaCommentModel.author.ID];
 //    //编辑,删除
 //    NSArray *itemArray = @[item1, item2];
 //    if (!isMy) {
 //        itemArray = @[item3];
 //    }
-// 
+//
 //    if (![UserInfoConfig sharedUserInfoConfig].isMoviesOpen) {
 //        itemArray = @[item1, item2, item4];
 //        if (!isMy) {
@@ -656,7 +699,7 @@
 ////    NSString *title = @"举报毒舌电影：好搞笑哦好好看撒大噶点范德萨发的撒范德萨到发疯剧啊撒地方大法大范德萨发到点点滴滴带的…";
 ////    NSString *title = [NSString stringWithFormat:@"%@：%@", self.model.author.nickName, self.model.content];
 //    RRAlertBase *alert = [[RRAlertBase alloc] initWithTitle:nil itemArray:itemArray];
-////    [alert titleStyleWithText:title lines:2 textColor:kCOLOR_898A91 font:SYSTEMFONT(14) lineHeihgt:6]; 
+////    [alert titleStyleWithText:title lines:2 textColor:kCOLOR_898A91 font:SYSTEMFONT(14) lineHeihgt:6];
 //    alert.cancelItemBlock = ^{
 //        //功能点击
 //        NSMutableDictionary *parms = [NSMutableDictionary dictionary];
@@ -667,9 +710,9 @@
 //    };
 //    [alert showWithAnimation:YES];
 //}
-// 
-//#pragma mark - 点赞
-//- (void)clickPraiseBtn:(UIButton *)btn {
+ 
+#pragma mark - 点赞
+- (void)clickPraiseBtn:(UIButton *)btn {
 //    @weakify(self);
 //    [[RRAppLinkManager sharedManager] goLoginBlockToRoot:NO loginFinish:^(BOOL sucess) {
 //        @strongify(self);
@@ -702,7 +745,7 @@
 //            }];
 //        }
 //    }];
-//    
+//
 //    //内容点赞
 //    NSMutableDictionary *parms = [NSMutableDictionary dictionary];
 //    parms[kRRUmengEventKeySourcePage] = self.rr_UMemgPageName;
@@ -711,10 +754,10 @@
 //    parms[kRRUmengEventKeyLikeType] = @"影评";
 //    parms[kRRUmengEventKeyPublisherID] = self.dramaCommentModel.author.ID;
 //    [RRUMengLogger modularContentLikeWithParams:parms];
-//}
-//
-//#pragma mark - 举报
-//- (void)clickReportBtn {
+}
+
+#pragma mark - 举报
+- (void)clickReportBtn {
 //    @weakify(self);
 //    [[RRAppLinkManager sharedManager] goLoginBlockToRoot:NO loginFinish:^(BOOL sucess) {
 //        @strongify(self);
@@ -755,11 +798,11 @@
 //            }];
 //        }
 //    }];
-//}
-//
-//#pragma mark - 删除影评
-//#pragma mark - 删除btn
-//- (void)clickDeleteBtn {
+}
+
+#pragma mark - 删除影评
+#pragma mark - 删除btn
+- (void)clickDeleteBtn {
 //    WS(weakSelf)
 //    RRAlertView *alertView = [[RRAlertView alloc] initWithTitle:nil
 //                                                        content:@"确定删除改影评？删除后不可恢复"
@@ -774,20 +817,20 @@
 //        }
 //    };
 //    [alertView showInView:kAppDelegate.window];
-//}
-//
-//#pragma mark - 确认删除btn
-//- (void)clickSureDeleteBtn {
-////    NSString *typeId = self.model.ID;
-////    WS(weakSelf)
-////    [RRSeniorCommentsDeletetApi requestSeniorCommentsDeleteWithTypeId:typeId block:^(BOOL success, NSError * _Nonnull error) {
-////        if (success) {
-////            if (weakSelf.clickDelete) {
-////                weakSelf.clickDelete(self.model);
-////            }
-////        }
-////    }];
-//    
+}
+
+#pragma mark - 确认删除btn
+- (void)clickSureDeleteBtn {
+//    NSString *typeId = self.model.ID;
+//    WS(weakSelf)
+//    [RRSeniorCommentsDeletetApi requestSeniorCommentsDeleteWithTypeId:typeId block:^(BOOL success, NSError * _Nonnull error) {
+//        if (success) {
+//            if (weakSelf.clickDelete) {
+//                weakSelf.clickDelete(self.model);
+//            }
+//        }
+//    }];
+    
 //    NSString  *typeId = self.dramaCommentModel.ID;
 //    WS(weakSelf)
 //    [RRDramaCommentDeletetApi requestDramaCommentDeleteWithTypeId:typeId block:^(BOOL success, NSError * _Nonnull error) {
@@ -798,15 +841,15 @@
 //            [weakSelf.navigationController popViewControllerAnimated:YES];
 //        }
 //    }];
-//}
-// 
-////删除影评
-//- (void)clickDeleteDramaCommentWithModel:(RRSeniorCommentsModel *)model {
-//    [self clickDeleteBtn];
-//}
-//
-////点击剧集
-//- (void)clickDramaWithModel:(RRSeniorCommentsModel *)model {
+}
+ 
+//删除影评
+- (void)clickDeleteDramaCommentWithModel:(RRSeniorCommentsModel *)model {
+    [self clickDeleteBtn];
+}
+
+//点击剧集
+- (void)clickDramaWithModel:(RRSeniorCommentsModel *)model {
 //    if (self.delegate) {
 ////        [self.navigationController popViewControllerAnimated:YES];
 //        [self popViewController];
@@ -817,7 +860,7 @@
 //            [[RRAppLinkManager sharedManager] goSeasonDetail:dramaId title:nil isMovie:NO toRoot:NO];
 //        }
 //    }
-//    
+//
 //    if (model.drama.enable) {
 //        //内容点击
 //        NSMutableDictionary *paramDict = [NSMutableDictionary dictionary];
@@ -829,10 +872,10 @@
 //        paramDict[kRRUmengEventKeyRecSource] = self.recSource;
 //        [RRUMengLogger logWithEventName:kRRUMengEventNameContentClick params:paramDict];
 //    }
-//}
-// 
-//#pragma mark - 编辑
-//- (void)clickEditBtn {
+}
+ 
+#pragma mark - 编辑
+- (void)clickEditBtn {
 //    NSLog(@"编辑影评");
 //    @weakify(self)
 //    [[RRAppLinkManager sharedManager] goLoginBlockToRoot:NO loginFinish:^(BOOL sucess) {
@@ -842,163 +885,167 @@
 //        vc.delegate = self;
 //        [[RRAppLinkManager sharedManager] pushViewController:vc animated:YES];
 //    }];
-//}
-//
-//#pragma - mark RRCreateFilmReviewViewControllerDelegate
-//- (void)createFilmReviewViewCallBackModel:(RRSeniorCommentsModel *)model {
-//    if (!model) {
-//        return;
-//    }
-//    //刷新页面
-//    //剧集信息
-//    RRSeriesItemModel *drama = self.dramaCommentModel.drama;
-//    self.dramaCommentModel = model;
-//    self.dramaCommentModel.drama = drama;
-//    [self.tableView reloadData];
-//    //网络请求刷新
-////    [self.tableView.mj_header beginRefreshing];
-//}
-//
-//#pragma - mark UITableViewDataSource
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+}
+
+#pragma - mark RRCreateFilmReviewViewControllerDelegate
+- (void)createFilmReviewViewCallBackModel:(RRSeniorCommentsModel *)model {
+    if (!model) {
+        return;
+    }
+    //刷新页面
+    //剧集信息
+    RRSeriesItemModel *drama = self.dramaCommentModel.drama;
+    self.dramaCommentModel = model;
+    self.dramaCommentModel.drama = drama;
+    [self.tableView reloadData];
+    //网络请求刷新
+//    [self.tableView.mj_header beginRefreshing];
+}
+
+#pragma - mark UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 //    if (!self.loadingView.isHidden || !self.dramaCommentModel) {
 //        return 0;
 //    }
 //    return 2;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//     switch (section) {
-//        case 0:
-//             return 1;
-//            break;
-//        case 1:
-//            return self.dataSource.dataArray.count;
-//            break;
-//        default:
-//            return 0;
-//            break;
-//    }
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    NSInteger section = indexPath.section;
-//    switch (section) {
-//        case 0:
-//            return [RRDramaCommentDetailCell cellHeightWithModel:self.dramaCommentModel];
-//            break;
-//        case 1:
-//        {
-//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
-//            return [RRSeasonSeniorCommentsTextImageReplyListCell cellHeightWithModel:model isShowAll:NO];
-//        }
-//            break;
-//        default:
-//            return 0;
-//            break;
-//    }
-//}
-//
-////header高度
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    switch (section) {
-//        case 1:
-//            return 21 + 16;
-//            break;
-//        default:
-//            return 0.1;
-//            break;
-//    }
-//}
-//
-////footer高度
-//- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    switch (section) {
-//        case 0:
-//            return 10.0;
-//            break;
-//        default:
-//            return 0.1;
-//            break;
-//    }
-//}
-//
-////自定义头
-//- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    switch (section) {
-//        case 0:
-//        {
-//            return [[UIView alloc] init];
-//        }
-//            break;
-//        default:
-//        {
-//            NSInteger count = self.listCount;
-//            NSString *countStr = [NSString transformCountWithString:count];
-//            NSString *text = @"";
-//            if (countStr.length > 0) {
-//                text = [NSString stringWithFormat:@"全部评论 %@ ", countStr];
-//            } else {
-//                text = @"全部评论";
-//            }
-//            _headerLab.text = text;
-//            return _header;
-//        }
-//            break;
-//    }
-//}
-//
-////自定义脚
-//- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-//    return [[UIView alloc] init];
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-////    RRDramaCommentDetailCell *cell = (RRDramaCommentDetailCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRDramaCommentDetailCell class]) forIndexPath:indexPath];
-////    cell.model = self.dramaCommentModel;
-////    return cell;
-//    
-//    NSInteger section = indexPath.section;
-//    switch (section) {
-//        case 0:
-//        {
-//            RRDramaCommentDetailCell *cell = (RRDramaCommentDetailCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRDramaCommentDetailCell class]) forIndexPath:indexPath];
-//            RRSeniorCommentsModel *model = self.dramaCommentModel;
-//            cell.isHalf = NO;
-//            cell.model = model;
-//            WS(weakSelf)
-//            cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
-//                [weakSelf clickDeleteDramaCommentWithModel:model];
-//            };
-//            cell.clickDrama = ^(RRSeniorCommentsModel * _Nonnull model) {
-//                [weakSelf clickDramaWithModel:model];
-//            };
-//            [self showSeasonCardWithModel:model];
-//
-//            return cell;
-//        }
-//            break;
-//            
-//        default:{
-//            RRSeasonSeniorCommentsTextImageReplyListCell *cell = (RRSeasonSeniorCommentsTextImageReplyListCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageReplyListCell class]) forIndexPath:indexPath];
-//            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//            cell.isHalf = NO;
-//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
-//            cell.model = model;
-//            WS(weakSelf)
-//        //    cell.clickText = ^(RRSeniorCommentsModel *_Nonnull model) {
-//        //        [weakSelf clickCommentWithModel:model];
-//        //    };
-//            cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
-//                [weakSelf clickDeleteWithModel:model];
-//            };
-//            cell.clickReplyListCell = ^(RRSeniorCommentsModel * _Nonnull commentModel, RRSeniorCommentsModel * _Nullable replyModel, BOOL isShowMore) {
-//                [weakSelf clickReplyListCellWithCommentModel:commentModel replyModel:replyModel isShowMore:isShowMore];
-//            };
-//            cell.clickPraise = ^(RRSeniorCommentsModel * _Nonnull model) {
-//                [weakSelf clickPraiseWithModel:model];
-//            };
-//            
+    if (!self.dramaCommentModel) {
+        return 0;
+    }
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+     switch (section) {
+        case 0:
+             return 1;
+            break;
+        case 1:
+            return self.data.count;
+            break;
+        default:
+            return 0;
+            break;
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case 0:
+            return [RRDramaCommentDetailCell cellHeightWithModel:self.dramaCommentModel];
+            break;
+        case 1:
+        {
+            RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+            return [RRSeasonSeniorCommentsTextImageReplyListCell cellHeightWithModel:model isShowAll:NO];
+        }
+            break;
+        default:
+            return 0;
+            break;
+    }
+}
+
+//header高度
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 1:
+            return 21 + 16;
+            break;
+        default:
+            return 0.1;
+            break;
+    }
+}
+
+//footer高度
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return 10.0;
+            break;
+        default:
+            return 0.1;
+            break;
+    }
+}
+
+//自定义头
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+        {
+            return [[UIView alloc] init];
+        }
+            break;
+        default:
+        {
+            NSInteger count = self.listCount;
+            NSString *countStr = [NSString transformCountWithString:count];
+            NSString *text = @"";
+            if (countStr.length > 0) {
+                text = [NSString stringWithFormat:@"全部评论 %@ ", countStr];
+            } else {
+                text = @"全部评论";
+            }
+            _headerLab.text = text;
+            return _header;
+        }
+            break;
+    }
+}
+
+//自定义脚
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    return [[UIView alloc] init];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    RRDramaCommentDetailCell *cell = (RRDramaCommentDetailCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRDramaCommentDetailCell class]) forIndexPath:indexPath];
+//    cell.model = self.dramaCommentModel;
+//    return cell;
+    
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case 0:
+        {
+            RRDramaCommentDetailCell *cell = (RRDramaCommentDetailCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRDramaCommentDetailCell class]) forIndexPath:indexPath];
+            RRSeniorCommentsModel *model = self.dramaCommentModel;
+            cell.isHalf = NO;
+            cell.model = model;
+            WS(weakSelf)
+            cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
+                [weakSelf clickDeleteDramaCommentWithModel:model];
+            };
+            cell.clickDrama = ^(RRSeniorCommentsModel * _Nonnull model) {
+                [weakSelf clickDramaWithModel:model];
+            };
+            [self showSeasonCardWithModel:model];
+
+            return cell;
+        }
+            break;
+            
+        default:{
+            RRSeasonSeniorCommentsTextImageReplyListCell *cell = (RRSeasonSeniorCommentsTextImageReplyListCell *)[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageReplyListCell class]) forIndexPath:indexPath];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.isHalf = NO;
+            RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+            cell.model = model;
+            WS(weakSelf)
+        //    cell.clickText = ^(RRSeniorCommentsModel *_Nonnull model) {
+        //        [weakSelf clickCommentWithModel:model];
+        //    };
+            cell.clickDelete = ^(RRSeniorCommentsModel * _Nonnull model) {
+                [weakSelf clickDeleteWithModel:model];
+            };
+            cell.clickReplyListCell = ^(RRSeniorCommentsModel * _Nonnull commentModel, RRSeniorCommentsModel * _Nullable replyModel, BOOL isShowMore) {
+                [weakSelf clickReplyListCellWithCommentModel:commentModel replyModel:replyModel isShowMore:isShowMore];
+            };
+            cell.clickPraise = ^(RRSeniorCommentsModel * _Nonnull model) {
+                [weakSelf clickPraiseWithModel:model];
+            };
+            
 //            if (!model.rr_contentContext) {
 //                RRUmengContentContext *context = [[RRUmengContentContext alloc] init];
 //        //        context.contentName = model.title;
@@ -1011,46 +1058,47 @@
 //                model.rr_contentContext = context;
 //            }
 //            cell.rr_statisticsExposureModel = model;
-//             
+//
 //            //评论曝光：UM_Event_CommentExposure（只爆一级评论）
 //            NSMutableDictionary *parms = [NSMutableDictionary dictionary];
 //            parms[kRRUmengEventKeyCommentID] = model.ID;
 //            parms[kRRUmengEventKeyContentType] = kRRUmengEventContnetTypeDramaCommentComment;
 //            parms[kRRUmengEventKeyPublisherID] = model.author.ID;
 //            [RRUMengLogger modularCommentExposureWithParams:parms];
-//            
-//            return cell;
-//        }
-//            break;
-//    }
-//}
-//
-////点击回复列表的cell和footer
-//- (void)clickReplyListCellWithCommentModel:(RRSeniorCommentsModel *)commentModel replyModel:(RRSeniorCommentsModel *)replyModel isShowMore:(BOOL)isShowMore {
-//    NSString *type = @"DRAMA_COMMENT";
-//    RRSeasonSeniorCommentsDetailVC *vc = [[RRSeasonSeniorCommentsDetailVC alloc] initWithIsHalf:NO type:type];
-//    vc.commentModel = commentModel;
-//    NSString *replyId = replyModel ? replyModel.ID : nil;
-//    vc.replyId = replyId;
-//    vc.isShowMore = isShowMore;
-//    vc.delegate = self;
+            
+            return cell;
+        }
+            break;
+    }
+}
+
+//点击回复列表的cell和footer
+- (void)clickReplyListCellWithCommentModel:(RRSeniorCommentsModel *)commentModel replyModel:(RRSeniorCommentsModel *)replyModel isShowMore:(BOOL)isShowMore {
+    NSString *type = @"DRAMA_COMMENT";
+    RRSeasonSeniorCommentsDetailVC *vc = [[RRSeasonSeniorCommentsDetailVC alloc] initWithIsHalf:NO type:type];
+    vc.commentModel = commentModel;
+    NSString *replyId = replyModel ? replyModel.ID : nil;
+    vc.replyId = replyId;
+    vc.isShowMore = isShowMore;
+    vc.delegate = self;
 //    [[RRAppLinkManager sharedManager] pushViewController:vc animated:YES];
-//}
-//
-////vc跳转删除
-//#pragma mark -  RRSeasonSeniorCommentsDetailVCDelegate
-//- (void)seasonSeniorCommentsSecondarySubVC:(RRSeasonSeniorCommentsDetailVC *)vc deleteModel:(RRSeniorCommentsModel *)deleteModel {
-//    [self clickDeleteWithModel:deleteModel];
-//}
-//
-//- (void)closeSeasonSeniorCommentsSecondarySubVC:(RRSeasonSeniorCommentsDetailVC *)vc {
-//    if (!self.tableView.isHidden) {
-//        [self.tableView reloadData];
-//    }
-//}
-//
-////删除评论
-//- (void)clickDeleteWithModel:(RRSeniorCommentsModel *)model {
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+//vc跳转删除
+#pragma mark -  RRSeasonSeniorCommentsDetailVCDelegate
+- (void)seasonSeniorCommentsSecondarySubVC:(RRSeasonSeniorCommentsDetailVC *)vc deleteModel:(RRSeniorCommentsModel *)deleteModel {
+    [self clickDeleteWithModel:deleteModel];
+}
+
+- (void)closeSeasonSeniorCommentsSecondarySubVC:(RRSeasonSeniorCommentsDetailVC *)vc {
+    if (!self.tableView.isHidden) {
+        [self.tableView reloadData];
+    }
+}
+
+//删除评论
+- (void)clickDeleteWithModel:(RRSeniorCommentsModel *)model {
 //    NSMutableArray *tempArr = [[NSMutableArray alloc] init];
 //    for (RRSeniorCommentsModel *nowModel in self.dataSource.dataArray) {
 //        if (![nowModel.ID isEqualToString:model.ID]) {
@@ -1063,11 +1111,11 @@
 //    [self.tableView reloadData];
 //    [self addHeader];
 //    [self addFooter];
-//
-//}
-//
-//#pragma - mark 发回复
-//- (void)clickCommentWithModel:(RRSeniorCommentsModel *)model {
+
+}
+
+#pragma - mark 发回复
+- (void)clickCommentWithModel:(RRSeniorCommentsModel *)model {
 //    @weakify(self);
 //    [[RRAppLinkManager sharedManager] goLoginBlockToRoot:NO loginFinish:^(BOOL sucess) {
 //        @strongify(self);
@@ -1083,9 +1131,9 @@
 //            }];
 //        }
 //    }];
-//}
-//
-//- (void)clickPraiseWithModel:(RRSeniorCommentsModel *)model {
+}
+
+- (void)clickPraiseWithModel:(RRSeniorCommentsModel *)model {
 //    //内容点赞
 //    NSMutableDictionary *parms = [NSMutableDictionary dictionary];
 //    parms[kRRUmengEventKeySourcePage] = self.rr_UMemgPageName;
@@ -1094,61 +1142,61 @@
 //    parms[kRRUmengEventKeyLikeType] = kRRUmengEventContnetTypeDramaCommentComment;
 //    parms[kRRUmengEventKeyPublisherID] = model.author.ID;
 //    [RRUMengLogger modularContentLikeWithParams:parms];
-//}
-//
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    //点击cell回复
-////    RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
-////    [self clickCommentWithModel:model];
-////    return;
-//    
-//    NSInteger section = indexPath.section;
-//    switch (section) {
-//        case 0:
-//        {
-////            RRSeniorCommentsModel *model = self.dramaCommentModel;
-//            [self clickTextBtn:nil];
-//        }
-//            break;
-//            
-//        default:{
-//      
-//            RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
-//            [self clickCommentWithModel:model];
-//        }
-//            break;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    //点击cell回复
+//    RRSeniorCommentsModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.row];
+//    [self clickCommentWithModel:model];
+//    return;
+    
+    NSInteger section = indexPath.section;
+    switch (section) {
+        case 0:
+        {
+//            RRSeniorCommentsModel *model = self.dramaCommentModel;
+            [self clickTextBtn:nil];
+        }
+            break;
+            
+        default:{
+      
+            RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
+            [self clickCommentWithModel:model];
+        }
+            break;
+    }
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+//    if ([self.fatherVC respondsToSelector:@selector(scrollViewDidScroll:)]) {
+//        [self.fatherVC scrollViewDidScroll:scrollView];
 //    }
-//}
-//
-//- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-////    if ([self.fatherVC respondsToSelector:@selector(scrollViewDidScroll:)]) {
-////        [self.fatherVC scrollViewDidScroll:scrollView];
-////    }
 //    [self viewRate];
-//}
-//
+}
+
 ////浏览进度
 //- (void)viewRate {
-//    
+//
 //    if (!self.dramaCommentModel) {
 //        return;
 //    }
-//    
+//
 //    if (self.rate >= 1) {
 //        return;
 //    }
-//    
+//
 //    //当前屏幕高度
 //    CGFloat screenHeight = KHeight;
 //    //ScrollView top
 //    CGFloat scrollViewContentOffset = self.tableView.contentOffset.y;
-//    
+//
 //    CGFloat top = [RRDramaCommentDetailCell cellContentLabTopWithModel:self.dramaCommentModel];
-//    
+//
 //    CGFloat bottom = [RRDramaCommentDetailCell cellHeightWithModel:self.dramaCommentModel] - 20 - 70 -20;
-//    
+//
 //    CGFloat rate = (scrollViewContentOffset + screenHeight - top) / (bottom - top);
-//    
+//
 //    rate = MIN(rate, 1.0);
 //    self.rate = rate;
 //    NSLog(@"进度 = %f", rate);
@@ -1156,9 +1204,9 @@
 //    self.pageContext.watchProgresStr = rateStr;
 //    self.pageContext.publisherID = self.dramaCommentModel.author.ID;
 //}
-//
-////埋点剧集上报
-//- (void)showSeasonCardWithModel:(RRSeniorCommentsModel *)model {
+
+//埋点剧集上报
+- (void)showSeasonCardWithModel:(RRSeniorCommentsModel *)model {
 //    //上报过了，只上报一次
 //    if (self.isShowSeasonCard) {
 //        return;
@@ -1173,102 +1221,102 @@
 //        paramDict[kRRUmengEventKeyExposureChannel] = self.rr_UMemgChannelName;
 //        paramDict[kRRUmengEventKeyRecSource] = self.recSource;
 //        [RRUMengLogger logWithEventName:kRRUMengEventNameContentExposure params:paramDict];
-//        
+//
 //        self.isShowSeasonCard = YES;
 //    }
-//}
-//
-//#pragma - mark lazy
-//- (UITableView *)tableView {
-//    if (!_tableView) {
-//        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
-//        _tableView.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
-//
-//        //iOS11
-//        _tableView.estimatedRowHeight = 0;
-//        _tableView.estimatedSectionHeaderHeight = 0;
-//        _tableView.estimatedSectionFooterHeight = 0;
-//        if (@available(iOS 11.0, *)) {
-//            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-//        } else {
-//            //        self.automaticallyAdjustsScrollViewInsets = NO;
-//        }
-//        _tableView.dataSource = self;
-//        _tableView.delegate = self;
-//        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-//        [_tableView registerClass:[RRDramaCommentDetailCell class] forCellReuseIdentifier:NSStringFromClass([RRDramaCommentDetailCell class])];
-//        [_tableView registerClass:[RRSeasonSeniorCommentsTextImageReplyListCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageReplyListCell class])];
-//    }
-//    return _tableView;
-//}
-//
-//- (RRDramaCommentPraiseBtnInputBar *)bottomView {
-//    if (!_bottomView) {
-//        _bottomView = [[RRDramaCommentPraiseBtnInputBar alloc] initWithFrame:CGRectMake(0, 0, 320, 53)];
-//        [_bottomView.textBoxBtn addTarget:self action:@selector(clickTextBtn:) forControlEvents:UIControlEventTouchUpInside];
-//        [_bottomView.praiseBtn addTarget:self action:@selector(clickPraiseBtn:) forControlEvents:UIControlEventTouchUpInside];
-//        [self.view addSubview:_bottomView];
-//        //        [_bottomView sketchShadowWithOffsetX:0 offsetY:0 Blur:15 Spread:0 color:kCOLOR_dynamicProvider_Shadow_bar_000000Alpha008_000000Alpha14 alpha:1];
+}
+
+#pragma - mark lazy
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+        _tableView.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
+
+        //iOS11
+        _tableView.estimatedRowHeight = 0;
+        _tableView.estimatedSectionHeaderHeight = 0;
+        _tableView.estimatedSectionFooterHeight = 0;
+        if (@available(iOS 11.0, *)) {
+            _tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        } else {
+            //        self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+        _tableView.dataSource = self;
+        _tableView.delegate = self;
+        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        [_tableView registerClass:[RRDramaCommentDetailCell class] forCellReuseIdentifier:NSStringFromClass([RRDramaCommentDetailCell class])];
+        [_tableView registerClass:[RRSeasonSeniorCommentsTextImageReplyListCell class] forCellReuseIdentifier:NSStringFromClass([RRSeasonSeniorCommentsTextImageReplyListCell class])];
+    }
+    return _tableView;
+}
+
+- (RRDramaCommentPraiseBtnInputBar *)bottomView {
+    if (!_bottomView) {
+        _bottomView = [[RRDramaCommentPraiseBtnInputBar alloc] initWithFrame:CGRectMake(0, 0, 320, 53)];
+        [_bottomView.textBoxBtn addTarget:self action:@selector(clickTextBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [_bottomView.praiseBtn addTarget:self action:@selector(clickPraiseBtn:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_bottomView];
+        //        [_bottomView sketchShadowWithOffsetX:0 offsetY:0 Blur:15 Spread:0 color:kCOLOR_dynamicProvider_Shadow_bar_000000Alpha008_000000Alpha14 alpha:1];
 //        [_bottomView sketchShadowWithBottomBar];
-//    }
-//    return _bottomView;
-//}
-//
+    }
+    return _bottomView;
+}
+
 //- (RRCommentService *)service {
 //    if (!_service) {
 //        _service = [[RRCommentService alloc] init];
 //    }
 //    return _service;
 //}
-//
-//- (RRTopBarUserView *)topBarUserView {
-//    if (!_topBarUserView) {
-//        _topBarUserView = [[RRTopBarUserView alloc] init];
-//        _topBarUserView.frame = CGRectMake(48, 0, 200, 30);
-//        _topBarUserView.hidden = YES;
+
+- (RRTopBarUserView *)topBarUserView {
+    if (!_topBarUserView) {
+        _topBarUserView = [[RRTopBarUserView alloc] init];
+        _topBarUserView.frame = CGRectMake(48, 0, 200, 30);
+        _topBarUserView.hidden = YES;
+    }
+    return _topBarUserView;
+}
+
+//- (UIView *)topUserView {
+//    if (!_topUserView) {
+//        _topUserView = [[UIView alloc] init];
+//        _topUserView.frame = CGRectMake(48, 0, 200, 30);
+//        _topUserView.hidden = YES;
 //    }
-//    return _topBarUserView;
+//    return _topUserView;
 //}
 //
-////- (UIView *)topUserView {
-////    if (!_topUserView) {
-////        _topUserView = [[UIView alloc] init];
-////        _topUserView.frame = CGRectMake(48, 0, 200, 30);
-////        _topUserView.hidden = YES;
-////    }
-////    return _topUserView;
-////}
-////
-////- (UIImageView *)topUserAvaterImgV {
-////    if (!_topUserAvaterImgV) {
-////        _topUserAvaterImgV = [[UIImageView alloc] init];
-////        _topUserAvaterImgV.frame = CGRectMake(0, 0, 30, 30);
-////        _topUserAvaterImgV.layer.cornerRadius = 15;
-////        _topUserAvaterImgV.layer.masksToBounds = YES;
-////        _topUserAvaterImgV.layer.borderWidth = 1;
-////        _topUserAvaterImgV.layer.borderColor = [kCOLOR_85888F colorWithAlphaComponent:0.2].CGColor;
-////    }
-////    return _topUserAvaterImgV;
-////}
-////
-////- (UILabel *)topUserNickNameLab {
-////    if (!_topUserNickNameLab) {
-////        _topUserNickNameLab = [[UILabel alloc] init];
-////        _topUserNickNameLab.frame  = CGRectMake(0, 0, 100, 30);
-////        _topUserNickNameLab.font = BOLDSYSTEMFONT(17.0);
-////        _topUserNickNameLab.textColor = kCOLOR_dynamicProvider_222222_DADBDC;
-////    }
-////    return _topUserNickNameLab;
-////}
-////
-////- (UIImageView *)topUserVipImgV {
-////    if (!_topUserVipImgV) {
-////        _topUserVipImgV = [[UIImageView alloc] init];
-////        _topUserVipImgV.frame  = CGRectMake(0, 0, 28, 14);
-////
-////    }
-////    return _topUserVipImgV;
-////}
+//- (UIImageView *)topUserAvaterImgV {
+//    if (!_topUserAvaterImgV) {
+//        _topUserAvaterImgV = [[UIImageView alloc] init];
+//        _topUserAvaterImgV.frame = CGRectMake(0, 0, 30, 30);
+//        _topUserAvaterImgV.layer.cornerRadius = 15;
+//        _topUserAvaterImgV.layer.masksToBounds = YES;
+//        _topUserAvaterImgV.layer.borderWidth = 1;
+//        _topUserAvaterImgV.layer.borderColor = [kCOLOR_85888F colorWithAlphaComponent:0.2].CGColor;
+//    }
+//    return _topUserAvaterImgV;
+//}
+//
+//- (UILabel *)topUserNickNameLab {
+//    if (!_topUserNickNameLab) {
+//        _topUserNickNameLab = [[UILabel alloc] init];
+//        _topUserNickNameLab.frame  = CGRectMake(0, 0, 100, 30);
+//        _topUserNickNameLab.font = BOLDSYSTEMFONT(17.0);
+//        _topUserNickNameLab.textColor = kCOLOR_dynamicProvider_222222_DADBDC;
+//    }
+//    return _topUserNickNameLab;
+//}
+//
+//- (UIImageView *)topUserVipImgV {
+//    if (!_topUserVipImgV) {
+//        _topUserVipImgV = [[UIImageView alloc] init];
+//        _topUserVipImgV.frame  = CGRectMake(0, 0, 28, 14);
+//
+//    }
+//    return _topUserVipImgV;
+//}
 //
 //- (RRSeniorCommentsListApi *)listApi {
 //    if (!_listApi) {
@@ -1287,16 +1335,16 @@
 //    }
 //    return _noCommontDataView;
 //}
-//
-//// 当iOS界面环境发生变化时，系统调用该方法。
-//- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-//    [super traitCollectionDidChange:previousTraitCollection];
-//    [self.tableView reloadData];
-//}
-//
-//- (void)dealloc {
-//}
-//
+
+// 当iOS界面环境发生变化时，系统调用该方法。
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    [self.tableView reloadData];
+}
+
+- (void)dealloc {
+}
+
 //- (NSString * _Nullable)rr_UMemgChannelName {
 //    return @"";
 //}
