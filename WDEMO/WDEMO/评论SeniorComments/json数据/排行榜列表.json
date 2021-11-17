@@ -1,94 +1,235 @@
 {
-    "requestId": "665e43b74ddf42fcae8b89de8d1b7eea",
+    "requestId": "7d9255887e1e4ce8917adb39a5b58f8f",
     "code": "0000",
     "msg": "Success",
     "recordsTotal": null,
-    "data": [{
-        "id": 3,
-        "name": "热搜榜123",
-        "topList": [{
-            "id": 17,
-            "name": "全部",
-            "type": "SEARCH",
-            "showRules": "少时诵诗书"
+    "data": {
+        "total": 50,
+        "currentPage": 1,
+        "content": [{
+            "dramaId": 37449,
+            "title": "One the woman",
+            "normalTagList": ["2021", "韩国", "剧情"],
+            "specialTagList": [],
+            "cover": "http://img.rr.tv/img/img/20211011/o_a12c6ecff6994cecad57be0d6ec1f3cb.jpg",
+            "imageList": [{
+                "url": "http://img.rr.tv/img/img/20211025/o_cd20bb106d20499e9aca9a2e20f90ac7.jpeg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_07614a1019094a7f9c15589a6f298beb.jpeg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_c012c0778cc44cba8171b6d900f4c53a.jpeg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_4c190ec98a6f4d51aa30d22d3ec59a1c.jpeg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_625567d234754a1b80fbd21bf4e61862.jpeg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_d0eea9451b45470b9ad4814044ca0701.jpeg",
+                "width": 800,
+                "height": 443
+            }],
+            "sortValue": "4296",
+            "shortDesc": "",
+            "sortType": "SEARCH",
+            "favorite": null
         }, {
-            "id": 18,
-            "name": "国剧",
-            "type": "SEARCH",
-            "showRules": "少时诵诗书"
+            "dramaId": 11560,
+            "title": "孤单又灿烂的神-鬼怪 第一季",
+            "normalTagList": ["2016", "韩国", "剧情"],
+            "specialTagList": [],
+            "cover": "http://img.rr.tv/img/img/20210926/o_ba1010f864334a9c9374fce7686c5731.jpg",
+            "imageList": [{
+                "url": "http://img.rr.tv/img/img/20211025/o_7bd8d10e004247ef921a2ba00c371d19.jpg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_f13281d94767419997c3ccf1b5e8cb05.jpeg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_1dc01ebbb688486daa1b731f1754da13.jpg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_27973de96ec64585940a5effd2fe44ef.jpg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_4559c09d6549427fbc2bab69b0dcfd4f.jpeg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_f8aa434b1da245cab6ca04da878a9869.jpeg",
+                "width": 800,
+                "height": 443
+            }],
+            "sortValue": "4251",
+            "shortDesc": "",
+            "sortType": "SEARCH",
+            "favorite": null
         }, {
-            "id": 20,
-            "name": "韩剧",
-            "type": "SEARCH",
-            "showRules": "少时诵诗书"
+            "dramaId": 34089,
+            "title": "甜蜜家园",
+            "normalTagList": ["2020", "韩国", "剧情"],
+            "specialTagList": [],
+            "cover": "http://img.rr.tv/seasonCover/20210112/o_1610419193232.jpg",
+            "imageList": [{
+                "url": "http://img.rr.tv/img/img/20211028/o_fd10f16bb0104241811bd91a03904a59.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211028/o_3c4f20f07178469fbf21ef96032355ab.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211028/o_6e72465916494662a75d448201f4fa24.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211028/o_6e45161464cd43b1bb7cd625444913a8.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211028/o_2abfdf371b124494aad5c5993ebed1f1.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211028/o_8cd6b5320f46402fa8dfbd1efe13de7c.png",
+                "width": 800,
+                "height": 443
+            }],
+            "sortValue": "3178",
+            "shortDesc": "",
+            "sortType": "SEARCH",
+            "favorite": null
         }, {
-            "id": 21,
-            "name": "电影",
-            "type": "SEARCH",
-            "showRules": "少时诵诗书"
+            "dramaId": 34630,
+            "title": "Running Man2021 第十二季",
+            "normalTagList": ["2021", "韩国", "真人秀"],
+            "specialTagList": [],
+            "cover": "http://img.rr.tv/seasonCover/20210226/o_1614303437242.jpg",
+            "imageList": [],
+            "sortValue": "3178",
+            "shortDesc": "",
+            "sortType": "SEARCH",
+            "favorite": null
         }, {
-            "id": 22,
-            "name": "泰剧",
-            "type": "SEARCH",
-            "showRules": "少时诵诗书"
+            "dramaId": 11188,
+            "title": "匹诺曹 第一季",
+            "normalTagList": ["2014", "韩国", "偶像", "言情", "都市", "剧情"],
+            "specialTagList": [],
+            "cover": "http://img.rr.tv/img/seasonCover/20210514/o_6132dc3ac8c740d2b12bdbc17957ec91.jpg",
+            "imageList": [],
+            "sortValue": "2689",
+            "shortDesc": "",
+            "sortType": "SEARCH",
+            "favorite": null
         }, {
-            "id": 23,
-            "name": "英剧",
-            "type": "SEARCH",
-            "showRules": "少时诵诗书"
+            "dramaId": 34359,
+            "title": "46天婚礼大作战",
+            "normalTagList": ["2021", "泰国", "爱情", "喜剧"],
+            "specialTagList": [],
+            "cover": "http://img.rr.tv/img/img/20210901/o_17e7757a030343ab98472cee531c4129.jpg",
+            "imageList": [],
+            "sortValue": "2516",
+            "shortDesc": "",
+            "sortType": "SEARCH",
+            "favorite": null
         }, {
-            "id": 24,
-            "name": "美剧",
-            "type": "SEARCH",
-            "showRules": "少时诵诗书"
-        }]
-    }, {
-        "id": 4,
-        "name": "马赛克榜",
-        "topList": [{
-            "id": 1,
-            "name": "人工榜-01",
-            "type": "NORMAL",
-            "showRules": "人工的榜单"
-        }]
-    }, {
-        "id": 1,
-        "name": "口碑榜",
-        "topList": [{
-            "id": 2,
-            "name": "国剧",
-            "type": "SCORE",
-            "showRules": "少时诵诗书"
+            "dramaId": 32900,
+            "title": "到了30岁还是处男 似乎会变成魔法师",
+            "normalTagList": ["2020", "日本", "剧情", "喜剧", "爱情", "同性"],
+            "specialTagList": [],
+            "cover": "http://img.rr.tv/seasonCover/20210112/o_1610419222858.jpg",
+            "imageList": [],
+            "sortValue": "2464",
+            "shortDesc": "",
+            "sortType": "SEARCH",
+            "favorite": null
         }, {
-            "id": 3,
-            "name": "日剧",
-            "type": "SCORE",
-            "showRules": "少时诵诗书"
+            "dramaId": 35614,
+            "title": "HIStory4-近距离爱上你",
+            "normalTagList": ["2021", "中国台湾", "爱情", "同性"],
+            "specialTagList": [],
+            "cover": "http://img.rr.tv/seasonCover/20210315/o_1615775251981.jpg",
+            "imageList": [],
+            "sortValue": "2442",
+            "shortDesc": "",
+            "sortType": "SEARCH",
+            "favorite": null
         }, {
-            "id": 4,
-            "name": "韩剧",
-            "type": "SCORE",
-            "showRules": "少时诵诗书"
+            "dramaId": 14359,
+            "title": "火之迷恋 第一季",
+            "normalTagList": ["2017", "泰国", "剧情", "爱情"],
+            "specialTagList": [],
+            "cover": "http://img.rr.tv/img/img/20210926/o_1bc7fba2a8b64ebab731ba4c133f9f4a.jpg",
+            "imageList": [{
+                "url": "http://img.rr.tv/img/img/20211101/o_076026cbb5694dea8331633aa984eb43.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211101/o_edfce82428aa4bd98206c82f1a0f2f0b.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211101/o_f5e4412aaf2b4fb3a932e810a6fdd8d6.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211101/o_f2647494d9604026b44a11b9930514eb.png",
+                "width": 800,
+                "height": 443
+            }],
+            "sortValue": "2250",
+            "shortDesc": "",
+            "sortType": "SEARCH",
+            "favorite": null
         }, {
-            "id": 5,
-            "name": "电影",
-            "type": "SCORE",
-            "showRules": "少时诵诗书"
-        }, {
-            "id": 6,
-            "name": "泰剧",
-            "type": "SCORE",
-            "showRules": "少时诵诗书"
-        }, {
-            "id": 7,
-            "name": "英剧",
-            "type": "SCORE",
-            "showRules": "少时诵诗书"
-        }, {
-            "id": 8,
-            "name": "美剧",
-            "type": "SCORE",
-            "showRules": "少时诵诗书"
-        }]
-    }]
+            "dramaId": 37385,
+            "title": "基地",
+            "normalTagList": ["2021", "美国", "科幻"],
+            "specialTagList": [],
+            "cover": "http://img.rr.tv/img/img/20210903/o_839838fef19948238bfb874c80739478.jpg",
+            "imageList": [{
+                "url": "http://img.rr.tv/img/img/20211028/o_52d5ad2b9c224dd99e4f54a33c9d4069.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211028/o_bd1db3a15805476eaab294d7f91055b1.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211028/o_75e36a4ff3e74e5b9d0f65bbf6a657f5.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211028/o_5f43454634e74d23a315ba4888836cda.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211028/o_5474215e1b5c4d118a5e2f66d75af204.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211028/o_77b6f34041dc4b07acbd425417872bf0.png",
+                "width": 800,
+                "height": 443
+            }],
+            "sortValue": "2230",
+            "shortDesc": "",
+            "sortType": "SEARCH",
+            "favorite": null
+        }],
+        "isEnd": false,
+        "end": false
+    }
 }

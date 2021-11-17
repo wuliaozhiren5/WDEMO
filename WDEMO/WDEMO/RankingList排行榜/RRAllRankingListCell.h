@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "UICollectionViewLeftAlignedLayout.h"
+#import "RRAllRankingTagCollectionView.h"
 #import "RRRankingImageBanner.h"
+#import "RRAllRankingListModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,7 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 //追剧按钮
 @property(nonatomic ,strong)UIButton *followBtn;
 //剧照多图滚动图
-@property(nonatomic ,strong)UIView *photoView; //view要改
+@property(nonatomic ,strong)UIView *photoView;
+@property(nonatomic ,strong)UIImageView *photoBackgroundImgV;
+
 @property(nonatomic ,strong)RRRankingImageBanner *banner;
 
 //1，2，3，---------50（top50）背景图
@@ -32,7 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 //热门榜，口碑榜，热搜榜的数量
 @property(nonatomic ,strong)UILabel *countLab;
 //标签
-@property(nonatomic, strong) UICollectionView *collectionView;
+@property(nonatomic, strong) RRAllRankingTagCollectionView *collectionView;
 
 @property (nonatomic, copy) NSArray *titleArr;
 //评论
@@ -40,7 +44,13 @@ NS_ASSUME_NONNULL_BEGIN
 //线底部的线
 @property(nonatomic, strong)UIView *line;
 
-@property(nonatomic, copy) void (^clickBanner)(void);
+@property(nonatomic, copy) void (^clickBanner)(RRAllRankingModel *allRankingModel);
+
+@property(nonatomic, strong)RRAllRankingModel *model;
+
+@property(nonatomic, assign)NSInteger row;
+
++ (CGFloat)cellHeightWithModel:(RRAllRankingModel *)model;
 
 @end
 

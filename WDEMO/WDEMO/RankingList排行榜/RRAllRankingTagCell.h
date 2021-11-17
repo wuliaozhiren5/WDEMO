@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RRAllRankingListModel.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RRAllRankingTagCell : UICollectionViewCell
-@property(nonatomic ,strong)UILabel *titleLab;
+@property (nonatomic, strong) UILabel *titleLab;
+@property (nonatomic, strong) RRAllRankingTagModel *model;
+
 @end
 
 NS_ASSUME_NONNULL_END

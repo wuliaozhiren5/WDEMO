@@ -10,6 +10,8 @@
 #import "RRAllRankingListCell.h"
 #import "RRAllRankingListHeader.h"
 #import "CHTCollectionViewWaterfallLayout.h"
+//#import "RRAllRankingListApi.h"
+#import "RRAllRankingListModel.h"
 
 @interface RRAllRankingListVC ()<UICollectionViewDelegate, UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 
@@ -21,43 +23,184 @@
 //@property (nonatomic, assign) BOOL isShowMore;    //是否显示更多数据 默认NO
 //@property (nonatomic, assign) BOOL isNoOtherData; //是否没有其他数据 默认NO
 
+@property (nonatomic, copy) NSArray *data;
+
 @end
 
 @implementation RRAllRankingListVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-// Do any additional setup after loading the view.
-//    self.isShowMore = NO;
-//    self.isNoOtherData = NO;
 //    self.customTabbar.hidden = YES;
 //    self.dataSource = [[RRDataSource alloc] init];
-//    self.pageSize = @"10";
-//    [self createData];
-    [self setupViews];
+//
 //    self.loadingView.hidden = NO;
 //    self.loadingView.center = CGPointMake(self.view.centerX, self.view.centerY - 99 - appMargin().top);
 //    self.noDataView.center = self.loadingView.center;
-//    [self refreshData];
-    
-//    [self createTipsLab];
+ 
+    [self setupViews];
+    [self refreshData];
 }
 
-- (void)createTipsLab {
-    
-    //更多精彩短视频即将上线，敬请期待
-    NSString *tipString = @"更多精彩短视频即将上线，敬请期待";
-    UILabel *tipsLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, KWidth, KWidth)];
-    tipsLab.font = SYSTEMFONT(15);
-    tipsLab.textAlignment = NSTextAlignmentCenter;
-    tipsLab.text = tipString;
-    [self.collectionView addSubview:tipsLab];
-//    [tipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.center.equalTo(self.collectionView);
-//    }];
+- (void)refreshData {
+    //iOS 读取本地Json文件
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"排行榜列表" ofType:@"json"];
+    NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
+    NSError *error;
+    id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
+    if (!jsonData || error) {
+        //DLog(@"JSON解码失败");
+    } else {
+        //DLog(@"JSON解码成功");
+    }
+    NSDictionary *dic = (NSDictionary *)jsonObj;
+    RRAllRankingListModel *model = [RRAllRankingListModel modelWithJSON:dic[@"data"]];
+    self.data = [NSMutableArray arrayWithArray:model.content];
+    [self.collectionView reloadData];
+ 
 }
+
+//- (void)requestData {
+//    [self refreshData];
+//}
+//
+//- (void)refreshData {
+//    if (self.dataSource.isLoading) {
+//        if (!self.dataSource.isRefreshing && self.collectionView.mj_header.isRefreshing) {
+//            [self.collectionView.mj_header endRefreshing];
+//        }
+//        return;
+//    }
+//    self.dataSource.isLoading = YES;    //loading中
+//    self.dataSource.isRefreshing = YES; //下拉加载
+//    [self loadDataWithPage:1];
+//}
+//
+//- (void)loadMoreData {
+//    if (self.dataSource.isLoading) {
+//        if (self.dataSource.isRefreshing && self.collectionView.mj_footer.isRefreshing) {
+//            [self.collectionView.mj_footer endRefreshing];
+//        }
+//        return;
+//    }
+//    self.dataSource.isLoading = YES; //loading中
+//    self.dataSource.isRefreshing = NO;//上拉加载
+//
+//    [self loadDataWithPage:self.dataSource.page + 1];
+//}
+//
+//- (void)loadDataWithPage:(NSInteger)page {
+//    NSString *topId = self.rankingContentModel.ID;
+//    NSInteger pageSize = 10;
+//    WS(weakSelf)
+//    [RRAllRankingListApi requestAllRankingListWithTopId:topId
+//                                                   page:page
+//                                               pageSize:pageSize
+//                                                  block:^(RRAllRankingListModel * _Nonnull model, NSError * _Nonnull error) {
+//        //        //测试代码
+//        //        error = [[NSError alloc] init];
+//        if (error) {
+//            if (weakSelf.loadingView) {
+//                if (weakSelf.loadingView.isHidden) {
+//                    TOAST(@"加载失败");
+//                } else {
+//                    weakSelf.loadingView.msgType = RRMJLoadingErrorDefault;
+//                    weakSelf.dataSource.error = error;
+//                }
+//            }
+//            [weakSelf stopLoading];
+//            return;
+//        }
+//        //        listArray = @[];
+//        weakSelf.loadingView.hidden = YES;
+//        [weakSelf.dataSource appendDatas:model.content];
+//        weakSelf.dataSource.isLoading = NO;
+//        weakSelf.dataSource.isRefreshing = NO;
+//        weakSelf.dataSource.noMoreData = model.isEnd;
+//        weakSelf.dataSource.error = error;
+//        weakSelf.dataSource.page = page;
+//        [weakSelf stopLoading];
+//
+//    }];
+//}
+//
+//- (void)stopLoading {
+//
+//    self.dataSource.isLoading = NO;
+//    self.dataSource.isRefreshing = NO;
+//
+//    [self addHeader];
+//    [self addFooter];
+//    [self.collectionView.mj_footer endRefreshing];
+//    [self.collectionView.mj_header endRefreshing];
+//
+//    if (self.dataSource.noMoreData) {
+//        [self.collectionView.mj_footer endRefreshingWithNoMoreData];
+//    } else {
+//        [self.collectionView.mj_footer resetNoMoreData];
+//    }
+//
+//    self.noDataView.hidden = !self.dataSource.isNoData;
+//    self.noDataView.placeText = @"抱歉，没有找到相关内容";
+//    [self.collectionView reloadData];
+//
+//}
+//
+//- (void)addHeader {
+//    if (self.collectionView.mj_header) {
+//        return;
+//    }
+//    @weakify(self)
+//    MJDIYHeader *header = [MJDIYHeader headerWithRefreshingBlock:^{
+//        @strongify(self)
+//        [self refreshData];
+//    }];
+//    self.collectionView.mj_header = header;
+//}
+//
+//- (void)removeHeader {
+//    if (self.collectionView.mj_header) {
+//        [self.collectionView.mj_header endRefreshing];
+//        self.collectionView.mj_header = nil;
+//    }
+//}
+//
+//- (void)addFooter {
+//    if (self.dataSource.dataArray.count <= 0) {
+////        self.collectionView.mj_footer = nil;
+//        [self removeFooter];
+//        return;
+//    }
+//    if (self.collectionView.mj_footer) {
+//        return;
+//    }
+//    @weakify(self)
+//    MJDIYFooter *footer = [MJDIYFooter footerWithRefreshingBlock:^{
+//        @strongify(self)
+//        [self loadMoreData];
+//    }];
+//    [footer setTitle:@"" forState:MJRefreshStateIdle];
+//    [footer setTitle:@"" forState:MJRefreshStateRefreshing];
+//    [footer setTitle:@"已经到底啦～" forState:MJRefreshStateNoMoreData];
+//    footer.stateLabel.font = [UIFont systemFontOfSize:12];
+//    footer.stateLabel.textColor = kCOLOR_85888F;
+//    self.collectionView.mj_footer = footer;
+//}
+//
+//- (void)removeFooter {
+//    if (self.collectionView.mj_footer) {
+//        [self.collectionView.mj_footer endRefreshing];
+//        self.collectionView.mj_footer = nil;
+//    }
+//}
 
 - (void)setupViews {
+    [self createCollectionView];
+//    [self.view bringSubviewToFront:self.loadingView];
+//    [self.view bringSubviewToFront:self.noDataView];
+}
+
+- (void)createCollectionView {
     
     CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc]init];
     
@@ -111,35 +254,48 @@
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return self.data.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    RRSearchResultVideoCollectionViewCell *cell = (RRSearchResultVideoCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRSearchResultVideoCollectionViewCell class]) forIndexPath:indexPath];
-//    RRSearchVideoNewDataModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.item];
-//    cell.model = model;
-//    if (!model.rr_contentContext) {
-//        RRUmengContentContext *context = [[RRUmengContentContext alloc] init];
-//        context.contentName = model.title;
-//        context.contentID = @(model.ID).stringValue;
-//        context.contentType = kRRUmengEventVideoTypeValueShortVideo;
-//        context.page = self.rr_UMemgPageName;
-//        context.channel = self.rr_UMemgChannelName;
-//        context.location = @(indexPath.row).stringValue;
-//        context.searchKeyword = self.searchWord;
-//        model.rr_contentContext = context;
-//    }
-//    cell.rr_statisticsExposureModel = model;
-//    return cell;
-    
- 
 //    UICollectionViewCell *cell = (UICollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class]) forIndexPath:indexPath];
 //    cell.backgroundColor = [UIColor grayColor];
 //    return cell;
      
     RRAllRankingListCell *cell = (RRAllRankingListCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRAllRankingListCell class]) forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor grayColor];
+    RRAllRankingModel *model = [self.data objectOrNilAtIndex:indexPath.item];
+    cell.model = model;
+    cell.row = indexPath.item;
+    @weakify(self);
+    cell.clickBanner = ^(RRAllRankingModel * _Nonnull allRankingModel) {
+        @strongify(self);
+        NSLog(@"点击排行榜cell的banner");
+        //跳转
+        [self goSeasonDetailWithModel:allRankingModel];
+//        //埋点
+//        NSMutableDictionary *paramDict = [NSMutableDictionary dictionary];
+//        paramDict[kRRUmengEventKeyExposurePage] = self.rr_UMemgPageName;
+////        paramDict[kRRUmengEventKeyExposureChannel] = @"";
+//        paramDict[kRRUmengEventKeyExposureGroup] = self.rankingContainerModel.name;
+//        paramDict[kRRUmengEventKeyExposureSection] = self.rankingContentModel.name;
+//        paramDict[kRRUmengEventKeyContentName] = model.title ?: @"";
+//        paramDict[kRRUmengEventKeyContentID] = model.dramaId ?: @"";
+//        paramDict[kRRUmengEventKeyContentType] = kRRUmengEventVideoTypeValueLongVideo;
+//        [RRUMengLogger contentClickedWithParams:paramDict];
+    };
+//    if (!model.rr_contentContext) {
+//        RRUmengContentContext *context = [[RRUmengContentContext alloc] init];
+//        context.contentName = model.title;
+//        context.contentID = model.dramaId;
+//        context.contentType = kRRUmengEventVideoTypeValueLongVideo;
+//        context.page = self.rr_UMemgPageName;
+////        context.channel = self.channel;
+//        context.group = self.rankingContainerModel.name;
+//        context.section = self.rankingContentModel.name;
+//        context.location = @(indexPath.row).stringValue;
+//        model.rr_contentContext = context;
+//    }
+//    cell.rr_statisticsExposureModel = model;
     return cell;
 }
 
@@ -147,6 +303,7 @@
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     if ([kind isEqualToString:CHTCollectionElementKindSectionHeader]){
         RRAllRankingListHeader *header = (RRAllRankingListHeader *)[collectionView dequeueReusableSupplementaryViewOfKind:kind withReuseIdentifier:NSStringFromClass([RRAllRankingListHeader class]) forIndexPath:indexPath];
+        header.titleLab.text = self.rankingContentModel.showRules ?: @"";
         return header;
      } else if ([kind isEqualToString:CHTCollectionElementKindSectionFooter]) {
          RRSafeEndOfCollectionReusableView;
@@ -154,11 +311,14 @@
         RRSafeEndOfCollectionReusableView;
     }
 }
- 
+
 #pragma mark -- UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     //todo
     NSLog(@"点击排行榜cell");
+    RRAllRankingModel *model = [self.data objectOrNilAtIndex:indexPath.item];
+    [self goSeasonDetailWithModel:model];
+
 }
 
 #pragma mark - CHTCollectionViewDelegateWaterfallLayout
@@ -167,8 +327,11 @@
 //    RRSearchVideoNewDataModel *model = [self.dataSource.dataArray objectOrNilAtIndex:indexPath.item];
 //    CGFloat height = [RRSearchResultVideoCollectionViewCell heightForCellWithModel:model];
 //    CGFloat width = (KWidth - 16 - 16 - 8) / 2;
-    return CGSizeMake(KWidth, KWidth);
- 
+     
+    RRAllRankingModel *model = [self.data objectOrNilAtIndex:indexPath.item];
+    CGFloat height = [RRAllRankingListCell cellHeightWithModel:model];
+    CGFloat width = KWidth;
+    return CGSizeMake(width, height);
 }
 
 // 每个区多少列
@@ -195,5 +358,13 @@
 // header的高度
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout heightForHeaderInSection:(NSInteger)section {
     return 15.0;
+}
+
+- (void)goSeasonDetailWithModel:(RRAllRankingModel *)model {
+//    [[RRAppLinkManager sharedManager] goSeasonDetail:model.dramaId title:model.title isMovie:NO toRoot:NO];
+}
+
+- (NSString *)rr_UMemgPageName {
+    return @"排行榜列表页";
 }
 @end

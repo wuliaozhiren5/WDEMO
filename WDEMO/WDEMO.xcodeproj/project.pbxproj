@@ -413,6 +413,7 @@
 		F5F6AEFB2744ABCD0074B26D /* 影评详情下讨论.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEF82744ABCD0074B26D /* 影评详情下讨论.json */; };
 		F5F6AEFD2744EE0C0074B26D /* 排行榜头.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEFC2744EE0C0074B26D /* 排行榜头.json */; };
 		F5F6AEFF2744EE450074B26D /* 排行榜列表.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEFE2744EE450074B26D /* 排行榜列表.json */; };
+		F5F6AF08274506040074B26D /* RRAllRankingTagCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F6AF06274506040074B26D /* RRAllRankingTagCollectionView.m */; };
 		F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */; };
 		F5FB5D7B263AB2C400155BFE /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FB5D7A263AB2C400155BFE /* NSString+Util.m */; };
 /* End PBXBuildFile section */
@@ -1136,6 +1137,8 @@
 		F5F6AEF82744ABCD0074B26D /* 影评详情下讨论.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "影评详情下讨论.json"; sourceTree = "<group>"; };
 		F5F6AEFC2744EE0C0074B26D /* 排行榜头.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "排行榜头.json"; sourceTree = "<group>"; };
 		F5F6AEFE2744EE450074B26D /* 排行榜列表.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "排行榜列表.json"; sourceTree = "<group>"; };
+		F5F6AF06274506040074B26D /* RRAllRankingTagCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingTagCollectionView.m; sourceTree = "<group>"; };
+		F5F6AF07274506040074B26D /* RRAllRankingTagCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRAllRankingTagCollectionView.h; sourceTree = "<group>"; };
 		F5F701F725CD2E290000D5A9 /* KeyedArchiverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyedArchiverViewController.h; sourceTree = "<group>"; };
 		F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyedArchiverViewController.m; sourceTree = "<group>"; };
 		F5FB5D79263AB2C400155BFE /* NSString+Util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Util.h"; sourceTree = "<group>"; };
@@ -2633,6 +2636,8 @@
 				F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */,
 				F501FEA9272016A200FE2F3B /* RRAllRankingListCell.h */,
 				F501FEAA272016A200FE2F3B /* RRAllRankingListCell.m */,
+				F5F6AF07274506040074B26D /* RRAllRankingTagCollectionView.h */,
+				F5F6AF06274506040074B26D /* RRAllRankingTagCollectionView.m */,
 				F51F95172721565000D4B56B /* RRAllRankingListHeader.h */,
 				F51F95182721565000D4B56B /* RRAllRankingListHeader.m */,
 				F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */,
@@ -3329,6 +3334,7 @@
 				F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */,
 				67535E892390F0CF0009F882 /* FontViewControlle.m in Sources */,
 				67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */,
+				F5F6AF08274506040074B26D /* RRAllRankingTagCollectionView.m in Sources */,
 				6783C8931FB944B80040C02B /* LZTagSegmentedControl.m in Sources */,
 				F553E12924CA800200DA5625 /* FaceView.m in Sources */,
 				673AE9251FC7F5BD0002D304 /* ForceTouchListVC.m in Sources */,
