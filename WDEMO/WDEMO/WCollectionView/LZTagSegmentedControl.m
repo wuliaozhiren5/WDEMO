@@ -29,6 +29,11 @@
     self = [super initWithFrame:frame];
     if (self) {
 //        [self addView];
+        self.defaultColor = kCOLOR_FFFFFF;
+        self.selectedColor = kCOLOR_FFD541;
+
+        self.defaultFont = RR_COMMONFONT(17);
+        self.selectedFont = RR_BOLDFONT(24);
     }
     return self;
 }
@@ -62,8 +67,8 @@
     self.collectionView.dataSource = self;
     
     self.collectionView.showsHorizontalScrollIndicator = NO;
-    self.collectionView.showsVerticalScrollIndicator =NO;
-    self.collectionView.backgroundColor = [UIColor redColor];
+    self.collectionView.showsVerticalScrollIndicator = NO;
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
     [self.collectionView registerClass:[LZTagListCell class] forCellWithReuseIdentifier:NSStringFromClass([LZTagListCell class])];
@@ -138,6 +143,12 @@
     LZTagListCell *cell = (LZTagListCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([LZTagListCell class]) forIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
     
+    cell.defaultColor = kCOLOR_FFFFFF;
+    cell.selectedColor = kCOLOR_FFD541;
+
+    cell.defaultFont = RR_COMMONFONT(17);
+    cell.selectedFont = RR_BOLDFONT(24);
+    
     BOOL isUserSelected = (indexPath.item == _index);
     cell.isUserSelected = isUserSelected;
     cell.tagStr = _tagArr[indexPath.item];
@@ -203,14 +214,16 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     //    UIFont *font = [UIFont systemFontOfSize:17.0];
 
-    UIFont *font = [UIFont systemFontOfSize:12.0];
-
-    BOOL isUserSelected = (indexPath.item == _index);
-    //动画
-    if (isUserSelected) {
-        font = [UIFont systemFontOfSize:17.0];
-    }
+//    UIFont *font = self.defaultFont;
+//
+//    BOOL isUserSelected = (indexPath.item == _index);
+//    //动画
+//    if (isUserSelected) {
+//        font = self.selectedFont;
+//    }
         
+    UIFont *font = self.selectedFont;
+
     NSString *text = _tagArr[indexPath.item];
     CGSize maxSize = CGSizeMake(0, MAXFLOAT);
     CGSize textSize = CGSizeZero;

@@ -67,6 +67,9 @@
     if (_isUserSelected) {
         [_tagBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _tagBtn.titleLabel.font = [UIFont systemFontOfSize:17.0];
+        _tagBtn.titleLabel.font = self.selectedFont;
+        [_tagBtn setTitleColor:self.selectedColor forState:UIControlStateNormal];
+
 //        _tagBtn.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
 //        _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
         
@@ -87,6 +90,8 @@
     } else {
         [_tagBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         _tagBtn.titleLabel.font = [UIFont systemFontOfSize:12.0];
+        _tagBtn.titleLabel.font = self.defaultFont;
+        [_tagBtn setTitleColor:self.defaultColor forState:UIControlStateNormal];
 //        [_tagBtn sizeToFit];
 //        _tagBtn.frame = CGRectMake((self.frame.size.width - _tagBtn.frame.size.width) / 2, 0, _tagBtn.frame.size.width, self.frame.size.height);
  

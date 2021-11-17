@@ -411,7 +411,7 @@
 		F5F6AEF92744ABCD0074B26D /* 影评列表.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEF62744ABCC0074B26D /* 影评列表.json */; };
 		F5F6AEFA2744ABCD0074B26D /* 影评详情.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEF72744ABCC0074B26D /* 影评详情.json */; };
 		F5F6AEFB2744ABCD0074B26D /* 影评详情下讨论.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEF82744ABCD0074B26D /* 影评详情下讨论.json */; };
-		F5F6AEFD2744EE0C0074B26D /* 排行榜.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEFC2744EE0C0074B26D /* 排行榜.json */; };
+		F5F6AEFD2744EE0C0074B26D /* 排行榜头.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEFC2744EE0C0074B26D /* 排行榜头.json */; };
 		F5F6AEFF2744EE450074B26D /* 排行榜列表.json in Resources */ = {isa = PBXBuildFile; fileRef = F5F6AEFE2744EE450074B26D /* 排行榜列表.json */; };
 		F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */; };
 		F5FB5D7B263AB2C400155BFE /* NSString+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FB5D7A263AB2C400155BFE /* NSString+Util.m */; };
@@ -1134,7 +1134,7 @@
 		F5F6AEF62744ABCC0074B26D /* 影评列表.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "影评列表.json"; sourceTree = "<group>"; };
 		F5F6AEF72744ABCC0074B26D /* 影评详情.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "影评详情.json"; sourceTree = "<group>"; };
 		F5F6AEF82744ABCD0074B26D /* 影评详情下讨论.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "影评详情下讨论.json"; sourceTree = "<group>"; };
-		F5F6AEFC2744EE0C0074B26D /* 排行榜.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "排行榜.json"; sourceTree = "<group>"; };
+		F5F6AEFC2744EE0C0074B26D /* 排行榜头.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "排行榜头.json"; sourceTree = "<group>"; };
 		F5F6AEFE2744EE450074B26D /* 排行榜列表.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "排行榜列表.json"; sourceTree = "<group>"; };
 		F5F701F725CD2E290000D5A9 /* KeyedArchiverViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyedArchiverViewController.h; sourceTree = "<group>"; };
 		F5F701F825CD2E290000D5A9 /* KeyedArchiverViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyedArchiverViewController.m; sourceTree = "<group>"; };
@@ -1565,7 +1565,7 @@
 		F5091DDA268C22A1000884D1 /* json数据 */ = {
 			isa = PBXGroup;
 			children = (
-				F5F6AEFC2744EE0C0074B26D /* 排行榜.json */,
+				F5F6AEFC2744EE0C0074B26D /* 排行榜头.json */,
 				F5F6AEFE2744EE450074B26D /* 排行榜列表.json */,
 				F51C24B6263BEF4D0010A298 /* 评论列表.json */,
 				F58B4B452643FCD800D7C82D /* 回复列表.json */,
@@ -3091,7 +3091,7 @@
 				F58613E126A9719500D81DDA /* Shell脚本批量修改iOS方法名.md in Resources */,
 				F5CA140626B2A2DC00D8A7AE /* message_normal@2x.png in Resources */,
 				F5446CA6268D73240076961A /* 消息回复详情.json in Resources */,
-				F5F6AEFD2744EE0C0074B26D /* 排行榜.json in Resources */,
+				F5F6AEFD2744EE0C0074B26D /* 排行榜头.json in Resources */,
 				F52F168D26A82C1C00D4E305 /* func.list in Resources */,
 				F5F6AEFF2744EE450074B26D /* 排行榜列表.json in Resources */,
 				F5CA13FF26B2A2DC00D8A7AE /* home_highlight@2x.png in Resources */,
