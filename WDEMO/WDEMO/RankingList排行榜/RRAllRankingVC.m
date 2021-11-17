@@ -108,18 +108,13 @@ static CGFloat const headViewHeight = 256;
     }
     self.navigationbarHeight = self.navigationController.navigationBar.frame.size.height;
     
-    [self createTagData];
-    [self createSegmentedControl];
-    [self createCurrentSubVC];
-    [self createTableView];
-    
     [self refreshData];
 }
 
 - (void)refreshData {
     
     //iOS 读取本地Json文件
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"排行榜组件" ofType:@"json"];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"排行榜头" ofType:@"json"];
     NSData *jsonData = [[NSData alloc] initWithContentsOfFile:path];
     NSError *error;
     id jsonObj = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
@@ -131,7 +126,9 @@ static CGFloat const headViewHeight = 256;
     NSDictionary *dic = (NSDictionary *)jsonObj;
     
     NSArray *listArray = [NSArray modelArrayWithClass:[RRAllRankingContainerModel class] json:dic[@"data"]];
-//    self.topArr = listArray;
+    self.topArr = listArray;
+    
+    [self setupViews];
 }
 
 //- (void)requestData {
@@ -203,8 +200,17 @@ static CGFloat const headViewHeight = 256;
 }
 
 - (void)createTableView {
+    //    [self.customTabbar.leftButton setImage:IMAGENAME(@"ic_universal_navbar_back_white_40") forState:UIControlStateNormal];
+//    self.customTabbar.hidden = NO;
+    self.view.backgroundColor = [UIColor blackColor];
     [self.view addSubview:self.mainTableView];
+//    [self.view insertSubview:self.mainTableView belowSubview:self.customTabbar];
+    [self.mainTableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(self.view);
+    }];
+    
     [self.mainTableView addSubview:self.headImageView];
+    [self.mainTableView bringSubviewToFront:self.headImageView];
     //支持下刷新。关闭弹簧效果
     //bounces = YES;外部支持下拉刷新
     //bounces = NO;内部支持下拉刷新
@@ -212,96 +218,151 @@ static CGFloat const headViewHeight = 256;
 }
 
 - (void)createTagData {
-    NSArray *tagArr = @[
-        @"总榜",
-        @"评分榜",
-        @"热门榜",
-        @"搜索榜",
-        @"口碑榜",
-    ];
-    _tagArr = tagArr;
+//    NSArray *tagArr = @[
+//        @"总榜",
+//        @"评分榜",
+//        @"热门榜",
+//        @"搜索榜",
+//        @"口碑榜",
+//    ];
+//    _tagArr = tagArr;
+//
+//    NSArray *subTagArr0 = @[
+//        @"全部",
+//        @"美剧总",
+//        @"日剧总",
+//        @"韩剧总",
+//        @"泰剧总",
+//        @"英剧总",
+//        @"动画总",
+//    ];
+//    NSArray *subTagArr1 = @[
+//        @"全部",
+//        @"美剧评分",
+//        @"日剧评分",
+//        @"韩剧评分",
+//        @"泰剧评分",
+//        @"英剧评分",
+//        @"动画评分",
+//    ];
+//    NSArray *subTagArr2 = @[
+//        @"全部",
+//        @"美剧热门",
+//        @"日剧热门",
+//        @"韩剧热门",
+//        @"泰剧热门",
+//        @"英剧热门",
+//        @"动画热门",
+//    ];
+//    NSArray *subTagArr3 = @[
+//        @"全部",
+//        @"美剧搜索",
+//        @"日剧搜索",
+//        @"韩剧搜索",
+//        @"泰剧搜索",
+//        @"英剧搜索",
+//        @"动画搜索",
+//    ];
+//    NSArray *subTagArr4 = @[
+//        @"全部",
+//        @"美剧口碑",
+//        @"日剧口碑",
+//        @"韩剧口碑",
+//        @"泰剧口碑",
+//        @"英剧口碑",
+//        @"动画口碑",
+//    ];
+//    _subTagArr = @[
+//        subTagArr0,
+//        subTagArr1,
+//        subTagArr2,
+//        subTagArr3,
+//        subTagArr4,
+//    ];
     
-    NSArray *subTagArr0 = @[
-        @"全部",
-        @"美剧总",
-        @"日剧总",
-        @"韩剧总",
-        @"泰剧总",
-        @"英剧总",
-        @"动画总",
-    ];
-    NSArray *subTagArr1 = @[
-        @"全部",
-        @"美剧评分",
-        @"日剧评分",
-        @"韩剧评分",
-        @"泰剧评分",
-        @"英剧评分",
-        @"动画评分",
-    ];
-    NSArray *subTagArr2 = @[
-        @"全部",
-        @"美剧热门",
-        @"日剧热门",
-        @"韩剧热门",
-        @"泰剧热门",
-        @"英剧热门",
-        @"动画热门",
-    ];
-    NSArray *subTagArr3 = @[
-        @"全部",
-        @"美剧搜索",
-        @"日剧搜索",
-        @"韩剧搜索",
-        @"泰剧搜索",
-        @"英剧搜索",
-        @"动画搜索",
-    ];
-    NSArray *subTagArr4 = @[
-        @"全部",
-        @"美剧口碑",
-        @"日剧口碑",
-        @"韩剧口碑",
-        @"泰剧口碑",
-        @"英剧口碑",
-        @"动画口碑",
-    ];
-    _subTagArr = @[
-        subTagArr0,
-        subTagArr1,
-        subTagArr2,
-        subTagArr3,
-        subTagArr4,
-    ];
+    NSArray *tagArr = [self.topArr valueForKeyPath:@"name"];
+    self.tagArr = tagArr;
+    
+    NSInteger containerIndex = 0;
+    NSInteger contentIndex = 0;
+    if (self.containerId) {
+        NSInteger n = self.topArr.count;
+        for (NSInteger i = 0; i < n; i++) {
+            RRAllRankingContainerModel *rankingContainerModel = self.topArr[i];
+            if ([rankingContainerModel.ID isEqualToString:self.containerId]) {
+                containerIndex = i;
+                if (self.contentId) {
+                    NSInteger m = rankingContainerModel.topList.count;
+                    for (NSInteger j = 0; j < m; j++) {
+                        RRAllRankingContentModel *rankingContentModel  = rankingContainerModel.topList[j];
+                        if ([rankingContentModel.ID isEqualToString:self.contentId]) {
+                            contentIndex = j;
+                            break;
+                        }
+                    }
+                }
+                break;
+            }
+        }
+    }
+    self.containerIndex = containerIndex;
+    self.contentIndex = contentIndex;
+    self.selectIndex = self.containerIndex;
 }
 
 - (void)createSegmentedControl {
     LZTagSegmentedControl *segmentedControl = [[LZTagSegmentedControl alloc]initWithFrame:CGRectMake(0, headViewHeight - 40 - 10, SCREEN_WIDTH, 40)];
-    segmentedControl.backgroundColor = [UIColor yellowColor];
     segmentedControl.delegate = self;
     
-    NSArray *tagArr = _tagArr;
-    segmentedControl.tagArr = tagArr;
+//    segmentedControl.defaultColor = kCOLOR_FFFFFF;
+    segmentedControl.defaultColor = kCOLOR_000000;
+    segmentedControl.selectedColor = kCOLOR_FFD541;
+
+    segmentedControl.defaultFont = RR_COMMONFONT(17);
+    segmentedControl.selectedFont = RR_BOLDFONT(24);
+    
+    segmentedControl.tagArr = self.tagArr;
     segmentedControl.index = self.selectIndex;
+    
+
+    
     [self.headImageView addSubview:segmentedControl];
     _segmentedControl = segmentedControl;
 }
 
 - (UIViewController *)createSubVC {
-    NSArray *tagArr = _subTagArr[self.selectIndex];
+    RRAllRankingContainerModel *rankingContainerModel = self.topArr[self.selectIndex];
+    NSArray *topList = rankingContainerModel.topList;
     NSMutableArray *viewControllers = [NSMutableArray array];
-    for (NSString *title in tagArr) {
-        RRAllRankingListVC *oneVc  = [RRAllRankingListVC new];
-        oneVc.delegate = self;
-        oneVc.title = title;
-        [viewControllers addObject:oneVc];
-    }
-    NSArray *titles = tagArr;
+    NSMutableArray *titles = [NSMutableArray array];
     
-    RRAllRankingSubVC *pageVC= [[RRAllRankingSubVC alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
+    for (RRAllRankingContentModel *rankingContentModel in topList) {
+        RRAllRankingListVC *oneVc = [[RRAllRankingListVC alloc] init];
+        oneVc.rankingContentModel = rankingContentModel;
+        oneVc.rankingContainerModel = rankingContainerModel;
+        oneVc.delegate = self;
+        [viewControllers addObject:oneVc];
+        [titles addObject:rankingContentModel.name];
+    }
+    
+    NSInteger selectIndex = 0;
+    if (self.selectIndex == self.containerIndex) {
+        selectIndex = self.contentIndex;
+        //这里用完置为0，避免不必要的bug
+        self.containerIndex = -1;
+        self.contentIndex = -1;
+    }
+//    RRAllRankingSubVC *pageController = [[RRAllRankingSubVC alloc] initWithTitles:titles viewControllers:viewControllers selectedIndex:selectIndex];
+//    pageController.view.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
+//
+//    [self addChildViewController:pageController];
+//    [pageController didMoveToParentViewController:self];
+//    return pageController;
+     
+    RRAllRankingSubVC *pageVC = [[RRAllRankingSubVC alloc] initWithViewControllerClasses:viewControllers andTheirTitles:titles];
     pageVC.viewControllers = viewControllers;
     
-    pageVC.selectIndex = 0;
+    pageVC.selectIndex = (int)selectIndex;
     //    pageVC.title = @"首页样式";
     //带下划线
     pageVC.menuViewStyle = WMMenuViewStyleLine;
@@ -717,7 +778,7 @@ static CGFloat const headViewHeight = 256;
         _mainTableView.dataSource = self;
         _mainTableView.showsVerticalScrollIndicator = NO;
         _mainTableView.contentInset = UIEdgeInsetsMake(headViewHeight,0, 0, 0);
-        _mainTableView.backgroundColor = [UIColor redColor];
+//        _mainTableView.backgroundColor = [UIColor redColor];
     }
     return _mainTableView;
 }
