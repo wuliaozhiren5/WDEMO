@@ -1022,6 +1022,19 @@
             };
             [self showSeasonCardWithModel:model];
 
+            //单击手势 单击回复
+            UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTapDramaCommentDetailCell:)];
+            singleTapGesture.numberOfTapsRequired = 1;
+            singleTapGesture.numberOfTouchesRequired = 1;
+            [cell addGestureRecognizer:singleTapGesture];
+            //双击手势 双击点赞
+            UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTapDramaCommentDetailCell:)];
+            doubleTapGesture.numberOfTapsRequired = 2;
+            doubleTapGesture.numberOfTouchesRequired = 1;
+            [cell addGestureRecognizer:doubleTapGesture];
+            //只有当doubleTapGesture识别失败的时候(即识别出这不是双击操作)，singleTapGesture才能开始识别
+            [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
+            
             return cell;
         }
             break;
@@ -1069,6 +1082,43 @@
             return cell;
         }
             break;
+    }
+}
+
+- (void)singleTapDramaCommentDetailCell:(UIGestureRecognizer *)gesture {
+    NSLog(@"单击");
+    //点击回复
+    [self clickTextBtn:nil];
+}
+
+- (void)doubleTapDramaCommentDetailCell:(UIGestureRecognizer *)gesture {
+    NSLog(@"双击");
+//
+//    CGPoint point = [gesture locationInView:self.view];
+//    //读取PAG素材文件
+//    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"kuaikan_zan_bmp" ofType:@"pag"];
+//    PAGFile *pagFile = [PAGFile Load:resourcePath];
+//    //创建PAG播放视图PAGView
+//    PAGView *pagView = [[PAGView alloc] initWithFrame:CGRectMake(point.x - 40, point.y - 40, 80, 80)];
+//    [self.view addSubview:pagView];
+//    //关联PAGView和PAGFile
+//    [pagView setComposition:pagFile];
+//    //设置循环播放，默认只播放一次
+//    [pagView setRepeatCount:1];
+//    [pagView play];
+////    [pagView mas_makeConstraints:^(MASConstraintMaker *make) {
+////        make.centerX.offset(point.x);
+////        make.centerY.offset(point.y);
+////        make.width.height.offset(80);
+////    }];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [pagView stop];
+//        [pagView removeFromSuperview];
+//    });
+    
+    BOOL liked = self.dramaCommentModel.liked;
+    if (!liked) {
+        [self clickPraiseBtn:nil];
     }
 }
 
@@ -1155,7 +1205,8 @@
         case 0:
         {
 //            RRSeniorCommentsModel *model = self.dramaCommentModel;
-            [self clickTextBtn:nil];
+            //点击回复
+//            [self clickTextBtn:nil];
         }
             break;
             
