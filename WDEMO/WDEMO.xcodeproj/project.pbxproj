@@ -156,6 +156,7 @@
 		F553E19D24CA8DE200DA5625 /* FaceAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E19924CA8DE200DA5625 /* FaceAttachment.m */; };
 		F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */; };
 		F553E1E124CAC69F00DA5625 /* ChatMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */; };
+		F5557D7C274DE852002B2B98 /* 识别单击和双击手势.md in Resources */ = {isa = PBXBuildFile; fileRef = F5557D7B274DE852002B2B98 /* 识别单击和双击手势.md */; };
 		F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F556CBCA25AEA11600B590D2 /* WaterLayout.m */; };
 		F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */; };
 		F5596C75271EA2FE007D9FE9 /* RRAllRankingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5596C74271EA2FE007D9FE9 /* RRAllRankingVC.m */; };
@@ -715,6 +716,7 @@
 		F553E1A024CA8F9B00DA5625 /* ChatMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatMessageDataModel.m; sourceTree = "<group>"; };
 		F553E1DF24CAC69F00DA5625 /* ChatMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatMessageCell.h; sourceTree = "<group>"; };
 		F553E1E024CAC69F00DA5625 /* ChatMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatMessageCell.m; sourceTree = "<group>"; };
+		F5557D7B274DE852002B2B98 /* 识别单击和双击手势.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "识别单击和双击手势.md"; sourceTree = "<group>"; };
 		F556CBC925AEA11600B590D2 /* WaterLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterLayout.h; sourceTree = "<group>"; };
 		F556CBCA25AEA11600B590D2 /* WaterLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterLayout.m; sourceTree = "<group>"; };
 		F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1846,6 +1848,7 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				F5557D7B274DE852002B2B98 /* 识别单击和双击手势.md */,
 				F501FEA1271FEE8000FE2F3B /* 状态栏高度.md */,
 				F501FE9F271FEC2800FE2F3B /* 删除所有子View.md */,
 				F58B5289271D960500CD6A3F /* 动画过程中的点击.md */,
@@ -3005,6 +3008,7 @@
 				F5D5C1BB2714298D0021C36E /* 2.jpg in Resources */,
 				F52F168E26A82C1C00D4E305 /* confuse.sh in Resources */,
 				F5125756269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md in Resources */,
+				F5557D7C274DE852002B2B98 /* 识别单击和双击手势.md in Resources */,
 				F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */,
 				F58613CD26A96EB100D81DDA /* user_identifiers.txt in Resources */,
 				F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */,
