@@ -74,6 +74,7 @@
 		F507113024E2A6A700AD5306 /* MYPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F507112F24E2A6A700AD5306 /* MYPerson.m */; };
 		F507113324E2A6BE00AD5306 /* MYCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113224E2A6BE00AD5306 /* MYCar.m */; };
 		F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F507113624E2AB9400AD5306 /* IsEqualViewController.m */; };
+		F508EBF027562F920017F315 /* initWithNibName方法什么时候调用.md in Resources */ = {isa = PBXBuildFile; fileRef = F508EBEF27562F920017F315 /* initWithNibName方法什么时候调用.md */; };
 		F509136D25EF917B00A2E217 /* 文字显示全文显示更多.md in Resources */ = {isa = PBXBuildFile; fileRef = F509136C25EF917B00A2E217 /* 文字显示全文显示更多.md */; };
 		F5091DE1268C4184000884D1 /* XXLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5091DE0268C4184000884D1 /* XXLoadingView.m */; };
 		F5091E28268C679F000884D1 /* dropdown_loading_02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5091DE9268C679F000884D1 /* dropdown_loading_02@2x.png */; };
@@ -591,6 +592,7 @@
 		F507113224E2A6BE00AD5306 /* MYCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MYCar.m; sourceTree = "<group>"; };
 		F507113524E2AB9400AD5306 /* IsEqualViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsEqualViewController.h; sourceTree = "<group>"; };
 		F507113624E2AB9400AD5306 /* IsEqualViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsEqualViewController.m; sourceTree = "<group>"; };
+		F508EBEF27562F920017F315 /* initWithNibName方法什么时候调用.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "initWithNibName方法什么时候调用.md"; sourceTree = "<group>"; };
 		F509136C25EF917B00A2E217 /* 文字显示全文显示更多.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "文字显示全文显示更多.md"; sourceTree = "<group>"; };
 		F5091DDF268C4184000884D1 /* XXLoadingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XXLoadingView.h; sourceTree = "<group>"; };
 		F5091DE0268C4184000884D1 /* XXLoadingView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XXLoadingView.m; sourceTree = "<group>"; };
@@ -1848,6 +1850,7 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				F508EBEF27562F920017F315 /* initWithNibName方法什么时候调用.md */,
 				F5557D7B274DE852002B2B98 /* 识别单击和双击手势.md */,
 				F501FEA1271FEE8000FE2F3B /* 状态栏高度.md */,
 				F501FE9F271FEC2800FE2F3B /* 删除所有子View.md */,
@@ -3056,6 +3059,7 @@
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
 				F5CA13A826B2928700D8A7AE /* ic_bottombar_kuaikan_h@2x.png in Resources */,
 				F5CA13A126B2928700D8A7AE /* ic_bottombar_me_h@2x.png in Resources */,
+				F508EBF027562F920017F315 /* initWithNibName方法什么时候调用.md in Resources */,
 				F548D0E6256E2EEA00357E64 /* amwayPlayerZan.json in Resources */,
 				F5409ABA26B166020042F29D /* star@3x.png in Resources */,
 				F567346C260C41D80081BC8A /* 数字变化的动画效果.md in Resources */,
