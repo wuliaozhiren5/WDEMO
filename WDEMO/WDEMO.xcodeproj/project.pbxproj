@@ -163,6 +163,7 @@
 		F5596C75271EA2FE007D9FE9 /* RRAllRankingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5596C74271EA2FE007D9FE9 /* RRAllRankingVC.m */; };
 		F5596C78271EA30E007D9FE9 /* RRAllRankingSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5596C77271EA30E007D9FE9 /* RRAllRankingSubVC.m */; };
 		F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F55E5B5A258C58B700C1DECD /* ScoreView.m */; };
+		F55EF6882758CD430043B460 /* 更改状态栏导航栏颜色的方法.md in Resources */ = {isa = PBXBuildFile; fileRef = F55EF6872758CD430043B460 /* 更改状态栏导航栏颜色的方法.md */; };
 		F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C922502134800A13C15 /* SetPasswordVC.m */; };
 		F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C98250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m */; };
 		F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C9B250215ED00A13C15 /* NeedResetPasswordVC.m */; };
@@ -728,6 +729,7 @@
 		F5596C77271EA30E007D9FE9 /* RRAllRankingSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingSubVC.m; sourceTree = "<group>"; };
 		F55E5B59258C58B700C1DECD /* ScoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreView.h; sourceTree = "<group>"; };
 		F55E5B5A258C58B700C1DECD /* ScoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreView.m; sourceTree = "<group>"; };
+		F55EF6872758CD430043B460 /* 更改状态栏导航栏颜色的方法.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "更改状态栏导航栏颜色的方法.md"; sourceTree = "<group>"; };
 		F5609C912502134800A13C15 /* SetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordVC.h; sourceTree = "<group>"; };
 		F5609C922502134800A13C15 /* SetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordVC.m; sourceTree = "<group>"; };
 		F5609C97250214FC00A13C15 /* ForgetPasswordResetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordResetPasswordVC.h; sourceTree = "<group>"; };
@@ -1850,6 +1852,7 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				F55EF6872758CD430043B460 /* 更改状态栏导航栏颜色的方法.md */,
 				F508EBEF27562F920017F315 /* initWithNibName方法什么时候调用.md */,
 				F5557D7B274DE852002B2B98 /* 识别单击和双击手势.md */,
 				F501FEA1271FEE8000FE2F3B /* 状态栏高度.md */,
@@ -3103,6 +3106,7 @@
 				F50D6DA325A9675700B8C415 /* 个人主页.md in Resources */,
 				F58613E126A9719500D81DDA /* Shell脚本批量修改iOS方法名.md in Resources */,
 				F5CA140626B2A2DC00D8A7AE /* message_normal@2x.png in Resources */,
+				F55EF6882758CD430043B460 /* 更改状态栏导航栏颜色的方法.md in Resources */,
 				F5446CA6268D73240076961A /* 消息回复详情.json in Resources */,
 				F5F6AEFD2744EE0C0074B26D /* 排行榜头.json in Resources */,
 				F52F168D26A82C1C00D4E305 /* func.list in Resources */,
