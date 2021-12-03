@@ -88,12 +88,17 @@
     }
     
     //    self.contentLab.text = textStr;
-    self.yyContentLab.text = textStr;
-    
+    YYLabel *yyContentLab = [YYLabel new];
+    yyContentLab.frame = CGRectMake(0, 0, KWidth - 61 - 16, 300);
+    yyContentLab.font = RR_COMMONFONT(14);
+//    yyContentLab.lineBreakMode = NSLineBreakByCharWrapping;
+    yyContentLab.numberOfLines = 0;
+    yyContentLab.text = textStr;
+
     //    ...查看全文
     //    ...查看图片
     //恢复View
-    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
+    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
     
     //颜色
     UIColor *textColor = kCOLOR_222222;
@@ -172,8 +177,8 @@
             //第5行：拼接...查看全文
             line5String = [NSString stringWithFormat:@"%@%@%@", line5String, moreTextStr, showAllTextStr];//...查看全文
             //第5行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
-            self.yyContentLab.text = line5String;
-            NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
+            yyContentLab.text = line5String;
+            NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
             NSString *lineString = lineArray[0];
             
             //需要填充的字符
