@@ -15,6 +15,7 @@
 #import "LZTagSegmentedControl.h"
 #import "RRAllRankingListVC.h"
 #import "RRAllRankingContainerModel.h"
+#import "RRAllRankingHomeModel.h"
 
 static CGFloat const headViewHeight = 256;
 
@@ -58,9 +59,10 @@ static CGFloat const headViewHeight = 256;
 @property(strong , nonatomic)LZTagSegmentedControl *segmentedControl;
 
 @property (nonatomic, copy) NSArray *topArr;
+//组件id
+@property (nonatomic, copy) NSString *containerId;
 
 @end
-
 
 @implementation RRAllRankingVC
 
@@ -125,8 +127,11 @@ static CGFloat const headViewHeight = 256;
     }
     NSDictionary *dic = (NSDictionary *)jsonObj;
     
-    NSArray *listArray = [NSArray modelArrayWithClass:[RRAllRankingContainerModel class] json:dic[@"data"]];
-    self.topArr = listArray;
+    RRAllRankingHomeModel *model = [RRAllRankingHomeModel modelWithJSON:dic[@"data"]];
+    
+    self.topArr = model.containerList;
+    self.containerId = model.containerId;
+    self.topId = model.topId;
     
     [self setupViews];
 }
@@ -138,7 +143,9 @@ static CGFloat const headViewHeight = 256;
 //- (void)refreshData {
 //
 //    WS(weakSelf)
-//    [RRAllRankingApi requestAllRankingWithBlock:^(NSArray * _Nonnull listArray, NSError * _Nonnull error) {
+//    NSString *topId = self.topId;
+//    [RRAllRankingApi requestAllRankingWithTopId:topId
+//                                          block:^(RRAllRankingHomeModel * _Nonnull model, NSError * _Nonnull error) {
 //        if (error) {
 //            if (weakSelf.loadingView) {
 //                weakSelf.loadingView.msgType = RRMJLoadingErrorDefault;
@@ -148,7 +155,9 @@ static CGFloat const headViewHeight = 256;
 //            }
 //        }
 //        weakSelf.loadingView.hidden = YES;
-//        self.topArr = listArray;
+//        self.topArr = model.containerList;
+//        self.containerId = model.containerId;
+//        self.topId = model.topId;
 //        [weakSelf stopLoading];
 //    }];
 //}
@@ -291,11 +300,11 @@ static CGFloat const headViewHeight = 256;
             RRAllRankingContainerModel *rankingContainerModel = self.topArr[i];
             if ([rankingContainerModel.ID isEqualToString:self.containerId]) {
                 containerIndex = i;
-                if (self.contentId) {
+                if (self.topId) {
                     NSInteger m = rankingContainerModel.topList.count;
                     for (NSInteger j = 0; j < m; j++) {
                         RRAllRankingContentModel *rankingContentModel  = rankingContainerModel.topList[j];
-                        if ([rankingContentModel.ID isEqualToString:self.contentId]) {
+                        if ([rankingContentModel.ID isEqualToString:self.topId]) {
                             contentIndex = j;
                             break;
                         }
@@ -313,7 +322,8 @@ static CGFloat const headViewHeight = 256;
 - (void)createSegmentedControl {
     LZTagSegmentedControl *segmentedControl = [[LZTagSegmentedControl alloc]initWithFrame:CGRectMake(0, headViewHeight - 40 - 10, SCREEN_WIDTH, 40)];
     segmentedControl.delegate = self;
-    
+    segmentedControl.backgroundColor = [UIColor grayColor];
+
 //    segmentedControl.defaultColor = kCOLOR_FFFFFF;
     segmentedControl.defaultColor = kCOLOR_000000;
     segmentedControl.selectedColor = kCOLOR_FFD541;
@@ -323,8 +333,6 @@ static CGFloat const headViewHeight = 256;
     
     segmentedControl.tagArr = self.tagArr;
     segmentedControl.index = self.selectIndex;
-    
-
     
     [self.headImageView addSubview:segmentedControl];
     _segmentedControl = segmentedControl;

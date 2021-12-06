@@ -87,6 +87,7 @@
 - (void)setData:(NSArray *)data {
     _data = data;
     [self reloadData];
+    [self layoutIfNeeded];
 }
 
 @end

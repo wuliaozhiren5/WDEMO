@@ -264,25 +264,46 @@
      
     RRAllRankingListCell *cell = (RRAllRankingListCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([RRAllRankingListCell class]) forIndexPath:indexPath];
     RRAllRankingModel *model = [self.data objectOrNilAtIndex:indexPath.item];
-    cell.model = model;
-    cell.row = indexPath.item;
     @weakify(self);
-    cell.clickBanner = ^(RRAllRankingModel * _Nonnull allRankingModel) {
+    cell.clickBanner = ^(RRAllRankingModel * _Nonnull allRankingModel, RRSeniorCommentsImageModel * _Nonnull imageModel, NSInteger index) {
         @strongify(self);
         NSLog(@"点击排行榜cell的banner");
         //跳转
         [self goSeasonDetailWithModel:allRankingModel];
 //        //埋点
 //        NSMutableDictionary *paramDict = [NSMutableDictionary dictionary];
+//        paramDict[kRRUmengEventKeySourcePage] = self.rr_UMemgPageName;
+////        paramDict[kRRUmengEventKeySourceChannel] = @"";
+//        paramDict[kRRUmengEventKeySourceGroup] = self.rankingContainerModel.name;
+//        paramDict[kRRUmengEventKeySourceSection] = self.rankingContentModel.name;
+//        paramDict[kRRUmengEventKeyContentName] = @"剧照";
+//        paramDict[kRRUmengEventKeyContentID] =  @"";
+//        paramDict[kRRUmengEventKeyContentType] = @"图片";
+//        paramDict[kRRUmengEventKeySeason] = model.dramaId;
+//        paramDict[kRRUmengEventKeySourceLocation] = @(index);
+//        [RRUMengLogger contentClickedWithParams:paramDict];
+
+    };
+    cell.slideBanner = ^(RRAllRankingModel * _Nonnull allRankingModel, RRSeniorCommentsImageModel * _Nonnull imageModel, NSInteger index) {
+        @strongify(self);
+//        NSLog(@"滑动排行榜cell的banner");
+//        //埋点
+//        NSMutableDictionary *paramDict = [NSMutableDictionary dictionary];
 //        paramDict[kRRUmengEventKeyExposurePage] = self.rr_UMemgPageName;
 ////        paramDict[kRRUmengEventKeyExposureChannel] = @"";
 //        paramDict[kRRUmengEventKeyExposureGroup] = self.rankingContainerModel.name;
 //        paramDict[kRRUmengEventKeyExposureSection] = self.rankingContentModel.name;
-//        paramDict[kRRUmengEventKeyContentName] = model.title ?: @"";
-//        paramDict[kRRUmengEventKeyContentID] = model.dramaId ?: @"";
-//        paramDict[kRRUmengEventKeyContentType] = kRRUmengEventVideoTypeValueLongVideo;
-//        [RRUMengLogger contentClickedWithParams:paramDict];
+//        paramDict[kRRUmengEventKeyContentName] = @"剧照";
+//        paramDict[kRRUmengEventKeyContentID] =  @"";
+//        paramDict[kRRUmengEventKeyContentType] = @"图片";
+//        paramDict[kRRUmengEventKeySeason] = model.dramaId;
+//        paramDict[kRRUmengEventKeyExposureLocation] = @(index);
+//        [RRUMengLogger contentExposureWithParams:paramDict];
     };
+    
+    cell.model = model;
+    cell.row = indexPath.item;
+    
 //    if (!model.rr_contentContext) {
 //        RRUmengContentContext *context = [[RRUmengContentContext alloc] init];
 //        context.contentName = model.title;

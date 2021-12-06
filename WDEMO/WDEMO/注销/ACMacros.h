@@ -210,7 +210,8 @@
 #define kCOLOR_979797      RGB(0x97, 0x97, 0x97)
 #define kCOLOR_A8A8A8      RGB(0xA8, 0xA8, 0xA8)
 #define kCOLOR_108F80      RGB(0x10, 0x8F, 0x80)
-#define kCOLOR_BCBCBC      RGB(0xBC, 0xBC, 0x80)
+#define kCOLOR_BCBCBC      RGB(0xBC, 0xBC, 0xBC)
+#define kCOLOR_2CD35B      RGB(0x2C, 0xD3, 0x5B)
 
 //辅助字体色 或者按钮线
 #define kCOLOR_dynamicProvider_CACBCC_616466       [UIColor colorWithDynamicProviderColor:@[RGB(0xCA, 0xCB, 0xCC),RGB(0x61, 0x64, 0x66)]]
@@ -325,6 +326,7 @@
 
 #define kCOLOR_222222 RGB(0x22, 0x22, 0x22)
 #define kCOLOR_dynamicProvider_222222_DADBDC      [UIColor colorWithDynamicProviderColor:@[RGB(0x22, 0x22, 0x22),RGB(0xda, 0xdb, 0xdc)]]
+#define kCOLOR_dynamicProvider_525252_DADBDC      [UIColor colorWithDynamicProviderColor:@[RGB(0x52, 0x52, 0x52),RGB(0xda, 0xdb, 0xdc)]]
 
 #define kCOLOR_dynamicProvider_AmwayPage_222222      [UIColor colorWithDynamicProviderColor:@[RGB(0x22, 0x22, 0x22),RGB(0x34, 0x34, 0x34)]]
 
@@ -430,6 +432,7 @@
 #define kCOLOR_88898F       RGB(0x88, 0x89, 0x8F)
 #define kCOLOR_DCB350       RGB(0xDC, 0xB3, 0x50)
 #define kCOLOR_F0F1F2       RGB(0xf0, 0xf1, 0xf2)
+#define kCOLOR_B4B4B4       RGB(0xB4, 0xB4, 0xB4)
 
 
 

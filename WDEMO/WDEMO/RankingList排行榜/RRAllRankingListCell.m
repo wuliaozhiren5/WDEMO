@@ -75,7 +75,7 @@
     }];
     
     [self.numberIconImgV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.coverImgV.mas_bottom).offset(8);
+        make.top.equalTo(self.coverImgV.mas_bottom).offset(7);
         make.leading.equalTo(@(leading));
         make.width.equalTo(@20);
         make.height.equalTo(@20);
@@ -86,8 +86,8 @@
     }];
     
     [self.countLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.numberIconImgV);
-        make.trailing.equalTo(@(trailing));
+        make.centerY.equalTo(self.numberIconImgV.mas_centerY).offset(1);
+        make.trailing.equalTo(@(-19));
         make.height.equalTo(@20);
     }];
     
@@ -126,11 +126,20 @@
     //    NSArray *array = @[@"4.jpg", @"4.jpg", @"4.jpg", @"4.jpg", @"4.jpg"];
     NSArray *imagesArr = [model.imageList valueForKeyPath:@"url"];
     self.banner.frame = CGRectMake(0, 0, KWidth - 124 - 16, 130);
-    self.banner.hidden = (imagesArr > 0) ? NO : YES;
+    self.banner.hidden = (imagesArr.count > 0) ? NO : YES;
+    @weakify(self)
+    self.banner.clickImage = ^(NSInteger index) {
+        @strongify(self)
+        [self clickImage:index];
+    };
+    self.banner.slideImage = ^(NSInteger index) {
+        @strongify(self)
+        [self slideImage:index];
+    };
     self.banner.imageArr = imagesArr;
-     
-    UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
-    [self.banner addGestureRecognizer:tapGesturRecognizer];
+
+//    UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
+//    [self.banner addGestureRecognizer:tapGesturRecognizer];
     
     self.titleLab.text = model.title;
     
@@ -154,14 +163,15 @@
     
     CGFloat currentHeight = 177;
     CGFloat spacing = 10;
-    
+
     NSArray *tagList = model.tagList;
     self.collectionView.data = tagList;
+    
     CGFloat collectionViewHeight = 0;
     if (tagList.count > 0) {
-        CGFloat minHeight = 30;
-        CGFloat maxHeight = 55;
-        if (self.collectionView.contentSize.height > maxHeight) {
+        CGFloat minHeight = 20;
+        CGFloat maxHeight = 45;
+        if (self.collectionView.contentSize.height >= maxHeight) {
             collectionViewHeight = maxHeight;
         } else {
             collectionViewHeight = minHeight;
@@ -175,7 +185,7 @@
 //    model.shortDesc = @"测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试";
     self.commentLab.hidden = YES;
     if (model.shortDesc && model.shortDesc.length > 0) {
-        NSString *nameStr = @"评论家共识：";
+        NSString *nameStr = @"看点：";
         NSString *commentStr = model.shortDesc;
         
         //初始化NSMutableAttributedString
@@ -187,7 +197,7 @@
         [attributedString appendAttributedString:attr0];
         
         NSString *str2 = commentStr;
-        NSDictionary *dictAttr2 = @{NSFontAttributeName:[UIFont systemFontOfSize:12], NSForegroundColorAttributeName:kCOLOR_dynamicProvider_222222_DADBDC};
+        NSDictionary *dictAttr2 = @{NSFontAttributeName:[UIFont systemFontOfSize:12], NSForegroundColorAttributeName:kCOLOR_dynamicProvider_525252_DADBDC};
         NSAttributedString *attr2 = [[NSAttributedString alloc]initWithString:str2 attributes:dictAttr2];
         [attributedString appendAttributedString:attr2];
         
@@ -212,7 +222,7 @@
         self.commentLab.hidden = NO;
         
         CGSize size = [self.commentLab sizeThatFits:CGSizeMake(KWidth - 16 * 2, MAXFLOAT)];
-        self.commentLab.frame = CGRectMake(16, currentHeight + spacing, KWidth - 16 * 2, size.height + 1);
+        self.commentLab.frame = CGRectMake(16, currentHeight + 14, KWidth - 16 * 2, size.height + 1);
         
         currentHeight = currentHeight + spacing + self.commentLab.frame.size.height;
     }
@@ -249,18 +259,32 @@
     self.numberIconImgV.image = IMAGENAME(imageName);
 }
 
-#pragma mark - 点击头像 点击昵称
-- (void)tap:(UITapGestureRecognizer *)tap {
+#pragma mark - 点击图片
+- (void)clickImage:(NSInteger)index {
+    RRSeniorCommentsImageModel *imageModel = [self.model.imageList objectOrNilAtIndex:index];
     if (self.clickBanner) {
-        self.clickBanner(self.model);
+        self.clickBanner(self.model, imageModel ,index);
     }
 }
+
+- (void)slideImage:(NSInteger)index {
+    RRSeniorCommentsImageModel *imageModel = [self.model.imageList objectOrNilAtIndex:index];
+    if (self.slideBanner) {
+        self.slideBanner(self.model, imageModel ,index);
+    }
+}
+ 
+//- (void)tap:(UITapGestureRecognizer *)tap {
+//    if (self.clickBanner) {
+//        self.clickBanner(self.model);
+//    }
+//}
 
 #pragma mark - 点击按钮
 - (void)clickFollowBtn:(UIButton *)btn {
     NSLog(@"点击了追剧按钮");
-//    WS(weakSelf);
-//    //追剧
+    WS(weakSelf);
+    //追剧
 //    [RRMJTool pushToLoginVCWith:[RRAppLinkManager sharedManager].currentTopNavigationController Block:^{
 //        BOOL isfous = weakSelf.model.favorite;
 //        NSString *idStr = weakSelf.model.dramaId;
@@ -282,11 +306,11 @@
     
     CGFloat currentHeight = 177;
     CGFloat spacing = 10;
-    
+
     //初始化collectionLayout
     UICollectionViewLeftAlignedLayout *collectionLayout = [[UICollectionViewLeftAlignedLayout alloc] init];
     collectionLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    collectionLayout.sectionInset = UIEdgeInsetsMake(5, 16, 5, 16);
+    collectionLayout.sectionInset = UIEdgeInsetsMake(0, 16, 0, 16);
     collectionLayout.estimatedItemSize = CGSizeZero;
     collectionLayout.minimumLineSpacing = 5;                        //水平间距
     collectionLayout.minimumInteritemSpacing = 5;
@@ -299,9 +323,9 @@
     
     CGFloat collectionViewHeight = 0;
     if (tagList.count > 0) {
-        CGFloat minHeight = 30;
-        CGFloat maxHeight = 55;
-        if (collectionView.contentSize.height > maxHeight) {
+        CGFloat minHeight = 20;
+        CGFloat maxHeight = 45;
+        if (collectionView.contentSize.height >= maxHeight) {
             collectionViewHeight = maxHeight;
         } else {
             collectionViewHeight = minHeight;
@@ -321,7 +345,7 @@
         commentLab.textColor = kCOLOR_88898F;
         commentLab.numberOfLines = 2;
         
-        NSString *nameStr = @"评论家共识：";
+        NSString *nameStr = @"看点：";
         NSString *commentStr = model.shortDesc;
         
         //初始化NSMutableAttributedString
@@ -333,7 +357,7 @@
         [attributedString appendAttributedString:attr0];
         
         NSString *str2 = commentStr;
-        NSDictionary *dictAttr2 = @{NSFontAttributeName:[UIFont systemFontOfSize:12], NSForegroundColorAttributeName:kCOLOR_dynamicProvider_222222_DADBDC};
+        NSDictionary *dictAttr2 = @{NSFontAttributeName:[UIFont systemFontOfSize:12], NSForegroundColorAttributeName:kCOLOR_dynamicProvider_525252_DADBDC};
         NSAttributedString *attr2 = [[NSAttributedString alloc]initWithString:str2 attributes:dictAttr2];
         [attributedString appendAttributedString:attr2];
         
@@ -358,12 +382,12 @@
         commentLab.hidden = NO;
         
         CGSize size = [commentLab sizeThatFits:CGSizeMake(KWidth - 16 * 2, MAXFLOAT)];
-        commentLab.frame = CGRectMake(16, currentHeight + spacing, KWidth - 16 * 2, size.height + 1);
+        commentLab.frame = CGRectMake(16, currentHeight + 14, KWidth - 16 * 2, size.height + 1);
         
         currentHeight = currentHeight + spacing + commentLab.frame.size.height;
     }
     
-    return currentHeight + 15;
+    return currentHeight + 14;
 }
 
 #pragma mark - lazy
@@ -378,6 +402,8 @@
         _coverImgV.layer.masksToBounds = YES;
         _coverImgV.userInteractionEnabled = YES;
         _coverImgV.image = IMAGENAME(@"ranking_cover");
+        _coverImgV.backgroundColor = [UIColor grayColor];
+
     }
     return _coverImgV;
 }
@@ -402,7 +428,7 @@
         _photoView.frame = CGRectMake(0, 0, KWidth - 124 - 16, 130);
         _photoView.layer.cornerRadius = 8;
         _photoView.layer.masksToBounds = YES;
-        
+        _photoView.backgroundColor = [UIColor grayColor];
     }
     return _photoView;
 }
@@ -489,7 +515,7 @@
         //初始化collectionLayout
         UICollectionViewLeftAlignedLayout *collectionLayout = [[UICollectionViewLeftAlignedLayout alloc] init];
         collectionLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        collectionLayout.sectionInset = UIEdgeInsetsMake(5, 16, 5, 16);
+        collectionLayout.sectionInset = UIEdgeInsetsMake(0, 16, 0, 16);
         collectionLayout.estimatedItemSize = CGSizeZero;
         collectionLayout.minimumLineSpacing = 5;                        //水平间距
         collectionLayout.minimumInteritemSpacing = 5;
@@ -521,9 +547,9 @@
     return _line;
 }
 
-- (RRRankingImageBanner *)banner {
+- (RRAllRankingImageBanner *)banner {
     if (!_banner) {
-        _banner = [[RRRankingImageBanner alloc] initWithFrame:CGRectMake(0, 0, KWidth - 124 - 16, 130)];
+        _banner = [[RRAllRankingImageBanner alloc] initWithFrame:CGRectMake(0, 0, KWidth - 124 - 16, 130)];
     }
     return _banner;
 }

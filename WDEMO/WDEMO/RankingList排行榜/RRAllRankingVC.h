@@ -12,10 +12,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RRAllRankingVC : BaseViewController
 
-//组件id
-@property (nonatomic, copy) NSString *containerId;
 //内容id
-@property (nonatomic, copy) NSString *contentId;
+//非必填 榜单ID
+//@property (nonatomic, copy) NSString *contentId;
+@property (nonatomic, copy) NSString *topId;
 
 @end
 

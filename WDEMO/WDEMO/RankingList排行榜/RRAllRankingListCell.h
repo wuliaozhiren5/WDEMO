@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UICollectionViewLeftAlignedLayout.h"
 #import "RRAllRankingTagCollectionView.h"
-#import "RRRankingImageBanner.h"
+#import "RRAllRankingImageBanner.h"
 #import "RRAllRankingListModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
@@ -23,7 +23,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic ,strong)UIView *photoView;
 @property(nonatomic ,strong)UIImageView *photoBackgroundImgV;
 
-@property(nonatomic ,strong)RRRankingImageBanner *banner;
+@property(nonatomic ,strong)RRAllRankingImageBanner *banner;
 
 //1，2，3，---------50（top50）背景图
 @property(nonatomic ,strong)UIImageView *numberIconImgV;
@@ -44,7 +44,10 @@ NS_ASSUME_NONNULL_BEGIN
 //线底部的线
 @property(nonatomic, strong)UIView *line;
 
-@property(nonatomic, copy) void (^clickBanner)(RRAllRankingModel *allRankingModel);
+//滑动
+@property(nonatomic, copy) void (^slideBanner)(RRAllRankingModel *allRankingModel, RRSeniorCommentsImageModel *imageModel, NSInteger index);
+//点击
+@property(nonatomic, copy) void (^clickBanner)(RRAllRankingModel *allRankingModel, RRSeniorCommentsImageModel *imageModel, NSInteger index);
 
 @property(nonatomic, strong)RRAllRankingModel *model;
 

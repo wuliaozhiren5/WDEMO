@@ -36,7 +36,7 @@
     _model = model;
     self.titleLab.text = model.name;
     if (model.isSpecialTag) {
-        self.contentView.backgroundColor = [kCOLOR_108F80 colorWithAlphaComponent:0.12];
+        self.contentView.backgroundColor = [kCOLOR_2CD35B colorWithAlphaComponent:0.12];
         self.titleLab.textColor = kCOLOR_108F80;
     } else {
         self.contentView.backgroundColor = [kCOLOR_A8A8A8 colorWithAlphaComponent:0.12];

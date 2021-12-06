@@ -91,6 +91,8 @@
 		F50E841D25BEDDE6009767FE /* SearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F50E841C25BEDDE6009767FE /* SearchBar.m */; };
 		F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F511C70B25B6918800581063 /* UIView+Shadow.m */; };
 		F5125756269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md in Resources */ = {isa = PBXBuildFile; fileRef = F5125755269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md */; };
+		F5130E882759FF720020E2EF /* RRAllRankingHomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5130E862759FF710020E2EF /* RRAllRankingHomeModel.m */; };
+		F5130E8B275A050E0020E2EF /* RRAllRankingPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F5130E8A275A050E0020E2EF /* RRAllRankingPageControl.m */; };
 		F51535EF259B2960007E3416 /* UserEditBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51535EE259B2960007E3416 /* UserEditBar.m */; };
 		F516E5342683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md in Resources */ = {isa = PBXBuildFile; fileRef = F516E5332683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md */; };
 		F518ED3725E8DDAC00260125 /* 图片压缩.md in Resources */ = {isa = PBXBuildFile; fileRef = F518ED3625E8DDAC00260125 /* 图片压缩.md */; };
@@ -102,7 +104,7 @@
 		F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */ = {isa = PBXBuildFile; fileRef = F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */; };
 		F51F95192721565000D4B56B /* RRAllRankingListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95182721565000D4B56B /* RRAllRankingListHeader.m */; };
 		F51F951C2721591500D4B56B /* RRAllRankingTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */; };
-		F51F95372721762200D4B56B /* RRRankingImageBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95362721762200D4B56B /* RRRankingImageBanner.m */; };
+		F51F95372721762200D4B56B /* RRAllRankingImageBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95362721762200D4B56B /* RRAllRankingImageBanner.m */; };
 		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
 		F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A098725B6EBE2008BDDEE /* SearchBarController.m */; };
 		F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */ = {isa = PBXBuildFile; fileRef = F52A383725C3B14700C6909E /* 新手引导页GuideView.md */; };
@@ -616,6 +618,10 @@
 		F511C70A25B6918800581063 /* UIView+Shadow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
 		F511C70B25B6918800581063 /* UIView+Shadow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
 		F5125755269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS应用内跳转到系统设置页面.md"; sourceTree = "<group>"; };
+		F5130E862759FF710020E2EF /* RRAllRankingHomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingHomeModel.m; sourceTree = "<group>"; };
+		F5130E872759FF710020E2EF /* RRAllRankingHomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRAllRankingHomeModel.h; sourceTree = "<group>"; };
+		F5130E89275A050E0020E2EF /* RRAllRankingPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingPageControl.h; sourceTree = "<group>"; };
+		F5130E8A275A050E0020E2EF /* RRAllRankingPageControl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingPageControl.m; sourceTree = "<group>"; };
 		F51535ED259B2960007E3416 /* UserEditBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserEditBar.h; sourceTree = "<group>"; };
 		F51535EE259B2960007E3416 /* UserEditBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserEditBar.m; sourceTree = "<group>"; };
 		F516E5332683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "按钮选中这时时候图片闪烁问题Selected.md"; sourceTree = "<group>"; };
@@ -632,8 +638,8 @@
 		F51F95182721565000D4B56B /* RRAllRankingListHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListHeader.m; sourceTree = "<group>"; };
 		F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingTagCell.h; sourceTree = "<group>"; };
 		F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingTagCell.m; sourceTree = "<group>"; };
-		F51F95352721762200D4B56B /* RRRankingImageBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRRankingImageBanner.h; sourceTree = "<group>"; };
-		F51F95362721762200D4B56B /* RRRankingImageBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRRankingImageBanner.m; sourceTree = "<group>"; };
+		F51F95352721762200D4B56B /* RRAllRankingImageBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingImageBanner.h; sourceTree = "<group>"; };
+		F51F95362721762200D4B56B /* RRAllRankingImageBanner.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingImageBanner.m; sourceTree = "<group>"; };
 		F5200DC92531536E004637DD /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		F5200DCA2531536E004637DD /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		F52A098625B6EBE2008BDDEE /* SearchBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBarController.h; sourceTree = "<group>"; };
@@ -2651,14 +2657,18 @@
 				F51F95182721565000D4B56B /* RRAllRankingListHeader.m */,
 				F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */,
 				F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */,
-				F51F95352721762200D4B56B /* RRRankingImageBanner.h */,
-				F51F95362721762200D4B56B /* RRRankingImageBanner.m */,
+				F51F95352721762200D4B56B /* RRAllRankingImageBanner.h */,
+				F51F95362721762200D4B56B /* RRAllRankingImageBanner.m */,
 				F5F6AEF02744A6100074B26D /* RRAllRankingContainerModel.h */,
 				F5F6AEF12744A6100074B26D /* RRAllRankingContainerModel.m */,
 				F5F6AEF22744A6100074B26D /* RRAllRankingContentModel.h */,
 				F5F6AEED2744A60F0074B26D /* RRAllRankingContentModel.m */,
 				F5F6AEEE2744A6100074B26D /* RRAllRankingListModel.h */,
 				F5F6AEEF2744A6100074B26D /* RRAllRankingListModel.m */,
+				F5130E872759FF710020E2EF /* RRAllRankingHomeModel.h */,
+				F5130E862759FF710020E2EF /* RRAllRankingHomeModel.m */,
+				F5130E89275A050E0020E2EF /* RRAllRankingPageControl.h */,
+				F5130E8A275A050E0020E2EF /* RRAllRankingPageControl.m */,
 			);
 			path = "RankingList排行榜";
 			sourceTree = "<group>";
@@ -3223,6 +3233,7 @@
 				F50E841D25BEDDE6009767FE /* SearchBar.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
 				F5409A9926B1051B0042F29D /* RRMJTool.m in Sources */,
+				F5130E8B275A050E0020E2EF /* RRAllRankingPageControl.m in Sources */,
 				F51F951C2721591500D4B56B /* RRAllRankingTagCell.m in Sources */,
 				F5AC7C4D27102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */,
 				F5AC7C4427102CBE00533793 /* RRSeasonSeniorCommentsTextImageCell.m in Sources */,
@@ -3397,7 +3408,7 @@
 				F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
-				F51F95372721762200D4B56B /* RRRankingImageBanner.m in Sources */,
+				F51F95372721762200D4B56B /* RRAllRankingImageBanner.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
 				F5FB5D7B263AB2C400155BFE /* NSString+Util.m in Sources */,
 				F5AC7C4727102CBE00533793 /* RRSeasonSeniorCommentsTextCell.m in Sources */,
@@ -3422,6 +3433,7 @@
 				F5D4EB5825DF6A6E00F807EF /* MainTouchTableTableView.m in Sources */,
 				F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */,
 				F5CA13DA26B2A14A00D8A7AE /* LBNavigationController.m in Sources */,
+				F5130E882759FF720020E2EF /* RRAllRankingHomeModel.m in Sources */,
 				F50440D82625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m in Sources */,
 				F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */,
 				F5AC7C4827102CBE00533793 /* RRSeasonSeniorCommentsHearder.m in Sources */,
