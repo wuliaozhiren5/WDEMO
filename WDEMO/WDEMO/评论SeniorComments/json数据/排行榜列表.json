@@ -1,5 +1,5 @@
 {
-    "requestId": "70ef6fef2d3849719cbf47c4893e2c92",
+    "requestId": "01eb0740a3c545f597c676c71a60dd36",
     "code": "0000",
     "msg": "Success",
     "recordsTotal": null,
@@ -10,7 +10,7 @@
             "dramaId": 38331,
             "title": "华灯初上",
             "normalTagList": ["2021", "中国台湾", "剧情", "爱情", "犯罪"],
-            "specialTagList": ["豪华卡司", "女性群像", "美术颜值五星", "女性的救赎与光辉"],
+            "specialTagList": ["豪华卡司", "女性群像", "美术颜值五星", "悬疑"],
             "cover": "http://img.rr.tv/img/img/20211129/o_5efee05ed7f64c9fa50cfa40beb2c971.jpg",
             "imageList": [{
                 "url": "http://img.rr.tv/img/img/20211129/o_a094919ad1a246bdb03c75f13ea33769.png",
@@ -33,40 +33,8 @@
                 "width": 800,
                 "height": 443
             }],
-            "sortValue": "65248",
+            "sortValue": "72969",
             "shortDesc": "由一起命案揭开序幕，道出台北日式酒店“光”小姐们的爱恨情仇，从主演到配角，无疑是近年来台剧最强阵容！",
-            "sortType": "HOT",
-            "favorite": null,
-            "total": 50
-        }, {
-            "dramaId": 38257,
-            "title": "成人练习生",
-            "normalTagList": ["2021", "韩国", "喜剧", "爱情"],
-            "specialTagList": ["校园爱情", "温暖", "俊男靓女", "无厘头搞笑", "青春"],
-            "cover": "http://img.rr.tv/img/img/20211124/o_52ee14dffb374715bb1d76c52df27a2c.jpg",
-            "imageList": [{
-                "url": "http://img.rr.tv/img/img/20211130/o_483ec519627a4088bc8cd4f3604ecb1d.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_a115b4c98107483ebe94ad8f8e39c0c7.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_644a88fce38f4b31a6458d0c53467f9e.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_c5eb809df5414d72b7762c6bf0a08910.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_f1de03bdc2864a0fab14169e0db4869a.png",
-                "width": 800,
-                "height": 443
-            }],
-            "sortValue": "35860",
-            "shortDesc": "只有练习才是出路！血气旺盛的青少年们的粉红色喜剧。度过粗鲁季节的18岁，脸红的青春们的苦恼和爱情引发Z世代们的共鸣。",
             "sortType": "HOT",
             "favorite": null,
             "total": 50
@@ -74,7 +42,7 @@
             "dramaId": 34552,
             "title": "是朋友还是男友",
             "normalTagList": ["2021", "泰国", "剧情", "爱情", "同性"],
-            "specialTagList": ["竹马冤家", "OhmNanon", "学霸x校霸"],
+            "specialTagList": ["竹马冤家", "OhmNanon", "学霸x校霸", "强强", "校园"],
             "cover": "http://img.rr.tv/img/img/20211125/o_a2cbe7006bcf4e1d931199ee014f8820.jpg",
             "imageList": [{
                 "url": "http://img.rr.tv/img/img/20211118/o_e3c2958bc1b54912abcd7d67713ba4e1.png",
@@ -97,7 +65,7 @@
                 "width": 799,
                 "height": 442
             }],
-            "sortValue": "26813",
+            "sortValue": "39312",
             "shortDesc": "作为门对门“世仇”的儿子Pat和Pran，两人从冤家到朋友，再到男友！没想到南农也下海了！泰迪至此有了cp",
             "sortType": "HOT",
             "favorite": null,
@@ -129,168 +97,40 @@
                 "width": 800,
                 "height": 443
             }],
-            "sortValue": "23207",
+            "sortValue": "35119",
             "shortDesc": "韩孝周&朴炯植共同演绎的丧尸题材剧，当丧尸也与人类一样，是个鲜活的肉体，你会如何选择？",
             "sortType": "HOT",
             "favorite": null,
             "total": 50
         }, {
-            "dramaId": 38142,
-            "title": "鹰眼",
-            "normalTagList": ["2021", "美国", "剧情", "动作", "科幻", "悬疑", "犯罪", "冒险"],
-            "specialTagList": ["超级英雄", "漫画改编", "复仇冒险"],
-            "cover": "http://img.rr.tv/img/img/20211018/o_ac62d31417f448d9b79c099a5f0b777f.jpg",
-            "imageList": [{
-                "url": "http://img.rr.tv/img/img/20211130/o_7764787421f34a21b4ed5604de11de52.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_f178fe483d684831bab7de0459d5327e.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_43f3f241e4cb4ce6b50e0f104d2f8078.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_0073233c595544ea95875f7822067ece.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_d5999f87c9574d4a9516c261df70ad7f.png",
-                "width": 800,
-                "height": 443
-            }],
-            "sortValue": "22550",
-            "shortDesc": "漫威英雄鹰眼的传承。",
-            "sortType": "HOT",
-            "favorite": null,
-            "total": 50
-        }, {
-            "dramaId": 11560,
-            "title": "孤单又灿烂的神-鬼怪",
-            "normalTagList": ["2016", "韩国", "爱情", "奇幻", "剧情"],
-            "specialTagList": ["鬼怪系列神剧", "唯美", "冬日必刷韩剧"],
-            "cover": "http://img.rr.tv/img/img/20210926/o_ba1010f864334a9c9374fce7686c5731.jpg",
-            "imageList": [{
-                "url": "http://img.rr.tv/img/img/20211025/o_7bd8d10e004247ef921a2ba00c371d19.jpg",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211025/o_f13281d94767419997c3ccf1b5e8cb05.jpeg",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211025/o_1dc01ebbb688486daa1b731f1754da13.jpg",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211025/o_27973de96ec64585940a5effd2fe44ef.jpg",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211025/o_4559c09d6549427fbc2bab69b0dcfd4f.jpeg",
-                "width": 800,
-                "height": 443
-            }],
-            "sortValue": "18558",
-            "shortDesc": "经久不衰的经典之作，孔刘×金高银，你是我的鬼怪新娘。",
-            "sortType": "HOT",
-            "favorite": null,
-            "total": 50
-        }, {
-            "dramaId": 37250,
-            "title": "地狱公使",
-            "normalTagList": ["2021", "韩国", "奇幻", "悬疑"],
-            "specialTagList": ["宗教", "天堂地狱", "超现实题材", "人性", "刘亚仁"],
-            "cover": "http://img.rr.tv/img/img/20211117/o_d2e5a530102742298eb8c3e0ed7bfc82.jpg",
-            "imageList": [{
-                "url": "http://img.rr.tv/img/img/20211119/o_5229af1c82654c6398000c501dfb0224.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211119/o_aff64df38d494223b7acce7881d34ebf.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211022/o_2e6cc80570be4ad687a9d179e2d83aff.jpg",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211022/o_5a56f36c19ea4b4a869867efb0d58492.jpg",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211022/o_7ec3e6ab8c124226a40274faa5245bef.jpg",
-                "width": 800,
-                "height": 443
-            }],
-            "sortValue": "16248",
-            "shortDesc": "刘亚仁主演惊悚奇幻漫改，地狱使者施行血腥判罪，是杀人？还是神的审判？",
-            "sortType": "HOT",
-            "favorite": null,
-            "total": 50
-        }, {
-            "dramaId": 37844,
-            "title": "酒鬼城市女人们",
+            "dramaId": 38257,
+            "title": "成人练习生",
             "normalTagList": ["2021", "韩国", "喜剧", "爱情"],
-            "specialTagList": ["友情", "30岁", "搞笑", "治愈"],
-            "cover": "http://img.rr.tv/img/img/20211027/o_d61b4cce2fa1436bb0a34c75ecd3e45b.jpg",
+            "specialTagList": ["校园爱情", "温暖", "俊男靓女", "无厘头搞笑", "青春"],
+            "cover": "http://img.rr.tv/img/img/20211124/o_52ee14dffb374715bb1d76c52df27a2c.jpg",
             "imageList": [{
-                "url": "http://img.rr.tv/img/img/20211110/o_bdffba945c5d4d1b826de4c2077328e3.png",
-                "width": 639,
-                "height": 353
-            }, {
-                "url": "http://img.rr.tv/img/img/20211110/o_8d0b57e9f5bc475794c0bcca04a60643.png",
-                "width": 651,
-                "height": 360
-            }, {
-                "url": "http://img.rr.tv/img/img/20211110/o_87f0d71720c04d09a0d1c6e821f9bc30.png",
+                "url": "http://img.rr.tv/img/img/20211130/o_644a88fce38f4b31a6458d0c53467f9e.png",
                 "width": 800,
                 "height": 443
             }, {
-                "url": "http://img.rr.tv/img/img/20211110/o_358edbe53dbe40b586933d8ebf3e5e09.png",
+                "url": "http://img.rr.tv/img/img/20211130/o_483ec519627a4088bc8cd4f3604ecb1d.png",
                 "width": 800,
                 "height": 443
             }, {
-                "url": "http://img.rr.tv/img/img/20211110/o_21d326d2913b48cebc723281821ed158.png",
+                "url": "http://img.rr.tv/img/img/20211130/o_c5eb809df5414d72b7762c6bf0a08910.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211130/o_a115b4c98107483ebe94ad8f8e39c0c7.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211130/o_f1de03bdc2864a0fab14169e0db4869a.png",
                 "width": 800,
                 "height": 443
             }],
-            "sortValue": "15050",
-            "shortDesc": "李先彬+韩善花+郑恩地三个美疯女酒鬼，喝酒治愈轻松搞笑超解压！",
-            "sortType": "HOT",
-            "favorite": null,
-            "total": 50
-        }, {
-            "dramaId": 11505,
-            "title": "欧若拉公主",
-            "normalTagList": ["2013", "韩国", "爱情"],
-            "specialTagList": ["浪漫", "治愈", "轻松", "生活"],
-            "cover": "http://img.rr.tv/seasonCover/20210415/o_1618482553969.jpg",
-            "imageList": [{
-                "url": "http://img.rr.tv/img/img/20211130/o_4a969ff30c2444649e98ac1a90ee3a71.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_5d5876d368794fa7a3608b96efdecdef.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_9e663eec374941f7a39728ba1f2df021.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_2462b44bcb8f49639d4b1008a59ebb9d.png",
-                "width": 800,
-                "height": 443
-            }, {
-                "url": "http://img.rr.tv/img/img/20211130/o_e2741a321fc1475a99f01b174cb4360b.png",
-                "width": 800,
-                "height": 443
-            }],
-            "sortValue": "14393",
-            "shortDesc": "落难公主的浪漫治愈之旅。",
+            "sortValue": "34984",
+            "shortDesc": "\uD83D\uDD1E血气旺盛的青少年们的大尺度粉红喜剧。青梅竹马双向暗恋又纯又欲！kswl！",
             "sortType": "HOT",
             "favorite": null,
             "total": 50
@@ -321,8 +161,160 @@
                 "width": 800,
                 "height": 443
             }],
-            "sortValue": "13508",
+            "sortValue": "26842",
             "shortDesc": "是谁袭击了达顿一家的答案，特别是谁将炸弹送到贝丝的办公室以及谁射杀了约翰。这些谜题都即将被解开……",
+            "sortType": "HOT",
+            "favorite": null,
+            "total": 50
+        }, {
+            "dramaId": 37899,
+            "title": "某一天",
+            "normalTagList": ["2021", "韩国", "犯罪", "悬疑"],
+            "specialTagList": ["高能", "快节奏", "冤案", "真相"],
+            "cover": "http://img.rr.tv/img/img/20211129/o_d327a22838864a36bf00833b613cb350.jpg",
+            "imageList": [{
+                "url": "http://img.rr.tv/img/img/20211110/o_508bc16f54b04e44ad59d6c35f4134a9.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211110/o_05064c7037e245a086dcf4fbc1f6940d.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211110/o_24036d6559a44c15bf29a4a1941362ff.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211110/o_671af4c7292447d1ab6f45b7bad90783.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211110/o_d195c72d97694132bfa13280396264c1.png",
+                "width": 800,
+                "height": 443
+            }],
+            "sortValue": "20867",
+            "shortDesc": "金秀贤新作！BBC《司法正义》改编，集集高能！",
+            "sortType": "HOT",
+            "favorite": null,
+            "total": 50
+        }, {
+            "dramaId": 36276,
+            "title": "纸钞屋 第五季",
+            "normalTagList": ["2021", "西班牙", "剧情", "动作", "悬疑", "犯罪"],
+            "specialTagList": ["高智商犯罪", "人性", "热血警匪"],
+            "cover": "http://img.rr.tv/img/img/20210923/o_8eddccd5edb24f38a36ca52aba91df25.jpg",
+            "imageList": [{
+                "url": "http://img.rr.tv/img/img/20211109/o_b992c759559b459da77f38168661846f.png",
+                "width": 669,
+                "height": 370
+            }, {
+                "url": "http://img.rr.tv/img/img/20211109/o_c2b99c55ab134cf9a63bc560f4d7f617.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211109/o_9c1baa6275524d3784d846876a053f18.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211109/o_26d05e528db64482bcfb8ec35c7a9d25.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211109/o_5b63cf6cf2a3406fbf967cde3e7eb971.png",
+                "width": 800,
+                "height": 443
+            }],
+            "sortValue": "20490",
+            "shortDesc": "史上最火西班牙剧！神秘“教授”和8名罪犯打劫马德里铸币厂，印钞24亿欧！",
+            "sortType": "HOT",
+            "favorite": null,
+            "total": 50
+        }, {
+            "dramaId": 11560,
+            "title": "孤单又灿烂的神-鬼怪",
+            "normalTagList": ["2016", "韩国", "爱情", "奇幻", "剧情"],
+            "specialTagList": ["鬼怪系列神剧", "唯美", "冬日必刷韩剧"],
+            "cover": "http://img.rr.tv/img/img/20210926/o_ba1010f864334a9c9374fce7686c5731.jpg",
+            "imageList": [{
+                "url": "http://img.rr.tv/img/img/20211025/o_7bd8d10e004247ef921a2ba00c371d19.jpg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_f13281d94767419997c3ccf1b5e8cb05.jpeg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_1dc01ebbb688486daa1b731f1754da13.jpg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_27973de96ec64585940a5effd2fe44ef.jpg",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211025/o_4559c09d6549427fbc2bab69b0dcfd4f.jpeg",
+                "width": 800,
+                "height": 443
+            }],
+            "sortValue": "19638",
+            "shortDesc": "经久不衰的经典之作，孔刘×金高银，你是我的鬼怪新娘。",
+            "sortType": "HOT",
+            "favorite": null,
+            "total": 50
+        }, {
+            "dramaId": 38079,
+            "title": "现在，正在分手中",
+            "normalTagList": ["2021", "韩国", "爱情"],
+            "specialTagList": ["年下恋", "时尚", "职场", "宋慧乔"],
+            "cover": "http://img.rr.tv/img/img/20211109/o_192efd234628444083064d289753211e.jpg",
+            "imageList": [{
+                "url": "http://img.rr.tv/img/img/20211115/o_04c427e13cb14bc6ba22b255df9928f5.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211115/o_543f27851b5f41b8840b7e939ceb4bc3.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211115/o_01f7d6e16deb4180969ff3ccb0540213.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211115/o_b64f44d848d6470ebffe3cc79562735e.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211115/o_181aa58a008d4ed2bee7c64e353fbf87.png",
+                "width": 800,
+                "height": 443
+            }],
+            "sortValue": "19434",
+            "shortDesc": "宋慧乔X张基龙的深情年下恋，由《迷雾》编剧济仁执笔，《来自星星的你》拍摄组的李吉福导演执导。",
+            "sortType": "HOT",
+            "favorite": null,
+            "total": 50
+        }, {
+            "dramaId": 34778,
+            "title": "蔷薇色的恋人们",
+            "normalTagList": ["2014", "韩国", "剧情", "爱情"],
+            "specialTagList": ["青春", "甜虐", "浪漫喜剧", "高颜值"],
+            "cover": "http://img.rr.tv/img/img/20210609/o_2f01691a0d244022ac47f54531b46646.jpg",
+            "imageList": [{
+                "url": "http://img.rr.tv/img/img/20211126/o_bf62bc46f9754effaa851521f8e70309.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211126/o_cd579f8522bb4911964f54d271d6dad9.png",
+                "width": 800,
+                "height": 443
+            }, {
+                "url": "http://img.rr.tv/img/img/20211126/o_7eaf8d853f124b289db0573d064551b6.png",
+                "width": 800,
+                "height": 443
+            }],
+            "sortValue": "18318",
+            "shortDesc": "大学生小情侣突然变成了父母，寻找幸福的答案...",
             "sortType": "HOT",
             "favorite": null,
             "total": 50
