@@ -307,6 +307,8 @@
 		F5C1168C260CA20F001F4A74 /* UILabel+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C1168B260CA20F001F4A74 /* UILabel+Util.m */; };
 		F5C7261824E1258000B16639 /* ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261724E1257F00B16639 /* ListModel.m */; };
 		F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7261A24E1317B00B16639 /* ListModelCell.m */; };
+		F5C7488B27605E110025448F /* RRAllRankingSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7488827605E100025448F /* RRAllRankingSwitchView.m */; };
+		F5C7488C27605E110025448F /* RRAllRankingSwitchViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C7488A27605E100025448F /* RRAllRankingSwitchViewCell.m */; };
 		F5CA135426B25DA200D8A7AE /* 网络图片403.md in Resources */ = {isa = PBXBuildFile; fileRef = F5CA135326B25DA200D8A7AE /* 网络图片403.md */; };
 		F5CA135E26B2820000D8A7AE /* 自定义TabBar.md in Resources */ = {isa = PBXBuildFile; fileRef = F5CA135D26B2820000D8A7AE /* 自定义TabBar.md */; };
 		F5CA13A126B2928700D8A7AE /* ic_bottombar_me_h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5CA139126B2928700D8A7AE /* ic_bottombar_me_h@2x.png */; };
@@ -977,6 +979,10 @@
 		F5C7261724E1257F00B16639 /* ListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModel.m; sourceTree = "<group>"; };
 		F5C7261924E1317B00B16639 /* ListModelCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListModelCell.h; sourceTree = "<group>"; };
 		F5C7261A24E1317B00B16639 /* ListModelCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListModelCell.m; sourceTree = "<group>"; };
+		F5C7488727605E100025448F /* RRAllRankingSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRAllRankingSwitchView.h; sourceTree = "<group>"; };
+		F5C7488827605E100025448F /* RRAllRankingSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingSwitchView.m; sourceTree = "<group>"; };
+		F5C7488927605E100025448F /* RRAllRankingSwitchViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRAllRankingSwitchViewCell.h; sourceTree = "<group>"; };
+		F5C7488A27605E100025448F /* RRAllRankingSwitchViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingSwitchViewCell.m; sourceTree = "<group>"; };
 		F5CA135326B25DA200D8A7AE /* 网络图片403.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "网络图片403.md"; sourceTree = "<group>"; };
 		F5CA135D26B2820000D8A7AE /* 自定义TabBar.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自定义TabBar.md"; sourceTree = "<group>"; };
 		F5CA139126B2928700D8A7AE /* ic_bottombar_me_h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bottombar_me_h@2x.png"; sourceTree = "<group>"; };
@@ -2643,32 +2649,36 @@
 		F5DC862C27155FE600EED8D5 /* RankingList排行榜 */ = {
 			isa = PBXGroup;
 			children = (
-				F5596C73271EA2FE007D9FE9 /* RRAllRankingVC.h */,
-				F5596C74271EA2FE007D9FE9 /* RRAllRankingVC.m */,
-				F5596C76271EA30E007D9FE9 /* RRAllRankingSubVC.h */,
-				F5596C77271EA30E007D9FE9 /* RRAllRankingSubVC.m */,
-				F501FE9C271FC13400FE2F3B /* RRAllRankingListVC.h */,
-				F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */,
-				F501FEA9272016A200FE2F3B /* RRAllRankingListCell.h */,
-				F501FEAA272016A200FE2F3B /* RRAllRankingListCell.m */,
-				F5F6AF07274506040074B26D /* RRAllRankingTagCollectionView.h */,
-				F5F6AF06274506040074B26D /* RRAllRankingTagCollectionView.m */,
-				F51F95172721565000D4B56B /* RRAllRankingListHeader.h */,
-				F51F95182721565000D4B56B /* RRAllRankingListHeader.m */,
-				F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */,
-				F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */,
-				F51F95352721762200D4B56B /* RRAllRankingImageBanner.h */,
-				F51F95362721762200D4B56B /* RRAllRankingImageBanner.m */,
 				F5F6AEF02744A6100074B26D /* RRAllRankingContainerModel.h */,
 				F5F6AEF12744A6100074B26D /* RRAllRankingContainerModel.m */,
 				F5F6AEF22744A6100074B26D /* RRAllRankingContentModel.h */,
 				F5F6AEED2744A60F0074B26D /* RRAllRankingContentModel.m */,
-				F5F6AEEE2744A6100074B26D /* RRAllRankingListModel.h */,
-				F5F6AEEF2744A6100074B26D /* RRAllRankingListModel.m */,
 				F5130E872759FF710020E2EF /* RRAllRankingHomeModel.h */,
 				F5130E862759FF710020E2EF /* RRAllRankingHomeModel.m */,
+				F51F95352721762200D4B56B /* RRAllRankingImageBanner.h */,
+				F51F95362721762200D4B56B /* RRAllRankingImageBanner.m */,
+				F501FEA9272016A200FE2F3B /* RRAllRankingListCell.h */,
+				F501FEAA272016A200FE2F3B /* RRAllRankingListCell.m */,
+				F51F95172721565000D4B56B /* RRAllRankingListHeader.h */,
+				F51F95182721565000D4B56B /* RRAllRankingListHeader.m */,
+				F5F6AEEE2744A6100074B26D /* RRAllRankingListModel.h */,
+				F5F6AEEF2744A6100074B26D /* RRAllRankingListModel.m */,
+				F501FE9C271FC13400FE2F3B /* RRAllRankingListVC.h */,
+				F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */,
 				F5130E89275A050E0020E2EF /* RRAllRankingPageControl.h */,
 				F5130E8A275A050E0020E2EF /* RRAllRankingPageControl.m */,
+				F5596C76271EA30E007D9FE9 /* RRAllRankingSubVC.h */,
+				F5596C77271EA30E007D9FE9 /* RRAllRankingSubVC.m */,
+				F5C7488727605E100025448F /* RRAllRankingSwitchView.h */,
+				F5C7488827605E100025448F /* RRAllRankingSwitchView.m */,
+				F5C7488927605E100025448F /* RRAllRankingSwitchViewCell.h */,
+				F5C7488A27605E100025448F /* RRAllRankingSwitchViewCell.m */,
+				F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */,
+				F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */,
+				F5F6AF07274506040074B26D /* RRAllRankingTagCollectionView.h */,
+				F5F6AF06274506040074B26D /* RRAllRankingTagCollectionView.m */,
+				F5596C73271EA2FE007D9FE9 /* RRAllRankingVC.h */,
+				F5596C74271EA2FE007D9FE9 /* RRAllRankingVC.m */,
 			);
 			path = "RankingList排行榜";
 			sourceTree = "<group>";
@@ -3282,6 +3292,7 @@
 				F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */,
 				F593574825F7466A008CF0D8 /* OneViewTableTableViewController.m in Sources */,
 				A4F2C0A024B97FD5005922B1 /* ViewController1.m in Sources */,
+				F5C7488B27605E110025448F /* RRAllRankingSwitchView.m in Sources */,
 				F57A6A7A24CFCA9700D51E01 /* EnterMessageCell.m in Sources */,
 				F5F3664924C8287C008BA221 /* ChatKit.m in Sources */,
 				A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */,
@@ -3316,6 +3327,7 @@
 				F50440D32625A06B00834547 /* RRSeasonSeniorCommentsInputBar.m in Sources */,
 				F563DADF25AC26790079474B /* WMProgressView.m in Sources */,
 				F5F5B44825FA1DFE0069491B /* RRActorInfoCell.m in Sources */,
+				F5C7488C27605E110025448F /* RRAllRankingSwitchViewCell.m in Sources */,
 				F5872CDF257DFAF300341B57 /* xibVC.m in Sources */,
 				F5F37087250A594400118FC4 /* ChatManager.m in Sources */,
 				F5A763BF253D952D00A76C6E /* Book.m in Sources */,

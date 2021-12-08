@@ -26,10 +26,20 @@
 - (void)setupViews {
     
     self.contentView.backgroundColor = kCOLOR_dynamicProvider_FFFFFF_1F2126;
-    
+ 
     CGFloat top = 20;
     CGFloat leading = 16;
     CGFloat trailing = -16;
+    CGFloat scale = 686.0 / 260;
+    CGFloat coverScale = 1.0 / 1.3;
+    CGFloat width = KWidth - leading * 2;
+    CGFloat coverHeight = width / scale;
+    CGFloat coverWidth = coverScale * coverHeight;
+//    CGFloat photoHeight = coverHeight;
+//    CGFloat photoWidth = width - coverWidth - 8;
+//    CGFloat spacing = 10;
+//    CGFloat titleHeight = 27;
+//    CGFloat currentHeight = top + coverHeight + titleHeight;
     
     [self.contentView addSubview:self.coverImgV];
     [self.coverImgV addSubview:self.followBtn];
@@ -52,15 +62,15 @@
     [self.coverImgV mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@(top));
         make.leading.equalTo(@(leading));
-        make.width.equalTo(@100);
-        make.height.equalTo(@130);
+        make.width.equalTo(@(coverWidth));
+        make.height.equalTo(@(coverHeight));
     }];
     
     [self.photoView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(@(top));
-        make.leading.equalTo(@124);
+        make.leading.equalTo(self.coverImgV.mas_trailing).offset(8);
         make.trailing.equalTo(@(trailing));
-        make.height.equalTo(@130);
+        make.height.equalTo(@(coverHeight));
     }];
     
     [self.photoBackgroundImgV mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -113,19 +123,33 @@
         //线的高度
         make.height.equalTo(@(1.0f / [UIScreen mainScreen].scale));
     }];
-    
 }
 
 - (void)setModel:(RRAllRankingModel *)model {
     _model = model;
     
+    CGFloat top = 20;
+    CGFloat leading = 16;
+//    CGFloat trailing = -16;
+    CGFloat scale = 686.0 / 260;
+    CGFloat coverScale = 1.0 / 1.3;
+    CGFloat width = KWidth - leading * 2;
+    CGFloat coverHeight = width / scale;
+    CGFloat coverWidth = coverScale * coverHeight;
+    CGFloat photoHeight = coverHeight;
+    CGFloat photoWidth = width - coverWidth - 8;
+    CGFloat spacing = 10;
+    CGFloat titleHeight = 27;
+    CGFloat currentHeight = top + coverHeight + titleHeight;
+    
 //    [self.coverImgV rr_delaySetImageWithURLString:model.cover placeholderImage:IMAGENAME(@"ranking_cover")];
+    self.coverImgV.image = IMAGENAME(@"ranking_cover");
     
     self.followBtn.selected = model.favorite;
 
     //    NSArray *array = @[@"4.jpg", @"4.jpg", @"4.jpg", @"4.jpg", @"4.jpg"];
     NSArray *imagesArr = [model.imageList valueForKeyPath:@"url"];
-    self.banner.frame = CGRectMake(0, 0, KWidth - 124 - 16, 130);
+    self.banner.frame = CGRectMake(0, 0, photoWidth, photoHeight);
     self.banner.hidden = (imagesArr.count > 0) ? NO : YES;
     @weakify(self)
     self.banner.clickImage = ^(NSInteger index) {
@@ -161,8 +185,9 @@
     self.countIconImgV.image = IMAGENAME(iconNameStr);
     self.countLab.text = countStr;
     
-    CGFloat currentHeight = 177;
-    CGFloat spacing = 10;
+////    CGFloat currentHeight = 177;
+//    CGFloat currentHeight = top + coverHeight + 27;
+//    CGFloat spacing = 10;
 
     NSArray *tagList = model.tagList;
     self.collectionView.data = tagList;
@@ -283,7 +308,7 @@
 #pragma mark - 点击按钮
 - (void)clickFollowBtn:(UIButton *)btn {
     NSLog(@"点击了追剧按钮");
-    WS(weakSelf);
+//    WS(weakSelf);
     //追剧
 //    [RRMJTool pushToLoginVCWith:[RRAppLinkManager sharedManager].currentTopNavigationController Block:^{
 //        BOOL isfous = weakSelf.model.favorite;
@@ -303,10 +328,21 @@
 }
 
 + (CGFloat)cellHeightWithModel:(RRAllRankingModel *)model {
-    
-    CGFloat currentHeight = 177;
+     
+    CGFloat top = 20;
+    CGFloat leading = 16;
+//    CGFloat trailing = -16;
+    CGFloat scale = 686.0 / 260;
+//    CGFloat coverScale = 1.0 / 1.3;
+    CGFloat width = KWidth - leading * 2;
+    CGFloat coverHeight = width / scale;
+//    CGFloat coverWidth = coverScale * coverHeight;
+//    CGFloat photoHeight = coverHeight;
+//    CGFloat photoWidth = width - coverWidth - 8;
     CGFloat spacing = 10;
-
+    CGFloat titleHeight = 27;
+    CGFloat currentHeight = top + coverHeight + titleHeight;
+ 
     //初始化collectionLayout
     UICollectionViewLeftAlignedLayout *collectionLayout = [[UICollectionViewLeftAlignedLayout alloc] init];
     collectionLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -402,8 +438,6 @@
         _coverImgV.layer.masksToBounds = YES;
         _coverImgV.userInteractionEnabled = YES;
         _coverImgV.image = IMAGENAME(@"ranking_cover");
-        _coverImgV.backgroundColor = [UIColor grayColor];
-
     }
     return _coverImgV;
 }
@@ -428,7 +462,7 @@
         _photoView.frame = CGRectMake(0, 0, KWidth - 124 - 16, 130);
         _photoView.layer.cornerRadius = 8;
         _photoView.layer.masksToBounds = YES;
-        _photoView.backgroundColor = [UIColor grayColor];
+        
     }
     return _photoView;
 }
@@ -549,9 +583,23 @@
 
 - (RRAllRankingImageBanner *)banner {
     if (!_banner) {
-        _banner = [[RRAllRankingImageBanner alloc] initWithFrame:CGRectMake(0, 0, KWidth - 124 - 16, 130)];
+//        CGFloat top = 20;
+        CGFloat leading = 16;
+//        CGFloat trailing = -16;
+        CGFloat scale = 686.0 / 260;
+        CGFloat coverScale = 1.0 / 1.3;
+        CGFloat width = KWidth - leading * 2;
+        CGFloat coverHeight = width / scale;
+        CGFloat coverWidth = coverScale * coverHeight;
+        CGFloat photoHeight = coverHeight;
+        CGFloat photoWidth = width - coverWidth - 8;
+//        CGFloat spacing = 10;
+//        CGFloat titleHeight = 27;
+//        CGFloat currentHeight = top + coverHeight + titleHeight;
+        _banner = [[RRAllRankingImageBanner alloc] initWithFrame:CGRectMake(0, 0, photoWidth, photoHeight)];
     }
     return _banner;
 }
  
 @end
+

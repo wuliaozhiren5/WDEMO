@@ -71,6 +71,7 @@
         point.layer.cornerRadius = cornerRadius;
         point.layer.masksToBounds = YES;
         point.backgroundColor = defaultColor;
+        point.tag = i;
         if (i == currentPage) {
             point.backgroundColor = selectColor;
         }
@@ -83,16 +84,25 @@
 
 - (void)setCurrentPage:(NSInteger)currentPage {
     _currentPage = currentPage; 
-    if (self.pointArr && self.pointArr.count > 0) {
-        UIColor *defaultColor = _pageIndicatorTintColor;
-        UIColor *selectColor = _currentPageIndicatorTintColor;
-        NSInteger numberOfPages = _numberOfPages;
-        for (NSInteger i = 0; i < numberOfPages; i++) {
-            UIImageView *point = self.pointArr[i];
-            point.backgroundColor = defaultColor;
-            if (i == currentPage) {
-                point.backgroundColor = selectColor;
-            }
+//    if (self.pointArr && self.pointArr.count > 0) {
+//        UIColor *defaultColor = _pageIndicatorTintColor;
+//        UIColor *selectColor = _currentPageIndicatorTintColor;
+//        NSInteger numberOfPages = _numberOfPages;
+//        for (NSInteger i = 0; i < numberOfPages; i++) {
+//            UIImageView *point = self.pointArr[i];
+//            point.backgroundColor = defaultColor;
+//            if (i == currentPage) {
+//                point.backgroundColor = selectColor;
+//            }
+//        }
+//    }
+    UIColor *defaultColor = _pageIndicatorTintColor;
+    UIColor *selectColor = _currentPageIndicatorTintColor;
+    for (UIImageView *point in self.pointArr) {
+        point.backgroundColor = defaultColor;
+        NSInteger i = point.tag;
+        if (i == currentPage) {
+            point.backgroundColor = selectColor;
         }
     }
 }

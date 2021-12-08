@@ -230,7 +230,8 @@
 
 
 
- #pragma mark ---背景色---
+#pragma mark ---背景色---
+#define kCOLOR_F7F8FA RGB(0xF7, 0xF8, 0xFA)
 
 //模块背景色  二级回复,帖子里的转发内容
 #define kCOLOR_dynamicProvider_F6F7F8_2A2A2A [UIColor colorWithDynamicProviderColor:@[RGB(0xF6, 0xF7, 0xF8),RGB(0x2a, 0x2a, 0x2a)]]
@@ -525,6 +526,9 @@
 #define kCOLOR_6D4A1A       RGB(0x6D, 0x4A, 0x1A)
 #define kCOLOR_B17BFF       RGB(0xB1, 0x7B, 0xFF)
 #define kCOLOR_FF4865       RGB(0xFF, 0x48, 0x65)
+#define kCOLOR_EEC379       RGB(0xee, 0xc3, 0x79)
+#define kCOLOR_D4AE6C       RGB(0xd4, 0xae, 0x6c)
+#define kCOLOR_969696       RGB(0x96, 0x96, 0x96)
 
 
 

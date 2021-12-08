@@ -51,6 +51,8 @@
 //        [imgV rr_delaySetImageWithURLString:self.imageArr[i]
 //                                placeholderImage:IMAGENAME(@"ranking_image")];
 //        [imageView rr_downloadImageWithURLString:model.cov placeholderImage:IMAGENAME(@"ranking_cover")];
+        imgV.image = IMAGENAME(@"ranking_cover");
+        imgV.backgroundColor = [UIColor grayColor];
         [self.scrollView addSubview:imgV];
         imgV.userInteractionEnabled = YES;
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
