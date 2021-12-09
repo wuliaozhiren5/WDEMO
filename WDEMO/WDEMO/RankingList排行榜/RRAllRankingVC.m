@@ -18,7 +18,7 @@
 #import "RRAllRankingHomeModel.h"
 #import "RRAllRankingSwitchView.h"
 
-static CGFloat const headViewHeight = 256;
+static CGFloat const headViewHeight = 200.0;//156.0
 
 @interface RRAllRankingVC ()<UITableViewDelegate, UITableViewDataSource, scrollDelegate, WMPageControllerDelegate, LZTagSegmentedControlDelegate, RRAllRankingSwitchViewDelegate>
 //tableview
