@@ -16,10 +16,11 @@
 #import "RRAllRankingListVC.h"
 #import "RRAllRankingContainerModel.h"
 #import "RRAllRankingHomeModel.h"
+#import "RRAllRankingSwitchView.h"
 
 static CGFloat const headViewHeight = 256;
 
-@interface RRAllRankingVC ()<UITableViewDelegate, UITableViewDataSource, scrollDelegate, WMPageControllerDelegate, LZTagSegmentedControlDelegate>
+@interface RRAllRankingVC ()<UITableViewDelegate, UITableViewDataSource, scrollDelegate, WMPageControllerDelegate, LZTagSegmentedControlDelegate, RRAllRankingSwitchViewDelegate>
 //tableview
 @property(nonatomic ,strong)MainTouchTableTableView *mainTableView;
 //scrollView
@@ -55,6 +56,10 @@ static CGFloat const headViewHeight = 256;
 
 //当前的subVC
 @property (nonatomic,strong) UIViewController *currentSubVC;
+//当前的subVC的title
+@property (nonatomic,strong) NSString *currentSubVCTitle;
+//当前的subVC的title
+@property (nonatomic,strong) NSString *defaultTitle;
 
 @property(strong , nonatomic)LZTagSegmentedControl *segmentedControl;
 
@@ -62,6 +67,19 @@ static CGFloat const headViewHeight = 256;
 //组件id
 @property (nonatomic, copy) NSString *containerId;
 
+//viewTitle
+@property (nonatomic, strong) UILabel *allRankingTitleLab;
+
+//切换btn
+//titleBtn
+@property (nonatomic, strong) UIButton *allRankingSwitchBtn;
+//titleBtn标题
+@property (nonatomic, strong) UILabel *allRankingSwitchBtntitleLab;
+//titleBtn
+@property (nonatomic, strong) UIImageView *allRankingSwitchBtnIconImgV;
+
+
+@property (nonatomic, strong) RRAllRankingSwitchView *allRankingSwitchView;
 @end
 
 @implementation RRAllRankingVC
@@ -70,8 +88,11 @@ static CGFloat const headViewHeight = 256;
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = @"新排行榜";
-    
+//    self.defaultTitle = @"新排行榜";
+//    self.title = @"新排行榜";
+    //标题
+    self.navigationItem.titleView = self.allRankingTitleLab;
+
     self.navigationController.navigationBar.translucent = YES;//这个必须设置
     
     ////////////////////
@@ -181,6 +202,7 @@ static CGFloat const headViewHeight = 256;
     [self createSegmentedControl];
     [self createCurrentSubVC];
     [self createTableView];
+    [self createAllRankingSwitchBtn];
 }
 
 - (void)createBackgroundImageView {
@@ -199,7 +221,8 @@ static CGFloat const headViewHeight = 256;
         self.subVCDict[key] = showSubVC;
     }
     self.currentSubVC = showSubVC;
-    
+    self.currentSubVCTitle = [self.tagArr objectOrNilAtIndex:self.selectIndex];
+
 }
 
 - (void)removeCurrentSubVC {
@@ -397,6 +420,82 @@ static CGFloat const headViewHeight = 256;
     return pageVC;
     
 }
+
+- (void)createAllRankingSwitchBtn {
+ 
+//    self.navigationItem.titleView = self.allRankingSwitchBtn;
+//    [self.customTabbar addSubview:self.allRankingSwitchBtn];
+  
+    [self.allRankingSwitchBtn addSubview:self.allRankingSwitchBtntitleLab];
+    [self.allRankingSwitchBtn addSubview:self.allRankingSwitchBtnIconImgV];
+      
+    [self.allRankingSwitchBtntitleLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@0);
+        make.leading.equalTo(@20);
+        make.bottom.equalTo(@0);
+    }];
+    [self.allRankingSwitchBtnIconImgV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.equalTo(@14);
+        make.height.equalTo(@14);
+        make.centerY.equalTo(self.allRankingSwitchBtntitleLab);
+        make.leading.equalTo(self.allRankingSwitchBtntitleLab.mas_trailing).offset(2);
+        make.trailing.equalTo(@-20);
+    }];
+    
+//    [self.allRankingSwitchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.center.equalTo(self.navigationController.navigationBar);
+//        make.height.equalTo(@40);
+////        make.width.equalTo(@40);
+//    }];
+//    self.allRankingSwitchBtn.backgroundColor = [UIColor yellowColor];
+    self.allRankingSwitchBtntitleLab.text = @"";
+//    self.allRankingSwitchBtn.hidden = YES;
+}
+
+- (void)clickAllRankingSwitchBtn:(UIButton *)btn {
+    
+    if (self.allRankingSwitchView) {
+        [self.allRankingSwitchView hidden];
+        self.allRankingSwitchView = nil;
+        return;
+    }
+
+    RRAllRankingSwitchView *allRankingSwitchView = [[RRAllRankingSwitchView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
+    allRankingSwitchView.selectIndex = self.selectIndex;
+    allRankingSwitchView.tagArr = self.tagArr;
+    allRankingSwitchView.delegate = self;
+    [self.view addSubview:allRankingSwitchView];
+    [allRankingSwitchView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@(self.navigationbarHeight + self.statusbarHeight));
+        make.bottom.equalTo(@0);
+        make.leading.equalTo(@0);
+        make.trailing.equalTo(@0);
+    }];
+    self.allRankingSwitchView = allRankingSwitchView;
+    self.allRankingSwitchBtnIconImgV.image = IMAGENAME(@"ranking_arrow_up");
+}
+
+#pragma mark - RRAllRankingSwitchViewDelegate
+//点击
+- (void)clickAllRankingSwitchViewIndex:(NSInteger)index {
+    if (self.selectIndex == index) {
+        return;
+    }
+    self.segmentedControl.index = index;
+    self.selectIndex = index;
+    [self.mainTableView reloadData];
+}
+ 
+- (void)hiddenAllRankingSwitchView {
+    self.allRankingSwitchView = nil;
+    self.allRankingSwitchBtnIconImgV.image = IMAGENAME(@"ranking_arrow_down");
+}
+
+- (void)setCurrentSubVCTitle:(NSString *)currentSubVCTitle {
+    _currentSubVCTitle = currentSubVCTitle;
+    self.allRankingSwitchBtntitleLab.text = _currentSubVCTitle;
+}
+
 
 //iOS 10、设置导航栏全透明
 //https://www.jianshu.com/p/e97086eb1f15
@@ -641,6 +740,14 @@ static CGFloat const headViewHeight = 256;
     //滑动渐变颜色
     [self.navigationController.navigationBar setBackgroundImage:[self imageWithBgColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:alpha]] forBarMetrics:UIBarMetricsDefault];// 颜色自己设置 渐变开始的位置自己算
     
+    if (alpha > 0) {
+        self.segmentedControl.hidden = YES;
+        self.navigationItem.titleView = self.allRankingSwitchBtn;
+    } else {
+        self.navigationItem.titleView = self.allRankingTitleLab;
+        self.segmentedControl.hidden = NO;
+    }
+    
     /**
      * 处理头部视图
      */
@@ -813,6 +920,53 @@ static CGFloat const headViewHeight = 256;
     }
     return _subVCDict;
     
+}
+
+- (UILabel *)allRankingTitleLab {
+    if (!_allRankingTitleLab) {
+        _allRankingTitleLab = [[UILabel alloc] init];
+        _allRankingTitleLab.frame = CGRectMake(0, 0, 20, 20);
+        _allRankingTitleLab.font = BOLDSYSTEMFONT(17);
+        _allRankingTitleLab.textColor = kCOLOR_FFD541;
+        _allRankingTitleLab.userInteractionEnabled = NO;
+        _allRankingTitleLab.text = @"新排行榜";
+    }
+    return _allRankingTitleLab;
+}
+
+- (UIButton *)allRankingSwitchBtn {
+    if (!_allRankingSwitchBtn) {
+        _allRankingSwitchBtn = [[UIButton alloc] init];
+        _allRankingSwitchBtn.frame = CGRectMake(0, 0, 40, 40);
+        [_allRankingSwitchBtn addTarget:self action:@selector(clickAllRankingSwitchBtn:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _allRankingSwitchBtn;
+}
+
+- (UILabel *)allRankingSwitchBtntitleLab {
+    if (!_allRankingSwitchBtntitleLab) {
+        _allRankingSwitchBtntitleLab = [[UILabel alloc] init];
+        _allRankingSwitchBtntitleLab.frame = CGRectMake(0, 0, 20, 20);
+        _allRankingSwitchBtntitleLab.font = BOLDSYSTEMFONT(17);
+        _allRankingSwitchBtntitleLab.textColor = kCOLOR_FFD541;
+        _allRankingSwitchBtntitleLab.userInteractionEnabled = NO;
+    }
+    return _allRankingSwitchBtntitleLab;
+}
+
+- (UIImageView *)allRankingSwitchBtnIconImgV {
+    if (!_allRankingSwitchBtnIconImgV) {
+        _allRankingSwitchBtnIconImgV = [[UIImageView alloc] init];
+        _allRankingSwitchBtnIconImgV.frame = CGRectMake(0, 0, 20, 20);
+//        _allRankingSwitchBtnIconImgV.userInteractionEnabled = YES;
+//        _allRankingSwitchBtnIconImgV.contentMode = UIViewContentModeScaleAspectFill;
+//        _allRankingSwitchBtnIconImgV.clipsToBounds = YES;
+//        _allRankingSwitchBtnIconImgV.backgroundColor = [UIColor redColor];
+        _allRankingSwitchBtnIconImgV.userInteractionEnabled = NO;
+        _allRankingSwitchBtnIconImgV.image = IMAGENAME(@"ranking_arrow_down");
+//        _allRankingSwitchBtnIconImgV.image = IMAGENAME(@"ranking_arrow_up");
+    }
+    return _allRankingSwitchBtnIconImgV;
 }
 
 - (void)didReceiveMemoryWarning {
