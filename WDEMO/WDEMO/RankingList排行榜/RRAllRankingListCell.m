@@ -35,8 +35,8 @@
     CGFloat width = KWidth - leading * 2;
     CGFloat coverHeight = width / scale;
     CGFloat coverWidth = coverScale * coverHeight;
-//    CGFloat photoHeight = coverHeight;
-//    CGFloat photoWidth = width - coverWidth - 8;
+//    CGFloat photoHeight = ceil(coverHeight);
+//    CGFloat photoWidth = ceil(width - coverWidth - 8);
 //    CGFloat spacing = 10;
 //    CGFloat titleHeight = 27;
 //    CGFloat currentHeight = top + coverHeight + titleHeight;
@@ -136,8 +136,8 @@
     CGFloat width = KWidth - leading * 2;
     CGFloat coverHeight = width / scale;
     CGFloat coverWidth = coverScale * coverHeight;
-    CGFloat photoHeight = coverHeight;
-    CGFloat photoWidth = width - coverWidth - 8;
+    CGFloat photoHeight = ceil(coverHeight);
+    CGFloat photoWidth = ceil(width - coverWidth - 8);
     CGFloat spacing = 10;
     CGFloat titleHeight = 27;
     CGFloat currentHeight = top + coverHeight + titleHeight;
@@ -309,7 +309,7 @@
 - (void)clickFollowBtn:(UIButton *)btn {
     NSLog(@"点击了追剧按钮");
 //    WS(weakSelf);
-    //追剧
+//    //追剧
 //    [RRMJTool pushToLoginVCWith:[RRAppLinkManager sharedManager].currentTopNavigationController Block:^{
 //        BOOL isfous = weakSelf.model.favorite;
 //        NSString *idStr = weakSelf.model.dramaId;
@@ -337,8 +337,8 @@
     CGFloat width = KWidth - leading * 2;
     CGFloat coverHeight = width / scale;
 //    CGFloat coverWidth = coverScale * coverHeight;
-//    CGFloat photoHeight = coverHeight;
-//    CGFloat photoWidth = width - coverWidth - 8;
+//    CGFloat photoHeight = ceil(coverHeight);
+//    CGFloat photoWidth = ceil(width - coverWidth - 8);
     CGFloat spacing = 10;
     CGFloat titleHeight = 27;
     CGFloat currentHeight = top + coverHeight + titleHeight;
@@ -591,8 +591,8 @@
         CGFloat width = KWidth - leading * 2;
         CGFloat coverHeight = width / scale;
         CGFloat coverWidth = coverScale * coverHeight;
-        CGFloat photoHeight = coverHeight;
-        CGFloat photoWidth = width - coverWidth - 8;
+        CGFloat photoHeight = ceil(coverHeight);
+        CGFloat photoWidth = ceil(width - coverWidth - 8);
 //        CGFloat spacing = 10;
 //        CGFloat titleHeight = 27;
 //        CGFloat currentHeight = top + coverHeight + titleHeight;
