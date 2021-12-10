@@ -166,6 +166,7 @@
 		F5596C78271EA30E007D9FE9 /* RRAllRankingSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5596C77271EA30E007D9FE9 /* RRAllRankingSubVC.m */; };
 		F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F55E5B5A258C58B700C1DECD /* ScoreView.m */; };
 		F55EF6882758CD430043B460 /* 更改状态栏导航栏颜色的方法.md in Resources */ = {isa = PBXBuildFile; fileRef = F55EF6872758CD430043B460 /* 更改状态栏导航栏颜色的方法.md */; };
+		F55F2EFF2763323F000DB684 /* YYLabel#话题@用户.md in Resources */ = {isa = PBXBuildFile; fileRef = F55F2EFE2763323F000DB684 /* YYLabel#话题@用户.md */; };
 		F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C922502134800A13C15 /* SetPasswordVC.m */; };
 		F5609C99250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C98250214FC00A13C15 /* ForgetPasswordResetPasswordVC.m */; };
 		F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5609C9B250215ED00A13C15 /* NeedResetPasswordVC.m */; };
@@ -738,6 +739,7 @@
 		F55E5B59258C58B700C1DECD /* ScoreView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreView.h; sourceTree = "<group>"; };
 		F55E5B5A258C58B700C1DECD /* ScoreView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreView.m; sourceTree = "<group>"; };
 		F55EF6872758CD430043B460 /* 更改状态栏导航栏颜色的方法.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "更改状态栏导航栏颜色的方法.md"; sourceTree = "<group>"; };
+		F55F2EFE2763323F000DB684 /* YYLabel#话题@用户.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "YYLabel#话题@用户.md"; sourceTree = "<group>"; };
 		F5609C912502134800A13C15 /* SetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetPasswordVC.h; sourceTree = "<group>"; };
 		F5609C922502134800A13C15 /* SetPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetPasswordVC.m; sourceTree = "<group>"; };
 		F5609C97250214FC00A13C15 /* ForgetPasswordResetPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgetPasswordResetPasswordVC.h; sourceTree = "<group>"; };
@@ -2785,6 +2787,7 @@
 		F5F4F10024D3BF23007DB7F3 /* YYText富文本YY富文本 */ = {
 			isa = PBXGroup;
 			children = (
+				F55F2EFE2763323F000DB684 /* YYLabel#话题@用户.md */,
 				F5F4F10124D3C158007DB7F3 /* YYViewController.h */,
 				F5F4F10224D3C158007DB7F3 /* YYViewController.m */,
 			);
@@ -3012,6 +3015,7 @@
 				F548D0DA256E2EEA00357E64 /* amwayPlayerGuide_0.png in Resources */,
 				F5091E28268C679F000884D1 /* dropdown_loading_02@2x.png in Resources */,
 				F5CA668D26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md in Resources */,
+				F55F2EFF2763323F000DB684 /* YYLabel#话题@用户.md in Resources */,
 				F5D05B7425BAB18000A4C6EC /* 阴影.md in Resources */,
 				F58B528A271D960500CD6A3F /* 动画过程中的点击.md in Resources */,
 				F5D5C1A52714164F0021C36E /* Demo.png in Resources */,
