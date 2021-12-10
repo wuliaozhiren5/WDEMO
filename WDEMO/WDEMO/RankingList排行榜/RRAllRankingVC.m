@@ -738,7 +738,7 @@ static CGFloat const headViewHeight = 200.0;//156.0
     CGFloat alpha = 1 + (offset + minAlphaOffset) / (maxAlphaOffset - minAlphaOffset);
     
     //滑动渐变颜色
-    [self.navigationController.navigationBar setBackgroundImage:[self imageWithBgColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:alpha]] forBarMetrics:UIBarMetricsDefault];// 颜色自己设置 渐变开始的位置自己算
+    [self.navigationController.navigationBar setBackgroundImage:[self imageWithBgColor:[UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:0.0]] forBarMetrics:UIBarMetricsDefault];// 颜色自己设置 渐变开始的位置自己算
     
     if (alpha > 0) {
         self.segmentedControl.hidden = YES;

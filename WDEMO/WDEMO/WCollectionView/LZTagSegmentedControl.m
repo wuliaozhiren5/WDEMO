@@ -5,9 +5,10 @@
 //  Created by xxx on 2017/10/31.
 //  Copyright © 2017年 developer. All rights reserved.
 //
-#import "LZTagListCell.h"
 
 #import "LZTagSegmentedControl.h"
+#import "LZTagListCell.h"
+
 @interface LZTagSegmentedControl ()<UICollectionViewDelegate, UICollectionViewDataSource>
 
 //tag
