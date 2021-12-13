@@ -491,19 +491,19 @@
 
 #pragma mark - 布局
 + (CGFloat)getAvatarImageViewTop {
-    return 12;
+    return 20;
 }
 
 + (CGFloat)getNicknameLabTop {
-    return 10;
+    return 31;
 }
 
 + (CGFloat)getContentLabTop {
-    return 34;
+    return 55;
 }
 
 + (CGFloat)getSpacing {
-    return 8;
+    return 10;
 }
 
 + (CGFloat)getBottomViewHeight {
@@ -518,5 +518,6 @@
     return 61;
 }
 @end
+
 
 

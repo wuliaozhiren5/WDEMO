@@ -610,7 +610,7 @@
         default:
         {
             RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
-            return [RRSeasonSeniorCommentsReplyTextImageCell cellHeightWithModel:model];
+            return [RRSeasonSeniorCommentsReplyTextImageCell cellHeightWithModel:model isShowAll:YES];
         }
             break;
     }

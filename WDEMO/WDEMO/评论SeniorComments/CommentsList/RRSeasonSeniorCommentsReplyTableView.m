@@ -271,6 +271,26 @@
 - (void)setModel:(RRSeniorCommentsModel *)model {
     _model = model;
     
+    NSMutableAttributedString *text = [self handleTextWithModel:model];
+    if (!text) {
+        text = [[NSMutableAttributedString alloc] initWithString:@""];
+    }
+    
+    CGSize yySize = CGSizeMake((KWidth - 61 - 16 - 15 * 2), CGFLOAT_MAX);
+    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
+//    CGRect rect = layout.textBoundingRect;
+    CGSize size = layout.textBoundingSize;
+    self.yyContentLab.attributedText = text;
+    self.yyContentLab.frame = CGRectMake(15, 0, (KWidth - 61 - 16 - 15 * 2), size.height);
+
+    NSLog(@"%zi", [layout lineIndexForRow:1]);
+    NSLog(@"%zi", [layout lineCountForRow:1]);
+    NSLog(@"%zi", layout.rowCount);
+    
+}
+
+- (NSMutableAttributedString *)handleTextWithModel:(RRSeniorCommentsModel *)model {
+    
     NSString *realNicknameStr = model.authorName ?: @"";
     NSString *realReplyNicknameStr = model.reply2UserName ?: @"";
      
@@ -319,14 +339,21 @@
        replyNicknameStr = @"";
     }
     
-    textStr = [NSString stringWithFormat:@"%@%@%@%@%@%@", nicknameStr, replyStr, replyNicknameStr, colonStr, textStr, lookImageStr];
+    textStr = [NSString stringWithFormat:@"%@%@%@%@%@", nicknameStr, replyStr, replyNicknameStr, colonStr, textStr];
     //    self.contentLab.text = textStr;
-    self.yyContentLab.text = textStr;
+//    self.yyContentLab.text = textStr;
     
+    YYLabel *yyContentLab = [YYLabel new];
+    yyContentLab.frame = CGRectMake(15, 6, KWidth - 61 - 16 - 15 * 2, 60);
+    yyContentLab.font = RR_COMMONFONT(14);
+//        _yyContentLab.lineBreakMode = NSLineBreakByCharWrapping;
+    yyContentLab.numberOfLines = 0;
+    yyContentLab.text = textStr;
+ 
     //    ...查看全文
     //    ...查看图片
     //恢复View
-    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
+    NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
     
     //颜色
     UIColor *textColor = kCOLOR_222222;
@@ -350,6 +377,17 @@
     CGFloat fontSize = 14;
     UIFont *textFont = RR_COMMONFONT(fontSize);
     
+    UILabel *textLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    textLab.font = textFont;
+//    textLab.textColor = textColor;
+    textLab.text = moreTextStr;
+    CGSize moreTextStrSize = [textLab sizeThatFits:CGSizeMake(CGFLOAT_MAX, 50)];
+    CGFloat moreTextStrSizeWidth = ceil(moreTextStrSize.width);
+    
+    textLab.text = lookImageStr;
+    CGSize lookImageStrSize = [textLab sizeThatFits:CGSizeMake(CGFLOAT_MAX, 50)];
+    CGFloat lookImageStrSizeWidth = ceil(lookImageStrSize.width);
+    
     //字体间距
     CGFloat textLineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
     
@@ -358,7 +396,7 @@
     text.font = textFont;
     text.color = textColor;//kCOLOR_dynamicProvider_222222_E5E7EB;
     
-    if (array.count > 2 ) {
+    if (array.count > 1 ) {
         //1行
         NSString *showText = [NSString stringWithFormat:@"%@", array[0]];
         //第2行：
@@ -366,29 +404,18 @@
         //第2行：过滤回车和空行
         line2String = [NSString filterReturn:line2String];
         line2String = [NSString filterNewLine:line2String];
-        //第2行：拼接...查看全文
-        line2String = [NSString stringWithFormat:@"%@%@%@", line2String, moreTextStr, lookImageStr];//...查看全文
-        //第2行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
-        self.yyContentLab.text = line2String;
-        NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:self.yyContentLab];
-        NSString *lineString = lineArray[0];
         
-        //需要填充的字符
-        NSString *fillStr = [NSString stringWithFormat:@"%@%@", moreTextStr, lookImageStr];
-        //实际截取的字符
-        NSString *deleteStr = [NSString stringWithFormat:@"%@", [lineString substringFromIndex:lineString.length - moreTextStr.length - lookImageStr.length]];
-//            //保留的字符
-//            NSString *retainStr = [NSString stringWithFormat:@"%@", [lineString substringToIndex:lineString.length - placeholderTextStr.length - showAllTextStr.length]];
-     
-        int fillStrLength = [RRMJTool convertToInt:fillStr];
-        int deleteStrLength = [RRMJTool convertToInt:deleteStr];
-        int length = fillStrLength - deleteStrLength;
-        if (lineString.length >= (moreTextStr.length + lookImageStr.length + length + 1)) {
-            lineString = [NSString stringWithFormat:@"%@", [lineString substringToIndex:lineString.length - (moreTextStr.length + lookImageStr.length + length + 1)]];
-        } else {
-            lineString = @"";
-        }
-        
+        //第2行的label
+        YYLabel *lineLab = [YYLabel new];
+        lineLab.frame = CGRectMake(15, 6, KWidth - 61 - 16 - 15 * 2 - moreTextStrSizeWidth - lookImageStrSizeWidth, 60);
+        lineLab.font = RR_COMMONFONT(14);
+        //lineLab.lineBreakMode = NSLineBreakByCharWrapping;
+        lineLab.numberOfLines = 1;
+        lineLab.text = line2String;
+        NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:lineLab];
+        //注意如果lineLab.text = @"";时候lineArray.count = 0,直接去lineArray[0]，会崩溃
+        NSString *lineString = lineArray.count > 0 ? lineArray[0] : @"";
+         
         //最后，完成1-2行
         showText = [NSString stringWithFormat:@"%@%@", showText, lineString];
         
@@ -397,7 +424,7 @@
         if (showText.length >= (nicknameStr.length + replyStr.length + replyNicknameStr.length + colonStr.length)) {
             showContentText = [showText substringFromIndex:(nicknameStr.length + replyStr.length + replyNicknameStr.length + colonStr.length)];
         }
-  
+
         {
             //nicknameStr
             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:nicknameStr];
@@ -572,30 +599,41 @@
             [text appendAttributedString:one];
         }
     }
- 
-    CGSize yySize = CGSizeMake((KWidth - 61 - 16 - 15 * 2), CGFLOAT_MAX);
-    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
-//    CGRect rect = layout.textBoundingRect;
-    CGSize size = layout.textBoundingSize;
-    self.yyContentLab.attributedText = text;
-    self.yyContentLab.frame = CGRectMake(15, 0, (KWidth - 61 - 16 - 15 * 2), size.height);
-    
-    NSLog(@"%zi", [layout lineIndexForRow:1]);
-    NSLog(@"%zi", [layout lineCountForRow:1]);
-    NSLog(@"%zi", layout.rowCount);
-    
+    return text;
 }
 
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model {
     if (!model) {
         return 0;
     }
+
     YYLabel *yyContentLab = [YYLabel new];
     yyContentLab.frame = CGRectMake(15, 6, KWidth - 61 - 16 - 15 * 2, 60);
     yyContentLab.font = RR_COMMONFONT(14);
 //    yyContentLab.lineBreakMode = NSLineBreakByCharWrapping;
     yyContentLab.numberOfLines = 0;
-     
+    
+    NSMutableAttributedString *text = [self handleTextHeightWithModel:model];
+    if (!text) {
+        text = [[NSMutableAttributedString alloc] initWithString:@""];
+    }
+    
+    CGSize yySize = CGSizeMake((KWidth - 61 - 16 - 15 * 2), CGFLOAT_MAX);
+    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
+//    CGRect rect = layout.textBoundingRect;
+    CGSize size = layout.textBoundingSize;
+    CGFloat currentHeight = size.height;
+//    yyContentLab.attributedText = text;
+//    yyContentLab.frame = CGRectMake(15, 6, (KWidth - 61 - 16 - 15 * 2), rect.size.height);
+//
+//    NSLog(@"%zi", [layout lineIndexForRow:1]);
+//    NSLog(@"%zi", [layout lineCountForRow:1]);
+//    NSLog(@"%zi", layout.rowCount);
+    
+    return currentHeight + 6; //文字高度 + 6
+}
+
++ (NSMutableAttributedString *)handleTextHeightWithModel:(RRSeniorCommentsModel *)model {
     
     NSString *realNicknameStr = model.authorName ?: @"";
     NSString *realReplyNicknameStr = model.reply2UserName ?: @"";
@@ -645,8 +683,14 @@
        replyNicknameStr = @"";
     }
     
-    textStr = [NSString stringWithFormat:@"%@%@%@%@%@%@", nicknameStr, replyStr, replyNicknameStr, colonStr, textStr, lookImageStr];
+    textStr = [NSString stringWithFormat:@"%@%@%@%@%@", nicknameStr, replyStr, replyNicknameStr, colonStr, textStr];
     //    self.contentLab.text = textStr;
+    
+    YYLabel *yyContentLab = [YYLabel new];
+    yyContentLab.frame = CGRectMake(15, 6, KWidth - 61 - 16 - 15 * 2, 60);
+    yyContentLab.font = RR_COMMONFONT(14);
+//    yyContentLab.lineBreakMode = NSLineBreakByCharWrapping;
+    yyContentLab.numberOfLines = 0;
     yyContentLab.text = textStr;
     
     //    ...查看全文
@@ -661,15 +705,26 @@
     CGFloat fontSize = 14;
     UIFont *textFont = RR_COMMONFONT(fontSize);
     
+    UILabel *textLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    textLab.font = textFont;
+//    textLab.textColor = textColor;
+    textLab.text = moreTextStr;
+    CGSize moreTextStrSize = [textLab sizeThatFits:CGSizeMake(CGFLOAT_MAX, 50)];
+    CGFloat moreTextStrSizeWidth = ceil(moreTextStrSize.width);
+    
+    textLab.text = lookImageStr;
+    CGSize lookImageStrSize = [textLab sizeThatFits:CGSizeMake(CGFLOAT_MAX, 50)];
+    CGFloat lookImageStrSizeWidth = ceil(lookImageStrSize.width);
+    
     //字体间距
     CGFloat textLineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
 
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@""];
     text.lineSpacing = textLineSpacing;
     text.font = textFont;
-    text.color = textColor;;
+    text.color = textColor;
 
-    if (array.count > 2 ) {
+    if (array.count > 1 ) {
         //1行
         NSString *showText = [NSString stringWithFormat:@"%@", array[0]];
         //第2行：
@@ -677,32 +732,21 @@
         //第2行：过滤回车和空行
         line2String = [NSString filterReturn:line2String];
         line2String = [NSString filterNewLine:line2String];
-        //第2行：拼接...查看全文
-        line2String = [NSString stringWithFormat:@"%@%@%@", line2String, moreTextStr, lookImageStr];//...查看全文
-        //第2行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
-        yyContentLab.text = line2String;
-        NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
-        NSString *lineString = lineArray[0];
-        
-        //需要填充的字符
-        NSString *fillStr = [NSString stringWithFormat:@"%@%@", moreTextStr, lookImageStr];
-        //实际截取的字符
-        NSString *deleteStr = [NSString stringWithFormat:@"%@", [lineString substringFromIndex:lineString.length - moreTextStr.length - lookImageStr.length]];
-//            //保留的字符
-//            NSString *retainStr = [NSString stringWithFormat:@"%@", [lineString substringToIndex:lineString.length - placeholderTextStr.length - showAllTextStr.length]];
-     
-        int fillStrLength = [RRMJTool convertToInt:fillStr];
-        int deleteStrLength = [RRMJTool convertToInt:deleteStr];
-        int length = fillStrLength - deleteStrLength;
-        if (lineString.length >= (moreTextStr.length + lookImageStr.length + length + 1)) {
-            lineString = [NSString stringWithFormat:@"%@", [lineString substringToIndex:lineString.length - (moreTextStr.length + lookImageStr.length + length + 1)]];
-        } else {
-            lineString = @"";
-        }
-        
+         
+        //第2行的label
+        YYLabel *lineLab = [YYLabel new];
+        lineLab.frame = CGRectMake(15, 6, KWidth - 61 - 16 - 15 * 2 - moreTextStrSizeWidth - lookImageStrSizeWidth, 60);
+        lineLab.font = RR_COMMONFONT(14);
+        //lineLab.lineBreakMode = NSLineBreakByCharWrapping;
+        lineLab.numberOfLines = 1;
+        lineLab.text = line2String;
+        NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:lineLab];
+        //注意如果lineLab.text = @"";时候lineArray.count = 0,直接去lineArray[0]，会崩溃
+        NSString *lineString = lineArray.count > 0 ? lineArray[0] : @"";
+         
         //最后，完成1-2行
         showText = [NSString stringWithFormat:@"%@%@", showText, lineString];
-         
+        
         //真正可以显示的文本
         NSString *showContentText = @"";
         if (showText.length >= (nicknameStr.length + replyStr.length + replyNicknameStr.length + colonStr.length)) {
@@ -824,21 +868,8 @@
         }
     }
  
-    CGSize yySize = CGSizeMake((KWidth - 61 - 16 - 15 * 2), CGFLOAT_MAX);
-    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
-//    CGRect rect = layout.textBoundingRect;
-    CGSize size = layout.textBoundingSize;
-    CGFloat currentHeight = size.height;
-//    yyContentLab.attributedText = text;
-//    yyContentLab.frame = CGRectMake(15, 6, (KWidth - 61 - 16 - 15 * 2), rect.size.height);
-//
-//    NSLog(@"%zi", [layout lineIndexForRow:1]);
-//    NSLog(@"%zi", [layout lineCountForRow:1]);
-//    NSLog(@"%zi", layout.rowCount);
-    
-    return currentHeight + 6; //文字高度 + 6
+    return text;
 }
-
 //lazy
 - (YYLabel *)yyContentLab {
     if (!_yyContentLab) {

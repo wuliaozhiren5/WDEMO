@@ -31,7 +31,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RRSeasonSeniorCommentsReplyTableViewCell : UITableViewCell
 @property (nonatomic, strong)RRSeniorCommentsModel *model;
 @property (nonatomic, assign) BOOL isHalf;          //半屏
-+ (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model; 
+
+//富文本
+- (NSMutableAttributedString *)handleTextWithModel:(RRSeniorCommentsModel *)model;
++ (NSMutableAttributedString *)handleTextHeightWithModel:(RRSeniorCommentsModel *)model;
++ (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model;
 @end
 
 NS_ASSUME_NONNULL_END

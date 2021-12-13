@@ -72,7 +72,7 @@
         self.tableView.count = model.replyCount;
         self.tableView.data = model.replies;
         self.tableView.model = model;
-        self.tableView.frame = CGRectMake(61, spacing + currentHeight, (KWidth - 61 - 16), self.tableView.contentSize.height);
+        self.tableView.frame = CGRectMake(61, currentHeight + spacing, (KWidth - 61 - 16), self.tableView.contentSize.height);
     } else {
         self.tableView.hidden = YES;
 //        self.tableView.count = 0;
@@ -106,7 +106,7 @@
         tableView.count = model.replyCount;
         tableView.data = model.replies;
         tableView.model = model;
-        tableView.frame = CGRectMake(61, spacing + currentHeight, (KWidth - 61 - 16), tableView.contentSize.height);
+        tableView.frame = CGRectMake(61, currentHeight + spacing, (KWidth - 61 - 16), tableView.contentSize.height);
     } else {
         tableView.hidden = YES;
 //        self.tableView.count = 0;

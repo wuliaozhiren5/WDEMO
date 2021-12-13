@@ -64,7 +64,35 @@
     CGFloat contentLabTop = [[self class] getContentLabTop];
     CGFloat spacing = [[self class] getSpacing];
     CGFloat bottomViewHeight = [[self class] getBottomViewHeight];
- 
+    
+    NSMutableAttributedString *text = [self handleTextWithModel:model isShowAll:self.isShowMore];
+    if (!text) {
+        text = [[NSMutableAttributedString alloc] initWithString:@""];
+    }
+    CGSize yySize = CGSizeMake((KWidth - 61 - 16), CGFLOAT_MAX);
+    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
+//    CGRect rect = layout.textBoundingRect;
+    CGSize size = layout.textBoundingSize;
+    self.yyContentLab.attributedText = text;
+    self.yyContentLab.frame = CGRectMake(61, contentLabTop, (KWidth - 61 - 16), size.height);
+    
+    //当前高度
+    CGFloat currentHeight = contentLabTop - spacing;
+    //文字高度
+    CGFloat textViewHeight = self.yyContentLab.frame.size.height;
+    if (textViewHeight > 0) {
+        currentHeight = currentHeight + spacing + textViewHeight;
+    }
+    //    CGFloat currentHeight = contentLabTop + rect.size.height;
+
+    self.bottomView.frame = CGRectMake(0, currentHeight, KWidth, bottomViewHeight);
+}
+
+- (NSMutableAttributedString *)handleTextWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll {
+    //普通评论
+    //话题评论（#话题）
+    //回复（回复：xxx）
+    
     //文字部分
     //@"剧透 "
     //@"       " 7个空格
@@ -75,17 +103,31 @@
     NSString *hideAllTextStr = @"收起";
     NSString *content = [model.content copy] ?: @"";
     NSString *textStr = [model.content copy] ?: @"";
-    
+    NSString *talkStr = @"#火凤燎原#";
+
+    //需要显示的所有文字
+    NSString *allShowTextStr = @"";
     //剧透
     BOOL isFirst = model.spoiler;
     if (isFirst) {
         //现实剧透标签
         self.firstView.hidden = NO;
-        textStr = [firstTextStr stringByAppendingString:textStr];
+        allShowTextStr = [allShowTextStr stringByAppendingString:firstTextStr];
     } else {
         //隐藏剧透标签
         self.firstView.hidden = YES;
     }
+    
+    //话题
+    //是否有话题
+    BOOL isTalk = NO;
+    //话题是否启用
+    BOOL isTalkEnable = YES;
+    if (isTalk) {
+        allShowTextStr = [allShowTextStr stringByAppendingString:talkStr];
+    }
+    
+    textStr = [allShowTextStr stringByAppendingString:textStr];
     
     //    self.contentLab.text = textStr;
     YYLabel *yyContentLab = [YYLabel new];
@@ -117,11 +159,22 @@
     } else {
         // Fallback on earlier versions
     }
-    
+     
     //字号
     CGFloat fontSize = 14;
     UIFont *textFont = RR_COMMONFONT(fontSize);
     
+    UILabel *textLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    textLab.font = textFont;
+//    textLab.textColor = textColor;
+    textLab.text = moreTextStr;
+    CGSize moreTextStrSize = [textLab sizeThatFits:CGSizeMake(CGFLOAT_MAX, 50)];
+    CGFloat moreTextStrSizeWidth = ceil(moreTextStrSize.width);
+    
+    textLab.text = showAllTextStr;
+    CGSize showAllTextStrSize = [textLab sizeThatFits:CGSizeMake(CGFLOAT_MAX, 50)];
+    CGFloat showAllTextStrSizeWidth = ceil(showAllTextStrSize.width);
+
     //字体间距
     CGFloat textLineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
     
@@ -130,7 +183,7 @@
     text.font = textFont;
     text.color = textColor;//kCOLOR_dynamicProvider_222222_E5E7EB;
 
-    BOOL isShowMore = self.isShowMore;
+    BOOL isShowMore = isShowAll;
     if (array.count > 5) {
         if (isShowMore) {
             {
@@ -166,6 +219,23 @@
                   }];
                 [text appendAttributedString:one];
             }
+            
+            {
+                //真实显示的文字：textStr + \n + 收起
+                NSString *realDisplayStr = [NSString stringWithFormat:@"%@%@%@", textStr, returnTextStr, hideAllTextStr];
+                NSRange talkRange = [realDisplayStr rangeOfString:talkStr];
+                if(talkRange.location != NSNotFound){
+                    NSLog(@"这个字符串中存在");
+                    [text setTextHighlightRange:talkRange
+                                          color:kCOLOR_0091FF
+                                backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
+                                      tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+                        //自定义代码，此处根据需要调整
+                        NSLog(@"点击了话题%@",talkStr);
+                    }];
+                }
+            }
+            
         } else {
             //1-4行
             NSString *showText = [NSString stringWithFormat:@"%@%@%@%@", array[0], array[1], array[2], array[3]];
@@ -174,28 +244,17 @@
             //第5行：过滤回车和空行
             line5String = [NSString filterReturn:line5String];
             line5String = [NSString filterNewLine:line5String];
-            //第5行：拼接...查看全文
-            line5String = [NSString stringWithFormat:@"%@%@%@", line5String, moreTextStr, showAllTextStr];//...查看全文
-            //第5行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
-            yyContentLab.text = line5String;
-            NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
-            NSString *lineString = lineArray[0];
-            
-            //需要填充的字符
-            NSString *fillStr = [NSString stringWithFormat:@"%@%@", moreTextStr, showAllTextStr];
-            //实际截取的字符
-            NSString *deleteStr = [NSString stringWithFormat:@"%@", [lineString substringFromIndex:lineString.length - moreTextStr.length - showAllTextStr.length]];
-//            //保留的字符
-//            NSString *retainStr = [NSString stringWithFormat:@"%@", [lineString substringToIndex:lineString.length - moreTextStr.length - showAllTextStr.length]];
-         
-            int fillStrLength = [RRMJTool convertToInt:fillStr];
-            int deleteStrLength = [RRMJTool convertToInt:deleteStr];
-            int length = fillStrLength - deleteStrLength;
-            if (lineString.length >= (moreTextStr.length + showAllTextStr.length + length + 1)) {
-                lineString = [NSString stringWithFormat:@"%@", [lineString substringToIndex:lineString.length - (moreTextStr.length + showAllTextStr.length + length + 1)]];
-            } else {
-                lineString = @"";
-            }
+    
+            //第5行的label
+            YYLabel *lineLab = [YYLabel new];
+            lineLab.frame = CGRectMake(0, 0, KWidth - 61 - 16 - moreTextStrSizeWidth - showAllTextStrSizeWidth, 300);
+            lineLab.font = RR_COMMONFONT(14);
+            //lineLab.lineBreakMode = NSLineBreakByCharWrapping;
+            lineLab.numberOfLines = 1;
+            lineLab.text = line5String;
+            NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:lineLab];
+            //注意如果lineLab.text = @"";时候lineArray.count = 0,直接去lineArray[0]，会崩溃
+            NSString *lineString = lineArray.count > 0 ? lineArray[0] : @"";
             
             //最后，完成1-5行
             showText = [NSString stringWithFormat:@"%@%@", showText, lineString];
@@ -232,7 +291,24 @@
                  }];
                 [text appendAttributedString:one];
             }
+            
+            {
+                //真实显示的文字：showText + ... + 查看全文
+                NSString *realDisplayStr = [NSString stringWithFormat:@"%@%@%@", showText, moreTextStr, showAllTextStr];
+                NSRange talkRange = [realDisplayStr rangeOfString:talkStr];
+                if(talkRange.location != NSNotFound){
+                    NSLog(@"这个字符串中存在");
+                    [text setTextHighlightRange:talkRange
+                                          color:kCOLOR_0091FF
+                                backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
+                                      tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+                        //自定义代码，此处根据需要调整
+                        NSLog(@"点击了话题%@",talkStr);
+                    }];
+                }
+            }
         }
+        
     } else {
         {
             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:textStr];
@@ -240,27 +316,26 @@
             one.font = textFont;
             one.color = textColor;
             [text appendAttributedString:one];
+
+            {
+                //真实显示的文字：textStr
+                NSString *realDisplayStr = [NSString stringWithFormat:@"%@", textStr];
+                NSRange talkRange = [realDisplayStr rangeOfString:talkStr];
+                if(talkRange.location != NSNotFound){
+                    NSLog(@"这个字符串中存在");
+                    [text setTextHighlightRange:talkRange
+                                          color:kCOLOR_0091FF
+                                backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
+                                      tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+                        //自定义代码，此处根据需要调整
+                        NSLog(@"点击了话题%@",talkStr);
+                    }];
+                }
+            }
+            
         }
     }
-    
-    
-    CGSize yySize = CGSizeMake((KWidth - 61 - 16), CGFLOAT_MAX);
-    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
-//    CGRect rect = layout.textBoundingRect;
-    CGSize size = layout.textBoundingSize;
-    self.yyContentLab.attributedText = text;
-    self.yyContentLab.frame = CGRectMake(61, contentLabTop, (KWidth - 61 - 16), size.height);
-    
-    //当前高度
-    CGFloat currentHeight = contentLabTop - spacing;
-    //文字高度
-    CGFloat textViewHeight = self.yyContentLab.frame.size.height;
-    if (textViewHeight > 0) {
-        currentHeight = currentHeight + spacing + textViewHeight;
-    }
-    //    CGFloat currentHeight = contentLabTop + rect.size.height;
-
-    self.bottomView.frame = CGRectMake(0, currentHeight, KWidth, bottomViewHeight);
+    return text;
 }
 
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll {
@@ -280,7 +355,32 @@
     yyContentLab.font = RR_COMMONFONT(14);
 //    yyContentLab.lineBreakMode = NSLineBreakByCharWrapping;
     yyContentLab.numberOfLines = 0;
-  
+    
+    NSMutableAttributedString *text = [self handleTextHeightWithModel:model isShowAll:isShowAll];
+    if (!text) {
+        text = [[NSMutableAttributedString alloc] initWithString:@""];
+    }
+    CGSize yySize = CGSizeMake((KWidth - 61 - 16), CGFLOAT_MAX);
+    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
+//    CGRect rect = layout.textBoundingRect;
+    CGSize size = layout.textBoundingSize;
+    yyContentLab.attributedText = text;
+    yyContentLab.frame = CGRectMake(61, contentLabTop, (KWidth - 61 - 16), size.height);
+   
+    //当前高度
+    CGFloat currentHeight = contentLabTop - spacing;
+    //文字高度
+    CGFloat textViewHeight = yyContentLab.frame.size.height;
+    if (textViewHeight > 0) {
+        currentHeight = currentHeight + spacing + textViewHeight;
+    }
+    //    CGFloat currentHeight = contentLabTop + rect.size.height;
+
+    return bottomViewHeight + currentHeight;
+}
+
++ (NSMutableAttributedString *)handleTextHeightWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll {
+    //文字部分
     //@"剧透 "
     //@"       " 7个空格
     NSString *firstTextStr = @"      ";//@"剧透 ";//@"       "; @"剧透 ";
@@ -290,32 +390,77 @@
     NSString *hideAllTextStr = @"收起";
     NSString *content = [model.content copy] ?: @"";
     NSString *textStr = [model.content copy] ?: @"";
-    
+    NSString *talkStr = @"#火凤燎原#";
+
+    //需要显示的所有文字
+    NSString *allShowTextStr = @"";
     //剧透
     BOOL isFirst = model.spoiler;
     if (isFirst) {
         //现实剧透标签
 //        self.firstView.hidden = NO;
-        textStr = [firstTextStr stringByAppendingString:textStr];
+        allShowTextStr = [allShowTextStr stringByAppendingString:firstTextStr];
     } else {
         //隐藏剧透标签
 //        self.firstView.hidden = YES;
     }
     
-    //    self.contentLab.text = textStr;
-    yyContentLab.text = textStr;
+    //话题
+    //是否有话题
+    BOOL isTalk = NO;
+    //话题是否启用
+    BOOL isTalkEnable = YES;
+    if (isTalk) {
+        allShowTextStr = [allShowTextStr stringByAppendingString:talkStr];
+    }
     
+    textStr = [allShowTextStr stringByAppendingString:textStr];
+    
+    //    self.contentLab.text = textStr;
+    YYLabel *yyContentLab = [YYLabel new];
+    yyContentLab.frame = CGRectMake(0, 0, KWidth - 61 - 16, 300);
+    yyContentLab.font = RR_COMMONFONT(14);
+//    yyContentLab.lineBreakMode = NSLineBreakByCharWrapping;
+    yyContentLab.numberOfLines = 0;
+    yyContentLab.text = textStr;
+
     //    ...查看全文
     //    ...查看图片
     //恢复View
     NSArray *array = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
     
     //颜色
-    UIColor *textColor = kCOLOR_dynamicProvider_222222_E5E7EB;
-
+    UIColor *textColor = kCOLOR_222222;
+    if (@available(iOS 13.0, *)) {
+        if (UITraitCollection.currentTraitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+            //当前 "深色"模式
+            NSLog(@"深色");
+            textColor = kCOLOR_E5E7EB;
+            
+        } else {
+            //当前 "浅色"模式
+            NSLog(@"浅色");
+            textColor = kCOLOR_222222;
+            
+        }
+    } else {
+        // Fallback on earlier versions
+    }
+    
     //字号
     CGFloat fontSize = 14;
     UIFont *textFont = RR_COMMONFONT(fontSize);
+    
+    UILabel *textLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+    textLab.font = textFont;
+//    textLab.textColor = textColor;
+    textLab.text = moreTextStr;
+    CGSize moreTextStrSize = [textLab sizeThatFits:CGSizeMake(CGFLOAT_MAX, 50)];
+    CGFloat moreTextStrSizeWidth = ceil(moreTextStrSize.width);
+    
+    textLab.text = showAllTextStr;
+    CGSize showAllTextStrSize = [textLab sizeThatFits:CGSizeMake(CGFLOAT_MAX, 50)];
+    CGFloat showAllTextStrSizeWidth = ceil(showAllTextStrSize.width);
     
     //字体间距
     CGFloat textLineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
@@ -323,8 +468,8 @@
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@""];
     text.lineSpacing = textLineSpacing;
     text.font = textFont;
-    text.color = textColor;
-    
+    text.color = textColor;//kCOLOR_dynamicProvider_222222_E5E7EB;
+
     BOOL isShowMore = isShowAll;
     if (array.count > 5) {
         if (isShowMore) {
@@ -332,7 +477,7 @@
                 NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:textStr];
 //                one.lineSpacing = 2.5;
                 one.font = textFont;
-//                one.color = kCOLOR_dynamicProvider_222222_E5E7EB;
+                one.color = textColor;
                 [text appendAttributedString:one];
             }
             
@@ -340,7 +485,7 @@
                 NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:returnTextStr];
 //                one.lineSpacing = 2.5;
                 one.font = textFont;
-//                one.color = kCOLOR_dynamicProvider_222222_E5E7EB;
+                one.color = textColor;
                 [text appendAttributedString:one];
             }
             
@@ -359,36 +504,25 @@
             //第5行：过滤回车和空行
             line5String = [NSString filterReturn:line5String];
             line5String = [NSString filterNewLine:line5String];
-            //第5行：拼接...查看全文
-            line5String = [NSString stringWithFormat:@"%@%@%@", line5String, moreTextStr, showAllTextStr];//...查看全文
-            //第5行：拼接后有去出第一行（因为之前拼接了@“...查看全文”，所以substringToIndex:,是安全的）
-            yyContentLab.text = line5String;
-            NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:yyContentLab];
-            NSString *lineString = lineArray[0];
             
-            //需要填充的字符
-            NSString *fillStr = [NSString stringWithFormat:@"%@%@", moreTextStr, showAllTextStr];
-            //实际截取的字符
-            NSString *deleteStr = [NSString stringWithFormat:@"%@", [lineString substringFromIndex:lineString.length - moreTextStr.length - showAllTextStr.length]];
-//            //保留的字符
-//            NSString *retainStr = [NSString stringWithFormat:@"%@", [lineString substringToIndex:lineString.length - placeholderTextStr.length - showAllTextStr.length]];
-         
-            int fillStrLength = [RRMJTool convertToInt:fillStr];
-            int deleteStrLength = [RRMJTool convertToInt:deleteStr];
-            int length = fillStrLength - deleteStrLength;
-            if (lineString.length >= (moreTextStr.length + showAllTextStr.length + length + 1)) {
-                lineString = [NSString stringWithFormat:@"%@", [lineString substringToIndex:lineString.length - (moreTextStr.length + showAllTextStr.length + length + 1)]];
-            } else {
-                lineString = @"";
-            }
+            //第5行的label
+            YYLabel *lineLab = [YYLabel new];
+            lineLab.frame = CGRectMake(0, 0, KWidth - 61 - 16 - moreTextStrSizeWidth - showAllTextStrSizeWidth, 300);
+            lineLab.font = RR_COMMONFONT(14);
+            //lineLab.lineBreakMode = NSLineBreakByCharWrapping;
+            lineLab.numberOfLines = 1;
+            lineLab.text = line5String;
+            NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:lineLab];
+            //注意如果lineLab.text = @"";时候lineArray.count = 0,直接去lineArray[0]，会崩溃
+            NSString *lineString = lineArray.count > 0 ? lineArray[0] : @"";
             
             //最后，完成1-5行
             showText = [NSString stringWithFormat:@"%@%@", showText, lineString];
             {
                 NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:showText];
-//                one.lineSpacing = 2.5;
+                //                one.lineSpacing = 2.5;
                 one.font = textFont;
-//                one.color = kCOLOR_dynamicProvider_222222_E5E7EB;
+                one.color = textColor;
                 [text appendAttributedString:one];
             }
             
@@ -396,7 +530,7 @@
                 NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:moreTextStr];
 //                one.lineSpacing = 2.5;
                 one.font = textFont;
-//                one.color = kCOLOR_dynamicProvider_222222_E5E7EB;
+                one.color = textColor;
                 [text appendAttributedString:one];
             }
             
@@ -413,29 +547,13 @@
             NSMutableAttributedString *one = [[NSMutableAttributedString alloc] initWithString:textStr];
 //            one.lineSpacing = 2.5;
             one.font = textFont;
-//            one.color = kCOLOR_dynamicProvider_222222_E5E7EB;
+            one.color = textColor;
             [text appendAttributedString:one];
         }
     }
-    
-    CGSize yySize = CGSizeMake((KWidth - 61 - 16), CGFLOAT_MAX);
-    YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:yySize text:text];
-//    CGRect rect = layout.textBoundingRect;
-    CGSize size = layout.textBoundingSize;
-    yyContentLab.attributedText = text;
-    yyContentLab.frame = CGRectMake(61, contentLabTop, (KWidth - 61 - 16), size.height);;
-   
-    //当前高度
-    CGFloat currentHeight = contentLabTop - spacing;
-    //文字高度
-    CGFloat textViewHeight = yyContentLab.frame.size.height;
-    if (textViewHeight > 0) {
-        currentHeight = currentHeight + spacing + textViewHeight;
-    }
-    //    CGFloat currentHeight = contentLabTop + rect.size.height;
-
-    return bottomViewHeight + currentHeight;
+    return text;
 }
+
 
 //查看全文
 - (void)clickFullTextBtn {

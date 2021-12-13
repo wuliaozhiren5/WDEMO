@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 //@property (nonatomic, strong) UILabel *contentLab; //内容
 @property (nonatomic, strong) YYLabel *yyContentLab;//内容
 
+//富文本
+- (NSMutableAttributedString *)handleTextWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll;
++ (NSMutableAttributedString *)handleTextHeightWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll;
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll;
 @end
 
