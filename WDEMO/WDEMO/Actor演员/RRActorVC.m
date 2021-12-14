@@ -21,7 +21,7 @@
 #import "RRActorIntroAndWorksVC.h"
 #import "RRActorVideoVC.h"
  
-const CGFloat headViewHeight = 256;
+static const CGFloat headViewHeight = 256;
 
 @interface RRActorVC ()<UITableViewDelegate, UITableViewDataSource, scrollDelegate, WMPageControllerDelegate>
 //tableview
