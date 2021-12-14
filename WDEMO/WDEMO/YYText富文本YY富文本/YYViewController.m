@@ -146,6 +146,10 @@
     // 嵌入 UIImageViewv  网络图片 webimage
     UIImageView *imageView = [[UIImageView alloc] init];
     imageView.frame = CGRectMake(0, 0, 20, 20);
+//    imageView.backgroundColor = [UIColor redColor];
+//    imageView.layer.cornerRadius = 10;
+//    imageView.layer.masksToBounds = YES;
+//    imageView.userInteractionEnabled = YES;
     [imageView setImageWithURL:[NSURL URLWithString:@"https://avatar.csdnimg.cn/D/A/E/1_weixin_39840387.jpg"] placeholder:[UIImage imageNamed:@"dao"]];
     attachment = [NSMutableAttributedString attachmentStringWithContent:imageView contentMode:UIViewContentModeCenter attachmentSize:imageView.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
     [text appendAttributedString: attachment];
