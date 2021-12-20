@@ -161,9 +161,7 @@
         return nil;
     }
 }
-
-
-
+ 
 #pragma mark -- UICollectionViewDelegateFlowLayout
 /*
 //CGSize itemSize：它定义了每一个item的大小，通过itemSize可以快捷给每一个cell设置一样的大小，如果你想到不同的尺寸，-collectionView:layout:sizeForItemAtIndexPath:来给每一个item指定不同的尺寸。
