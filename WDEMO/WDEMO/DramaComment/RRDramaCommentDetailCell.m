@@ -81,9 +81,9 @@
         make.height.equalTo(@30);
     }];
     [self.noSeasonViewLab mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.leading.equalTo(@60);
+//        make.leading.equalTo(@60);
         make.height.equalTo(@17);
-        make.centerY.equalTo(self.seasonView.mas_centerY);
+        make.center.equalTo(self.seasonView);
     }];
     [self.line mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(@0);
@@ -91,6 +91,21 @@
         make.trailing.equalTo(@-16);
         make.height.equalTo(@(1.0f / [UIScreen mainScreen].scale));
     }];
+    
+    
+    self.contentView.userInteractionEnabled = YES;
+    //单击手势 单击回复
+    UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(singleTapDramaCommentDetailCell:)];
+    singleTapGesture.numberOfTapsRequired = 1;
+    singleTapGesture.numberOfTouchesRequired = 1;
+    [self.contentView addGestureRecognizer:singleTapGesture];
+    //双击手势 双击点赞
+    UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTapDramaCommentDetailCell:)];
+    doubleTapGesture.numberOfTapsRequired = 2;
+    doubleTapGesture.numberOfTouchesRequired = 1;
+    [self.contentView addGestureRecognizer:doubleTapGesture];
+    //只有当doubleTapGesture识别失败的时候(即识别出这不是双击操作)，singleTapGesture才能开始识别
+    [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
 }
 
 - (void)setModel:(RRSeniorCommentsModel *)model {
@@ -257,6 +272,10 @@
     //可能没剧集信息
 }
 
+//+ (RRSeriesItemModel *)dramaModel:(RRSeniorCommentsModel *)dramaModel {
+//    return dramaModel.drama;
+//}
+
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model {
     
     //当前高度
@@ -341,8 +360,17 @@
     }
      
     CGFloat seasonViewHeight = 0;
-    seasonViewHeight = 70;
-    currentHeight = currentHeight + 20 + seasonViewHeight;
+    RRSeriesItemModel *dramaModel = model.drama;
+    if (dramaModel) {
+        seasonViewHeight = 70;
+    } else {
+        seasonViewHeight = 0;
+    }
+     
+    if (seasonViewHeight > 0) {
+        currentHeight = currentHeight + 20 + seasonViewHeight;
+    }
+    
     currentHeight = currentHeight + 20;
  
     return currentHeight;
