@@ -289,6 +289,7 @@
 		F5AC7C4D27102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C4227102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m */; };
 		F5AC7C5027102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C4F27102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m */; };
 		F5AC7C542710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C522710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m */; };
+		F5B035B0278548E100D8F4D8 /* iOS监听系统侧滑返回事件.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B035AF278548E100D8F4D8 /* iOS监听系统侧滑返回事件.md */; };
 		F5B1FE6B2621AC6C004B950C /* TableviewSectionHeader不悬停.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */; };
 		F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B30F6524F8D3F8003DFB2E /* RAC.md */; };
 		F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A92F2508F502002505AE /* FullScreenMessageController.m */; };
@@ -951,6 +952,7 @@
 		F5AC7C4F27102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsDetailVC.m; sourceTree = "<group>"; };
 		F5AC7C522710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsPraiseBtnInputBar.m; sourceTree = "<group>"; };
 		F5AC7C532710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsPraiseBtnInputBar.h; sourceTree = "<group>"; };
+		F5B035AF278548E100D8F4D8 /* iOS监听系统侧滑返回事件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS监听系统侧滑返回事件.md"; sourceTree = "<group>"; };
 		F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "TableviewSectionHeader不悬停.md"; sourceTree = "<group>"; };
 		F5B30F6524F8D3F8003DFB2E /* RAC.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RAC.md; sourceTree = "<group>"; };
 		F5B5A92E2508F501002505AE /* HalfScreenMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenMessageController.h; sourceTree = "<group>"; };
@@ -1312,6 +1314,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F5A13D60277AF51600EABA4D /* Talk */,
 				F5F6AEE92744A1DA0074B26D /* DIYPageControl */,
 				F5596C79271EA554007D9FE9 /* md文件 */,
 				F5DC862C27155FE600EED8D5 /* RankingList排行榜 */,
@@ -1866,6 +1869,7 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				F5B035AF278548E100D8F4D8 /* iOS监听系统侧滑返回事件.md */,
 				F55EF6872758CD430043B460 /* 更改状态栏导航栏颜色的方法.md */,
 				F508EBEF27562F920017F315 /* initWithNibName方法什么时候调用.md */,
 				F5557D7B274DE852002B2B98 /* 识别单击和双击手势.md */,
@@ -2186,6 +2190,13 @@
 				F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */,
 			);
 			path = "底部假的输入框ChatBottomInputBarViewController";
+			sourceTree = "<group>";
+		};
+		F5A13D60277AF51600EABA4D /* Talk */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Talk;
 			sourceTree = "<group>";
 		};
 		F5A51F2B24FC952C0054A4DD /* Password */ = {
@@ -3013,6 +3024,7 @@
 				F548D0EA256E2EEA00357E64 /* amwayGuide.json in Resources */,
 				F5409ABB26B166020042F29D /* star@2x.png in Resources */,
 				F548D0DA256E2EEA00357E64 /* amwayPlayerGuide_0.png in Resources */,
+				F5B035B0278548E100D8F4D8 /* iOS监听系统侧滑返回事件.md in Resources */,
 				F5091E28268C679F000884D1 /* dropdown_loading_02@2x.png in Resources */,
 				F5CA668D26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md in Resources */,
 				F55F2EFF2763323F000DB684 /* YYLabel#话题@用户.md in Resources */,
