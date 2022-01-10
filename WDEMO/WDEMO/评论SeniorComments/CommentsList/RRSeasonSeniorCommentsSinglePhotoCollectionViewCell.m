@@ -36,26 +36,38 @@
 }
 
 - (void)setModel:(RRSeniorCommentsImageModel *)model {
-    _model = model;
-//    [self.imageView rr_downloadImageWithURLString:model.url placeholderImage:KplaceholderImg];
-    
-    CGFloat width = self.size.width;
-    CGFloat height = self.size.height;
-    NSInteger modelImageWidth = model.width;
-    NSInteger modelImageHeight = model.height;
-    NSInteger showImageWidth = width;
-    NSInteger showImageHeight = height;
-    
+    CGFloat cellwidth = self.size.width;
+    CGFloat cellheight = self.size.height;
+    CGFloat width = model.width;
+    CGFloat height = model.height;
+    CGFloat showWidth = 0;
+    CGFloat showHeight = 0;
+ 
+    CGFloat orginX = 0;
     CGFloat orginY = 0;
-    //图片尺寸转变，图片的宽width = 屏幕点宽，计算出图片的高height
-    showImageHeight = showImageWidth * modelImageHeight / modelImageWidth;
-    if (showImageHeight <= height) {
-        showImageHeight = height;
+    
+    if (width > height) {
+        //居中上下可以有黑边，左右不能有黑便
+        showWidth = cellwidth;
+        showHeight = showWidth * height / width;
+        orginX = 0;
+        orginY = (cellheight - showHeight) / 2.0;
+        
+    } else if (width < height) {
+        showWidth = cellwidth;
+        showHeight = showWidth * height / width;
+        orginX = 0;
+        orginY = 0;
+        
     } else {
-        //图片居中
-//        orginY = -(showImageHeight - height) / 2.0;
+        showWidth = cellwidth;
+        showHeight = cellheight;
+        orginX = 0;
+        orginY = 0;
+        
     }
-    self.imageView.frame = CGRectMake(0, orginY, showImageWidth, showImageHeight);
+    self.imageView.frame = CGRectMake(orginX, orginY, showWidth, showHeight);
+//    [self.imageView rr_downloadImageWithURLString:model.url placeholderImage:KplaceholderImg];
 }
 
 - (UIImageView *)imageView {

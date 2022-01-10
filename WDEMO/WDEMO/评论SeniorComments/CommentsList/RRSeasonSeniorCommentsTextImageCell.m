@@ -91,11 +91,15 @@
             
         } else if (width < height) {
             showWidth = max;
-            showHeight = max * 4 / 3;
+            showHeight = showWidth * height / width;
+            if (showHeight > max * 4 / 3) {
+                showHeight = max * 4 / 3;
+            }
             
         } else {
             showWidth = max;
             showHeight = max;
+            
         }
   
         self.photoCollectionView.hidden = NO;
@@ -214,7 +218,7 @@
         //        //5.9UI展示逻辑修改
         //        showWidth = (KWidth - 61 - 16) - 100;
         //        showHeight = showWidth;
-        
+       
         //5.12UI展示逻辑修改
         if (width > height) {
             showWidth = max;
@@ -222,11 +226,15 @@
             
         } else if (width < height) {
             showWidth = max;
-            showHeight = max * 4 / 3;
+            showHeight = showWidth * height / width;
+            if (showHeight > max * 4 / 3) {
+                showHeight = max * 4 / 3;
+            }
             
         } else {
             showWidth = max;
             showHeight = max;
+            
         }
         
         imageViewHeight = showHeight;

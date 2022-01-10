@@ -119,14 +119,18 @@
         if (width > height) {
             showWidth = max;
             showHeight = max * 9 / 16;
-
+            
         } else if (width < height) {
             showWidth = max;
-            showHeight = max * 4 / 3;
-
+            showHeight = showWidth * height / width;
+            if (showHeight > max * 4 / 3) {
+                showHeight = max * 4 / 3;
+            }
+            
         } else {
             showWidth = max;
             showHeight = max;
+            
         }
         return CGSizeMake(showWidth, showHeight);
     } else {
