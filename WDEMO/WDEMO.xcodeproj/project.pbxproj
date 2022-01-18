@@ -1316,7 +1316,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
-				F5A13D60277AF51600EABA4D /* Talk */,
+				F53626402796954800AC8A74 /* Talk */,
 				F5F6AEE92744A1DA0074B26D /* DIYPageControl */,
 				F5596C79271EA554007D9FE9 /* md文件 */,
 				F5DC862C27155FE600EED8D5 /* RankingList排行榜 */,
@@ -1722,6 +1722,13 @@
 				F5F5B43D25FA1DFE0069491B /* RRActorInfoVC.m */,
 			);
 			path = ActorIntroVC;
+			sourceTree = "<group>";
+		};
+		F53626402796954800AC8A74 /* Talk */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Talk;
 			sourceTree = "<group>";
 		};
 		F53C39052616B85E0015A9AE /* 新手引导Guide镂空 */ = {
@@ -2193,13 +2200,6 @@
 				F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */,
 			);
 			path = "底部假的输入框ChatBottomInputBarViewController";
-			sourceTree = "<group>";
-		};
-		F5A13D60277AF51600EABA4D /* Talk */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Talk;
 			sourceTree = "<group>";
 		};
 		F5A51F2B24FC952C0054A4DD /* Password */ = {
