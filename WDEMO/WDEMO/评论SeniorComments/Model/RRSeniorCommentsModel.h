@@ -11,6 +11,10 @@
 #import "RRHomeChannelModel.h"
 
 @class RRSeniorCommentsImageModel;
+@class RRTalkModel;
+
+@class RRSeniorCommentsImageModel;
+@class RRTalkModel;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -64,8 +68,11 @@ NS_ASSUME_NONNULL_BEGIN
 //影评
 @property (nonatomic, assign) CGFloat score; //评分
 
-//影评
+//关联剧集
 @property (nonatomic, strong) RRSeriesItemModel *drama; //剧集信息
+
+//话题列表
+@property (nonatomic, copy) NSArray<RRTalkModel *> *talkList;
 
 @end
 
@@ -127,8 +134,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) NSInteger height;
 @end
 
+#pragma mark - RRTalk 话题
+@interface RRTalkModel : NSObject
+
+@property (nonatomic, copy) NSString *ID;
+
+@property (nonatomic, copy) NSString *name;
+
+@property (nonatomic, assign) BOOL enable;
+@end
 NS_ASSUME_NONNULL_END
-
-
-
-

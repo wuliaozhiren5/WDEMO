@@ -21,6 +21,7 @@
     return @{
         @"images" : [RRSeniorCommentsImageModel class],
         @"replies" : [RRSeniorCommentsModel class],
+        @"talkList" : [RRTalkModel class],
     };
 }
 
@@ -53,7 +54,6 @@
 
 + (NSDictionary *)modelContainerPropertyGenericClass {
     return @{@"content" : [RRSeniorCommentsModel class],
-             @"images"  : [RRSeniorCommentsImageModel class],
     };
 }
 @end
@@ -95,5 +95,12 @@
     return _height > 0 ? _height : 200;
 }
 @end
+ 
+#pragma mark - RRTalk 话题
+@implementation RRTalkModel
 
-
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{@"ID" : @"id",
+    };
+}
+@end

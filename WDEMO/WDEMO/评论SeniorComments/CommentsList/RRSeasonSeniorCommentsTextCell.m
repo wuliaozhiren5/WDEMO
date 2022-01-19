@@ -65,6 +65,16 @@
     CGFloat spacing = [[self class] getSpacing];
     CGFloat bottomViewHeight = [[self class] getBottomViewHeight];
     
+    //剧透
+    BOOL isFirst = model.spoiler;
+    if (isFirst) {
+        //现实剧透标签
+        self.firstView.hidden = NO;
+     } else {
+        //隐藏剧透标签
+        self.firstView.hidden = YES;
+    }
+    
     NSMutableAttributedString *text = [self handleTextWithModel:model isShowAll:self.isShowMore];
     if (!text) {
         text = [[NSMutableAttributedString alloc] initWithString:@""];
@@ -103,7 +113,6 @@
     NSString *hideAllTextStr = @"收起";
     NSString *content = [model.content copy] ?: @"";
     NSString *textStr = [model.content copy] ?: @"";
-    NSString *talkStr = @"#火凤燎原#";
 
     //需要显示的所有文字
     NSString *allShowTextStr = @"";
@@ -111,20 +120,21 @@
     BOOL isFirst = model.spoiler;
     if (isFirst) {
         //现实剧透标签
-        self.firstView.hidden = NO;
+//        self.firstView.hidden = NO;
         allShowTextStr = [allShowTextStr stringByAppendingString:firstTextStr];
     } else {
         //隐藏剧透标签
-        self.firstView.hidden = YES;
+//        self.firstView.hidden = YES;
     }
-    
-    //话题
+     
     //是否有话题
-    BOOL isTalk = NO;
-    //话题是否启用
-    BOOL isTalkEnable = YES;
-    if (isTalk) {
-        allShowTextStr = [allShowTextStr stringByAppendingString:talkStr];
+    RRTalkModel *talkModel = [model.talkList firstObject];
+    if (talkModel) {
+        NSString *talkStr = talkModel.name ? [NSString stringWithFormat:@"#%@", talkModel.name]: @"";
+        if (talkStr.length > 0) {
+            allShowTextStr = [allShowTextStr stringByAppendingString:talkStr];
+            allShowTextStr = [allShowTextStr stringByAppendingString:@" "];
+        }
     }
     
     textStr = [allShowTextStr stringByAppendingString:textStr];
@@ -221,21 +231,39 @@
             }
             
             {
+ 
                 //真实显示的文字：textStr + \n + 收起
                 NSString *realDisplayStr = [NSString stringWithFormat:@"%@%@%@", textStr, returnTextStr, hideAllTextStr];
-                NSRange talkRange = [realDisplayStr rangeOfString:talkStr];
-                if(talkRange.location != NSNotFound){
-                    NSLog(@"这个字符串中存在");
-                    [text setTextHighlightRange:talkRange
-                                          color:kCOLOR_0091FF
-                                backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                                      tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                        //自定义代码，此处根据需要调整
-                        NSLog(@"点击了话题%@",talkStr);
-                    }];
+                if (talkModel) {
+                    NSString *talkStr = talkModel.name ? [NSString stringWithFormat:@"#%@", talkModel.name]: @"";
+                    if (talkStr.length > 0) {
+                        
+                        BOOL talkEnable = talkModel.enable;
+                        //话题不可用（高亮灰色）
+                        UIColor *talkHighlightColor = kCOLOR_85888F;
+                        if (talkEnable) {
+                            //话题可用（高亮蓝色）
+                            talkHighlightColor = kCOLOR_0091FF;
+                        }
+                        
+                        NSRange talkRange = [realDisplayStr rangeOfString:talkStr];
+                        if(talkRange.location != NSNotFound) {
+                            NSLog(@"这个字符串中存在");
+                            [text setTextHighlightRange:talkRange
+                                                  color:talkHighlightColor
+                                        backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
+                                              tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+                                //自定义代码，此处根据需要调整
+                                NSLog(@"点击了话题%@",talkStr);
+                                if (talkEnable) {
+//                                    [[RRAppLinkManager sharedManager] goTalkDetail:talkModel.ID toRoot:NO];
+                                }
+                            }];
+                        }
+                    }
                 }
             }
-            
+ 
         } else {
             //1-4行
             NSString *showText = [NSString stringWithFormat:@"%@%@%@%@", array[0], array[1], array[2], array[3]];
@@ -244,17 +272,20 @@
             //第5行：过滤回车和空行
             line5String = [NSString filterReturn:line5String];
             line5String = [NSString filterNewLine:line5String];
-    
-            //第5行的label
-            YYLabel *lineLab = [YYLabel new];
-            lineLab.frame = CGRectMake(0, 0, KWidth - 61 - 16 - moreTextStrSizeWidth - showAllTextStrSizeWidth, 300);
-            lineLab.font = RR_COMMONFONT(14);
-            //lineLab.lineBreakMode = NSLineBreakByCharWrapping;
-            lineLab.numberOfLines = 1;
-            lineLab.text = line5String;
-            NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:lineLab];
-            //注意如果lineLab.text = @"";时候lineArray.count = 0,直接去lineArray[0]，会崩溃
-            NSString *lineString = lineArray.count > 0 ? lineArray[0] : @"";
+     
+            NSString *lineString = @"";
+            if (line5String.length > 0) {
+                //第5行的label
+                YYLabel *lineLab = [YYLabel new];
+                lineLab.frame = CGRectMake(0, 0, KWidth - 61 - 16 - moreTextStrSizeWidth - showAllTextStrSizeWidth, 300);
+                lineLab.font = RR_COMMONFONT(14);
+                //lineLab.lineBreakMode = NSLineBreakByCharWrapping;
+                lineLab.numberOfLines = 1;
+                lineLab.text = line5String;
+                NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:lineLab];
+                //注意如果lineLab.text = @"";时候lineArray.count = 0,直接去lineArray[0]，会崩溃
+                lineString = lineArray.count > 0 ? [lineArray firstObject] : @"";
+            }
             
             //最后，完成1-5行
             showText = [NSString stringWithFormat:@"%@%@", showText, lineString];
@@ -295,16 +326,33 @@
             {
                 //真实显示的文字：showText + ... + 查看全文
                 NSString *realDisplayStr = [NSString stringWithFormat:@"%@%@%@", showText, moreTextStr, showAllTextStr];
-                NSRange talkRange = [realDisplayStr rangeOfString:talkStr];
-                if(talkRange.location != NSNotFound){
-                    NSLog(@"这个字符串中存在");
-                    [text setTextHighlightRange:talkRange
-                                          color:kCOLOR_0091FF
-                                backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                                      tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                        //自定义代码，此处根据需要调整
-                        NSLog(@"点击了话题%@",talkStr);
-                    }];
+                if (talkModel) {
+                    NSString *talkStr = talkModel.name ? [NSString stringWithFormat:@"#%@", talkModel.name]: @"";
+                    if (talkStr.length > 0) {
+                        
+                        BOOL talkEnable = talkModel.enable;
+                        //话题不可用（高亮灰色）
+                        UIColor *talkHighlightColor = kCOLOR_85888F;
+                        if (talkEnable) {
+                            //话题可用（高亮蓝色）
+                            talkHighlightColor = kCOLOR_0091FF;
+                        }
+                        
+                        NSRange talkRange = [realDisplayStr rangeOfString:talkStr];
+                        if(talkRange.location != NSNotFound) {
+                            NSLog(@"这个字符串中存在");
+                            [text setTextHighlightRange:talkRange
+                                                  color:talkHighlightColor
+                                        backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
+                                              tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+                                //自定义代码，此处根据需要调整
+                                NSLog(@"点击了话题%@",talkStr);
+                                if (talkEnable) {
+//                                    [[RRAppLinkManager sharedManager] goTalkDetail:talkModel.ID toRoot:NO];
+                                }
+                            }];
+                        }
+                    }
                 }
             }
         }
@@ -320,16 +368,33 @@
             {
                 //真实显示的文字：textStr
                 NSString *realDisplayStr = [NSString stringWithFormat:@"%@", textStr];
-                NSRange talkRange = [realDisplayStr rangeOfString:talkStr];
-                if(talkRange.location != NSNotFound){
-                    NSLog(@"这个字符串中存在");
-                    [text setTextHighlightRange:talkRange
-                                          color:kCOLOR_0091FF
-                                backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
-                                      tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
-                        //自定义代码，此处根据需要调整
-                        NSLog(@"点击了话题%@",talkStr);
-                    }];
+                if (talkModel) {
+                    NSString *talkStr = talkModel.name ? [NSString stringWithFormat:@"#%@", talkModel.name]: @"";
+                    if (talkStr.length > 0) {
+                        
+                        BOOL talkEnable = talkModel.enable;
+                        //话题不可用（高亮灰色）
+                        UIColor *talkHighlightColor = kCOLOR_85888F;
+                        if (talkEnable) {
+                            //话题可用（高亮蓝色）
+                            talkHighlightColor = kCOLOR_0091FF;
+                        }
+                        
+                        NSRange talkRange = [realDisplayStr rangeOfString:talkStr];
+                        if(talkRange.location != NSNotFound) {
+                            NSLog(@"这个字符串中存在");
+                            [text setTextHighlightRange:talkRange
+                                                  color:talkHighlightColor
+                                        backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
+                                              tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+                                //自定义代码，此处根据需要调整
+                                NSLog(@"点击了话题%@",talkStr);
+                                if (talkEnable) {
+//                                    [[RRAppLinkManager sharedManager] goTalkDetail:talkModel.ID toRoot:NO];
+                                }
+                            }];
+                        }
+                    }
                 }
             }
             
@@ -337,6 +402,7 @@
     }
     return text;
 }
+
 
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll {
     //顶部到文字 34
@@ -390,7 +456,6 @@
     NSString *hideAllTextStr = @"收起";
     NSString *content = [model.content copy] ?: @"";
     NSString *textStr = [model.content copy] ?: @"";
-    NSString *talkStr = @"#火凤燎原#";
 
     //需要显示的所有文字
     NSString *allShowTextStr = @"";
@@ -405,13 +470,14 @@
 //        self.firstView.hidden = YES;
     }
     
-    //话题
     //是否有话题
-    BOOL isTalk = NO;
-    //话题是否启用
-    BOOL isTalkEnable = YES;
-    if (isTalk) {
-        allShowTextStr = [allShowTextStr stringByAppendingString:talkStr];
+    RRTalkModel *talkModel = [model.talkList firstObject];
+    if (talkModel) {
+        NSString *talkStr = talkModel.name ? [NSString stringWithFormat:@"#%@", talkModel.name]: @"";
+        if (talkStr.length > 0) {
+            allShowTextStr = [allShowTextStr stringByAppendingString:talkStr];
+            allShowTextStr = [allShowTextStr stringByAppendingString:@" "];
+        }
     }
     
     textStr = [allShowTextStr stringByAppendingString:textStr];
@@ -505,16 +571,19 @@
             line5String = [NSString filterReturn:line5String];
             line5String = [NSString filterNewLine:line5String];
             
-            //第5行的label
-            YYLabel *lineLab = [YYLabel new];
-            lineLab.frame = CGRectMake(0, 0, KWidth - 61 - 16 - moreTextStrSizeWidth - showAllTextStrSizeWidth, 300);
-            lineLab.font = RR_COMMONFONT(14);
-            //lineLab.lineBreakMode = NSLineBreakByCharWrapping;
-            lineLab.numberOfLines = 1;
-            lineLab.text = line5String;
-            NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:lineLab];
-            //注意如果lineLab.text = @"";时候lineArray.count = 0,直接去lineArray[0]，会崩溃
-            NSString *lineString = lineArray.count > 0 ? lineArray[0] : @"";
+            NSString *lineString = @"";
+            if (line5String.length > 0) {
+                //第5行的label
+                YYLabel *lineLab = [YYLabel new];
+                lineLab.frame = CGRectMake(0, 0, KWidth - 61 - 16 - moreTextStrSizeWidth - showAllTextStrSizeWidth, 300);
+                lineLab.font = RR_COMMONFONT(14);
+                //lineLab.lineBreakMode = NSLineBreakByCharWrapping;
+                lineLab.numberOfLines = 1;
+                lineLab.text = line5String;
+                NSArray *lineArray = [RRMJTool getSeparatedLinesFromYYLabel:lineLab];
+                //注意如果lineLab.text = @"";时候lineArray.count = 0,直接去lineArray[0]，会崩溃
+                lineString = lineArray.count > 0 ? [lineArray firstObject] : @"";
+            }
             
             //最后，完成1-5行
             showText = [NSString stringWithFormat:@"%@%@", showText, lineString];
@@ -553,7 +622,6 @@
     }
     return text;
 }
-
 
 //查看全文
 - (void)clickFullTextBtn {
