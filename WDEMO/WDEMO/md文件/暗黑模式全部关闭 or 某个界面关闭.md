@@ -27,3 +27,8 @@ if (@available(iOS 13.0, *)) {
     }
 }
 ```
+```
+公司代码
+[self.view setDarkMode:YES];
+
+```

@@ -112,7 +112,7 @@
 		F52F168D26A82C1C00D4E305 /* func.list in Resources */ = {isa = PBXBuildFile; fileRef = F52F168B26A82C1C00D4E305 /* func.list */; };
 		F52F168E26A82C1C00D4E305 /* confuse.sh in Resources */ = {isa = PBXBuildFile; fileRef = F52F168C26A82C1C00D4E305 /* confuse.sh */; };
 		F52FE64A255A6EAB00AE67D3 /* FullScreenChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293F22509CE0D00E06D42 /* FullScreenChatController.m */; };
-		F53155FA27981A69007B9E2E /* 全部关闭 or 某个界面关闭.md in Resources */ = {isa = PBXBuildFile; fileRef = F53155F927981A69007B9E2E /* 全部关闭 or 某个界面关闭.md */; };
+		F53155FA27981A69007B9E2E /* 暗黑模式全部关闭 or 某个界面关闭.md in Resources */ = {isa = PBXBuildFile; fileRef = F53155F927981A69007B9E2E /* 暗黑模式全部关闭 or 某个界面关闭.md */; };
 		F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */; };
 		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
 		F534736E25E357F400F01CC6 /* iOS仿抖音短视频.md in Resources */ = {isa = PBXBuildFile; fileRef = F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */; };
@@ -163,6 +163,7 @@
 		F5557D7C274DE852002B2B98 /* 识别单击和双击手势.md in Resources */ = {isa = PBXBuildFile; fileRef = F5557D7B274DE852002B2B98 /* 识别单击和双击手势.md */; };
 		F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F556CBCA25AEA11600B590D2 /* WaterLayout.m */; };
 		F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */; };
+		F556FE1B27B9F75E00D00D8E /* 半屏评论下滑.md in Resources */ = {isa = PBXBuildFile; fileRef = F556FE1A27B9F75E00D00D8E /* 半屏评论下滑.md */; };
 		F5596C75271EA2FE007D9FE9 /* RRAllRankingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5596C74271EA2FE007D9FE9 /* RRAllRankingVC.m */; };
 		F5596C78271EA30E007D9FE9 /* RRAllRankingSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5596C77271EA30E007D9FE9 /* RRAllRankingSubVC.m */; };
 		F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F55E5B5A258C58B700C1DECD /* ScoreView.m */; };
@@ -655,7 +656,7 @@
 		F52F168A26A82C1C00D4E305 /* codeObfuscation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codeObfuscation.h; sourceTree = "<group>"; };
 		F52F168B26A82C1C00D4E305 /* func.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
 		F52F168C26A82C1C00D4E305 /* confuse.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = confuse.sh; sourceTree = "<group>"; };
-		F53155F927981A69007B9E2E /* 全部关闭 or 某个界面关闭.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "全部关闭 or 某个界面关闭.md"; sourceTree = "<group>"; };
+		F53155F927981A69007B9E2E /* 暗黑模式全部关闭 or 某个界面关闭.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "暗黑模式全部关闭 or 某个界面关闭.md"; sourceTree = "<group>"; };
 		F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfScreenInputController.m; sourceTree = "<group>"; };
 		F53293EC2509C6FE00E06D42 /* HalfScreenInputController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenInputController.h; sourceTree = "<group>"; };
 		F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenInputController.m; sourceTree = "<group>"; };
@@ -736,6 +737,7 @@
 		F556CBC925AEA11600B590D2 /* WaterLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterLayout.h; sourceTree = "<group>"; };
 		F556CBCA25AEA11600B590D2 /* WaterLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterLayout.m; sourceTree = "<group>"; };
 		F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WCollectionViewCell.xib; sourceTree = "<group>"; };
+		F556FE1A27B9F75E00D00D8E /* 半屏评论下滑.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "半屏评论下滑.md"; sourceTree = "<group>"; };
 		F5596C73271EA2FE007D9FE9 /* RRAllRankingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingVC.h; sourceTree = "<group>"; };
 		F5596C74271EA2FE007D9FE9 /* RRAllRankingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingVC.m; sourceTree = "<group>"; };
 		F5596C76271EA30E007D9FE9 /* RRAllRankingSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingSubVC.h; sourceTree = "<group>"; };
@@ -1880,7 +1882,8 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
-				F53155F927981A69007B9E2E /* 全部关闭 or 某个界面关闭.md */,
+				F556FE1A27B9F75E00D00D8E /* 半屏评论下滑.md */,
+				F53155F927981A69007B9E2E /* 暗黑模式全部关闭 or 某个界面关闭.md */,
 				F5B035B127856EE200D8F4D8 /* 修改工程名称待实践.md */,
 				F5B035AF278548E100D8F4D8 /* iOS监听系统侧滑返回事件.md */,
 				F55EF6872758CD430043B460 /* 更改状态栏导航栏颜色的方法.md */,
@@ -3057,12 +3060,13 @@
 				F52F168E26A82C1C00D4E305 /* confuse.sh in Resources */,
 				F5125756269C2616000B81C0 /* iOS应用内跳转到系统设置页面.md in Resources */,
 				F5557D7C274DE852002B2B98 /* 识别单击和双击手势.md in Resources */,
+				F556FE1B27B9F75E00D00D8E /* 半屏评论下滑.md in Resources */,
 				F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */,
 				F58613CD26A96EB100D81DDA /* user_identifiers.txt in Resources */,
 				F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */,
 				F5CA140326B2A2DC00D8A7AE /* account_highlight@2x.png in Resources */,
 				F5A5E71A26B3ADEF00C28596 /* 自定义TabBar点击动画效.md in Resources */,
-				F53155FA27981A69007B9E2E /* 全部关闭 or 某个界面关闭.md in Resources */,
+				F53155FA27981A69007B9E2E /* 暗黑模式全部关闭 or 某个界面关闭.md in Resources */,
 				F548D101256E384300357E64 /* img_1.png in Resources */,
 				F5D5C1B82714298D0021C36E /* 3.jpg in Resources */,
 				F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */,
