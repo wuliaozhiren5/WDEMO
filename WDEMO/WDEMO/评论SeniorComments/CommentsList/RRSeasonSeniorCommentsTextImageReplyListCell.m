@@ -69,6 +69,7 @@
     if (isHasReply) {
         self.tableView.hidden = NO;
         self.tableView.isHalf = self.isHalf;
+        self.tableView.showPhotoVC = self.showPhotoVC;
         self.tableView.count = model.replyCount;
         self.tableView.data = model.replies;
         self.tableView.model = model;

@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) NSArray *data;
 @property (nonatomic, assign) NSInteger count;
 @property (nonatomic, assign) BOOL isHalf;          //半屏
+@property (nonatomic, strong) UIViewController *showPhotoVC;//快看评论的图片处理
 @property (nonatomic, weak) id<RRSeasonSeniorCommentsReplyTableViewDelegate> tableViewDelegate;
 @end
 
@@ -31,6 +32,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface RRSeasonSeniorCommentsReplyTableViewCell : UITableViewCell
 @property (nonatomic, strong)RRSeniorCommentsModel *model;
 @property (nonatomic, assign) BOOL isHalf;          //半屏
+@property (nonatomic, strong) UIViewController *showPhotoVC;//快看评论的图片处理
 
 //富文本
 - (NSMutableAttributedString *)handleTextWithModel:(RRSeniorCommentsModel *)model;

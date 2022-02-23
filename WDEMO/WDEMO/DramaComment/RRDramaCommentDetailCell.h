@@ -13,6 +13,8 @@
 #import "RRSeasonSeniorCommentsCell.h"
 
 NS_ASSUME_NONNULL_BEGIN
+typedef void(^DoubleTapCell)(void);
+typedef void(^SingleTapCell)(void);
 
 @interface RRDramaCommentDetailCell : UITableViewCell
 //图片滚动器
@@ -42,6 +44,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, copy) ClickSeasonSeniorCommentsCell clickDrama;
 
 @property (nonatomic, strong) RRSeniorCommentsModel *model;
+
+@property (nonatomic, copy) DoubleTapCell doubleTapCell;
+@property (nonatomic, copy) SingleTapCell singleTapCell;
 
 + (CGFloat)cellHeightWithModel:(RRSeniorCommentsModel *)model;
 //文字top

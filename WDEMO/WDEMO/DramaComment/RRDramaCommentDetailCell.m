@@ -13,6 +13,11 @@
 //#import "ReportApi.h"
 //#import "RRSeniorCommentsDeletetApi.h"
 
+@interface RRDramaCommentDetailCell ()
+//是否点击高亮字体
+@property (nonatomic, assign) BOOL isClickHighlightText;
+@end
+
 @implementation RRDramaCommentDetailCell
 
 - (void)awakeFromNib {
@@ -108,6 +113,48 @@
     [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
 }
 
+- (void)singleTapDramaCommentDetailCell:(UIGestureRecognizer *)gesture {
+    NSLog(@"单击");
+    if (self.isClickHighlightText) {
+        self.isClickHighlightText = NO;
+        return;
+    }
+    if (self.singleTapCell) {
+        self.singleTapCell();
+    }
+}
+
+- (void)doubleTapDramaCommentDetailCell:(UIGestureRecognizer *)gesture {
+    NSLog(@"双击");
+    
+    CGPoint point = [gesture locationInView:self.contentView];
+//    //读取PAG素材文件
+//    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"kuaikan_zan_bmp" ofType:@"pag"];
+//    PAGFile *pagFile = [PAGFile Load:resourcePath];
+//    //创建PAG播放视图PAGView
+//    PAGView *pagView = [[PAGView alloc] initWithFrame:CGRectMake(point.x - 40, point.y - 40, 80, 80)];
+//    [self.contentView addSubview:pagView];
+//    //关联PAGView和PAGFile
+//    [pagView setComposition:pagFile];
+//    //设置循环播放，默认只播放一次
+//    [pagView setRepeatCount:1];
+//    [pagView play];
+////    [pagView mas_makeConstraints:^(MASConstraintMaker *make) {
+////        make.centerX.offset(point.x);
+////        make.centerY.offset(point.y);
+////        make.width.height.offset(80);
+////    }];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [pagView stop];
+//        [pagView removeFromSuperview];
+//    });
+    
+    if (self.doubleTapCell) {
+        self.doubleTapCell();
+    }
+}
+
+
 - (void)setModel:(RRSeniorCommentsModel *)model {
     _model = model;
     
@@ -177,7 +224,25 @@
     CGFloat scoreViewHeight = self.scoreView.frame.size.height;
     currentHeight = currentHeight + 12 + scoreViewHeight;
  
+    //文字
     NSString *textStr = model.content ?: @"";
+    //需要显示的所有文字
+    NSString *allShowTextStr = @"";
+    //是否有话题
+    RRTalkModel *talkModel = [model.talkList firstObject];
+    if (talkModel) {
+        NSString *talkStr = talkModel.name ? [NSString stringWithFormat:@"#%@", talkModel.name]: @"";
+        if (talkStr.length > 0) {
+            allShowTextStr = [allShowTextStr stringByAppendingString:talkStr];
+            allShowTextStr = [allShowTextStr stringByAppendingString:@" "];
+        }
+    }
+//    else {
+//        isHasTalk = NO;
+//        isTalkEnable = NO;
+//    }
+    textStr = [allShowTextStr stringByAppendingString:textStr];
+    
     CGFloat fontSize = 15;
     UIFont *textFont = SYSTEMFONT(fontSize);
     NSMutableAttributedString *text = [[NSMutableAttributedString alloc] initWithString:@""];
@@ -191,6 +256,31 @@
         one.font = textFont;
         one.color = kCOLOR_dynamicProvider_222222_E5E7EB;
         [text appendAttributedString:one];
+        
+        {
+            //真实显示的文字：textStr
+            NSString *realDisplayStr = [NSString stringWithFormat:@"%@", textStr];
+            if (talkModel && talkModel.enable) {
+                NSString *talkStr = talkModel.name ? [NSString stringWithFormat:@"#%@", talkModel.name]: @"";
+                if (talkStr.length > 0) {
+                    
+                    NSRange talkRange = [realDisplayStr rangeOfString:talkStr];
+                    if(talkRange.location != NSNotFound) {
+                        WS(weakSelf)
+                        NSLog(@"这个字符串中存在");
+                        [text setTextHighlightRange:talkRange
+                                              color:kCOLOR_0091FF
+                                    backgroundColor:[UIColor colorWithWhite:0.000 alpha:0.1]
+                                          tapAction:^(UIView *containerView, NSAttributedString *text, NSRange range, CGRect rect){
+                            //自定义代码，此处根据需要调整
+                            NSLog(@"点击了话题%@",talkStr);
+                            weakSelf.isClickHighlightText = YES;
+//                            [[RRAppLinkManager sharedManager] goTalkDetail:talkModel.ID toRoot:NO];
+                        }];
+                    }
+                }
+            }
+        }
     }
     
     CGSize yySize = CGSizeMake((KWidth - 16 * 2), CGFLOAT_MAX);

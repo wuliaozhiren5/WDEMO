@@ -710,6 +710,10 @@
 //    NSString *title = [NSString stringWithFormat:@"%@：%@", self.model.author.nickName, self.model.content];
 //    RRAlertBase *alert = [[RRAlertBase alloc] initWithTitle:title itemArray:itemArray];
 //    [alert titleStyleWithText:title lines:2 textColor:kCOLOR_898A91 font:SYSTEMFONT(14) lineHeihgt:6];
+//    //半屏的快看评论
+//    if (self.showPhotoVC) {
+//        [alert setDarkMode];
+//    }
 //    [alert showWithAnimation:YES];
 }
 

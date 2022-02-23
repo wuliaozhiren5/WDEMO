@@ -20,7 +20,7 @@
             "reply2Id": null,
             "liked": false,
             "replies": null,
-            "likeCount": 1,
+            "likeCount": 0,
             "realLikeCount": 0,
             "replyCount": 0,
             "deleted": false,

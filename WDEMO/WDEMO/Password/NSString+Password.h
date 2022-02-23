@@ -21,10 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSMutableAttributedString *)freshPasswordText;
 + (NSMutableAttributedString *)confirmPasswordText;
 
-//时间戳转化 日期转化 秒
-+ (NSString *)getFormatterDateStringWithTimeInterval:(NSTimeInterval)timeInterval;
-
-//用于新评论中的 评论数 点赞数 评论数展示规则
-+ (NSString *)transformCountWithString:(NSInteger)count;
+////时间戳转化 日期转化 秒
+//+ (NSString *)getFormatterDateStringWithTimeInterval:(NSTimeInterval)timeInterval;
+//
+////用于新评论中的 评论数 点赞数 评论数展示规则
+//+ (NSString *)transformCountWithString:(NSInteger)count;
 @end
 NS_ASSUME_NONNULL_END

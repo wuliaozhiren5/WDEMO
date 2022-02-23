@@ -376,22 +376,36 @@
 //    };
 //    
 //    [photoManager addCustomAssetModel:assetArray];
-//    UIViewController *topVC = [UIViewController topViewController];
-// 
+//    
 //    NSInteger currentIndex = self.currentIndex;
+//    
+//    UIViewController *topVC = [UIViewController topViewController];
 //    if (!self.isHalf) {
 //        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
 //                                              previewStyle:HXPhotoViewPreViewShowStyleDark
 //                                              currentIndex:currentIndex
 //                                                 photoView:nil];
 //    } else {
-//        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
-//                                              previewStyle:HXPhotoViewPreViewShowStyleDark
-//                                     showBottomPageControl:YES
-//                                              currentIndex:currentIndex
-//                                                 photoView:nil
-//                                                    height:playerViewHeight()];
+//        
+//        //半屏快看评论
+//        if (self.showPhotoVC) {
+//            [self.showPhotoVC hx_presentPreviewPhotoControllerWithManager:photoManager
+//                                                  previewStyle:HXPhotoViewPreViewShowStyleDark
+//                                         showBottomPageControl:YES
+//                                                  currentIndex:currentIndex
+//                                                     photoView:nil
+//                                                        height:0];
+//        } else {
+//            //半屏普通评论
+//            [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
+//                                                  previewStyle:HXPhotoViewPreViewShowStyleDark
+//                                         showBottomPageControl:YES
+//                                                  currentIndex:currentIndex
+//                                                     photoView:nil
+//                                                        height:playerViewHeight()];
+//        }
 //    }
+//  
 }
 
 #pragma mark - lazy

@@ -43,6 +43,8 @@
 - (void)setupViews {
     
     self.backgroundColor = [UIColor clearColor];
+    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
+
     [self addSubview:self.control];
     self.control.frame = self.frame;
     [self addSubview:self.container];
@@ -83,10 +85,10 @@
 - (void)hidden {
     //更新评论数
     NSInteger total = [self.videoCommentsVC getTotal];
-    if (self.delegate && self.delegate.amwayModel.commentCount != total && total > 0) {
-        self.delegate.amwayModel.commentCount = total;
-        [self.delegate.controlView refreshUI];
-    }
+//    if (self.delegate && self.delegate.amwayModel.commentCount != total && total > 0) {
+//        self.delegate.amwayModel.commentCount = total;
+//        [self.delegate.controlView refreshUI];
+//    }
     
 //    [self removeFromSuperview];
     [UIView animateWithDuration:0.25

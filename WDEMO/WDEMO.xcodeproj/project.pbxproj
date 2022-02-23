@@ -163,6 +163,9 @@
 		F5557D7C274DE852002B2B98 /* 识别单击和双击手势.md in Resources */ = {isa = PBXBuildFile; fileRef = F5557D7B274DE852002B2B98 /* 识别单击和双击手势.md */; };
 		F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F556CBCA25AEA11600B590D2 /* WaterLayout.m */; };
 		F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */; };
+		F556F68327C6198100C418BB /* RRVideoCommentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F556F67F27C6198100C418BB /* RRVideoCommentsVC.m */; };
+		F556F68427C6198100C418BB /* RRVideoCommentsPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = F556F68127C6198100C418BB /* RRVideoCommentsPopView.m */; };
+		F556F68727C619EC00C418BB /* RRVideoCommentsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F556F68627C619EC00C418BB /* RRVideoCommentsDetailVC.m */; };
 		F556FE1B27B9F75E00D00D8E /* 半屏评论下滑.md in Resources */ = {isa = PBXBuildFile; fileRef = F556FE1A27B9F75E00D00D8E /* 半屏评论下滑.md */; };
 		F5596C75271EA2FE007D9FE9 /* RRAllRankingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5596C74271EA2FE007D9FE9 /* RRAllRankingVC.m */; };
 		F5596C78271EA30E007D9FE9 /* RRAllRankingSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5596C77271EA30E007D9FE9 /* RRAllRankingSubVC.m */; };
@@ -737,6 +740,12 @@
 		F556CBC925AEA11600B590D2 /* WaterLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WaterLayout.h; sourceTree = "<group>"; };
 		F556CBCA25AEA11600B590D2 /* WaterLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WaterLayout.m; sourceTree = "<group>"; };
 		F556CBDD25AEC79100B590D2 /* WCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WCollectionViewCell.xib; sourceTree = "<group>"; };
+		F556F67C27C6198000C418BB /* RRVideoCommentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRVideoCommentsVC.h; sourceTree = "<group>"; };
+		F556F67F27C6198100C418BB /* RRVideoCommentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRVideoCommentsVC.m; sourceTree = "<group>"; };
+		F556F68027C6198100C418BB /* RRVideoCommentsPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRVideoCommentsPopView.h; sourceTree = "<group>"; };
+		F556F68127C6198100C418BB /* RRVideoCommentsPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRVideoCommentsPopView.m; sourceTree = "<group>"; };
+		F556F68527C619EC00C418BB /* RRVideoCommentsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRVideoCommentsDetailVC.h; sourceTree = "<group>"; };
+		F556F68627C619EC00C418BB /* RRVideoCommentsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRVideoCommentsDetailVC.m; sourceTree = "<group>"; };
 		F556FE1A27B9F75E00D00D8E /* 半屏评论下滑.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "半屏评论下滑.md"; sourceTree = "<group>"; };
 		F5596C73271EA2FE007D9FE9 /* RRAllRankingVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingVC.h; sourceTree = "<group>"; };
 		F5596C74271EA2FE007D9FE9 /* RRAllRankingVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingVC.m; sourceTree = "<group>"; };
@@ -1866,6 +1875,12 @@
 		F556F67227C6160C00C418BB /* VideoComments */ = {
 			isa = PBXGroup;
 			children = (
+				F556F68027C6198100C418BB /* RRVideoCommentsPopView.h */,
+				F556F68127C6198100C418BB /* RRVideoCommentsPopView.m */,
+				F556F67C27C6198000C418BB /* RRVideoCommentsVC.h */,
+				F556F67F27C6198100C418BB /* RRVideoCommentsVC.m */,
+				F556F68527C619EC00C418BB /* RRVideoCommentsDetailVC.h */,
+				F556F68627C619EC00C418BB /* RRVideoCommentsDetailVC.m */,
 			);
 			path = VideoComments;
 			sourceTree = "<group>";
@@ -3440,6 +3455,7 @@
 				67B7E5F42321187E00C494EF /* PassValueViewController.m in Sources */,
 				A479989224BAEBCE0079F72D /* SmallBigCollectionViewCell.m in Sources */,
 				F593574A25F7466A008CF0D8 /* SecondViewTableViewController.m in Sources */,
+				F556F68727C619EC00C418BB /* RRVideoCommentsDetailVC.m in Sources */,
 				F563DADE25AC26790079474B /* WMMenuView.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
 				F57D5739272FE367009F5846 /* RRDramaCommentDetailScoreView.m in Sources */,
@@ -3487,6 +3503,7 @@
 				F5AC7C4827102CBE00533793 /* RRSeasonSeniorCommentsHearder.m in Sources */,
 				F5872CBF257DDEC000341B57 /* SettingModuleHandler.m in Sources */,
 				F5F6AEF32744A6100074B26D /* RRAllRankingContentModel.m in Sources */,
+				F556F68327C6198100C418BB /* RRVideoCommentsVC.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
 				A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */,
@@ -3509,6 +3526,7 @@
 				F5446CE9268DB20C0076961A /* MyReply.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
 				F58E20DC2711672A00C4BB4F /* RRMessageSeasonCommentPositionListVC.m in Sources */,
+				F556F68427C6198100C418BB /* RRVideoCommentsPopView.m in Sources */,
 				F5CEF81C25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				F511C70C25B6918800581063 /* UIView+Shadow.m in Sources */,
 				F5DC862F2715631000EED8D5 /* PersonalHomePageSubVC.m in Sources */,

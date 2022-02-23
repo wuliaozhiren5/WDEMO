@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RRPlayerProtocol.h"
-#import "RRPlayerControlBase.h"
+//#import "RRPlayerProtocol.h"
+//#import "RRPlayerControlBase.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RRVideoCommentsPopView : UIView
-//协议对象
-@property (nonatomic ,weak) id <RRPlayerProtocol> delegate;
+////协议对象
+//@property (nonatomic ,weak) id <RRPlayerProtocol> delegate;
 
 - (instancetype)initWithFrame:(CGRect)frame
                       videoId:(NSString *)videoId;

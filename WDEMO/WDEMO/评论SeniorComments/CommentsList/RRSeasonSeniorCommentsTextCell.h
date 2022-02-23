@@ -19,6 +19,9 @@ NS_ASSUME_NONNULL_BEGIN
 //@property (nonatomic, strong) UILabel *contentLab; //内容
 @property (nonatomic, strong) YYLabel *yyContentLab;//内容
 
+//快看评论的图片处理 (半屏，暗黑)
+@property (nonatomic, strong) UIViewController *showPhotoVC;
+
 //富文本
 - (NSMutableAttributedString *)handleTextWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll;
 + (NSMutableAttributedString *)handleTextHeightWithModel:(RRSeniorCommentsModel *)model isShowAll:(BOOL)isShowAll;

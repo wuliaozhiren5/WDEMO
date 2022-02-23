@@ -273,7 +273,7 @@
     
     //填充数据
     //点赞
-    NSString *likeCountStr = [NSString transformCountWithString:model.likeCount];
+    NSString *likeCountStr = [NSString commentLikeTransformCountWithString:model.likeCount];
     NSString *dateStr = [RRMJTool getFormatterDateStringWithTimeInterval:model.createTime / 1000.0];
     self.praiseBtn.selected = model.liked;
     self.praiseBtnLab.text = likeCountStr;

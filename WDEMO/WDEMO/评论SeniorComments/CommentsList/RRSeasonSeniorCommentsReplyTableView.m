@@ -158,6 +158,7 @@
     RRSeniorCommentsModel *model = [self.data objectOrNilAtIndex:indexPath.row];
     cell.model= model;
     cell.isHalf = self.isHalf;
+    cell.showPhotoVC = self.showPhotoVC;
 //    //WTableViewCell
 //    WTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([WTableViewCell class]) forIndexPath:indexPath];
 //    cell.firstLabel.text = [NSString stringWithFormat:@"cell_section = %zi", indexPath.section];
@@ -939,20 +940,34 @@
 ////    };
 //    
 //    [photoManager addCustomAssetModel:assetArray];
+//    
+//    NSInteger currentIndex = 0;
+//    
 //    UIViewController *topVC = [UIViewController topViewController];
-// 
 //    if (!self.isHalf) {
 //        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
 //                                              previewStyle:HXPhotoViewPreViewShowStyleDark
-//                                              currentIndex:0
+//                                              currentIndex:currentIndex
 //                                                 photoView:nil];
 //    } else {
-//        [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
-//                                              previewStyle:HXPhotoViewPreViewShowStyleDark
-//                                     showBottomPageControl:YES
-//                                              currentIndex:0
-//                                                 photoView:nil
-//                                                    height:playerViewHeight()];
+//        
+//        //半屏快看评论
+//        if (self.showPhotoVC) {
+//            [self.showPhotoVC hx_presentPreviewPhotoControllerWithManager:photoManager
+//                                                  previewStyle:HXPhotoViewPreViewShowStyleDark
+//                                         showBottomPageControl:YES
+//                                                  currentIndex:currentIndex
+//                                                     photoView:nil
+//                                                        height:0];
+//        } else {
+//            //半屏普通评论
+//            [topVC hx_presentPreviewPhotoControllerWithManager:photoManager
+//                                                  previewStyle:HXPhotoViewPreViewShowStyleDark
+//                                         showBottomPageControl:YES
+//                                                  currentIndex:currentIndex
+//                                                     photoView:nil
+//                                                        height:playerViewHeight()];
+//        }
 //    }
 }
 @end

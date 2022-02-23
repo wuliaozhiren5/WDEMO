@@ -103,6 +103,7 @@
 //评论
 #import "RRSeasonSeniorCommentsSubVC.h"
 #import "RRDramaCommentSubVC.h"
+#import "RRVideoCommentsPopView.h"
 //消息
 #import "RRMessageSeasonCommentPositionListVC.h"
 //加载页
@@ -1076,6 +1077,11 @@
 //    RRDramaCommentSubVC *vc= [[RRDramaCommentSubVC alloc]init];
 //    vc.hidesBottomBarWhenPushed = YES;
 //    [self.navigationController pushViewController:vc animated:YES];
+    
+    NSString *videoId = @"123456";
+    RRVideoCommentsPopView *popView = [[RRVideoCommentsPopView alloc] initWithFrame:CGRectMake(0, 0, KWidth, KHeight) videoId:videoId];
+//    popView.delegate = self.delegate;
+    [popView showInView:self.view];
 }
 
 - (void)clickTalk {
