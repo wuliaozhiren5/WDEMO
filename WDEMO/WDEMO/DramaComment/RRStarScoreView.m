@@ -2,7 +2,7 @@
 //  RRStarScoreView.m
 //  NJVideo
 //
-//  Created by rrtv on 2020/12/21.
+//  Created by WDEMO on 2020/12/21.
 //  Copyright © 2020 RRMJ. All rights reserved.
 //
 

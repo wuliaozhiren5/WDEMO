@@ -2,7 +2,7 @@
 //  RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.m
 //  NJVideo
 //
-//  Created by rrtv on 2021/11/8.
+//  Created by WDEMO on 2021/11/8.
 //  Copyright © 2021 RRMJ. All rights reserved.
 //
 

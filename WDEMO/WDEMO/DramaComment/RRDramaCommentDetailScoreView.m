@@ -2,7 +2,7 @@
 //  RRDramaCommentDetailScoreView.m
 //  NJVideo
 //
-//  Created by rrtv on 2021/8/11.
+//  Created by WDEMO on 2021/8/11.
 //  Copyright © 2021 RRMJ. All rights reserved.
 //
 

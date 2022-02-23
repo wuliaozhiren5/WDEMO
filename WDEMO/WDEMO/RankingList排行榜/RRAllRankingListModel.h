@@ -2,7 +2,7 @@
 //  RRAllRankingListModel.h
 //  NJVideo
 //
-//  Created by rrtv on 2021/10/28.
+//  Created by WDEMO on 2021/10/28.
 //  Copyright © 2021 RRMJ. All rights reserved.
 //
 
