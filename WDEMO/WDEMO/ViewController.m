@@ -171,6 +171,9 @@
     
     
     NSArray * array = @[
+     
+        [ListModel initWithTitle:@"短视频评论" detail:@"短视频评论" type:ListModelTypeVideoComment],
+        [ListModel initWithTitle:@"话题" detail:@"话题" type:ListModelTypeTalk],
 
         [ListModel initWithTitle:@"AllRankingList" detail:@"排行榜3层" type:ListModelTypeAllRanking],
         [ListModel initWithTitle:@"banner" detail:@"广告banner无限滚动" type:ListModelTypeBanner],
@@ -1068,6 +1071,20 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)clickVideoComment {
+    //短视频评论
+//    RRDramaCommentSubVC *vc= [[RRDramaCommentSubVC alloc]init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (void)clickTalk {
+    //话题
+//    RRDramaCommentSubVC *vc= [[RRDramaCommentSubVC alloc]init];
+//    vc.hidesBottomBarWhenPushed = YES;
+//    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)clickArchiver {
     //归档解档
     KeyedArchiverViewController *vc= [[KeyedArchiverViewController alloc]init];
@@ -1381,6 +1398,16 @@
         case ListModelTypeDramaComment:
         {
             [self clickDramaComment];
+        }
+            break;
+        case ListModelTypeVideoComment:
+        {
+            [self clickVideoComment];
+        }
+            break;
+        case ListModelTypeTalk:
+        {
+            [self clickTalk];
         }
             break;
         case ListModelTypeBanner:

@@ -43,10 +43,13 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeNewHandGuide,//新手引导（某个页面的新手引导）
 //    ListModelTypeLoadingView,
 //    ListModelTypeBanner,
+    
     ListModelTypeComment,//评论
     ListModelTypeMessageComment,//我的消息评论详情
     ListModelTypeDramaComment,//影视评论，影评
-
+    ListModelTypeVideoComment,//短视频评论
+    ListModelTypeTalk,//话题
+    
     ListModelTypeZZStar,//评分打分
     
     ListModelTypeBanner,//广告banner无限滚动
