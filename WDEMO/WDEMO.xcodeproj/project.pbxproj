@@ -1320,11 +1320,13 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F556F67227C6160C00C418BB /* VideoComments */,
+				F50440B72625A06B00834547 /* 评论SeniorComments */,
+				F5D4476926CB653D002E90EB /* DramaComment */,
 				F53626402796954800AC8A74 /* Talk */,
 				F5F6AEE92744A1DA0074B26D /* DIYPageControl */,
 				F5596C79271EA554007D9FE9 /* md文件 */,
 				F5DC862C27155FE600EED8D5 /* RankingList排行榜 */,
-				F5D4476926CB653D002E90EB /* DramaComment */,
 				F5CA136326B2823000D8A7AE /* TabBar */,
 				F5409AA626B164490042F29D /* 评分打分 */,
 				F58613F126A971F200D81DDA /* Python批量修改iOS类名 */,
@@ -1334,7 +1336,6 @@
 				F591AC9226A163EC0042802F /* 枚举 */,
 				F591AC9026A163DD0042802F /* 宏 */,
 				F591AC8826A163D70042802F /* 常量 */,
-				F50440B72625A06B00834547 /* 评论SeniorComments */,
 				F53C39052616B85E0015A9AE /* 新手引导Guide镂空 */,
 				F5C1168A260CA20F001F4A74 /* UILabel+Util.h */,
 				F5C1168B260CA20F001F4A74 /* UILabel+Util.m */,
@@ -1860,6 +1861,13 @@
 				F5DEB2A824CE7FA0009A6767 /* ChatMemberListCell.m */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		F556F67227C6160C00C418BB /* VideoComments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VideoComments;
 			sourceTree = "<group>";
 		};
 		F5596C79271EA554007D9FE9 /* md文件 */ = {
