@@ -35,15 +35,14 @@
         
         //[self setBackgroundImage:[UIImage imageWithColor:[UIColor clearColor]]];
         
-        self.backgroundColor = [UIColor whiteColor];
-        [self setShadowImage:[UIImage imageWithColor:[UIColor clearColor]]];
+//        self.backgroundColor = [UIColor whiteColor];
+//        [self setShadowImage:[UIImage imageWithColor:[UIColor clearColor]]];
         
         UIButton *plusBtn = [[UIButton alloc] init];
         [plusBtn setBackgroundImage:[UIImage imageNamed:@"post_normal"] forState:UIControlStateNormal];
         [plusBtn setBackgroundImage:[UIImage imageNamed:@"post_normal"] forState:UIControlStateHighlighted];
         
         self.plusBtn = plusBtn;
-        
         
         [plusBtn addTarget:self action:@selector(plusBtnDidClick) forControlEvents:UIControlEventTouchUpInside];
         
