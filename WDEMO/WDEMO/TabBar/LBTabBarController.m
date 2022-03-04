@@ -70,12 +70,22 @@
     
     //UITabBar添加背景图片
     //[[UITabBar appearance] setBackgroundImage:[[UIImage imageNamed:@“tabbarBack”] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];//此种方法改变背景,但是图片变短重复铺
-    UIImageView *ima = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tabbarbackground1"]];
-//    ima.frame = CGRectMake(0,0,self.view.frame.size.width, 49);
-    ima.frame = CGRectMake(0,0,self.view.frame.size.width, self.view.frame.size.height);
+    UIImageView *ima = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tabbar_bg_1"]];
+    //tabbar高度：49 83
+    //判断刘海屏
+    ima.frame = CGRectMake(0,0,self.view.frame.size.width, 49);
+    BOOL isPhoneX = NO;
+    if (@available(iOS 11.0, *)) {
+        isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;
+    }
+    if (isPhoneX) {
+        ima.frame = CGRectMake(0,0,self.view.frame.size.width, 83);
+    }
+    
+//    ima.frame = CGRectMake(0,0,self.view.frame.size.width, self.view.frame.size.height);
     ima.contentMode = UIViewContentModeScaleAspectFill;
-    ima.backgroundColor = [UIColor redColor];
-    self.tabBar.opaque = YES;
+//    ima.backgroundColor = [UIColor redColor];
+//    self.tabBar.opaque = YES;
     [self.tabBar insertSubview:ima atIndex:0];
 
     //去黑线
