@@ -88,3 +88,8 @@ git config pull.ff only       # 仅快进
 缺省的配置项。您也可以在每次执行 pull 命令时添加 --rebase、--no-rebase，
 或者 --ff-only 参数覆盖缺省设置。
 ```
+
+
+新建Podfile
+
+pod init
