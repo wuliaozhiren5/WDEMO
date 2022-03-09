@@ -36,8 +36,15 @@
     //    [tabBarItem setTitleTextAttributes:dictSelected forState:UIControlStateSelected];
 }
 
-- (void)viewDidLoad
-{
+//- (void)viewDidLayoutSubviews{
+//    [super viewDidLayoutSubviews];
+//    CGRect frame = self.tabBar.frame;
+//    frame.size.height = self.tabBar.frame.size.height + 50;
+//    frame.origin.y = self.view.frame.size.height - frame.size.height;
+//    self.tabBar.frame = frame;
+//}
+ 
+- (void)viewDidLoad {
     [super viewDidLoad];
     
     [self setUpAllChildVc];
@@ -68,25 +75,25 @@
             [item setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor redColor]} forState:UIControlStateSelected];
         }
     
-    //UITabBar添加背景图片
-    //[[UITabBar appearance] setBackgroundImage:[[UIImage imageNamed:@“tabbarBack”] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];//此种方法改变背景,但是图片变短重复铺
-    UIImageView *ima = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tabbar_bg_1"]];
-    //tabbar高度：49 83
-    //判断刘海屏
-    ima.frame = CGRectMake(0,0,self.view.frame.size.width, 49);
-    BOOL isPhoneX = NO;
-    if (@available(iOS 11.0, *)) {
-        isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;
-    }
-    if (isPhoneX) {
-        ima.frame = CGRectMake(0,0,self.view.frame.size.width, 83);
-    }
-    
-//    ima.frame = CGRectMake(0,0,self.view.frame.size.width, self.view.frame.size.height);
-    ima.contentMode = UIViewContentModeScaleAspectFill;
-//    ima.backgroundColor = [UIColor redColor];
-//    self.tabBar.opaque = YES;
-    [self.tabBar insertSubview:ima atIndex:0];
+//    //UITabBar添加背景图片
+//    //[[UITabBar appearance] setBackgroundImage:[[UIImage imageNamed:@“tabbarBack”] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];//此种方法改变背景,但是图片变短重复铺
+//    UIImageView *ima = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"tabbar_bg_1"]];
+//    //tabbar高度：49 83
+//    //判断刘海屏
+//    ima.frame = CGRectMake(0,0,self.view.frame.size.width, 49);
+//    BOOL isPhoneX = NO;
+//    if (@available(iOS 11.0, *)) {
+//        isPhoneX = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;
+//    }
+//    if (isPhoneX) {
+//        ima.frame = CGRectMake(0,0,self.view.frame.size.width, 83);
+//    }
+//
+////    ima.frame = CGRectMake(0,0,self.view.frame.size.width, self.view.frame.size.height);
+//    ima.contentMode = UIViewContentModeScaleAspectFill;
+////    ima.backgroundColor = [UIColor redColor];
+////    self.tabBar.opaque = YES;
+//    [self.tabBar insertSubview:ima atIndex:0];
 
     //去黑线
     [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
@@ -124,7 +131,8 @@
 
 - (void)setUpAllChildVc
 {
-    
+//    ViewController *HomeVC = [[ViewController alloc] init];
+//    [self setUpOneChildVcWithVc:HomeVC Image:@"ic_lottery_n" selectedImage:@"ic_lottery_h" title:@"首页"];
     ViewController *HomeVC = [[ViewController alloc] init];
     [self setUpOneChildVcWithVc:HomeVC Image:@"home_normal" selectedImage:@"home_highlight" title:@"首页"];
     
@@ -155,8 +163,7 @@
 - (void)setUpOneChildVcWithVc:(UIViewController *)Vc Image:(NSString *)image selectedImage:(NSString *)selectedImage title:(NSString *)title
 {
     LBNavigationController *nav = [[LBNavigationController alloc] initWithRootViewController:Vc];
-    
-    
+
     Vc.view.backgroundColor = [self randomColor];
     
     UIImage *myImage = [UIImage imageNamed:image];
@@ -204,7 +211,6 @@
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
-    
     NSInteger index = [self.tabBar.items indexOfObject:item];
     //执行动画
     NSMutableArray *arry = [NSMutableArray array];
@@ -224,5 +230,6 @@
     animation.fromValue = [NSNumber numberWithFloat:0.7];   //初始伸缩倍数
     animation.toValue = [NSNumber numberWithFloat:1.3];     //结束伸缩倍数
     [[arry[index] layer] addAnimation:animation forKey:nil];
+
 }
 @end

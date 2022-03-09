@@ -1505,6 +1505,19 @@
 - (void)doubleClickTab {
     //刷新界面
     //界面回滚
+    
+//    UIImage *myImage = [UIImage imageNamed:@"ic_lottery_n"];
+//    myImage = [myImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//
+//    //tabBarItem，是系统提供模型，专门负责tabbar上按钮的文字以及图片展示
+//    self.tabBarItem.image = myImage;
+//
+//    UIImage *mySelectedImage = [UIImage imageNamed:@"ic_lottery_h"];
+//    mySelectedImage = [mySelectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//
+//
+//    self.tabBarItem.selectedImage = mySelectedImage;
+   
 }
 @end
 
