@@ -231,5 +231,41 @@
     animation.toValue = [NSNumber numberWithFloat:1.3];     //结束伸缩倍数
     [[arry[index] layer] addAnimation:animation forKey:nil];
 
+//    for (UIViewController *vc in self.viewControllers) {
+//
+//            UIImage *myImage = [UIImage imageNamed:@"ic_lottery_n"];
+//            myImage = [myImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//
+//            //tabBarItem，是系统提供模型，专门负责tabbar上按钮的文字以及图片展示
+//        vc.tabBarItem.image = myImage;
+//
+//            UIImage *mySelectedImage = [UIImage imageNamed:@"ic_lottery_h"];
+//            mySelectedImage = [mySelectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+//
+//
+//        vc.tabBarItem.selectedImage = mySelectedImage;
+//
+//    }
+    
+    NSInteger n = self.viewControllers.count;
+    NSArray *nn = @[@"ic_lottery_n",@"home_normal",@"home_normal",@"home_normal"];
+    NSArray *hh = @[@"ic_lottery_h",@"home_normal",@"home_normal",@"home_normal"];
+    for (NSInteger i = 0; i < n; i++) {
+          
+            UIViewController *vc = self.viewControllers[i];
+            
+            UIImage *myImage = [UIImage imageNamed:nn[i]];
+            myImage = [myImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+            //tabBarItem，是系统提供模型，专门负责tabbar上按钮的文字以及图片展示
+        vc.tabBarItem.image = myImage;
+        
+        UIImage *mySelectedImage = [UIImage imageNamed:hh[i]];
+            mySelectedImage = [mySelectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        
+        
+        vc.tabBarItem.selectedImage = mySelectedImage;
+         
+    }
 }
 @end

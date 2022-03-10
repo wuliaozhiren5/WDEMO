@@ -10,6 +10,7 @@
 #import "CJAppUncaughtExceptionHandler.h"
 #import "MyTabBarController.h"
 #import "LBTabBarController.h"
+#import "MainTabBarController.h"
 
 @interface AppDelegate ()
 
@@ -47,12 +48,15 @@
     
 //    //简单tabBar
 //    MyTabBarController *tabbarVC = [[MyTabBarController alloc]init];
-//
 //    self.window.rootViewController = tabbarVC;
     
-    //自定义tabBar
-    LBTabBarController *tabBarVc = [[LBTabBarController alloc] init];
-
+    
+//    //自定义tabBar
+//    LBTabBarController *tabBarVc = [[LBTabBarController alloc] init];
+//    self.window.rootViewController = tabBarVc;
+    
+    
+    MainTabBarController *tabBarVc = [[MainTabBarController alloc] init];
     self.window.rootViewController = tabBarVc;
     
     // 显示窗口

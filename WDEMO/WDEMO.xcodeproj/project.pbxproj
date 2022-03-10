@@ -279,11 +279,12 @@
 		F5A8899524F612A000DB73ED /* OrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A8899324F612A000DB73ED /* OrderCell.m */; };
 		F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A889B824F65D6000DB73ED /* RACLoginViewController.m */; };
 		F5A889BC24F65D9000DB73ED /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A889BB24F65D9000DB73ED /* LoginViewModel.m */; };
-		F5A9632527D88523002EEE4A /* MWSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9632427D88523002EEE4A /* MWSTabBarController.m */; };
-		F5A9632827D886A4002EEE4A /* MWSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9632727D886A4002EEE4A /* MWSTabBar.m */; };
 		F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F12924E3C12B00F611E6 /* TestViewController.m */; };
 		F5A9F13924E3D44B00F611E6 /* SeeLivingBaseCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13824E3D44A00F611E6 /* SeeLivingBaseCell.m */; };
 		F5A9F13C24E3EC2400F611E6 /* SeeLivingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */; };
+		F5AC4B0D27D99B070051F1A5 /* MWSTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC4B0827D99B070051F1A5 /* MWSTabBarController.m */; };
+		F5AC4B0E27D99B070051F1A5 /* MWSTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC4B0B27D99B070051F1A5 /* MWSTabBarButton.m */; };
+		F5AC4B0F27D99B070051F1A5 /* MWSTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC4B0C27D99B070051F1A5 /* MWSTabBar.m */; };
 		F5AC7C2A271020FD00533793 /* 锁@synchronized.md in Resources */ = {isa = PBXBuildFile; fileRef = F5AC7C29271020FD00533793 /* 锁@synchronized.md */; };
 		F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */ = {isa = PBXBuildFile; fileRef = F5AC7C2B2710276800533793 /* github开发人员在七夕搞事情.md */; };
 		F5AC7C2F27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C2E27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.m */; };
@@ -298,6 +299,10 @@
 		F5AC7C4D27102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C4227102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m */; };
 		F5AC7C5027102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C4F27102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m */; };
 		F5AC7C542710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AC7C522710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m */; };
+		F5AF50FD27D9F7540082B55E /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF50F527D9F7540082B55E /* MainTabBarController.m */; };
+		F5AF50FE27D9F7540082B55E /* MainNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF50F627D9F7540082B55E /* MainNavigationController.m */; };
+		F5AF50FF27D9F7540082B55E /* MainTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF50F927D9F7540082B55E /* MainTabBarButton.m */; };
+		F5AF510027D9F7540082B55E /* MainTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF50FA27D9F7540082B55E /* MainTabBar.m */; };
 		F5B035B0278548E100D8F4D8 /* iOS监听系统侧滑返回事件.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B035AF278548E100D8F4D8 /* iOS监听系统侧滑返回事件.md */; };
 		F5B035B227856EE200D8F4D8 /* 修改工程名称待实践.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B035B127856EE200D8F4D8 /* 修改工程名称待实践.md */; };
 		F5B1FE6B2621AC6C004B950C /* TableviewSectionHeader不悬停.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */; };
@@ -940,16 +945,18 @@
 		F5A889B824F65D6000DB73ED /* RACLoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACLoginViewController.m; sourceTree = "<group>"; };
 		F5A889BA24F65D9000DB73ED /* LoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
 		F5A889BB24F65D9000DB73ED /* LoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
-		F5A9632327D88523002EEE4A /* MWSTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWSTabBarController.h; sourceTree = "<group>"; };
-		F5A9632427D88523002EEE4A /* MWSTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWSTabBarController.m; sourceTree = "<group>"; };
-		F5A9632627D886A4002EEE4A /* MWSTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWSTabBar.h; sourceTree = "<group>"; };
-		F5A9632727D886A4002EEE4A /* MWSTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWSTabBar.m; sourceTree = "<group>"; };
 		F5A9F12824E3C12B00F611E6 /* TestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		F5A9F12924E3C12B00F611E6 /* TestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
 		F5A9F13724E3D44A00F611E6 /* SeeLivingBaseCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeeLivingBaseCell.h; sourceTree = "<group>"; };
 		F5A9F13824E3D44A00F611E6 /* SeeLivingBaseCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeeLivingBaseCell.m; sourceTree = "<group>"; };
 		F5A9F13A24E3EC2400F611E6 /* SeeLivingModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeeLivingModel.h; sourceTree = "<group>"; };
 		F5A9F13B24E3EC2400F611E6 /* SeeLivingModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SeeLivingModel.m; sourceTree = "<group>"; };
+		F5AC4B0727D99B070051F1A5 /* MWSTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSTabBarButton.h; sourceTree = "<group>"; };
+		F5AC4B0827D99B070051F1A5 /* MWSTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSTabBarController.m; sourceTree = "<group>"; };
+		F5AC4B0927D99B070051F1A5 /* MWSTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSTabBar.h; sourceTree = "<group>"; };
+		F5AC4B0A27D99B070051F1A5 /* MWSTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSTabBarController.h; sourceTree = "<group>"; };
+		F5AC4B0B27D99B070051F1A5 /* MWSTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSTabBarButton.m; sourceTree = "<group>"; };
+		F5AC4B0C27D99B070051F1A5 /* MWSTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSTabBar.m; sourceTree = "<group>"; };
 		F5AC7C29271020FD00533793 /* 锁@synchronized.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "锁@synchronized.md"; sourceTree = "<group>"; };
 		F5AC7C2B2710276800533793 /* github开发人员在七夕搞事情.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "github开发人员在七夕搞事情.md"; sourceTree = "<group>"; };
 		F5AC7C2D27102CB200533793 /* RRSeasonSeniorCommentsReplyTextImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsReplyTextImageCell.h; sourceTree = "<group>"; };
@@ -976,6 +983,14 @@
 		F5AC7C4F27102D6D00533793 /* RRSeasonSeniorCommentsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsDetailVC.m; sourceTree = "<group>"; };
 		F5AC7C522710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRSeasonSeniorCommentsPraiseBtnInputBar.m; sourceTree = "<group>"; };
 		F5AC7C532710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRSeasonSeniorCommentsPraiseBtnInputBar.h; sourceTree = "<group>"; };
+		F5AF50F427D9F7540082B55E /* MainNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainNavigationController.h; sourceTree = "<group>"; };
+		F5AF50F527D9F7540082B55E /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		F5AF50F627D9F7540082B55E /* MainNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainNavigationController.m; sourceTree = "<group>"; };
+		F5AF50F727D9F7540082B55E /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		F5AF50F927D9F7540082B55E /* MainTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarButton.m; sourceTree = "<group>"; };
+		F5AF50FA27D9F7540082B55E /* MainTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBar.m; sourceTree = "<group>"; };
+		F5AF50FB27D9F7540082B55E /* MainTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarButton.h; sourceTree = "<group>"; };
+		F5AF50FC27D9F7540082B55E /* MainTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBar.h; sourceTree = "<group>"; };
 		F5B035AF278548E100D8F4D8 /* iOS监听系统侧滑返回事件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS监听系统侧滑返回事件.md"; sourceTree = "<group>"; };
 		F5B035B127856EE200D8F4D8 /* 修改工程名称待实践.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "修改工程名称待实践.md"; sourceTree = "<group>"; };
 		F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "TableviewSectionHeader不悬停.md"; sourceTree = "<group>"; };
@@ -2324,6 +2339,50 @@
 			path = RACLogin;
 			sourceTree = "<group>";
 		};
+		F5AC4B0627D99B070051F1A5 /* MWSTabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				F5AC4B0727D99B070051F1A5 /* MWSTabBarButton.h */,
+				F5AC4B0B27D99B070051F1A5 /* MWSTabBarButton.m */,
+				F5AC4B0827D99B070051F1A5 /* MWSTabBarController.m */,
+				F5AC4B0A27D99B070051F1A5 /* MWSTabBarController.h */,
+				F5AC4B0927D99B070051F1A5 /* MWSTabBar.h */,
+				F5AC4B0C27D99B070051F1A5 /* MWSTabBar.m */,
+			);
+			path = MWSTabBarController;
+			sourceTree = "<group>";
+		};
+		F5AF50F227D9F7540082B55E /* MainTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				F5AF50F327D9F7540082B55E /* Controller */,
+				F5AF50F827D9F7540082B55E /* View */,
+			);
+			path = MainTabbar;
+			sourceTree = "<group>";
+		};
+		F5AF50F327D9F7540082B55E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5AF50F427D9F7540082B55E /* MainNavigationController.h */,
+				F5AF50F627D9F7540082B55E /* MainNavigationController.m */,
+				F5AF50F727D9F7540082B55E /* MainTabBarController.h */,
+				F5AF50F527D9F7540082B55E /* MainTabBarController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F5AF50F827D9F7540082B55E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5AF50FC27D9F7540082B55E /* MainTabBar.h */,
+				F5AF50FA27D9F7540082B55E /* MainTabBar.m */,
+				F5AF50FB27D9F7540082B55E /* MainTabBarButton.h */,
+				F5AF50F927D9F7540082B55E /* MainTabBarButton.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F5B5A9342508F509002505AE /* 消息页面MessageController */ = {
 			isa = PBXGroup;
 			children = (
@@ -2450,6 +2509,8 @@
 		F5CA136326B2823000D8A7AE /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				F5AF50F227D9F7540082B55E /* MainTabbar */,
+				F5AC4B0627D99B070051F1A5 /* MWSTabBarController */,
 				F5CA13F126B2A2DC00D8A7AE /* TabBarImage */,
 				F5CA139026B2928700D8A7AE /* RRTabBarImage */,
 				F5CA13D726B2A14A00D8A7AE /* LBNavigationController.h */,
@@ -2464,10 +2525,6 @@
 				F5CA13E926B2A1EA00D8A7AE /* UIImage+Image.m */,
 				F5CA13E826B2A1EA00D8A7AE /* UIView+LBExtension.h */,
 				F5CA13EA26B2A1EA00D8A7AE /* UIView+LBExtension.m */,
-				F5A9632327D88523002EEE4A /* MWSTabBarController.h */,
-				F5A9632427D88523002EEE4A /* MWSTabBarController.m */,
-				F5A9632627D886A4002EEE4A /* MWSTabBar.h */,
-				F5A9632727D886A4002EEE4A /* MWSTabBar.m */,
 			);
 			path = TabBar;
 			sourceTree = "<group>";
@@ -3371,6 +3428,7 @@
 				F5D5C1AF271428D70021C36E /* CarouseViewPlus.m in Sources */,
 				F591ACC126A16E110042802F /* llslog.m in Sources */,
 				F5F30DB3256652CC00DD2597 /* WPerson.m in Sources */,
+				F5AC4B0D27D99B070051F1A5 /* MWSTabBarController.m in Sources */,
 				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
 				F5CA13EB26B2A1EB00D8A7AE /* UIImage+Image.m in Sources */,
 				F5F5B44925FA1DFE0069491B /* RRActorHeader.m in Sources */,
@@ -3386,6 +3444,7 @@
 				F5AC7C542710306E00533793 /* RRSeasonSeniorCommentsPraiseBtnInputBar.m in Sources */,
 				F57D573E272FE367009F5846 /* RRDramaCommentDetailVC.m in Sources */,
 				F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */,
+				F5AC4B0E27D99B070051F1A5 /* MWSTabBarButton.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
 				F563DADB25AC26790079474B /* UIViewController+WMPageController.m in Sources */,
 				F5609CA62502222100A13C15 /* BaseNavigationController.m in Sources */,
@@ -3407,17 +3466,18 @@
 				F5F5B44B25FA1DFE0069491B /* RRActorVC.m in Sources */,
 				F5A8899524F612A000DB73ED /* OrderCell.m in Sources */,
 				F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */,
+				F5AF50FE27D9F7540082B55E /* MainNavigationController.m in Sources */,
 				F546A7CE2609DCB90001F697 /* RRActorVideoHeader.m in Sources */,
 				F5CED5E525749E84002CF42C /* XXClass.m in Sources */,
 				F5409AAE26B164A30042F29D /* ZZStarView.m in Sources */,
 				F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */,
+				F5AC4B0F27D99B070051F1A5 /* MWSTabBar.m in Sources */,
 				F57D573B272FE367009F5846 /* RRDramaCommentBottomView.m in Sources */,
 				F5CA13E226B2A15200D8A7AE /* LBTabBar.m in Sources */,
 				F5D138CC25679690008CC29A /* FollowTips.m in Sources */,
 				F53F669224FE454000770055 /* PasswordTextField.m in Sources */,
 				A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */,
 				F57D5742272FE367009F5846 /* RRDramaCommentCell.m in Sources */,
-				F5A9632827D886A4002EEE4A /* MWSTabBar.m in Sources */,
 				F553E12A24CA800200DA5625 /* InputController.m in Sources */,
 				F5D0FC0A24E0F91800CAADF8 /* UIImage+TUIDarkMode.m in Sources */,
 				F5D4EB8425DF6B5500F807EF /* PersonalHomePageVC.m in Sources */,
@@ -3446,6 +3506,7 @@
 				F563DADD25AC26790079474B /* WMScrollView.m in Sources */,
 				6783C8921FB944B80040C02B /* LZTagListView.m in Sources */,
 				F5F701F925CD2E290000D5A9 /* KeyedArchiverViewController.m in Sources */,
+				F5AF50FD27D9F7540082B55E /* MainTabBarController.m in Sources */,
 				F5C1168C260CA20F001F4A74 /* UILabel+Util.m in Sources */,
 				F5CA13EC26B2A1EB00D8A7AE /* UIView+LBExtension.m in Sources */,
 				F5D5C1BE271429CD0021C36E /* CarouseViewController.m in Sources */,
@@ -3467,7 +3528,6 @@
 				F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */,
 				F5C7261B24E1317B00B16639 /* ListModelCell.m in Sources */,
 				F5F5B44725FA1DFE0069491B /* RRActorFooter.m in Sources */,
-				F5A9632527D88523002EEE4A /* MWSTabBarController.m in Sources */,
 				F5D0FC0224E0E70500CAADF8 /* MaskViewController.m in Sources */,
 				F51C24CD263BF1460010A298 /* RRSeniorCommentsModel.m in Sources */,
 				6783C8611FB941EE0040C02B /* main.m in Sources */,
@@ -3487,6 +3547,7 @@
 				F58E20E0271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m in Sources */,
 				F5609C9F250216BE00A13C15 /* RegisterSetPasswordVC.m in Sources */,
 				F5A763C6253D956800A76C6E /* Attributes.m in Sources */,
+				F5AF50FF27D9F7540082B55E /* MainTabBarButton.m in Sources */,
 				F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */,
 				F5D5C1A32714161F0021C36E /* LXHSlideView.m in Sources */,
 				F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */,
@@ -3540,6 +3601,7 @@
 				F5A8898B24F6074A00DB73ED /* OrderModel.m in Sources */,
 				F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */,
 				F5CE3D2224E6901800B20C80 /* RRDestroyAccountReasonCell.m in Sources */,
+				F5AF510027D9F7540082B55E /* MainTabBar.m in Sources */,
 				F5F5B44A25FA1DFE0069491B /* RRActorInfoVC.m in Sources */,
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
