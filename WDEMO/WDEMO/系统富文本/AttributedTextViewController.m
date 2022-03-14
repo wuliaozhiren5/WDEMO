@@ -61,6 +61,43 @@
 //    self.label.attributedText = attributedString;
     
     
+    
+    [self textCenter1];
+
+    [self textCenter2];
+    
+ 
+}
+
+- (void)textCenter1 {
+    UILabel *myLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
+    [self.view addSubview:myLab];
+    UIFont * font1 = [UIFont systemFontOfSize:40];
+    UIFont * font2 = [UIFont systemFontOfSize:20];
+    NSMutableAttributedString * att = [[NSMutableAttributedString alloc] init];
+    NSAttributedString * att1 = [[NSAttributedString alloc] initWithString:@"20." attributes:@{NSFontAttributeName :font1,NSForegroundColorAttributeName:[UIColor orangeColor]}];
+    NSAttributedString * att2 = [[NSAttributedString alloc] initWithString:@"00" attributes:@{NSFontAttributeName:font2,NSForegroundColorAttributeName:[UIColor orangeColor]}];
+    NSAttributedString * att3 = [[NSAttributedString alloc] initWithString:@"%" attributes:@{NSFontAttributeName:font2,NSForegroundColorAttributeName:[UIColor orangeColor],NSBaselineOffsetAttributeName:@15}];
+    [att appendAttributedString:att1];
+    [att appendAttributedString:att2];
+    [att appendAttributedString:att3];
+    myLab.attributedText = att;
+}
+
+
+- (void)textCenter2 {
+    UILabel *myLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, 320, 100)];
+    [self.view addSubview:myLab];
+    UIFont * font1 = [UIFont systemFontOfSize:40];
+    UIFont * font2 = [UIFont systemFontOfSize:20];
+    NSMutableAttributedString * att = [[NSMutableAttributedString alloc] init];
+    NSAttributedString * att1 = [[NSAttributedString alloc] initWithString:@"第" attributes:@{NSFontAttributeName :font2,NSForegroundColorAttributeName:[UIColor orangeColor],NSBaselineOffsetAttributeName:@0}];
+    NSAttributedString * att2 = [[NSAttributedString alloc] initWithString:@"100" attributes:@{NSFontAttributeName:font1,NSForegroundColorAttributeName:[UIColor orangeColor],NSBaselineOffsetAttributeName:@(-0.36 * (40 - 20))}];
+    NSAttributedString * att3 = [[NSAttributedString alloc] initWithString:@"箱" attributes:@{NSFontAttributeName:font2,NSForegroundColorAttributeName:[UIColor orangeColor],NSBaselineOffsetAttributeName:@0}];
+    [att appendAttributedString:att1];
+    [att appendAttributedString:att2];
+    [att appendAttributedString:att3];
+    myLab.attributedText = att;
 }
 
 /*
@@ -82,9 +119,9 @@
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:contentStr];
     NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc]init];
     //行间距
-    paragraph.lineSpacing = 6;
+    paragraph.lineSpacing = 16;
     //正确的实现行间距
-    paragraph.lineSpacing = 6 - (textFont.lineHeight - textFont.pointSize);
+    paragraph.lineSpacing = 16 - (textFont.lineHeight - textFont.pointSize);
 
     //对齐方式两边对齐
 //    paragraph.alignment = NSTextAlignmentJustified;
