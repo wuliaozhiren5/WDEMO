@@ -93,3 +93,13 @@ git config pull.ff only       # 仅快进
 新建Podfile
 
 pod init
+
+
+
+pod 'Masonry'
+pod 'YYKit',                    '~> 1.0.9'
+pod 'AFNetworking',             '~>3.0'
+pod 'SDWebImage',               '~>5.11.0'
+pod 'SDWebImageWebPCoder'
+pod 'ReactiveObjC'
+pod 'MJRefresh'
