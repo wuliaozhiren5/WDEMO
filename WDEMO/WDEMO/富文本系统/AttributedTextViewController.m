@@ -69,6 +69,7 @@
  
 }
 
+
 - (void)textCenter1 {
     UILabel *myLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 100)];
     [self.view addSubview:myLab];

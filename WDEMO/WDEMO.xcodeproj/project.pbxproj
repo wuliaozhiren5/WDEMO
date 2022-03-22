@@ -1407,7 +1407,7 @@
 				F50D6D7225A957C000B8C415 /* 搜索页面 */,
 				F5D138BE256795FF008CC29A /* 提示的条 */,
 				F5200DB22531526D004637DD /* 贴吧 */,
-				F5D0FBFB24E0E65500CAADF8 /* 系统富文本 */,
+				F5D0FBFB24E0E65500CAADF8 /* 富文本系统 */,
 				67535E6C2390B8DF0009F882 /* 语言包 */,
 				F5CE3D1424E6901700B20C80 /* 注销 */,
 				F548D0C0256E2EE900357E64 /* 追剧-动效-11-25 */,
@@ -1458,7 +1458,7 @@
 				675852A5231D211000C5CF7E /* WTableView */,
 				F5C0A21C2578BB49004EBD94 /* xibViewDemo */,
 				F5A763BC253D94D900A76C6E /* YYmodel测试 */,
-				F5F4F10024D3BF23007DB7F3 /* YYText富文本YY富文本 */,
+				F5F4F10024D3BF23007DB7F3 /* 富文本YYText富文本 */,
 			);
 			path = WDEMO;
 			sourceTree = "<group>";
@@ -2623,14 +2623,14 @@
 			path = "阴影";
 			sourceTree = "<group>";
 		};
-		F5D0FBFB24E0E65500CAADF8 /* 系统富文本 */ = {
+		F5D0FBFB24E0E65500CAADF8 /* 富文本系统 */ = {
 			isa = PBXGroup;
 			children = (
 				F5D0FBFD24E0E6CB00CAADF8 /* AttributedTextViewController.h */,
 				F5D0FBFE24E0E6CB00CAADF8 /* AttributedTextViewController.m */,
 				F5710B4125232263009DEE02 /* 富文本.md */,
 			);
-			path = "系统富文本";
+			path = "富文本系统";
 			sourceTree = "<group>";
 		};
 		F5D0FBFC24E0E6A300CAADF8 /* Mask */ = {
@@ -2906,14 +2906,14 @@
 			path = "管理者ChatManager";
 			sourceTree = "<group>";
 		};
-		F5F4F10024D3BF23007DB7F3 /* YYText富文本YY富文本 */ = {
+		F5F4F10024D3BF23007DB7F3 /* 富文本YYText富文本 */ = {
 			isa = PBXGroup;
 			children = (
 				F55F2EFE2763323F000DB684 /* YYLabel#话题@用户.md */,
 				F5F4F10124D3C158007DB7F3 /* YYViewController.h */,
 				F5F4F10224D3C158007DB7F3 /* YYViewController.m */,
 			);
-			path = "YYText富文本YY富文本";
+			path = "富文本YYText富文本";
 			sourceTree = "<group>";
 		};
 		F5F5B43425FA1DFE0069491B /* Actor演员 */ = {
