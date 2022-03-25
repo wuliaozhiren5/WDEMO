@@ -39,6 +39,11 @@
     //隐藏
     self.hidden = YES;
     
+//    self.userInteractionEnabled = YES;
+//    UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+//    [self addGestureRecognizer:tapGesturRecognizer];
+    
+    
     [self addSubview:self.containerView];
     [self.containerView addSubview:self.loadingView];
     [self.containerView addSubview:self.tipsLab];
@@ -66,6 +71,19 @@
     
 //    self.containerView.backgroundColor = [UIColor lightGrayColor];
 //    self.loadingView.backgroundColor = [UIColor systemGrayColor];
+}
+
+- (void)tapAction:(UIGestureRecognizer *)tap {
+  
+    switch (self.state) {
+        case MJLoadingViewStateFailure:
+        case MJLoadingViewStateNoNetwork:
+            
+            break;
+        default:
+           
+            break;
+    }
 }
 
 - (void)clickRetryBtn:(UIButton *)btn {
@@ -101,7 +119,7 @@
             //暂无数据
             self.hidden = NO;
             [self stopAnimating];
-            self.loadingView.image = [UIImage imageNamed:@"ChatBackgroundImage"];
+            self.loadingView.image = [UIImage imageNamed:@"dropdown_loading_01"];
             self.tipsLab.text = @"暂无数据";
             
             self.loadingView.hidden = NO;
@@ -112,7 +130,7 @@
             //失败
             self.hidden = NO;
             [self stopAnimating];
-            self.loadingView.image = [UIImage imageNamed:@"ChatBackgroundImage"];
+            self.loadingView.image = [UIImage imageNamed:@"dropdown_loading_01"];
             self.tipsLab.text = @"加载失败";
             
             self.loadingView.hidden = NO;
@@ -123,7 +141,7 @@
             //没有网络
             self.hidden = NO;
             [self stopAnimating];
-            self.loadingView.image = [UIImage imageNamed:@"ChatBackgroundImage"];
+            self.loadingView.image = [UIImage imageNamed:@"dropdown_loading_01"];
             self.tipsLab.text = @"无法连接网络";
             
             self.loadingView.hidden = NO;
@@ -235,7 +253,7 @@
     if (!_retryBtn) {
         _retryBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 88, 44)];
         [_retryBtn setTitle:@"点击重试" forState:UIControlStateNormal];
-        [_retryBtn addTarget:self action:@selector(clickRetryBtn:) forControlEvents:UIControlEventTouchUpInside];
+//        [_retryBtn addTarget:self action:@selector(clickRetryBtn:) forControlEvents:UIControlEventTouchUpInside];
         _retryBtn.backgroundColor = [UIColor systemBlueColor];
         _retryBtn.layer.cornerRadius = 20;
         _retryBtn.layer.masksToBounds = YES;

@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSUInteger, LoadingViewState) {
     MJLoadingViewStateNone = 0,
-    MJLoadingViewStateLoading,
-    MJLoadingViewStateSuccess,
-    MJLoadingViewStateFailure,
-    MJLoadingViewStateNoData,
-    MJLoadingViewStateNoNetwork,
+    MJLoadingViewStateLoading,  //加载中
+    MJLoadingViewStateSuccess,  //加载成功
+    MJLoadingViewStateFailure,  //加载失败，服务器错误
+    MJLoadingViewStateNoData,   //加载成功，无数据
+    MJLoadingViewStateNoNetwork,//加载失败，无网络
 };
 
 @interface XXLoadingView : UIView

@@ -396,7 +396,11 @@
 }
  
 - (void)releaseMem {
-    self.loadingView.state = MJLoadingViewStateSuccess;
+    self.loadingView.state = MJLoadingViewStateSuccess; 
+ 
+//    self.loadingView.state = MJLoadingViewStateFailure;
+//    self.loadingView.state = MJLoadingViewStateNoData;
+//    self.loadingView.state = MJLoadingViewStateNoNetwork;
 }
 
 - (void)test123456 {
