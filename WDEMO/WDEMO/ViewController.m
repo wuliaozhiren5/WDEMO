@@ -106,8 +106,7 @@
 #import "RRVideoCommentsPopView.h"
 //消息
 #import "RRMessageSeasonCommentPositionListVC.h"
-//加载页
-#import "XXLoadingView.h"
+
 //TopViewController
 #import "UIViewController+TopViewController.h"
 //评分打分
@@ -119,10 +118,17 @@
 #import "RRAllRankingVC.h"
 //搜索历史词
 #import "SerachHistoryWordCollectionVC.h"
+//DIY
+#import "MJDIYAutoGifFooter.h"
+#import "MJDIYGifHeader.h"
+//加载页
+#import "MJDIYLoadingView.h"
+
+#import "MWSLotteryBagListVC.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
-@interface ViewController ()<UITableViewDelegate, UITableViewDataSource, CAAnimationDelegate>
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource, CAAnimationDelegate, MJDIYLoadingViewDelegate>
 
 @property(nonatomic, strong) UITableView *tableView;
 @property(nonatomic, copy) NSArray *data;
@@ -131,7 +137,7 @@
 @property (nonatomic, strong) NSTimer *followTipTimer;
 
 @property (nonatomic, strong) UIImageView *removeImageView;
-@property (nonatomic, strong) XXLoadingView *loadingView;
+@property (nonatomic, strong) MJDIYLoadingView *loadingView;
 @end
 
 @implementation ViewController
@@ -143,6 +149,10 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [self hub];
+//    
+//    return;
     // Do any additional setup after loading the view, typically from a nib.
 //    self.title = @"首页";
     //    [self clickChat];
@@ -172,7 +182,9 @@
     
     
     NSArray * array = @[
-     
+         
+        [ListModel initWithTitle:@"多个头列表 换箱子" detail:@"多个头列表 换箱子" type:ListModelTypeExchangeBox],
+
         [ListModel initWithTitle:@"短视频评论" detail:@"短视频评论" type:ListModelTypeVideoComment],
         [ListModel initWithTitle:@"话题" detail:@"话题" type:ListModelTypeTalk],
 
@@ -378,29 +390,41 @@
 
 - (void)showLoadingView {
 //    XXLoadingView *loadingView = [[XXLoadingView alloc] init];
-    XXLoadingView *loadingView = [[XXLoadingView alloc] initWithFrame:self.view.bounds];
+    MJDIYLoadingView *loadingView = [[MJDIYLoadingView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    loadingView.delegate = self;
     loadingView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:loadingView];
     [self.view bringSubviewToFront:loadingView];
     [loadingView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.view);
+//        make.edges.equalTo(self.view);
+        make.center.equalTo(self.view);
+        make.width.equalTo(@200);
+        make.height.equalTo(@200);
+
     }];
-//    loadingView.state = MJLoadingViewStateNone;
-    loadingView.state = MJLoadingViewStateLoading;
-//    loadingView.state = MJLoadingViewStateSuccess;
-//    loadingView.state = MJLoadingViewStateFailure;
-//    loadingView.state = MJLoadingViewStateNoData;
-//    loadingView.state = MJLoadingViewStateNoNetwork;
+//    loadingView.state = LoadingViewStateNone;
+    loadingView.state = LoadingViewStateLoading;
+//    loadingView.state = LoadingViewStateSuccess;
+//    loadingView.state = LoadingViewStateFailure;
+//    loadingView.state = LoadingViewStateNoData;
+//    loadingView.state = LoadingViewStateNoNetwork;
     [self performSelector:@selector(releaseMem) withObject:nil afterDelay:1.0];
     self.loadingView = loadingView;
 }
  
 - (void)releaseMem {
-    self.loadingView.state = MJLoadingViewStateSuccess; 
+    self.loadingView.state = LoadingViewStateSuccess;
  
-//    self.loadingView.state = MJLoadingViewStateFailure;
-//    self.loadingView.state = MJLoadingViewStateNoData;
-//    self.loadingView.state = MJLoadingViewStateNoNetwork;
+//    self.loadingView.state = LoadingViewStateFailure;
+//    self.loadingView.state = LoadingViewStateNoData;
+//    self.loadingView.state = LoadingViewStateNoNetwork;
+//    self.loadingView.state = LoadingViewStateLoading;
+
+}
+ 
+#pragma mark - MJDIYLoadingViewDelegate
+- (void)clickDIYLoadingView:(MJDIYLoadingView *)view {
+    self.loadingView.state = LoadingViewStateLoading;
 }
 
 - (void)test123456 {
@@ -1128,6 +1152,17 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)clickExchangeBox {
+    //换个箱子
+    MWSLotteryBagListVC *vc= [[MWSLotteryBagListVC alloc]init];
+    MWSLotteryDetailBagModel *bagModel = [[MWSLotteryDetailBagModel alloc] init];
+    bagModel.bag_total = 9999;
+    bagModel.bag_no = 12;
+    vc.bagModel = bagModel;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 - (void)clickTest {
     //横向滚动的collectionView
     TestViewController *vc= [[TestViewController alloc]init];
@@ -1162,11 +1197,35 @@
     //只显示文字
     MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
     hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
-    hud.bezelView.backgroundColor = [UIColor blackColor];
-    hud.mode = MBProgressHUDModeText;
-    hud.label.text = @"Some message...";
-    hud.label.textColor = [UIColor whiteColor];
-    [hud hideAnimated:YES afterDelay:2];
+//    hud.bezelView.backgroundColor = [UIColor blackColor];
+//    hud.mode = MBProgressHUDModeText;
+//    hud.label.text = @"Some message...";
+//    hud.label.textColor = [UIColor whiteColor];
+    [hud hideAnimated:YES afterDelay:100];
+    
+    
+//    MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:self.view];
+//
+//    //修改样式，否则等待框背景色将为半透明
+//    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+//    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+//
+//    //设置等待框背景色为黑色
+//    hud.bezelView.backgroundColor = [UIColor blackColor];
+//
+//    hud.removeFromSuperViewOnHide = YES;
+//
+//    //设置菊花框为白色
+//
+//    [UIActivityIndicatorView appearance].color = [UIColor whiteColor];
+//
+//    [self.view addSubview:hud];
+//
+//    [hud showAnimated:YES];
+////    ————————————————
+////    版权声明：本文为CSDN博主「青莲浮梦」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+//    原文链接：https://blog.csdn.net/m0_38126868/article/details/78349869
+    
 }
 
 - (void)setupViews {
@@ -1186,6 +1245,44 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
     }];
+    
+//    MJDIYGifHeader  MJRefreshGifHeader
+//    MJDIYAutoGifFooter  MJRefreshAutoGifFooter
+    
+    MJDIYGifHeader *mj_header = [MJDIYGifHeader headerWithRefreshingBlock:^{
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.tableView.mj_header endRefreshing];
+        });
+    }];
+//    mj_header.lastUpdatedTimeLabel.hidden = YES;
+//    mj_header.stateLabel.hidden = YES;
+    self.tableView.mj_header = mj_header;
+ 
+    MJDIYAutoGifFooter *mj_footer = [MJDIYAutoGifFooter footerWithRefreshingBlock:^{
+        
+//        [self.tableView.mj_footer endRefreshing];
+//
+//        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+       
+//        [self.tableView.mj_footer resetNoMoreData];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.tableView.mj_footer endRefreshing];
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+
+        });
+        
+    }];
+////    mj_footer.stateLabel.hidden = YES;
+    [mj_footer setTitle:@"" forState:MJRefreshStateIdle];
+    [mj_footer setTitle:@"" forState:MJRefreshStatePulling];
+    [mj_footer setTitle:@"" forState:MJRefreshStateRefreshing];
+    [mj_footer setTitle:@"" forState:MJRefreshStateWillRefresh];
+    [mj_footer setTitle:@"已经到底啦～" forState:MJRefreshStateNoMoreData];
+    self.tableView.mj_footer = mj_footer;
+
+
 }
 
 #pragma mark -- UITableViewDataSource
@@ -1199,6 +1296,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.data.count;
+//    return 5;
+
 }
 
 //row高度
@@ -1435,6 +1534,12 @@
             [self clickSerachHistoryWord];
         }
             break;
+        case ListModelTypeExchangeBox:
+        {
+            [self clickExchangeBox];
+        }
+            break;
+            
         default:
         {
             NSAssert(NO, @"PLUPersonalItemType 类型错误");

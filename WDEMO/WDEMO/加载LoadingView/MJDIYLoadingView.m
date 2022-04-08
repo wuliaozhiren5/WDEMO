@@ -1,16 +1,13 @@
 //
-//  XXLoadingView.m
-//  WDEMO
+//  MJDIYLoadingView.m
+//  MoWanShang
 //
-//  Created by WDEMO on 2021/6/30.
-//  Copyright © 2021 wwc. All rights reserved.
+//  Created by rrtv on 2022/3/28.
 //
 
-#import "XXLoadingView.h"
-@interface XXLoadingView ()
-@end
+#import "MJDIYLoadingView.h"
 
-@implementation XXLoadingView
+@implementation MJDIYLoadingView
 
 /*
 // Only override drawRect: if you perform custom drawing.
@@ -39,9 +36,9 @@
     //隐藏
     self.hidden = YES;
     
-//    self.userInteractionEnabled = YES;
-//    UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
-//    [self addGestureRecognizer:tapGesturRecognizer];
+    self.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapAction:)];
+    [self addGestureRecognizer:tapGesturRecognizer];
     
     
     [self addSubview:self.containerView];
@@ -49,25 +46,26 @@
     [self.containerView addSubview:self.tipsLab];
     [self.containerView addSubview:self.retryBtn];
      
-    CGFloat containerView_width = 320;
-    
+    CGFloat containerView_width = self.frame.size.width;
+    CGFloat containerView_height = self.frame.size.height;
+
     CGFloat loadingView_width = 100;
     CGFloat loadingView_height = 100;
     
-    CGFloat tipsLab_width = 320;
+    CGFloat tipsLab_width = self.frame.size.width;;
     CGFloat tipsLab_height = 20;
     
-    CGFloat retryBtn_width = 150;
+    CGFloat retryBtn_width = 100;
     CGFloat retryBtn_height = 44;
    
     CGFloat spacing = 10;
-    CGFloat containerView_height = loadingView_height + tipsLab_height + retryBtn_height + spacing * 2;
+//    CGFloat containerView_height = loadingView_height + tipsLab_height + retryBtn_height + spacing * 2;
  
     self.containerView.frame = CGRectMake(0, 0, containerView_width, containerView_height);
     self.loadingView.frame = CGRectMake((containerView_width - loadingView_width) / 2, 0, loadingView_width, loadingView_height);
     self.tipsLab.frame = CGRectMake((containerView_width - tipsLab_width) / 2, loadingView_height + spacing, tipsLab_width, tipsLab_height);
     self.retryBtn.frame = CGRectMake((containerView_width - retryBtn_width) / 2, loadingView_height + spacing + tipsLab_height + spacing, retryBtn_width, retryBtn_height);
-    self.containerView.center = self.center;    
+    self.containerView.center = self.center;
     
 //    self.containerView.backgroundColor = [UIColor lightGrayColor];
 //    self.loadingView.backgroundColor = [UIColor systemGrayColor];
@@ -78,12 +76,20 @@
     switch (self.state) {
         case LoadingViewStateFailure:
         case LoadingViewStateNoNetwork:
+        case LoadingViewStateNoData:
+        {
+            self.state = LoadingViewStateLoading;
             
+            if (self.delegate && [self.delegate respondsToSelector:@selector(clickDIYLoadingView:)]) {
+                [self.delegate clickDIYLoadingView:self];
+            }
+        }
             break;
         default:
            
             break;
     }
+     
 }
 
 - (void)clickRetryBtn:(UIButton *)btn {
@@ -108,7 +114,7 @@
             //加载成功
             self.hidden = YES;
             [self stopAnimating];
-//            self.loadingView.image = [UIImage imageNamed:@"ChatBackgroundImage"];
+//            self.loadingView.image = [UIImage imageNamed:@"dropdown_loading_01"];
             self.tipsLab.text = @"加载成功";
             
             self.loadingView.hidden = NO;
@@ -153,6 +159,10 @@
             [self stopAnimating];
             break;
     }
+    
+//    //按钮暂时隐藏
+//    self.retryBtn.hidden = YES;
+
 }
 
 //lazy
@@ -167,61 +177,18 @@
 - (UIImageView *)loadingView {
     if (!_loadingView) {
         _loadingView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        _loadingView.image = [UIImage imageNamed:@"ChatBackgroundImage"];
+        _loadingView.image = [UIImage imageNamed:@"dropdown_loading_01"];
         _loadingView.contentMode = UIViewContentModeScaleAspectFill;
         _loadingView.clipsToBounds = YES;
-//        // 1.设置最后一帧为imageView的图片
-//          self.imageView.image = [UIImage imageNamed:@"0017"];
-//          
-//          // 2.获取 image 数组
-//          NSMutableArray *imgArray = [NSMutableArray array];
-//          for (int i=0; i<18; i++) {
-//              NSString *str = [NSString stringWithFormat:@"%04d",i];
-//              UIImage *image = [UIImage imageNamed:str];
-//              [imgArray addObject:image];
-//          }
-//          
-//          // 3.设置 animation 图片数组
-//            _loadingView.animationImages = imgArray;
-//          // 设置播放时长
-//          self.imageView.animationDuration = 0.1 * imgArray.count;
-//          // 设置播放次数
-//          self.imageView.animationRepeatCount = 1;
-//          // 开始播放动画
-//          [self.imageView startAnimating];
-        
-  
-//        _loadingView.image = [UIImage imageNamed:@"0017"];
-//        NSMutableArray *imgArray = [NSMutableArray array];
-//        for (int i = 0; i < 17; i++) {
-//            NSString *str = [NSString stringWithFormat:@"tt/tt%02d",i];
-//            // 1.将资源放到 bundle 中
-//            NSString *path = [[[NSBundle mainBundle] pathForResource:@"ChatKitFace" ofType:@"bundle"] stringByAppendingPathComponent:str];
-//            UIImage *image = [UIImage imageNamed:path];
-//            if (image) {
-//                [imgArray addObject:image];
-//            }
-//
-            
-//            for (NSUInteger i = 1; i<=60; i++) {
-//                UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_anim__000%zd", i]];
-//                [imgArray addObject:image];
-//            }
-
-//        }
-//        _loadingView.animationImages = imgArray;
-//        _loadingView.animationDuration = 0.2 * imgArray.count;
-//        _loadingView.animationRepeatCount = 1;
-//        [_loadingView startAnimating];
-        
    
-        NSMutableArray *imgArray = [NSMutableArray array];
+        //设置正在刷新状态的动画图片
+        NSMutableArray * refreshingImages = [NSMutableArray array];
         for (NSUInteger i = 1; i<=3; i++) {
-            UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd", i]];
-            [imgArray addObject:image];
+            UIImage * image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd",i]];
+            [refreshingImages addObject:image];
         }
-        _loadingView.animationImages = imgArray;
-        _loadingView.animationDuration = 0.1 * imgArray.count;
+        _loadingView.animationImages = refreshingImages;
+        _loadingView.animationDuration = 0.1 * refreshingImages.count;
 //        _loadingView.animationRepeatCount = 1;
 //        [_loadingView startAnimating];
     }
@@ -264,3 +231,4 @@
     return _retryBtn;
 }
 @end
+

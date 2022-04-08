@@ -57,6 +57,9 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     ListModelTypeAllRanking,//排行榜
     
     ListModelTypeSerachHistoryWord,//搜索历史词
+    
+    ListModelTypeExchangeBox,//多个头列表 换箱子
+
     ListModelTypeTest,//测试页面
 };
 

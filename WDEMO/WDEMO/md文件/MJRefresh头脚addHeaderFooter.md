@@ -1,4 +1,10 @@
 
+MJRefresh头脚
+
+MJRefresh (Footer ) API
+https://www.jianshu.com/p/af57d795839e
+
+------------------------------------------------------------------------------
 #addHeaderFooter
 #添加列表加载头脚逻辑
 

@@ -22,3 +22,22 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+
+
+////追剧小红点
+//- (void)kvoUserSubscriptionRedPointDisplay {
+//    @weakify(self);
+//    [RACObserve([RRUserSubscriptionRedPointDisplayManager sharedInstance], isShowRedPoint) subscribeNext:^(id x) {
+//        @strongify(self);
+//        if (x) {
+//            UIView *entryView = [self viewWithTag:10086];
+//            if ([RRUserSubscriptionRedPointDisplayManager sharedInstance].isShowRedPoint) {
+//                CGFloat x = 25;
+//                CGFloat y = 10;
+//                [RRMJTool createRedTextViewWith:CGPointMake(x, y) bySuperView:entryView];
+//            } else {
+//                [RRMJTool cleanRedViewBySuperView:entryView];
+//            }
+//        }
+//    }];
+//}

@@ -42,43 +42,43 @@ p互斥锁，就是使用了线程同步技术
 @implementation ViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    
+[super viewDidLoad];
+
 //    self.locker = [[NSObject alloc] init];
-    
-    self.ticketCount = 100;
-    
-    self.thread01 = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicket) object:nil];
-    self.thread01.name = @"售票员01";
-    
-    self.thread02 = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicket) object:nil];
-    self.thread02.name = @"售票员02";
-    
-    self.thread03 = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicket) object:nil];
-    self.thread03.name = @"售票员03";
+
+self.ticketCount = 100;
+
+self.thread01 = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicket) object:nil];
+self.thread01.name = @"售票员01";
+
+self.thread02 = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicket) object:nil];
+self.thread02.name = @"售票员02";
+
+self.thread03 = [[NSThread alloc] initWithTarget:self selector:@selector(saleTicket) object:nil];
+self.thread03.name = @"售票员03";
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    [self.thread01 start];
-    [self.thread02 start];
-    [self.thread03 start];
+[self.thread01 start];
+[self.thread02 start];
+[self.thread03 start];
 }
 
 - (void)saleTicket
 {
-    while (1) {
-        @synchronized(self) {
-            // 先取出总数
-            NSInteger count = self.ticketCount;
-            if (count > 0) {
-                self.ticketCount = count - 1;
-                NSLog(@"%@卖了一张票，还剩下%zd张", [NSThread currentThread].name, self.ticketCount);
-            } else {
-                NSLog(@"票已经卖完了");
-                break;
-            }
-        }
-    }
+while (1) {
+@synchronized(self) {
+// 先取出总数
+NSInteger count = self.ticketCount;
+if (count > 0) {
+self.ticketCount = count - 1;
+NSLog(@"%@卖了一张票，还剩下%zd张", [NSThread currentThread].name, self.ticketCount);
+} else {
+NSLog(@"票已经卖完了");
+break;
+}
+}
+}
 }
 
 @end
@@ -89,29 +89,29 @@ https://www.jianshu.com/p/434e008fc09c
 https://www.cnblogs.com/iOSJason/p/5139883.html
 
 @synchronized 是递归锁，类似NSRecursiveLock,递归调用不会引起死锁，而NSLock是非递归锁。
- 
+
 
 假设我们正在用 Objective-C 实现一个线程安全的队列，我们一开始可能会这么干：
 ```
 @implementation ThreadSafeQueue
 {
-    NSMutableArray *_elements;
-    NSLock *_lock;
+NSMutableArray *_elements;
+NSLock *_lock;
 }
 - (instancetype)init
 {
-    self = [super init];
-    if (self) {
-        _elements = [NSMutableArray array];
-        _lock = [[NSLock alloc] init];
-    }
-    return self;
+self = [super init];
+if (self) {
+_elements = [NSMutableArray array];
+_lock = [[NSLock alloc] init];
+}
+return self;
 }
 - (void)push:(id)element
 {
-    [_lock lock];
-    [_elements addObject:element];
-    [_lock unlock];
+[_lock lock];
+[_elements addObject:element];
+[_lock unlock];
 }
 @end
 ```
@@ -131,24 +131,296 @@ https://www.cnblogs.com/iOSJason/p/5139883.html
 ```
 @implementation ThreadSafeQueue
 {
-    NSMutableArray *_elements;
+NSMutableArray *_elements;
 }
 - (instancetype)init
 {
-    self = [super init];
-    if (self) {
-        _elements = [NSMutableArray array];
-    }
-    return self;
+self = [super init];
+if (self) {
+_elements = [NSMutableArray array];
+}
+return self;
 }
 - (void)increment
 {
-    @synchronized (self) {
-        [_elements addObject:element];
-    }
+@synchronized (self) {
+[_elements addObject:element];
+}
 }
 @end
 ```
 在前面的例子中，”synchronized block” 与 [_lock lock] 和 [_lock unlock] 效果相同。你可以把它当成是锁住 self，仿佛 self 就是个 NSLock。锁在左括号 { 后面的任何代码运行之前被获取到，在右括号 } 后面的任何代码运行之前被释放掉。这爽就爽在妈妈再也不用担心我忘记调用 unlock 了！
 
 你可以给任何 Objective-C 对象上加个 @synchronized。那么我们也可以在上面的例子中用 @synchronized(_elements) 来替代 @synchronized(self)，效果是相同的。
+
+
+
+
+
+
+
+
+iOS 之 线程锁
+https://www.jianshu.com/p/b5c63d7c36da
+
+iOS GCD dispatch_group_t的使用
+https://www.jianshu.com/p/319838c5c657
+
+浅谈GCD信号量dispatch_semaphore_t
+http://events.jianshu.io/p/ba3e86a2e211
+
+使用GCD中的dispatch_semaphore(信号量)处理一个界面多个请求(把握AFNet网络请求完成的正确时机)
+https://www.imooc.com/article/258207
+
+网络
+dispatch_semaphore使用
+https://www.jianshu.com/p/68eea89fd130
+
+推荐
+iOS GCD线程同步以及AFNetworking多次请求线程依赖
+https://www.jianshu.com/p/efac15d882c7
+
+第一种
+```
+//第一步创建队列
+   dispatch_queue_t customQuue = dispatch_queue_create("com.manman.network", DISPATCH_QUEUE_CONCURRENT);
+     //第二步创建组
+   dispatch_group_t customGroup = dispatch_group_create();
+
+   //第三步添加任务
+   dispatch_group_async(customGroup, customQuue, ^{
+
+       [self requestWithType:@"吃饭"];
+
+   });
+
+   dispatch_group_async(customGroup, customQuue, ^{
+
+
+       [self requestWithType:@"洗澡"];
+
+
+   });
+   dispatch_group_async(customGroup, customQuue, ^{
+
+       [self requestWithType:@"睡觉"];
+
+
+   });
+   dispatch_group_async(customGroup, customQuue, ^{
+
+       [self requestWithType:@"起床"];
+
+   });
+   //第四步通知
+   dispatch_group_notify(customGroup, dispatch_get_main_queue(), ^{
+       NSLog(@"任务完成");
+   });
+
+
+
+/**发起请求*/
+-(void)requestWithType:(NSString *)type{
+    
+     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    AFHTTPSessionManager *manger =[AFHTTPSessionManager manager];
+    
+    manger.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    manger.requestSerializer = [AFHTTPRequestSerializer serializer];
+    
+    manger.requestSerializer.timeoutInterval = 30;
+    
+    manger.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/html",nil,nil];
+    
+    NSString  *url = @"http://122.112.244.62/elevator/api/index.php/elevator/info?id=12345678711234567878";
+    
+    [manger GET:url parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        //信号量+1
+        long x  = dispatch_semaphore_signal(sema);
+        NSLog(@"%@ --%ld",type,x);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        //信号量+1
+         dispatch_semaphore_signal(sema);
+    }];
+    //信号量-1
+    long x =  dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    NSLog(@"%@了 --%ld",type,x);
+}
+```
+
+第二种
+```
+//第一步创建队列
+    dispatch_queue_t customQuue = dispatch_queue_create("com.manman.network", DISPATCH_QUEUE_CONCURRENT);
+      //第二步创建组
+    dispatch_group_t customGroup = dispatch_group_create();
+
+    //第三步添加任务
+    
+
+    dispatch_group_async(customGroup, customQuue, ^{
+
+        [self requestWithType:@"吃饭" group:customGroup];
+;
+    });
+
+ 
+
+    dispatch_group_async(customGroup, customQuue, ^{
+ 
+        [self requestWithType:@"洗澡" group:customGroup];
+     
+
+
+    });
+  
+    
+    dispatch_group_async(customGroup, customQuue, ^{
+     
+        [self requestWithType:@"睡觉" group:customGroup];
+
+
+    });
+   
+    dispatch_group_async(customGroup, customQuue, ^{
+       
+
+        [self requestWithType:@"起床" group:customGroup];
+        
+
+    });
+    
+
+    //第四步通知
+    dispatch_group_notify(customGroup, dispatch_get_main_queue(), ^{
+        NSLog(@"任务完成");
+    });
+
+
+
+/**发起请求*/
+-(void)requestWithType:(NSString *)type group:(dispatch_group_t)group{
+    
+    
+    dispatch_group_enter(group);
+    AFHTTPSessionManager *manger =[AFHTTPSessionManager manager];
+    
+    manger.responseSerializer = [AFHTTPResponseSerializer serializer];
+    
+    manger.requestSerializer = [AFHTTPRequestSerializer serializer];
+    
+    manger.requestSerializer.timeoutInterval = 30;
+    
+    manger.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/html",nil,nil];
+    
+    NSString  *url = @"http://122.112.244.62/elevator/api/index.php/elevator/info?id=12345678711234567878";
+    
+    [manger GET:url parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+        
+        
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"%@",type);
+
+        dispatch_group_leave(group);
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+
+        dispatch_group_leave(group);
+    }];
+
+}
+```
+
+
+如何实现线程依赖。
+```
+NSBlockOperation *operation1 = [NSBlockOperation blockOperationWithBlock:^{
+         [self requestWithType:@"吃饭"];
+      }];
+
+
+      NSBlockOperation *operation2 = [NSBlockOperation blockOperationWithBlock:^{
+          [self requestWithType:@"洗澡"];
+
+      }];
+
+
+      NSBlockOperation *operation3 = [NSBlockOperation blockOperationWithBlock:^{
+          [self requestWithType:@"起床"];
+
+      }];
+
+      NSBlockOperation *operation4 = [NSBlockOperation blockOperationWithBlock:^{
+          [self requestWithType:@"睡觉"];
+
+      }];
+
+      NSBlockOperation *operation5 = [NSBlockOperation blockOperationWithBlock:^{
+          [self requestWithType:@"第二天"];
+
+      }];
+  
+  NSBlockOperation *operation6 = [NSBlockOperation blockOperationWithBlock:^{
+      [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+          NSLog(@"任务完成,刷新UI");
+      }];
+      
+  }];
+      //4.设置依赖
+      [operation2 addDependency:operation1];      //任务二依赖任务一
+      [operation3 addDependency:operation2];      //任务三依赖任务二
+
+      [operation4 addDependency:operation3];      //任务四依赖任务三
+
+      [operation5 addDependency:operation4];
+      [operation6 addDependency:operation5];
+
+  
+      //5.创建队列并加入任务
+      NSOperationQueue *queue = [[NSOperationQueue alloc] init]; [queue addOperations:@[operation3, operation2, operation1,operation4,operation5,operation6] waitUntilFinished:NO];
+
+  
+  
+}
+
+
+
+
+/**发起请求*/
+-(void)requestWithType:(NSString *)type{
+  
+  
+  dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+  AFHTTPSessionManager *manger =[AFHTTPSessionManager manager];
+  
+  manger.responseSerializer = [AFHTTPResponseSerializer serializer];
+  
+  manger.requestSerializer = [AFHTTPRequestSerializer serializer];
+  
+  manger.requestSerializer.timeoutInterval = 30;
+  
+  manger.responseSerializer.acceptableContentTypes=[NSSet setWithObjects:@"application/json",@"text/json",@"text/javascript",@"text/html",nil,nil];
+  
+  NSString  *url = @"http://122.112.244.62/elevator/api/index.php/elevator/info?id=12345678711234567878";
+  
+  [manger GET:url parameters:nil progress:^(NSProgress * _Nonnull uploadProgress) {
+      
+      
+  } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+      NSLog(@"%@",type);
+
+      dispatch_semaphore_signal(sema);
+      
+  } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+   dispatch_semaphore_signal(sema);
+      
+  }];
+  dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+}
+```

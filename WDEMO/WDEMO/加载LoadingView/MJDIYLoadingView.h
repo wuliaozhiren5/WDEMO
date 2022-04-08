@@ -1,9 +1,8 @@
 //
-//  XXLoadingView.h
-//  WDEMO
+//  MJDIYLoadingView.h
+//  MoWanShang
 //
-//  Created by WDEMO on 2021/6/30.
-//  Copyright © 2021 wwc. All rights reserved.
+//  Created by rrtv on 2022/3/28.
 //
 
 #import <UIKit/UIKit.h>
@@ -19,7 +18,9 @@ typedef NS_ENUM(NSUInteger, LoadingViewState) {
     LoadingViewStateNoNetwork,//加载失败，无网络
 };
 
-@interface XXLoadingView : UIView
+@protocol MJDIYLoadingViewDelegate;
+
+@interface MJDIYLoadingView : UIView
  
 @property (nonatomic, strong) UIImageView *loadingView;//动图
 @property (nonatomic, strong) UILabel *tipsLab;//提示文字
@@ -27,6 +28,13 @@ typedef NS_ENUM(NSUInteger, LoadingViewState) {
 @property (nonatomic, strong) UIView *containerView;
 @property (nonatomic, assign) LoadingViewState state;//状态
 
+@property (nonatomic, weak) id<MJDIYLoadingViewDelegate> delegate;
+
 @end
 
+@protocol MJDIYLoadingViewDelegate <NSObject>
+
+- (void)clickDIYLoadingView:(MJDIYLoadingView *)view;
+
+@end
 NS_ASSUME_NONNULL_END
