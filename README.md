@@ -104,9 +104,16 @@ pod 'SDWebImageWebPCoder'
 pod 'ReactiveObjC'
 pod 'MJRefresh'
 
+pod 'FMDB'
 
-
+pod 'SDCycleScrollView'
 
 
 SVProgressHUD
 MBProgressHUB
+
+
+Header Search Paths 与 User Header Search Paths 的区别
+https://www.jianshu.com/p/74ba9ddbaf71
+
+SDCycleScrollView - 无限循环控件

@@ -9,6 +9,7 @@
 #ifndef WDEMO_pch
 #define WDEMO_pch
 
+#ifdef __OBJC__
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #import <UIKit/UIKit.h>
@@ -38,4 +39,5 @@ typedef void (^ClickIndexBlock)(UIResponder *sender, NSUInteger index);
 #import "UIColor+color.h"
 #import "MBProgressHUD.h"
 
+#endif
 #endif /* WDEMO_pch */

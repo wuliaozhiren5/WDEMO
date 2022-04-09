@@ -1,12 +1,22 @@
-platform :ios, '8.0'
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '9.0'
+
+#1、纯OC项目中，通过cocoapods导入OC库时，一般都不使用use_frameworks!
+#2、纯swift项目中，通过cocoapods导入swift库时，必须使用use_frameworks!
+#3、只要是通过cocoapods导入swift库时，都必须使用use_frameworks!
+#4、使用动态链接库dynamic frameworks时，必须使用use_frameworks!
+use_frameworks!
+ 
 inhibit_all_warnings!
 
 target "WDEMO" do
 #图片
 pod 'SDWebImage', '~> 5.0'
-
-#网络请求
+pod 'SDWebImageWebPCoder'
+#刷新
 pod 'MJRefresh'
+#网络请求
 pod 'AFNetworking','~> 3.0’
 #UI布局
 pod 'Masonry', '~> 1.0.1'
@@ -16,6 +26,8 @@ pod 'ReactiveObjC', '~> 2.0'
 pod 'YYKit', '~> 1.0'
 #HUD
 pod 'MBProgressHUD', '~> 1.2.0'
+#无限循环控件
+pod 'SDCycleScrollView'
 #动画 JSON动画
 pod 'lottie-ios', '~> 2.5.3'
 #pod 'FLAnimatedImage', '~> 1.0'
