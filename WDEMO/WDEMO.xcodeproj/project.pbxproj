@@ -427,6 +427,7 @@
 		F5E7AAB727F1A9E800B2AD20 /* MJDIYGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E7AAB627F1A9E800B2AD20 /* MJDIYGifHeader.m */; };
 		F5E7AABA27F1AA0700B2AD20 /* MJDIYAutoGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E7AAB927F1AA0700B2AD20 /* MJDIYAutoGifFooter.m */; };
 		F5EB7C0E255B96740006FC64 /* YYmodel使用.md in Resources */ = {isa = PBXBuildFile; fileRef = F5EB7C0D255B96740006FC64 /* YYmodel使用.md */; };
+		F5ECB63D2807070B00B1250F /* 时间戳.md in Resources */ = {isa = PBXBuildFile; fileRef = F5ECB63C2807070B00B1250F /* 时间戳.md */; };
 		F5F2274826BA939B002EB4FC /* self.view = nil.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F2274726BA939A002EB4FC /* self.view = nil.md */; };
 		F5F30DB3256652CC00DD2597 /* WPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F30DB2256652CC00DD2597 /* WPerson.m */; };
 		F5F3664924C8287C008BA221 /* ChatKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3664824C8287C008BA221 /* ChatKit.m */; };
@@ -1210,6 +1211,7 @@
 		F5E7AAB827F1AA0700B2AD20 /* MJDIYAutoGifFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJDIYAutoGifFooter.h; sourceTree = "<group>"; };
 		F5E7AAB927F1AA0700B2AD20 /* MJDIYAutoGifFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJDIYAutoGifFooter.m; sourceTree = "<group>"; };
 		F5EB7C0D255B96740006FC64 /* YYmodel使用.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "YYmodel使用.md"; sourceTree = "<group>"; };
+		F5ECB63C2807070B00B1250F /* 时间戳.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "时间戳.md"; sourceTree = "<group>"; };
 		F5F2274726BA939A002EB4FC /* self.view = nil.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "self.view = nil.md"; sourceTree = "<group>"; };
 		F5F30DB1256652CC00DD2597 /* WPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WPerson.h; sourceTree = "<group>"; };
 		F5F30DB2256652CC00DD2597 /* WPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WPerson.m; sourceTree = "<group>"; };
@@ -2014,6 +2016,7 @@
 		F5596C79271EA554007D9FE9 /* md文件 */ = {
 			isa = PBXGroup;
 			children = (
+				F5ECB63C2807070B00B1250F /* 时间戳.md */,
 				F5D77C512803CC520003683F /* 开发者证书.md */,
 				F509136C25EF917B00A2E217 /* 文字显示全文显示更多.md */,
 				F518ED3625E8DDAC00260125 /* 图片压缩.md */,
@@ -3258,6 +3261,7 @@
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
 				F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */,
 				F5023E4A2716B48700BA5829 /* 空白.md in Resources */,
+				F5ECB63D2807070B00B1250F /* 时间戳.md in Resources */,
 				F5CA140726B2A2DC00D8A7AE /* post_normal@2x.png in Resources */,
 				F5F2274826BA939B002EB4FC /* self.view = nil.md in Resources */,
 				F5CA13AA26B2928700D8A7AE /* ic_bottombar_vip_h@2x.png in Resources */,
