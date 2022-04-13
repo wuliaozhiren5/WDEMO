@@ -18,9 +18,7 @@
 @implementation LBNavigationController
 
 + (void)load
-{
-
-
+{ 
     UIBarButtonItem *item=[UIBarButtonItem appearanceWhenContainedIn:self, nil ];
     NSMutableDictionary *dic=[NSMutableDictionary dictionary];
     dic[NSFontAttributeName]=[UIFont systemFontOfSize:15];
@@ -48,22 +46,11 @@
     if (self.viewControllers.count > 0) {
         
         viewController.hidesBottomBarWhenPushed = YES;
-
-        
-        
-
-
+ 
     }
 
     return [super pushViewController:viewController animated:animated];
 }
-
-
-
-
-
-
-
-
+ 
 
 @end

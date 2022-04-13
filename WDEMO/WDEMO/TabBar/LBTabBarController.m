@@ -131,10 +131,15 @@
 
 - (void)setUpAllChildVc
 {
-//    ViewController *HomeVC = [[ViewController alloc] init];
-//    [self setUpOneChildVcWithVc:HomeVC Image:@"ic_lottery_n" selectedImage:@"ic_lottery_h" title:@"首页"];
+    
+//    UIViewController *HomeVC = [[UIViewController alloc] init];
+//    [self setUpOneChildVcWithVc:HomeVC Image:@"home_normal" selectedImage:@"home_highlight" title:@"首页"];
+//
     ViewController *HomeVC = [[ViewController alloc] init];
     [self setUpOneChildVcWithVc:HomeVC Image:@"home_normal" selectedImage:@"home_highlight" title:@"首页"];
+    
+//    ViewController *HomeVC = [[ViewController alloc] init];
+//    [self setUpOneChildVcWithVc:HomeVC Image:@"home_normal" selectedImage:@"home_highlight" title:@"首页"];
     
     UIViewController *FishVC = [[UIViewController alloc] init];
     [self setUpOneChildVcWithVc:FishVC Image:@"fish_normal" selectedImage:@"fish_highlight" title:@"鱼塘"];
@@ -165,7 +170,8 @@
     LBNavigationController *nav = [[LBNavigationController alloc] initWithRootViewController:Vc];
 
     Vc.view.backgroundColor = [self randomColor];
-    
+//    Vc.view.backgroundColor = [UIColor redColor];
+
     UIImage *myImage = [UIImage imageNamed:image];
     myImage = [myImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
@@ -211,6 +217,7 @@
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
+    return;
     NSInteger index = [self.tabBar.items indexOfObject:item];
     //执行动画
     NSMutableArray *arry = [NSMutableArray array];
@@ -231,41 +238,43 @@
     animation.toValue = [NSNumber numberWithFloat:1.3];     //结束伸缩倍数
     [[arry[index] layer] addAnimation:animation forKey:nil];
 
-//    for (UIViewController *vc in self.viewControllers) {
+    for (UIViewController *vc in self.viewControllers) {
+
+            UIImage *myImage = [UIImage imageNamed:@"ic_lottery_n"];
+            myImage = [myImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+            //tabBarItem，是系统提供模型，专门负责tabbar上按钮的文字以及图片展示
+        vc.tabBarItem.image = myImage;
+
+            UIImage *mySelectedImage = [UIImage imageNamed:@"ic_lottery_h"];
+            mySelectedImage = [mySelectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+
+
+        vc.tabBarItem.selectedImage = mySelectedImage;
+
+    }
+    
+    
+    
+//    NSInteger n = self.viewControllers.count;
+//    NSArray *nn = @[@"ic_lottery_n",@"home_normal",@"home_normal",@"home_normal"];
+//    NSArray *hh = @[@"ic_lottery_h",@"home_normal",@"home_normal",@"home_normal"];
+//    for (NSInteger i = 0; i < n; i++) {
 //
-//            UIImage *myImage = [UIImage imageNamed:@"ic_lottery_n"];
+//            UIViewController *vc = self.viewControllers[i];
+//
+//            UIImage *myImage = [UIImage imageNamed:nn[i]];
 //            myImage = [myImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 //
 //            //tabBarItem，是系统提供模型，专门负责tabbar上按钮的文字以及图片展示
 //        vc.tabBarItem.image = myImage;
 //
-//            UIImage *mySelectedImage = [UIImage imageNamed:@"ic_lottery_h"];
+//        UIImage *mySelectedImage = [UIImage imageNamed:hh[i]];
 //            mySelectedImage = [mySelectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 //
 //
 //        vc.tabBarItem.selectedImage = mySelectedImage;
 //
 //    }
-    
-    NSInteger n = self.viewControllers.count;
-    NSArray *nn = @[@"ic_lottery_n",@"home_normal",@"home_normal",@"home_normal"];
-    NSArray *hh = @[@"ic_lottery_h",@"home_normal",@"home_normal",@"home_normal"];
-    for (NSInteger i = 0; i < n; i++) {
-          
-            UIViewController *vc = self.viewControllers[i];
-            
-            UIImage *myImage = [UIImage imageNamed:nn[i]];
-            myImage = [myImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        
-            //tabBarItem，是系统提供模型，专门负责tabbar上按钮的文字以及图片展示
-        vc.tabBarItem.image = myImage;
-        
-        UIImage *mySelectedImage = [UIImage imageNamed:hh[i]];
-            mySelectedImage = [mySelectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        
-        
-        vc.tabBarItem.selectedImage = mySelectedImage;
-         
-    }
 }
 @end

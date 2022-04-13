@@ -414,6 +414,7 @@
 		F5D5C1BA2714298D0021C36E /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B52714298D0021C36E /* 4.jpg */; };
 		F5D5C1BB2714298D0021C36E /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B62714298D0021C36E /* 2.jpg */; };
 		F5D5C1BE271429CD0021C36E /* CarouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C1BD271429CD0021C36E /* CarouseViewController.m */; };
+		F5D77C522803CC520003683F /* 开发者证书.md in Resources */ = {isa = PBXBuildFile; fileRef = F5D77C512803CC520003683F /* 开发者证书.md */; };
 		F5DC862B27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md in Resources */ = {isa = PBXBuildFile; fileRef = F5DC862A27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md */; };
 		F5DC862F2715631000EED8D5 /* PersonalHomePageSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC862E2715631000EED8D5 /* PersonalHomePageSubVC.m */; };
 		F5DEB2A624CE7E4B009A6767 /* ChatMemberListView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DEB2A524CE7E4B009A6767 /* ChatMemberListView.m */; };
@@ -1188,6 +1189,7 @@
 		F5D5C1B62714298D0021C36E /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		F5D5C1BC271429CD0021C36E /* CarouseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouseViewController.h; sourceTree = "<group>"; };
 		F5D5C1BD271429CD0021C36E /* CarouseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouseViewController.m; sourceTree = "<group>"; };
+		F5D77C512803CC520003683F /* 开发者证书.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "开发者证书.md"; sourceTree = "<group>"; };
 		F5DC862A27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自定义TabBar再次点击实现刷新.md"; sourceTree = "<group>"; };
 		F5DC862D2715631000EED8D5 /* PersonalHomePageSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalHomePageSubVC.h; sourceTree = "<group>"; };
 		F5DC862E2715631000EED8D5 /* PersonalHomePageSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PersonalHomePageSubVC.m; sourceTree = "<group>"; };
@@ -2012,6 +2014,7 @@
 		F5596C79271EA554007D9FE9 /* md文件 */ = {
 			isa = PBXGroup;
 			children = (
+				F5D77C512803CC520003683F /* 开发者证书.md */,
 				F509136C25EF917B00A2E217 /* 文字显示全文显示更多.md */,
 				F518ED3625E8DDAC00260125 /* 图片压缩.md */,
 				F567346B260C41D80081BC8A /* 数字变化的动画效果.md */,
@@ -3249,6 +3252,7 @@
 				F55F2EFF2763323F000DB684 /* YYLabel#话题@用户.md in Resources */,
 				F5D05B7425BAB18000A4C6EC /* 阴影.md in Resources */,
 				F58B528A271D960500CD6A3F /* 动画过程中的点击.md in Resources */,
+				F5D77C522803CC520003683F /* 开发者证书.md in Resources */,
 				F5D5C1A52714164F0021C36E /* Demo.png in Resources */,
 				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,

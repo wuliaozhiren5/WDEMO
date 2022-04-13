@@ -150,8 +150,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    [self hub];
-//    
+ 
+    //    [self hub];
+ 
 //    return;
     // Do any additional setup after loading the view, typically from a nib.
 //    self.title = @"首页";
@@ -159,9 +160,12 @@
     //    [self clickWebView];
     
     //    iOS7之后由于navigationBar.translucent默认是YES，坐标零点默认在（0，0）点  当不透明的时候，零点坐标在（0，64）；如果你想设置成透明的，而且还要零点从（0，64）开始，那就添加：self.edgesForExtendedLayout = UIRectEdgeNone;
-    self.navigationController.navigationBar.translucent = NO;
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+//    self.navigationController.navigationBar.translucent = NO;
+//    self.edgesForExtendedLayout = UIRectEdgeNone;
     
+    
+    self.navigationController.navigationBar.translucent = NO;
+
     //深色模式 切换时会自动变化
     self.view.backgroundColor = [UIColor d_colorWithColorLight:[UIColor whiteColor] dark:[UIColor grayColor]];
     
@@ -179,8 +183,7 @@
     NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
     dict[@"name"] = @"jack"; //@{@"name":@"jack"}   //等效于[mutableDictionary setObject:value forKeyedSubscript:@"someKey"];
     dict[@"name"] = nil;     //@{}
-    
-    
+     
     NSArray * array = @[
          
         [ListModel initWithTitle:@"多个头列表 换箱子" detail:@"多个头列表 换箱子" type:ListModelTypeExchangeBox],
@@ -235,7 +238,7 @@
         [ListModel initWithTitle:@"Test" detail:@"测试" type:ListModelTypeTest],
     ];
     self.data = array;
-    
+
     //列表tableview
     [self setupViews];
     
