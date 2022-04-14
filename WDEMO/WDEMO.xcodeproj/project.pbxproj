@@ -125,6 +125,9 @@
 		F5200DCB2531536E004637DD /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5200DCA2531536E004637DD /* BaseViewController.m */; };
 		F5236BE727CDBD0100CEDB5C /* 自定义TabBar文字颜色.md in Resources */ = {isa = PBXBuildFile; fileRef = F5236BE627CDBD0100CEDB5C /* 自定义TabBar文字颜色.md */; };
 		F5236BE927CE13F200CEDB5C /* 自定义TabBar添加背景图片.md in Resources */ = {isa = PBXBuildFile; fileRef = F5236BE827CE13F200CEDB5C /* 自定义TabBar添加背景图片.md */; };
+		F52960B52808170300FC7D03 /* NSURL返回为空.md in Resources */ = {isa = PBXBuildFile; fileRef = F52960B32808170300FC7D03 /* NSURL返回为空.md */; };
+		F52960B62808170300FC7D03 /* iOS 支付宝支付及授权.md in Resources */ = {isa = PBXBuildFile; fileRef = F52960B42808170300FC7D03 /* iOS 支付宝支付及授权.md */; };
+		F52960B82808177100FC7D03 /* git reflog 处理代码丢失、恢复代码.md in Resources */ = {isa = PBXBuildFile; fileRef = F52960B72808177000FC7D03 /* git reflog 处理代码丢失、恢复代码.md */; };
 		F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A098725B6EBE2008BDDEE /* SearchBarController.m */; };
 		F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */ = {isa = PBXBuildFile; fileRef = F52A383725C3B14700C6909E /* 新手引导页GuideView.md */; };
 		F52F15A526A7C60500D4E305 /* 定时器NSTimer.md in Resources */ = {isa = PBXBuildFile; fileRef = F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */; };
@@ -717,6 +720,9 @@
 		F5200DCA2531536E004637DD /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		F5236BE627CDBD0100CEDB5C /* 自定义TabBar文字颜色.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自定义TabBar文字颜色.md"; sourceTree = "<group>"; };
 		F5236BE827CE13F200CEDB5C /* 自定义TabBar添加背景图片.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自定义TabBar添加背景图片.md"; sourceTree = "<group>"; };
+		F52960B32808170300FC7D03 /* NSURL返回为空.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "NSURL返回为空.md"; sourceTree = "<group>"; };
+		F52960B42808170300FC7D03 /* iOS 支付宝支付及授权.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS 支付宝支付及授权.md"; sourceTree = "<group>"; };
+		F52960B72808177000FC7D03 /* git reflog 处理代码丢失、恢复代码.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "git reflog 处理代码丢失、恢复代码.md"; sourceTree = "<group>"; };
 		F52A098625B6EBE2008BDDEE /* SearchBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBarController.h; sourceTree = "<group>"; };
 		F52A098725B6EBE2008BDDEE /* SearchBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBarController.m; sourceTree = "<group>"; };
 		F52A383725C3B14700C6909E /* 新手引导页GuideView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "新手引导页GuideView.md"; sourceTree = "<group>"; };
@@ -2016,6 +2022,9 @@
 		F5596C79271EA554007D9FE9 /* md文件 */ = {
 			isa = PBXGroup;
 			children = (
+				F52960B72808177000FC7D03 /* git reflog 处理代码丢失、恢复代码.md */,
+				F52960B42808170300FC7D03 /* iOS 支付宝支付及授权.md */,
+				F52960B32808170300FC7D03 /* NSURL返回为空.md */,
 				F5ECB63C2807070B00B1250F /* 时间戳.md */,
 				F5D77C512803CC520003683F /* 开发者证书.md */,
 				F509136C25EF917B00A2E217 /* 文字显示全文显示更多.md */,
@@ -3230,6 +3239,7 @@
 				F5CA13A326B2928700D8A7AE /* ic_bottombar_kuaikan_n@2x.png in Resources */,
 				F5C0A2292578BBD4004EBD94 /* xibView.xib in Resources */,
 				F5D5C1BA2714298D0021C36E /* 4.jpg in Resources */,
+				F52960B82808177100FC7D03 /* git reflog 处理代码丢失、恢复代码.md in Resources */,
 				F5872CEC257DFC9E00341B57 /* 单例.md in Resources */,
 				F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */,
 				F5D5C1B92714298D0021C36E /* 1.jpg in Resources */,
@@ -3254,6 +3264,7 @@
 				F5CA668D26E61D59003C84CC /* 苹果开发者的Mac大瘦身.md in Resources */,
 				F55F2EFF2763323F000DB684 /* YYLabel#话题@用户.md in Resources */,
 				F5D05B7425BAB18000A4C6EC /* 阴影.md in Resources */,
+				F52960B62808170300FC7D03 /* iOS 支付宝支付及授权.md in Resources */,
 				F58B528A271D960500CD6A3F /* 动画过程中的点击.md in Resources */,
 				F5D77C522803CC520003683F /* 开发者证书.md in Resources */,
 				F5D5C1A52714164F0021C36E /* Demo.png in Resources */,
@@ -3309,6 +3320,7 @@
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
 				F5448BD12615F0A300169B71 /* 镂空.md in Resources */,
 				F5F5B47025FA3AE50069491B /* bg.jpg in Resources */,
+				F52960B52808170300FC7D03 /* NSURL返回为空.md in Resources */,
 				F5D5C1B72714298D0021C36E /* 5.jpg in Resources */,
 				F586140126A9739A00D81DDA /* Python批量修改iOS类名.md in Resources */,
 				F5CA140126B2A2DC00D8A7AE /* tapbar_top_line@2x.png in Resources */,
