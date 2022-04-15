@@ -388,6 +388,7 @@
 		F5CED5E525749E84002CF42C /* XXClass.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CED5E425749E84002CF42C /* XXClass.m */; };
 		F5CEF81C25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CEF81A25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.m */; };
 		F5CFA6FA280930830089BC2A /* DevEnvironmentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5CFA6F9280930830089BC2A /* DevEnvironmentViewController.m */; };
+		F5CFA6FC280966470089BC2A /* 隐私权限plist.md in Resources */ = {isa = PBXBuildFile; fileRef = F5CFA6FB280966470089BC2A /* 隐私权限plist.md */; };
 		F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */; };
 		F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D056FB25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m */; };
 		F5D05B5D25BAAF9B00A4C6EC /* RGB十六进制颜色.md in Resources */ = {isa = PBXBuildFile; fileRef = F5D05B5C25BAAF9B00A4C6EC /* RGB十六进制颜色.md */; };
@@ -1148,6 +1149,7 @@
 		F5CEF81B25C2B1EF003E329E /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
 		F5CFA6F8280930830089BC2A /* DevEnvironmentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevEnvironmentViewController.h; sourceTree = "<group>"; };
 		F5CFA6F9280930830089BC2A /* DevEnvironmentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevEnvironmentViewController.m; sourceTree = "<group>"; };
+		F5CFA6FB280966470089BC2A /* 隐私权限plist.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "隐私权限plist.md"; sourceTree = "<group>"; };
 		F5D056F325594D5F008CC230 /* FullScreenChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FullScreenChatBottomInputBarViewController.h; sourceTree = "<group>"; };
 		F5D056F425594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FullScreenChatBottomInputBarViewController.m; sourceTree = "<group>"; };
 		F5D056FA25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HalfScreenChatBottomInputBarViewController.h; sourceTree = "<group>"; };
@@ -2027,6 +2029,7 @@
 		F5596C79271EA554007D9FE9 /* md文件 */ = {
 			isa = PBXGroup;
 			children = (
+				F5CFA6FB280966470089BC2A /* 隐私权限plist.md */,
 				F52960B72808177000FC7D03 /* git reflog 处理代码丢失、恢复代码.md */,
 				F52960B42808170300FC7D03 /* iOS 支付宝支付及授权.md */,
 				F52960B32808170300FC7D03 /* NSURL返回为空.md */,
@@ -3362,6 +3365,7 @@
 				F592283A26C500F80030DB49 /* UIScrollView滑动停止监听.md in Resources */,
 				F58613D026A96EB100D81DDA /* start.sh in Resources */,
 				F501FEA0271FEC2800FE2F3B /* 删除所有子View.md in Resources */,
+				F5CFA6FC280966470089BC2A /* 隐私权限plist.md in Resources */,
 				F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */,
 				F5F3665A26F0D82A00E5D767 /* UICollectionView预加载isPrefetchingEnabled.md in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
