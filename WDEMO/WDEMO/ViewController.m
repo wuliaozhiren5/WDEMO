@@ -125,6 +125,8 @@
 #import "MJDIYLoadingView.h"
 
 #import "MWSLotteryBagListVC.h"
+//环境
+#import "DevEnvironmentViewController.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -187,6 +189,7 @@
     NSArray * array = @[
          
         [ListModel initWithTitle:@"多个头列表 换箱子" detail:@"多个头列表 换箱子" type:ListModelTypeExchangeBox],
+        [ListModel initWithTitle:@"切换环境" detail:@"切换环境" type:ListModelTypeEnvironment],
 
         [ListModel initWithTitle:@"短视频评论" detail:@"短视频评论" type:ListModelTypeVideoComment],
         [ListModel initWithTitle:@"话题" detail:@"话题" type:ListModelTypeTalk],
@@ -1166,6 +1169,11 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)clickEnvironment {
+    //换个箱子
+    DevEnvironmentViewController *vc= [[DevEnvironmentViewController alloc]init]; 
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)clickTest {
     //横向滚动的collectionView
     TestViewController *vc= [[TestViewController alloc]init];
@@ -1542,7 +1550,11 @@
             [self clickExchangeBox];
         }
             break;
-            
+        case ListModelTypeEnvironment:
+        {
+            [self clickEnvironment];
+        }
+            break;
         default:
         {
             NSAssert(NO, @"PLUPersonalItemType 类型错误");

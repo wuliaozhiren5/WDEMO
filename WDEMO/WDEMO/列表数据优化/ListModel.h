@@ -60,6 +60,8 @@ typedef NS_ENUM(NSInteger, ListModelType) {
     
     ListModelTypeExchangeBox,//多个头列表 换箱子
 
+    ListModelTypeEnvironment, //开发环境
+    
     ListModelTypeTest,//测试页面
 };
 
