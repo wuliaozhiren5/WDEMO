@@ -441,6 +441,12 @@
 		F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F3665524C82E5C008BA221 /* ChatImageCache.m */; };
 		F5F3665A26F0D82A00E5D767 /* UICollectionView预加载isPrefetchingEnabled.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F3665926F0D82A00E5D767 /* UICollectionView预加载isPrefetchingEnabled.md */; };
 		F5F37087250A594400118FC4 /* ChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F37086250A594400118FC4 /* ChatManager.m */; };
+		F5F3C40A280D609200DBDD82 /* GCD.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F3C409280D609200DBDD82 /* GCD.md */; };
+		F5F3C40C280D798000DBDD82 /* 渐变色图片.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F3C40B280D798000DBDD82 /* 渐变色图片.md */; };
+		F5F3C40E280D79A500DBDD82 /* 显示HTML文本.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F3C40D280D79A500DBDD82 /* 显示HTML文本.md */; };
+		F5F3C410280D79D900DBDD82 /* UIButton状态.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F3C40F280D79D900DBDD82 /* UIButton状态.md */; };
+		F5F3C412280D7A8400DBDD82 /* 允许使用http协议请求.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F3C411280D7A8400DBDD82 /* 允许使用http协议请求.md */; };
+		F5F3C414280D7AAC00DBDD82 /* AFNetWork 简单实用demo.md in Resources */ = {isa = PBXBuildFile; fileRef = F5F3C413280D7AAC00DBDD82 /* AFNetWork 简单实用demo.md */; };
 		F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10224D3C158007DB7F3 /* YYViewController.m */; };
 		F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10724D40311007DB7F3 /* TipMessageCell.m */; };
 		F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F4F10B24D4081A007DB7F3 /* ChatMessageYYDataModel.m */; };
@@ -1235,6 +1241,12 @@
 		F5F3665926F0D82A00E5D767 /* UICollectionView预加载isPrefetchingEnabled.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UICollectionView预加载isPrefetchingEnabled.md"; sourceTree = "<group>"; };
 		F5F37085250A594400118FC4 /* ChatManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatManager.h; sourceTree = "<group>"; };
 		F5F37086250A594400118FC4 /* ChatManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatManager.m; sourceTree = "<group>"; };
+		F5F3C409280D609200DBDD82 /* GCD.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = GCD.md; sourceTree = "<group>"; };
+		F5F3C40B280D798000DBDD82 /* 渐变色图片.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "渐变色图片.md"; sourceTree = "<group>"; };
+		F5F3C40D280D79A500DBDD82 /* 显示HTML文本.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "显示HTML文本.md"; sourceTree = "<group>"; };
+		F5F3C40F280D79D900DBDD82 /* UIButton状态.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UIButton状态.md"; sourceTree = "<group>"; };
+		F5F3C411280D7A8400DBDD82 /* 允许使用http协议请求.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "允许使用http协议请求.md"; sourceTree = "<group>"; };
+		F5F3C413280D7AAC00DBDD82 /* AFNetWork 简单实用demo.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "AFNetWork 简单实用demo.md"; sourceTree = "<group>"; };
 		F5F4F10124D3C158007DB7F3 /* YYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YYViewController.h; sourceTree = "<group>"; };
 		F5F4F10224D3C158007DB7F3 /* YYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YYViewController.m; sourceTree = "<group>"; };
 		F5F4F10724D40311007DB7F3 /* TipMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipMessageCell.m; sourceTree = "<group>"; };
@@ -2029,6 +2041,12 @@
 		F5596C79271EA554007D9FE9 /* md文件 */ = {
 			isa = PBXGroup;
 			children = (
+				F5F3C413280D7AAC00DBDD82 /* AFNetWork 简单实用demo.md */,
+				F5F3C411280D7A8400DBDD82 /* 允许使用http协议请求.md */,
+				F5F3C40F280D79D900DBDD82 /* UIButton状态.md */,
+				F5F3C40D280D79A500DBDD82 /* 显示HTML文本.md */,
+				F5F3C40B280D798000DBDD82 /* 渐变色图片.md */,
+				F5F3C409280D609200DBDD82 /* GCD.md */,
 				F5CFA6FB280966470089BC2A /* 隐私权限plist.md */,
 				F52960B72808177000FC7D03 /* git reflog 处理代码丢失、恢复代码.md */,
 				F52960B42808170300FC7D03 /* iOS 支付宝支付及授权.md */,
@@ -3277,6 +3295,7 @@
 				F5D77C522803CC520003683F /* 开发者证书.md in Resources */,
 				F5D5C1A52714164F0021C36E /* Demo.png in Resources */,
 				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
+				F5F3C40C280D798000DBDD82 /* 渐变色图片.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
 				F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */,
 				F5023E4A2716B48700BA5829 /* 空白.md in Resources */,
@@ -3326,6 +3345,7 @@
 				F5872CFD257DFF5900341B57 /* 追剧引导-暗黑-循环.gif in Resources */,
 				F51C8695261F10400066850E /* UIView中坐标转换.md in Resources */,
 				F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */,
+				F5F3C40E280D79A500DBDD82 /* 显示HTML文本.md in Resources */,
 				F5448BD12615F0A300169B71 /* 镂空.md in Resources */,
 				F5F5B47025FA3AE50069491B /* bg.jpg in Resources */,
 				F52960B52808170300FC7D03 /* NSURL返回为空.md in Resources */,
@@ -3340,11 +3360,13 @@
 				F5CA135426B25DA200D8A7AE /* 网络图片403.md in Resources */,
 				F534736E25E357F400F01CC6 /* iOS仿抖音短视频.md in Resources */,
 				F5409ABD26B166020042F29D /* star.png in Resources */,
+				F5F3C412280D7A8400DBDD82 /* 允许使用http协议请求.md in Resources */,
 				F5CA140826B2A2DC00D8A7AE /* home_normal@2x.png in Resources */,
 				F504EE1727E208350099350D /* nullable nonnull.md in Resources */,
 				F5D05B6E25BAB16600A4C6EC /* 归档解档.md in Resources */,
 				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
 				F51A9E0426D6734400A15993 /* 判断中英混合的的字符串长度.md in Resources */,
+				F5F3C410280D79D900DBDD82 /* UIButton状态.md in Resources */,
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
 				F5CA13A826B2928700D8A7AE /* ic_bottombar_kuaikan_h@2x.png in Resources */,
 				F5CA13A126B2928700D8A7AE /* ic_bottombar_me_h@2x.png in Resources */,
@@ -3376,6 +3398,7 @@
 				F5CA140226B2A2DC00D8A7AE /* mycity_normal@2x.png in Resources */,
 				F5CA140026B2A2DC00D8A7AE /* fish_normal@2x.png in Resources */,
 				F548D0D7256E2EEA00357E64 /* img_0.png in Resources */,
+				F5F3C40A280D609200DBDD82 /* GCD.md in Resources */,
 				F5CA13A626B2928700D8A7AE /* ic_bottombar_me_n@2x.png in Resources */,
 				F5AC7C2A271020FD00533793 /* 锁@synchronized.md in Resources */,
 				F50D6D8625A95AD300B8C415 /* 瀑布流.md in Resources */,
@@ -3397,6 +3420,7 @@
 				F5CA140626B2A2DC00D8A7AE /* message_normal@2x.png in Resources */,
 				F55EF6882758CD430043B460 /* 更改状态栏导航栏颜色的方法.md in Resources */,
 				F5446CA6268D73240076961A /* 消息回复详情.json in Resources */,
+				F5F3C414280D7AAC00DBDD82 /* AFNetWork 简单实用demo.md in Resources */,
 				F5F6AEFD2744EE0C0074B26D /* 排行榜头.json in Resources */,
 				F52F168D26A82C1C00D4E305 /* func.list in Resources */,
 				F5F6AEFF2744EE450074B26D /* 排行榜列表.json in Resources */,

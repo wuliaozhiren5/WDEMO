@@ -33,6 +33,8 @@ NSArray *array = [NSArray modelArrayWithClass:[AllSeasonCategorySectionModel cla
 //result.data 是 Dictionary
 xxxModel *response = [xxxModel modelWithDictionary:result.data];
 
+xxx *model = [xxx modelWithJSON:result.data];
+
 
 int main() {
     // create model from json
