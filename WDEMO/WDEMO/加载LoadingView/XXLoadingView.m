@@ -119,7 +119,7 @@
             //暂无数据
             self.hidden = NO;
             [self stopAnimating];
-            self.loadingView.image = [UIImage imageNamed:@"dropdown_loading_01"];
+            self.loadingView.image = [UIImage imageNamed:@"pic_nocontent"];
             self.tipsLab.text = @"暂无数据";
             
             self.loadingView.hidden = NO;
@@ -130,7 +130,7 @@
             //失败
             self.hidden = NO;
             [self stopAnimating];
-            self.loadingView.image = [UIImage imageNamed:@"dropdown_loading_01"];
+            self.loadingView.image = [UIImage imageNamed:@"pic_error"];
             self.tipsLab.text = @"加载失败";
             
             self.loadingView.hidden = NO;
@@ -141,7 +141,7 @@
             //没有网络
             self.hidden = NO;
             [self stopAnimating];
-            self.loadingView.image = [UIImage imageNamed:@"dropdown_loading_01"];
+            self.loadingView.image = [UIImage imageNamed:@"pic_nonetwork"];
             self.tipsLab.text = @"无法连接网络";
             
             self.loadingView.hidden = NO;
@@ -218,7 +218,9 @@
         NSMutableArray *imgArray = [NSMutableArray array];
         for (NSUInteger i = 1; i<=3; i++) {
             UIImage *image = [UIImage imageNamed:[NSString stringWithFormat:@"dropdown_loading_0%zd", i]];
-            [imgArray addObject:image];
+            if (image) {
+                [imgArray addObject:image];
+            }
         }
         _loadingView.animationImages = imgArray;
         _loadingView.animationDuration = 0.1 * imgArray.count;
