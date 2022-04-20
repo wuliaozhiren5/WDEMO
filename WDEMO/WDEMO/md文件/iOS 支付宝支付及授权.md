@@ -42,3 +42,7 @@ https://blog.csdn.net/ChasingDreamsCoder/article/details/82391546
 }
 ```
  
+ 
+LSApplicationQueriesSchemes 
+https://blog.csdn.net/heqiang2015/article/details/86646446
+https://blog.csdn.net/xinxinNoGiveUp/article/details/50824864
