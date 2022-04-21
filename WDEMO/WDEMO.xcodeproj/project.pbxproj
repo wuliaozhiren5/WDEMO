@@ -130,6 +130,7 @@
 		F52960B82808177100FC7D03 /* git reflog 处理代码丢失、恢复代码.md in Resources */ = {isa = PBXBuildFile; fileRef = F52960B72808177000FC7D03 /* git reflog 处理代码丢失、恢复代码.md */; };
 		F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A098725B6EBE2008BDDEE /* SearchBarController.m */; };
 		F52A383825C3B14700C6909E /* 新手引导页GuideView.md in Resources */ = {isa = PBXBuildFile; fileRef = F52A383725C3B14700C6909E /* 新手引导页GuideView.md */; };
+		F52A51EB280FBBAF003D0FDA /* WWCAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = F52A51EA280FBBAF003D0FDA /* WWCAdapter.m */; };
 		F52F15A526A7C60500D4E305 /* 定时器NSTimer.md in Resources */ = {isa = PBXBuildFile; fileRef = F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */; };
 		F52F168D26A82C1C00D4E305 /* func.list in Resources */ = {isa = PBXBuildFile; fileRef = F52F168B26A82C1C00D4E305 /* func.list */; };
 		F52F168E26A82C1C00D4E305 /* confuse.sh in Resources */ = {isa = PBXBuildFile; fileRef = F52F168C26A82C1C00D4E305 /* confuse.sh */; };
@@ -734,6 +735,8 @@
 		F52A098625B6EBE2008BDDEE /* SearchBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchBarController.h; sourceTree = "<group>"; };
 		F52A098725B6EBE2008BDDEE /* SearchBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchBarController.m; sourceTree = "<group>"; };
 		F52A383725C3B14700C6909E /* 新手引导页GuideView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "新手引导页GuideView.md"; sourceTree = "<group>"; };
+		F52A51E9280FBBAF003D0FDA /* WWCAdapter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WWCAdapter.h; sourceTree = "<group>"; };
+		F52A51EA280FBBAF003D0FDA /* WWCAdapter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WWCAdapter.m; sourceTree = "<group>"; };
 		F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "定时器NSTimer.md"; sourceTree = "<group>"; };
 		F52F168A26A82C1C00D4E305 /* codeObfuscation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = codeObfuscation.h; sourceTree = "<group>"; };
 		F52F168B26A82C1C00D4E305 /* func.list */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = func.list; sourceTree = "<group>"; };
@@ -1439,6 +1442,8 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F52A51E9280FBBAF003D0FDA /* WWCAdapter.h */,
+				F52A51EA280FBBAF003D0FDA /* WWCAdapter.m */,
 				F5CFA6F8280930830089BC2A /* DevEnvironmentViewController.h */,
 				F5CFA6F9280930830089BC2A /* DevEnvironmentViewController.m */,
 				F51CAFA527F5A0FD00990349 /* LotteryBagListVC */,
@@ -3565,6 +3570,7 @@
 				F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */,
 				F553E12B24CA800200DA5625 /* FaceCell.m in Sources */,
 				F5D056FC25594D72008CC230 /* HalfScreenChatBottomInputBarViewController.m in Sources */,
+				F52A51EB280FBBAF003D0FDA /* WWCAdapter.m in Sources */,
 				F57D571F272FE326009F5846 /* RRHomeChannelModel.m in Sources */,
 				F57D5746272FE424009F5846 /* RRStarScoreView.m in Sources */,
 				F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */,
