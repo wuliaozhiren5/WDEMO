@@ -11,7 +11,7 @@
 #import "MyTabBarController.h"
 #import "LBTabBarController.h"
 #import "MainTabBarController.h"
-
+#import <AFNetworking/AFNetworking.h>
 @interface AppDelegate ()
 
 @end
@@ -59,6 +59,8 @@
 //    MainTabBarController *tabBarVc = [[MainTabBarController alloc] init];
 //    self.window.rootViewController = tabBarVc;
     
+    
+    [self startNetWorkMonitor];
     // 显示窗口
     [self.window makeKeyAndVisible];
     
@@ -105,8 +107,43 @@
         return;
         
     }
-    
 }
+
+- (void)startNetWorkMonitor {
+    AFNetworkReachabilityManager *mgr=[AFNetworkReachabilityManager sharedManager];
+    [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"WIFI");
+                self.isNetWork = YES;
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"自带网路");
+                self.isNetWork = YES;
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                NSLog(@"没有网络");
+                self.isNetWork = NO;
+                break;
+            case AFNetworkReachabilityStatusUnknown:
+                NSLog(@"未知网络");
+                self.isNetWork = NO;
+                break;
+            default:
+                NSLog(@"其他");
+                self.isNetWork = NO;
+                break;
+        }
+    }];
+    //开始监控
+    [mgr startMonitoring];
+}
+
+-(void)dealloc
+{
+    [[AFNetworkReachabilityManager sharedManager]stopMonitoring];
+}
+
 
 //将进入后台
 - (void)applicationWillResignActive:(UIApplication *)application {
