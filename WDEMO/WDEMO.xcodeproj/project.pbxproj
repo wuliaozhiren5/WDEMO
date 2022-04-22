@@ -139,6 +139,7 @@
 		F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293EB2509C6FE00E06D42 /* HalfScreenInputController.m */; };
 		F53293F02509C6FE00E06D42 /* FullScreenInputController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53293ED2509C6FE00E06D42 /* FullScreenInputController.m */; };
 		F534736E25E357F400F01CC6 /* iOS仿抖音短视频.md in Resources */ = {isa = PBXBuildFile; fileRef = F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */; };
+		F535118D2812BE2C00691183 /* RRDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F535118C2812BE2C00691183 /* RRDataSource.m */; };
 		F5358C1926032C1200C69FC4 /* RRActorSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5358C1726032C1200C69FC4 /* RRActorSubVC.m */; };
 		F53C391F2616B9320015A9AE /* NewHandGuideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F53C391E2616B9320015A9AE /* NewHandGuideViewController.m */; };
 		F53F668C24FE2E2300770055 /* UIImage+GradientColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F53F668B24FE2E2300770055 /* UIImage+GradientColor.m */; };
@@ -749,6 +750,8 @@
 		F53293F12509CE0B00E06D42 /* FullScreenChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenChatController.h; sourceTree = "<group>"; };
 		F53293F22509CE0D00E06D42 /* FullScreenChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenChatController.m; sourceTree = "<group>"; };
 		F534736D25E357F400F01CC6 /* iOS仿抖音短视频.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS仿抖音短视频.md"; sourceTree = "<group>"; };
+		F535118B2812BE2C00691183 /* RRDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDataSource.h; sourceTree = "<group>"; };
+		F535118C2812BE2C00691183 /* RRDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDataSource.m; sourceTree = "<group>"; };
 		F5358C1726032C1200C69FC4 /* RRActorSubVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRActorSubVC.m; sourceTree = "<group>"; };
 		F5358C1826032C1200C69FC4 /* RRActorSubVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRActorSubVC.h; sourceTree = "<group>"; };
 		F53C391D2616B9320015A9AE /* NewHandGuideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewHandGuideViewController.h; sourceTree = "<group>"; };
@@ -1444,6 +1447,8 @@
 			children = (
 				F52A51E9280FBBAF003D0FDA /* WWCAdapter.h */,
 				F52A51EA280FBBAF003D0FDA /* WWCAdapter.m */,
+				F535118B2812BE2C00691183 /* RRDataSource.h */,
+				F535118C2812BE2C00691183 /* RRDataSource.m */,
 				F5CFA6F8280930830089BC2A /* DevEnvironmentViewController.h */,
 				F5CFA6F9280930830089BC2A /* DevEnvironmentViewController.m */,
 				F51CAFA527F5A0FD00990349 /* LotteryBagListVC */,
@@ -3531,6 +3536,7 @@
 				F553E1A124CA8F9B00DA5625 /* ChatMessageDataModel.m in Sources */,
 				F5200DCB2531536E004637DD /* BaseViewController.m in Sources */,
 				F5E7AABA27F1AA0700B2AD20 /* MJDIYAutoGifFooter.m in Sources */,
+				F535118D2812BE2C00691183 /* RRDataSource.m in Sources */,
 				F57D5738272FE367009F5846 /* RRTopBarUserView.m in Sources */,
 				F50440CF2625A06B00834547 /* RRSeasonSeniorCommentsTabCountView.m in Sources */,
 				F5F5B44C25FA1DFE0069491B /* RRActorIntroCell.m in Sources */,
