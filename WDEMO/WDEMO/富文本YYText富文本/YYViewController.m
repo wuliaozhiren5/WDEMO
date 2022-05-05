@@ -258,6 +258,15 @@
     //    [text appendAttributedString: attachment];
     
     
+    UILabel *lab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
+    lab.font = [UIFont boldSystemFontOfSize:30];
+    lab.textColor = [UIColor greenColor];
+    lab.text = @"添加一个Label";
+    [lab sizeToFit];
+    attachment = [NSMutableAttributedString attachmentStringWithContent:lab contentMode:UIViewContentModeCenter attachmentSize:lab.size alignToFont:font alignment:YYTextVerticalAlignmentCenter];
+    [text appendAttributedString:attachment];
+    
+    
     // 嵌入 UIImageViewv  网络图片 webimage
     UIImageView *imageView = [[UIImageView alloc] init];
     imageView.frame = CGRectMake(0, 0, 20, 20);

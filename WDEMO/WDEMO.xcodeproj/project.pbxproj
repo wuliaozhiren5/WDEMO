@@ -422,6 +422,10 @@
 		F5D5C1BA2714298D0021C36E /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B52714298D0021C36E /* 4.jpg */; };
 		F5D5C1BB2714298D0021C36E /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5D5C1B62714298D0021C36E /* 2.jpg */; };
 		F5D5C1BE271429CD0021C36E /* CarouseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D5C1BD271429CD0021C36E /* CarouseViewController.m */; };
+		F5D5CA042823A827008B83E3 /* 电脑连不上真机.md in Resources */ = {isa = PBXBuildFile; fileRef = F5D5CA032823A827008B83E3 /* 电脑连不上真机.md */; };
+		F5D5CA062823A88B008B83E3 /* 适配iOS13之AFNetworking + UIWebView.md in Resources */ = {isa = PBXBuildFile; fileRef = F5D5CA052823A88B008B83E3 /* 适配iOS13之AFNetworking + UIWebView.md */; };
+		F5D5CA082823A8D7008B83E3 /* view旋转角度.md in Resources */ = {isa = PBXBuildFile; fileRef = F5D5CA072823A8D7008B83E3 /* view旋转角度.md */; };
+		F5D5CA0A2823A9E8008B83E3 /* IDFA权限弹框，弹出框.md in Resources */ = {isa = PBXBuildFile; fileRef = F5D5CA092823A9E8008B83E3 /* IDFA权限弹框，弹出框.md */; };
 		F5D77C522803CC520003683F /* 开发者证书.md in Resources */ = {isa = PBXBuildFile; fileRef = F5D77C512803CC520003683F /* 开发者证书.md */; };
 		F5DC862B27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md in Resources */ = {isa = PBXBuildFile; fileRef = F5DC862A27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md */; };
 		F5DC862F2715631000EED8D5 /* PersonalHomePageSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC862E2715631000EED8D5 /* PersonalHomePageSubVC.m */; };
@@ -1215,6 +1219,10 @@
 		F5D5C1B62714298D0021C36E /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		F5D5C1BC271429CD0021C36E /* CarouseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CarouseViewController.h; sourceTree = "<group>"; };
 		F5D5C1BD271429CD0021C36E /* CarouseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CarouseViewController.m; sourceTree = "<group>"; };
+		F5D5CA032823A827008B83E3 /* 电脑连不上真机.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "电脑连不上真机.md"; sourceTree = "<group>"; };
+		F5D5CA052823A88B008B83E3 /* 适配iOS13之AFNetworking + UIWebView.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "适配iOS13之AFNetworking + UIWebView.md"; sourceTree = "<group>"; };
+		F5D5CA072823A8D7008B83E3 /* view旋转角度.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "view旋转角度.md"; sourceTree = "<group>"; };
+		F5D5CA092823A9E8008B83E3 /* IDFA权限弹框，弹出框.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "IDFA权限弹框，弹出框.md"; sourceTree = "<group>"; };
 		F5D77C512803CC520003683F /* 开发者证书.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "开发者证书.md"; sourceTree = "<group>"; };
 		F5DC862A27152CFD00EED8D5 /* 自定义TabBar再次点击实现刷新.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自定义TabBar再次点击实现刷新.md"; sourceTree = "<group>"; };
 		F5DC862D2715631000EED8D5 /* PersonalHomePageSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PersonalHomePageSubVC.h; sourceTree = "<group>"; };
@@ -2084,6 +2092,10 @@
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F504EE1827E208780099350D /* 抓包Charles.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				F5D5CA092823A9E8008B83E3 /* IDFA权限弹框，弹出框.md */,
+				F5D5CA072823A8D7008B83E3 /* view旋转角度.md */,
+				F5D5CA052823A88B008B83E3 /* 适配iOS13之AFNetworking + UIWebView.md */,
+				F5D5CA032823A827008B83E3 /* 电脑连不上真机.md */,
 				F504EE1627E208340099350D /* nullable nonnull.md */,
 				F556FE1A27B9F75E00D00D8E /* 半屏评论下滑.md */,
 				F53155F927981A69007B9E2E /* 暗黑模式全部关闭 or 某个界面关闭.md */,
@@ -3313,6 +3325,7 @@
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
 				F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */,
 				F5023E4A2716B48700BA5829 /* 空白.md in Resources */,
+				F5D5CA082823A8D7008B83E3 /* view旋转角度.md in Resources */,
 				F5ECB63D2807070B00B1250F /* 时间戳.md in Resources */,
 				F5CA140726B2A2DC00D8A7AE /* post_normal@2x.png in Resources */,
 				F5F2274826BA939B002EB4FC /* self.view = nil.md in Resources */,
@@ -3366,9 +3379,11 @@
 				F5D5C1B72714298D0021C36E /* 5.jpg in Resources */,
 				F586140126A9739A00D81DDA /* Python批量修改iOS类名.md in Resources */,
 				F5CA140126B2A2DC00D8A7AE /* tapbar_top_line@2x.png in Resources */,
+				F5D5CA0A2823A9E8008B83E3 /* IDFA权限弹框，弹出框.md in Resources */,
 				F548D0E7256E2EEA00357E64 /* data.json in Resources */,
 				F505AC3525C940D100F43298 /* addChildViewController.md in Resources */,
 				F5609CAD25022F3100A13C15 /* 暗黑模式 深色模式.md in Resources */,
+				F5D5CA062823A88B008B83E3 /* 适配iOS13之AFNetworking + UIWebView.md in Resources */,
 				F5760E13268EECF4008250D7 /* 隐藏导航栏.md in Resources */,
 				F58613CC26A96EB100D81DDA /* confuse_log.log in Resources */,
 				F5CA135426B25DA200D8A7AE /* 网络图片403.md in Resources */,
@@ -3439,6 +3454,7 @@
 				F52F168D26A82C1C00D4E305 /* func.list in Resources */,
 				F5F6AEFF2744EE450074B26D /* 排行榜列表.json in Resources */,
 				F5CA13FF26B2A2DC00D8A7AE /* home_highlight@2x.png in Resources */,
+				F5D5CA042823A827008B83E3 /* 电脑连不上真机.md in Resources */,
 				F51C24B7263BEF4D0010A298 /* 评论列表.json in Resources */,
 				F50D6D9125A9618300B8C415 /* 首页PageController.md in Resources */,
 				F509136D25EF917B00A2E217 /* 文字显示全文显示更多.md in Resources */,
