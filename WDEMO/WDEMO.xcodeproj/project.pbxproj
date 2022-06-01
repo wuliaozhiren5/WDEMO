@@ -272,12 +272,18 @@
 		F5872CFD257DFF5900341B57 /* 追剧引导-暗黑-循环.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CF9257DFF5900341B57 /* 追剧引导-暗黑-循环.gif */; };
 		F5872CFE257DFF5900341B57 /* 追剧引导-暗黑-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFA257DFF5900341B57 /* 追剧引导-暗黑-一次.gif */; };
 		F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */ = {isa = PBXBuildFile; fileRef = F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */; };
+		F58830A828474C290040AF21 /* AppLinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F58830A728474C290040AF21 /* AppLinkManager.m */; };
+		F58830AB28474D800040AF21 /* MWSLinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F58830AA28474D800040AF21 /* MWSLinkManager.m */; };
+		F58830AE284762600040AF21 /* RRAppLinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F58830AD284762600040AF21 /* RRAppLinkManager.m */; };
 		F58B4B402643FAF700D7C82D /* UIViewController+TopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */; };
 		F58B4B462643FCD800D7C82D /* 回复列表.json in Resources */ = {isa = PBXBuildFile; fileRef = F58B4B452643FCD800D7C82D /* 回复列表.json */; };
 		F58B528A271D960500CD6A3F /* 动画过程中的点击.md in Resources */ = {isa = PBXBuildFile; fileRef = F58B5289271D960500CD6A3F /* 动画过程中的点击.md */; };
 		F58B528C271D961A00CD6A3F /* 点击事件穿透.md in Resources */ = {isa = PBXBuildFile; fileRef = F58B528B271D961A00CD6A3F /* 点击事件穿透.md */; };
 		F58E20DC2711672A00C4BB4F /* RRMessageSeasonCommentPositionListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F58E20D82711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.m */; };
 		F58E20E0271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F58E20DE271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m */; };
+		F58F2B64282A16FF00295ED1 /* UIButton+ImageTitleStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = F58F2B63282A16FF00295ED1 /* UIButton+ImageTitleStyle.m */; };
+		F58F2B66282A17EC00295ED1 /* UIButton图片文字对齐.md in Resources */ = {isa = PBXBuildFile; fileRef = F58F2B65282A17EC00295ED1 /* UIButton图片文字对齐.md */; };
+		F58F2B7C282A687300295ED1 /* iOS中拉伸图片的几种方式.md in Resources */ = {isa = PBXBuildFile; fileRef = F58F2B7B282A687300295ED1 /* iOS中拉伸图片的几种方式.md */; };
 		F591AC2D26A13B970042802F /* 马甲包.md in Resources */ = {isa = PBXBuildFile; fileRef = F591AC2C26A13B970042802F /* 马甲包.md */; };
 		F591AC8B26A163D70042802F /* WConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = F591AC8926A163D70042802F /* WConstants.m */; };
 		F591AC9726A1641B0042802F /* Vendors.m in Sources */ = {isa = PBXBuildFile; fileRef = F591AC9626A1641B0042802F /* Vendors.m */; };
@@ -331,6 +337,11 @@
 		F5B1FE6B2621AC6C004B950C /* TableviewSectionHeader不悬停.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */; };
 		F5B30F6624F8D3F8003DFB2E /* RAC.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B30F6524F8D3F8003DFB2E /* RAC.md */; };
 		F5B39E2F2818E5A3004858C4 /* APPIcon生成.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B39E2E2818E5A2004858C4 /* APPIcon生成.md */; };
+		F5B4563928377F95008B5547 /* UITextView默认文字提示.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B4563828377F95008B5547 /* UITextView默认文字提示.md */; };
+		F5B4563B28377FDF008B5547 /* Masonry约束宽高比.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B4563A28377FDE008B5547 /* Masonry约束宽高比.md */; };
+		F5B4563D28378043008B5547 /* 谓语NSPredicate.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B4563C28378043008B5547 /* 谓语NSPredicate.md */; };
+		F5B4563F28378088008B5547 /* 排序NSSortDescriptor.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B4563E28378088008B5547 /* 排序NSSortDescriptor.md */; };
+		F5B45641283781DA008B5547 /* 键盘遮挡问题解决办法.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B45640283781DA008B5547 /* 键盘遮挡问题解决办法.md */; };
 		F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A92F2508F502002505AE /* FullScreenMessageController.m */; };
 		F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9302508F502002505AE /* HalfScreenMessageController.m */; };
 		F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9372508F79A002505AE /* TipMessageDataModel.m */; };
@@ -341,6 +352,7 @@
 		F5B7DC442608814B00B1E497 /* XcodeClangFormat.zip in Resources */ = {isa = PBXBuildFile; fileRef = F5B7DC422608814B00B1E497 /* XcodeClangFormat.zip */; };
 		F5BFBBFC25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5BFBBFA25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m */; };
 		F5BFBC0C25E523BC0068358F /* 弹幕.md in Resources */ = {isa = PBXBuildFile; fileRef = F5BFBC0B25E523BC0068358F /* 弹幕.md */; };
+		F5BFEFB42834EE8E00800D46 /* UITableView侧滑删除滑动删除.md in Resources */ = {isa = PBXBuildFile; fileRef = F5BFEFB32834EE8E00800D46 /* UITableView侧滑删除滑动删除.md */; };
 		F5C0A20425788B92004EBD94 /* UIColor+color.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C0A20325788B92004EBD94 /* UIColor+color.m */; };
 		F5C0A20A2578950D004EBD94 /* WTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5C0A2092578950D004EBD94 /* WTableViewCell.xib */; };
 		F5C0A21F2578BBC2004EBD94 /* xibView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5C0A21E2578BBC2004EBD94 /* xibView.m */; };
@@ -633,7 +645,7 @@
 		F501FEA7271FF40500FE2F3B /* SerachHistoryWordCollectionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SerachHistoryWordCollectionVC.m; sourceTree = "<group>"; };
 		F501FEA9272016A200FE2F3B /* RRAllRankingListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingListCell.h; sourceTree = "<group>"; };
 		F501FEAA272016A200FE2F3B /* RRAllRankingListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListCell.m; sourceTree = "<group>"; };
-		F5023E492716B48700BA5829 /* 空白.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白.md"; sourceTree = "<group>"; };
+		F5023E492716B48700BA5829 /* 空白.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白.md"; sourceTree = "<group>"; wrapsLines = 1; };
 		F5023E4B2716B4CD00BA5829 /* View设置顶点设置大小.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "View设置顶点设置大小.md"; sourceTree = "<group>"; };
 		F5023E4D2717097700BA5829 /* NewLXHBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewLXHBanner.h; sourceTree = "<group>"; };
 		F5023E4E2717097800BA5829 /* NewLXHBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewLXHBanner.m; sourceTree = "<group>"; };
@@ -972,6 +984,12 @@
 		F5872CF9257DFF5900341B57 /* 追剧引导-暗黑-循环.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "追剧引导-暗黑-循环.gif"; sourceTree = "<group>"; };
 		F5872CFA257DFF5900341B57 /* 追剧引导-暗黑-一次.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "追剧引导-暗黑-一次.gif"; sourceTree = "<group>"; };
 		F5872CFB257DFF5900341B57 /* 追剧引导-白色-一次.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "追剧引导-白色-一次.gif"; sourceTree = "<group>"; };
+		F58830A628474C290040AF21 /* AppLinkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppLinkManager.h; sourceTree = "<group>"; };
+		F58830A728474C290040AF21 /* AppLinkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppLinkManager.m; sourceTree = "<group>"; };
+		F58830A928474D800040AF21 /* MWSLinkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MWSLinkManager.h; sourceTree = "<group>"; };
+		F58830AA28474D800040AF21 /* MWSLinkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWSLinkManager.m; sourceTree = "<group>"; };
+		F58830AC284762600040AF21 /* RRAppLinkManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAppLinkManager.h; sourceTree = "<group>"; };
+		F58830AD284762600040AF21 /* RRAppLinkManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAppLinkManager.m; sourceTree = "<group>"; };
 		F58B4B3E2643FAF700D7C82D /* UIViewController+TopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TopViewController.h"; sourceTree = "<group>"; };
 		F58B4B3F2643FAF700D7C82D /* UIViewController+TopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TopViewController.m"; sourceTree = "<group>"; };
 		F58B4B452643FCD800D7C82D /* 回复列表.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "回复列表.json"; sourceTree = "<group>"; };
@@ -981,6 +999,10 @@
 		F58E20D92711672900C4BB4F /* RRMessageSeasonCommentPositionListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMessageSeasonCommentPositionListVC.h; sourceTree = "<group>"; };
 		F58E20DE271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRMessageSeniorCommentsPositionListVCViewController.m; sourceTree = "<group>"; };
 		F58E20DF271169DD00C4BB4F /* RRMessageSeniorCommentsPositionListVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRMessageSeniorCommentsPositionListVCViewController.h; sourceTree = "<group>"; };
+		F58F2B62282A16FF00295ED1 /* UIButton+ImageTitleStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+ImageTitleStyle.h"; sourceTree = "<group>"; };
+		F58F2B63282A16FF00295ED1 /* UIButton+ImageTitleStyle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+ImageTitleStyle.m"; sourceTree = "<group>"; };
+		F58F2B65282A17EC00295ED1 /* UIButton图片文字对齐.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UIButton图片文字对齐.md"; sourceTree = "<group>"; };
+		F58F2B7B282A687300295ED1 /* iOS中拉伸图片的几种方式.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS中拉伸图片的几种方式.md"; sourceTree = "<group>"; };
 		F591AC2C26A13B970042802F /* 马甲包.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "马甲包.md"; sourceTree = "<group>"; };
 		F591AC8926A163D70042802F /* WConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WConstants.m; sourceTree = "<group>"; };
 		F591AC8A26A163D70042802F /* WConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WConstants.h; sourceTree = "<group>"; };
@@ -1077,6 +1099,11 @@
 		F5B1FE6A2621AC6C004B950C /* TableviewSectionHeader不悬停.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "TableviewSectionHeader不悬停.md"; sourceTree = "<group>"; };
 		F5B30F6524F8D3F8003DFB2E /* RAC.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = RAC.md; sourceTree = "<group>"; };
 		F5B39E2E2818E5A2004858C4 /* APPIcon生成.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "APPIcon生成.md"; sourceTree = "<group>"; };
+		F5B4563828377F95008B5547 /* UITextView默认文字提示.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UITextView默认文字提示.md"; sourceTree = "<group>"; };
+		F5B4563A28377FDE008B5547 /* Masonry约束宽高比.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Masonry约束宽高比.md"; sourceTree = "<group>"; };
+		F5B4563C28378043008B5547 /* 谓语NSPredicate.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "谓语NSPredicate.md"; sourceTree = "<group>"; };
+		F5B4563E28378088008B5547 /* 排序NSSortDescriptor.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "排序NSSortDescriptor.md"; sourceTree = "<group>"; };
+		F5B45640283781DA008B5547 /* 键盘遮挡问题解决办法.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "键盘遮挡问题解决办法.md"; sourceTree = "<group>"; };
 		F5B5A92E2508F501002505AE /* HalfScreenMessageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HalfScreenMessageController.h; sourceTree = "<group>"; };
 		F5B5A92F2508F502002505AE /* FullScreenMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenMessageController.m; sourceTree = "<group>"; };
 		F5B5A9302508F502002505AE /* HalfScreenMessageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HalfScreenMessageController.m; sourceTree = "<group>"; };
@@ -1093,6 +1120,7 @@
 		F5BFBBF925E4A0B80068358F /* UICollectionViewLeftAlignedLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICollectionViewLeftAlignedLayout.h; sourceTree = "<group>"; };
 		F5BFBBFA25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICollectionViewLeftAlignedLayout.m; sourceTree = "<group>"; };
 		F5BFBC0B25E523BC0068358F /* 弹幕.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "弹幕.md"; sourceTree = "<group>"; };
+		F5BFEFB32834EE8E00800D46 /* UITableView侧滑删除滑动删除.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UITableView侧滑删除滑动删除.md"; sourceTree = "<group>"; };
 		F5C0A20225788B91004EBD94 /* UIColor+color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+color.h"; sourceTree = "<group>"; };
 		F5C0A20325788B92004EBD94 /* UIColor+color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+color.m"; sourceTree = "<group>"; };
 		F5C0A2092578950D004EBD94 /* WTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WTableViewCell.xib; sourceTree = "<group>"; };
@@ -1455,6 +1483,8 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F58830A5284747CF0040AF21 /* AppLinkManager */,
+				F58F2B67282A182000295ED1 /* UIButton图片文字对齐 */,
 				F52A51E9280FBBAF003D0FDA /* WWCAdapter.h */,
 				F52A51EA280FBBAF003D0FDA /* WWCAdapter.m */,
 				F535118B2812BE2C00691183 /* RRDataSource.h */,
@@ -2091,7 +2121,15 @@
 				F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */,
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F504EE1827E208780099350D /* 抓包Charles.md */,
+				F58F2B65282A17EC00295ED1 /* UIButton图片文字对齐.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				F5B45640283781DA008B5547 /* 键盘遮挡问题解决办法.md */,
+				F5B4563C28378043008B5547 /* 谓语NSPredicate.md */,
+				F5B4563E28378088008B5547 /* 排序NSSortDescriptor.md */,
+				F5B4563A28377FDE008B5547 /* Masonry约束宽高比.md */,
+				F5B4563828377F95008B5547 /* UITextView默认文字提示.md */,
+				F5BFEFB32834EE8E00800D46 /* UITableView侧滑删除滑动删除.md */,
+				F58F2B7B282A687300295ED1 /* iOS中拉伸图片的几种方式.md */,
 				F5D5CA092823A9E8008B83E3 /* IDFA权限弹框，弹出框.md */,
 				F5D5CA072823A8D7008B83E3 /* view旋转角度.md */,
 				F5D5CA052823A88B008B83E3 /* 适配iOS13之AFNetworking + UIWebView.md */,
@@ -2356,6 +2394,28 @@
 				F5872CD0257DF62400341B57 /* SettingModuleHandler+setting.m */,
 			);
 			path = OCModuleCallBack;
+			sourceTree = "<group>";
+		};
+		F58830A5284747CF0040AF21 /* AppLinkManager */ = {
+			isa = PBXGroup;
+			children = (
+				F58830A628474C290040AF21 /* AppLinkManager.h */,
+				F58830A728474C290040AF21 /* AppLinkManager.m */,
+				F58830A928474D800040AF21 /* MWSLinkManager.h */,
+				F58830AA28474D800040AF21 /* MWSLinkManager.m */,
+				F58830AC284762600040AF21 /* RRAppLinkManager.h */,
+				F58830AD284762600040AF21 /* RRAppLinkManager.m */,
+			);
+			path = AppLinkManager;
+			sourceTree = "<group>";
+		};
+		F58F2B67282A182000295ED1 /* UIButton图片文字对齐 */ = {
+			isa = PBXGroup;
+			children = (
+				F58F2B62282A16FF00295ED1 /* UIButton+ImageTitleStyle.h */,
+				F58F2B63282A16FF00295ED1 /* UIButton+ImageTitleStyle.m */,
+			);
+			path = "UIButton图片文字对齐";
 			sourceTree = "<group>";
 		};
 		F591AC8826A163D70042802F /* 常量 */ = {
@@ -3278,6 +3338,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5B45641283781DA008B5547 /* 键盘遮挡问题解决办法.md in Resources */,
 				F5F5B44625FA1DFE0069491B /* RRActorHeader.xib in Resources */,
 				F58B528C271D961A00CD6A3F /* 点击事件穿透.md in Resources */,
 				F5236BE927CE13F200CEDB5C /* 自定义TabBar添加背景图片.md in Resources */,
@@ -3310,6 +3371,7 @@
 				F586139726A9620900D81DDA /* 马甲包的副本2.md in Resources */,
 				F548D0EA256E2EEA00357E64 /* amwayGuide.json in Resources */,
 				F5409ABB26B166020042F29D /* star@2x.png in Resources */,
+				F5BFEFB42834EE8E00800D46 /* UITableView侧滑删除滑动删除.md in Resources */,
 				F548D0DA256E2EEA00357E64 /* amwayPlayerGuide_0.png in Resources */,
 				F5B035B0278548E100D8F4D8 /* iOS监听系统侧滑返回事件.md in Resources */,
 				F5091E28268C679F000884D1 /* dropdown_loading_02@2x.png in Resources */,
@@ -3325,6 +3387,7 @@
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
 				F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */,
 				F5023E4A2716B48700BA5829 /* 空白.md in Resources */,
+				F5B4563F28378088008B5547 /* 排序NSSortDescriptor.md in Resources */,
 				F5D5CA082823A8D7008B83E3 /* view旋转角度.md in Resources */,
 				F5ECB63D2807070B00B1250F /* 时间戳.md in Resources */,
 				F5CA140726B2A2DC00D8A7AE /* post_normal@2x.png in Resources */,
@@ -3368,6 +3431,7 @@
 				F58613D126A96EB100D81DDA /* clean_identifiers.txt in Resources */,
 				F5091E51268C679F000884D1 /* dropdown_loading_03@2x.png in Resources */,
 				F504404F26259C6300834547 /* PCH文件.md in Resources */,
+				F5B4563B28377FDF008B5547 /* Masonry约束宽高比.md in Resources */,
 				F50D6D9D25A9675200B8C415 /* 广告banner无限滚动.md in Resources */,
 				F5872CFD257DFF5900341B57 /* 追剧引导-暗黑-循环.gif in Resources */,
 				F51C8695261F10400066850E /* UIView中坐标转换.md in Resources */,
@@ -3431,15 +3495,19 @@
 				F5CA13A626B2928700D8A7AE /* ic_bottombar_me_n@2x.png in Resources */,
 				F5AC7C2A271020FD00533793 /* 锁@synchronized.md in Resources */,
 				F50D6D8625A95AD300B8C415 /* 瀑布流.md in Resources */,
+				F5B4563D28378043008B5547 /* 谓语NSPredicate.md in Resources */,
 				F518ED3725E8DDAC00260125 /* 图片压缩.md in Resources */,
 				F5CA13AE26B2928700D8A7AE /* ic_bottombar_vip_n@2x.png in Resources */,
 				F504EE1927E208780099350D /* 抓包Charles.md in Resources */,
 				F5B035B227856EE200D8F4D8 /* 修改工程名称待实践.md in Resources */,
 				F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */,
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
+				F58F2B7C282A687300295ED1 /* iOS中拉伸图片的几种方式.md in Resources */,
 				F548D0E2256E2EEA00357E64 /* amwayPlayerGuide_1.png in Resources */,
+				F58F2B66282A17EC00295ED1 /* UIButton图片文字对齐.md in Resources */,
 				F5A2475D26A6D9BD008B7BF4 /* 自动化打包.md in Resources */,
 				F586139626A9620900D81DDA /* 马甲包的副本3.md in Resources */,
+				F5B4563928377F95008B5547 /* UITextView默认文字提示.md in Resources */,
 				F58613CB26A96EB100D81DDA /* system_identifiers.txt in Resources */,
 				6783C8591FB941EE0040C02B /* Main.storyboard in Resources */,
 				F58B4B462643FCD800D7C82D /* 回复列表.json in Resources */,
@@ -3579,6 +3647,7 @@
 				F5AC7C4627102CBE00533793 /* RRSeasonSeniorCommentsPhotoCollectionView.m in Sources */,
 				F501FEAB272016A200FE2F3B /* RRAllRankingListCell.m in Sources */,
 				F5D0FC0D24E0F99800CAADF8 /* UIImage+TUIKIT.m in Sources */,
+				F58830AB28474D800040AF21 /* MWSLinkManager.m in Sources */,
 				F5A9F13924E3D44B00F611E6 /* SeeLivingBaseCell.m in Sources */,
 				F57A6A7724CFCA8400D51E01 /* FaceMessageCell.m in Sources */,
 				F51CAFC327F5A0FD00990349 /* MWSBagsModel.m in Sources */,
@@ -3635,6 +3704,7 @@
 				F5F30DB3256652CC00DD2597 /* WPerson.m in Sources */,
 				F5AC4B0D27D99B070051F1A5 /* MWSTabBarController.m in Sources */,
 				F5668FBA24C6DB69007D452E /* CpuMemoryUsage.m in Sources */,
+				F58830A828474C290040AF21 /* AppLinkManager.m in Sources */,
 				F5CA13EB26B2A1EB00D8A7AE /* UIImage+Image.m in Sources */,
 				F51CAFC727F5A0FD00990349 /* MWSLotteryBagListCell.m in Sources */,
 				F5F5B44925FA1DFE0069491B /* RRActorHeader.m in Sources */,
@@ -3767,6 +3837,7 @@
 				F5D5C1A32714161F0021C36E /* LXHSlideView.m in Sources */,
 				F5B5A9332508F502002505AE /* HalfScreenMessageController.m in Sources */,
 				6783C8941FB944B80040C02B /* CustomLayout.m in Sources */,
+				F58830AE284762600040AF21 /* RRAppLinkManager.m in Sources */,
 				F57B52A324C7DF2700940696 /* ChatController.m in Sources */,
 				F51F95372721762200D4B56B /* RRAllRankingImageBanner.m in Sources */,
 				F5F4F10C24D4081A007DB7F3 /* ChatMessageYYDataModel.m in Sources */,
@@ -3798,6 +3869,7 @@
 				F50440D82625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m in Sources */,
 				F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */,
 				F5AC7C4827102CBE00533793 /* RRSeasonSeniorCommentsHearder.m in Sources */,
+				F58F2B64282A16FF00295ED1 /* UIButton+ImageTitleStyle.m in Sources */,
 				F5872CBF257DDEC000341B57 /* SettingModuleHandler.m in Sources */,
 				F5F6AEF32744A6100074B26D /* RRAllRankingContentModel.m in Sources */,
 				F556F68327C6198100C418BB /* RRVideoCommentsVC.m in Sources */,

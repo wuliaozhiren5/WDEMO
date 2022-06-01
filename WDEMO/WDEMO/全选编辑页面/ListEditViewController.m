@@ -337,6 +337,7 @@
     return !self.isUserEditState;
 
 }
+
 ////滑动删除功能
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewRowAction *AddAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"添加" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
@@ -395,6 +396,12 @@
 }
 //iOS11解决UITableView侧滑删除无限拉伸的方法
 //原文链接：https://www.jb51.net/article/145243.htm
+
+//iOS 11 删除
+//iOS 11 editActionsForRowAtIndexPath
+//https://www.jianshu.com/p/75f6264e5cb5
+
+
 
 ////---------------------------------------------------------
 ////iOS8之前
