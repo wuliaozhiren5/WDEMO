@@ -122,6 +122,10 @@
 		F51E66AB2848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66A92848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md */; };
 		F51E66AC2848A1CC008A4C68 /* 获取URL链接中的各参数.md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66AA2848A1CC008A4C68 /* 获取URL链接中的各参数.md */; };
 		F51E66AE2848A22F008A4C68 /* 左上角换回app .md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66AD2848A22F008A4C68 /* 左上角换回app .md */; };
+		F51E66A3284893E6008A4C68 /* MWSSendOutGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E669D284893E5008A4C68 /* MWSSendOutGoodsVC.m */; };
+		F51E66A4284893E6008A4C68 /* MWSSendOutGoodsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E669E284893E5008A4C68 /* MWSSendOutGoodsApi.m */; };
+		F51E66A5284893E6008A4C68 /* MWSSendOutGoodsBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66A2284893E5008A4C68 /* MWSSendOutGoodsBottomBar.m */; };
+		F51E66A82848944C008A4C68 /* MWSStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66A62848944C008A4C68 /* MWSStoreModel.m */; };
 		F51F95192721565000D4B56B /* RRAllRankingListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95182721565000D4B56B /* RRAllRankingListHeader.m */; };
 		F51F951C2721591500D4B56B /* RRAllRankingTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */; };
 		F51F95372721762200D4B56B /* RRAllRankingImageBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95362721762200D4B56B /* RRAllRankingImageBanner.m */; };
@@ -743,6 +747,14 @@
 		F51E66A92848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS15适配 navigationBar 与 tabBar 背景色.md"; sourceTree = "<group>"; };
 		F51E66AA2848A1CC008A4C68 /* 获取URL链接中的各参数.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "获取URL链接中的各参数.md"; sourceTree = "<group>"; };
 		F51E66AD2848A22F008A4C68 /* 左上角换回app .md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "左上角换回app .md"; sourceTree = "<group>"; };
+		F51E669D284893E5008A4C68 /* MWSSendOutGoodsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSSendOutGoodsVC.m; sourceTree = "<group>"; };
+		F51E669E284893E5008A4C68 /* MWSSendOutGoodsApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSSendOutGoodsApi.m; sourceTree = "<group>"; };
+		F51E669F284893E5008A4C68 /* MWSSendOutGoodsBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSSendOutGoodsBottomBar.h; sourceTree = "<group>"; };
+		F51E66A0284893E5008A4C68 /* MWSSendOutGoodsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSSendOutGoodsVC.h; sourceTree = "<group>"; };
+		F51E66A1284893E5008A4C68 /* MWSSendOutGoodsApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSSendOutGoodsApi.h; sourceTree = "<group>"; };
+		F51E66A2284893E5008A4C68 /* MWSSendOutGoodsBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSSendOutGoodsBottomBar.m; sourceTree = "<group>"; };
+		F51E66A62848944C008A4C68 /* MWSStoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSStoreModel.m; sourceTree = "<group>"; };
+		F51E66A72848944C008A4C68 /* MWSStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSStoreModel.h; sourceTree = "<group>"; };
 		F51F95172721565000D4B56B /* RRAllRankingListHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingListHeader.h; sourceTree = "<group>"; };
 		F51F95182721565000D4B56B /* RRAllRankingListHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListHeader.m; sourceTree = "<group>"; };
 		F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingTagCell.h; sourceTree = "<group>"; };
@@ -1489,14 +1501,14 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F51E669C284893E5008A4C68 /* SendOutGoods */,
+				F51E669B284893D2008A4C68 /* 切环境 */,
 				F58830A5284747CF0040AF21 /* AppLinkManager */,
 				F58F2B67282A182000295ED1 /* UIButton图片文字对齐 */,
 				F52A51E9280FBBAF003D0FDA /* WWCAdapter.h */,
 				F52A51EA280FBBAF003D0FDA /* WWCAdapter.m */,
 				F535118B2812BE2C00691183 /* RRDataSource.h */,
 				F535118C2812BE2C00691183 /* RRDataSource.m */,
-				F5CFA6F8280930830089BC2A /* DevEnvironmentViewController.h */,
-				F5CFA6F9280930830089BC2A /* DevEnvironmentViewController.m */,
 				F51CAFA527F5A0FD00990349 /* LotteryBagListVC */,
 				F5596C79271EA554007D9FE9 /* md文件 */,
 				F556F67227C6160C00C418BB /* VideoComments */,
@@ -1895,6 +1907,30 @@
 				F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */,
 			);
 			path = URLencodeURLdecode;
+			sourceTree = "<group>";
+		};
+		F51E669B284893D2008A4C68 /* 切环境 */ = {
+			isa = PBXGroup;
+			children = (
+				F5CFA6F8280930830089BC2A /* DevEnvironmentViewController.h */,
+				F5CFA6F9280930830089BC2A /* DevEnvironmentViewController.m */,
+			);
+			path = "切环境";
+			sourceTree = "<group>";
+		};
+		F51E669C284893E5008A4C68 /* SendOutGoods */ = {
+			isa = PBXGroup;
+			children = (
+				F51E66A72848944C008A4C68 /* MWSStoreModel.h */,
+				F51E66A62848944C008A4C68 /* MWSStoreModel.m */,
+				F51E66A1284893E5008A4C68 /* MWSSendOutGoodsApi.h */,
+				F51E669E284893E5008A4C68 /* MWSSendOutGoodsApi.m */,
+				F51E669F284893E5008A4C68 /* MWSSendOutGoodsBottomBar.h */,
+				F51E66A2284893E5008A4C68 /* MWSSendOutGoodsBottomBar.m */,
+				F51E66A0284893E5008A4C68 /* MWSSendOutGoodsVC.h */,
+				F51E669D284893E5008A4C68 /* MWSSendOutGoodsVC.m */,
+			);
+			path = SendOutGoods;
 			sourceTree = "<group>";
 		};
 		F5200DB22531526D004637DD /* 贴吧 */ = {
@@ -3771,6 +3807,7 @@
 				F5D0FC0A24E0F91800CAADF8 /* UIImage+TUIDarkMode.m in Sources */,
 				F5D4EB8425DF6B5500F807EF /* PersonalHomePageVC.m in Sources */,
 				F5872CF3257DFCBD00341B57 /* SharedInstanceVC.m in Sources */,
+				F51E66A5284893E6008A4C68 /* MWSSendOutGoodsBottomBar.m in Sources */,
 				F5596C78271EA30E007D9FE9 /* RRAllRankingSubVC.m in Sources */,
 				F5D5C19C271415A10021C36E /* LXHBanner.m in Sources */,
 				F553E19B24CA8DE200DA5625 /* NSAttributedString+FaceString.m in Sources */,
@@ -3788,6 +3825,7 @@
 				F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */,
 				67535E892390F0CF0009F882 /* FontViewControlle.m in Sources */,
 				67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */,
+				F51E66A4284893E6008A4C68 /* MWSSendOutGoodsApi.m in Sources */,
 				F51CAFCC27F5A0FD00990349 /* MWSBagsListModel.m in Sources */,
 				F5F6AF08274506040074B26D /* RRAllRankingTagCollectionView.m in Sources */,
 				6783C8931FB944B80040C02B /* LZTagSegmentedControl.m in Sources */,
@@ -3803,6 +3841,7 @@
 				F5D5C1BE271429CD0021C36E /* CarouseViewController.m in Sources */,
 				6730334C210AED3D001471D8 /* PersonalCenterBarBtn.m in Sources */,
 				F5DEB2A924CE7FA0009A6767 /* ChatMemberListCell.m in Sources */,
+				F51E66A82848944C008A4C68 /* MWSStoreModel.m in Sources */,
 				F52A098825B6EBE2008BDDEE /* SearchBarController.m in Sources */,
 				6783C8911FB944B80040C02B /* LZTagListVC.m in Sources */,
 				F5DEB33024CEF5E3009A6767 /* NoInputBar.m in Sources */,
@@ -3861,6 +3900,7 @@
 				F55E5B5B258C58B700C1DECD /* ScoreView.m in Sources */,
 				F5CE3D2024E6901800B20C80 /* RRDestroyAccountReasonViewController.m in Sources */,
 				673AE92B1FC7F5E90002D304 /* ForceTouchDetailVC.m in Sources */,
+				F51E66A3284893E6008A4C68 /* MWSSendOutGoodsVC.m in Sources */,
 				F563DAF525AC2C2C0079474B /* WMCustomizedPageController.m in Sources */,
 				F51C24D4263BF1690010A298 /* AuthorModel.m in Sources */,
 				F51CAFC127F5A0FD00990349 /* MWSLotteryBagListTopModel.m in Sources */,

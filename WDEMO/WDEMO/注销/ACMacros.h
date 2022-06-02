@@ -344,6 +344,9 @@
  
 #define kCOLOR_dynamicProvider_222222_E5E7E8      [UIColor colorWithDynamicProviderColor:@[RGB(0x22, 0x22, 0x22),RGB(0xe5, 0xe7, 0xe8)]]
 
+#define kCOLOR_C13030 RGB(0xC1, 0x30, 0x30)
+#define kCOLOR_1D1D1D RGB(0x1D, 0x1D, 0x1D)
+
 #define kCOLOR_FFFFFF RGB(0xff, 0xff, 0xff)
 #define kCOLOR_333333  RGB(0x33, 0x33, 0x33)
 #define kCOLOR_FFFFFFAlpha03 [RGB(0xff, 0xff, 0xff) colorWithAlphaComponent:0.3]

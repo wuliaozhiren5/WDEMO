@@ -127,6 +127,8 @@
 #import "MWSLotteryBagListVC.h"
 //环境
 #import "DevEnvironmentViewController.h"
+//发货
+#import "MWSSendOutGoodsVC.h"
 
 #define angle2Rad(angle) ((angle) / 180.0 *M_PI)
 
@@ -961,6 +963,12 @@
     WebVC *vc= [[WebVC alloc]init];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+    
+    
+    //发货
+    MWSSendOutGoodsVC *vc1= [[MWSSendOutGoodsVC alloc]init];
+    vc1.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc1 animated:YES];
 }
 
 - (void)clickScore {
@@ -1650,16 +1658,27 @@
 
 - (void)urlDEMO {
 //    NSString *urlStr = @"https://vision.juquanquanapp.com/bag/list/31?level=all&orderWay=remainder&page=1&sort=DESC";
-    NSString *urlStr = @"/pages/detail/index?id=31";
+//    NSString *urlStr = @"/pages/detail/index?id=31";
+    //
+    NSString *urlStr = @"visionminiapp://page?url=%2Fpages%2Fdetail%2Findex%3Fid%3D31";
     NSURL *url = [NSURL URLWithString:urlStr];
     NSLog(@"host = %@", url.host);
     NSLog(@"path = %@", url.path);
     NSLog(@"query = %@", url.query);
-
+   
     NSDictionary *dict = [self getParamsWithUrlString:urlStr];
-        NSLog(@"结果：%@",dict);
+    NSLog(@"结果：%@",dict);
 
-}
+    //这种类型的url解析
+    //visionminiapp://page?url=%2Fpages%2Fdetail%2Findex%3Fid%3D31
+    //URL encode
+    //visionminiapp://page?url=/pages/detail/index?id=31
+    NSString *urlStr1 = dict[@"url"];
+    NSString *urlStr2 =  [urlStr1 stringByRemovingPercentEncoding];
+    NSDictionary *dict1 = [self getParamsWithUrlString:urlStr2];
+    NSLog(@"=================");
+    NSLog(@"结果：%@",dict1);
+ }
 
 //获取其中某个参数
 - (NSString *)getParamByName:(NSString *)name URLString:(NSString *)url{
