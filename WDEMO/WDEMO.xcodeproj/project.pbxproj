@@ -119,6 +119,9 @@
 		F51CAFCF27F5A18800990349 /* MWSLotteryDetailBagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51CAFCE27F5A18800990349 /* MWSLotteryDetailBagModel.m */; };
 		F51CAFD227F5A1AC00990349 /* MWSLotteryDetailGoodsInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51CAFD027F5A1AB00990349 /* MWSLotteryDetailGoodsInfoModel.m */; };
 		F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */ = {isa = PBXBuildFile; fileRef = F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */; };
+		F51E66AB2848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66A92848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md */; };
+		F51E66AC2848A1CC008A4C68 /* 获取URL链接中的各参数.md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66AA2848A1CC008A4C68 /* 获取URL链接中的各参数.md */; };
+		F51E66AE2848A22F008A4C68 /* 左上角换回app .md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66AD2848A22F008A4C68 /* 左上角换回app .md */; };
 		F51F95192721565000D4B56B /* RRAllRankingListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95182721565000D4B56B /* RRAllRankingListHeader.m */; };
 		F51F951C2721591500D4B56B /* RRAllRankingTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */; };
 		F51F95372721762200D4B56B /* RRAllRankingImageBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95362721762200D4B56B /* RRAllRankingImageBanner.m */; };
@@ -737,6 +740,9 @@
 		F51CAFD027F5A1AB00990349 /* MWSLotteryDetailGoodsInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSLotteryDetailGoodsInfoModel.m; sourceTree = "<group>"; };
 		F51CAFD127F5A1AB00990349 /* MWSLotteryDetailGoodsInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSLotteryDetailGoodsInfoModel.h; sourceTree = "<group>"; };
 		F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "URLencode与URLdecode.md"; sourceTree = "<group>"; };
+		F51E66A92848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS15适配 navigationBar 与 tabBar 背景色.md"; sourceTree = "<group>"; };
+		F51E66AA2848A1CC008A4C68 /* 获取URL链接中的各参数.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "获取URL链接中的各参数.md"; sourceTree = "<group>"; };
+		F51E66AD2848A22F008A4C68 /* 左上角换回app .md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "左上角换回app .md"; sourceTree = "<group>"; };
 		F51F95172721565000D4B56B /* RRAllRankingListHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingListHeader.h; sourceTree = "<group>"; };
 		F51F95182721565000D4B56B /* RRAllRankingListHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListHeader.m; sourceTree = "<group>"; };
 		F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingTagCell.h; sourceTree = "<group>"; };
@@ -2123,6 +2129,9 @@
 				F504EE1827E208780099350D /* 抓包Charles.md */,
 				F58F2B65282A17EC00295ED1 /* UIButton图片文字对齐.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				F51E66AD2848A22F008A4C68 /* 左上角换回app .md */,
+				F51E66A92848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md */,
+				F51E66AA2848A1CC008A4C68 /* 获取URL链接中的各参数.md */,
 				F5B45640283781DA008B5547 /* 键盘遮挡问题解决办法.md */,
 				F5B4563C28378043008B5547 /* 谓语NSPredicate.md */,
 				F5B4563E28378088008B5547 /* 排序NSSortDescriptor.md */,
@@ -3385,6 +3394,7 @@
 				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
 				F5F3C40C280D798000DBDD82 /* 渐变色图片.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
+				F51E66AB2848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md in Resources */,
 				F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */,
 				F5023E4A2716B48700BA5829 /* 空白.md in Resources */,
 				F5B4563F28378088008B5547 /* 排序NSSortDescriptor.md in Resources */,
@@ -3393,6 +3403,7 @@
 				F5CA140726B2A2DC00D8A7AE /* post_normal@2x.png in Resources */,
 				F5F2274826BA939B002EB4FC /* self.view = nil.md in Resources */,
 				F5CA13AA26B2928700D8A7AE /* ic_bottombar_vip_h@2x.png in Resources */,
+				F51E66AC2848A1CC008A4C68 /* 获取URL链接中的各参数.md in Resources */,
 				F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */,
 				F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */,
 				F5B7DC3B2608813D00B1E497 /* 代码格式化工具.md in Resources */,
@@ -3477,6 +3488,7 @@
 				67535E812390C6560009F882 /* InfoPlist.strings in Resources */,
 				F5B1FE6B2621AC6C004B950C /* TableviewSectionHeader不悬停.md in Resources */,
 				F5CA13B026B2928700D8A7AE /* ic_bottombar_home_h@2x.png in Resources */,
+				F51E66AE2848A22F008A4C68 /* 左上角换回app .md in Resources */,
 				F592283A26C500F80030DB49 /* UIScrollView滑动停止监听.md in Resources */,
 				F58613D026A96EB100D81DDA /* start.sh in Resources */,
 				F501FEA0271FEC2800FE2F3B /* 删除所有子View.md in Resources */,
