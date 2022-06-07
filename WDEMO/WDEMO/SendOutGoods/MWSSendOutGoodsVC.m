@@ -12,7 +12,8 @@
 //#import "MWSPackListDetailOpenCell.h"
 //#import "MWSPackListDetailCloseCell.h"
 
-//#import "MWSMyAddressVC.h"
+#import "MWSAddressModel.h"
+#import "MWSMyAddressVC.h"
 //#import "MWSSendOutGoodsApi.h"
 //#import "MWSAccountBalanceApi.h"
 //#import "MWSPayPostageVC.h"
@@ -72,7 +73,7 @@
 
 @property(nonatomic, copy) NSArray *closeArr;
 
-//@property (nonatomic, strong) MWSAddressModel *addressModel;
+@property (nonatomic, strong) MWSAddressModel *addressModel;
 //
 //@property (nonatomic, strong) MWSPayPostageVC *payPostageVC;
 
@@ -526,7 +527,7 @@
 
     self.collectionView.showsHorizontalScrollIndicator = NO;
     self.collectionView.showsVerticalScrollIndicator = NO;
-//    self.collectionView.backgroundColor = kCOLOR_0F0F0F;
+    self.collectionView.backgroundColor = kCOLOR_0F0F0F;
 //    self.collectionView.backgroundColor = [UIColor blueColor];
     
     [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:NSStringFromClass([UICollectionViewCell class])];
@@ -588,7 +589,10 @@
 ///每一组有多少个cell
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.closeArr.count;
+//    return self.closeArr.count;
+    
+    return 5;
+
 }
 
 //定义并返回每个cell
@@ -736,45 +740,46 @@
 }
 
 - (void)clickSelectAddressBtn:(UIButton *)btn {
-//    //选择地址
-//    [self.view endEditing:YES];
-//    MWSMyAddressVC *vc = [[MWSMyAddressVC alloc] init];
-//
-//    @weakify(self);
-//    vc.selectAddressBlock = ^(MWSAddressModel * _Nonnull addressModel) {        @strongify(self);
-//        self.addressModel = addressModel;
-//
-//        if (self.addressModel) {
-//            self.selectAddressView.hidden = YES;
-//            self.addressView.hidden = NO;
-//            self.addressViewNameLab.text = self.addressModel.name;
-//            self.addressViewPhoneLab.text = self.addressModel.phone;
-//            self.addressViewAddressLab.text = [NSString stringWithFormat:@"%@ %@", self.addressModel.area, self.addressModel.address];
-//
-//            [self.selectedGoodsTitleLab mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                make.top.equalTo(self.addressView.mas_bottom).offset(30);
-//        //        make.top.equalTo(@0);
-//                make.leading.equalTo(@12);
-//                make.trailing.lessThanOrEqualTo(@-12);
-//                make.height.equalTo(@25);
-//
-//            }];
-//
-//        } else {
-//
-//            self.selectAddressView.hidden = NO;
-//            self.addressView.hidden = YES;
-//            [self.selectedGoodsTitleLab mas_remakeConstraints:^(MASConstraintMaker *make) {
-//                make.top.equalTo(self.selectAddressView.mas_bottom).offset(30);
-//        //        make.top.equalTo(@0);
-//                make.leading.equalTo(@12);
-//                make.trailing.lessThanOrEqualTo(@-12);
-//                make.height.equalTo(@25);
-//
-//            }];
-//        }
-//
-//    };
+    //选择地址
+    [self.view endEditing:YES];
+    MWSMyAddressVC *vc = [[MWSMyAddressVC alloc] init];
+
+    @weakify(self);
+    vc.selectAddressBlock = ^(MWSAddressModel * _Nonnull addressModel) {        @strongify(self);
+        self.addressModel = addressModel;
+
+        if (self.addressModel) {
+            self.selectAddressView.hidden = YES;
+            self.addressView.hidden = NO;
+            self.addressViewNameLab.text = self.addressModel.name;
+            self.addressViewPhoneLab.text = self.addressModel.phone;
+            self.addressViewAddressLab.text = [NSString stringWithFormat:@"%@ %@", self.addressModel.area, self.addressModel.address];
+
+            [self.selectedGoodsTitleLab mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.addressView.mas_bottom).offset(30);
+        //        make.top.equalTo(@0);
+                make.leading.equalTo(@12);
+                make.trailing.lessThanOrEqualTo(@-12);
+                make.height.equalTo(@25);
+
+            }];
+
+        } else {
+
+            self.selectAddressView.hidden = NO;
+            self.addressView.hidden = YES;
+            [self.selectedGoodsTitleLab mas_remakeConstraints:^(MASConstraintMaker *make) {
+                make.top.equalTo(self.selectAddressView.mas_bottom).offset(30);
+        //        make.top.equalTo(@0);
+                make.leading.equalTo(@12);
+                make.trailing.lessThanOrEqualTo(@-12);
+                make.height.equalTo(@25);
+
+            }];
+        }
+
+    };
+    [self.navigationController pushViewController:vc animated:YES];
 //    [[MWSLinkManager sharedManager] pushViewController:vc animated:YES];
 
 }
@@ -915,7 +920,7 @@
 - (UIView *)textFieldBackgroundView {
     if (!_textFieldBackgroundView) {
         _textFieldBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
-//        _textFieldBackgroundView.backgroundColor = kCOLOR_282828;
+        _textFieldBackgroundView.backgroundColor = kCOLOR_282828;
         _textFieldBackgroundView.layer.cornerRadius = 2;
         _textFieldBackgroundView.layer.masksToBounds = YES;
     }

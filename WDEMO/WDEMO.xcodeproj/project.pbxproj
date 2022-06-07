@@ -119,13 +119,32 @@
 		F51CAFCF27F5A18800990349 /* MWSLotteryDetailBagModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51CAFCE27F5A18800990349 /* MWSLotteryDetailBagModel.m */; };
 		F51CAFD227F5A1AC00990349 /* MWSLotteryDetailGoodsInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51CAFD027F5A1AB00990349 /* MWSLotteryDetailGoodsInfoModel.m */; };
 		F51DC313259C5DA50079AFC8 /* URLencode与URLdecode.md in Resources */ = {isa = PBXBuildFile; fileRef = F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */; };
-		F51E66AB2848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66A92848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md */; };
-		F51E66AC2848A1CC008A4C68 /* 获取URL链接中的各参数.md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66AA2848A1CC008A4C68 /* 获取URL链接中的各参数.md */; };
-		F51E66AE2848A22F008A4C68 /* 左上角换回app .md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66AD2848A22F008A4C68 /* 左上角换回app .md */; };
 		F51E66A3284893E6008A4C68 /* MWSSendOutGoodsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E669D284893E5008A4C68 /* MWSSendOutGoodsVC.m */; };
 		F51E66A4284893E6008A4C68 /* MWSSendOutGoodsApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E669E284893E5008A4C68 /* MWSSendOutGoodsApi.m */; };
 		F51E66A5284893E6008A4C68 /* MWSSendOutGoodsBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66A2284893E5008A4C68 /* MWSSendOutGoodsBottomBar.m */; };
 		F51E66A82848944C008A4C68 /* MWSStoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66A62848944C008A4C68 /* MWSStoreModel.m */; };
+		F51E66AB2848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66A92848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md */; };
+		F51E66AC2848A1CC008A4C68 /* 获取URL链接中的各参数.md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66AA2848A1CC008A4C68 /* 获取URL链接中的各参数.md */; };
+		F51E66AE2848A22F008A4C68 /* 左上角换回app .md in Resources */ = {isa = PBXBuildFile; fileRef = F51E66AD2848A22F008A4C68 /* 左上角换回app .md */; };
+		F51E66D62848A403008A4C68 /* MWSPhoneNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66B02848A403008A4C68 /* MWSPhoneNumberCell.m */; };
+		F51E66D72848A403008A4C68 /* MWSZipCodeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66B12848A403008A4C68 /* MWSZipCodeCell.m */; };
+		F51E66D82848A403008A4C68 /* MWSProvinceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66B32848A403008A4C68 /* MWSProvinceVC.m */; };
+		F51E66D92848A403008A4C68 /* MWSAddAddressApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66B72848A403008A4C68 /* MWSAddAddressApi.m */; };
+		F51E66DA2848A403008A4C68 /* MWSCityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66B82848A403008A4C68 /* MWSCityCell.m */; };
+		F51E66DB2848A403008A4C68 /* MWSCityListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66BB2848A403008A4C68 /* MWSCityListApi.m */; };
+		F51E66DC2848A403008A4C68 /* MWSAddressListApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66BC2848A403008A4C68 /* MWSAddressListApi.m */; };
+		F51E66DD2848A403008A4C68 /* MWSUpdateAddressApi.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66BD2848A403008A4C68 /* MWSUpdateAddressApi.m */; };
+		F51E66DE2848A403008A4C68 /* MWSCityModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66BF2848A403008A4C68 /* MWSCityModel.m */; };
+		F51E66DF2848A403008A4C68 /* MWSDetailedAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66C02848A403008A4C68 /* MWSDetailedAddressCell.m */; };
+		F51E66E02848A403008A4C68 /* MWSMyAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66C22848A403008A4C68 /* MWSMyAddressVC.m */; };
+		F51E66E12848A403008A4C68 /* MWSProvinceModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66C32848A403008A4C68 /* MWSProvinceModel.m */; };
+		F51E66E22848A403008A4C68 /* MWSAddAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66C42848A403008A4C68 /* MWSAddAddressVC.m */; };
+		F51E66E32848A403008A4C68 /* MWSCityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66C52848A403008A4C68 /* MWSCityVC.m */; };
+		F51E66E42848A403008A4C68 /* MWSAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66C72848A403008A4C68 /* MWSAddressModel.m */; };
+		F51E66E52848A403008A4C68 /* MWSContactsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66CD2848A403008A4C68 /* MWSContactsCell.m */; };
+		F51E66E62848A403008A4C68 /* MWSAreaVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66CE2848A403008A4C68 /* MWSAreaVC.m */; };
+		F51E66E72848A403008A4C68 /* MWSSelectRegionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66D02848A403008A4C68 /* MWSSelectRegionCell.m */; };
+		F51E66E82848A403008A4C68 /* MWSMyAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51E66D32848A403008A4C68 /* MWSMyAddressCell.m */; };
 		F51F95192721565000D4B56B /* RRAllRankingListHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95182721565000D4B56B /* RRAllRankingListHeader.m */; };
 		F51F951C2721591500D4B56B /* RRAllRankingTagCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F951B2721591500D4B56B /* RRAllRankingTagCell.m */; };
 		F51F95372721762200D4B56B /* RRAllRankingImageBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = F51F95362721762200D4B56B /* RRAllRankingImageBanner.m */; };
@@ -744,9 +763,6 @@
 		F51CAFD027F5A1AB00990349 /* MWSLotteryDetailGoodsInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSLotteryDetailGoodsInfoModel.m; sourceTree = "<group>"; };
 		F51CAFD127F5A1AB00990349 /* MWSLotteryDetailGoodsInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSLotteryDetailGoodsInfoModel.h; sourceTree = "<group>"; };
 		F51DC312259C5DA50079AFC8 /* URLencode与URLdecode.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "URLencode与URLdecode.md"; sourceTree = "<group>"; };
-		F51E66A92848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS15适配 navigationBar 与 tabBar 背景色.md"; sourceTree = "<group>"; };
-		F51E66AA2848A1CC008A4C68 /* 获取URL链接中的各参数.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "获取URL链接中的各参数.md"; sourceTree = "<group>"; };
-		F51E66AD2848A22F008A4C68 /* 左上角换回app .md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "左上角换回app .md"; sourceTree = "<group>"; };
 		F51E669D284893E5008A4C68 /* MWSSendOutGoodsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSSendOutGoodsVC.m; sourceTree = "<group>"; };
 		F51E669E284893E5008A4C68 /* MWSSendOutGoodsApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSSendOutGoodsApi.m; sourceTree = "<group>"; };
 		F51E669F284893E5008A4C68 /* MWSSendOutGoodsBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSSendOutGoodsBottomBar.h; sourceTree = "<group>"; };
@@ -755,6 +771,47 @@
 		F51E66A2284893E5008A4C68 /* MWSSendOutGoodsBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSSendOutGoodsBottomBar.m; sourceTree = "<group>"; };
 		F51E66A62848944C008A4C68 /* MWSStoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSStoreModel.m; sourceTree = "<group>"; };
 		F51E66A72848944C008A4C68 /* MWSStoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSStoreModel.h; sourceTree = "<group>"; };
+		F51E66A92848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "iOS15适配 navigationBar 与 tabBar 背景色.md"; sourceTree = "<group>"; };
+		F51E66AA2848A1CC008A4C68 /* 获取URL链接中的各参数.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "获取URL链接中的各参数.md"; sourceTree = "<group>"; };
+		F51E66AD2848A22F008A4C68 /* 左上角换回app .md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "左上角换回app .md"; sourceTree = "<group>"; };
+		F51E66B02848A403008A4C68 /* MWSPhoneNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSPhoneNumberCell.m; sourceTree = "<group>"; };
+		F51E66B12848A403008A4C68 /* MWSZipCodeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSZipCodeCell.m; sourceTree = "<group>"; };
+		F51E66B22848A403008A4C68 /* MWSAddressModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSAddressModel.h; sourceTree = "<group>"; };
+		F51E66B32848A403008A4C68 /* MWSProvinceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSProvinceVC.m; sourceTree = "<group>"; };
+		F51E66B42848A403008A4C68 /* MWSAddAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSAddAddressVC.h; sourceTree = "<group>"; };
+		F51E66B52848A403008A4C68 /* MWSCityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSCityVC.h; sourceTree = "<group>"; };
+		F51E66B62848A403008A4C68 /* MWSProvinceModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSProvinceModel.h; sourceTree = "<group>"; };
+		F51E66B72848A403008A4C68 /* MWSAddAddressApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSAddAddressApi.m; sourceTree = "<group>"; };
+		F51E66B82848A403008A4C68 /* MWSCityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSCityCell.m; sourceTree = "<group>"; };
+		F51E66B92848A403008A4C68 /* MWSAreaVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSAreaVC.h; sourceTree = "<group>"; };
+		F51E66BA2848A403008A4C68 /* MWSContactsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSContactsCell.h; sourceTree = "<group>"; };
+		F51E66BB2848A403008A4C68 /* MWSCityListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSCityListApi.m; sourceTree = "<group>"; };
+		F51E66BC2848A403008A4C68 /* MWSAddressListApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSAddressListApi.m; sourceTree = "<group>"; };
+		F51E66BD2848A403008A4C68 /* MWSUpdateAddressApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSUpdateAddressApi.m; sourceTree = "<group>"; };
+		F51E66BE2848A403008A4C68 /* MWSMyAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSMyAddressCell.h; sourceTree = "<group>"; };
+		F51E66BF2848A403008A4C68 /* MWSCityModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSCityModel.m; sourceTree = "<group>"; };
+		F51E66C02848A403008A4C68 /* MWSDetailedAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSDetailedAddressCell.m; sourceTree = "<group>"; };
+		F51E66C12848A403008A4C68 /* MWSSelectRegionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSSelectRegionCell.h; sourceTree = "<group>"; };
+		F51E66C22848A403008A4C68 /* MWSMyAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSMyAddressVC.m; sourceTree = "<group>"; };
+		F51E66C32848A403008A4C68 /* MWSProvinceModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSProvinceModel.m; sourceTree = "<group>"; };
+		F51E66C42848A403008A4C68 /* MWSAddAddressVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSAddAddressVC.m; sourceTree = "<group>"; };
+		F51E66C52848A403008A4C68 /* MWSCityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSCityVC.m; sourceTree = "<group>"; };
+		F51E66C62848A403008A4C68 /* MWSProvinceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSProvinceVC.h; sourceTree = "<group>"; };
+		F51E66C72848A403008A4C68 /* MWSAddressModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSAddressModel.m; sourceTree = "<group>"; };
+		F51E66C82848A403008A4C68 /* MWSZipCodeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSZipCodeCell.h; sourceTree = "<group>"; };
+		F51E66C92848A403008A4C68 /* MWSPhoneNumberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSPhoneNumberCell.h; sourceTree = "<group>"; };
+		F51E66CA2848A403008A4C68 /* MWSCityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSCityCell.h; sourceTree = "<group>"; };
+		F51E66CB2848A403008A4C68 /* MWSAddAddressApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSAddAddressApi.h; sourceTree = "<group>"; };
+		F51E66CC2848A403008A4C68 /* MWSCityListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSCityListApi.h; sourceTree = "<group>"; };
+		F51E66CD2848A403008A4C68 /* MWSContactsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSContactsCell.m; sourceTree = "<group>"; };
+		F51E66CE2848A403008A4C68 /* MWSAreaVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSAreaVC.m; sourceTree = "<group>"; };
+		F51E66CF2848A403008A4C68 /* MWSMyAddressVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSMyAddressVC.h; sourceTree = "<group>"; };
+		F51E66D02848A403008A4C68 /* MWSSelectRegionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSSelectRegionCell.m; sourceTree = "<group>"; };
+		F51E66D12848A403008A4C68 /* MWSDetailedAddressCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSDetailedAddressCell.h; sourceTree = "<group>"; };
+		F51E66D22848A403008A4C68 /* MWSCityModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSCityModel.h; sourceTree = "<group>"; };
+		F51E66D32848A403008A4C68 /* MWSMyAddressCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSMyAddressCell.m; sourceTree = "<group>"; };
+		F51E66D42848A403008A4C68 /* MWSAddressListApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSAddressListApi.h; sourceTree = "<group>"; };
+		F51E66D52848A403008A4C68 /* MWSUpdateAddressApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSUpdateAddressApi.h; sourceTree = "<group>"; };
 		F51F95172721565000D4B56B /* RRAllRankingListHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingListHeader.h; sourceTree = "<group>"; };
 		F51F95182721565000D4B56B /* RRAllRankingListHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListHeader.m; sourceTree = "<group>"; };
 		F51F951A2721591500D4B56B /* RRAllRankingTagCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingTagCell.h; sourceTree = "<group>"; };
@@ -1501,6 +1558,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F51E66AF2848A402008A4C68 /* Address */,
 				F51E669C284893E5008A4C68 /* SendOutGoods */,
 				F51E669B284893D2008A4C68 /* 切环境 */,
 				F58830A5284747CF0040AF21 /* AppLinkManager */,
@@ -1931,6 +1989,51 @@
 				F51E669D284893E5008A4C68 /* MWSSendOutGoodsVC.m */,
 			);
 			path = SendOutGoods;
+			sourceTree = "<group>";
+		};
+		F51E66AF2848A402008A4C68 /* Address */ = {
+			isa = PBXGroup;
+			children = (
+				F51E66CB2848A403008A4C68 /* MWSAddAddressApi.h */,
+				F51E66B72848A403008A4C68 /* MWSAddAddressApi.m */,
+				F51E66B42848A403008A4C68 /* MWSAddAddressVC.h */,
+				F51E66C42848A403008A4C68 /* MWSAddAddressVC.m */,
+				F51E66D42848A403008A4C68 /* MWSAddressListApi.h */,
+				F51E66BC2848A403008A4C68 /* MWSAddressListApi.m */,
+				F51E66B22848A403008A4C68 /* MWSAddressModel.h */,
+				F51E66C72848A403008A4C68 /* MWSAddressModel.m */,
+				F51E66B92848A403008A4C68 /* MWSAreaVC.h */,
+				F51E66CE2848A403008A4C68 /* MWSAreaVC.m */,
+				F51E66CA2848A403008A4C68 /* MWSCityCell.h */,
+				F51E66B82848A403008A4C68 /* MWSCityCell.m */,
+				F51E66CC2848A403008A4C68 /* MWSCityListApi.h */,
+				F51E66BB2848A403008A4C68 /* MWSCityListApi.m */,
+				F51E66D22848A403008A4C68 /* MWSCityModel.h */,
+				F51E66BF2848A403008A4C68 /* MWSCityModel.m */,
+				F51E66B52848A403008A4C68 /* MWSCityVC.h */,
+				F51E66C52848A403008A4C68 /* MWSCityVC.m */,
+				F51E66BA2848A403008A4C68 /* MWSContactsCell.h */,
+				F51E66CD2848A403008A4C68 /* MWSContactsCell.m */,
+				F51E66D12848A403008A4C68 /* MWSDetailedAddressCell.h */,
+				F51E66C02848A403008A4C68 /* MWSDetailedAddressCell.m */,
+				F51E66BE2848A403008A4C68 /* MWSMyAddressCell.h */,
+				F51E66D32848A403008A4C68 /* MWSMyAddressCell.m */,
+				F51E66CF2848A403008A4C68 /* MWSMyAddressVC.h */,
+				F51E66C22848A403008A4C68 /* MWSMyAddressVC.m */,
+				F51E66C92848A403008A4C68 /* MWSPhoneNumberCell.h */,
+				F51E66B02848A403008A4C68 /* MWSPhoneNumberCell.m */,
+				F51E66B62848A403008A4C68 /* MWSProvinceModel.h */,
+				F51E66C32848A403008A4C68 /* MWSProvinceModel.m */,
+				F51E66C62848A403008A4C68 /* MWSProvinceVC.h */,
+				F51E66B32848A403008A4C68 /* MWSProvinceVC.m */,
+				F51E66C12848A403008A4C68 /* MWSSelectRegionCell.h */,
+				F51E66D02848A403008A4C68 /* MWSSelectRegionCell.m */,
+				F51E66D52848A403008A4C68 /* MWSUpdateAddressApi.h */,
+				F51E66BD2848A403008A4C68 /* MWSUpdateAddressApi.m */,
+				F51E66C82848A403008A4C68 /* MWSZipCodeCell.h */,
+				F51E66B12848A403008A4C68 /* MWSZipCodeCell.m */,
+			);
+			path = Address;
 			sourceTree = "<group>";
 		};
 		F5200DB22531526D004637DD /* 贴吧 */ = {
@@ -3684,8 +3787,12 @@
 				F50E841D25BEDDE6009767FE /* SearchBar.m in Sources */,
 				A4F2C09924B97F9B005922B1 /* TagSegmentedControl.m in Sources */,
 				F5409A9926B1051B0042F29D /* RRMJTool.m in Sources */,
+				F51E66DC2848A403008A4C68 /* MWSAddressListApi.m in Sources */,
 				F5130E8B275A050E0020E2EF /* RRAllRankingPageControl.m in Sources */,
+				F51E66E62848A403008A4C68 /* MWSAreaVC.m in Sources */,
+				F51E66D82848A403008A4C68 /* MWSProvinceVC.m in Sources */,
 				F51F951C2721591500D4B56B /* RRAllRankingTagCell.m in Sources */,
+				F51E66D92848A403008A4C68 /* MWSAddAddressApi.m in Sources */,
 				F5AC7C4D27102CBE00533793 /* RRSeasonSeniorCommentsReplyTableView.m in Sources */,
 				F5AC7C4427102CBE00533793 /* RRSeasonSeniorCommentsTextImageCell.m in Sources */,
 				F5609C9C250215ED00A13C15 /* NeedResetPasswordVC.m in Sources */,
@@ -3719,6 +3826,7 @@
 				F5A889B924F65D6000DB73ED /* RACLoginViewController.m in Sources */,
 				F5446D03268DC1490076961A /* RRCommentPositionListModel.m in Sources */,
 				F563DAE625AC27020079474B /* HomePageViewController.m in Sources */,
+				F51E66DA2848A403008A4C68 /* MWSCityCell.m in Sources */,
 				F5D4EB6325DF6A8700F807EF /* ParentClassScrollViewController.m in Sources */,
 				F50D6D6525A94EBE00B8C415 /* ListEditViewController.m in Sources */,
 				F5609CB025024E2600A13C15 /* AllScreenViewController.m in Sources */,
@@ -3746,6 +3854,7 @@
 				A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */,
 				A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */,
 				F5872CB4257DDE1A00341B57 /* SettingModule.m in Sources */,
+				F51E66D72848A403008A4C68 /* MWSZipCodeCell.m in Sources */,
 				F507113024E2A6A700AD5306 /* MYPerson.m in Sources */,
 				F5D5C1AF271428D70021C36E /* CarouseViewPlus.m in Sources */,
 				F591ACC126A16E110042802F /* llslog.m in Sources */,
@@ -3769,8 +3878,11 @@
 				F57D573E272FE367009F5846 /* RRDramaCommentDetailVC.m in Sources */,
 				F53293EF2509C6FE00E06D42 /* HalfScreenInputController.m in Sources */,
 				F5AC4B0E27D99B070051F1A5 /* MWSTabBarButton.m in Sources */,
+				F51E66DD2848A403008A4C68 /* MWSUpdateAddressApi.m in Sources */,
 				F553E12824CA800200DA5625 /* InputBar.m in Sources */,
+				F51E66E42848A403008A4C68 /* MWSAddressModel.m in Sources */,
 				F563DADB25AC26790079474B /* UIViewController+WMPageController.m in Sources */,
+				F51E66DB2848A403008A4C68 /* MWSCityListApi.m in Sources */,
 				F5609CA62502222100A13C15 /* BaseNavigationController.m in Sources */,
 				F5CA13BB26B2979800D8A7AE /* MyTabBarController.m in Sources */,
 				F5091DE1268C4184000884D1 /* XXLoadingView.m in Sources */,
@@ -3815,7 +3927,9 @@
 				F5DEB32924CEBB66009A6767 /* MessageController.m in Sources */,
 				679FEC5E210AF53B00FF4972 /* RoundedSegmentedControl.m in Sources */,
 				F5596C75271EA2FE007D9FE9 /* RRAllRankingVC.m in Sources */,
+				F51E66DF2848A403008A4C68 /* MWSDetailedAddressCell.m in Sources */,
 				F5358C1926032C1200C69FC4 /* RRActorSubVC.m in Sources */,
+				F51E66E02848A403008A4C68 /* MWSMyAddressVC.m in Sources */,
 				F563DADC25AC26790079474B /* WMMenuItem.m in Sources */,
 				F57D5749272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.m in Sources */,
 				67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */,
@@ -3823,6 +3937,7 @@
 				F56AB11D273E102A00A59421 /* RRSeasonSeniorCommentsSinglePhotoCollectionViewCell.m in Sources */,
 				F566A1D625008D76004991D3 /* ChangePasswordVC.m in Sources */,
 				F5F4F10324D3C158007DB7F3 /* YYViewController.m in Sources */,
+				F51E66E22848A403008A4C68 /* MWSAddAddressVC.m in Sources */,
 				67535E892390F0CF0009F882 /* FontViewControlle.m in Sources */,
 				67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */,
 				F51E66A4284893E6008A4C68 /* MWSSendOutGoodsApi.m in Sources */,
@@ -3906,10 +4021,12 @@
 				F51CAFC127F5A0FD00990349 /* MWSLotteryBagListTopModel.m in Sources */,
 				F597A9BD25B44600006D9172 /* UIView+RedPoint.m in Sources */,
 				F5F6AEF52744A6100074B26D /* RRAllRankingContainerModel.m in Sources */,
+				F51E66DE2848A403008A4C68 /* MWSCityModel.m in Sources */,
 				F5609C932502134800A13C15 /* SetPasswordVC.m in Sources */,
 				A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */,
 				F5F3665624C82E5C008BA221 /* ChatImageCache.m in Sources */,
 				F563DABE25AC24B80079474B /* BannerViewController.m in Sources */,
+				F51E66E52848A403008A4C68 /* MWSContactsCell.m in Sources */,
 				F5D5C1A22714161F0021C36E /* ContentView.m in Sources */,
 				F563DAC525AC24E20079474B /* SearchResultSubViewController.m in Sources */,
 				F5C0A20425788B92004EBD94 /* UIColor+color.m in Sources */,
@@ -3918,10 +4035,12 @@
 				F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */,
 				F5CA13DA26B2A14A00D8A7AE /* LBNavigationController.m in Sources */,
 				F5130E882759FF720020E2EF /* RRAllRankingHomeModel.m in Sources */,
+				F51E66E32848A403008A4C68 /* MWSCityVC.m in Sources */,
 				F50440D82625A06B00834547 /* RRSeasonSeniorCommentsSubVC.m in Sources */,
 				F553E12724CA800200DA5625 /* TResponderTextView.m in Sources */,
 				F5AC7C4827102CBE00533793 /* RRSeasonSeniorCommentsHearder.m in Sources */,
 				F58F2B64282A16FF00295ED1 /* UIButton+ImageTitleStyle.m in Sources */,
+				F51E66E82848A403008A4C68 /* MWSMyAddressCell.m in Sources */,
 				F5872CBF257DDEC000341B57 /* SettingModuleHandler.m in Sources */,
 				F5F6AEF32744A6100074B26D /* RRAllRankingContentModel.m in Sources */,
 				F556F68327C6198100C418BB /* RRVideoCommentsVC.m in Sources */,
@@ -3942,10 +4061,13 @@
 				F5A8898B24F6074A00DB73ED /* OrderModel.m in Sources */,
 				F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */,
 				F5CE3D2224E6901800B20C80 /* RRDestroyAccountReasonCell.m in Sources */,
+				F51E66E72848A403008A4C68 /* MWSSelectRegionCell.m in Sources */,
 				F5AF510027D9F7540082B55E /* MainTabBar.m in Sources */,
 				F5F5B44A25FA1DFE0069491B /* RRActorInfoVC.m in Sources */,
 				A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */,
+				F51E66E12848A403008A4C68 /* MWSProvinceModel.m in Sources */,
 				F5F4F10924D40312007DB7F3 /* TipMessageCell.m in Sources */,
+				F51E66D62848A403008A4C68 /* MWSPhoneNumberCell.m in Sources */,
 				F51CAFC927F5A0FD00990349 /* MWSLotteryBagListTopPageCollectionView.m in Sources */,
 				F5446CE9268DB20C0076961A /* MyReply.m in Sources */,
 				675852A8231D21A700C5CF7E /* WTableViewController.m in Sources */,
