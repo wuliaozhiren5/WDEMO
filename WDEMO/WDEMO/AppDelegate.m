@@ -158,6 +158,8 @@
 }
 
 //将进入前台
+//支付
+//在点击返回键的时候，支付宝、微信就会退回发起支付的app，返回app必定会走这个方法：
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
 }
@@ -170,5 +172,36 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+//- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
+//{
+//    if ([url.host isEqualToString:@"safepay"]) {
+//        [IanAlert showloadingAllowUserInteraction:NO];
+//        // 支付跳转支付宝钱包进行支付，处理支付结果
+//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+//            [IanAlert hideLoading];
+//            NSLog(@"result = %@",resultDic);
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"AppPay" object:nil userInfo:resultDic];
+//        }];
+//
+//    }
+//    return YES;
+//}
+//
+//// NOTE: 9.0以后使用新API接口
+//- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString*, id> *)options
+//{
+//    if ([url.host isEqualToString:@"safepay"]) {
+//        [IanAlert showloadingAllowUserInteraction:NO];
+//        // 支付跳转支付宝钱包进行支付，处理支付结果
+//        [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
+//            [IanAlert hideLoading];
+//            NSLog(@"result = %@",resultDic);
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"AppPay" object:nil userInfo:resultDic];
+//        }];
+//
+//    }
+//    return YES;
+//}
 
 @end

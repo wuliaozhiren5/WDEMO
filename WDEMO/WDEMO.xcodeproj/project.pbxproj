@@ -593,7 +593,6 @@
 		675852A9231D23F700C5CF7E /* WTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WTableViewCell.h; sourceTree = "<group>"; };
 		675852AA231D23F700C5CF7E /* WTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WTableViewCell.m; sourceTree = "<group>"; };
 		677BADCD1FC40D4E00E7A3FF /* WMacros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WMacros.h; path = ../WMacros.h; sourceTree = "<group>"; };
-		677BADD41FC4128900E7A3FF /* WEnums.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = WEnums.h; path = ../WEnums.h; sourceTree = "<group>"; };
 		6783C84E1FB941EE0040C02B /* WDEMO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WDEMO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6783C8511FB941EE0040C02B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6783C8521FB941EE0040C02B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1607,7 +1606,6 @@
 				F5F346F224ED5970006AAEA3 /* 宏 */,
 				F53FFE5F259DA1D600ABE946 /* 加载LoadingView */,
 				F5C7261524E1252B00B16639 /* 列表数据优化 */,
-				F5F346F024ED5964006AAEA3 /* 枚举 */,
 				F507113424E2AA6D00AD5306 /* 判断对象是否相等 */,
 				F55E5B58258C589400C1DECD /* 评分只是展示ScoreView */,
 				F5609CA32502195A00A13C15 /* 屏幕旋转 */,
@@ -3230,14 +3228,6 @@
 				F5E7AAB927F1AA0700B2AD20 /* MJDIYAutoGifFooter.m */,
 			);
 			path = MJDIY;
-			sourceTree = "<group>";
-		};
-		F5F346F024ED5964006AAEA3 /* 枚举 */ = {
-			isa = PBXGroup;
-			children = (
-				677BADD41FC4128900E7A3FF /* WEnums.h */,
-			);
-			path = "枚举";
 			sourceTree = "<group>";
 		};
 		F5F346F224ED5970006AAEA3 /* 宏 */ = {
