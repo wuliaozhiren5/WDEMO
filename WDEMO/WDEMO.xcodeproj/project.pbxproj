@@ -272,6 +272,7 @@
 		F57F3A8B2850A6270080F069 /* 空白json.json in Resources */ = {isa = PBXBuildFile; fileRef = F57F3A882850A6260080F069 /* 空白json.json */; };
 		F57F3A8C2850A6270080F069 /* 空白md.md in Resources */ = {isa = PBXBuildFile; fileRef = F57F3A892850A6260080F069 /* 空白md.md */; };
 		F57F3A8D2850A6270080F069 /* 空白txt.txt in Resources */ = {isa = PBXBuildFile; fileRef = F57F3A8A2850A6260080F069 /* 空白txt.txt */; };
+		F57F3A8F2850A99E0080F069 /*  代码规范.md in Resources */ = {isa = PBXBuildFile; fileRef = F57F3A8E2850A99E0080F069 /*  代码规范.md */; };
 		F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F581D21724EAB684008AC679 /* WScrollViewController.m */; };
 		F58293B2255CDBD40066111C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F58293B1255CDBD40066111C /* Person.m */; };
 		F586139626A9620900D81DDA /* 马甲包的副本3.md in Resources */ = {isa = PBXBuildFile; fileRef = F586139226A9620800D81DDA /* 马甲包的副本3.md */; };
@@ -1026,6 +1027,7 @@
 		F57F3A882850A6260080F069 /* 空白json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "空白json.json"; sourceTree = "<group>"; };
 		F57F3A892850A6260080F069 /* 空白md.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白md.md"; sourceTree = "<group>"; };
 		F57F3A8A2850A6260080F069 /* 空白txt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "空白txt.txt"; sourceTree = "<group>"; };
+		F57F3A8E2850A99E0080F069 /*  代码规范.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = " 代码规范.md"; sourceTree = "<group>"; };
 		F581D21624EAB684008AC679 /* WScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WScrollViewController.h; sourceTree = "<group>"; };
 		F581D21724EAB684008AC679 /* WScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WScrollViewController.m; sourceTree = "<group>"; };
 		F58293B0255CDBD40066111C /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -2241,6 +2243,7 @@
 		F5596C79271EA554007D9FE9 /* md文件 */ = {
 			isa = PBXGroup;
 			children = (
+				F57F3A8E2850A99E0080F069 /*  代码规范.md */,
 				F5B39E2E2818E5A2004858C4 /* APPIcon生成.md */,
 				F5F3C413280D7AAC00DBDD82 /* AFNetWork 简单实用demo.md */,
 				F5F3C411280D7A8400DBDD82 /* 允许使用http协议请求.md */,
@@ -3540,6 +3543,7 @@
 				F586139926A9620900D81DDA /* 马甲包的副本.md in Resources */,
 				F5F3C40C280D798000DBDD82 /* 渐变色图片.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
+				F57F3A8F2850A99E0080F069 /*  代码规范.md in Resources */,
 				F51E66AB2848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md in Resources */,
 				F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */,
 				F5023E4A2716B48700BA5829 /* 空白.md in Resources */,
