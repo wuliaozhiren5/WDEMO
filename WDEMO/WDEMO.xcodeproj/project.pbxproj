@@ -269,6 +269,9 @@
 		F57D5743272FE367009F5846 /* RRDramaCommentSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5735272FE367009F5846 /* RRDramaCommentSubVC.m */; };
 		F57D5746272FE424009F5846 /* RRStarScoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5745272FE424009F5846 /* RRStarScoreView.m */; };
 		F57D5749272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F57D5747272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.m */; };
+		F57F3A8B2850A6270080F069 /* 空白json.json in Resources */ = {isa = PBXBuildFile; fileRef = F57F3A882850A6260080F069 /* 空白json.json */; };
+		F57F3A8C2850A6270080F069 /* 空白md.md in Resources */ = {isa = PBXBuildFile; fileRef = F57F3A892850A6260080F069 /* 空白md.md */; };
+		F57F3A8D2850A6270080F069 /* 空白txt.txt in Resources */ = {isa = PBXBuildFile; fileRef = F57F3A8A2850A6260080F069 /* 空白txt.txt */; };
 		F581D21824EAB684008AC679 /* WScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F581D21724EAB684008AC679 /* WScrollViewController.m */; };
 		F58293B2255CDBD40066111C /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F58293B1255CDBD40066111C /* Person.m */; };
 		F586139626A9620900D81DDA /* 马甲包的副本3.md in Resources */ = {isa = PBXBuildFile; fileRef = F586139226A9620800D81DDA /* 马甲包的副本3.md */; };
@@ -1020,6 +1023,9 @@
 		F57D5745272FE424009F5846 /* RRStarScoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRStarScoreView.m; sourceTree = "<group>"; };
 		F57D5747272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRDramaCommentPraiseBtnInputBar.m; sourceTree = "<group>"; };
 		F57D5748272FE539009F5846 /* RRDramaCommentPraiseBtnInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RRDramaCommentPraiseBtnInputBar.h; sourceTree = "<group>"; };
+		F57F3A882850A6260080F069 /* 空白json.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "空白json.json"; sourceTree = "<group>"; };
+		F57F3A892850A6260080F069 /* 空白md.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "空白md.md"; sourceTree = "<group>"; };
+		F57F3A8A2850A6260080F069 /* 空白txt.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "空白txt.txt"; sourceTree = "<group>"; };
 		F581D21624EAB684008AC679 /* WScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WScrollViewController.h; sourceTree = "<group>"; };
 		F581D21724EAB684008AC679 /* WScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WScrollViewController.m; sourceTree = "<group>"; };
 		F58293B0255CDBD40066111C /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
@@ -1557,6 +1563,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				F57F3A872850A6260080F069 /* 空白文件夹 */,
 				F51E66AF2848A402008A4C68 /* Address */,
 				F51E669C284893E5008A4C68 /* SendOutGoods */,
 				F51E669B284893D2008A4C68 /* 切环境 */,
@@ -2475,6 +2482,16 @@
 				F57D571E272FE326009F5846 /* RRHomeChannelModel.m */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		F57F3A872850A6260080F069 /* 空白文件夹 */ = {
+			isa = PBXGroup;
+			children = (
+				F57F3A882850A6260080F069 /* 空白json.json */,
+				F57F3A892850A6260080F069 /* 空白md.md */,
+				F57F3A8A2850A6260080F069 /* 空白txt.txt */,
+			);
+			path = "空白文件夹";
 			sourceTree = "<group>";
 		};
 		F581D21524EAB65A008AC679 /* ScrollView */ = {
@@ -3534,6 +3551,7 @@
 				F5CA13AA26B2928700D8A7AE /* ic_bottombar_vip_h@2x.png in Resources */,
 				F51E66AC2848A1CC008A4C68 /* 获取URL链接中的各参数.md in Resources */,
 				F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */,
+				F57F3A8D2850A6270080F069 /* 空白txt.txt in Resources */,
 				F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */,
 				F5B7DC3B2608813D00B1E497 /* 代码格式化工具.md in Resources */,
 				F516E5342683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md in Resources */,
@@ -3622,6 +3640,7 @@
 				F58613D026A96EB100D81DDA /* start.sh in Resources */,
 				F501FEA0271FEC2800FE2F3B /* 删除所有子View.md in Resources */,
 				F5CFA6FC280966470089BC2A /* 隐私权限plist.md in Resources */,
+				F57F3A8C2850A6270080F069 /* 空白md.md in Resources */,
 				F50D6D9725A9672200B8C415 /* 加载LoadingView.md in Resources */,
 				F5F3665A26F0D82A00E5D767 /* UICollectionView预加载isPrefetchingEnabled.md in Resources */,
 				6783C85E1FB941EE0040C02B /* LaunchScreen.storyboard in Resources */,
@@ -3640,6 +3659,7 @@
 				F518ED3725E8DDAC00260125 /* 图片压缩.md in Resources */,
 				F5CA13AE26B2928700D8A7AE /* ic_bottombar_vip_n@2x.png in Resources */,
 				F504EE1927E208780099350D /* 抓包Charles.md in Resources */,
+				F57F3A8B2850A6270080F069 /* 空白json.json in Resources */,
 				F5B035B227856EE200D8F4D8 /* 修改工程名称待实践.md in Resources */,
 				F5E4786E25303C9E001AE2AE /* 屏幕旋转.md in Resources */,
 				6783C85B1FB941EE0040C02B /* Assets.xcassets in Resources */,
