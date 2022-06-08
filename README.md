@@ -44,6 +44,10 @@ UI缩写： Btn Lab Lab View VC
 
 git
 
+git clone 拷贝一个 Git 仓库到本地，让自己能够查看该项目，或者进行修改。 
+git clone [url]
+
+提交代码
 3： git add --all
 4： git commit -m "a"
 5：再重新 git pull origin master 
