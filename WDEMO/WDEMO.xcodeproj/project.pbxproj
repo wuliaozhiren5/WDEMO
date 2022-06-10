@@ -325,6 +325,7 @@
 		F593574A25F7466A008CF0D8 /* SecondViewTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F593574725F7466A008CF0D8 /* SecondViewTableViewController.m */; };
 		F593FAFA2501E8A60095BB10 /* UIButton+buttonType.m in Sources */ = {isa = PBXBuildFile; fileRef = F593FAF82501E8A50095BB10 /* UIButton+buttonType.m */; };
 		F597A9BD25B44600006D9172 /* UIView+RedPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = F597A9BC25B44600006D9172 /* UIView+RedPoint.m */; };
+		F598CC922851F3F3000D486E /* CocoaPods详细过程.md in Resources */ = {isa = PBXBuildFile; fileRef = F598CC912851F3F3000D486E /* CocoaPods详细过程.md */; };
 		F5A2475D26A6D9BD008B7BF4 /* 自动化打包.md in Resources */ = {isa = PBXBuildFile; fileRef = F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */; };
 		F5A2476326A6D9E7008B7BF4 /* WiFi名.md in Resources */ = {isa = PBXBuildFile; fileRef = F5A2476226A6D9E6008B7BF4 /* WiFi名.md */; };
 		F5A4890C25AC4CCB0046B52C /* VerticalCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A4890B25AC4CCB0046B52C /* VerticalCollectionViewController.m */; };
@@ -377,6 +378,7 @@
 		F5B5A9382508F79A002505AE /* TipMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A9372508F79A002505AE /* TipMessageDataModel.m */; };
 		F5B5A93B2508F7A7002505AE /* EnterMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */; };
 		F5B5A93E2508F7B5002505AE /* FaceMessageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */; };
+		F5B7C43228530E810055DEA4 /* M1模拟器报错.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B7C43128530E810055DEA4 /* M1模拟器报错.md */; };
 		F5B7DC3B2608813D00B1E497 /* 代码格式化工具.md in Resources */ = {isa = PBXBuildFile; fileRef = F5B7DC3A2608813C00B1E497 /* 代码格式化工具.md */; };
 		F5B7DC432608814B00B1E497 /* clang-format-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = F5B7DC412608814B00B1E497 /* clang-format-master.zip */; };
 		F5B7DC442608814B00B1E497 /* XcodeClangFormat.zip in Resources */ = {isa = PBXBuildFile; fileRef = F5B7DC422608814B00B1E497 /* XcodeClangFormat.zip */; };
@@ -1107,6 +1109,7 @@
 		F593FAF92501E8A60095BB10 /* UIButton+buttonType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+buttonType.h"; sourceTree = "<group>"; };
 		F597A9BB25B44600006D9172 /* UIView+RedPoint.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+RedPoint.h"; sourceTree = "<group>"; };
 		F597A9BC25B44600006D9172 /* UIView+RedPoint.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+RedPoint.m"; sourceTree = "<group>"; };
+		F598CC912851F3F3000D486E /* CocoaPods详细过程.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "CocoaPods详细过程.md"; sourceTree = "<group>"; };
 		F5A2475C26A6D9BD008B7BF4 /* 自动化打包.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "自动化打包.md"; sourceTree = "<group>"; };
 		F5A2476226A6D9E6008B7BF4 /* WiFi名.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "WiFi名.md"; sourceTree = "<group>"; };
 		F5A4890A25AC4CCB0046B52C /* VerticalCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerticalCollectionViewController.h; sourceTree = "<group>"; };
@@ -1196,6 +1199,7 @@
 		F5B5A93A2508F7A6002505AE /* EnterMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EnterMessageDataModel.m; sourceTree = "<group>"; };
 		F5B5A93C2508F7B5002505AE /* FaceMessageDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceMessageDataModel.h; sourceTree = "<group>"; };
 		F5B5A93D2508F7B5002505AE /* FaceMessageDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceMessageDataModel.m; sourceTree = "<group>"; };
+		F5B7C43128530E810055DEA4 /* M1模拟器报错.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "M1模拟器报错.md"; sourceTree = "<group>"; };
 		F5B7DC3A2608813C00B1E497 /* 代码格式化工具.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "代码格式化工具.md"; sourceTree = "<group>"; };
 		F5B7DC412608814B00B1E497 /* clang-format-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "clang-format-master.zip"; sourceTree = "<group>"; };
 		F5B7DC422608814B00B1E497 /* XcodeClangFormat.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = XcodeClangFormat.zip; sourceTree = "<group>"; };
@@ -2275,7 +2279,9 @@
 				F52F15A426A7C60500D4E305 /* 定时器NSTimer.md */,
 				F504EE1827E208780099350D /* 抓包Charles.md */,
 				F58F2B65282A17EC00295ED1 /* UIButton图片文字对齐.md */,
+				F598CC912851F3F3000D486E /* CocoaPods详细过程.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				F5B7C43128530E810055DEA4 /* M1模拟器报错.md */,
 				F51E66AD2848A22F008A4C68 /* 左上角换回app .md */,
 				F51E66A92848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md */,
 				F51E66AA2848A1CC008A4C68 /* 获取URL链接中的各参数.md */,
@@ -3616,6 +3622,7 @@
 				F534736E25E357F400F01CC6 /* iOS仿抖音短视频.md in Resources */,
 				F5409ABD26B166020042F29D /* star.png in Resources */,
 				F5F3C412280D7A8400DBDD82 /* 允许使用http协议请求.md in Resources */,
+				F598CC922851F3F3000D486E /* CocoaPods详细过程.md in Resources */,
 				F5CA140826B2A2DC00D8A7AE /* home_normal@2x.png in Resources */,
 				F504EE1727E208350099350D /* nullable nonnull.md in Resources */,
 				F5D05B6E25BAB16600A4C6EC /* 归档解档.md in Resources */,
@@ -3624,6 +3631,7 @@
 				F5F3C410280D79D900DBDD82 /* UIButton状态.md in Resources */,
 				F548D0D8256E2EEA00357E64 /* amwayPlayerGuide_3.png in Resources */,
 				F5CA13A826B2928700D8A7AE /* ic_bottombar_kuaikan_h@2x.png in Resources */,
+				F5B7C43228530E810055DEA4 /* M1模拟器报错.md in Resources */,
 				F5CA13A126B2928700D8A7AE /* ic_bottombar_me_h@2x.png in Resources */,
 				F508EBF027562F920017F315 /* initWithNibName方法什么时候调用.md in Resources */,
 				F548D0E6256E2EEA00357E64 /* amwayPlayerZan.json in Resources */,

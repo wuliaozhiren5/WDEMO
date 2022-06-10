@@ -235,3 +235,41 @@ typedef NS_ENUM(NSInteger, ButtonImageTitleStyle ) {
 @end
 
 ```
+
+
+
+简单使用
+```
+//lazy
+- (UIButton *)detailBtn {
+    if (!_detailBtn) {
+        _detailBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, KWidth / 2, 320)];
+        [_detailBtn setTitle:@"已打包0件物品" forState:UIControlStateNormal];
+        [_detailBtn setImage:IMAGENAME(@"pic_uo") forState:UIControlStateNormal];
+        [_detailBtn setImage:IMAGENAME(@"pic_uo") forState:UIControlStateHighlighted];
+ 
+        
+        //先还原
+        _detailBtn.titleEdgeInsets = UIEdgeInsetsZero;
+        _detailBtn.imageEdgeInsets = UIEdgeInsetsZero;
+        
+        CGRect imageRect = _detailBtn.imageView.frame;
+        CGRect titleRect = _detailBtn.titleLabel.frame;
+
+        CGFloat padding = 5.0;
+        
+        //图片在右，文字在左
+        _detailBtn.titleEdgeInsets = UIEdgeInsetsMake(0,
+                                                      -(imageRect.size.width + padding/2),
+                                                      0,
+                                                      (imageRect.size.width + padding/2));
+
+        _detailBtn.imageEdgeInsets = UIEdgeInsetsMake(0,
+                                                      (titleRect.size.width+ padding/2),
+                                                      0,
+                                                      -(titleRect.size.width+ padding/2));
+    }
+    return _detailBtn;
+}
+
+```
