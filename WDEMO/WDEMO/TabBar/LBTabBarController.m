@@ -15,6 +15,8 @@
 
 @interface LBTabBarController ()<UITabBarControllerDelegate, LBTabBarDelegate>
 
+@property(nonatomic, strong)UIImageView *tabBarBackgroundImgV;
+
 @end
 
 @implementation LBTabBarController
@@ -95,6 +97,8 @@
 //    self.tabBar.opaque = YES;
     [self.tabBar insertSubview:ima atIndex:0];
 
+    self.tabBarBackgroundImgV = ima;
+    
     //去黑线
     [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
 //    [UITabBar appearance].layer.borderWidth = 0.0f;
@@ -277,5 +281,12 @@
 //        vc.tabBarItem.selectedImage = mySelectedImage;
 //
 //    }
+
+    if (index == 1) {
+        self.tabBarBackgroundImgV.image = [UIImage imageNamed:@"tabbar_bg_2"];
+    } else {
+        self.tabBarBackgroundImgV.image = [UIImage imageNamed:@"tabbar_bg_1"];
+    }
+    
 }
 @end
