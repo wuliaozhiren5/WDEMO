@@ -63,6 +63,15 @@
         //        self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
+    // 原文链接：https://blog.csdn.net/TaLinBoy/article/details/122545788
+    //    在iOS 15.0以上版本
+    //    -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+    //    返回的高度异常：
+    //    解决方法：
+    
+    if (@available(iOS 15.0, *)) {
+        _tableView.sectionHeaderTopPadding = 0;
+    }
     
     //------
     self.tableView.frame = self.view.bounds;
