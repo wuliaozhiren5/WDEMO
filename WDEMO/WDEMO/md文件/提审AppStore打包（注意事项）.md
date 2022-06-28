@@ -1,4 +1,4 @@
-#提审打包（注意事项）
+#提审AppStore打包（注意事项）
 
 1.代码中
 版本号：
@@ -15,7 +15,7 @@ Targets - General - Build
 自动选择证书
 
 Xcode
-Xcode - Product - Scheme - Edit Scheme - Archive - Relesae
+Xcode - Product - Scheme - Edit Scheme - Archive - Release
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////

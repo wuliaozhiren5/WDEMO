@@ -51,7 +51,8 @@
 		A4A1BC63285B0D7D0025DF7C /* vim.md in Resources */ = {isa = PBXBuildFile; fileRef = A4A1BC61285B0D7D0025DF7C /* vim.md */; };
 		A4A1BC64285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md in Resources */ = {isa = PBXBuildFile; fileRef = A4A1BC62285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md */; };
 		A4A1BC66285B0DE90025DF7C /* Mac电脑抹掉.md in Resources */ = {isa = PBXBuildFile; fileRef = A4A1BC65285B0DE90025DF7C /* Mac电脑抹掉.md */; };
-		A4E01C872860563700F75DDC /* 提审打包（注意事项）.md in Resources */ = {isa = PBXBuildFile; fileRef = A4E01C862860563700F75DDC /* 提审打包（注意事项）.md */; };
+		A4E01C872860563700F75DDC /* 提审AppStore打包（注意事项）.md in Resources */ = {isa = PBXBuildFile; fileRef = A4E01C862860563700F75DDC /* 提审AppStore打包（注意事项）.md */; };
+		A4EF19D92869853F003B0B0D /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EF19D82869853F003B0B0D /* AlertView.m */; };
 		A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C08F24B97F5E005922B1 /* TagListViewController.m */; };
 		A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09324B97F9B005922B1 /* TagListCell.m */; };
 		A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09524B97F9B005922B1 /* TagListView.m */; };
@@ -663,7 +664,9 @@
 		A4A1BC61285B0D7D0025DF7C /* vim.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = vim.md; sourceTree = "<group>"; };
 		A4A1BC62285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "git去掉UserInterfaceState.xcuserstate文件.md"; sourceTree = "<group>"; };
 		A4A1BC65285B0DE90025DF7C /* Mac电脑抹掉.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Mac电脑抹掉.md"; sourceTree = "<group>"; };
-		A4E01C862860563700F75DDC /* 提审打包（注意事项）.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "提审打包（注意事项）.md"; sourceTree = "<group>"; };
+		A4E01C862860563700F75DDC /* 提审AppStore打包（注意事项）.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "提审AppStore打包（注意事项）.md"; sourceTree = "<group>"; };
+		A4EF19D72869853F003B0B0D /* AlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
+		A4EF19D82869853F003B0B0D /* AlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
 		A4F2C08E24B97F5E005922B1 /* TagListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagListViewController.h; sourceTree = "<group>"; };
 		A4F2C08F24B97F5E005922B1 /* TagListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagListViewController.m; sourceTree = "<group>"; };
 		A4F2C09124B97F9B005922B1 /* TagListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListCell.h; sourceTree = "<group>"; };
@@ -1585,6 +1588,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				A4EF19D62869850A003B0B0D /* 提示框 */,
 				F57F3A872850A6260080F069 /* 空白文件夹 */,
 				F51E66AF2848A402008A4C68 /* Address */,
 				F51E669C284893E5008A4C68 /* SendOutGoods */,
@@ -1788,6 +1792,15 @@
 				A479989124BAEBCE0079F72D /* SmallBigCollectionViewCell.m */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		A4EF19D62869850A003B0B0D /* 提示框 */ = {
+			isa = PBXGroup;
+			children = (
+				A4EF19D72869853F003B0B0D /* AlertView.h */,
+				A4EF19D82869853F003B0B0D /* AlertView.m */,
+			);
+			path = "提示框";
 			sourceTree = "<group>";
 		};
 		A4F2C08D24B97F27005922B1 /* TagLIst */ = {
@@ -2297,7 +2310,7 @@
 				F58F2B65282A17EC00295ED1 /* UIButton图片文字对齐.md */,
 				F598CC912851F3F3000D486E /* CocoaPods详细过程.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
-				A4E01C862860563700F75DDC /* 提审打包（注意事项）.md */,
+				A4E01C862860563700F75DDC /* 提审AppStore打包（注意事项）.md */,
 				A4A1BC65285B0DE90025DF7C /* Mac电脑抹掉.md */,
 				A4A1BC61285B0D7D0025DF7C /* vim.md */,
 				A4A1BC62285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md */,
@@ -3612,7 +3625,7 @@
 				F5D5C1B82714298D0021C36E /* 3.jpg in Resources */,
 				F5F5B47625FA3AE90069491B /* avatar.jpg in Resources */,
 				F5A2476326A6D9E7008B7BF4 /* WiFi名.md in Resources */,
-				A4E01C872860563700F75DDC /* 提审打包（注意事项）.md in Resources */,
+				A4E01C872860563700F75DDC /* 提审AppStore打包（注意事项）.md in Resources */,
 				F5872CFC257DFF5900341B57 /* 追剧引导-白色-循环.gif in Resources */,
 				F5872CFF257DFF5900341B57 /* 追剧引导-白色-一次.gif in Resources */,
 				A4A1BC64285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md in Resources */,
@@ -4038,6 +4051,7 @@
 				F556F68727C619EC00C418BB /* RRVideoCommentsDetailVC.m in Sources */,
 				F56AE4FC27F1B509002047F5 /* MJDIYLoadingView.m in Sources */,
 				F563DADE25AC26790079474B /* WMMenuView.m in Sources */,
+				A4EF19D92869853F003B0B0D /* AlertView.m in Sources */,
 				F51CAFC427F5A0FD00990349 /* MWSLotteryBagListTopPageCollectionViewCell.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
 				F57D5739272FE367009F5846 /* RRDramaCommentDetailScoreView.m in Sources */,
