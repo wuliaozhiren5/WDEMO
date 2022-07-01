@@ -42,6 +42,8 @@
 		67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F62321189E00C494EF /* DelegateViewController.m */; };
 		67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F9232118A900C494EF /* BlockViewController.m */; };
 		67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5FC232118B800C494EF /* NotificationViewController.m */; };
+		A43964B1286BFD4400355CC6 /* MWSTradeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A43964B0286BFD4400355CC6 /* MWSTradeAlertView.m */; };
+		A43964B4286BFE7000355CC6 /* MWSPackBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A43964B2286BFE7000355CC6 /* MWSPackBottomBar.m */; };
 		A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A459C29024C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m */; };
 		A459C29424C174A300A3B5FF /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = A459C29324C174A300A3B5FF /* Plist.m */; };
 		A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A479987F24BAB2FA0079F72D /* GaoDengViewController.m */; };
@@ -52,7 +54,8 @@
 		A4A1BC64285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md in Resources */ = {isa = PBXBuildFile; fileRef = A4A1BC62285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md */; };
 		A4A1BC66285B0DE90025DF7C /* Mac电脑抹掉.md in Resources */ = {isa = PBXBuildFile; fileRef = A4A1BC65285B0DE90025DF7C /* Mac电脑抹掉.md */; };
 		A4E01C872860563700F75DDC /* 提审AppStore打包（注意事项）.md in Resources */ = {isa = PBXBuildFile; fileRef = A4E01C862860563700F75DDC /* 提审AppStore打包（注意事项）.md */; };
-		A4EF19D92869853F003B0B0D /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4EF19D82869853F003B0B0D /* AlertView.m */; };
+		A4E6F616286D772B00A20CA5 /* MWSTradeDetailCloseBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E6F614286D772B00A20CA5 /* MWSTradeDetailCloseBottomBar.m */; };
+		A4E6F617286D772B00A20CA5 /* MWSTradeDetailPayBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E6F615286D772B00A20CA5 /* MWSTradeDetailPayBottomBar.m */; };
 		A4F2C09024B97F5E005922B1 /* TagListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C08F24B97F5E005922B1 /* TagListViewController.m */; };
 		A4F2C09724B97F9B005922B1 /* TagListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09324B97F9B005922B1 /* TagListCell.m */; };
 		A4F2C09824B97F9B005922B1 /* TagListView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09524B97F9B005922B1 /* TagListView.m */; };
@@ -649,6 +652,10 @@
 		67B7E5FB232118B800C494EF /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		67B7E5FC232118B800C494EF /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		6F661C06B03CAE44D97A8656 /* Pods-WDEMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDEMO.release.xcconfig"; path = "Target Support Files/Pods-WDEMO/Pods-WDEMO.release.xcconfig"; sourceTree = "<group>"; };
+		A43964AF286BFD4400355CC6 /* MWSTradeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSTradeAlertView.h; sourceTree = "<group>"; };
+		A43964B0286BFD4400355CC6 /* MWSTradeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSTradeAlertView.m; sourceTree = "<group>"; };
+		A43964B2286BFE7000355CC6 /* MWSPackBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSPackBottomBar.m; sourceTree = "<group>"; };
+		A43964B3286BFE7000355CC6 /* MWSPackBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSPackBottomBar.h; sourceTree = "<group>"; };
 		A459C28F24C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJAppUncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		A459C29024C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAppUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		A459C29224C174A300A3B5FF /* Plist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plist.h; sourceTree = "<group>"; };
@@ -665,8 +672,10 @@
 		A4A1BC62285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "git去掉UserInterfaceState.xcuserstate文件.md"; sourceTree = "<group>"; };
 		A4A1BC65285B0DE90025DF7C /* Mac电脑抹掉.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Mac电脑抹掉.md"; sourceTree = "<group>"; };
 		A4E01C862860563700F75DDC /* 提审AppStore打包（注意事项）.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "提审AppStore打包（注意事项）.md"; sourceTree = "<group>"; };
-		A4EF19D72869853F003B0B0D /* AlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
-		A4EF19D82869853F003B0B0D /* AlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		A4E6F612286D772B00A20CA5 /* MWSTradeDetailCloseBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSTradeDetailCloseBottomBar.h; sourceTree = "<group>"; };
+		A4E6F613286D772B00A20CA5 /* MWSTradeDetailPayBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSTradeDetailPayBottomBar.h; sourceTree = "<group>"; };
+		A4E6F614286D772B00A20CA5 /* MWSTradeDetailCloseBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSTradeDetailCloseBottomBar.m; sourceTree = "<group>"; };
+		A4E6F615286D772B00A20CA5 /* MWSTradeDetailPayBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSTradeDetailPayBottomBar.m; sourceTree = "<group>"; };
 		A4F2C08E24B97F5E005922B1 /* TagListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagListViewController.h; sourceTree = "<group>"; };
 		A4F2C08F24B97F5E005922B1 /* TagListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagListViewController.m; sourceTree = "<group>"; };
 		A4F2C09124B97F9B005922B1 /* TagListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagListCell.h; sourceTree = "<group>"; };
@@ -1797,8 +1806,14 @@
 		A4EF19D62869850A003B0B0D /* 提示框 */ = {
 			isa = PBXGroup;
 			children = (
-				A4EF19D72869853F003B0B0D /* AlertView.h */,
-				A4EF19D82869853F003B0B0D /* AlertView.m */,
+				A4E6F612286D772B00A20CA5 /* MWSTradeDetailCloseBottomBar.h */,
+				A4E6F614286D772B00A20CA5 /* MWSTradeDetailCloseBottomBar.m */,
+				A4E6F613286D772B00A20CA5 /* MWSTradeDetailPayBottomBar.h */,
+				A4E6F615286D772B00A20CA5 /* MWSTradeDetailPayBottomBar.m */,
+				A43964B3286BFE7000355CC6 /* MWSPackBottomBar.h */,
+				A43964B2286BFE7000355CC6 /* MWSPackBottomBar.m */,
+				A43964AF286BFD4400355CC6 /* MWSTradeAlertView.h */,
+				A43964B0286BFD4400355CC6 /* MWSTradeAlertView.m */,
 			);
 			path = "提示框";
 			sourceTree = "<group>";
@@ -3922,6 +3937,7 @@
 				A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */,
 				F5872CB4257DDE1A00341B57 /* SettingModule.m in Sources */,
 				F51E66D72848A403008A4C68 /* MWSZipCodeCell.m in Sources */,
+				A43964B4286BFE7000355CC6 /* MWSPackBottomBar.m in Sources */,
 				F507113024E2A6A700AD5306 /* MYPerson.m in Sources */,
 				F5D5C1AF271428D70021C36E /* CarouseViewPlus.m in Sources */,
 				F591ACC126A16E110042802F /* llslog.m in Sources */,
@@ -3971,6 +3987,7 @@
 				F5D056F525594D5F008CC230 /* FullScreenChatBottomInputBarViewController.m in Sources */,
 				F5AF50FE27D9F7540082B55E /* MainNavigationController.m in Sources */,
 				F546A7CE2609DCB90001F697 /* RRActorVideoHeader.m in Sources */,
+				A4E6F617286D772B00A20CA5 /* MWSTradeDetailPayBottomBar.m in Sources */,
 				F5CED5E525749E84002CF42C /* XXClass.m in Sources */,
 				F5409AAE26B164A30042F29D /* ZZStarView.m in Sources */,
 				F5D54C002553F35400787EBB /* ChatBottomInputBarViewController.m in Sources */,
@@ -4051,7 +4068,6 @@
 				F556F68727C619EC00C418BB /* RRVideoCommentsDetailVC.m in Sources */,
 				F56AE4FC27F1B509002047F5 /* MJDIYLoadingView.m in Sources */,
 				F563DADE25AC26790079474B /* WMMenuView.m in Sources */,
-				A4EF19D92869853F003B0B0D /* AlertView.m in Sources */,
 				F51CAFC427F5A0FD00990349 /* MWSLotteryBagListTopPageCollectionViewCell.m in Sources */,
 				6730334D210AED3D001471D8 /* PersonalCenterBar.m in Sources */,
 				F57D5739272FE367009F5846 /* RRDramaCommentDetailScoreView.m in Sources */,
@@ -4099,6 +4115,7 @@
 				F563DAC525AC24E20079474B /* SearchResultSubViewController.m in Sources */,
 				F5C0A20425788B92004EBD94 /* UIColor+color.m in Sources */,
 				F53F669B24FE484700770055 /* NSString+Password.m in Sources */,
+				A43964B1286BFD4400355CC6 /* MWSTradeAlertView.m in Sources */,
 				F5D4EB5825DF6A6E00F807EF /* MainTouchTableTableView.m in Sources */,
 				F507113724E2AB9400AD5306 /* IsEqualViewController.m in Sources */,
 				F5CA13DA26B2A14A00D8A7AE /* LBNavigationController.m in Sources */,
@@ -4150,6 +4167,7 @@
 				F5BFBBFC25E4A0B80068358F /* UICollectionViewLeftAlignedLayout.m in Sources */,
 				67AB47F9231E07D100C837BB /* AlterViewController.m in Sources */,
 				F564D5E924F7550C00A02FA2 /* RACViewController.m in Sources */,
+				A4E6F616286D772B00A20CA5 /* MWSTradeDetailCloseBottomBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

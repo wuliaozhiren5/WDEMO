@@ -12,6 +12,7 @@ juxing.toys
 Targets - General - Version
 Targets - General - Build
 
+Xcode
 自动选择证书
 
 Xcode

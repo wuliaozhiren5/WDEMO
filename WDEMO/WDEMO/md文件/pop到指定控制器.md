@@ -7,12 +7,12 @@
 
 点击返回按钮，返回到指定控制器
 ```
-for (UIViewController *controller in self.navigationController.viewControllers) {
-    if (controller isKindOfClass:[XXViewController Class]) {
-       [self.navigationController popToViewController:controller animated:YES];
-       return;
+    for (UIViewController *controller in self.navigationController.viewControllers) {
+        if ([controller isKindOfClass:[xxxxxxx class]]) {
+           [self.navigationController popToViewController:controller animated:YES];
+           return;
+        }
     }
-}
 ```
 
 关闭滑动返回手势
