@@ -46,6 +46,7 @@
 		A43964B4286BFE7000355CC6 /* MWSPackBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A43964B2286BFE7000355CC6 /* MWSPackBottomBar.m */; };
 		A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A459C29024C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m */; };
 		A459C29424C174A300A3B5FF /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = A459C29324C174A300A3B5FF /* Plist.m */; };
+		A45D6A2B2872ED9B00988871 /* UITextField+NLLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D6A2A2872ED9B00988871 /* UITextField+NLLimit.m */; };
 		A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A479987F24BAB2FA0079F72D /* GaoDengViewController.m */; };
 		A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A479988B24BAC0E20079F72D /* SmallCollectionView.m */; };
 		A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A479988E24BAE2EF0079F72D /* BigCollectionView.m */; };
@@ -660,6 +661,8 @@
 		A459C29024C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJAppUncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		A459C29224C174A300A3B5FF /* Plist.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Plist.h; sourceTree = "<group>"; };
 		A459C29324C174A300A3B5FF /* Plist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plist.m; sourceTree = "<group>"; };
+		A45D6A292872ED9B00988871 /* UITextField+NLLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+NLLimit.h"; sourceTree = "<group>"; };
+		A45D6A2A2872ED9B00988871 /* UITextField+NLLimit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NLLimit.m"; sourceTree = "<group>"; };
 		A479987E24BAB2FA0079F72D /* GaoDengViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GaoDengViewController.h; sourceTree = "<group>"; };
 		A479987F24BAB2FA0079F72D /* GaoDengViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GaoDengViewController.m; sourceTree = "<group>"; };
 		A479988A24BAC0E20079F72D /* SmallCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmallCollectionView.h; sourceTree = "<group>"; };
@@ -2325,6 +2328,8 @@
 				F58F2B65282A17EC00295ED1 /* UIButton图片文字对齐.md */,
 				F598CC912851F3F3000D486E /* CocoaPods详细过程.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				A45D6A292872ED9B00988871 /* UITextField+NLLimit.h */,
+				A45D6A2A2872ED9B00988871 /* UITextField+NLLimit.m */,
 				A4E01C862860563700F75DDC /* 提审AppStore打包（注意事项）.md */,
 				A4A1BC65285B0DE90025DF7C /* Mac电脑抹掉.md */,
 				A4A1BC61285B0D7D0025DF7C /* vim.md */,
@@ -4130,6 +4135,7 @@
 				F5F6AEF32744A6100074B26D /* RRAllRankingContentModel.m in Sources */,
 				F556F68327C6198100C418BB /* RRVideoCommentsVC.m in Sources */,
 				6783C8531FB941EE0040C02B /* AppDelegate.m in Sources */,
+				A45D6A2B2872ED9B00988871 /* UITextField+NLLimit.m in Sources */,
 				67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */,
 				A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */,
 				F5D2129125FF567100C7DCC1 /* RRActorIntroAndWorksVC.m in Sources */,

@@ -153,3 +153,97 @@ AppDelegate
     return YES;
 }
 ```
+
+
+支付的时候
+``` 
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    //    self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(appPayResult:) name:@"AppPay" object:nil];
+    [self setupViews];
+}
+
+- (void)doAPPayWithTradePayModel:(MWSPayModel *)model {
+    
+    NSString *orderString = model.body;
+    // NOTE: 如果加签成功，则继续执行支付
+    if (orderString != nil) {
+        //应用注册scheme,在AliSDKDemo-Info.plist定义URL types
+        //        NSString *appScheme = @"alisdkdemo";
+        NSString *appScheme = @"com.MoWanShang.www";
+        // NOTE: 调用支付结果开始支付
+        
+        NSURL *url = [NSURL URLWithString:@"alipay://"];//注意设置白名单
+        if (![[UIApplication sharedApplication] canOpenURL:url]) {//未安装
+            //自己的代码逻辑处理
+            [MWSPayTypeManager sharedInstance].payType = Pay_Type_none;
+        } else {
+            [MWSPayTypeManager sharedInstance].payType = Pay_Type_alipay;
+        }
+        
+//        [IanAlert showloadingAllowUserInteraction:NO];
+        @weakify(self);
+        [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
+            @strongify(self);
+//            [IanAlert hideLoading];
+            NSLog(@"reslut = %@",resultDic);
+            [self handleAppPayWithResultDic:resultDic];
+        }];
+    } else {
+        TOAST(@"支付参数错误，支付宝sdk调用失败")
+        
+    }
+}
+
+
+
+- (void)handleAppPayWithResultDic:(NSDictionary *)resultDic {
+    
+    if (!resultDic) {
+        //点击左上角回来的
+        //查询订单
+        [self paySuccess];
+        return;
+    }
+    //    返回码 含义
+    //    9000 订单支付成功。
+    //    8000 正在处理中，支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态。
+    //    4000 订单支付失败。
+    //    5000 重复请求。
+    //    6001 用户中途取消。
+    //    6002 网络连接出错。
+    //    6004 支付结果未知（有可能已经支付成功），请查询商户订单列表中订单的支付状态。
+    //    其他 其他支付错误。
+    NSInteger orderState = [resultDic[@"resultStatus"] integerValue];
+    NSString *notice = nil;
+    switch (orderState) {
+        case 9000:
+            NSLog(@"order_id = %@",self.order_id);
+            notice = @"支付成功";
+            //查询订单
+            [self paySuccess];
+            break;
+        case 8000:
+            notice = @"支付正在处理中";
+            break;
+        case 4000:
+            notice = @"支付失败";
+            break;
+        case 6001:
+            notice = @"支付取消";
+            break;
+        case 6002:
+            notice = @"网络连接出错";
+            break;
+            
+        default:
+            notice = @"支付出错";
+            break;
+    }
+    TOAST(notice);
+}
+
+```
