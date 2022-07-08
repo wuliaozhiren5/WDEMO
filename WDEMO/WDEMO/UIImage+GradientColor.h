@@ -40,3 +40,7 @@ typedef NS_ENUM(NSUInteger, GradientType) {
 + (UIImage *)gradientColorImageFromColors:(NSArray*)colorArray locations:(NSArray *)locationArray gradientType:(GradientType)gradientType imgSize:(CGSize)imgSize opaque:(BOOL)opaque;
 
 @end
+
+
+
+

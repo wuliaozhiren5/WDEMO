@@ -19,7 +19,7 @@ UIImage *someImage1 = [UIImage imageNamed:@"SomeResource.png"];
 [button setBackgroundImage:someImage forState:(UIControlStateHighlighted|UIControlStateSelected];
  
 
-我的代码中解决
+自己代码中解决
 - (UIButton *)praiseBtn {
     if (!_praiseBtn) {
         _praiseBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 320, 45)];

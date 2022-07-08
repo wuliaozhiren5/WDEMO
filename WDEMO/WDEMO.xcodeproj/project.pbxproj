@@ -42,11 +42,16 @@
 		67B7E5F72321189E00C494EF /* DelegateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F62321189E00C494EF /* DelegateViewController.m */; };
 		67B7E5FA232118A900C494EF /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5F9232118A900C494EF /* BlockViewController.m */; };
 		67B7E5FD232118B800C494EF /* NotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 67B7E5FC232118B800C494EF /* NotificationViewController.m */; };
+		A4395C2A2874249F008FE315 /* break continue 和 return.md in Resources */ = {isa = PBXBuildFile; fileRef = A4395C292874249E008FE315 /* break continue 和 return.md */; };
+		A4395C2C28742526008FE315 /* 限制 UITextField 输入长度.md in Resources */ = {isa = PBXBuildFile; fileRef = A4395C2B28742526008FE315 /* 限制 UITextField 输入长度.md */; };
+		A4395C2E2874254F008FE315 /* 保留2位小数保留2位整数.md in Resources */ = {isa = PBXBuildFile; fileRef = A4395C2D2874254F008FE315 /* 保留2位小数保留2位整数.md */; };
+		A4395C30287425B7008FE315 /* UITextField 禁用复制粘贴.md in Resources */ = {isa = PBXBuildFile; fileRef = A4395C2F287425B6008FE315 /* UITextField 禁用复制粘贴.md */; };
 		A43964B1286BFD4400355CC6 /* MWSTradeAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = A43964B0286BFD4400355CC6 /* MWSTradeAlertView.m */; };
 		A43964B4286BFE7000355CC6 /* MWSPackBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A43964B2286BFE7000355CC6 /* MWSPackBottomBar.m */; };
 		A459C29124C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = A459C29024C16ADE00A3B5FF /* CJAppUncaughtExceptionHandler.m */; };
 		A459C29424C174A300A3B5FF /* Plist.m in Sources */ = {isa = PBXBuildFile; fileRef = A459C29324C174A300A3B5FF /* Plist.m */; };
 		A45D6A2B2872ED9B00988871 /* UITextField+NLLimit.m in Sources */ = {isa = PBXBuildFile; fileRef = A45D6A2A2872ED9B00988871 /* UITextField+NLLimit.m */; };
+		A46772DF28752E5B003BD0EF /* 跳转到指定tabBar.md in Resources */ = {isa = PBXBuildFile; fileRef = A46772DE28752E5A003BD0EF /* 跳转到指定tabBar.md */; };
 		A479988024BAB2FA0079F72D /* GaoDengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A479987F24BAB2FA0079F72D /* GaoDengViewController.m */; };
 		A479988C24BAC0E20079F72D /* SmallCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A479988B24BAC0E20079F72D /* SmallCollectionView.m */; };
 		A479988F24BAE2EF0079F72D /* BigCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A479988E24BAE2EF0079F72D /* BigCollectionView.m */; };
@@ -653,6 +658,10 @@
 		67B7E5FB232118B800C494EF /* NotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationViewController.h; sourceTree = "<group>"; };
 		67B7E5FC232118B800C494EF /* NotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationViewController.m; sourceTree = "<group>"; };
 		6F661C06B03CAE44D97A8656 /* Pods-WDEMO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WDEMO.release.xcconfig"; path = "Target Support Files/Pods-WDEMO/Pods-WDEMO.release.xcconfig"; sourceTree = "<group>"; };
+		A4395C292874249E008FE315 /* break continue 和 return.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "break continue 和 return.md"; sourceTree = "<group>"; };
+		A4395C2B28742526008FE315 /* 限制 UITextField 输入长度.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "限制 UITextField 输入长度.md"; sourceTree = "<group>"; };
+		A4395C2D2874254F008FE315 /* 保留2位小数保留2位整数.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "保留2位小数保留2位整数.md"; sourceTree = "<group>"; };
+		A4395C2F287425B6008FE315 /* UITextField 禁用复制粘贴.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "UITextField 禁用复制粘贴.md"; sourceTree = "<group>"; };
 		A43964AF286BFD4400355CC6 /* MWSTradeAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSTradeAlertView.h; sourceTree = "<group>"; };
 		A43964B0286BFD4400355CC6 /* MWSTradeAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSTradeAlertView.m; sourceTree = "<group>"; };
 		A43964B2286BFE7000355CC6 /* MWSPackBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSPackBottomBar.m; sourceTree = "<group>"; };
@@ -663,6 +672,7 @@
 		A459C29324C174A300A3B5FF /* Plist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plist.m; sourceTree = "<group>"; };
 		A45D6A292872ED9B00988871 /* UITextField+NLLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITextField+NLLimit.h"; sourceTree = "<group>"; };
 		A45D6A2A2872ED9B00988871 /* UITextField+NLLimit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITextField+NLLimit.m"; sourceTree = "<group>"; };
+		A46772DE28752E5A003BD0EF /* 跳转到指定tabBar.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "跳转到指定tabBar.md"; sourceTree = "<group>"; };
 		A479987E24BAB2FA0079F72D /* GaoDengViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GaoDengViewController.h; sourceTree = "<group>"; };
 		A479987F24BAB2FA0079F72D /* GaoDengViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GaoDengViewController.m; sourceTree = "<group>"; };
 		A479988A24BAC0E20079F72D /* SmallCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmallCollectionView.h; sourceTree = "<group>"; };
@@ -2328,6 +2338,11 @@
 				F58F2B65282A17EC00295ED1 /* UIButton图片文字对齐.md */,
 				F598CC912851F3F3000D486E /* CocoaPods详细过程.md */,
 				F5023E492716B48700BA5829 /* 空白.md */,
+				A46772DE28752E5A003BD0EF /* 跳转到指定tabBar.md */,
+				A4395C292874249E008FE315 /* break continue 和 return.md */,
+				A4395C2D2874254F008FE315 /* 保留2位小数保留2位整数.md */,
+				A4395C2B28742526008FE315 /* 限制 UITextField 输入长度.md */,
+				A4395C2F287425B6008FE315 /* UITextField 禁用复制粘贴.md */,
 				A45D6A292872ED9B00988871 /* UITextField+NLLimit.h */,
 				A45D6A2A2872ED9B00988871 /* UITextField+NLLimit.m */,
 				A4E01C862860563700F75DDC /* 提审AppStore打包（注意事项）.md */,
@@ -3609,6 +3624,7 @@
 				F5F3C40C280D798000DBDD82 /* 渐变色图片.md in Resources */,
 				F586139826A9620900D81DDA /* 马甲包的副本4.md in Resources */,
 				F57F3A8F2850A99E0080F069 /*  代码规范.md in Resources */,
+				A4395C30287425B7008FE315 /* UITextField 禁用复制粘贴.md in Resources */,
 				F51E66AB2848A1CC008A4C68 /* iOS15适配 navigationBar 与 tabBar 背景色.md in Resources */,
 				F5AC7C2C2710276800533793 /* github开发人员在七夕搞事情.md in Resources */,
 				F5023E4A2716B48700BA5829 /* 空白.md in Resources */,
@@ -3620,9 +3636,11 @@
 				F5CA13AA26B2928700D8A7AE /* ic_bottombar_vip_h@2x.png in Resources */,
 				F51E66AC2848A1CC008A4C68 /* 获取URL链接中的各参数.md in Resources */,
 				F548D0D9256E2EEA00357E64 /* amwayPlayerGuide_2.png in Resources */,
+				A4395C2A2874249F008FE315 /* break continue 和 return.md in Resources */,
 				F57F3A8D2850A6270080F069 /* 空白txt.txt in Resources */,
 				F556CBDE25AEC79100B590D2 /* WCollectionViewCell.xib in Resources */,
 				F5B7DC3B2608813D00B1E497 /* 代码格式化工具.md in Resources */,
+				A4395C2E2874254F008FE315 /* 保留2位小数保留2位整数.md in Resources */,
 				F516E5342683172200EB915E /* 按钮选中这时时候图片闪烁问题Selected.md in Resources */,
 				F58613CE26A96EB100D81DDA /* Confuse.py in Resources */,
 				F505AC2325C936F600F43298 /* 约束动画.md in Resources */,
@@ -3687,6 +3705,7 @@
 				F5F3C412280D7A8400DBDD82 /* 允许使用http协议请求.md in Resources */,
 				F598CC922851F3F3000D486E /* CocoaPods详细过程.md in Resources */,
 				F5CA140826B2A2DC00D8A7AE /* home_normal@2x.png in Resources */,
+				A46772DF28752E5B003BD0EF /* 跳转到指定tabBar.md in Resources */,
 				F504EE1727E208350099350D /* nullable nonnull.md in Resources */,
 				F5D05B6E25BAB16600A4C6EC /* 归档解档.md in Resources */,
 				F5E4786825303C93001AE2AE /* WKWebView.md in Resources */,
@@ -3699,6 +3718,7 @@
 				F508EBF027562F920017F315 /* initWithNibName方法什么时候调用.md in Resources */,
 				F548D0E6256E2EEA00357E64 /* amwayPlayerZan.json in Resources */,
 				F5409ABA26B166020042F29D /* star@3x.png in Resources */,
+				A4395C2C28742526008FE315 /* 限制 UITextField 输入长度.md in Resources */,
 				F567346C260C41D80081BC8A /* 数字变化的动画效果.md in Resources */,
 				F5CA13FE26B2A2DC00D8A7AE /* message_highlight@2x.png in Resources */,
 				F58613CF26A96EB100D81DDA /* ignoreKey.txt in Resources */,
