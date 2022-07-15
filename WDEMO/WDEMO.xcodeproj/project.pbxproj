@@ -70,6 +70,7 @@
 		A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09B24B97FD4005922B1 /* ViewController2.m */; };
 		A4F2C0A224B97FD5005922B1 /* ViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F2C09C24B97FD4005922B1 /* ViewController3.m */; };
 		A4F9DC1B24D66049009FB2EA /* UIImage+size.m in Sources */ = {isa = PBXBuildFile; fileRef = A4F9DC1A24D66049009FB2EA /* UIImage+size.m */; };
+		A4FFD8FE2881099E00315DC6 /* MSStrokeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A4FFD8FD2881099E00315DC6 /* MSStrokeLabel.m */; };
 		F501FE9E271FC13400FE2F3B /* RRAllRankingListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */; };
 		F501FEA0271FEC2800FE2F3B /* 删除所有子View.md in Resources */ = {isa = PBXBuildFile; fileRef = F501FE9F271FEC2800FE2F3B /* 删除所有子View.md */; };
 		F501FEA2271FEE8000FE2F3B /* 状态栏高度.md in Resources */ = {isa = PBXBuildFile; fileRef = F501FEA1271FEE8000FE2F3B /* 状态栏高度.md */; };
@@ -705,6 +706,8 @@
 		A4F2C09F24B97FD5005922B1 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
 		A4F9DC1924D66049009FB2EA /* UIImage+size.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+size.h"; sourceTree = "<group>"; };
 		A4F9DC1A24D66049009FB2EA /* UIImage+size.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+size.m"; sourceTree = "<group>"; };
+		A4FFD8FC2881099E00315DC6 /* MSStrokeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSStrokeLabel.h; sourceTree = "<group>"; };
+		A4FFD8FD2881099E00315DC6 /* MSStrokeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSStrokeLabel.m; sourceTree = "<group>"; };
 		F501FE9C271FC13400FE2F3B /* RRAllRankingListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RRAllRankingListVC.h; sourceTree = "<group>"; };
 		F501FE9D271FC13400FE2F3B /* RRAllRankingListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RRAllRankingListVC.m; sourceTree = "<group>"; };
 		F501FE9F271FEC2800FE2F3B /* 删除所有子View.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "删除所有子View.md"; sourceTree = "<group>"; };
@@ -1610,6 +1613,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				A4FFD8FB2881099800315DC6 /* Label描边+发光字 */,
 				A4EF19D62869850A003B0B0D /* 提示框 */,
 				F57F3A872850A6260080F069 /* 空白文件夹 */,
 				F51E66AF2848A402008A4C68 /* Address */,
@@ -1850,6 +1854,15 @@
 				A4F2C09C24B97FD4005922B1 /* ViewController3.m */,
 			);
 			path = TagLIst;
+			sourceTree = "<group>";
+		};
+		A4FFD8FB2881099800315DC6 /* Label描边+发光字 */ = {
+			isa = PBXGroup;
+			children = (
+				A4FFD8FC2881099E00315DC6 /* MSStrokeLabel.h */,
+				A4FFD8FD2881099E00315DC6 /* MSStrokeLabel.m */,
+			);
+			path = "Label描边+发光字";
 			sourceTree = "<group>";
 		};
 		F50440B72625A06B00834547 /* 评论SeniorComments */ = {
@@ -4077,6 +4090,7 @@
 				A4F2C0A124B97FD5005922B1 /* ViewController2.m in Sources */,
 				F57D5741272FE367009F5846 /* RRDramaCommentScoreView.m in Sources */,
 				F5D0FC0924E0F91800CAADF8 /* UIColor+TUIDarkMode.m in Sources */,
+				A4FFD8FE2881099E00315DC6 /* MSStrokeLabel.m in Sources */,
 				6783C8561FB941EE0040C02B /* ViewController.m in Sources */,
 				F5A9F12A24E3C12B00F611E6 /* TestViewController.m in Sources */,
 				F556CBCB25AEA11600B590D2 /* WaterLayout.m in Sources */,

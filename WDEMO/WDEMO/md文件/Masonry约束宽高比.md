@@ -29,3 +29,12 @@ make.height.mas_equalTo(self.coverImgV.mas_width).multipliedBy(230 / 172.5);
 
 ```
 
+宽等于高 1:1
+```
+    [self.iconImgV mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(@0);
+        make.leading.trailing.equalTo(@0);
+        make.height.equalTo(self.iconImgV.mas_width);
+    }];
+
+```
