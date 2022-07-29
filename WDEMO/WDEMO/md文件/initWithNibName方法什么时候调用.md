@@ -18,6 +18,15 @@ https://blog.csdn.net/sinat_31063657/article/details/51784227
     if (self) {
 
         // Custom initialization
+     if (self.tabBarItem) {
+            if ([UserInfoConfig sharedUserInfoConfig].unreadAmwayCount >= 100) {
+                self.tabBarItem.badgeValue = @"99+";
+            } else if ([UserInfoConfig sharedUserInfoConfig].unreadAmwayCount > 0) {
+                self.tabBarItem.badgeValue = @([UserInfoConfig sharedUserInfoConfig].unreadAmwayCount).stringValue;
+            } else {
+                self.tabBarItem.badgeValue = nil;
+            }
+        }
 
     }
 

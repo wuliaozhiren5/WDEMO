@@ -1,0 +1,209 @@
+//
+//  MWSTradePackBottomBar.m
+//  MoWanShang
+//
+//  Created by aimeiju on 2022/6/30.
+//
+
+#import "MWSTradePackBottomBar.h"
+
+@implementation MWSTradePackBottomBar
+
+/*
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setupViews];
+    }
+    return self;
+}
+
+
+- (void)setupViews {
+    self.backgroundColor = [UIColor clearColor];
+    
+    //    self.view.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
+    
+    [self addSubview:self.detailBtn];
+    [self addSubview:self.nextBtn];
+    [self addSubview:self.tipsLabBackgroundView];
+    [self addSubview:self.tipsLab];
+    
+    [self.detailBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(50));
+        make.bottom.equalTo(@(0));
+        make.leading.equalTo(@0);
+        make.width.equalTo(@(KWidth / 2.0));
+    }];
+    
+    [self.nextBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(50));
+        make.bottom.equalTo(@(0));
+        make.trailing.equalTo(@0);
+        make.width.equalTo(@(KWidth / 2.0));
+    }];
+    
+    [self.tipsLab mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.equalTo(@(-55));
+        make.height.equalTo(@(30));
+        make.centerX.equalTo(@0);
+        
+    }];
+    
+    [self.tipsLabBackgroundView mas_makeConstraints:^(MASConstraintMaker *make) {
+        //        make.top.equalTo(self.tipsLab.mas_top).offset();
+        make.bottom.equalTo(@(-55));
+        make.height.equalTo(@(30));
+        //        make.leading.equalTo(self.tipsLab.mas_leading).offset(-16.5);
+        //        make.trailing.equalTo(self.tipsLab.mas_trailing).offset(16.5);
+        make.leading.equalTo(self.tipsLab.mas_leading).offset(-16);
+        make.trailing.equalTo(self.tipsLab.mas_trailing).offset(16);
+        make.width.mas_lessThanOrEqualTo(KWidth - 50);
+    }];
+    
+    self.detailBtn.backgroundColor = kCOLOR_1D1D1D;
+    self.nextBtn.backgroundColor = kCOLOR_C13030;
+    
+    self.tipsLab.hidden = YES;
+    self.tipsLabBackgroundView.hidden = YES;
+}
+
+- (void)setCount:(NSInteger)count {
+    _count = count;
+    //    NSString *countStr = [NSString stringWithFormat:@"已打包%zi件物品", count];
+    //    if (self.isTrade) {
+    //        countStr = [NSString stringWithFormat:@"已选%zi件交易品", count];
+    //    }
+    NSString *countStr = [NSString stringWithFormat:@"已选%zi", count];
+    
+    if (self.tradeType == 1) {
+        //发布交易
+        countStr = [NSString stringWithFormat:@"已选%zi件交易品", count];
+        [self.nextBtn setTitle:@"发布交易" forState:UIControlStateNormal];
+        
+    } else if (self.tradeType == 2) {
+        //加入换换
+        countStr = [NSString stringWithFormat:@"已选%zi件交易品", count];
+        [self.nextBtn setTitle:@"加入换换" forState:UIControlStateNormal];
+    } else if (self.tradeType == 4) {
+        //打擂
+        countStr = [NSString stringWithFormat:@"已选%zi赏品", count];
+        
+        NSString *str = [NSString stringWithFormat:@"选择完毕%zi/%zi", count, self.selectMaxCount];
+        
+        [self.nextBtn setTitle:str forState:UIControlStateNormal];
+        
+    } else {
+        //扭蛋
+        countStr = [NSString stringWithFormat:@"已选择%zi赏品", count];
+        [self.nextBtn setTitle:@"立即粉碎" forState:UIControlStateNormal];
+    }
+    
+    [self.detailBtn setTitle:countStr forState:UIControlStateNormal];
+    
+    //先还原
+    self.detailBtn.titleEdgeInsets = UIEdgeInsetsZero;
+    self.detailBtn.imageEdgeInsets = UIEdgeInsetsZero;
+    
+    CGRect imageRect = self.detailBtn.imageView.frame;
+    CGRect titleRect = self.detailBtn.titleLabel.frame;
+    
+    CGFloat padding = 5.0;
+    
+    //图片在右，文字在左
+    self.detailBtn.titleEdgeInsets = UIEdgeInsetsMake(0,
+                                                      -(imageRect.size.width + padding/2),
+                                                      0,
+                                                      (imageRect.size.width + padding/2));
+    
+    self.detailBtn.imageEdgeInsets = UIEdgeInsetsMake(0,
+                                                      (titleRect.size.width+ padding/2),
+                                                      0,
+                                                      -(titleRect.size.width+ padding/2));
+    
+}
+
+//穿透
+- (UIView*)hitTest:(CGPoint)point withEvent:(UIEvent *)event{
+    UIView *hitView = [super hitTest:point withEvent:event];
+    if(hitView == self) {
+        return nil;
+    }
+    return hitView;
+}
+
+//lazy
+- (UIButton *)detailBtn {
+    if (!_detailBtn) {
+        _detailBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, KWidth / 2, 320)];
+        [_detailBtn setTitle:@"已打包0件物品" forState:UIControlStateNormal];
+        [_detailBtn setImage:IMAGENAME(@"pic_uo") forState:UIControlStateNormal];
+        [_detailBtn setImage:IMAGENAME(@"pic_uo") forState:UIControlStateHighlighted];
+        
+        ////        _detailBtn.imageView.contentMode = UIViewContentModeRight;
+        //        _detailBtn.imageView.contentMode = UIViewContentModeRight;
+        ////        _detailBtn.imageEdgeInsets = UIEdgeInsetsMake(0, -40, 0, 0);
+        //        _detailBtn.titleLabel.contentMode = UIViewContentModeRight;
+        
+        //先还原
+        _detailBtn.titleEdgeInsets = UIEdgeInsetsZero;
+        _detailBtn.imageEdgeInsets = UIEdgeInsetsZero;
+        
+        CGRect imageRect = _detailBtn.imageView.frame;
+        CGRect titleRect = _detailBtn.titleLabel.frame;
+        
+        CGFloat padding = 5.0;
+        
+        //图片在右，文字在左
+        _detailBtn.titleEdgeInsets = UIEdgeInsetsMake(0,
+                                                      -(imageRect.size.width + padding/2),
+                                                      0,
+                                                      (imageRect.size.width + padding/2));
+        
+        _detailBtn.imageEdgeInsets = UIEdgeInsetsMake(0,
+                                                      (titleRect.size.width+ padding/2),
+                                                      0,
+                                                      -(titleRect.size.width+ padding/2));
+    }
+    return _detailBtn;
+}
+
+- (UIButton *)nextBtn {
+    if (!_nextBtn) {
+        _nextBtn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, KWidth / 2, 320)];
+        //        [_nextBtn setTitle:@"去发货" forState:UIControlStateNormal];
+        [_nextBtn setTitle:@"发布交易" forState:UIControlStateNormal];
+        
+    }
+    return _nextBtn;
+}
+
+- (UILabel *)tipsLab {
+    if (!_tipsLab) {
+        _tipsLab = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
+        _tipsLab.text = @"提示：满5件赏品包邮，如不满5件需支付18元运费";
+        _tipsLab.font = [UIFont systemFontOfSize:12.0];
+        _tipsLab.textColor = [UIColor whiteColor];
+        _tipsLab.textAlignment = NSTextAlignmentCenter;
+    }
+    return _tipsLab;
+}
+
+- (UIView *)tipsLabBackgroundView {
+    if (!_tipsLabBackgroundView) {
+        _tipsLabBackgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
+        //        _tipsLabBackgroundView.backgroundColor = [UIColor blackColor];
+        _tipsLabBackgroundView.backgroundColor = kCOLOR_1D1D1D;
+        _tipsLabBackgroundView.layer.cornerRadius = 15;
+        _tipsLabBackgroundView.layer.masksToBounds = YES;
+    }
+    return _tipsLabBackgroundView;
+}
+@end

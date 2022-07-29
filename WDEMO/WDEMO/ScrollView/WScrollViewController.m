@@ -123,4 +123,25 @@
  }
  */
 
+
+
+//- (UIScrollView *)scrollView {
+//    if (!_scrollView) {
+//        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 320)];
+////        _scrollView.backgroundColor = kCOLOR_FFFFFF;
+//        
+////        _scrollView.delegate = self;
+//////        _scrollView.delegate = self;
+////        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapAction:)];
+////        [_scrollView addGestureRecognizer:tap];
+//        
+//        if (@available(iOS 11.0, *)) {
+//            _scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        } else {
+//            //        self.automaticallyAdjustsScrollViewInsets = NO;
+//        }
+//    }
+//    return _scrollView;
+//    
+//}
 @end

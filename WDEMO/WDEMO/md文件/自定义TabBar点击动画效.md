@@ -3,6 +3,10 @@
 iOS tabbar点击动画效果实现
 https://www.cnblogs.com/yajunLi/p/6288811.html
 
+iOS UITabbar图标点击动画效果实现
+https://blog.csdn.net/fongim/article/details/88422233
+
+
 正常情况下，我们点击tabbar都只有一个变色效果，但有时候，如果我们想给它添加一个点击动画，该如何做呢？
  
 原理：利用UITabBarController实现，在tabbar的 didSelectItem 代理里添加动画效果。
