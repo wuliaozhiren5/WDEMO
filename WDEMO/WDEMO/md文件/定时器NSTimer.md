@@ -65,6 +65,8 @@
 //常用
 //每隔1秒的定时器
 ```
+@property (nonatomic, strong) NSTimer *timer;
+
 
 - (void)updateViews { 
 
