@@ -3,14 +3,14 @@
 1.代码中
 版本号：
 kAppClientVersion   @"1.1.0"
-kAppClientType      @"xxxxx"
+kAppClientType      @"xxxxx"  
 
 2.Xcode中
 Xcode
 Targets - General - Bundle Identifier
 juxing.toys
-Targets - General - Version
-Targets - General - Build
+Targets - General - Version          1.1.0
+Targets - General - Build            1 01 00 1
 
 Xcode
 选择证书：自动选择证书
