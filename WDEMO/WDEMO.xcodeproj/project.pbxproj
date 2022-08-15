@@ -72,6 +72,7 @@
 		A4A1BC63285B0D7D0025DF7C /* vim.md in Resources */ = {isa = PBXBuildFile; fileRef = A4A1BC61285B0D7D0025DF7C /* vim.md */; };
 		A4A1BC64285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md in Resources */ = {isa = PBXBuildFile; fileRef = A4A1BC62285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md */; };
 		A4A1BC66285B0DE90025DF7C /* Mac电脑抹掉.md in Resources */ = {isa = PBXBuildFile; fileRef = A4A1BC65285B0DE90025DF7C /* Mac电脑抹掉.md */; };
+		A4B6A03228A9F2EF00934F01 /* MWSNumberView.m in Sources */ = {isa = PBXBuildFile; fileRef = A4B6A03128A9F2EF00934F01 /* MWSNumberView.m */; };
 		A4E01C872860563700F75DDC /* 提审AppStore打包（注意事项）.md in Resources */ = {isa = PBXBuildFile; fileRef = A4E01C862860563700F75DDC /* 提审AppStore打包（注意事项）.md */; };
 		A4E6F616286D772B00A20CA5 /* MWSTradeDetailCloseBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E6F614286D772B00A20CA5 /* MWSTradeDetailCloseBottomBar.m */; };
 		A4E6F617286D772B00A20CA5 /* MWSTradeDetailPayBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E6F615286D772B00A20CA5 /* MWSTradeDetailPayBottomBar.m */; };
@@ -715,6 +716,8 @@
 		A4A1BC61285B0D7D0025DF7C /* vim.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = vim.md; sourceTree = "<group>"; };
 		A4A1BC62285B0D7D0025DF7C /* git去掉UserInterfaceState.xcuserstate文件.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "git去掉UserInterfaceState.xcuserstate文件.md"; sourceTree = "<group>"; };
 		A4A1BC65285B0DE90025DF7C /* Mac电脑抹掉.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Mac电脑抹掉.md"; sourceTree = "<group>"; };
+		A4B6A03028A9F2EF00934F01 /* MWSNumberView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSNumberView.h; sourceTree = "<group>"; };
+		A4B6A03128A9F2EF00934F01 /* MWSNumberView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MWSNumberView.m; sourceTree = "<group>"; };
 		A4E01C862860563700F75DDC /* 提审AppStore打包（注意事项）.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "提审AppStore打包（注意事项）.md"; sourceTree = "<group>"; };
 		A4E6F612286D772B00A20CA5 /* MWSTradeDetailCloseBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSTradeDetailCloseBottomBar.h; sourceTree = "<group>"; };
 		A4E6F613286D772B00A20CA5 /* MWSTradeDetailPayBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWSTradeDetailPayBottomBar.h; sourceTree = "<group>"; };
@@ -1643,6 +1646,7 @@
 		6783C8501FB941EE0040C02B /* WDEMO */ = {
 			isa = PBXGroup;
 			children = (
+				A4B6A02F28A9F2C300934F01 /* 数字加减NumberView */,
 				A45CF2562888FF0300C4070F /* 弹出层弹出View */,
 				A4EF19D62869850A003B0B0D /* 提示框 */,
 				A45FE7AA2888031600BB4E8D /* 底部bar按钮 */,
@@ -1892,6 +1896,15 @@
 				A479989124BAEBCE0079F72D /* SmallBigCollectionViewCell.m */,
 			);
 			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		A4B6A02F28A9F2C300934F01 /* 数字加减NumberView */ = {
+			isa = PBXGroup;
+			children = (
+				A4B6A03028A9F2EF00934F01 /* MWSNumberView.h */,
+				A4B6A03128A9F2EF00934F01 /* MWSNumberView.m */,
+			);
+			path = "数字加减NumberView";
 			sourceTree = "<group>";
 		};
 		A4EF19D62869850A003B0B0D /* 提示框 */ = {
@@ -4046,6 +4059,7 @@
 				F5CED5DA25749C7D002CF42C /* CollectionRedPointManager.m in Sources */,
 				F591AC9726A1641B0042802F /* Vendors.m in Sources */,
 				F5B5A9322508F502002505AE /* FullScreenMessageController.m in Sources */,
+				A4B6A03228A9F2EF00934F01 /* MWSNumberView.m in Sources */,
 				F5409AAD26B164A30042F29D /* ZZStarViewVC.m in Sources */,
 				F5C0A21F2578BBC2004EBD94 /* xibView.m in Sources */,
 				F5CA13DB26B2A14A00D8A7AE /* LBTabBarController.m in Sources */,
